@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "filename": "countries.json",
+      "row_count": 57,
+      "sha256": "8466054d4b1c1eccfe56909e45bb3d0910eb99b02161a60d4cf4348311288c3f"
+    },
+    {
+      "filename": "cities.json",
+      "row_count": 117,
+      "sha256": "d8d08abe610eb7b6eb95abac45c9e05cdf25757968ad26fb42bdec71cd8ec0b4"
+    },
+    {
+      "filename": "organizations.json",
+      "row_count": 100,
+      "sha256": "3adac810c245d696bc4f885177322cb4f71fe8bc91f7cc69eca2f7eac2648c49"
+    },
+    {
+      "filename": "show_series.json",
+      "row_count": 19,
+      "sha256": "11a2f488507e8b166cd19b1bb5553ea8d7d3a0aa048f8cfe37ba9f5b29764eba"
+    },
+    {
+      "filename": "upcoming_events.json",
+      "row_count": 137,
+      "sha256": "f402e14dd3d76d2ed70e28c95e9282b91a13746b570a3bbf0a60db7b25f8b160"
+    },
+    {
+      "filename": "public_booking_methods.json",
+      "row_count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "filename": "festivals.json",
+      "row_count": 75,
+      "sha256": "f1d5c75e4da7314b0f5f5a6b5fabd7007ad16448e2f4d8177b1e03ec4a65d75b"
+    },
+    {
+      "filename": "tours.json",
+      "row_count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "filename": "opportunities.json",
+      "row_count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  ],
+  "generated_at": "2026-07-15T23:11:24.877699+00:00",
+  "source_exports_dir": "/Users/chuck/Documents/Claude/Projects/comedy-network-db/exports"
+}

@@ -1,0 +1,1172 @@
+[
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 1,
+    "latitude": -37.8136,
+    "longitude": 144.9631,
+    "name": "Melbourne",
+    "timezone": "Australia/Melbourne"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 2,
+    "latitude": -33.8688,
+    "longitude": 151.2093,
+    "name": "Sydney",
+    "timezone": "Australia/Sydney"
+  },
+  {
+    "country_id": 2,
+    "country_iso2": "BE",
+    "country_name": "Belgium",
+    "id": 3,
+    "latitude": 50.8503,
+    "longitude": 4.3517,
+    "name": "Brussels",
+    "timezone": "Europe/Brussels"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 4,
+    "latitude": 43.6532,
+    "longitude": -79.3832,
+    "name": "Toronto",
+    "timezone": "America/Toronto"
+  },
+  {
+    "country_id": 4,
+    "country_iso2": "CN",
+    "country_name": "China",
+    "id": 5,
+    "latitude": 22.3193,
+    "longitude": 114.1694,
+    "name": "Hong Kong",
+    "timezone": "Asia/Hong_Kong"
+  },
+  {
+    "country_id": 5,
+    "country_iso2": "CZ",
+    "country_name": "Czechia",
+    "id": 6,
+    "latitude": 50.0755,
+    "longitude": 14.4378,
+    "name": "Prague",
+    "timezone": "Europe/Prague"
+  },
+  {
+    "country_id": 6,
+    "country_iso2": "DK",
+    "country_name": "Denmark",
+    "id": 7,
+    "latitude": 55.6761,
+    "longitude": 12.5683,
+    "name": "Copenhagen",
+    "timezone": "Europe/Copenhagen"
+  },
+  {
+    "country_id": 7,
+    "country_iso2": "DE",
+    "country_name": "Germany",
+    "id": 8,
+    "latitude": 52.52,
+    "longitude": 13.405,
+    "name": "Berlin",
+    "timezone": "Europe/Berlin"
+  },
+  {
+    "country_id": 8,
+    "country_iso2": "IN",
+    "country_name": "India",
+    "id": 9,
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "name": "Bangalore",
+    "timezone": "Asia/Kolkata"
+  },
+  {
+    "country_id": 8,
+    "country_iso2": "IN",
+    "country_name": "India",
+    "id": 10,
+    "latitude": 28.7041,
+    "longitude": 77.1025,
+    "name": "Delhi",
+    "timezone": "Asia/Kolkata"
+  },
+  {
+    "country_id": 8,
+    "country_iso2": "IN",
+    "country_name": "India",
+    "id": 11,
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "name": "Kolkata",
+    "timezone": "Asia/Kolkata"
+  },
+  {
+    "country_id": 8,
+    "country_iso2": "IN",
+    "country_name": "India",
+    "id": 12,
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "name": "Mumbai",
+    "timezone": "Asia/Kolkata"
+  },
+  {
+    "country_id": 9,
+    "country_iso2": "IE",
+    "country_name": "Ireland",
+    "id": 13,
+    "latitude": 51.8985,
+    "longitude": -8.4756,
+    "name": "Cork",
+    "timezone": "Europe/Dublin"
+  },
+  {
+    "country_id": 9,
+    "country_iso2": "IE",
+    "country_name": "Ireland",
+    "id": 14,
+    "latitude": 53.3498,
+    "longitude": -6.2603,
+    "name": "Dublin",
+    "timezone": "Europe/Dublin"
+  },
+  {
+    "country_id": 10,
+    "country_iso2": "JP",
+    "country_name": "Japan",
+    "id": 15,
+    "latitude": 35.6762,
+    "longitude": 139.6503,
+    "name": "Tokyo",
+    "timezone": "Asia/Tokyo"
+  },
+  {
+    "country_id": 11,
+    "country_iso2": "NL",
+    "country_name": "Netherlands",
+    "id": 16,
+    "latitude": 52.3676,
+    "longitude": 4.9041,
+    "name": "Amsterdam",
+    "timezone": "Europe/Amsterdam"
+  },
+  {
+    "country_id": 12,
+    "country_iso2": "SG",
+    "country_name": "Singapore",
+    "id": 17,
+    "latitude": 1.3521,
+    "longitude": 103.8198,
+    "name": "Singapore",
+    "timezone": "Asia/Singapore"
+  },
+  {
+    "country_id": 13,
+    "country_iso2": "ZA",
+    "country_name": "South Africa",
+    "id": 18,
+    "latitude": -33.9249,
+    "longitude": 18.4241,
+    "name": "Cape Town",
+    "timezone": "Africa/Johannesburg"
+  },
+  {
+    "country_id": 13,
+    "country_iso2": "ZA",
+    "country_name": "South Africa",
+    "id": 19,
+    "latitude": -26.2041,
+    "longitude": 28.0473,
+    "name": "Johannesburg",
+    "timezone": "Africa/Johannesburg"
+  },
+  {
+    "country_id": 14,
+    "country_iso2": "ES",
+    "country_name": "Spain",
+    "id": 20,
+    "latitude": 41.3851,
+    "longitude": 2.1734,
+    "name": "Barcelona",
+    "timezone": "Europe/Madrid"
+  },
+  {
+    "country_id": 14,
+    "country_iso2": "ES",
+    "country_name": "Spain",
+    "id": 21,
+    "latitude": 40.4168,
+    "longitude": -3.7038,
+    "name": "Madrid",
+    "timezone": "Europe/Madrid"
+  },
+  {
+    "country_id": 15,
+    "country_iso2": "TH",
+    "country_name": "Thailand",
+    "id": 22,
+    "latitude": 13.7563,
+    "longitude": 100.5018,
+    "name": "Bangkok",
+    "timezone": "Asia/Bangkok"
+  },
+  {
+    "country_id": 16,
+    "country_iso2": "AE",
+    "country_name": "UAE",
+    "id": 23,
+    "latitude": 25.2048,
+    "longitude": 55.2708,
+    "name": "Dubai",
+    "timezone": "Asia/Dubai"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 24,
+    "latitude": 53.4808,
+    "longitude": -2.2426,
+    "name": "Manchester",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 25,
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "name": "Paris",
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 22,
+    "country_iso2": "PT",
+    "country_name": "Portugal",
+    "id": 26,
+    "latitude": 38.7223,
+    "longitude": -9.1393,
+    "name": "Lisbon",
+    "timezone": "Europe/Lisbon"
+  },
+  {
+    "country_id": 23,
+    "country_iso2": "CH",
+    "country_name": "Switzerland",
+    "id": 27,
+    "latitude": 47.3769,
+    "longitude": 8.5417,
+    "name": "Zurich",
+    "timezone": "Europe/Zurich"
+  },
+  {
+    "country_id": 24,
+    "country_iso2": "LV",
+    "country_name": "Latvia",
+    "id": 28,
+    "latitude": 56.9496,
+    "longitude": 24.1052,
+    "name": "Riga",
+    "timezone": "Europe/Riga"
+  },
+  {
+    "country_id": 25,
+    "country_iso2": "RS",
+    "country_name": "Serbia",
+    "id": 29,
+    "latitude": 44.7866,
+    "longitude": 20.4489,
+    "name": "Belgrade",
+    "timezone": "Europe/Belgrade"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 30,
+    "latitude": 45.764,
+    "longitude": 4.8357,
+    "name": "Lyon",
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 7,
+    "country_iso2": "DE",
+    "country_name": "Germany",
+    "id": 31,
+    "latitude": 48.1351,
+    "longitude": 11.582,
+    "name": "Munich",
+    "timezone": "Europe/Berlin"
+  },
+  {
+    "country_id": 7,
+    "country_iso2": "DE",
+    "country_name": "Germany",
+    "id": 32,
+    "latitude": 53.5511,
+    "longitude": 9.9937,
+    "name": "Hamburg",
+    "timezone": "Europe/Berlin"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 33,
+    "latitude": 55.9533,
+    "longitude": -3.1883,
+    "name": "Edinburgh",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 22,
+    "country_iso2": "PT",
+    "country_name": "Portugal",
+    "id": 34,
+    "latitude": 41.1579,
+    "longitude": -8.6291,
+    "name": "Porto",
+    "timezone": "Europe/Lisbon"
+  },
+  {
+    "country_id": 22,
+    "country_iso2": "PT",
+    "country_name": "Portugal",
+    "id": 35,
+    "latitude": 40.6405,
+    "longitude": -8.6538,
+    "name": "Aveiro",
+    "timezone": "Europe/Lisbon"
+  },
+  {
+    "country_id": 26,
+    "country_iso2": "IT",
+    "country_name": "Italy",
+    "id": 36,
+    "latitude": 45.4642,
+    "longitude": 9.19,
+    "name": "Milan",
+    "timezone": "Europe/Rome"
+  },
+  {
+    "country_id": 26,
+    "country_iso2": "IT",
+    "country_name": "Italy",
+    "id": 37,
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "name": "Rome",
+    "timezone": "Europe/Rome"
+  },
+  {
+    "country_id": 27,
+    "country_iso2": "AT",
+    "country_name": "Austria",
+    "id": 38,
+    "latitude": 48.2082,
+    "longitude": 16.3738,
+    "name": "Vienna",
+    "timezone": "Europe/Vienna"
+  },
+  {
+    "country_id": 5,
+    "country_iso2": "CZ",
+    "country_name": "Czechia",
+    "id": 39,
+    "latitude": 49.1951,
+    "longitude": 16.6068,
+    "name": "Brno",
+    "timezone": "Europe/Prague"
+  },
+  {
+    "country_id": 28,
+    "country_iso2": "SE",
+    "country_name": "Sweden",
+    "id": 40,
+    "latitude": 59.3293,
+    "longitude": 18.0686,
+    "name": "Stockholm",
+    "timezone": "Europe/Stockholm"
+  },
+  {
+    "country_id": 29,
+    "country_iso2": "PL",
+    "country_name": "Poland",
+    "id": 41,
+    "latitude": 52.2297,
+    "longitude": 21.0122,
+    "name": "Warsaw",
+    "timezone": "Europe/Warsaw"
+  },
+  {
+    "country_id": 23,
+    "country_iso2": "CH",
+    "country_name": "Switzerland",
+    "id": 42,
+    "latitude": 46.2044,
+    "longitude": 6.1432,
+    "name": "Geneva",
+    "timezone": "Europe/Zurich"
+  },
+  {
+    "country_id": 30,
+    "country_iso2": "NO",
+    "country_name": "Norway",
+    "id": 43,
+    "latitude": 59.9139,
+    "longitude": 10.7522,
+    "name": "Oslo",
+    "timezone": "Europe/Oslo"
+  },
+  {
+    "country_id": 31,
+    "country_iso2": "FI",
+    "country_name": "Finland",
+    "id": 44,
+    "latitude": 60.1699,
+    "longitude": 24.9384,
+    "name": "Helsinki",
+    "timezone": "Europe/Helsinki"
+  },
+  {
+    "country_id": 6,
+    "country_iso2": "DK",
+    "country_name": "Denmark",
+    "id": 45,
+    "latitude": 56.1629,
+    "longitude": 10.2039,
+    "name": "Aarhus",
+    "timezone": "Europe/Copenhagen"
+  },
+  {
+    "country_id": 32,
+    "country_iso2": "GR",
+    "country_name": "Greece",
+    "id": 46,
+    "latitude": 37.9838,
+    "longitude": 23.7275,
+    "name": "Athens",
+    "timezone": "Europe/Athens"
+  },
+  {
+    "country_id": 33,
+    "country_iso2": "HU",
+    "country_name": "Hungary",
+    "id": 47,
+    "latitude": 47.4979,
+    "longitude": 19.0402,
+    "name": "Budapest",
+    "timezone": "Europe/Budapest"
+  },
+  {
+    "country_id": 34,
+    "country_iso2": "RO",
+    "country_name": "Romania",
+    "id": 48,
+    "latitude": 44.4268,
+    "longitude": 26.1025,
+    "name": "Bucharest",
+    "timezone": "Europe/Bucharest"
+  },
+  {
+    "country_id": 35,
+    "country_iso2": "HR",
+    "country_name": "Croatia",
+    "id": 49,
+    "latitude": 45.815,
+    "longitude": 15.9819,
+    "name": "Zagreb",
+    "timezone": "Europe/Zagreb"
+  },
+  {
+    "country_id": 37,
+    "country_iso2": "SK",
+    "country_name": "Slovakia",
+    "id": 50,
+    "latitude": 48.1486,
+    "longitude": 17.1077,
+    "name": "Bratislava",
+    "timezone": "Europe/Bratislava"
+  },
+  {
+    "country_id": 36,
+    "country_iso2": "BG",
+    "country_name": "Bulgaria",
+    "id": 51,
+    "latitude": 42.6977,
+    "longitude": 23.3219,
+    "name": "Sofia",
+    "timezone": "Europe/Sofia"
+  },
+  {
+    "country_id": 38,
+    "country_iso2": "SI",
+    "country_name": "Slovenia",
+    "id": 52,
+    "latitude": 46.0569,
+    "longitude": 14.5058,
+    "name": "Ljubljana",
+    "timezone": "Europe/Ljubljana"
+  },
+  {
+    "country_id": 39,
+    "country_iso2": "EE",
+    "country_name": "Estonia",
+    "id": 53,
+    "latitude": 59.437,
+    "longitude": 24.7536,
+    "name": "Tallinn",
+    "timezone": "Europe/Tallinn"
+  },
+  {
+    "country_id": 40,
+    "country_iso2": "LT",
+    "country_name": "Lithuania",
+    "id": 55,
+    "latitude": 54.6872,
+    "longitude": 25.2797,
+    "name": "Vilnius",
+    "timezone": "Europe/Vilnius"
+  },
+  {
+    "country_id": 41,
+    "country_iso2": "LU",
+    "country_name": "Luxembourg",
+    "id": 56,
+    "latitude": 49.6116,
+    "longitude": 6.1319,
+    "name": "Luxembourg City",
+    "timezone": "Europe/Luxembourg"
+  },
+  {
+    "country_id": 42,
+    "country_iso2": "IS",
+    "country_name": "Iceland",
+    "id": 57,
+    "latitude": 64.1466,
+    "longitude": -21.9426,
+    "name": "Reykjavik",
+    "timezone": "Atlantic/Reykjavik"
+  },
+  {
+    "country_id": 43,
+    "country_iso2": "MT",
+    "country_name": "Malta",
+    "id": 58,
+    "latitude": 35.8989,
+    "longitude": 14.5146,
+    "name": "Valletta",
+    "timezone": "Europe/Malta"
+  },
+  {
+    "country_id": 44,
+    "country_iso2": "CY",
+    "country_name": "Cyprus",
+    "id": 59,
+    "latitude": 35.1856,
+    "longitude": 33.3823,
+    "name": "Nicosia",
+    "timezone": "Asia/Nicosia"
+  },
+  {
+    "country_id": 45,
+    "country_iso2": "TR",
+    "country_name": "T\u00fcrkiye",
+    "id": 60,
+    "latitude": 41.0082,
+    "longitude": 28.9784,
+    "name": "Istanbul",
+    "timezone": "Europe/Istanbul"
+  },
+  {
+    "country_id": 46,
+    "country_iso2": "GE",
+    "country_name": "Georgia",
+    "id": 61,
+    "latitude": 41.7151,
+    "longitude": 44.8271,
+    "name": "Tbilisi",
+    "timezone": "Asia/Tbilisi"
+  },
+  {
+    "country_id": 47,
+    "country_iso2": "MD",
+    "country_name": "Moldova",
+    "id": 62,
+    "latitude": 47.0105,
+    "longitude": 28.8638,
+    "name": "Chisinau",
+    "timezone": "Europe/Chisinau"
+  },
+  {
+    "country_id": 48,
+    "country_iso2": "UA",
+    "country_name": "Ukraine",
+    "id": 63,
+    "latitude": 50.4501,
+    "longitude": 30.5234,
+    "name": "Kyiv",
+    "timezone": "Europe/Kyiv"
+  },
+  {
+    "country_id": 49,
+    "country_iso2": "BA",
+    "country_name": "Bosnia and Herzegovina",
+    "id": 64,
+    "latitude": 43.8563,
+    "longitude": 18.4131,
+    "name": "Sarajevo",
+    "timezone": "Europe/Sarajevo"
+  },
+  {
+    "country_id": 51,
+    "country_iso2": "MK",
+    "country_name": "North Macedonia",
+    "id": 65,
+    "latitude": 41.9981,
+    "longitude": 21.4254,
+    "name": "Skopje",
+    "timezone": "Europe/Skopje"
+  },
+  {
+    "country_id": 50,
+    "country_iso2": "ME",
+    "country_name": "Montenegro",
+    "id": 66,
+    "latitude": 42.4304,
+    "longitude": 19.2594,
+    "name": "Podgorica",
+    "timezone": "Europe/Podgorica"
+  },
+  {
+    "country_id": 52,
+    "country_iso2": "AL",
+    "country_name": "Albania",
+    "id": 67,
+    "latitude": 41.3275,
+    "longitude": 19.8187,
+    "name": "Tirana",
+    "timezone": "Europe/Tirane"
+  },
+  {
+    "country_id": 53,
+    "country_iso2": "AM",
+    "country_name": "Armenia",
+    "id": 68,
+    "latitude": 40.1792,
+    "longitude": 44.4991,
+    "name": "Yerevan",
+    "timezone": "Asia/Yerevan"
+  },
+  {
+    "country_id": 54,
+    "country_iso2": "AZ",
+    "country_name": "Azerbaijan",
+    "id": 69,
+    "latitude": 40.4093,
+    "longitude": 49.8671,
+    "name": "Baku",
+    "timezone": "Asia/Baku"
+  },
+  {
+    "country_id": 59,
+    "country_iso2": "XK",
+    "country_name": "Kosovo",
+    "id": 70,
+    "latitude": 42.6629,
+    "longitude": 21.1655,
+    "name": "Pristina",
+    "timezone": "Europe/Belgrade"
+  },
+  {
+    "country_id": 56,
+    "country_iso2": "MC",
+    "country_name": "Monaco",
+    "id": 71,
+    "latitude": 43.7384,
+    "longitude": 7.4246,
+    "name": "Monaco",
+    "timezone": "Europe/Monaco"
+  },
+  {
+    "country_id": 55,
+    "country_iso2": "AD",
+    "country_name": "Andorra",
+    "id": 72,
+    "latitude": 42.5063,
+    "longitude": 1.5218,
+    "name": "Andorra la Vella",
+    "timezone": "Europe/Andorra"
+  },
+  {
+    "country_id": 57,
+    "country_iso2": "LI",
+    "country_name": "Liechtenstein",
+    "id": 73,
+    "latitude": 47.141,
+    "longitude": 9.5209,
+    "name": "Vaduz",
+    "timezone": "Europe/Vaduz"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 74,
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "name": "London",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 75,
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "name": "New York",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 76,
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "name": "Los Angeles",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 77,
+    "latitude": 41.8781,
+    "longitude": -87.6298,
+    "name": "Chicago",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 78,
+    "latitude": 55.8642,
+    "longitude": -4.2518,
+    "name": "Glasgow",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 79,
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "name": "Bristol",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 80,
+    "latitude": 52.4862,
+    "longitude": -1.8904,
+    "name": "Birmingham",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 81,
+    "latitude": 53.8008,
+    "longitude": -1.5491,
+    "name": "Leeds",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 82,
+    "latitude": 53.4084,
+    "longitude": -2.9916,
+    "name": "Liverpool",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 83,
+    "latitude": 51.4816,
+    "longitude": -3.1791,
+    "name": "Cardiff",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 84,
+    "latitude": 54.5973,
+    "longitude": -5.9301,
+    "name": "Belfast",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 85,
+    "latitude": 50.8225,
+    "longitude": -0.1372,
+    "name": "Brighton",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 86,
+    "latitude": 52.9548,
+    "longitude": -1.1581,
+    "name": "Nottingham",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 87,
+    "latitude": 54.9783,
+    "longitude": -1.6178,
+    "name": "Newcastle",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 9,
+    "country_iso2": "IE",
+    "country_name": "Ireland",
+    "id": 88,
+    "latitude": 53.2707,
+    "longitude": -9.0568,
+    "name": "Galway",
+    "timezone": "Europe/Dublin"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 89,
+    "latitude": 42.3601,
+    "longitude": -71.0589,
+    "name": "Boston",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 90,
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "name": "Austin",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 91,
+    "latitude": 47.6062,
+    "longitude": -122.3321,
+    "name": "Seattle",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 92,
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "name": "Portland",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 93,
+    "latitude": 39.7392,
+    "longitude": -104.9903,
+    "name": "Denver",
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 94,
+    "latitude": 33.749,
+    "longitude": -84.388,
+    "name": "Atlanta",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 95,
+    "latitude": 36.1627,
+    "longitude": -86.7816,
+    "name": "Nashville",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 96,
+    "latitude": 39.9526,
+    "longitude": -75.1652,
+    "name": "Philadelphia",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 97,
+    "latitude": 38.9072,
+    "longitude": -77.0369,
+    "name": "Washington DC",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 98,
+    "latitude": 44.9778,
+    "longitude": -93.265,
+    "name": "Minneapolis",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 99,
+    "latitude": 32.7157,
+    "longitude": -117.1611,
+    "name": "San Diego",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 100,
+    "latitude": 33.4484,
+    "longitude": -112.074,
+    "name": "Phoenix",
+    "timezone": "America/Phoenix"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 101,
+    "latitude": 25.7617,
+    "longitude": -80.1918,
+    "name": "Miami",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 102,
+    "latitude": 29.9511,
+    "longitude": -90.0715,
+    "name": "New Orleans",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 103,
+    "latitude": 29.7604,
+    "longitude": -95.3698,
+    "name": "Houston",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 104,
+    "latitude": 32.7767,
+    "longitude": -96.797,
+    "name": "Dallas",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 105,
+    "latitude": 42.3314,
+    "longitude": -83.0458,
+    "name": "Detroit",
+    "timezone": "America/Detroit"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 106,
+    "latitude": 40.4406,
+    "longitude": -79.9959,
+    "name": "Pittsburgh",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 107,
+    "latitude": 49.2827,
+    "longitude": -123.1207,
+    "name": "Vancouver",
+    "timezone": "America/Vancouver"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 108,
+    "latitude": 45.5019,
+    "longitude": -73.5674,
+    "name": "Montreal",
+    "timezone": "America/Toronto"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 109,
+    "latitude": 51.0447,
+    "longitude": -114.0719,
+    "name": "Calgary",
+    "timezone": "America/Edmonton"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 110,
+    "latitude": 45.4215,
+    "longitude": -75.6972,
+    "name": "Ottawa",
+    "timezone": "America/Toronto"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 111,
+    "latitude": 49.8951,
+    "longitude": -97.1384,
+    "name": "Winnipeg",
+    "timezone": "America/Winnipeg"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 112,
+    "latitude": 53.5461,
+    "longitude": -113.4938,
+    "name": "Edmonton",
+    "timezone": "America/Edmonton"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 113,
+    "latitude": 44.6488,
+    "longitude": -63.5752,
+    "name": "Halifax",
+    "timezone": "America/Halifax"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 114,
+    "latitude": -27.4698,
+    "longitude": 153.0251,
+    "name": "Brisbane",
+    "timezone": "Australia/Brisbane"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 115,
+    "latitude": -31.9505,
+    "longitude": 115.8605,
+    "name": "Perth",
+    "timezone": "Australia/Perth"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 116,
+    "latitude": -34.9285,
+    "longitude": 138.6007,
+    "name": "Adelaide",
+    "timezone": "Australia/Adelaide"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 117,
+    "latitude": -35.2809,
+    "longitude": 149.13,
+    "name": "Canberra",
+    "timezone": "Australia/Sydney"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 118,
+    "latitude": -28.0167,
+    "longitude": 153.4,
+    "name": "Gold Coast",
+    "timezone": "Australia/Brisbane"
+  }
+]

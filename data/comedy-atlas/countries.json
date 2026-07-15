@@ -1,0 +1,401 @@
+[
+  {
+    "continent": "Oceania",
+    "id": 1,
+    "iso2": "AU",
+    "name": "Australia",
+    "primary_languages": "en"
+  },
+  {
+    "continent": "Europe",
+    "id": 2,
+    "iso2": "BE",
+    "name": "Belgium",
+    "primary_languages": "nl,fr,de"
+  },
+  {
+    "continent": "North America",
+    "id": 3,
+    "iso2": "CA",
+    "name": "Canada",
+    "primary_languages": "en,fr"
+  },
+  {
+    "continent": "Asia",
+    "id": 4,
+    "iso2": "CN",
+    "name": "China",
+    "primary_languages": "zh,en"
+  },
+  {
+    "continent": "Europe",
+    "id": 5,
+    "iso2": "CZ",
+    "name": "Czechia",
+    "primary_languages": "cs"
+  },
+  {
+    "continent": "Europe",
+    "id": 6,
+    "iso2": "DK",
+    "name": "Denmark",
+    "primary_languages": "da"
+  },
+  {
+    "continent": "Europe",
+    "id": 7,
+    "iso2": "DE",
+    "name": "Germany",
+    "primary_languages": "de"
+  },
+  {
+    "continent": "Asia",
+    "id": 8,
+    "iso2": "IN",
+    "name": "India",
+    "primary_languages": "hi,en"
+  },
+  {
+    "continent": "Europe",
+    "id": 9,
+    "iso2": "IE",
+    "name": "Ireland",
+    "primary_languages": "en,ga"
+  },
+  {
+    "continent": "Asia",
+    "id": 10,
+    "iso2": "JP",
+    "name": "Japan",
+    "primary_languages": "ja"
+  },
+  {
+    "continent": "Europe",
+    "id": 11,
+    "iso2": "NL",
+    "name": "Netherlands",
+    "primary_languages": "nl"
+  },
+  {
+    "continent": "Asia",
+    "id": 12,
+    "iso2": "SG",
+    "name": "Singapore",
+    "primary_languages": "en,zh,ms,ta"
+  },
+  {
+    "continent": "Africa",
+    "id": 13,
+    "iso2": "ZA",
+    "name": "South Africa",
+    "primary_languages": "en,af,zu"
+  },
+  {
+    "continent": "Europe",
+    "id": 14,
+    "iso2": "ES",
+    "name": "Spain",
+    "primary_languages": "es"
+  },
+  {
+    "continent": "Asia",
+    "id": 15,
+    "iso2": "TH",
+    "name": "Thailand",
+    "primary_languages": "th"
+  },
+  {
+    "continent": "Asia",
+    "id": 16,
+    "iso2": "AE",
+    "name": "UAE",
+    "primary_languages": "ar,en"
+  },
+  {
+    "continent": "Europe",
+    "id": 17,
+    "iso2": "GB",
+    "name": "UK",
+    "primary_languages": "en"
+  },
+  {
+    "continent": "Europe",
+    "id": 20,
+    "iso2": "FR",
+    "name": "France",
+    "primary_languages": "fr"
+  },
+  {
+    "continent": "Europe",
+    "id": 22,
+    "iso2": "PT",
+    "name": "Portugal",
+    "primary_languages": "pt"
+  },
+  {
+    "continent": "Europe",
+    "id": 23,
+    "iso2": "CH",
+    "name": "Switzerland",
+    "primary_languages": "de"
+  },
+  {
+    "continent": "Europe",
+    "id": 24,
+    "iso2": "LV",
+    "name": "Latvia",
+    "primary_languages": "lv"
+  },
+  {
+    "continent": "Europe",
+    "id": 25,
+    "iso2": "RS",
+    "name": "Serbia",
+    "primary_languages": "sr"
+  },
+  {
+    "continent": "Europe",
+    "id": 26,
+    "iso2": "IT",
+    "name": "Italy",
+    "primary_languages": "it"
+  },
+  {
+    "continent": "Europe",
+    "id": 27,
+    "iso2": "AT",
+    "name": "Austria",
+    "primary_languages": "de"
+  },
+  {
+    "continent": "Europe",
+    "id": 28,
+    "iso2": "SE",
+    "name": "Sweden",
+    "primary_languages": "sv"
+  },
+  {
+    "continent": "Europe",
+    "id": 29,
+    "iso2": "PL",
+    "name": "Poland",
+    "primary_languages": "pl"
+  },
+  {
+    "continent": "Europe",
+    "id": 30,
+    "iso2": "NO",
+    "name": "Norway",
+    "primary_languages": "no"
+  },
+  {
+    "continent": "Europe",
+    "id": 31,
+    "iso2": "FI",
+    "name": "Finland",
+    "primary_languages": "fi"
+  },
+  {
+    "continent": "Europe",
+    "id": 32,
+    "iso2": "GR",
+    "name": "Greece",
+    "primary_languages": "el"
+  },
+  {
+    "continent": "Europe",
+    "id": 33,
+    "iso2": "HU",
+    "name": "Hungary",
+    "primary_languages": "hu"
+  },
+  {
+    "continent": "Europe",
+    "id": 34,
+    "iso2": "RO",
+    "name": "Romania",
+    "primary_languages": "ro"
+  },
+  {
+    "continent": "Europe",
+    "id": 35,
+    "iso2": "HR",
+    "name": "Croatia",
+    "primary_languages": "hr"
+  },
+  {
+    "continent": "Europe",
+    "id": 36,
+    "iso2": "BG",
+    "name": "Bulgaria",
+    "primary_languages": "bg"
+  },
+  {
+    "continent": "Europe",
+    "id": 37,
+    "iso2": "SK",
+    "name": "Slovakia",
+    "primary_languages": "sk"
+  },
+  {
+    "continent": "Europe",
+    "id": 38,
+    "iso2": "SI",
+    "name": "Slovenia",
+    "primary_languages": "sl"
+  },
+  {
+    "continent": "Europe",
+    "id": 39,
+    "iso2": "EE",
+    "name": "Estonia",
+    "primary_languages": "et"
+  },
+  {
+    "continent": "Europe",
+    "id": 40,
+    "iso2": "LT",
+    "name": "Lithuania",
+    "primary_languages": "lt"
+  },
+  {
+    "continent": "Europe",
+    "id": 41,
+    "iso2": "LU",
+    "name": "Luxembourg",
+    "primary_languages": "fr"
+  },
+  {
+    "continent": "Europe",
+    "id": 42,
+    "iso2": "IS",
+    "name": "Iceland",
+    "primary_languages": "is"
+  },
+  {
+    "continent": "Europe",
+    "id": 43,
+    "iso2": "MT",
+    "name": "Malta",
+    "primary_languages": "mt"
+  },
+  {
+    "continent": "Europe",
+    "id": 44,
+    "iso2": "CY",
+    "name": "Cyprus",
+    "primary_languages": "el"
+  },
+  {
+    "continent": "Europe",
+    "id": 45,
+    "iso2": "TR",
+    "name": "T\u00fcrkiye",
+    "primary_languages": "tr"
+  },
+  {
+    "continent": "Europe",
+    "id": 46,
+    "iso2": "GE",
+    "name": "Georgia",
+    "primary_languages": "ka"
+  },
+  {
+    "continent": "Europe",
+    "id": 47,
+    "iso2": "MD",
+    "name": "Moldova",
+    "primary_languages": "ro"
+  },
+  {
+    "continent": "Europe",
+    "id": 48,
+    "iso2": "UA",
+    "name": "Ukraine",
+    "primary_languages": "uk"
+  },
+  {
+    "continent": "Europe",
+    "id": 49,
+    "iso2": "BA",
+    "name": "Bosnia and Herzegovina",
+    "primary_languages": "bs"
+  },
+  {
+    "continent": "Europe",
+    "id": 50,
+    "iso2": "ME",
+    "name": "Montenegro",
+    "primary_languages": "sr"
+  },
+  {
+    "continent": "Europe",
+    "id": 51,
+    "iso2": "MK",
+    "name": "North Macedonia",
+    "primary_languages": "mk"
+  },
+  {
+    "continent": "Europe",
+    "id": 52,
+    "iso2": "AL",
+    "name": "Albania",
+    "primary_languages": "sq"
+  },
+  {
+    "continent": "Europe",
+    "id": 53,
+    "iso2": "AM",
+    "name": "Armenia",
+    "primary_languages": "hy"
+  },
+  {
+    "continent": "Europe",
+    "id": 54,
+    "iso2": "AZ",
+    "name": "Azerbaijan",
+    "primary_languages": "az"
+  },
+  {
+    "continent": "Europe",
+    "id": 55,
+    "iso2": "AD",
+    "name": "Andorra",
+    "primary_languages": "ca"
+  },
+  {
+    "continent": "Europe",
+    "id": 56,
+    "iso2": "MC",
+    "name": "Monaco",
+    "primary_languages": "fr"
+  },
+  {
+    "continent": "Europe",
+    "id": 57,
+    "iso2": "LI",
+    "name": "Liechtenstein",
+    "primary_languages": "de"
+  },
+  {
+    "continent": "Europe",
+    "id": 58,
+    "iso2": "SM",
+    "name": "San Marino",
+    "primary_languages": "it"
+  },
+  {
+    "continent": "Europe",
+    "id": 59,
+    "iso2": "XK",
+    "name": "Kosovo",
+    "primary_languages": "sq"
+  },
+  {
+    "continent": "North America",
+    "id": 60,
+    "iso2": "US",
+    "name": "United States",
+    "primary_languages": "en"
+  }
+]
