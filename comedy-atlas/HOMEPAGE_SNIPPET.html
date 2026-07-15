@@ -1,0 +1,41 @@
+<!--
+  COMEDY ATLAS — homepage integration snippet (Phase-3 spec §6.2).
+
+  This file is NOT served. It is not linked from anywhere. It exists only
+  so a human/coordinator can paste its contents into the LIVE push repo's
+  index.html as a deliberate, reviewed deploy step. Building/verifying this
+  session touched ONLY site/comedy-atlas/*; the live homepage at
+  /Users/chuck/pariscomedy-push-20260526-095907/index.html was NOT modified.
+
+  Two paste points in that file:
+
+  1. Nav — index.html's existing <div class="nav-links"> block, around
+     line 239. Add ONE new link (bolded gold, matching the atlas page's own
+     nav treatment) — do not touch or restyle the surrounding links:
+
+       <div class="nav-links">
+         <a href="/shows.html">Shows</a>
+         <a href="/europe.html">Europe</a>
+         <a href="/venues.html">Venues</a>
+         <a href="/comedians.html">Comedians</a>
+         <a href="/bookers.html">Bookers</a>
+         <a href="/comedy-atlas/" style="color:#c9a84c;font-weight:700">COMEDY ATLAS</a>
+         <a href="/login.html">Sign In</a>
+         <a href="/about.html">About</a>
+         <a href="/feedback.html">Feedback</a>
+       </div>
+
+  2. A short standalone section, per spec §6.2 ("Perform or run a show?
+     Open COMEDY ATLAS."). Place after the hero, before the shows list —
+     self-contained inline styles so it doesn't depend on atlas-only CSS
+     variables not present on the homepage:
+
+       <section style="max-width:1100px;margin:0 auto;padding:24px;text-align:center;color:#8899aa;font-size:15px">
+         <p>Perform or run a show? <a href="/comedy-atlas/" style="color:#c9a84c;font-weight:700">Open COMEDY ATLAS →</a></p>
+       </section>
+
+  Open decision for Robert: copy/wording sign-off, and whether the nav
+  label should read "COMEDY ATLAS" or something shorter on mobile widths
+  (the existing nav-links already wraps at 620px per index.html's own
+  media query, so a long label is not new risk, just worth a look).
+-->

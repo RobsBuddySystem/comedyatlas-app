@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in — COMEDY ATLAS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.wrap{max-width:420px;margin:0 auto;padding:60px 20px}
+.logo{font-size:22px;font-weight:800;margin-bottom:28px}
+.logo .dot{color:var(--gold)}
+h1{font-size:20px;margin-bottom:6px}
+p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+input,select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px}
+button{width:100%;margin-top:20px;padding:12px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+button:hover{opacity:.9}
+button.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold);margin-top:10px}
+.tabs{display:flex;gap:8px;margin-bottom:18px}
+.tab{flex:1;text-align:center;padding:8px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:13px;color:var(--muted)}
+.tab.active{border-color:var(--purple);color:var(--text);font-weight:700}
+.msg{margin-top:14px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.hint{margin-top:20px;font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1 id="heading">Sign in</h1>
+  <p class="sub" id="subheading">One account for comics and bookers.</p>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="login">Sign in</div>
+    <div class="tab" data-tab="register">Create account</div>
+  </div>
+
+  <!-- Google Identity Services (GSI) button -- REUSES pariscomedy's existing
+       Google app. This client id is PUBLIC (not a secret); real verification
+       happens server-side in POST /auth/google via Google's tokeninfo
+       endpoint. NO Google Cloud console change is needed: this page is served
+       from https://pariscomedy.com/comedy-atlas/, an origin already registered
+       in that app's Authorized JavaScript origins (it powers pariscomedy's own
+       Google login), so the button works here as-is. The signed token is then
+       posted cross-origin (same-site) to atlas-api.pariscomedy.com. -->
+  <div id="g_id_onload"
+       data-client_id="732191322559-im49celgdbbg6vpbfdeuhn89iaah4pl1.apps.googleusercontent.com"
+       data-callback="handleGoogleCredential"
+       data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin" data-type="standard" data-shape="rectangular"
+       data-theme="outline" data-text="signin_with" data-size="large"
+       style="margin-bottom:14px"></div>
+
+  <div class="card" id="login-card">
+    <label for="li-email">Email</label>
+    <input id="li-email" type="email" autocomplete="email">
+    <label for="li-password">Password</label>
+    <input id="li-password" type="password" autocomplete="current-password">
+    <button id="li-submit">Sign in</button>
+    <div class="msg" id="li-msg"></div>
+    <div id="li-2fa-box" style="display:none;margin-top:14px">
+      <label for="li-2fa-code">This account has two-factor sign-in enabled --
+      enter the 6-digit code from your authenticator app</label>
+      <input id="li-2fa-code" type="text" inputmode="numeric" maxlength="6" placeholder="123456">
+      <button id="li-2fa-submit">Verify code</button>
+    </div>
+  </div>
+
+  <div class="card" id="register-card" style="display:none">
+    <label for="reg-stage-name">Stage name</label>
+    <input id="reg-stage-name" type="text" placeholder="Robert le Ricain">
+    <label for="reg-email">Email</label>
+    <input id="reg-email" type="email" autocomplete="email">
+    <label for="reg-password">Password (min 8 characters)</label>
+    <input id="reg-password" type="password" autocomplete="new-password">
+    <label for="reg-role">I am a...</label>
+    <select id="reg-role">
+      <option value="comic">Comic</option>
+      <option value="booker">Booker / show runner</option>
+      <option value="both">Both</option>
+    </select>
+    <button id="reg-submit">Create account</button>
+    <div class="msg" id="reg-msg"></div>
+  </div>
+
+  <p class="hint">Contact info is never shown
+  publicly — COMEDY ATLAS relays every message, it never reveals a real
+  email or phone number to the other party.</p>
+</div>
+
+<script src="atlas-track.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="atlas-auth.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+  var params = new URLSearchParams(location.search);
+  var wantRole = params.get("role"); // "comic" | "booker", pre-selects register tab
+
+  // Where to land after sign-in. The session cookie lives on
+  // atlas-api.pariscomedy.com, so the portal must be loaded from THAT host
+  // (same-origin with the cookie). Only our own two hosts are allowed as a
+  // ?next target -- anything else falls back to the role's portal, so this
+  // can never be turned into an open redirect.
+  // Which api host serves the (cookie-same-origin) portal, and which hosts are
+  // legitimate ?next targets, depends on the login page's own origin. On
+  // pariscomedy.com the portal is atlas-api.pariscomedy.com; on comedyatlas.app
+  // it is api.comedyatlas.app. Both are same-site with their login page, so the
+  // Lax cookie flows. Only our own hosts are accepted as ?next -> no open redirect.
+  var ATLAS = (function (h) {
+    if (h === "comedyatlas.app" || h === "www.comedyatlas.app" || h === "api.comedyatlas.app") {
+      return {portal: "https://api.comedyatlas.app/comedy-atlas/",
+              hosts: ["api.comedyatlas.app", "comedyatlas.app", "www.comedyatlas.app"]};
+    }
+    return {portal: "https://atlas-api.pariscomedy.com/comedy-atlas/",
+            hosts: ["atlas-api.pariscomedy.com", "pariscomedy.com"]};
+  })(location.hostname);
+  var PORTAL = ATLAS.portal;
+  function destination() {
+    var n = params.get("next");
+    if (n) {
+      try {
+        // A path-only next ("/comedy-atlas/x.html") lands on the portal's api
+        // origin (cookie-same-origin); an absolute next must be one of our hosts.
+        var base = (n.charAt(0) === "/") ? PORTAL : location.href;
+        var u = new URL(n, base);
+        if (ATLAS.hosts.indexOf(u.hostname) !== -1) {
+          return u.href;
+        }
+      } catch (e) { /* fall through */ }
+    }
+    return PORTAL + (wantRole === "booker" ? "booker.html" : "comic.html");
+  }
+  var next = destination();
+
+  // GSI callback: google.accounts.id posts here with a signed id_token.
+  // We forward it as-is to the backend, which verifies it via Google's own
+  // tokeninfo endpoint (apps/atlas_api/auth.py::verify_google_id_token) --
+  // this page never inspects or trusts the token itself.
+  window.handleGoogleCredential = function (response) {
+    var msg = document.getElementById("li-msg");
+    A.post("/auth/google", {
+      id_token: response.credential,
+      role: wantRole || "comic",
+    }).then(function (r) {
+      if (r && r.twofa_required) {
+        if (msg) { msg.textContent = ""; msg.className = "msg"; }
+        document.getElementById("li-2fa-box").style.display = "block";
+        return;
+      }
+      if (msg) { msg.textContent = "Signed in with Google."; msg.className = "msg ok"; }
+      location.href = next;
+    }).catch(function (e) {
+      if (msg) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Google sign-in failed.";
+        msg.className = "msg error";
+      }
+    });
+  };
+
+  var tabs = document.querySelectorAll(".tab");
+  var loginCard = document.getElementById("login-card");
+  var registerCard = document.getElementById("register-card");
+
+  function showTab(name) {
+    tabs.forEach(function (t) { t.classList.toggle("active", t.dataset.tab === name); });
+    loginCard.style.display = name === "login" ? "block" : "none";
+    registerCard.style.display = name === "register" ? "block" : "none";
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { showTab(t.dataset.tab); }); });
+
+  if (wantRole) {
+    showTab("register");
+    document.getElementById("reg-role").value = wantRole;
+  }
+
+  function redirect() {
+    location.href = next;
+  }
+
+  document.getElementById("li-submit").addEventListener("click", function () {
+    var msg = document.getElementById("li-msg");
+    msg.textContent = ""; msg.className = "msg";
+    document.getElementById("li-2fa-box").style.display = "none";
+    A.post("/auth/login", {
+      email: document.getElementById("li-email").value,
+      password: document.getElementById("li-password").value,
+    }).then(function (r) {
+      if (r && r.twofa_required) {
+        document.getElementById("li-2fa-box").style.display = "block";
+        return;
+      }
+      msg.textContent = "Signed in."; msg.className = "msg ok";
+      redirect();
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Sign-in failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  // Second step of a 2FA-enabled sign-in -- the backend already holds a
+  // PENDING session (set by /auth/login or /auth/google above); this just
+  // posts the 6-digit authenticator code to complete it.
+  document.getElementById("li-2fa-submit").addEventListener("click", function () {
+    var msg = document.getElementById("li-msg");
+    msg.textContent = ""; msg.className = "msg";
+    A.post("/auth/2fa/login", {
+      code: document.getElementById("li-2fa-code").value.trim(),
+    }).then(function () {
+      msg.textContent = "Signed in."; msg.className = "msg ok";
+      redirect();
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Invalid code.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("reg-submit").addEventListener("click", function () {
+    var msg = document.getElementById("reg-msg");
+    msg.textContent = ""; msg.className = "msg";
+    A.post("/auth/register", {
+      stage_name: document.getElementById("reg-stage-name").value,
+      email: document.getElementById("reg-email").value,
+      password: document.getElementById("reg-password").value,
+      role: document.getElementById("reg-role").value,
+    }).then(function () {
+      msg.textContent = "Account created."; msg.className = "msg ok";
+      redirect();
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Registration failed.";
+      msg.className = "msg error";
+    });
+  });
+})();
+</script>
+</body>
+</html>

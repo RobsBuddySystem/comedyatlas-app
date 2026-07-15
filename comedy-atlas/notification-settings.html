@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notification settings — COMEDY ATLAS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--purple);color:var(--purple-light);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:6px}
+.card .sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}
+input[type=text],input[type=number],input[type=time],textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
+button{padding:9px 16px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:13px;cursor:pointer}
+button:hover{opacity:.9}
+button.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+button.danger{background:transparent;border:1px solid var(--red);color:var(--red)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.row > *{flex:1;min-width:120px}
+.msg{margin-top:10px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+
+.toggle-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.toggle-row:last-child{border-bottom:none}
+.toggle-row .name{font-weight:600}
+.toggle-row .desc{font-size:12px;color:var(--muted);margin-top:2px}
+.switch{position:relative;display:inline-block;width:38px;height:22px;flex-shrink:0}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;inset:0;background-color:var(--border);transition:.15s;border-radius:999px}
+.slider:before{position:absolute;content:"";height:16px;width:16px;left:3px;bottom:3px;background-color:#fff;transition:.15s;border-radius:50%}
+input:checked + .slider{background-color:var(--purple)}
+input:checked + .slider:before{transform:translateX(16px)}
+input:disabled + .slider{opacity:.35;cursor:not-allowed}
+
+.matrix{width:100%;border-collapse:collapse;font-size:12px}
+.matrix th{text-align:left;color:var(--muted);font-weight:600;padding:6px 4px;border-bottom:1px solid var(--border);text-transform:uppercase;font-size:10px;letter-spacing:.03em}
+.matrix td{padding:6px 4px;border-bottom:1px solid var(--border);vertical-align:middle}
+.matrix select{padding:5px 6px;font-size:12px}
+.matrix .etype{font-weight:600;white-space:nowrap}
+.matrix .category{font-size:10px;color:var(--muted);display:block}
+
+.mute-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.mute-item:last-child{border-bottom:none}
+.pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--muted);color:var(--muted);text-transform:uppercase}
+.pill.active{border-color:var(--gold);color:var(--gold)}
+.privacy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">NOTIFICATION SETTINGS</div>
+
+  <div id="signed-out" class="signed-out" style="display:none">
+    <p>Sign in to manage your notification preferences.</p>
+    <p style="margin-top:12px"><a href="/comedy-atlas/login.html?next=/comedy-atlas/notification-settings.html">Sign in →</a></p>
+  </div>
+
+  <div id="app" style="display:none">
+
+    <div class="card">
+      <h2>Pause everything</h2>
+      <div class="sub">Snoozes ALL notifications — including bookings — for a fixed number of days. A hard stop, not just marketing.</div>
+      <div id="snooze-status" class="privacy" style="margin-bottom:8px"></div>
+      <div class="row">
+        <div>
+          <label for="snooze-days">Days</label>
+          <input id="snooze-days" type="number" min="1" value="7">
+        </div>
+        <div style="flex:2">
+          <label for="snooze-reason">Reason (optional)</label>
+          <input id="snooze-reason" type="text" placeholder="e.g. on tour">
+        </div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button id="snooze-btn">Pause notifications</button>
+        <button id="cancel-snooze-btn" class="ghost">Resume now</button>
+      </div>
+      <div class="msg" id="snooze-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Channels</h2>
+      <div class="sub">Where COMEDY ATLAS can reach you. Only Email sends today — the rest are reserved for when they ship.</div>
+      <div id="channel-list"></div>
+    </div>
+
+    <div class="card">
+      <h2>What you hear about</h2>
+      <div class="sub">Per-type control: turn a category off entirely, or override its channel/cadence. Booking-critical types (claim/invite/offer/replacement) always send immediately regardless of digest cadence below.</div>
+      <div style="overflow-x:auto">
+        <table class="matrix" id="event-matrix">
+          <thead><tr><th>Type</th><th>On</th><th>Channel</th><th>Cadence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Digest cadence</h2>
+      <div class="sub">Global default for non-critical updates (show changes, new matches, followed-entity news). Per-type overrides above win over this.</div>
+      <label for="digest-frequency">Send me these...</label>
+      <select id="digest-frequency">
+        <option value="immediate">Immediately</option>
+        <option value="daily">In a daily digest</option>
+        <option value="weekly">In a weekly digest</option>
+        <option value="off">Never</option>
+      </select>
+      <button id="save-digest" style="margin-top:12px">Save</button>
+      <div class="msg" id="digest-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Quiet hours</h2>
+      <div class="sub">No sends during this local time window.</div>
+      <div class="row">
+        <div>
+          <label for="qh-start">Start</label>
+          <input id="qh-start" type="time">
+        </div>
+        <div>
+          <label for="qh-end">End</label>
+          <input id="qh-end" type="time">
+        </div>
+        <div>
+          <label for="qh-tz">Timezone</label>
+          <input id="qh-tz" type="text" placeholder="Europe/Paris">
+        </div>
+      </div>
+      <button id="save-quiet-hours" style="margin-top:12px">Save</button>
+      <div class="msg" id="qh-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Muted shows / comics / venues / orgs</h2>
+      <div class="sub">Mute updates from one followed entity without unfollowing it.</div>
+      <div id="mute-list"></div>
+      <div class="row" style="margin-top:12px">
+        <div>
+          <label for="mute-type">Entity type</label>
+          <select id="mute-type">
+            <option value="show_series">Show</option>
+            <option value="person">Comic</option>
+            <option value="organization">Organization</option>
+            <option value="venue">Venue</option>
+          </select>
+        </div>
+        <div>
+          <label for="mute-id">Entity ID</label>
+          <input id="mute-id" type="number">
+        </div>
+        <button id="add-mute-btn">Mute</button>
+      </div>
+      <div class="msg" id="mute-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Marketing &amp; editorial</h2>
+      <div class="sub">Curated roundups and platform news. Separate from — and off by default unlike — the booking/listing alerts above, which always send.</div>
+      <div class="toggle-row">
+        <div>
+          <div class="name">Send me marketing/editorial email</div>
+          <div class="desc">Opt-in only. Never bundled with transactional mail.</div>
+        </div>
+        <label class="switch"><input type="checkbox" id="marketing-opt-in"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Focus &amp; language</h2>
+      <div class="toggle-row">
+        <div>
+          <div class="name">Important only</div>
+          <div class="desc">Only booking-critical notifications (claims, invites, offers, replacements). Everything else is filtered.</div>
+        </div>
+        <label class="switch"><input type="checkbox" id="important-only"><span class="slider"></span></label>
+      </div>
+      <label for="language" style="margin-top:12px">Language</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+      <button id="save-focus" style="margin-top:12px">Save</button>
+      <div class="msg" id="focus-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Unsubscribe from everything</h2>
+      <div class="sub">Stops every COMEDY ATLAS email, including bookings. You can resubscribe any time from the link in any past email, or here.</div>
+      <div class="toggle-row">
+        <div>
+          <div class="name">Unsubscribed from all COMEDY ATLAS email</div>
+        </div>
+        <label class="switch"><input type="checkbox" id="unsubscribed-all"><span class="slider"></span></label>
+      </div>
+      <button id="save-unsub" style="margin-top:12px">Save</button>
+      <div class="msg" id="unsub-msg"></div>
+      <p class="privacy" style="margin-top:10px">Every setting on this page is logged to a private preference-change history for your own account security — never shared with other users.</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-auth.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+
+  var EVENT_LABELS = {
+    claim_approved: ["Claim approved", "Booking"],
+    invitation: ["Invited to perform", "Booking"],
+    offer_received: ["New application received", "Booking"],
+    offer_accepted: ["Comic confirmed", "Booking"],
+    offer_declined: ["Comic declined", "Booking"],
+    replacement_needed: ["Replacement needed", "Booking"],
+    show_changed: ["Show details changed", "Listing"],
+    new_matching_opportunity: ["New matching opportunity", "Listing"],
+    followed_entity_changed: ["Followed entity update", "Listing"],
+    platform_digest: ["Platform digest", "Marketing"],
+  };
+  var TRANSACTIONAL = ["claim_approved", "invitation", "offer_received",
+    "offer_accepted", "offer_declined", "replacement_needed"];
+
+  function del(path) {
+    return A.api(path, {method: "DELETE"});
+  }
+
+  function setMsg(id, text, ok) {
+    var el = document.getElementById(id);
+    el.textContent = text;
+    el.className = "msg " + (ok ? "ok" : "error");
+  }
+
+  function renderChannels(channels) {
+    var byName = {};
+    channels.forEach(function (c) { byName[c.channel] = c.enabled; });
+    var defs = [
+      ["email", "Email", false],
+      ["sms", "SMS", true],
+      ["web_push", "Web push", true],
+      ["in_app", "In-app", true],
+    ];
+    var html = defs.map(function (d) {
+      var channel = d[0], label = d[1], notYetShipped = d[2];
+      var enabled = byName.hasOwnProperty(channel) ? byName[channel] : (channel === "email");
+      var disabledAttr = notYetShipped ? "disabled" : "";
+      var descText = notYetShipped ? "Coming soon — reserved now so your preference is ready when it ships." : "The channel that actually sends today.";
+      return '<div class="toggle-row"><div><div class="name">' + label + '</div><div class="desc">' + descText + '</div></div>' +
+        '<label class="switch"><input type="checkbox" data-channel="' + channel + '" ' + (enabled ? "checked" : "") + ' ' + disabledAttr + '><span class="slider"></span></label></div>';
+    }).join("");
+    document.getElementById("channel-list").innerHTML = html;
+    document.querySelectorAll("#channel-list input[data-channel]").forEach(function (input) {
+      input.addEventListener("change", function () {
+        A.put("/me/notification-preferences/channels", {
+          channel: input.dataset.channel, enabled: input.checked,
+        }).then(function (r) { renderAll(r); })
+          .catch(function (e) { setMsg("snooze-msg", e.body && e.body.detail ? e.body.detail : "Failed to save."); });
+      });
+    });
+  }
+
+  function renderMatrix(eventTypePrefs) {
+    var byType = {};
+    eventTypePrefs.forEach(function (r) { byType[r.event_type] = r; });
+    var tbody = document.querySelector("#event-matrix tbody");
+    tbody.innerHTML = Object.keys(EVENT_LABELS).map(function (et) {
+      var pref = byType[et] || {enabled: true, channel: null, frequency: null};
+      var label = EVENT_LABELS[et][0], category = EVENT_LABELS[et][1];
+      var isTxn = TRANSACTIONAL.indexOf(et) !== -1;
+      var freqDisabled = isTxn ? "disabled title=\"always sends immediately\"" : "";
+      return '<tr data-etype="' + et + '">' +
+        '<td class="etype">' + A.escapeHtml(label) + '<span class="category">' + category + '</span></td>' +
+        '<td><label class="switch"><input type="checkbox" class="et-enabled" ' + (pref.enabled ? "checked" : "") + '><span class="slider"></span></label></td>' +
+        '<td><select class="et-channel"><option value="">(default)</option><option value="email"' + (pref.channel === "email" ? " selected" : "") + '>Email</option><option value="sms"' + (pref.channel === "sms" ? " selected" : "") + '>SMS</option><option value="web_push"' + (pref.channel === "web_push" ? " selected" : "") + '>Web push</option><option value="in_app"' + (pref.channel === "in_app" ? " selected" : "") + '>In-app</option></select></td>' +
+        '<td><select class="et-frequency" ' + freqDisabled + '><option value="">(default)</option><option value="immediate"' + (pref.frequency === "immediate" ? " selected" : "") + '>Immediate</option><option value="daily"' + (pref.frequency === "daily" ? " selected" : "") + '>Daily</option><option value="weekly"' + (pref.frequency === "weekly" ? " selected" : "") + '>Weekly</option><option value="off"' + (pref.frequency === "off" ? " selected" : "") + '>Off</option></select></td>' +
+        '</tr>';
+    }).join("");
+    tbody.querySelectorAll("tr").forEach(function (tr) {
+      var et = tr.dataset.etype;
+      function save() {
+        var enabled = tr.querySelector(".et-enabled").checked;
+        var channel = tr.querySelector(".et-channel").value || null;
+        var frequency = tr.querySelector(".et-frequency").value || null;
+        A.put("/me/notification-preferences/event-types", {
+          event_type: et, enabled: enabled, channel: channel, frequency: frequency,
+        }).then(renderAll);
+      }
+      tr.querySelector(".et-enabled").addEventListener("change", save);
+      tr.querySelector(".et-channel").addEventListener("change", save);
+      tr.querySelector(".et-frequency").addEventListener("change", save);
+    });
+  }
+
+  function renderMutes(mutes) {
+    var list = document.getElementById("mute-list");
+    if (!mutes.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">Nothing muted.</p>'; return; }
+    list.innerHTML = mutes.map(function (m) {
+      return '<div class="mute-item"><span>' + A.escapeHtml(m.entity_type) + ' #' + m.entity_id + '</span>' +
+        '<button class="ghost" data-type="' + m.entity_type + '" data-id="' + m.entity_id + '">Unmute</button></div>';
+    }).join("");
+    list.querySelectorAll("button[data-type]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        del("/me/notification-preferences/mutes?entity_type=" + encodeURIComponent(btn.dataset.type) + "&entity_id=" + btn.dataset.id)
+          .then(renderAll);
+      });
+    });
+  }
+
+  function renderSnoozeStatus(snoozedUntil) {
+    var el = document.getElementById("snooze-status");
+    var cancelBtn = document.getElementById("cancel-snooze-btn");
+    var active = snoozedUntil && new Date(snoozedUntil) > new Date();
+    if (active) {
+      el.innerHTML = '<span class="pill active">PAUSED</span> until ' + A.escapeHtml(snoozedUntil);
+      cancelBtn.disabled = false;
+    } else {
+      el.innerHTML = '<span class="pill">NOT PAUSED</span>';
+      cancelBtn.disabled = true;
+    }
+  }
+
+  function fillForm(prefs) {
+    document.getElementById("digest-frequency").value = prefs.digest_frequency || "immediate";
+    document.getElementById("qh-start").value = prefs.quiet_hours_start ? String(prefs.quiet_hours_start).slice(0, 5) : "";
+    document.getElementById("qh-end").value = prefs.quiet_hours_end ? String(prefs.quiet_hours_end).slice(0, 5) : "";
+    document.getElementById("qh-tz").value = prefs.quiet_hours_timezone || "UTC";
+    document.getElementById("marketing-opt-in").checked = !!prefs.marketing_opt_in;
+    document.getElementById("important-only").checked = !!prefs.important_only;
+    document.getElementById("language").value = prefs.language || "en";
+    document.getElementById("unsubscribed-all").checked = !!prefs.unsubscribed_all;
+  }
+
+  function renderAll(r) {
+    fillForm(r.preferences);
+    renderChannels(r.channels);
+    renderMatrix(r.event_types);
+    renderMutes(r.muted_entities);
+    renderSnoozeStatus(r.snoozed_until);
+  }
+
+  function loadAll() {
+    A.get("/me/notification-preferences").then(renderAll);
+  }
+
+  A.me().then(function () {
+    document.getElementById("app").style.display = "block";
+    loadAll();
+  }).catch(function () {
+    document.getElementById("signed-out").style.display = "block";
+  });
+
+  document.getElementById("save-digest").addEventListener("click", function () {
+    A.put("/me/notification-preferences", {digest_frequency: document.getElementById("digest-frequency").value})
+      .then(function (r) { renderAll(r); setMsg("digest-msg", "Saved.", true); })
+      .catch(function (e) { setMsg("digest-msg", e.body && e.body.detail ? e.body.detail : "Failed to save."); });
+  });
+
+  document.getElementById("save-quiet-hours").addEventListener("click", function () {
+    A.put("/me/notification-preferences", {
+      quiet_hours_start: document.getElementById("qh-start").value || null,
+      quiet_hours_end: document.getElementById("qh-end").value || null,
+      quiet_hours_timezone: document.getElementById("qh-tz").value || "UTC",
+    }).then(function (r) { renderAll(r); setMsg("qh-msg", "Saved.", true); })
+      .catch(function (e) { setMsg("qh-msg", e.body && e.body.detail ? e.body.detail : "Failed to save."); });
+  });
+
+  document.getElementById("save-focus").addEventListener("click", function () {
+    A.put("/me/notification-preferences", {
+      marketing_opt_in: document.getElementById("marketing-opt-in").checked,
+      important_only: document.getElementById("important-only").checked,
+      language: document.getElementById("language").value,
+    }).then(function (r) { renderAll(r); setMsg("focus-msg", "Saved.", true); })
+      .catch(function (e) { setMsg("focus-msg", e.body && e.body.detail ? e.body.detail : "Failed to save."); });
+  });
+
+  document.getElementById("save-unsub").addEventListener("click", function () {
+    A.put("/me/notification-preferences", {unsubscribed_all: document.getElementById("unsubscribed-all").checked})
+      .then(function (r) { renderAll(r); setMsg("unsub-msg", "Saved.", true); })
+      .catch(function (e) { setMsg("unsub-msg", e.body && e.body.detail ? e.body.detail : "Failed to save."); });
+  });
+
+  document.getElementById("add-mute-btn").addEventListener("click", function () {
+    var id = document.getElementById("mute-id").value;
+    if (!id) { setMsg("mute-msg", "Enter an entity ID."); return; }
+    A.post("/me/notification-preferences/mutes", {
+      entity_type: document.getElementById("mute-type").value, entity_id: parseInt(id, 10),
+    }).then(function (r) { renderAll(r); setMsg("mute-msg", "Muted.", true); })
+      .catch(function (e) { setMsg("mute-msg", e.body && e.body.detail ? e.body.detail : "Failed to mute."); });
+  });
+
+  document.getElementById("snooze-btn").addEventListener("click", function () {
+    var days = parseInt(document.getElementById("snooze-days").value, 10) || 0;
+    if (days <= 0) { setMsg("snooze-msg", "Enter a positive number of days."); return; }
+    A.post("/me/notification-preferences/snooze", {
+      days: days, reason: document.getElementById("snooze-reason").value || null,
+    }).then(function (r) { renderAll(r); setMsg("snooze-msg", "Paused for " + days + " day(s).", true); })
+      .catch(function (e) { setMsg("snooze-msg", e.body && e.body.detail ? e.body.detail : "Failed to pause."); });
+  });
+
+  document.getElementById("cancel-snooze-btn").addEventListener("click", function () {
+    del("/me/notification-preferences/snooze")
+      .then(function (r) { renderAll(r); setMsg("snooze-msg", "Resumed.", true); })
+      .catch(function (e) { setMsg("snooze-msg", e.body && e.body.detail ? e.body.detail : "Failed to resume."); });
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>

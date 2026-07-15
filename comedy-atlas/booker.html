@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booker portal — COMEDY ATLAS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}
+input,textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
+button{padding:10px 18px;border-radius:8px;border:none;background:var(--gold);color:#100c00;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
+button:hover{opacity:.9}
+button.secondary{background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row > *{flex:1;min-width:120px}
+.msg{margin-top:10px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.result-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.result-item .name{font-weight:700}
+.tabs2{display:flex;gap:8px;margin-bottom:10px}
+.tab2{padding:6px 12px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:12.5px;color:var(--muted)}
+.tab2.active{border-color:var(--gold);color:var(--text);font-weight:700}
+.signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+.privacy{font-size:12px;color:var(--muted);margin-top:8px}
+.comic-card{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.comic-card input[type=checkbox]{width:auto;flex:0 0 auto;margin-top:2px}
+.comic-photo{width:40px;height:40px;border-radius:8px;object-fit:cover;background:var(--border);flex:0 0 auto}
+.comic-photo.placeholder{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px}
+.comic-card .info{flex:1;min-width:0}
+.tray{position:sticky;bottom:0;background:var(--card);border:1px solid var(--gold);border-radius:12px;padding:14px;margin-top:10px;display:none}
+.tray.show{display:block}
+.invite-row{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;display:flex;justify-content:space-between;gap:10px}
+.status-pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+.status-pill.pending{color:var(--gold);border:1px solid var(--gold)}
+.status-pill.accepted{color:var(--green);border:1px solid var(--green)}
+.status-pill.declined{color:var(--red);border:1px solid var(--red)}
+.status-pill.already_invited{color:var(--muted);border:1px solid var(--muted)}
+.status-pill.sent{color:var(--green);border:1px solid var(--green)}
+.cal-dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.cal-dot.gray{background:var(--muted)}
+.cal-dot.red{background:var(--red)}
+.cal-dot.yellow{background:#d4a017}
+.cal-dot.green{background:var(--green)}
+.cal-dot.blue{background:#3b82f6}
+.cal-row{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;display:flex;align-items:center;gap:10px}
+.cal-row .cal-date{font-weight:700;min-width:44px}
+.cal-row .cal-meta{flex:1;min-width:0}
+.cal-row .cal-meta .cal-title{font-weight:600}
+.cal-row .cal-meta .cal-sub{color:var(--muted)}
+.cal-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:11.5px;color:var(--muted);margin-top:10px}
+.cal-legend span{display:flex;align-items:center;gap:5px}
+.lineup-cols{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.lineup-slots,.lineup-palette{flex:1;min-width:240px}
+.lineup-slots h3,.lineup-palette h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:8px}
+.slot{display:flex;align-items:center;gap:10px;padding:10px;border:1px dashed var(--border);border-radius:8px;margin-bottom:8px;min-height:48px}
+.slot.filled{border-style:solid;border-color:var(--green)}
+.slot.dragover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.slot.picking{border-color:var(--purple-light);cursor:pointer}
+.slot .slot-role{font-size:11px;color:var(--muted);text-transform:uppercase;min-width:70px}
+.slot .slot-body{flex:1;font-size:13px}
+.slot .slot-empty{color:var(--muted);font-style:italic}
+.slot button.clear-slot{margin:0;padding:4px 9px;font-size:11px;background:transparent;border:1px solid var(--red);color:var(--red)}
+.cand-card{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:13px;cursor:grab}
+.cand-card.picked{border-color:var(--purple-light);background:rgba(157,95,245,.1)}
+.cand-card .comic-photo{width:32px;height:32px}
+.cand-card .tier{font-size:10px;color:var(--gold)}
+.lineup-status{font-size:12px;color:var(--muted);margin:8px 0}
+.lineup-status.sent{color:var(--green);font-weight:700}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">I'M A BOOKER</div>
+  <div id="atlas-2fa-banner-slot"></div>
+
+  <div id="signed-out" class="signed-out" style="display:none">
+    <p>You need to sign in to search comics and post spots.</p>
+    <p style="margin-top:12px"><a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/booker.html">Sign in / create account →</a></p>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="card">
+      <h2>Claim a show — "this is my show, help me book it"</h2>
+      <p class="privacy" style="margin-bottom:10px">Signed in with a
+      verified Google account whose address obviously belongs to the show
+      (e.g. <code>frenchfriedcomedy@gmail.com</code> claiming "French Fried
+      Comedy Night")? It's ratified <b>instantly</b> — no waiting on a human
+      reviewer. Anything less obvious is queued for a quick manual check.</p>
+      <label for="claim-show">Show series ID</label>
+      <input id="claim-show" type="number">
+      <label for="claim-name">Your name</label>
+      <input id="claim-name" type="text">
+      <label for="claim-contact">Your contact (kept internal)</label>
+      <input id="claim-contact" type="text">
+      <button id="do-claim">Claim this show</button>
+      <div class="msg" id="claim-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>➕ Create a show (not listed yet?)</h2>
+      <p class="privacy" style="margin-bottom:10px">If we haven't scraped your
+      show yet, add it here — you'll <b>own it instantly</b> and it appears on
+      your calendar right away.</p>
+      <label for="new-show-name">Show name</label>
+      <input id="new-show-name" type="text" placeholder="French Fried Comedy Night">
+      <label for="new-show-venue">Venue name</label>
+      <input id="new-show-venue" type="text" placeholder="Le Velvet">
+      <label for="new-show-city">City</label>
+      <input id="new-show-city" type="text" list="cities-list" placeholder="Paris">
+      <button id="do-create-show">Create &amp; own this show</button>
+      <div class="msg" id="new-show-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>📅 My venue calendar</h2>
+      <p class="privacy" style="margin-bottom:10px">Auto-populated from
+      everything the scraper already found for your shows — pick one of
+      your claimed shows below, no manual entry required.</p>
+      <div class="row">
+        <div>
+          <label for="cal-show">Your show</label>
+          <select id="cal-show"><option value="">Loading your shows…</option></select>
+        </div>
+        <div>
+          <label for="cal-month">Month</label>
+          <input id="cal-month" type="month">
+        </div>
+      </div>
+      <button id="cal-load">Load calendar</button>
+      <button class="secondary" id="cal-load-all" type="button">All my shows, this month</button>
+      <div class="msg" id="cal-msg"></div>
+      <div id="cal-list" style="margin-top:10px"></div>
+      <div class="cal-legend">
+        <span><span class="cal-dot red"></span> needs booking</span>
+        <span><span class="cal-dot yellow"></span> partial</span>
+        <span><span class="cal-dot green"></span> full</span>
+        <span><span class="cal-dot blue"></span> confirmed/locked</span>
+        <span><span class="cal-dot gray"></span> past</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎬 Lineup builder</h2>
+      <p class="privacy" style="margin-bottom:10px">Pick one of your shows,
+      pick a night, then drag comic cards into the open slots. Every drop
+      <b>auto-saves as a draft — nobody is notified</b>. Come back anytime;
+      your draft is right where you left it. Only <b>Send confirmations</b>
+      messages the comics.</p>
+      <div class="row">
+        <div>
+          <label for="lu-show">Your show</label>
+          <select id="lu-show"><option value="">Loading your shows…</option></select>
+        </div>
+        <div>
+          <label for="lu-event">Night</label>
+          <select id="lu-event"><option value="">Pick a show first</option></select>
+        </div>
+      </div>
+      <button id="lu-load">Load lineup</button>
+      <div class="msg" id="lu-msg"></div>
+      <div id="lu-status" class="lineup-status"></div>
+      <p class="privacy" id="lu-hint" style="display:none;margin:6px 0">
+      Mobile / no drag-and-drop? Tap a comic card below, then tap the slot
+      you want to fill it.</p>
+      <div class="lineup-cols" id="lu-board" style="display:none">
+        <div class="lineup-slots">
+          <h3>Slots</h3>
+          <div id="lu-slots"></div>
+        </div>
+        <div class="lineup-palette">
+          <h3>Available comics &amp; your rosters</h3>
+          <div id="lu-candidates"></div>
+        </div>
+      </div>
+      <button id="lu-confirm" style="display:none">📣 Send confirmations</button>
+      <div class="msg" id="lu-confirm-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Search comics</h2>
+      <div class="row">
+        <div>
+          <label for="search-city">City</label>
+          <input id="search-city" type="text" list="cities-list" placeholder="Start typing, e.g. Paris">
+        </div>
+        <div>
+          <label for="search-date">Available date</label>
+          <input id="search-date" type="date">
+        </div>
+      </div>
+      <button id="do-search">Search</button>
+      <div class="msg" id="search-msg"></div>
+      <div id="search-results" style="margin-top:14px"></div>
+      <p class="privacy">Contact info is never shown here — check the comics
+      you want, then send them a private message below. Every message goes
+      through the privacy relay.</p>
+      <datalist id="cities-list"></datalist>
+
+      <div class="tray" id="invite-tray">
+        <div id="tray-count" style="font-weight:700;margin-bottom:8px"></div>
+        <label for="tray-show">Show series ID (you must own this show)</label>
+        <input id="tray-show" type="number">
+        <label for="tray-booker-name">Your name (shown to the comics)</label>
+        <input id="tray-booker-name" type="text">
+        <label for="tray-booker-contact">Your contact (kept internal, never shown to them)</label>
+        <input id="tray-booker-contact" type="text">
+        <label for="tray-message">Private message</label>
+        <textarea id="tray-message" rows="3"></textarea>
+        <button id="send-batch-invite">Invite these comics</button>
+        <button class="secondary" id="clear-selection" type="button">Clear selection</button>
+        <div class="msg" id="tray-msg"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Invites for a show</h2>
+      <label for="invites-show">Show series ID (you must own this show)</label>
+      <input id="invites-show" type="number">
+      <button id="load-invites">Load invite statuses</button>
+      <div class="msg" id="invites-msg"></div>
+      <div id="invites-list" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>📲 Ask your roster on WhatsApp</h2>
+      <p class="privacy" style="margin-bottom:10px">Message comics you already
+      know from <b>your own WhatsApp</b> — free, no account linking. Each gets a
+      one-tap Yes/No that tallies back here.</p>
+      <label for="wa-show">Show series ID (you must own this show)</label>
+      <input id="wa-show" type="number">
+      <label for="wa-msg">Message (optional — a default is used if blank)</label>
+      <input id="wa-msg" type="text" placeholder="Free for French Fried on Sept 16?">
+      <label for="wa-roster">Your comics — one per line: <code>Name, +phone</code></label>
+      <textarea id="wa-roster" rows="4" placeholder="Betty, +33612345678&#10;Alexi, +33698765432"></textarea>
+      <button id="wa-build">Get WhatsApp links</button>
+      <div class="msg" id="wa-msg-out"></div>
+      <div id="wa-links" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>🗳️ Availability poll (share in WhatsApp)</h2>
+      <p class="privacy" style="margin-bottom:10px">Make a poll of the dates you
+      need to fill, drop the <b>one link</b> in your WhatsApp group, and see who's
+      free for each date here — names attached, no app for your comics to learn.</p>
+      <label for="poll-title">Title</label>
+      <input id="poll-title" type="text" placeholder="French Fried — September dates">
+      <label for="poll-dates">Dates to fill (one per line, YYYY-MM-DD)</label>
+      <textarea id="poll-dates" rows="3" placeholder="2026-09-16&#10;2026-09-23"></textarea>
+      <button id="poll-create">Create poll &amp; get share link</button>
+      <div class="msg" id="poll-msg"></div>
+      <div id="poll-link" style="margin-top:10px"></div>
+      <hr style="border-color:var(--border);margin:16px 0">
+      <button class="secondary" id="poll-refresh" type="button">Refresh my polls &amp; results</button>
+      <div id="poll-results" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>🎪 My availability page</h2>
+      <p class="privacy" style="margin-bottom:10px">A standing page your
+      comics bookmark — a white-label recreation of the "submit your
+      availability" page bookers already know, but it's YOUR shows only, and
+      it lives here. Share one URL; comics log in with a 6-digit emailed
+      code, no account needed.</p>
+      <label for="avp-title">Page title</label>
+      <input id="avp-title" type="text" placeholder="Blast Off Availability">
+      <label for="avp-shows">Show series IDs to include (comma-separated, blank = all shows you own)</label>
+      <input id="avp-shows" type="text" placeholder="12, 14">
+      <label for="avp-window">Rolling date window (days)</label>
+      <input id="avp-window" type="number" value="60">
+      <label for="avp-intro">Intro note (optional)</label>
+      <input id="avp-intro" type="text" placeholder="Thanks for keeping this updated!">
+      <button id="avp-create">Create page &amp; get share link</button>
+      <div class="msg" id="avp-msg"></div>
+      <div id="avp-link" style="margin-top:10px"></div>
+      <hr style="border-color:var(--border);margin:16px 0">
+      <button class="secondary" id="avp-refresh" type="button">Refresh my pages &amp; results</button>
+      <div id="avp-list" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>🎟️ Connect Eventbrite</h2>
+      <p class="privacy" style="margin-bottom:10px">Your token is
+      <b>encrypted</b> the moment it reaches us and is never shown again,
+      never emailed, never logged — not even to you. We only ever use it to
+      read your own org's events/attendees and, when you explicitly tap
+      "Push", to update one of your own events on Eventbrite.</p>
+      <div id="tk-status" style="margin-bottom:10px"></div>
+      <label for="tk-token">Eventbrite personal token</label>
+      <input id="tk-token" type="password" placeholder="paste your Eventbrite token">
+      <p class="privacy" style="margin:4px 0 10px">(OAuth "Connect with Eventbrite" is
+      coming later — for now, paste the personal token from Eventbrite's
+      Account Settings → API Keys.)</p>
+      <label for="tk-org">Organization ID (optional — auto-detected if you have only one)</label>
+      <input id="tk-org" type="text" placeholder="293344978866">
+      <button id="tk-connect">Connect</button>
+      <button class="secondary" id="tk-sync" type="button">Sync now</button>
+      <div class="msg" id="tk-msg"></div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+      <label for="tk-show">Show</label>
+      <select id="tk-show"></select>
+      <button class="secondary" id="tk-stats-load" type="button">Load ticket stats</button>
+      <div id="tk-stats" style="margin-top:10px"></div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+      <p class="privacy" style="margin-bottom:8px"><b>Push my changes to Eventbrite</b> —
+      only fields you fill in below are sent, and ONLY when you tap the button.
+      Nothing here is ever sent automatically.</p>
+      <label for="tk-push-name">New name (optional)</label>
+      <input id="tk-push-name" type="text" placeholder="leave blank to keep current">
+      <label for="tk-push-start">New start (optional, ISO e.g. 2026-09-16T20:00:00Z)</label>
+      <input id="tk-push-start" type="text" placeholder="leave blank to keep current">
+      <button id="tk-push">Push my changes to Eventbrite</button>
+      <div class="msg" id="tk-push-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>📧 My audience &amp; email</h2>
+      <p class="privacy" style="margin-bottom:10px">This list is <b>yours alone</b> —
+      never shown to any other booker, never shown to comics, never merged into
+      ATLAS's own follower list. Unsubscribed contacts are always excluded from
+      sends. Real email send is <b>OFF</b> — campaigns write to a local outbox
+      only until Robert arms a real provider.</p>
+
+      <label for="el-name">New list name</label>
+      <input id="el-name" type="text" placeholder="e.g. French Fried attendees">
+      <button id="el-create">Create list</button>
+      <div class="msg" id="el-msg"></div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+      <label for="el-list">My lists</label>
+      <select id="el-list"></select>
+      <button class="secondary" id="el-refresh" type="button">Refresh lists</button>
+      <div id="el-counts" style="margin-top:8px"></div>
+
+      <div style="margin-top:10px">
+        <button class="secondary" id="el-import-eb" type="button">Import from Eventbrite</button>
+      </div>
+
+      <label for="el-csv" style="margin-top:10px">Paste CSV (email,name — one per line)</label>
+      <textarea id="el-csv" rows="4" placeholder="jane@example.com,Jane Doe"></textarea>
+      <button class="secondary" id="el-import-csv" type="button">Import CSV</button>
+      <div class="msg" id="el-import-msg"></div>
+
+      <label for="el-suppress" style="margin-top:10px">Unsubscribe an email</label>
+      <input id="el-suppress" type="text" placeholder="someone@example.com">
+      <button class="secondary" id="el-suppress-btn" type="button">Mark unsubscribed</button>
+      <div id="el-contacts" style="margin-top:10px"></div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+      <p class="privacy" style="margin-bottom:8px"><b>Compose &amp; send a campaign</b></p>
+      <label for="camp-subject">Subject</label>
+      <input id="camp-subject" type="text" placeholder="What's on next month">
+      <label for="camp-body">Body</label>
+      <textarea id="camp-body" rows="5" placeholder="Write your campaign, or use the weekly-digest preview below as a starting point."></textarea>
+      <button id="camp-preview-digest" class="secondary" type="button">Preview weekly digest</button>
+      <button id="camp-create-send">Create &amp; send campaign</button>
+      <div class="msg" id="camp-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Post an open spot</h2>
+      <label for="opp-show">Show series ID (you must own this show)</label>
+      <input id="opp-show" type="number">
+      <div class="row">
+        <div>
+          <label for="opp-date">Date</label>
+          <input id="opp-date" type="date">
+        </div>
+        <div>
+          <label for="opp-role">Spot role</label>
+          <select id="opp-role">
+            <option value="open_mic">open_mic</option>
+            <option value="guest">guest</option>
+            <option value="bucket">bucket</option>
+            <option value="support">support</option>
+            <option value="feature">feature</option>
+            <option value="headline">headline</option>
+          </select>
+        </div>
+      </div>
+      <button id="post-opp">Post spot</button>
+      <div class="msg" id="opp-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Message a comic</h2>
+      <div class="tabs2">
+        <div class="tab2 active" data-t="known">Known comic</div>
+        <div class="tab2" data-t="unknown">Invite someone not listed</div>
+      </div>
+      <label for="inv-show">Show series ID (you must own this show)</label>
+      <input id="inv-show" type="number">
+
+      <div id="known-fields">
+        <label for="inv-comic-id">Comic person ID</label>
+        <input id="inv-comic-id" type="number">
+      </div>
+      <div id="unknown-fields" style="display:none">
+        <label for="inv-stage-name">Their stage name</label>
+        <input id="inv-stage-name" type="text">
+        <label for="inv-contact">Their contact (email, IG handle, phone...)</label>
+        <input id="inv-contact" type="text">
+        <p class="privacy">Stored internally only. Never shown to you or anyone
+        else again through COMEDY ATLAS — they get a relay invite to claim
+        their own profile.</p>
+      </div>
+
+      <label for="inv-booker-name">Your name (shown to the comic)</label>
+      <input id="inv-booker-name" type="text">
+      <label for="inv-booker-contact">Your contact (kept internal, never shown to the comic)</label>
+      <input id="inv-booker-contact" type="text">
+      <label for="inv-message">Message</label>
+      <textarea id="inv-message" rows="3"></textarea>
+      <button id="send-invite">Send invite</button>
+      <div class="msg" id="invite-msg"></div>
+    </div>
+
+    <div class="card" id="twofa-section"></div>
+  </div>
+</div>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-auth.js"></script>
+<script src="atlas-2fa.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+
+  // City picker: same name-autocomplete pattern as comic.html's cityNameToId
+  // -- a booker types "Paris", never a numeric city id (the bug this fixes).
+  // /booker/comics/search already accepts a `city` NAME param directly
+  // (resolved server-side via public_cities ILIKE), so we just pass the
+  // typed text through.
+  function loadCities() {
+    return A.get("/cities").then(function (rows) {
+      var dl = document.getElementById("cities-list");
+      dl.innerHTML = "";
+      rows.forEach(function (c) {
+        var label = c.name + (c.country_iso2 ? " (" + c.country_iso2 + ")" : "");
+        var o = document.createElement("option"); o.value = label; dl.appendChild(o);
+      });
+    }).catch(function () {});
+  }
+
+  A.me().then(function (r) {
+    document.getElementById("app").style.display = "block";
+    loadCities();
+    loadMyShows();
+    window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
+  }).catch(function () {
+    document.getElementById("signed-out").style.display = "block";
+  });
+
+  // ------------------------------------------------------------------
+  // Create a show (not scraped yet)
+  document.getElementById("do-create-show").addEventListener("click", function () {
+    var msg = document.getElementById("new-show-msg");
+    var name = document.getElementById("new-show-name").value.trim();
+    var venue = document.getElementById("new-show-venue").value.trim();
+    var city = document.getElementById("new-show-city").value.replace(/\s*\([A-Z]{2}\)\s*$/, "").trim();
+    if (!name || !venue || !city) { msg.textContent = "Add a show name, venue, and city."; msg.className = "msg error"; return; }
+    msg.textContent = "Creating…"; msg.className = "msg";
+    A.post("/booker/shows/create", { show_name: name, venue_name: venue, city: city }).then(function (r) {
+      msg.textContent = "Created & you own it — show #" + r.show_series_id + ". It's on your calendar now."; msg.className = "msg ok";
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+
+  // Claim a show
+  // ------------------------------------------------------------------
+  document.getElementById("do-claim").addEventListener("click", function () {
+    var msg = document.getElementById("claim-msg");
+    var showId = document.getElementById("claim-show").value;
+    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    A.post("/booker/shows/" + showId + "/claim", {
+      claimant_name: document.getElementById("claim-name").value,
+      claimant_contact: document.getElementById("claim-contact").value,
+    }).then(function (r) {
+      if (r.auto_approved) {
+        msg.textContent = "✅ Claimed and approved instantly — you can now manage this show.";
+        msg.className = "msg ok";
+        loadMyShows();
+      } else {
+        msg.textContent = "Claim submitted — pending a quick human review before you can manage it.";
+        msg.className = "msg";
+      }
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to submit claim.";
+      msg.className = "msg error";
+    });
+  });
+
+  // ------------------------------------------------------------------
+  // My venue calendar
+  // ------------------------------------------------------------------
+  var myShows = [];
+
+  function loadMyShows() {
+    return A.get("/booker/my-shows").then(function (rows) {
+      myShows = rows;
+      var sel = document.getElementById("cal-show");
+      if (!rows.length) {
+        sel.innerHTML = '<option value="">No claimed shows yet</option>';
+        return;
+      }
+      sel.innerHTML = rows.map(function (s) {
+        return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) +
+          (s.city_name ? " (" + A.escapeHtml(s.city_name) + ")" : "") + '</option>';
+      }).join("");
+    }).catch(function () {});
+  }
+
+  function currentYearMonth() {
+    var v = document.getElementById("cal-month").value; // "YYYY-MM"
+    if (v) {
+      var parts = v.split("-");
+      return { year: parseInt(parts[0], 10), month: parseInt(parts[1], 10) };
+    }
+    var now = new Date();
+    return { year: now.getFullYear(), month: now.getMonth() + 1 };
+  }
+
+  var STATUS_LABEL = {
+    red: "needs booking", yellow: "partial", green: "full",
+    blue: "confirmed/locked", gray: "past",
+  };
+
+  function renderCalendar(rows, showLabels) {
+    var el = document.getElementById("cal-list");
+    if (!rows.length) {
+      el.innerHTML = '<p style="color:var(--muted);font-size:13px">Nothing scraped for this month yet.</p>';
+      return;
+    }
+    el.innerHTML = rows.map(function (r) {
+      var target = r.lineup_slots_target != null ? ("/" + r.lineup_slots_target) : "";
+      var day = (r.date || "").slice(8, 10);
+      return '<div class="cal-row">' +
+        '<span class="cal-dot ' + r.status + '"></span>' +
+        '<span class="cal-date">' + day + '</span>' +
+        '<div class="cal-meta"><div class="cal-title">' + A.escapeHtml(r.title || "") + '</div>' +
+        '<div class="cal-sub">' + A.escapeHtml(r.venue_name || "unknown venue") +
+        ' · ' + r.lineup_count + target + ' booked · ' +
+        (STATUS_LABEL[r.status] || r.status) + '</div></div></div>';
+    }).join("");
+  }
+
+  document.getElementById("cal-load").addEventListener("click", function () {
+    var msg = document.getElementById("cal-msg");
+    var showId = document.getElementById("cal-show").value;
+    if (!showId) { msg.textContent = "Claim a show first, then pick it here."; msg.className = "msg error"; return; }
+    var ym = currentYearMonth();
+    A.get("/booker/shows/" + showId + "/calendar?year=" + ym.year + "&month=" + ym.month)
+      .then(function (rows) {
+        renderCalendar(rows, false);
+        msg.textContent = rows.length + " occurrence(s) this month."; msg.className = "msg ok";
+      }).catch(function (e) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load calendar.";
+        msg.className = "msg error";
+      });
+  });
+
+  document.getElementById("cal-load-all").addEventListener("click", function () {
+    var msg = document.getElementById("cal-msg");
+    var ym = currentYearMonth();
+    A.get("/booker/my-shows/calendar?year=" + ym.year + "&month=" + ym.month)
+      .then(function (rows) {
+        renderCalendar(rows, true);
+        msg.textContent = rows.length + " date(s) with scraped shows across all your rooms.";
+        msg.className = "msg ok";
+      }).catch(function (e) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load calendar.";
+        msg.className = "msg error";
+      });
+  });
+
+  // ------------------------------------------------------------------
+  // 🎬 Lineup builder (migration 0071; ingest/lineup_builder.py)
+  // ------------------------------------------------------------------
+  var luEventId = null;
+  var luDraftId = null;
+  var luPicked = null; // person_id currently tapped (mobile tap-to-assign fallback)
+
+  function populateLineupShowSelect() {
+    var sel = document.getElementById("lu-show");
+    if (myShows && myShows.length) {
+      sel.innerHTML = myShows.map(function (s) {
+        return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) + '</option>';
+      }).join("");
+      loadLineupEvents();
+    } else {
+      loadMyShows().then(populateLineupShowSelect);
+    }
+  }
+  populateLineupShowSelect();
+
+  function loadLineupEvents() {
+    var showId = document.getElementById("lu-show").value;
+    var sel = document.getElementById("lu-event");
+    if (!showId) { sel.innerHTML = '<option value="">Pick a show first</option>'; return; }
+    A.get("/booker/shows/" + showId + "/events").then(function (rows) {
+      if (!rows.length) { sel.innerHTML = '<option value="">No upcoming nights scraped yet</option>'; return; }
+      sel.innerHTML = rows.map(function (r) {
+        var d = (r.starts_at || "").slice(0, 10);
+        return '<option value="' + r.event_id + '">' + A.escapeHtml(d) + ' — ' +
+          A.escapeHtml(r.title || "") + (r.venue_name ? " @ " + A.escapeHtml(r.venue_name) : "") + '</option>';
+      }).join("");
+    }).catch(function () {});
+  }
+  document.getElementById("lu-show").addEventListener("change", loadLineupEvents);
+
+  function candidateCardHtml(c, picked) {
+    var photo = c.photo_url
+      ? '<img class="comic-photo" src="' + A.escapeHtml(c.photo_url) + '" alt="">'
+      : '<div class="comic-photo placeholder">🎤</div>';
+    return '<div class="cand-card' + (picked ? ' picked' : '') + '" draggable="true" data-id="' + c.person_id + '">' +
+      photo + '<div><div>' + A.escapeHtml(c.stage_name) +
+      (c.tier ? ' <span class="tier">' + A.escapeHtml(c.tier) + '</span>' : '') + '</div>' +
+      '<div style="color:var(--muted);font-size:11px">' + (c.sources || []).join(", ") + '</div></div></div>';
+  }
+
+  function slotHtml(s) {
+    var filled = s.comic_person_id != null;
+    var body = filled
+      ? A.escapeHtml(s.comic_stage_name || ("comic #" + s.comic_person_id)) +
+        ' <button class="clear-slot" type="button" data-i="' + s.slot_index + '">clear</button>'
+      : '<span class="slot-empty">empty — drag or tap a comic</span>';
+    return '<div class="slot' + (filled ? ' filled' : '') + '" data-i="' + s.slot_index + '">' +
+      '<div class="slot-role">' + A.escapeHtml(s.slot_role || "") + '</div>' +
+      '<div class="slot-body">' + body + '</div></div>';
+  }
+
+  function renderLineupBoard(data) {
+    document.getElementById("lu-board").style.display = "flex";
+    document.getElementById("lu-hint").style.display = "block";
+    var sent = data.status === "sent";
+    var statusEl = document.getElementById("lu-status");
+    statusEl.textContent = sent
+      ? "✅ Confirmations sent — this lineup is locked."
+      : (data.slots.filter(function (s) { return s.comic_person_id != null; }).length) +
+        " / " + data.slots.length + " slots filled (draft — not sent yet).";
+    statusEl.className = "lineup-status" + (sent ? " sent" : "");
+
+    document.getElementById("lu-slots").innerHTML = data.slots.map(slotHtml).join("");
+    document.getElementById("lu-candidates").innerHTML = (data.candidates || [])
+      .map(function (c) { return candidateCardHtml(c, luPicked === c.person_id); }).join("");
+    document.getElementById("lu-confirm").style.display = sent ? "none" : "inline-block";
+
+    if (sent) return; // locked draft: no drag/tap/clear wiring needed
+
+    // Drag-and-drop (desktop)
+    document.querySelectorAll("#lu-candidates .cand-card").forEach(function (card) {
+      card.addEventListener("dragstart", function (ev) {
+        ev.dataTransfer.setData("text/plain", card.dataset.id);
+      });
+      // Tap-to-assign fallback (mobile: no HTML5 drag)
+      card.addEventListener("click", function () {
+        var id = parseInt(card.dataset.id, 10);
+        luPicked = (luPicked === id) ? null : id;
+        renderLineupBoard(data);
+      });
+    });
+    document.querySelectorAll("#lu-slots .slot").forEach(function (slotEl) {
+      slotEl.addEventListener("dragover", function (ev) { ev.preventDefault(); slotEl.classList.add("dragover"); });
+      slotEl.addEventListener("dragleave", function () { slotEl.classList.remove("dragover"); });
+      slotEl.addEventListener("drop", function (ev) {
+        ev.preventDefault();
+        slotEl.classList.remove("dragover");
+        var id = parseInt(ev.dataTransfer.getData("text/plain"), 10);
+        if (id) assignSlot(parseInt(slotEl.dataset.i, 10), id);
+      });
+      slotEl.addEventListener("click", function (ev) {
+        if (ev.target.classList.contains("clear-slot")) return;
+        if (luPicked != null) {
+          assignSlot(parseInt(slotEl.dataset.i, 10), luPicked);
+          luPicked = null;
+        }
+      });
+    });
+    document.querySelectorAll("#lu-slots .clear-slot").forEach(function (btn) {
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        assignSlot(parseInt(btn.dataset.i, 10), null);
+      });
+    });
+  }
+
+  function assignSlot(slotIndex, comicPersonId) {
+    var msg = document.getElementById("lu-msg");
+    A.put("/booker/events/" + luEventId + "/lineup/slot", {
+      slot_index: slotIndex, comic_person_id: comicPersonId,
+    }).then(function () {
+      msg.textContent = "Saved (draft — not sent)."; msg.className = "msg ok";
+      return A.get("/booker/events/" + luEventId + "/lineup");
+    }).then(renderLineupBoard).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to save.";
+      msg.className = "msg error";
+    });
+  }
+
+  document.getElementById("lu-load").addEventListener("click", function () {
+    var msg = document.getElementById("lu-msg");
+    var eventId = document.getElementById("lu-event").value;
+    if (!eventId) { msg.textContent = "Pick a night first."; msg.className = "msg error"; return; }
+    luEventId = eventId;
+    luPicked = null;
+    A.get("/booker/events/" + eventId + "/lineup").then(function (data) {
+      luDraftId = data.draft_id;
+      renderLineupBoard(data);
+      msg.textContent = "Lineup loaded."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load lineup.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("lu-confirm").addEventListener("click", function () {
+    var msg = document.getElementById("lu-confirm-msg");
+    if (!luEventId) return;
+    if (!window.confirm("This sends real invites to every comic in a filled slot. Continue?")) return;
+    A.post("/booker/events/" + luEventId + "/lineup/confirm", {}).then(function (r) {
+      msg.textContent = "Sent " + r.invited.length + " confirmation(s).";
+      msg.className = "msg ok";
+      return A.get("/booker/events/" + luEventId + "/lineup");
+    }).then(renderLineupBoard).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to send confirmations.";
+      msg.className = "msg error";
+    });
+  });
+
+  var selected = {}; // person_id -> stage_name
+
+  function renderTray() {
+    var ids = Object.keys(selected);
+    var tray = document.getElementById("invite-tray");
+    tray.classList.toggle("show", ids.length > 0);
+    document.getElementById("tray-count").textContent =
+      ids.length + " comic(s) selected: " +
+      ids.map(function (id) { return selected[id]; }).join(", ");
+  }
+
+  document.getElementById("do-search").addEventListener("click", function () {
+    var msg = document.getElementById("search-msg");
+    var qs = new URLSearchParams();
+    // Strip the "(FR)" country-code suffix the datalist option shows, so
+    // the plain city name goes to the server for its own ILIKE match.
+    var city = document.getElementById("search-city").value
+      .replace(/\s*\([A-Za-z]{2}\)\s*$/, "").trim();
+    var d = document.getElementById("search-date").value;
+    if (city) qs.set("city", city);
+    if (d) qs.set("available_date", d);
+    A.get("/booker/comics/search?" + qs.toString()).then(function (rows) {
+      var el = document.getElementById("search-results");
+      if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No matches.</p>'; return; }
+      el.innerHTML = rows.map(function (r) {
+        var checked = selected[r.person_id] ? "checked" : "";
+        var photo = r.photo_url
+          ? '<img class="comic-photo" src="' + A.escapeHtml(r.photo_url) + '" alt="">'
+          : '<div class="comic-photo placeholder">🎤</div>';
+        return '<label class="comic-card">' +
+          '<input type="checkbox" data-id="' + r.person_id + '" data-name="' +
+          A.escapeHtml(r.stage_name) + '" ' + checked + '>' +
+          photo +
+          '<div class="info"><div class="name">' + A.escapeHtml(r.stage_name) +
+          ' <span style="color:var(--muted);font-weight:400">(id ' + r.person_id + ')</span></div>' +
+          '<div style="color:var(--muted)">' + A.escapeHtml(r.home_market || "") + ' · ' +
+          A.escapeHtml(r.touring_status || "") + '</div></div></label>';
+      }).join("");
+      el.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          var id = cb.dataset.id;
+          if (cb.checked) { selected[id] = cb.dataset.name; }
+          else { delete selected[id]; }
+          renderTray();
+        });
+      });
+      msg.textContent = rows.length + " comic(s) found."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Search failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("clear-selection").addEventListener("click", function () {
+    selected = {};
+    document.querySelectorAll('#search-results input[type=checkbox]').forEach(function (cb) {
+      cb.checked = false;
+    });
+    renderTray();
+  });
+
+  document.getElementById("send-batch-invite").addEventListener("click", function () {
+    var msg = document.getElementById("tray-msg");
+    var showId = document.getElementById("tray-show").value;
+    var ids = Object.keys(selected).map(function (id) { return parseInt(id, 10); });
+    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    if (!ids.length) { msg.textContent = "Select at least one comic."; msg.className = "msg error"; return; }
+    A.post("/booker/shows/" + showId + "/invite-batch", {
+      comic_person_ids: ids,
+      booker_name: document.getElementById("tray-booker-name").value,
+      booker_contact: document.getElementById("tray-booker-contact").value,
+      message: document.getElementById("tray-message").value,
+    }).then(function (r) {
+      var sent = r.results.filter(function (x) { return x.status === "sent"; }).length;
+      var already = r.results.filter(function (x) { return x.status === "already_invited"; }).length;
+      msg.textContent = sent + " invited, " + already + " already invited previously.";
+      msg.className = "msg ok";
+      selected = {};
+      renderTray();
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Batch invite failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  function renderInvites(rows) {
+    var el = document.getElementById("invites-list");
+    if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
+    el.innerHTML = rows.map(function (r) {
+      return '<div class="invite-row"><div>' + A.escapeHtml(r.comic_stage_name) +
+        ' <span style="color:var(--muted)">(id ' + r.comic_person_id + ')</span></div>' +
+        '<div class="status-pill ' + A.escapeHtml(r.status) + '">' + A.escapeHtml(r.status) + '</div></div>';
+    }).join("");
+  }
+
+  document.getElementById("load-invites").addEventListener("click", function () {
+    var msg = document.getElementById("invites-msg");
+    var showId = document.getElementById("invites-show").value;
+    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    A.get("/booker/shows/" + showId + "/invites").then(function (rows) {
+      renderInvites(rows);
+      msg.textContent = rows.length + " invite(s)."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load invites.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("poll-create").addEventListener("click", function () {
+    var msg = document.getElementById("poll-msg"), out = document.getElementById("poll-link");
+    var title = document.getElementById("poll-title").value.trim();
+    var dates = document.getElementById("poll-dates").value.split("\n")
+      .map(function (s) { return s.trim(); }).filter(Boolean);
+    if (!title || !dates.length) { msg.textContent = "Add a title and at least one date."; msg.className = "msg error"; return; }
+    A.post("/booker/polls", { title: title, dates: dates }).then(function (r) {
+      msg.textContent = "Poll created — post this link in your WhatsApp group:"; msg.className = "msg ok";
+      out.innerHTML = '<input readonly value="' + r.share_url + '" style="width:100%" onclick="this.select()">';
+      loadPolls();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+  function loadPolls() {
+    A.get("/booker/polls").then(function (polls) {
+      var box = document.getElementById("poll-results");
+      if (!polls.length) { box.innerHTML = '<p style="color:var(--muted);font-size:13px">No polls yet.</p>'; return; }
+      Promise.all(polls.map(function (p) {
+        return A.get("/booker/polls/" + p.id + "/results").then(function (res) { return { p: p, res: res }; });
+      })).then(function (all) {
+        box.innerHTML = all.map(function (x) {
+          var rows = x.res.dates.map(function (d) {
+            var names = d.available.map(function (a) { return A.escapeHtml(a.name); }).join(", ") || "<span style='color:var(--muted)'>nobody yet</span>";
+            return '<div style="padding:6px 0;border-bottom:1px solid var(--border)"><b>' + A.escapeHtml(d.date) + '</b>: ' + names + '</div>';
+          }).join("");
+          return '<div style="margin-bottom:14px"><div style="font-weight:700">' + A.escapeHtml(x.p.title) +
+            ' <span style="color:var(--muted);font-weight:400">(' + x.res.response_count + ' replies)</span></div>' + rows + '</div>';
+        }).join("");
+      });
+    });
+  }
+  document.getElementById("poll-refresh").addEventListener("click", loadPolls);
+
+  // ------------------------------------------------------------------
+  // White-label availability page (migration 0068; ingest/availability_page.py)
+  // ------------------------------------------------------------------
+  document.getElementById("avp-create").addEventListener("click", function () {
+    var msg = document.getElementById("avp-msg"), out = document.getElementById("avp-link");
+    var title = document.getElementById("avp-title").value.trim();
+    if (!title) { msg.textContent = "Add a page title."; msg.className = "msg error"; return; }
+    var showsRaw = document.getElementById("avp-shows").value.trim();
+    var showIds = showsRaw ? showsRaw.split(",").map(function (s) { return parseInt(s.trim(), 10); }).filter(function (n) { return !isNaN(n); }) : null;
+    var win = parseInt(document.getElementById("avp-window").value, 10) || 60;
+    var intro = document.getElementById("avp-intro").value.trim() || null;
+    A.post("/booker/availability-page", {
+      title: title, show_series_ids: showIds, date_window_days: win, intro_text: intro,
+    }).then(function (r) {
+      msg.textContent = "Page created — share this link with your comics:"; msg.className = "msg ok";
+      out.innerHTML = '<input readonly value="' + r.share_url + '" style="width:100%" onclick="this.select()">';
+      loadAvailabilityPages();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+
+  function loadAvailabilityPages() {
+    A.get("/booker/availability-page").then(function (pages) {
+      var box = document.getElementById("avp-list");
+      if (!pages.length) { box.innerHTML = '<p style="color:var(--muted);font-size:13px">No availability pages yet.</p>'; return; }
+      Promise.all(pages.map(function (p) {
+        return A.get("/booker/availability-page/results?page_id=" + p.id).then(function (res) { return { p: p, res: res }; });
+      })).then(function (all) {
+        box.innerHTML = all.map(function (x) {
+          var rows = x.res.events.map(function (e) {
+            var names = e.available.map(function (em) { return A.escapeHtml(em); }).join(", ") || "<span style='color:var(--muted)'>nobody yet</span>";
+            return '<div style="padding:6px 0;border-bottom:1px solid var(--border)"><b>' + A.escapeHtml(e.date) + " · " + A.escapeHtml(e.show_name) + '</b>: ' + names + '</div>';
+          }).join("");
+          return '<div style="margin-bottom:14px"><div style="font-weight:700">' + A.escapeHtml(x.p.title) +
+            ' <span style="color:var(--muted);font-weight:400">(' + x.p.submission_count + ' submission(s)) — ' + A.escapeHtml(x.p.share_url) + '</span></div>' + rows + '</div>';
+        }).join("");
+      });
+    }).catch(function () {});
+  }
+  document.getElementById("avp-refresh").addEventListener("click", loadAvailabilityPages);
+
+  // --- Eventbrite two-way ticketing (migration 0069; ingest/ticketing.py) ---
+  // The token field is never pre-filled and never echoed back -- GET
+  // /booker/ticketing/status intentionally never returns it.
+  function refreshTicketingStatus() {
+    A.get("/booker/ticketing/status").then(function (s) {
+      var box = document.getElementById("tk-status");
+      if (!s || s.status === "disconnected") {
+        box.innerHTML = '<span style="color:var(--muted)">Not connected yet.</span>';
+        return;
+      }
+      var badge = s.status === "active" ? "✅ connected" :
+        s.status === "needs_reauth" ? "⚠️ needs reconnect (token was rejected)" : s.status;
+      box.innerHTML = '<b>' + A.escapeHtml(s.platform) + '</b>: ' + badge +
+        (s.last_sync_at ? ' · last synced ' + A.escapeHtml(s.last_sync_at) : ' · never synced');
+    }).catch(function () {});
+  }
+  refreshTicketingStatus();
+
+  function populateTicketingShowSelect() {
+    var sel = document.getElementById("tk-show");
+    if (myShows && myShows.length) {
+      sel.innerHTML = myShows.map(function (s) {
+        return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) + '</option>';
+      }).join("");
+    } else {
+      loadMyShows().then(populateTicketingShowSelect);
+    }
+  }
+  populateTicketingShowSelect();
+
+  document.getElementById("tk-connect").addEventListener("click", function () {
+    var msg = document.getElementById("tk-msg");
+    var token = document.getElementById("tk-token").value.trim();
+    var org = document.getElementById("tk-org").value.trim() || null;
+    if (!token) { msg.textContent = "Paste your Eventbrite token first."; msg.className = "msg error"; return; }
+    A.post("/booker/ticketing/connect", { platform: "eventbrite", token: token, org_id: org }).then(function () {
+      msg.textContent = "Connected!"; msg.className = "msg ok";
+      document.getElementById("tk-token").value = ""; // never keep the plaintext token on screen
+      refreshTicketingStatus();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("tk-sync").addEventListener("click", function () {
+    var msg = document.getElementById("tk-msg");
+    msg.textContent = "Syncing…"; msg.className = "msg";
+    A.post("/booker/ticketing/sync", {}).then(function (r) {
+      if (r.status === "needs_reauth") {
+        msg.textContent = "Eventbrite rejected the token — reconnect above."; msg.className = "msg error";
+      } else {
+        msg.textContent = "Synced: " + r.linked + " show(s) linked, " + r.stats_pulled + " stat pull(s).";
+        msg.className = "msg ok";
+      }
+      refreshTicketingStatus();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Sync failed."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("tk-stats-load").addEventListener("click", function () {
+    var showId = document.getElementById("tk-show").value;
+    var box = document.getElementById("tk-stats");
+    if (!showId) { box.textContent = "Pick a show first."; return; }
+    A.get("/booker/shows/" + showId + "/ticket-stats").then(function (rows) {
+      if (!rows.length) { box.innerHTML = '<p style="color:var(--muted);font-size:13px">No ticket stats pulled yet — hit Sync above.</p>'; return; }
+      box.innerHTML = rows.map(function (r) {
+        return '<div style="padding:6px 0;border-bottom:1px solid var(--border)">' +
+          A.escapeHtml(String(r.tickets_sold)) + ' / ' + A.escapeHtml(String(r.capacity)) + ' sold · ' +
+          A.escapeHtml(((r.gross_amount_cents || 0) / 100).toFixed(2)) + ' ' + A.escapeHtml(r.currency || "") +
+          ' <span style="color:var(--muted)">(pulled ' + A.escapeHtml(r.pulled_at) + ')</span></div>';
+      }).join("");
+    }).catch(function (e) { box.textContent = (e.body && e.body.detail) || "Failed to load stats."; });
+  });
+
+  document.getElementById("tk-push").addEventListener("click", function () {
+    var msg = document.getElementById("tk-push-msg");
+    var showId = document.getElementById("tk-show").value;
+    if (!showId) { msg.textContent = "Pick a show first."; msg.className = "msg error"; return; }
+    var name = document.getElementById("tk-push-name").value.trim() || null;
+    var start = document.getElementById("tk-push-start").value.trim() || null;
+    if (!name && !start) { msg.textContent = "Fill in at least one field to push."; msg.className = "msg error"; return; }
+    if (!window.confirm("This will update the live event on Eventbrite. Continue?")) { return; }
+    A.post("/booker/shows/" + showId + "/push-to-eventbrite", { name: name, start: start }).then(function (r) {
+      msg.textContent = "Pushed: " + Object.keys(r.changes).join(", ") + " updated on Eventbrite.";
+      msg.className = "msg ok";
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Push failed."; msg.className = "msg error"; });
+  });
+
+  // --- Email lists + campaigns (migration 0070; ingest/email_lists.py + ---
+  // ingest/email_campaigns.py). Own-booker only; unsubscribed contacts are
+  // hard-excluded server-side, real send stays OFF (LocalOutbox).
+  var myEmailLists = [];
+
+  function refreshEmailLists() {
+    return A.get("/booker/email-lists").then(function (rows) {
+      myEmailLists = rows || [];
+      var sel = document.getElementById("el-list");
+      sel.innerHTML = myEmailLists.map(function (l) {
+        return '<option value="' + l.id + '">' + A.escapeHtml(l.name) + ' (' + l.contact_count + ')</option>';
+      }).join("");
+      renderListCounts();
+    }).catch(function () {});
+  }
+
+  function renderListCounts() {
+    var sel = document.getElementById("el-list");
+    var id = sel.value;
+    var box = document.getElementById("el-counts");
+    var l = myEmailLists.filter(function (x) { return String(x.id) === String(id); })[0];
+    if (!l) { box.innerHTML = ""; return; }
+    box.innerHTML = '<span style="color:var(--muted)">' + l.contact_count + ' contact(s) · ' +
+      l.unsubscribed_count + ' unsubscribed</span>';
+  }
+  document.getElementById("el-list").addEventListener("change", renderListCounts);
+
+  document.getElementById("el-create").addEventListener("click", function () {
+    var msg = document.getElementById("el-msg");
+    var name = document.getElementById("el-name").value.trim();
+    if (!name) { msg.textContent = "Name the list first."; msg.className = "msg error"; return; }
+    A.post("/booker/email-lists", { name: name }).then(function () {
+      msg.textContent = "List created."; msg.className = "msg ok";
+      document.getElementById("el-name").value = "";
+      refreshEmailLists();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+  document.getElementById("el-refresh").addEventListener("click", refreshEmailLists);
+  refreshEmailLists();
+
+  function loadEmailContacts() {
+    var id = document.getElementById("el-list").value;
+    if (!id) return;
+    A.get("/booker/email-lists/" + id + "/contacts").then(function (r) {
+      var box = document.getElementById("el-contacts");
+      var rows = (r.sample || []).map(function (c) {
+        return '<div style="padding:4px 0;border-bottom:1px solid var(--border)">' +
+          A.escapeHtml(c.email) + (c.name ? ' (' + A.escapeHtml(c.name) + ')' : '') +
+          ' <span style="color:var(--muted)">[' + A.escapeHtml(c.source) + ' · ' + A.escapeHtml(c.consent_status) + ']</span></div>';
+      }).join("");
+      box.innerHTML = '<div style="margin-bottom:6px"><b>' + r.total + '</b> total · ' +
+        r.unsubscribed + ' unsubscribed</div>' + rows;
+    }).catch(function () {});
+  }
+
+  document.getElementById("el-import-eb").addEventListener("click", function () {
+    var id = document.getElementById("el-list").value;
+    var msg = document.getElementById("el-import-msg");
+    if (!id) { msg.textContent = "Create/pick a list first."; msg.className = "msg error"; return; }
+    A.post("/booker/email-lists/" + id + "/import-eventbrite", {}).then(function (r) {
+      msg.textContent = "Imported " + r.imported + " attendee(s) from Eventbrite (" + r.skipped + " skipped).";
+      msg.className = "msg ok";
+      refreshEmailLists(); loadEmailContacts();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Import failed — connect Eventbrite first."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("el-import-csv").addEventListener("click", function () {
+    var id = document.getElementById("el-list").value;
+    var msg = document.getElementById("el-import-msg");
+    if (!id) { msg.textContent = "Create/pick a list first."; msg.className = "msg error"; return; }
+    var raw = document.getElementById("el-csv").value.trim();
+    if (!raw) { msg.textContent = "Paste some rows first."; msg.className = "msg error"; return; }
+    var rows = raw.split("\n").map(function (line) {
+      var parts = line.split(",");
+      return { email: (parts[0] || "").trim(), name: (parts[1] || "").trim() || null };
+    }).filter(function (r) { return r.email; });
+    A.post("/booker/email-lists/" + id + "/import-csv", { rows: rows }).then(function (r) {
+      msg.textContent = "Imported " + r.imported + " row(s) (" + r.skipped + " skipped).";
+      msg.className = "msg ok";
+      document.getElementById("el-csv").value = "";
+      refreshEmailLists(); loadEmailContacts();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Import failed."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("el-suppress-btn").addEventListener("click", function () {
+    var id = document.getElementById("el-list").value;
+    var email = document.getElementById("el-suppress").value.trim();
+    var msg = document.getElementById("el-import-msg");
+    if (!id || !email) { msg.textContent = "Pick a list and an email."; msg.className = "msg error"; return; }
+    A.post("/booker/email-lists/" + id + "/suppress", { email: email }).then(function () {
+      msg.textContent = email + " unsubscribed."; msg.className = "msg ok";
+      document.getElementById("el-suppress").value = "";
+      refreshEmailLists(); loadEmailContacts();
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+  });
+  document.getElementById("el-list").addEventListener("change", loadEmailContacts);
+
+  document.getElementById("camp-preview-digest").addEventListener("click", function () {
+    var msg = document.getElementById("camp-msg");
+    A.get("/booker/campaigns/0/weekly-digest-preview").then(function (r) {
+      document.getElementById("camp-subject").value = r.subject;
+      document.getElementById("camp-body").value = r.body;
+      msg.textContent = "Digest previewed below — edit freely before sending.";
+      msg.className = "msg ok";
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed to build preview."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("camp-create-send").addEventListener("click", function () {
+    var msg = document.getElementById("camp-msg");
+    var listId = document.getElementById("el-list").value;
+    var subject = document.getElementById("camp-subject").value.trim();
+    var body = document.getElementById("camp-body").value.trim();
+    if (!listId) { msg.textContent = "Pick a list first."; msg.className = "msg error"; return; }
+    if (!subject || !body) { msg.textContent = "Subject and body are required."; msg.className = "msg error"; return; }
+    if (!window.confirm("Send this campaign to every non-unsubscribed contact on this list?")) { return; }
+    A.post("/booker/campaigns", { list_id: parseInt(listId, 10), subject: subject, body: body }).then(function (c) {
+      return A.post("/booker/campaigns/" + c.id + "/send", {});
+    }).then(function (r) {
+      msg.textContent = "Sent " + r.sent + " (excluded " + r.unsubscribed_excluded + " unsubscribed, " + r.failed + " failed).";
+      msg.className = "msg ok";
+    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Send failed."; msg.className = "msg error"; });
+  });
+
+  document.getElementById("wa-build").addEventListener("click", function () {
+    var out = document.getElementById("wa-msg-out");
+    var links = document.getElementById("wa-links");
+    var show = document.getElementById("wa-show").value;
+    if (!show) { out.textContent = "Enter your show series ID."; out.className = "msg error"; return; }
+    var comics = document.getElementById("wa-roster").value.split("\n").map(function (line) {
+      var i = line.lastIndexOf(",");
+      if (i < 0) return null;
+      return { name: line.slice(0, i).trim(), phone: line.slice(i + 1).trim() };
+    }).filter(function (c) { return c && c.name && c.phone; });
+    if (!comics.length) { out.textContent = "Add at least one comic (Name, +phone)."; out.className = "msg error"; return; }
+    out.textContent = "Building…"; out.className = "msg";
+    A.post("/booker/shows/" + parseInt(show, 10) + "/whatsapp-invite", {
+      comics: comics, message: document.getElementById("wa-msg").value || null,
+    }).then(function (r) {
+      out.textContent = "Tap each to send from your WhatsApp:"; out.className = "msg ok";
+      links.innerHTML = r.links.map(function (l) {
+        return '<a href="' + l.wa_me_url + '" target="_blank" rel="noopener" ' +
+          'style="display:inline-block;background:#25D366;color:#fff;padding:8px 14px;' +
+          'border-radius:8px;font-weight:700;margin:4px 6px 4px 0">📲 ' +
+          A.escapeHtml(l.name) + '</a>';
+      }).join("");
+    }).catch(function (e) {
+      out.textContent = e.body && e.body.detail ? e.body.detail : "Failed."; out.className = "msg error";
+    });
+  });
+
+  document.getElementById("post-opp").addEventListener("click", function () {
+    var msg = document.getElementById("opp-msg");
+    var showId = document.getElementById("opp-show").value;
+    A.post("/booker/shows/" + showId + "/opportunities", {
+      opportunity_date: document.getElementById("opp-date").value,
+      spot_role: document.getElementById("opp-role").value,
+    }).then(function (r) {
+      msg.textContent = "Posted (opportunity #" + r.opportunity_id + ", " +
+        r.matches.length + " comic(s) notified)."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to post.";
+      msg.className = "msg error";
+    });
+  });
+
+  var tabs = document.querySelectorAll(".tab2");
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      tabs.forEach(function (x) { x.classList.toggle("active", x === t); });
+      var known = t.dataset.t === "known";
+      document.getElementById("known-fields").style.display = known ? "block" : "none";
+      document.getElementById("unknown-fields").style.display = known ? "none" : "block";
+    });
+  });
+
+  document.getElementById("send-invite").addEventListener("click", function () {
+    var msg = document.getElementById("invite-msg");
+    var showId = document.getElementById("inv-show").value;
+    var known = document.querySelector(".tab2.active").dataset.t === "known";
+    var payload = {
+      booker_name: document.getElementById("inv-booker-name").value,
+      booker_contact: document.getElementById("inv-booker-contact").value,
+      message: document.getElementById("inv-message").value,
+    };
+    if (known) {
+      payload.comic_person_id = parseInt(document.getElementById("inv-comic-id").value, 10);
+    } else {
+      payload.stage_name = document.getElementById("inv-stage-name").value;
+      payload.contact_value = document.getElementById("inv-contact").value;
+    }
+    A.post("/booker/shows/" + showId + "/invite", payload).then(function (r) {
+      msg.textContent = "Invite sent (offer #" + r.offer_id + ")."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to send invite.";
+      msg.className = "msg error";
+    });
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comic portal — COMEDY ATLAS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:720px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--purple);color:var(--purple-light);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}
+input,textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
+textarea{min-height:70px;resize:vertical}
+button{padding:10px 18px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
+button:hover{opacity:.9}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row > *{flex:1;min-width:120px}
+.msg{margin-top:10px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.avail-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.opp-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.opp-item .name{font-weight:700}
+.signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+.invite-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.invite-item .name{font-weight:700}
+.invite-actions{display:flex;gap:8px;margin-top:6px}
+.invite-actions button{margin-top:0;padding:6px 12px;font-size:12px}
+.btn-decline{background:transparent;border:1px solid var(--red);color:var(--red)}
+.status-pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;color:var(--muted);border:1px solid var(--muted)}
+.privacy{font-size:12px;color:var(--muted)}
+.show-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.show-item .name{font-weight:700}
+.show-item .avail-toggle{margin-top:0;padding:6px 12px;font-size:12px;white-space:nowrap;flex:0 0 auto;background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
+.show-item .avail-toggle.on{background:var(--green);border-color:var(--green);color:#06240f}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">I'M A COMIC</div>
+  <div id="atlas-2fa-banner-slot"></div>
+
+  <div id="signed-out" class="signed-out" style="display:none">
+    <p>You need to sign in to manage your comic profile.</p>
+    <p style="margin-top:12px"><a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/comic.html">Sign in / create account →</a></p>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="card">
+      <h2>My profile</h2>
+      <label for="bio">Bio</label>
+      <textarea id="bio"></textarea>
+      <div class="row">
+        <div>
+          <label for="home_market">Home market</label>
+          <input id="home_market" type="text">
+        </div>
+        <div>
+          <label for="touring_status">Touring status</label>
+          <select id="touring_status">
+            <option value="local_only">Local only</option>
+            <option value="regional_touring">Regional touring</option>
+            <option value="international_touring">International touring</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+      </div>
+      <label for="home_city">Home city</label>
+      <input id="home_city" type="text" list="cities-list" placeholder="Start typing, e.g. Paris">
+      <button id="save-profile">Save profile</button>
+      <div class="msg" id="profile-msg"></div>
+    </div>
+    <datalist id="cities-list"></datalist>
+
+    <div class="card">
+      <h2>My availability</h2>
+      <div id="avail-list"></div>
+      <div class="row" style="margin-top:12px">
+        <div>
+          <label for="avail-date">Available date</label>
+          <input id="avail-date" type="date">
+        </div>
+        <div>
+          <label for="avail-city">City (optional)</label>
+          <input id="avail-city" type="text" list="cities-list" placeholder="home city if blank">
+        </div>
+      </div>
+      <label for="avail-note">Note (optional)</label>
+      <input id="avail-note" type="text">
+      <button id="add-availability">Add date</button>
+      <div class="msg" id="avail-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>🎤 Shows in my city</h2>
+      <p class="privacy" style="margin-bottom:10px">Tap ✓ to say you're
+      available for a show — one click, saved instantly.</p>
+      <label for="city-shows-city">City</label>
+      <input id="city-shows-city" type="text" list="cities-list" placeholder="Start typing, e.g. Paris">
+      <div id="city-shows-list" style="margin-top:12px"><p style="color:var(--muted);font-size:13px">Pick a city to see upcoming shows.</p></div>
+      <div class="msg" id="city-shows-msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Studio</h2>
+      <p class="privacy" style="margin-bottom:10px">Free auto-captions for your clips —
+      styled burn-in + a downloadable .srt, no subscription.</p>
+      <a href="studio-captions.html"><button type="button">Open captions studio →</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Shows I could be available for</h2>
+      <div id="opp-list"><p style="color:var(--muted);font-size:13px">Loading…</p></div>
+    </div>
+
+    <div class="card">
+      <h2>My invites</h2>
+      <p class="privacy" style="margin-bottom:10px">Private messages from show-runners.
+      Their contact stays internal — respond here and it relays back to them.</p>
+      <div id="invites-list"><p style="color:var(--muted);font-size:13px">Loading…</p></div>
+    </div>
+
+    <div class="card" id="twofa-section"></div>
+  </div>
+</div>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-auth.js"></script>
+<script src="atlas-2fa.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+  var meId = null;
+
+  function renderAvailability(rows) {
+    var list = document.getElementById("avail-list");
+    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No dates published yet.</p>'; return; }
+    list.innerHTML = rows.map(function (r) {
+      return '<div class="avail-item"><span>' + A.escapeHtml(r.available_date) + '</span>' +
+        '<span style="color:var(--muted)">' + A.escapeHtml(r.visibility) + '</span></div>';
+    }).join("");
+  }
+
+  function renderOpportunities(rows) {
+    var list = document.getElementById("opp-list");
+    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No open matches right now.</p>'; return; }
+    list.innerHTML = rows.map(function (r) {
+      return '<div class="opp-item"><div class="name">' + A.escapeHtml(r.show_name) + '</div>' +
+        '<div style="color:var(--muted)">' + A.escapeHtml(r.spot_role) + ' · ' +
+        A.escapeHtml(r.opportunity_date) + ' · ' + A.escapeHtml(r.pay_model) + '</div></div>';
+    }).join("");
+  }
+
+  function renderInvites(rows) {
+    var list = document.getElementById("invites-list");
+    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
+    list.innerHTML = rows.map(function (r) {
+      var actions = r.status === "pending"
+        ? '<div class="invite-actions">' +
+          '<button data-offer="' + r.offer_id + '" data-accept="1">Interested</button>' +
+          '<button class="btn-decline" data-offer="' + r.offer_id + '" data-accept="0">Not interested</button>' +
+          '</div>'
+        : '<span class="status-pill">' + A.escapeHtml(r.status) + '</span>';
+      return '<div class="invite-item"><div class="name">' + A.escapeHtml(r.show_name || "A show") + '</div>' +
+        '<div style="color:var(--muted)">' + A.escapeHtml(r.message || "") + '</div>' + actions + '</div>';
+    }).join("");
+    list.querySelectorAll("button[data-offer]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var offerId = btn.dataset.offer;
+        var accept = btn.dataset.accept === "1";
+        A.post("/comic/" + meId + "/invites/" + offerId + "/respond", {accept: accept})
+          .then(function () {
+            A.get("/comic/" + meId + "/invites").then(renderInvites);
+          });
+      });
+    });
+  }
+
+  // City picker: name -> id, populated from the public /cities lookup so a
+  // user types "Paris", never a numeric id (the bug this fixes).
+  var cityNameToId = {};
+  function loadCities() {
+    return A.get("/cities").then(function (rows) {
+      var dl = document.getElementById("cities-list");
+      dl.innerHTML = "";
+      rows.forEach(function (c) {
+        var label = c.name + (c.country_iso2 ? " (" + c.country_iso2 + ")" : "");
+        cityNameToId[label.toLowerCase()] = c.id;
+        cityNameToId[c.name.toLowerCase()] = c.id;
+        var o = document.createElement("option"); o.value = label; dl.appendChild(o);
+      });
+    }).catch(function () {});
+  }
+  function resolveCity(val) {
+    if (!val) return null;
+    var id = cityNameToId[val.trim().toLowerCase()];
+    return id || null;
+  }
+
+  // Shows in my city -- see upcoming scraped shows in a city, tap a
+  // toggle to publish "I'm available" for that show's date (PUT
+  // /comic/{id}/availability, reused from the availability card above),
+  // and see a checkmark reflecting person_availability state. Blast Off
+  // parity (docs/research/blastoff-availability-reference.md): each card
+  // also shows DOORS / show start-end / SET LENGTH / PAY MODEL, grouped by
+  // month -- /comic/{id}/city-shows now returns doors_at/ends_at/
+  // set_minutes/pay_label (pay_label formatted server-side by the SAME
+  // ingest/show_cards.format_pay helper the white-label availability page
+  // uses, so the two surfaces can never drift on pay-model language).
+  var cityShowsCityId = null;
+
+  function hhmm(iso) {
+    return iso ? iso.slice(11, 16) : null;
+  }
+
+  function monthLabel(iso) {
+    var d = new Date(iso);
+    return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" }).toUpperCase();
+  }
+
+  function dateDisplay(iso) {
+    var d = new Date(iso);
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
+  }
+
+  function renderCityShows(rows) {
+    var list = document.getElementById("city-shows-list");
+    if (!rows.length) {
+      list.innerHTML = '<p style="color:var(--muted);font-size:13px">No upcoming shows found for this city yet.</p>';
+      return;
+    }
+    // Group by month, in date order (rows already arrive ordered by starts_at).
+    var months = [];
+    var byMonth = {};
+    rows.forEach(function (r) {
+      var m = monthLabel(r.starts_at);
+      if (!byMonth[m]) { byMonth[m] = []; months.push(m); }
+      byMonth[m].push(r);
+    });
+
+    list.innerHTML = months.map(function (m) {
+      var cards = byMonth[m].map(function (r) {
+        var when = A.escapeHtml((r.starts_at || "").slice(0, 10));
+        var doors = hhmm(r.doors_at);
+        var start = hhmm(r.starts_at);
+        var end = hhmm(r.ends_at);
+        var startEnd = end ? (start + "–" + end) : start;
+        var metaBits = [];
+        if (doors) metaBits.push("Doors " + doors);
+        metaBits.push("Show " + startEnd);
+        if (r.set_minutes) metaBits.push("Set " + r.set_minutes + "m");
+        if (r.pay_label) metaBits.push(r.pay_label);
+        var label = r.available ? "I'm available ✓" : "I'm available ＋";
+        return '<div class="show-item" data-event="' + r.event_id + '" data-date="' +
+          when + '"><div><div class="name">' + A.escapeHtml(r.title || "Show") + '</div>' +
+          '<div style="color:var(--muted)">' + A.escapeHtml(dateDisplay(r.starts_at)) +
+          (r.venue_name ? ' · ' + A.escapeHtml(r.venue_name) : '') + '</div>' +
+          '<div style="color:var(--muted)">' + A.escapeHtml(metaBits.join(" · ")) + '</div>' +
+          '</div><button type="button" class="avail-toggle' +
+          (r.available ? ' on' : '') + '" data-available="' + (r.available ? "1" : "0") +
+          '">' + label + '</button></div>';
+      }).join("");
+      return '<h3 style="color:var(--gold);font-size:12px;text-transform:uppercase;' +
+        'letter-spacing:.05em;margin:14px 0 6px">' + A.escapeHtml(m) + '</h3>' + cards;
+    }).join("");
+
+    list.querySelectorAll(".avail-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var item = btn.closest(".show-item");
+        var eventDate = item.dataset.date;
+        if (btn.dataset.available === "1") {
+          // Already marked available -- nothing to undo server-side yet;
+          // just reflect the state (removal is optional per spec).
+          return;
+        }
+        btn.disabled = true;
+        A.put("/comic/" + meId + "/availability", {
+          dates: [{ available_date: eventDate, city_id: cityShowsCityId, note: null }],
+        }).then(function () {
+          btn.dataset.available = "1";
+          btn.classList.add("on");
+          btn.textContent = "I'm available ✓";
+          btn.disabled = false;
+        }).catch(function (e) {
+          var msg = document.getElementById("city-shows-msg");
+          msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to save availability.";
+          msg.className = "msg error";
+          btn.disabled = false;
+        });
+      });
+    });
+  }
+
+  function loadCityShows(cityId) {
+    if (!cityId) return;
+    cityShowsCityId = cityId;
+    document.getElementById("city-shows-list").innerHTML =
+      '<p style="color:var(--muted);font-size:13px">Loading…</p>';
+    A.get("/comic/" + meId + "/city-shows?city_id=" + cityId + "&days=30")
+      .then(renderCityShows)
+      .catch(function () {
+        document.getElementById("city-shows-list").innerHTML =
+          '<p style="color:var(--muted);font-size:13px">Couldn\'t load shows.</p>';
+      });
+  }
+
+  document.getElementById("city-shows-city").addEventListener("change", function () {
+    var id = resolveCity(this.value);
+    if (id) loadCityShows(id);
+  });
+
+  function loadAll() {
+    A.get("/comic/" + meId + "/profile").then(function (p) {
+      document.getElementById("bio").value = p.bio || "";
+      document.getElementById("home_market").value = p.home_market || "";
+      document.getElementById("touring_status").value = p.touring_status || "unknown";
+      document.getElementById("home_city").value = p.home_city_name || "";
+      // Preload the comic's home city's shows by default, so the "Shows in
+      // my city" card is never blank on first load.
+      if (p.home_city_id) {
+        document.getElementById("city-shows-city").value = p.home_city_name || "";
+        loadCityShows(p.home_city_id);
+      }
+    });
+    A.get("/comic/" + meId + "/availability").then(renderAvailability);
+    A.get("/comic/" + meId + "/opportunities").then(renderOpportunities);
+    A.get("/comic/" + meId + "/invites").then(renderInvites);
+  }
+
+  A.me().then(function (r) {
+    meId = r.person_id;
+    document.getElementById("app").style.display = "block";
+    loadCities().then(loadAll);
+    window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
+  }).catch(function () {
+    document.getElementById("signed-out").style.display = "block";
+  });
+
+  document.getElementById("save-profile").addEventListener("click", function () {
+    var msg = document.getElementById("profile-msg");
+    A.put("/comic/" + meId + "/profile", {
+      edits: {
+        bio: document.getElementById("bio").value,
+        home_market: document.getElementById("home_market").value,
+        touring_status: document.getElementById("touring_status").value,
+        home_city_id: resolveCity(document.getElementById("home_city").value),
+      },
+    }).then(function () {
+      msg.textContent = "Saved."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Save failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("add-availability").addEventListener("click", function () {
+    var msg = document.getElementById("avail-msg");
+    var d = document.getElementById("avail-date").value;
+    if (!d) { msg.textContent = "Pick a date."; msg.className = "msg error"; return; }
+    var cityVal = document.getElementById("avail-city").value;
+    A.put("/comic/" + meId + "/availability", {
+      dates: [{
+        available_date: d,
+        city_id: resolveCity(cityVal),
+        note: document.getElementById("avail-note").value || null,
+      }],
+    }).then(function () {
+      msg.textContent = "Added."; msg.className = "msg ok";
+      A.get("/comic/" + meId + "/availability").then(renderAvailability);
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add date.";
+      msg.className = "msg error";
+    });
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>

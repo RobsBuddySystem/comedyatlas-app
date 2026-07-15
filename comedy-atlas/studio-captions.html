@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free auto-captions — COMEDY ATLAS Studio</title>
+<meta name="description" content="Upload a clip, get accurate word-level captions burned in and a downloadable .srt — free, no CapCut/Submagic subscription needed.">
+<!--
+  Sprint A flagship (docs/ATLAS_STUDIO_MASTER_PLAN.md, docs/research/
+  creator-studio-comic-tools-2026-07-14.md §3): free Whisper captions.
+  v1 is a SYNCHRONOUS small-clip path -- upload, wait (seconds to a
+  couple minutes depending on clip length + which engine ran), get back
+  a .srt download and, when the upload has a video track, a burned-in
+  preview clip. Mobile-first: this is meant to work from a comic's phone
+  right after they record a clip backstage.
+
+  Same dark/gold/purple ATLAS theme as city.html/comic.html so the studio
+  feels like part of the same product, not a bolted-on tool.
+-->
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:640px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:8px}
+h1{font-size:22px;font-weight:800;margin:8px 0 6px;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:520px}
+.sub strong{color:var(--text)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:14px}
+
+.dropzone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:border-color .15s}
+.dropzone:hover,.dropzone.dragover{border-color:var(--purple-light)}
+.dropzone .hint{color:var(--muted);font-size:13px;margin-top:6px}
+.dropzone .picked{margin-top:10px;font-size:13px;font-weight:700;color:var(--gold-light);word-break:break-all}
+#file-input{display:none}
+
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+.style-grid,.aspect-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.pick-tile{background:transparent;border:1px solid var(--border);border-radius:10px;padding:12px;text-align:left;font-family:inherit;cursor:pointer;color:var(--text);font-size:13px}
+.pick-tile:hover{border-color:var(--purple-light)}
+.pick-tile.active{border-color:var(--purple);background:rgba(124,58,237,.14)}
+.pick-tile .name{font-weight:700}
+.pick-tile .desc{color:var(--muted);font-size:12px;margin-top:2px}
+
+button.primary{width:100%;margin-top:18px;padding:13px 18px;border-radius:10px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+button.primary:hover{opacity:.92}
+button.primary:disabled{opacity:.5;cursor:default}
+
+.progress{margin-top:14px;font-size:13px;color:var(--muted);display:none;align-items:center;gap:10px}
+.progress.active{display:flex}
+.spinner{width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.msg{margin-top:12px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+
+.result{display:none}
+.result.active{display:block}
+.result video{width:100%;border-radius:10px;background:#000;margin-bottom:12px}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-secondary{display:inline-block;padding:10px 16px;border-radius:8px;border:1px solid var(--border);color:var(--text);font-size:13px;font-weight:700;background:transparent;cursor:pointer}
+.btn-secondary:hover{border-color:var(--purple-light)}
+.engine-note{font-size:12px;color:var(--muted);margin-top:10px}
+.srt-preview{margin-top:12px;max-height:180px;overflow:auto;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--muted);white-space:pre-wrap}
+
+.signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+.back-link{font-size:13px;color:var(--muted);margin-bottom:14px;display:inline-block}
+.back-link:hover{color:var(--text)}
+footer{margin-top:30px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="comic.html">← Back to my comic portal</a>
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">STUDIO</div>
+  <h1>Free auto-captions</h1>
+  <p class="sub">Upload a clip. Get <strong>word-level accurate captions</strong> —
+  a burned-in styled video plus a downloadable <strong>.srt</strong> — for
+  <strong>$0</strong>. The same thing CapCut/Submagic charge a subscription for.</p>
+
+  <div id="signed-out" class="signed-out" style="display:none">
+    <p>Sign in to use the captions studio.</p>
+    <p style="margin-top:12px"><a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/studio-captions.html">Sign in / create account →</a></p>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="card">
+      <h2>1. Your clip</h2>
+      <div class="dropzone" id="dropzone">
+        <div>Tap to choose a video or audio clip</div>
+        <div class="hint">MP4, MOV, M4A, MP3, WAV — a few minutes works best for v1</div>
+        <div class="picked" id="picked-name"></div>
+      </div>
+      <input type="file" id="file-input" accept="video/*,audio/*">
+    </div>
+
+    <div class="card">
+      <h2>2. Caption style</h2>
+      <div class="style-grid" id="style-grid">
+        <button type="button" class="pick-tile active" data-style="classic">
+          <div class="name">Classic</div>
+          <div class="desc">Clean white, bottom-safe</div>
+        </button>
+        <button type="button" class="pick-tile" data-style="atlas_gold">
+          <div class="name">Atlas Gold</div>
+          <div class="desc">Brand gold, bold outline</div>
+        </button>
+        <button type="button" class="pick-tile" data-style="karaoke_bold">
+          <div class="name">Karaoke Bold</div>
+          <div class="desc">Big, high-contrast pop</div>
+        </button>
+      </div>
+
+      <label>Export shape</label>
+      <div class="aspect-grid" id="aspect-grid">
+        <button type="button" class="pick-tile active" data-aspect="9:16">
+          <div class="name">9:16 vertical</div>
+          <div class="desc">Reels / TikTok / Shorts</div>
+        </button>
+        <button type="button" class="pick-tile" data-aspect="16:9">
+          <div class="name">16:9 widescreen</div>
+          <div class="desc">YouTube</div>
+        </button>
+      </div>
+    </div>
+
+    <button class="primary" id="go-btn" disabled>Choose a clip first</button>
+    <div class="progress" id="progress">
+      <div class="spinner"></div>
+      <span>Transcribing and burning in captions — this can take a moment…</span>
+    </div>
+    <div class="msg" id="msg"></div>
+
+    <div class="card result" id="result-card">
+      <h2>Result</h2>
+      <video id="preview-video" controls playsinline style="display:none"></video>
+      <div class="result-actions">
+        <a class="btn-secondary" id="download-srt" download="captions.srt">Download .srt</a>
+        <a class="btn-secondary" id="download-video" download="captioned.mp4" style="display:none">Download captioned video</a>
+      </div>
+      <div class="engine-note" id="engine-note"></div>
+      <div class="srt-preview" id="srt-preview"></div>
+    </div>
+  </div>
+
+  <footer>
+    Runs on faster-whisper (open-source, self-hosted) + ffmpeg. No paid API,
+    ever. Long sets and a background job queue are a planned follow-up — v1
+    is best for clips a few minutes long.
+  </footer>
+</div>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-auth.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+  var API_BASE = (function (h) {
+    if (h === "atlas-api.pariscomedy.com" || h === "api.comedyatlas.app") return "";
+    if (h === "comedyatlas.app" || h === "www.comedyatlas.app") return "https://api.comedyatlas.app";
+    return "https://atlas-api.pariscomedy.com";
+  })(location.hostname);
+
+  var selectedFile = null;
+  var selectedStyle = "classic";
+  var selectedAspect = "9:16";
+
+  var dropzone = document.getElementById("dropzone");
+  var fileInput = document.getElementById("file-input");
+  var pickedName = document.getElementById("picked-name");
+  var goBtn = document.getElementById("go-btn");
+  var progress = document.getElementById("progress");
+  var msg = document.getElementById("msg");
+  var resultCard = document.getElementById("result-card");
+  var previewVideo = document.getElementById("preview-video");
+  var downloadSrt = document.getElementById("download-srt");
+  var downloadVideo = document.getElementById("download-video");
+  var engineNote = document.getElementById("engine-note");
+  var srtPreview = document.getElementById("srt-preview");
+
+  function setMsg(text, ok) {
+    msg.textContent = text || "";
+    msg.className = "msg" + (text ? (ok ? " ok" : " error") : "");
+  }
+
+  function onFilePicked(file) {
+    if (!file) return;
+    selectedFile = file;
+    pickedName.textContent = file.name + " (" + Math.round(file.size / 1024) + " KB)";
+    goBtn.disabled = false;
+    goBtn.textContent = "Generate captions";
+    setMsg("");
+  }
+
+  dropzone.addEventListener("click", function () { fileInput.click(); });
+  fileInput.addEventListener("change", function () { onFilePicked(fileInput.files[0]); });
+  ["dragover", "dragenter"].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add("dragover"); });
+  });
+  ["dragleave", "drop"].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove("dragover"); });
+  });
+  dropzone.addEventListener("drop", function (e) {
+    var f = e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) onFilePicked(f);
+  });
+
+  document.querySelectorAll("#style-grid .pick-tile").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      document.querySelectorAll("#style-grid .pick-tile").forEach(function (t) { t.classList.remove("active"); });
+      tile.classList.add("active");
+      selectedStyle = tile.dataset.style;
+    });
+  });
+  document.querySelectorAll("#aspect-grid .pick-tile").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      document.querySelectorAll("#aspect-grid .pick-tile").forEach(function (t) { t.classList.remove("active"); });
+      tile.classList.add("active");
+      selectedAspect = tile.dataset.aspect;
+    });
+  });
+
+  goBtn.addEventListener("click", function () {
+    if (!selectedFile) return;
+    goBtn.disabled = true;
+    progress.classList.add("active");
+    resultCard.classList.remove("active");
+    setMsg("");
+
+    var form = new FormData();
+    form.append("file", selectedFile);
+
+    var url = API_BASE + "/studio/captions?style=" + encodeURIComponent(selectedStyle) +
+      "&aspect=" + encodeURIComponent(selectedAspect);
+
+    fetch(url, {method: "POST", credentials: "include", body: form})
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          if (!res.ok) {
+            var err = new Error(body.detail || res.statusText);
+            err.body = body;
+            throw err;
+          }
+          return body;
+        });
+      })
+      .then(function (data) {
+        var srtBlob = new Blob([data.srt], {type: "text/plain"});
+        downloadSrt.href = URL.createObjectURL(srtBlob);
+
+        if (data.styled_preview_url) {
+          var videoUrl = API_BASE + data.styled_preview_url;
+          previewVideo.src = videoUrl;
+          previewVideo.style.display = "block";
+          downloadVideo.href = videoUrl;
+          downloadVideo.style.display = "inline-block";
+        } else {
+          previewVideo.style.display = "none";
+          downloadVideo.style.display = "none";
+        }
+
+        engineNote.textContent = "Transcribed on: " + (data.engine_used === "3090" ? "RTX 3090 (fast)" : "local CPU") +
+          (data.note ? " — " + data.note : "");
+        srtPreview.textContent = data.srt;
+        resultCard.classList.add("active");
+        setMsg("Done.", true);
+      })
+      .catch(function (e) {
+        setMsg((e.body && e.body.detail) ? e.body.detail : "Something went wrong generating captions.", false);
+      })
+      .then(function () {
+        progress.classList.remove("active");
+        goBtn.disabled = false;
+        goBtn.textContent = "Generate captions";
+      });
+  });
+
+  A.me().then(function () {
+    document.getElementById("app").style.display = "block";
+  }).catch(function () {
+    document.getElementById("signed-out").style.display = "block";
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>
