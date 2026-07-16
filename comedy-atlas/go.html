@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Redirecting to tickets… — COMEDY ATLAS</title>
+<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/go.html">
+<style>
+:root{--navy:#0a0e1a;--gold:#c9a84c;--muted:#8899aa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--navy);color:#f0f0f0;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.msg{max-width:420px}
+.msg h1{font-size:22px;font-weight:700;margin-bottom:12px}
+.msg p{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.spinner{width:32px;height:32px;border:3px solid #1e2a3a;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fallback{font-size:13px;color:#556;margin-top:16px}
+.fallback a{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="msg">
+  <div class="spinner"></div>
+  <h1>Taking you to the box office…</h1>
+  <p id="show-name">Loading ticket link…</p>
+  <div class="fallback">If nothing happens, <a id="manual-link" href="/comedy-atlas/">go back to COMEDY ATLAS</a>.</div>
+</div>
+<script>
+// COMEDY ATLAS ticket-referral click-tracking (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md).
+// Mirrors pariscomedy.com's own europe/go.html choke-point pattern exactly
+// (see /Users/chuck/pariscomedy-push-20260526-095907/europe/go.html) but
+// reads live event data instead of a pre-baked ticket_links.json, since
+// COMEDY ATLAS already publishes data/comedy-atlas/upcoming_events.json on
+// every cycle -- no separate export needed.
+//
+// Every "tickets" link on the site (atlas-common.js renderEventCards +
+// scripts/generate_entity_pages.py's static entity pages) points here as
+// go.html?e=<event id>&dest=<hostname>. This page never links out raw:
+//   1) validates `dest` (and, once resolved, the real URL's hostname)
+//      against partner-config.json's ALLOWED_TICKET_HOSTS allowlist --
+//      refuses to redirect anywhere else (open-redirect defense),
+//   2) looks up the event by id in upcoming_events.json for the *current*
+//      canonical_event_url (defends against a stale/edited link),
+//   3) appends any partner/affiliate params from that same file's
+//      PARTNER_PARAMS map (empty today -- one edit adds codes everywhere
+//      once a partnership lands, no page regeneration required),
+//   4) redirects.
+// Its own page load (go.html?e=..&dest=..) is tracked as a pageview by
+// atlas-track.js (loaded below) -- that page_views row (path includes the
+// event id + destination host as query params) IS the click-count evidence
+// for future partnership negotiations. No new backend endpoint needed;
+// scripts/atlas_ticket_clicks_report.py reads exactly this.
+(async function () {
+  var params = new URLSearchParams(window.location.search);
+  var eventId = params.get('e') || '';
+  var declaredDest = (params.get('dest') || '').toLowerCase().replace(/^www\./, '');
+
+  var manualLink = document.getElementById('manual-link');
+  var showName = document.getElementById('show-name');
+
+  function fail(text) {
+    showName.textContent = text;
+  }
+
+  if (!eventId) {
+    fail('No show specified.');
+    return;
+  }
+
+  function safeHttpUrl(rawUrl) {
+    try {
+      var u = new URL(rawUrl);
+      return /^https?:$/.test(u.protocol) ? u : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function hostAllowed(host, allowlist) {
+    if (!host) return false;
+    host = host.toLowerCase().replace(/^www\./, '');
+    return allowlist.indexOf(host) !== -1;
+  }
+
+  var allowlist = [];
+  var partnerParams = {};
+  try {
+    var cfg = await fetch('partner-config.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
+    allowlist = cfg.ALLOWED_TICKET_HOSTS || [];
+    partnerParams = cfg.PARTNER_PARAMS || {};
+  } catch (_) {
+    // No config reachable -- fail closed (empty allowlist refuses every host).
+  }
+
+  // Defense in depth: refuse before even fetching event data if the
+  // caller-declared destination isn't allowlisted (covers a tampered link).
+  if (declaredDest && !hostAllowed(declaredDest, allowlist)) {
+    fail('This destination is not a recognized ticket provider.');
+    return;
+  }
+
+  var event = null;
+  try {
+    var events = await fetch('../data/comedy-atlas/upcoming_events.json', { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+    if (Array.isArray(events)) {
+      event = events.find(function (e) { return String(e.id) === String(eventId); }) || null;
+    }
+  } catch (_) {
+    // upcoming_events.json unreachable
+  }
+
+  if (!event || !event.canonical_event_url) {
+    fail('Ticket link not found for this show.');
+    return;
+  }
+
+  var u = safeHttpUrl(event.canonical_event_url);
+  if (!u) {
+    fail('Invalid ticket URL.');
+    return;
+  }
+
+  var host = u.hostname.toLowerCase().replace(/^www\./, '');
+  if (!hostAllowed(host, allowlist)) {
+    fail('This destination is not a recognized ticket provider.');
+    return;
+  }
+
+  // Global partner params (empty until a partnership lands), plus any
+  // event/host-specific override under partnerParams[hostname].
+  var globalParams = partnerParams['*'] || {};
+  var hostParams = partnerParams[host] || {};
+  Object.keys(globalParams).concat(Object.keys(hostParams)).forEach(function (k) {
+    var v = (hostParams[k] !== undefined) ? hostParams[k] : globalParams[k];
+    if (!u.searchParams.has(k)) u.searchParams.set(k, v);
+  });
+
+  var finalUrl = u.toString();
+
+  showName.textContent = 'Taking you to: ' + (event.title || 'the ticket page');
+  manualLink.href = finalUrl;
+  manualLink.textContent = 'click here to go directly';
+
+  setTimeout(function () {
+    window.location.href = finalUrl;
+  }, 300);
+})();
+</script>
+<script src="atlas-track.js" defer></script>
+</body>
+</html>

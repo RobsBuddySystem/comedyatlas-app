@@ -252,10 +252,21 @@
         if (price) metaParts.push(price);
         var meta = metaParts.join(' <span class="sep">·</span> ');
 
+        // Ticket-referral click-tracking (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md):
+        // every outbound ticket link routes through go.html rather than
+        // linking straight to canonical_event_url. go.html allowlists the
+        // destination, appends any future PARTNER_PARAMS, and its own page
+        // load is the click-count evidence (see go.html + atlas-track.js).
         var hasUrl = ev.canonical_event_url && /^https?:\/\//.test(ev.canonical_event_url);
-        var ticket = hasUrl
-          ? '<a class="ticket-link" href="' + escapeHtml(ev.canonical_event_url) + '" rel="noopener noreferrer" target="_blank">Official tickets →</a>'
-          : '<span class="ticket-link disabled">No ticket link yet</span>';
+        var ticket = "";
+        if (hasUrl) {
+          var destHost = "";
+          try { destHost = new URL(ev.canonical_event_url).hostname.replace(/^www\./, ""); } catch (_) { destHost = ""; }
+          var goHref = "go.html?e=" + encodeURIComponent(ev.id) + (destHost ? "&dest=" + encodeURIComponent(destHost) : "");
+          ticket = '<a class="ticket-link" href="' + escapeHtml(goHref) + '" rel="noopener noreferrer" target="_blank">Official tickets →</a>';
+        } else {
+          ticket = '<span class="ticket-link disabled">No ticket link yet</span>';
+        }
 
         html += '<article class="event-card">';
         html += '  <div class="event-top">';
