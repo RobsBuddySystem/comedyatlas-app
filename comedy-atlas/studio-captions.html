@@ -83,9 +83,28 @@ button.primary:disabled{opacity:.5;cursor:default}
 .back-link{font-size:13px;color:var(--muted);margin-bottom:14px;display:inline-block}
 .back-link:hover{color:var(--text)}
 footer{margin-top:30px;font-size:12px;color:var(--muted)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
 </style>
 </head>
 <body>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/europe.html">Europe</a>
+    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
 <div class="container">
   <a class="back-link" href="comic.html">← Back to my comic portal</a>
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
@@ -164,6 +183,11 @@ footer{margin-top:30px;font-size:12px;color:var(--muted)}
     Runs on faster-whisper (open-source, self-hosted) + ffmpeg. No paid API,
     ever. Long sets and a background job queue are a planned follow-up — v1
     is best for clips a few minutes long.
+    <div class="footer-links">
+      <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+      <span class="sep">·</span>
+      <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+    </div>
   </footer>
 </div>
 

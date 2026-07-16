@@ -56,9 +56,29 @@ input:disabled + .slider{opacity:.35;cursor:not-allowed}
 .pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--muted);color:var(--muted);text-transform:uppercase}
 .pill.active{border-color:var(--gold);color:var(--gold)}
 .privacy{font-size:12px;color:var(--muted)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
 </style>
 </head>
 <body>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/europe.html">Europe</a>
+    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
 <div class="container">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">NOTIFICATION SETTINGS</div>
@@ -212,6 +232,15 @@ input:disabled + .slider{opacity:.35;cursor:not-allowed}
 
   </div>
 </div>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+  </div>
+</footer>
 
 <script src="atlas-track.js"></script>
 <script src="atlas-auth.js"></script>

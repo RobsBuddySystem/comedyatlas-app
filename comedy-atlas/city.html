@@ -130,6 +130,10 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .privacy-note strong{color:var(--text)}
 
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
 
 @media(max-width:600px){
   .nav-links{font-size:13px;gap:14px}
@@ -217,9 +221,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </main>
 
 <footer>
-  <div>
-    <a href="https://www.instagram.com/comedyatlasapp/" target="_blank" rel="noopener">Instagram</a>
-    &nbsp;·&nbsp;
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
     <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
   </div>
 </footer>
