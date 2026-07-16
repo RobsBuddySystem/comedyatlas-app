@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're offline — COMEDY ATLAS</title>
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.wrap{max-width:640px;margin:0 auto;padding:48px 20px}
+.logo{font-size:20px;font-weight:800;margin-bottom:8px}
+.logo .dot{color:var(--gold)}
+h1{font-size:20px;margin-bottom:6px}
+p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:10px}
+.card .title{font-weight:700;font-size:15px}
+.card .meta{color:var(--muted);font-size:13px;margin-top:4px}
+.empty{color:var(--muted);font-size:14px;padding:20px 0}
+button{padding:10px 16px;border-radius:8px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-weight:700;font-size:13px;cursor:pointer;margin-top:18px}
+button:hover{opacity:.85}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1>You're offline</h1>
+  <p class="sub">No connection right now — showing the last shows we had cached.</p>
+  <div id="list"><div class="empty">Looking for cached shows…</div></div>
+  <button onclick="location.reload()">Try again</button>
+</div>
+<script>
+(function () {
+  "use strict";
+  var listEl = document.getElementById("list");
+
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return "";
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+
+  function render(events) {
+    if (!events || !events.length) {
+      listEl.innerHTML = '<div class="empty">No cached shows available yet — visit a page online once, then this page can show them offline.</div>';
+      return;
+    }
+    var now = Date.now();
+    var upcoming = events
+      .filter(function (e) { return e && e.date_utc && new Date(e.date_utc).getTime() >= now - 86400000; })
+      .sort(function (a, b) { return new Date(a.date_utc) - new Date(b.date_utc); })
+      .slice(0, 15);
+    if (!upcoming.length) upcoming = events.slice(0, 15);
+    listEl.innerHTML = upcoming.map(function (e) {
+      var name = escapeHtml(e.show_name || e.title || e.org_name || "Show");
+      var city = escapeHtml(e.city || "");
+      var date = "";
+      try { date = e.date_utc ? new Date(e.date_utc).toLocaleDateString("en-GB", {weekday:"short", day:"numeric", month:"short"}) : ""; } catch (_) {}
+      return '<div class="card"><div class="title">' + name + '</div><div class="meta">' + [date, city].filter(Boolean).join(" — ") + '</div></div>';
+    }).join("");
+  }
+
+  // Reuse whatever the service worker (or a prior visit) already cached --
+  // no network request here on purpose, this page IS the offline fallback.
+  if ("caches" in window) {
+    caches.match("/data/comedy-atlas/upcoming_events.json")
+      .then(function (res) { return res ? res.json() : null; })
+      .then(render)
+      .catch(function () { render(null); });
+  } else {
+    render(null);
+  }
+})();
+</script>
+</body>
+</html>

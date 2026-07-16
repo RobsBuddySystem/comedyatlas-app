@@ -6,6 +6,12 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <title id="doc-title">COMEDY ATLAS — City | Paris Comedy</title>
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
 <meta id="doc-desc" name="description" content="COMEDY ATLAS: find English-language stand-up comedy by city, worldwide. Verified listings, official ticket links.">
 <!--
   Static per-city view, generalized across every city in the data via a
@@ -220,6 +226,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </main>
 
+<p class="privacy-note container">
+  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
+  only. No comedian or organizer contact information is ever shown here — the
+  privacy relay is the product. Every listing links to the organizer's
+  official ticket page.
+</p>
+
 <footer>
   <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
   <div class="footer-links">
@@ -230,6 +243,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </footer>
 
 <script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
 <script src="atlas-common.js"></script>
 <script>
 (function () {

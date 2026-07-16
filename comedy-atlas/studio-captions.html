@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free auto-captions — COMEDY ATLAS Studio</title>
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
 <meta name="description" content="Upload a clip, get accurate word-level captions burned in and a downloadable .srt — free, no CapCut/Submagic subscription needed.">
 <!--
   Sprint A flagship (docs/ATLAS_STUDIO_MASTER_PLAN.md, docs/research/
@@ -192,6 +198,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 </div>
 
 <script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
 <script src="atlas-auth.js"></script>
 <script>
 (function () {
