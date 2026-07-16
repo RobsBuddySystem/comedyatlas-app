@@ -252,14 +252,19 @@
         if (price) metaParts.push(price);
         var meta = metaParts.join(' <span class="sep">·</span> ');
 
-        // Ticket-referral click-tracking (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md):
-        // every outbound ticket link routes through go.html rather than
-        // linking straight to canonical_event_url. go.html allowlists the
-        // destination, appends any future PARTNER_PARAMS, and its own page
-        // load is the click-count evidence (see go.html + atlas-track.js).
+        // Phase 3b (docs/spec/phase-3b-fan-experience.md, D1): "every
+        // ticket link routes through the event's own page first" -- the
+        // per-event static page (/comedy-atlas/event/<slug>/) is where the
+        // go.html click-tracked outbound link actually lives now. This
+        // hub/city JS listing only still links straight to go.html for an
+        // event with no slug yet (defensive; backfill_slugs.py runs every
+        // publish cycle so this should be rare in steady state).
         var hasUrl = ev.canonical_event_url && /^https?:\/\//.test(ev.canonical_event_url);
         var ticket = "";
-        if (hasUrl) {
+        if (ev.slug) {
+          var eventHref = "event/" + encodeURIComponent(ev.slug) + "/";
+          ticket = '<a class="ticket-link" href="' + escapeHtml(eventHref) + '">View & tickets →</a>';
+        } else if (hasUrl) {
           var destHost = "";
           try { destHost = new URL(ev.canonical_event_url).hostname.replace(/^www\./, ""); } catch (_) { destHost = ""; }
           var goHref = "go.html?e=" + encodeURIComponent(ev.id) + (destHost ? "&dest=" + encodeURIComponent(destHost) : "");
