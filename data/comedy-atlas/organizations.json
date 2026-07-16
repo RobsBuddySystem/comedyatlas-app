@@ -1398,5 +1398,47 @@
     "name": "Laughing Horse Free Festival",
     "organization_type": "other",
     "website_url": "https://freefestival.co.uk"
+  },
+  {
+    "active_status": "active",
+    "city_id": 49,
+    "city_name": "Zagreb",
+    "country_iso2": "HR",
+    "country_name": "Croatia",
+    "description": null,
+    "id": 104,
+    "instagram_handle": null,
+    "instagram_url": null,
+    "name": "Headline Comedy",
+    "organization_type": "comedy_club_operator",
+    "website_url": "https://www.headline.show/"
+  },
+  {
+    "active_status": "active",
+    "city_id": 51,
+    "city_name": "Sofia",
+    "country_iso2": "BG",
+    "country_name": "Bulgaria",
+    "description": null,
+    "id": 105,
+    "instagram_handle": null,
+    "instagram_url": null,
+    "name": "Inside Joke Stand-up Comedy",
+    "organization_type": "comedy_club_operator",
+    "website_url": "https://www.insidejokestandup.com/"
+  },
+  {
+    "active_status": "active",
+    "city_id": 25,
+    "city_name": "Paris",
+    "country_iso2": "FR",
+    "country_name": "France",
+    "description": "staged by pipeline.resolve for ticketing source 93 ('Eventbrite: The Dissident Club') \u2014 no canonical org matched the event title or source label",
+    "id": 110,
+    "instagram_handle": null,
+    "instagram_url": null,
+    "name": "The Dissident Club",
+    "organization_type": "production_company",
+    "website_url": null
   }
 ]
