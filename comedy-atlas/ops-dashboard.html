@@ -101,6 +101,15 @@ tr:last-child td{border-bottom:none}
       <div id="scraper-table"></div>
     </div>
   </div>
+
+  <div class="grid">
+    <div class="card grid-wide">
+      <h2>Revenue — MRR toward €400/mo target</h2>
+      <div id="mrr-stat" class="stat-row"><span class="empty">Loading…</span></div>
+      <div id="mrr-bar-track" style="height:10px;background:var(--border);border-radius:5px;overflow:hidden;margin:8px 0"><div id="mrr-bar-fill" style="height:100%;background:var(--gold);width:0%"></div></div>
+      <div id="mrr-sub" class="stat-sub"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -257,7 +266,32 @@ tr:last-child td{border-bottom:none}
       }).join("") + '</tbody></table>';
   }
 
+  // Revenue MRR card -- reads the static revenue-mrr.json this dashboard
+  // itself ships alongside (same directory-relative pattern as
+  // partner-config.json/upcoming_events.json), written by
+  // scripts/revenue/ledger.py. Independent of /api/atlas-metrics so a
+  // stale/unreachable backend never hides real ledger numbers.
+  function loadMrr() {
+    fetch("revenue-mrr.json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (d) {
+        var pct = d.target_eur ? Math.min(100, Math.round((d.mrr_eur / d.target_eur) * 100)) : 0;
+        el("mrr-stat").innerHTML = '<div class="stat">' + fmt(d.mrr_eur) +
+          '<span class="unit">EUR/mo of ' + fmt(d.target_eur) + ' EUR/mo target</span></div>';
+        el("mrr-bar-fill").style.width = pct + "%";
+        el("mrr-sub").textContent = d.deal_count + " closed deal(s) · floor milestone "
+          + fmt(d.floor_eur) + " EUR/mo · as of " + new Date(d.generated_at).toLocaleString();
+      })
+      .catch(function () {
+        el("mrr-stat").innerHTML = '<span class="empty">no revenue-mrr.json yet — run scripts/revenue/ledger.py</span>';
+      });
+  }
+
   function load() {
+    loadMrr();
     fetch(API_BASE + "/api/atlas-metrics", { cache: "no-store" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
