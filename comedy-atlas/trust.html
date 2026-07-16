@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trust &amp; data — COMEDY ATLAS</title>
+<meta name="description" content="How COMEDY ATLAS keeps listings honest: verified venues, a stand-up-only gate, the privacy relay, and public data sources.">
+<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/trust.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trust &amp; data — COMEDY ATLAS">
+<meta property="og:description" content="How we keep listings honest.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{max-width:820px;margin:0 auto;padding:0 20px}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+
+header{max-width:820px;margin:0 auto;padding:44px 20px 20px}
+h1{font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-1px}
+h1 .dot{color:var(--gold)}
+.lede{color:var(--gold-light);font-size:16px;font-weight:700;margin-top:10px}
+
+main{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+section{margin:32px 0}
+section h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+section p{color:var(--muted);font-size:15px;margin-bottom:10px}
+section p strong{color:var(--text)}
+
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+.stat-tile{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.stat-tile .stat-num{font-size:26px;font-weight:800;color:var(--gold)}
+.stat-tile .stat-num.na{color:var(--muted);font-size:18px}
+.stat-tile .stat-label{color:var(--muted);font-size:12.5px;margin-top:4px}
+.stat-asof{color:var(--muted);font-size:12px;margin-top:10px}
+
+.rule-list{list-style:none}
+.rule-list li{display:flex;gap:10px;margin-bottom:12px;color:var(--muted);font-size:15px}
+.rule-list li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0}
+.rule-list li strong{color:var(--text)}
+
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <div class="nav-links">
+    <a href="/comedy-atlas/">COMEDY ATLAS</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Trust &amp; data<span class="dot">.</span></h1>
+  <p class="lede">How we keep listings honest.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>This week</h2>
+  <p id="stats-intro">Loading moderation activity…</p>
+  <div class="stat-grid" id="stat-grid"></div>
+  <p class="stat-asof" id="stat-asof"></p>
+</section>
+
+<section>
+  <h2>Our standing rules</h2>
+  <ul class="rule-list">
+    <li><strong>Verified venues.</strong> A new venue is never published from a single, unconfirmed source — it needs corroboration from at least two independent sources (a festival programme, a second ticketing platform, an official venue site) before it appears on the map.</li>
+    <li><strong>Stand-up only.</strong> Every listing passes a genre gate before publication — quizzes, movie nights, karaoke, and other non-stand-up events at comedy venues are filtered out, not shown alongside real shows.</li>
+    <li><strong>The privacy relay is the product.</strong> COMEDY ATLAS shows public event and venue details only. No comedian's or organizer's personal contact info — email, phone — is ever displayed to another user. Every booking conversation goes through an anonymous relay; every ticket link points to the organizer's own official page.</li>
+    <li><strong>No pay-to-rank.</strong> A show's position in search results is never influenced by whether its organizer pays us. Paid placement (when it exists) is always labeled as such.</li>
+    <li><strong>Every fact is sourced.</strong> Each listing traces back to a specific source (an official venue site, a ticketing platform, a festival programme) — we don't invent or guess event details, and no AI model ever writes a canonical fact. A local model (never a paid API) may only draft a low-stakes suggestion for a human to approve or reject.</li>
+    <li><strong>Ghost events get removed.</strong> When a show is cancelled or a listing turns out to be wrong, it comes down — see the counts above for how often that happens, not just that it can.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Where the data comes from</h2>
+  <p>COMEDY ATLAS aggregates public listings from official venue websites, festival programmes (Edinburgh Fringe, PBH's Free Fringe, Laughing Horse, and others), and public ticketing platforms (Eventbrite and similar). We link directly to each organizer's own ticket page — we never resell tickets or take a cut of the door.</p>
+  <p>See something wrong? Use the feedback button on any page, or write to <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a> — we read every note.</p>
+</section>
+
+</main>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <span class="sep">·</span>
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+  </div>
+</footer>
+
+<script src="atlas-track.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // moderation_stats.json is built by another in-flight workstream
+  // (scripts/generate_public_exports.py::write_moderation_stats --
+  // docs/atlas-ops/GROWTH_ROADMAP_2026-07-16.md "public moderation log").
+  // This page renders gracefully whether or not it exists yet: every stat
+  // shows "n/a" until the feed lands, rather than a broken page or a
+  // fabricated number.
+  var STATS_URL = "../data/comedy-atlas/moderation_stats.json";
+
+  var TILE_DEFS = [
+    { key: "ghost_events_removed_7d", label: "Ghost events removed (7d)" },
+    { key: "venues_reverified_7d", label: "Venues re-verified (7d)" },
+    { key: "venues_verified_total", label: "Verified venues" },
+    { key: "non_standup_filtered_7d", label: "Non-stand-up filtered (7d)" },
+    { key: "sources_tracked", label: "Sources tracked" },
+  ];
+
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return "";
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderTiles(stats) {
+    var grid = document.getElementById("stat-grid");
+    var html = "";
+    TILE_DEFS.forEach(function (def) {
+      var has = stats && stats[def.key] !== undefined && stats[def.key] !== null;
+      var val = has ? stats[def.key] : "n/a";
+      html += '<div class="stat-tile"><div class="stat-num' + (has ? "" : " na") + '">' +
+        escapeHtml(val) + '</div><div class="stat-label">' + escapeHtml(def.label) + '</div></div>';
+    });
+    grid.innerHTML = html;
+  }
+
+  fetch(STATS_URL, { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error("no stats yet"); return r.json(); })
+    .then(function (stats) {
+      document.getElementById("stats-intro").textContent =
+        "A running count of the moderation work behind every listing.";
+      renderTiles(stats);
+      if (stats && stats.generated_at) {
+        document.getElementById("stat-asof").textContent =
+          "As of " + new Date(stats.generated_at).toLocaleString();
+      }
+    })
+    .catch(function () {
+      document.getElementById("stats-intro").textContent =
+        "Moderation activity numbers are coming soon — the rules below apply today regardless.";
+      renderTiles(null);
+    });
+})();
+</script>
+</body>
+</html>

@@ -226,6 +226,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </main>
 
+<div class="atlas-subscribe-mount container" id="atlas-subscribe-mount"></div>
+
 <p class="privacy-note container">
   <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
   only. No comedian or organizer contact information is ever shown here — the
@@ -236,6 +238,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <footer>
   <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
   <div class="footer-links">
+    <a href="trust.html">Trust &amp; data</a>
+    <span class="sep">·</span>
     <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
     <span class="sep">·</span>
     <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
@@ -245,6 +249,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
 <script src="atlas-common.js"></script>
+<script>
+  document.getElementById("atlas-subscribe-mount").setAttribute(
+    "data-city", new URLSearchParams(window.location.search).get("city") || "Paris");
+</script>
+<script src="atlas-city-subscribe.js"></script>
 <script>
 (function () {
   "use strict";
