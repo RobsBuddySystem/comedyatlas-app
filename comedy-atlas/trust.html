@@ -48,6 +48,7 @@ section p strong{color:var(--text)}
 .stat-tile .stat-num{font-size:26px;font-weight:800;color:var(--gold)}
 .stat-tile .stat-num.na{color:var(--muted);font-size:18px}
 .stat-tile .stat-label{color:var(--muted);font-size:12.5px;margin-top:4px}
+.stat-note{color:var(--muted);font-size:13px;margin-top:12px;line-height:1.5}
 .stat-asof{color:var(--muted);font-size:12px;margin-top:10px}
 
 .rule-list{list-style:none}
@@ -65,10 +66,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <body>
 
 <nav>
-  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
-    <a href="/comedy-atlas/">COMEDY ATLAS</a>
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/trust.html">Trust</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
     <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
 
@@ -83,6 +87,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <h2>This week</h2>
   <p id="stats-intro">Loading moderation activity…</p>
   <div class="stat-grid" id="stat-grid"></div>
+  <p class="stat-note">A "ghost event" is a listing whose event turned out to be cancelled, fake, or already gone — this is how many we caught and pulled down before you'd ever see them.</p>
   <p class="stat-asof" id="stat-asof"></p>
 </section>
 
@@ -122,20 +127,28 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 (function () {
   "use strict";
 
-  // moderation_stats.json is built by another in-flight workstream
-  // (scripts/generate_public_exports.py::write_moderation_stats --
-  // docs/atlas-ops/GROWTH_ROADMAP_2026-07-16.md "public moderation log").
-  // This page renders gracefully whether or not it exists yet: every stat
-  // shows "n/a" until the feed lands, rather than a broken page or a
-  // fabricated number.
+  // moderation_stats.json is written by scripts/generate_public_exports.py
+  // ::write_moderation_stats every publish cycle (pipeline/moderation_stats
+  // .py has the full counter-by-counter mapping and rationale for each
+  // key). This page renders gracefully whether or not the feed is
+  // reachable: every stat shows "n/a" on a fetch failure, rather than a
+  // broken page or a fabricated number.
+  //
+  // 2026-07-17 fix: TILE_DEFS used to reference five key names
+  // (ghost_events_removed_7d, venues_reverified_7d, venues_verified_total,
+  // non_standup_filtered_7d, sources_tracked) that the feed has NEVER
+  // produced -- zero overlap with the five keys
+  // compute_moderation_stats() actually returns, so every tile always
+  // read "n/a" regardless of real data. Aligned to the real keys here;
+  // see pipeline/moderation_stats.py for what each one measures.
   var STATS_URL = "../data/comedy-atlas/moderation_stats.json";
 
   var TILE_DEFS = [
-    { key: "ghost_events_removed_7d", label: "Ghost events removed (7d)" },
-    { key: "venues_reverified_7d", label: "Venues re-verified (7d)" },
-    { key: "venues_verified_total", label: "Verified venues" },
-    { key: "non_standup_filtered_7d", label: "Non-stand-up filtered (7d)" },
-    { key: "sources_tracked", label: "Sources tracked" },
+    { key: "ghost_events_pruned", label: "Ghost events pruned (7d)" },
+    { key: "non_standup_rejected", label: "Non-stand-up shows rejected (7d)" },
+    { key: "venues_verified", label: "Venues verified (7d)" },
+    { key: "entities_corroborated", label: "New listings corroborated (7d)" },
+    { key: "sources_paused", label: "Sources currently paused" },
   ];
 
   function escapeHtml(s) {
@@ -159,11 +172,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     .then(function (r) { if (!r.ok) throw new Error("no stats yet"); return r.json(); })
     .then(function (stats) {
       document.getElementById("stats-intro").textContent =
-        "A running count of the moderation work behind every listing.";
+        "A running count of the moderation work behind every listing, updated every publish cycle.";
       renderTiles(stats);
-      if (stats && stats.generated_at) {
-        document.getElementById("stat-asof").textContent =
-          "As of " + new Date(stats.generated_at).toLocaleString();
+      if (stats && stats.week) {
+        document.getElementById("stat-asof").textContent = "As of " + stats.week;
       }
     })
     .catch(function () {
