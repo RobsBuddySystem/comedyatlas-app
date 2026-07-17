@@ -40,6 +40,16 @@
     Edinburgh sources), not something this page can invent.
   - No neighbourhood/area, accessibility, or age-restriction fields exist in
     the export -> those facets from the research doc are omitted entirely.
+  - Duration facet (Phase 3b deliverable #6, 2026-07-17): event_instances.
+    ends_at is real, source-parsed data (never fabricated) and is populated
+    for ~100% of upcoming rows, BUT for umbrella festival listings
+    (venue_name null -- Edinburgh PBH/Laughing Horse) starts_at/ends_at span
+    the entire announced run, not one show's length. AtlasCommon.
+    deriveDurationBucket() returns null (excluded, never mis-bucketed) for
+    any event without a real venue_name, so the "Any length" facet only
+    ever buckets real per-show durations; buildDurationOptions() hides the
+    whole control (mirrors the organizer-facet convention) when a city has
+    zero events with a derivable duration.
 -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -133,6 +143,18 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--purple);border-radius:50%;margin:0 auto 16px;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+.venue-map-section{max-width:900px;margin:0 auto;padding:0 20px 8px}
+.venue-map-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:10px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
 
@@ -211,6 +233,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <option value="evening">Evening</option>
       <option value="late">Late night</option>
     </select>
+    <select id="filter-duration" aria-label="Filter by duration" style="display:none">
+      <option value="">Any length</option>
+      <option value="under45">Under 45 min</option>
+      <option value="45to90">45–90 min</option>
+      <option value="over90">Over 90 min</option>
+    </select>
     <select id="filter-org" aria-label="Filter by organizer" style="display:none">
       <option value="">All organizers</option>
     </select>
@@ -220,6 +248,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <span id="result-count"></span>
     <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
   </div>
+</div>
+
+<div class="venue-map-section">
+  <div class="venue-map-heading">Venue map</div>
+  <div id="venue-map"></div>
 </div>
 
 <main id="app" aria-live="polite">
@@ -257,6 +290,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     "data-city", new URLSearchParams(window.location.search).get("city") || "Paris");
 </script>
 <script src="atlas-city-subscribe.js"></script>
+<script src="atlas-venue-map.js"></script>
 <script>
 (function () {
   "use strict";
@@ -291,6 +325,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var priceFilter = document.getElementById("filter-price");
   var langFilter = document.getElementById("filter-lang");
   var todFilter = document.getElementById("filter-tod");
+  var durationFilter = document.getElementById("filter-duration");
   var orgFilter = document.getElementById("filter-org");
   var formatGrid = document.getElementById("format-grid");
   var resultCount = document.getElementById("result-count");
@@ -309,6 +344,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     venue: params.get("venue") || "",
     price: params.get("price") || "",
     lang: params.get("lang") || "",
+    duration: params.get("duration") || "",
     org: orgParam,
     q: params.get("q") || ""
   };
@@ -326,6 +362,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (state.venue) p.set("venue", state.venue);
     if (state.price) p.set("price", state.price);
     if (state.lang) p.set("lang", state.lang);
+    if (state.duration) p.set("duration", state.duration);
     if (state.org) p.set("org", state.org);
     if (state.q) p.set("q", state.q);
     var qs = p.toString();
@@ -342,6 +379,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     priceFilter.value = state.price;
     langFilter.value = state.lang;
     todFilter.value = state.tod;
+    durationFilter.value = state.duration;
     orgFilter.value = state.org;
     searchInput.value = state.q;
   }
@@ -429,6 +467,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
   }
 
+  // Duration facet: only shown when at least some events in this city carry
+  // a real, non-umbrella duration (see AtlasCommon.deriveDurationBucket for
+  // why umbrella/festival rows are excluded rather than mis-bucketed).
+  // Mirrors buildOrgOptions' own "hide the facet if it wouldn't be useful"
+  // convention (there: <2 distinct organizers; here: 0 derivable durations).
+  function buildDurationOptions(events) {
+    var any = events.some(function (ev) { return A.deriveDurationBucket(ev) !== null; });
+    durationFilter.style.display = any ? "" : "none";
+    if (!any && state.duration) { state.duration = ""; }
+  }
+
   function buildOrgOptions(events) {
     var orgs = {};
     events.forEach(function (ev) {
@@ -462,6 +511,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return true;
   }
 
+  function matchesDuration(ev, duration) {
+    if (!duration) return true;
+    return A.deriveDurationBucket(ev) === duration;
+  }
+
   function applyFilters() {
     var buckets = A.makeTimeBuckets();
     var filtered = allEvents.filter(function (ev) {
@@ -479,6 +533,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       if (state.venue && venueKey(ev) !== state.venue) return false;
       if (state.org && ev.organization_name !== state.org) return false;
       if (!matchesPrice(ev, state.price)) return false;
+      if (!matchesDuration(ev, state.duration)) return false;
       if (!matchesSearch(ev, state.q)) return false;
       return true;
     });
@@ -494,9 +549,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return parts[2] + "/" + parts[1] + "/" + parts[0];
   }
 
+  var venueMapEl = document.getElementById("venue-map");
+
   function render() {
     var filtered = applyFilters();
     buildFormatGrid(allEvents);
+
+    if (venueMapEl && window.AtlasVenueMap) {
+      window.AtlasVenueMap.render(venueMapEl, filtered, { basePath: "" });
+    }
     Array.prototype.forEach.call(formatGrid.children, function (tile) {
       tile.classList.toggle("active", tile.getAttribute("data-format") === state.format);
     });
@@ -556,6 +617,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   priceFilter.addEventListener("change", function () { state.price = priceFilter.value; onFilterChange(); });
   langFilter.addEventListener("change", function () { state.lang = langFilter.value; onFilterChange(); });
   todFilter.addEventListener("change", function () { state.tod = todFilter.value; onFilterChange(); });
+  durationFilter.addEventListener("change", function () { state.duration = durationFilter.value; onFilterChange(); });
   orgFilter.addEventListener("change", function () { state.org = orgFilter.value; onFilterChange(); });
   venueInput.addEventListener("input", function () { state.venue = venueInput.value; onFilterChange(); });
 
@@ -569,7 +631,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   });
 
   clearBtn.addEventListener("click", function () {
-    state = { when: "week", day: "", tod: "", format: "", venue: "", price: "", lang: "", org: "", q: "" };
+    state = { when: "week", day: "", tod: "", format: "", venue: "", price: "", lang: "", duration: "", org: "", q: "" };
     onFilterChange();
   });
 
@@ -606,6 +668,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     buildFormatOptions(cityEvents);
     buildVenueOptions(cityEvents);
+    buildDurationOptions(cityEvents);
     buildOrgOptions(cityEvents);
     syncControlsFromState();
     render();

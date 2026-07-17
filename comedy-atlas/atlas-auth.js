@@ -62,5 +62,6 @@ window.AtlasAuth = (function () {
     });
   }
 
-  return {api: api, post: post, put: put, get: get, me: me, escapeHtml: escapeHtml};
+  return {api: api, post: post, put: put, get: get, me: me, escapeHtml: escapeHtml,
+           apiBase: API_BASE};
 })();

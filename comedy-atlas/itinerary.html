@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Itinerary — COMEDY ATLAS</title>
+<meta name="description" content="Save shows across COMEDY ATLAS and plan your festival trip — one calendar, one shareable link for group planning.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/itinerary.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:10px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+input[type=email]{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px}
+button{padding:10px 18px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
+button:hover{opacity:.9}
+button.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+button.small{padding:6px 12px;font-size:12px;margin-top:0}
+button:disabled{opacity:.5;cursor:not-allowed}
+.msg{margin-top:10px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.signed-out{padding:20px 0;text-align:center;color:var(--muted)}
+.show-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.show-row:last-child{border-bottom:none}
+.show-name{font-weight:700;font-size:14px}
+.show-meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.empty-state{color:var(--muted);font-size:14px;padding:12px 0}
+.share-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.share-row input{flex:1;min-width:200px;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12.5px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/trust.html">Trust</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<div class="container">
+  <div class="logo">My Itinerary<span class="dot">.</span></div>
+  <p class="sub">Shows you've saved across COMEDY ATLAS. Free account, no password —
+  we only ever need an email to send you a sign-in link. Share a read-only link with
+  friends for group trip planning.</p>
+
+  <div id="signed-out-card" class="card" style="display:none">
+    <h2>Sign in to save shows</h2>
+    <label for="link-email">Email</label>
+    <input id="link-email" type="email" autocomplete="email" placeholder="you@example.com">
+    <button id="request-link-btn">Email me a sign-in link</button>
+    <div class="msg" id="link-msg"></div>
+  </div>
+
+  <div id="signed-in" style="display:none">
+    <div class="card">
+      <h2>Saved shows</h2>
+      <div id="shows-list"></div>
+    </div>
+
+    <div class="card">
+      <h2>Calendar</h2>
+      <p class="sub" style="margin-bottom:10px">Subscribe or download an .ics file
+      of everything you've saved.</p>
+      <a id="ics-link" href="#"><button class="ghost">Download .ics</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Share for group planning</h2>
+      <p class="sub" style="margin-bottom:10px">Anyone with this link can see (but not
+      edit) your saved shows — no account required on their end. Never shows your
+      email.</p>
+      <div class="share-row">
+        <input id="share-url" type="text" readonly>
+        <button class="small ghost" id="copy-share-btn">Copy</button>
+      </div>
+      <div class="msg" id="share-msg"></div>
+    </div>
+
+    <button class="ghost" id="logout-btn">Sign out</button>
+  </div>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links"><a href="/comedy-atlas/trust.html">Trust &amp; data</a></div>
+</footer>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
+<script src="atlas-auth.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+
+  function setMsg(id, text, ok) {
+    var el = document.getElementById(id);
+    el.textContent = text || "";
+    el.className = "msg" + (ok ? " ok" : text ? " error" : "");
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return "Date TBA";
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    return d.toLocaleString(undefined, {
+      weekday: "short", month: "short", day: "numeric",
+      hour: "numeric", minute: "2-digit",
+    });
+  }
+
+  function renderShows(shows) {
+    var list = document.getElementById("shows-list");
+    if (!shows.length) {
+      list.innerHTML = '<div class="empty-state">Nothing saved yet — hit '
+        + '"Save this show" on any event page.</div>';
+      return;
+    }
+    list.innerHTML = "";
+    shows.forEach(function (s) {
+      var row = document.createElement("div");
+      row.className = "show-row";
+      var name = A.escapeHtml(s.show_series_name || s.title);
+      var metaBits = [s.venue_name, s.city_name].filter(Boolean).map(A.escapeHtml);
+      var slugHref = s.slug ? "/comedy-atlas/event/" + encodeURIComponent(s.slug) + "/" : "#";
+      row.innerHTML =
+        '<div><div class="show-name"><a href="' + slugHref + '">' + name + '</a></div>'
+        + '<div class="show-meta">' + fmtDate(s.starts_at)
+        + (metaBits.length ? " · " + metaBits.join(", ") : "") + '</div></div>'
+        + '<button class="small ghost" data-event-id="' + s.event_id + '">Remove</button>';
+      row.querySelector("button").addEventListener("click", function () {
+        A.api("/fan/saved-shows/" + s.event_id, {method: "DELETE"})
+          .then(loadSavedShows)
+          .catch(function (e) { setMsg("link-msg", e.body && e.body.detail ? e.body.detail : "Could not remove."); });
+      });
+      list.appendChild(row);
+    });
+  }
+
+  function loadSavedShows() {
+    A.get("/fan/saved-shows").then(renderShows).catch(function () {
+      renderShows([]);
+    });
+  }
+
+  function showSignedIn(me) {
+    document.getElementById("signed-out-card").style.display = "none";
+    document.getElementById("signed-in").style.display = "block";
+    // A.apiBase is "" when this page is already same-origin with the api
+    // (served from atlas-api.pariscomedy.com / api.comedyatlas.app), or an
+    // absolute https://...  origin otherwise -- see atlas-auth.js.
+    var apiOrigin = A.apiBase || location.origin;
+    document.getElementById("ics-link").href = apiOrigin + "/fan/saved-shows.ics";
+    document.getElementById("share-url").value = apiOrigin + "/itinerary/" + me.share_token;
+    loadSavedShows();
+  }
+
+  function showSignedOut() {
+    document.getElementById("signed-out-card").style.display = "block";
+    document.getElementById("signed-in").style.display = "none";
+  }
+
+  A.get("/fan/me").then(showSignedIn).catch(showSignedOut);
+
+  document.getElementById("request-link-btn").addEventListener("click", function () {
+    var email = document.getElementById("link-email").value.trim();
+    if (!email) { setMsg("link-msg", "Enter an email address."); return; }
+    A.post("/fan/request-link", {email: email, return_to: location.href})
+      .then(function () { setMsg("link-msg", "Check your email for a sign-in link.", true); })
+      .catch(function (e) { setMsg("link-msg", e.body && e.body.detail ? e.body.detail : "Could not send link."); });
+  });
+
+  document.getElementById("copy-share-btn").addEventListener("click", function () {
+    var input = document.getElementById("share-url");
+    input.select();
+    navigator.clipboard && navigator.clipboard.writeText(input.value).then(function () {
+      setMsg("share-msg", "Copied.", true);
+    }).catch(function () { setMsg("share-msg", "Select and copy manually."); });
+  });
+
+  document.getElementById("logout-btn").addEventListener("click", function () {
+    A.post("/fan/logout", {}).then(function () {
+      showSignedOut();
+    });
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>

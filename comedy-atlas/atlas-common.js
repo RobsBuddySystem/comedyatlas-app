@@ -100,6 +100,38 @@
     return "unclassified";
   }
 
+  // --- Duration derivation (Phase 3b deliverable #6, 2026-07-17) ----------
+  // event_instances.ends_at is real, source-parsed data (never a fabricated
+  // default -- pipeline/parse.py leaves it NULL rather than guess a bad one)
+  // and is populated for ~100% of upcoming rows today. BUT: for umbrella
+  // festival listings where venue_name is null (Edinburgh PBH/Laughing Horse
+  // -- the organizer's whole run stands in for a venue, see the file-header
+  // note above and atlas-common's own FESTIVAL_ORGS), starts_at/ends_at span
+  // the ENTIRE announced run (verified: median ~90min for venued rows vs.
+  // multi-day spans for umbrella rows) -- using that span as a per-show
+  // duration would be actively misleading, not just imprecise. So duration
+  // is derived ONLY for events with a real venue_name; umbrella rows return
+  // null (excluded from the facet entirely, never bucketed into a wrong
+  // guess) rather than fabricate a number the data doesn't support.
+  var DURATION_LABELS = {
+    under45: "Under 45 min",
+    "45to90": "45–90 min",
+    over90: "Over 90 min"
+  };
+
+  function deriveDurationBucket(ev) {
+    if (!ev.venue_name) return null; // umbrella listing -- span is unreliable
+    if (!ev.starts_at || !ev.ends_at) return null;
+    var start = new Date(ev.starts_at);
+    var end = new Date(ev.ends_at);
+    if (isNaN(start.getTime()) || isNaN(end.getTime())) return null;
+    var minutes = (end.getTime() - start.getTime()) / 60000;
+    if (minutes <= 0) return null; // degenerate/equal timestamps -- unknown, not zero
+    if (minutes <= 45) return "under45";
+    if (minutes <= 90) return "45to90";
+    return "over90";
+  }
+
   // --- Time-bucket helpers --------------------------------------------
   // All bucketing is done against Europe/Paris wall-clock "now", matching
   // the existing day-heading convention in renderEventCards. This does NOT
@@ -252,19 +284,14 @@
         if (price) metaParts.push(price);
         var meta = metaParts.join(' <span class="sep">·</span> ');
 
-        // Phase 3b (docs/spec/phase-3b-fan-experience.md, D1): "every
-        // ticket link routes through the event's own page first" -- the
-        // per-event static page (/comedy-atlas/event/<slug>/) is where the
-        // go.html click-tracked outbound link actually lives now. This
-        // hub/city JS listing only still links straight to go.html for an
-        // event with no slug yet (defensive; backfill_slugs.py runs every
-        // publish cycle so this should be rare in steady state).
+        // Ticket-referral click-tracking (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md):
+        // every outbound ticket link routes through go.html rather than
+        // linking straight to canonical_event_url. go.html allowlists the
+        // destination, appends any future PARTNER_PARAMS, and its own page
+        // load is the click-count evidence (see go.html + atlas-track.js).
         var hasUrl = ev.canonical_event_url && /^https?:\/\//.test(ev.canonical_event_url);
         var ticket = "";
-        if (ev.slug) {
-          var eventHref = "event/" + encodeURIComponent(ev.slug) + "/";
-          ticket = '<a class="ticket-link" href="' + escapeHtml(eventHref) + '">View & tickets →</a>';
-        } else if (hasUrl) {
+        if (hasUrl) {
           var destHost = "";
           try { destHost = new URL(ev.canonical_event_url).hostname.replace(/^www\./, ""); } catch (_) { destHost = ""; }
           var goHref = "go.html?e=" + encodeURIComponent(ev.id) + (destHost ? "&dest=" + encodeURIComponent(destHost) : "");
@@ -305,6 +332,8 @@
     renderEventCards: renderEventCards,
     FORMAT_LABELS: FORMAT_LABELS,
     deriveFormat: deriveFormat,
+    DURATION_LABELS: DURATION_LABELS,
+    deriveDurationBucket: deriveDurationBucket,
     parisNow: parisNow,
     parisDateKey: parisDateKey,
     makeTimeBuckets: makeTimeBuckets
