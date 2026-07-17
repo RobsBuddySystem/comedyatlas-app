@@ -139,11 +139,15 @@ async function loadShows(){
       return ev.canonical_event_url && ev.starts_at;
     }).map(function (ev) {
       const d = new Date(ev.starts_at);
+      const urlObj = new URL(ev.canonical_event_url);
       return {
         title: ev.title || 'Untitled show',
         venue: ev.venue_name || '',
         city: ev.city_name || '',
         url: ev.canonical_event_url,
+        slug: ev.slug || '',
+        eventId: ev.id,
+        ticketHost: urlObj.hostname.toLowerCase().replace(/^www\./, ''),
         date: d,
         dateKey: isNaN(d.getTime()) ? '' : dateKeySv(d),
         time: isNaN(d.getTime()) ? '' : A.fmtTime(d),
@@ -182,7 +186,20 @@ function render(){
     const evs = showsOn(date);
     evs.forEach(s=>{
       const a=document.createElement('a'); a.className='ev';
-      a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      // Every card must land on our OWN event page first (Phase 3b D1,
+      // mirrors comedy-atlas/atlas-common.js's renderEventCards): if the
+      // event has a slug, link straight to /comedy-atlas/event/<slug>/,
+      // opened in the same tab. Only fall back to the click-tracked
+      // go.html redirector -- passing the ticket HOST, never the raw
+      // dest URL, since go.html's allowlist check compares `dest` against
+      // bare hostnames -- for events backfill_slugs.py hasn't reached yet.
+      if (s.slug) {
+        a.href = '/comedy-atlas/event/' + encodeURIComponent(s.slug) + '/';
+      } else {
+        a.href = '/comedy-atlas/go.html?e=' + encodeURIComponent(s.eventId) +
+          (s.ticketHost ? '&dest=' + encodeURIComponent(s.ticketHost) : '');
+        a.target = '_blank'; a.rel = 'noopener noreferrer';
+      }
       a.innerHTML = `<div class="ev-time">${s.time||''}</div>`
         + `<div class="ev-name">${A.escapeHtml(s.title)}</div>`
         + (s.venue?`<div class="ev-venue">${A.escapeHtml(s.venue)}</div>`:'')
