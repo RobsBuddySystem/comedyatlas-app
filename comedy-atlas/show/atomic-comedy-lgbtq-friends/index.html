@@ -71,6 +71,17 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 #save-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;min-width:220px}
 .save-email-btn{background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .save-status{font-size:13px;color:var(--muted);margin-top:8px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
@@ -152,7 +163,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
   <div class="event-meta"><span>The Comedy Clubhouse: Canvis Nous</span><span class="sep">·</span><span>Barcelona</span><span class="sep">·</span><span>12.00 EUR</span></div>
   <a class="ticket-link" href="/comedy-atlas/event/atomic-comedy-lgbtq-friends-4219/">View &amp; tickets →</a>
+</div><div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">The Comedy Clubhouse: Canvis Nous</div>
+  <div id="show-venue-map" data-events='[{&quot;id&quot;: 4215, &quot;slug&quot;: &quot;atomic-comedy-lgbtq-friends-4215&quot;, &quot;title&quot;: &quot;AtoMIC Comedy: LGBTQ+ &amp; Friends&quot;, &quot;venue_id&quot;: 180, &quot;venue_name&quot;: &quot;The Comedy Clubhouse: Canvis Nous&quot;, &quot;venue_latitude&quot;: 41.382932, &quot;venue_longitude&quot;: 2.181804, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/atomic-comedy-lgbtq-friends-tickets-1989387891737&quot;}, {&quot;id&quot;: 4216, &quot;slug&quot;: &quot;atomic-comedy-lgbtq-friends-4216&quot;, &quot;title&quot;: &quot;AtoMIC Comedy: LGBTQ+ &amp; Friends&quot;, &quot;venue_id&quot;: 180, &quot;venue_name&quot;: &quot;The Comedy Clubhouse: Canvis Nous&quot;, &quot;venue_latitude&quot;: 41.382932, &quot;venue_longitude&quot;: 2.181804, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/atomic-comedy-lgbtq-friends-tickets-1989387986019&quot;}, {&quot;id&quot;: 4217, &quot;slug&quot;: &quot;atomic-comedy-lgbtq-friends-4217&quot;, &quot;title&quot;: &quot;AtoMIC Comedy: LGBTQ+ &amp; Friends&quot;, &quot;venue_id&quot;: 180, &quot;venue_name&quot;: &quot;The Comedy Clubhouse: Canvis Nous&quot;, &quot;venue_latitude&quot;: 41.382932, &quot;venue_longitude&quot;: 2.181804, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/atomic-comedy-lgbtq-friends-tickets-1989388001064&quot;}, {&quot;id&quot;: 4218, &quot;slug&quot;: &quot;atomic-comedy-lgbtq-friends-4218&quot;, &quot;title&quot;: &quot;AtoMIC Comedy: LGBTQ+ &amp; Friends&quot;, &quot;venue_id&quot;: 180, &quot;venue_name&quot;: &quot;The Comedy Clubhouse: Canvis Nous&quot;, &quot;venue_latitude&quot;: 41.382932, &quot;venue_longitude&quot;: 2.181804, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/atomic-comedy-lgbtq-friends-tickets-1989388028145&quot;}, {&quot;id&quot;: 4219, &quot;slug&quot;: &quot;atomic-comedy-lgbtq-friends-4219&quot;, &quot;title&quot;: &quot;AtoMIC Comedy: LGBTQ+ &amp; Friends&quot;, &quot;venue_id&quot;: 180, &quot;venue_name&quot;: &quot;The Comedy Clubhouse: Canvis Nous&quot;, &quot;venue_latitude&quot;: 41.382932, &quot;venue_longitude&quot;: 2.181804, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/atomic-comedy-lgbtq-friends-tickets-1989388053220&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=41.382932%2C2.181804" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:41.382932,2.181804">Get directions →</a>
 </div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('show-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
 </main>
 <p class="privacy-note container">
   <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
