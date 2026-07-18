@@ -28,7 +28,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .nav-logo .dot{color:var(--gold)}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a{transition:color .15s}.nav-links a:hover{color:var(--text)}
-.nav-active{color:var(--text)!important}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+.nav-links a.nav-active{color:var(--text)!important;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .hero{text-align:center;padding:44px 24px 6px}
 .hero h1{font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.05;margin-bottom:10px}
 .hero h1 .g{color:var(--gold)}
@@ -83,17 +85,19 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
   <a href="/" class="nav-logo">COMEDY ATLAS<span class="dot">.</span></a>
   <div class="nav-links">
-    <a href="/comedy-atlas/">Home</a>
-    <a href="/shows.html" class="nav-active">Shows</a>
-    <a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/comic.html">I'm a comic</a>
-    <a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/booker.html">I'm a booker</a>
+    <a href="/shows.html" class="nav-active" aria-current="page">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
 
-<div class="hero">
+<div class="hero" id="main-content">
   <h1>Comedy <span class="g">Calendar</span></h1>
   <p>Every upcoming stand-up show tracked by COMEDY ATLAS, worldwide. Tap any show for the organizer's official ticket page.</p>
 </div>
