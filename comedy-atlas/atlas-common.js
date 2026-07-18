@@ -49,7 +49,20 @@
   // Price 0 always renders as "Free" — true both for Paris free open-mics
   // and for every Edinburgh Free Fringe / Laughing Horse show (donation
   // model, price_min = 0.00 in the data, never a real currency amount).
+  //
+  // 2026-07-18 (Chuck's editorial desk + daily-blog-build audit, "fans
+  // can't tell what's free"): `is_free` (migration 0094 view column,
+  // derived from event_instances.audience_payment_type — a SOURCED signal,
+  // Eventbrite's own top-level is_free boolean, see pipeline/parse.py's
+  // EventbriteApiEventsParser 1.3) is checked FIRST, before price_min/
+  // price_max. Root cause this closes: a genuinely free Eventbrite show
+  // (most of Paris's real organizers) never carried a $0 ticket_classes
+  // entry at all, so price_min/price_max stayed NULL — indistinguishable
+  // from "price unknown" — and this function returned null (no badge shown)
+  // even though the show WAS free. is_free is a real, independent,
+  // source-declared fact, not derived from price being absent.
   function fmtPrice(ev) {
+    if (ev.is_free === true) return "Free";
     if (ev.price_min == null && ev.price_max == null) return null;
     var cur = ev.currency ? (" " + ev.currency) : "";
     if (ev.price_min != null && ev.price_max != null && ev.price_min !== ev.price_max) {
@@ -328,50 +341,37 @@
         if (price) metaParts.push(price);
         var meta = metaParts.join(' <span class="sep">·</span> ');
 
-        // Ticket-referral click-tracking (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md):
-        // every outbound ticket link routes through go.html rather than
-        // linking straight to canonical_event_url. go.html allowlists the
-        // destination, appends any future PARTNER_PARAMS, and its own page
-        // load is the click-count evidence (see go.html + atlas-track.js).
-        var hasUrl = ev.canonical_event_url && /^https?:\/\//.test(ev.canonical_event_url);
-        var ticket = "";
-        if (hasUrl) {
-          var destHost = "";
-          try { destHost = new URL(ev.canonical_event_url).hostname.replace(/^www\./, ""); } catch (_) { destHost = ""; }
-          var goHref = "go.html?e=" + encodeURIComponent(ev.id) + (destHost ? "&dest=" + encodeURIComponent(destHost) : "");
-          ticket = '<a class="ticket-link" href="' + escapeHtml(goHref) + '" rel="noopener noreferrer" target="_blank">Official tickets →</a>';
-        } else {
-          ticket = '<span class="ticket-link disabled">No ticket link yet</span>';
-        }
-
-        // 2026-07-18, Robert (4th report of this exact bug class): the
-        // card's ONLY clickable element used to be the "Official tickets"
-        // button, going straight to go.html -> the real ticket seller --
-        // the event's own dedicated page was never linked from here at
-        // all, even though it has always existed and worked when visited
-        // directly. This is exactly the "listing card MUST link to our
-        // own event page" rule (spec/phase-3b-fan-experience.md's Standing
-        // rules #1) -- satisfied on the static SEO pages
-        // (scripts/generate_entity_pages.py) but never built into THIS
-        // renderer, the one real visitors actually browse (city.html,
-        // linked from the homepage). Title now links to the event's own
-        // page; "Official tickets" stays as a distinct, clearly secondary
-        // action for tracked ticket-referral clicks (a real, separate
-        // metric this product also cares about), unchanged.
+        // 2026-07-18, Robert (5th report of this exact bug class, this time
+        // on the homepage "Recently verified" strip -- rendered by this
+        // SAME function, since index.html calls A.renderEventCards too):
+        // a listing card's ONLY destination is the event's own dedicated
+        // page (spec/phase-3b-fan-experience.md's Standing rules #1). The
+        // 2026-07-18-earlier fix added the title link but LEFT the
+        // "Official tickets" exit button on the card as a "secondary
+        // action" -- that was itself still a policy violation: the
+        // Official-tickets link exists ONLY on the event's own page
+        // (go.html's tracked choke point, reached from there), never on a
+        // card, not even as a secondary control. No ticket link/button of
+        // any kind on cards now -- matches scripts/generate_entity_pages.py's
+        // related-events card (render_event_card), which has always done
+        // this correctly (single link to /comedy-atlas/event/<slug>/, no
+        // separate ticket exit). The whole card is the click target when a
+        // slug exists (same <a class="place-card"> idiom this file's own
+        // cityCard/festivalCard already use in index.html); a card with no
+        // slug yet renders as a plain, non-clickable block rather than
+        // fabricate a link or fall back to a raw ticket exit.
         var eventHref = ev.slug ? "event/" + encodeURIComponent(ev.slug) + "/" : null;
-        var titleHtml = escapeHtml(ev.title || "Untitled show");
-        if (eventHref) {
-          titleHtml = '<a class="event-title-link" href="' + escapeHtml(eventHref) + '">' + titleHtml + "</a>";
-        }
+        var titleText = escapeHtml(ev.title || "Untitled show");
+        var cardTag = eventHref ? "a" : "div";
+        var cardHrefAttr = eventHref ? ' href="' + escapeHtml(eventHref) + '"' : "";
 
-        html += '<article class="event-card">';
+        html += "<" + cardTag + ' class="event-card"' + cardHrefAttr + ">";
         html += '  <div class="event-top">';
-        html += '    <div class="event-title">' + titleHtml + "</div>";
+        html += '    <div class="event-title">' + titleText + "</div>";
         html += '    <div class="event-time">' + escapeHtml(fmtTime(x.d)) + "</div>";
         html += "  </div>";
         html += '  <div class="event-meta">' + meta + " " + statusBadge(ev) + "</div>";
-        html += '  <div class="event-actions">' + ticket + "</div>";
-        html += "</article>";
+        html += "</" + cardTag + ">";
       });
       html += "</section>";
     });
@@ -418,15 +418,6 @@
     });
     result.sort(function (a, b) { return a.earliest - b.earliest; });
     return result;
-  }
-
-  function _ticketLinkHtml(ev) {
-    var hasUrl = ev.canonical_event_url && /^https?:\/\//.test(ev.canonical_event_url);
-    if (!hasUrl) return '<span class="ticket-link disabled">No ticket link yet</span>';
-    var destHost = "";
-    try { destHost = new URL(ev.canonical_event_url).hostname.replace(/^www\./, ""); } catch (_) { destHost = ""; }
-    var goHref = "go.html?e=" + encodeURIComponent(ev.id) + (destHost ? "&dest=" + encodeURIComponent(destHost) : "");
-    return '<a class="ticket-link" href="' + escapeHtml(goHref) + '" rel="noopener noreferrer" target="_blank">Official tickets →</a>';
   }
 
   // Renders groupEventsByShow()'s output: one card per show, its earliest
@@ -495,7 +486,11 @@
         }
       }
 
-      html += '  <div class="event-actions">' + _ticketLinkHtml(primary) + "</div>";
+      // 2026-07-18: no card-level ticket exit here either (same standing
+      // rule as renderEventCards above) -- the group's own title link
+      // (and, for a multi-date group, each date's own link) already route
+      // to that show/event's dedicated page; the Official-tickets button
+      // belongs exclusively there.
       html += "</article>";
     });
     return html;

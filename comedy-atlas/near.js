@@ -34,13 +34,12 @@
     ".near-tonight-panel .state-block{text-align:center;padding:32px 20px;color:var(--muted,#8899aa)}" +
     ".near-tonight-panel .spinner{width:24px;height:24px;border:3px solid var(--border,#1e2a3a);border-top-color:var(--purple,#7c3aed);border-radius:50%;margin:0 auto 12px;animation:near-spin .8s linear infinite}" +
     "@keyframes near-spin{to{transform:rotate(360deg)}}" +
-    ".near-event-card{background:var(--card,#111827);border:1px solid var(--border,#1e2a3a);border-radius:12px;padding:16px 18px;margin-bottom:12px}" +
+    ".near-event-card{display:block;background:var(--card,#111827);border:1px solid var(--border,#1e2a3a);border-radius:12px;padding:16px 18px;margin-bottom:12px;color:inherit;text-decoration:none;transition:border-color .15s}" +
+    "a.near-event-card:hover{border-color:var(--purple,#7c3aed)}" +
     ".near-event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}" +
     ".near-event-title{font-size:16px;font-weight:700;line-height:1.3}" +
     ".near-event-dist{font-size:13px;color:var(--gold,#c9a84c);font-weight:700;white-space:nowrap}" +
     ".near-event-meta{font-size:13px;color:var(--muted,#8899aa);margin-top:4px}" +
-    ".near-ticket-link{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:#fff;background:var(--purple,#7c3aed);padding:8px 16px;border-radius:8px}" +
-    ".near-ticket-link:hover{opacity:.9}" +
     ".near-fallback-link{color:var(--purple-light,#9d5ff5);font-weight:700}";
 
   function injectCss() {
@@ -56,7 +55,14 @@
     } catch (e) { return ""; }
   }
 
+  // 2026-07-18 ("fans can't tell what's free" — Chuck's editorial desk):
+  // `is_free` (migration 0094, sourced from event_instances.
+  // audience_payment_type) is checked FIRST — a genuinely free show often
+  // has no price_min at all (see atlas-common.js's fmtPrice for the full
+  // root-cause writeup), so falling straight to "no price_min -> blank"
+  // was silently hiding the one signal a free show actually had.
   function fmtPrice(ev) {
+    if (ev.is_free === true) return "Free";
     if (ev.price_min === null || ev.price_min === undefined) return "";
     var cur = ev.currency || "";
     if (ev.price_max && ev.price_max !== ev.price_min) {
@@ -81,13 +87,24 @@
       'Browse by city instead →</a></p></div>');
   }
 
+  // 2026-07-18 (same standing rule enforced in atlas-common.js's card
+  // renderers this same session): a listing card's ONLY destination is the
+  // event's own /comedy-atlas/event/<slug>/ page -- the "Official tickets"
+  // exit belongs exclusively on that dedicated page, never on a card. This
+  // widget's old "Official tickets" button was actually WORSE than the
+  // atlas-common.js bug: it linked straight to the raw ticket_url, not even
+  // through go.html's tracked/allowlisted redirect. Now the whole card
+  // links to the event page (slug added to GET /shows/near, see
+  // apps/atlas_api/main.py); a result with no slug yet renders as a
+  // non-clickable card rather than fall back to a raw ticket exit.
   function eventCard(ev) {
     var price = fmtPrice(ev);
-    var ticket = ev.ticket_url
-      ? '<a class="near-ticket-link" href="' + escapeHtml(ev.ticket_url) +
-        '" rel="noopener noreferrer" target="_blank">Official tickets →</a>'
-      : "";
-    return '<div class="near-event-card">' +
+    var eventHref = ev.slug
+      ? "/comedy-atlas/event/" + encodeURIComponent(ev.slug) + "/"
+      : null;
+    var cardTag = eventHref ? "a" : "div";
+    var cardHrefAttr = eventHref ? ' href="' + escapeHtml(eventHref) + '"' : "";
+    return "<" + cardTag + ' class="near-event-card"' + cardHrefAttr + ">" +
       '<div class="near-event-top">' +
       '<div class="near-event-title">' + escapeHtml(ev.title || "Untitled show") + '</div>' +
       '<div class="near-event-dist">' + escapeHtml(ev.distance_km) + ' km away</div>' +
@@ -96,7 +113,7 @@
       (ev.venue_name ? ' · ' + escapeHtml(ev.venue_name) : '') +
       (ev.city ? ' · ' + escapeHtml(ev.city) : '') +
       (price ? ' · ' + price : '') +
-      '</div>' + ticket + '</div>';
+      '</div></' + cardTag + '>';
   }
 
   function renderResults(panel, events) {
