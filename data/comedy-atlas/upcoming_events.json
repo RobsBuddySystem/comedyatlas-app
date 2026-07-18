@@ -1,533 +1,5 @@
 [
   {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-afternoon-comedy-4pm-soho-tickets-1977981218069",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 3133,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 652,
-    "show_series_name": "Saturday Afternoon Comedy, 4PM, Soho",
-    "show_series_slug": "saturday-afternoon-comedy-4pm-soho",
-    "slug": "saturday-afternoon-comedy-4pm-soho",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Afternoon Comedy, 4PM, Soho",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-afternoon-dark-comedy-4pm-soho-tickets-1977981457786",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday afternoon stand-up comedy show in Soho, Central London.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 3154,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 653,
-    "show_series_name": "Saturday Afternoon Dark Comedy, 4PM, Soho",
-    "show_series_slug": "saturday-afternoon-dark-comedy-4pm-soho",
-    "slug": "saturday-afternoon-dark-comedy-4pm-soho",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Afternoon Dark Comedy, 4PM, Soho",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-afternoon-central-london-comedy-4pm-soho-tickets-1977981520975",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 3175,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 654,
-    "show_series_name": "Saturday Afternoon Central London Comedy, 4PM, Soho",
-    "show_series_slug": "saturday-afternoon-central-london-comedy-4pm-soho",
-    "slug": "saturday-afternoon-central-london-comedy-4pm-soho",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Afternoon Central London Comedy, 4PM, Soho",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-afternoon-british-comedy-4pm-soho-tickets-1977981582158",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 3196,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 655,
-    "show_series_name": "Saturday Afternoon British Comedy, 4PM, Soho",
-    "show_series_slug": "saturday-afternoon-british-comedy-4pm-soho",
-    "slug": "saturday-afternoon-british-comedy-4pm-soho",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Afternoon British Comedy, 4PM, Soho",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-afternoon-international-comedy-4pm-soho-tickets-1977981641335",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 3217,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 656,
-    "show_series_name": "Saturday Afternoon International Comedy, 4PM, Soho",
-    "show_series_slug": "saturday-afternoon-international-comedy-4pm-soho",
-    "slug": "saturday-afternoon-international-comedy-4pm-soho",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Afternoon International Comedy, 4PM, Soho",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.es/e/show-up-go-up-tickets-1987137613093",
-    "city_id": 20,
-    "city_name": "Barcelona",
-    "country_iso2": "ES",
-    "currency": null,
-    "description": "Show Up Go Up is Barcelona\u2019s most relaxed open mic - where anyone who shows up can perform!",
-    "doors_at": null,
-    "ends_at": "2026-07-18T18:30:00+02:00",
-    "genre": "standup",
-    "id": 4171,
-    "language": "en",
-    "organization_id": 23,
-    "organization_name": "The Comedy Clubhouse",
-    "price_max": null,
-    "price_min": null,
-    "show_age_policy": null,
-    "show_series_id": 701,
-    "show_series_name": "Show Up Go Up",
-    "show_series_slug": "show-up-go-up",
-    "slug": "show-up-go-up-4171",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T17:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Show Up Go Up",
-    "venue_accessibility_notes": null,
-    "venue_address": "6 Via Laietana",
-    "venue_id": 181,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": "The Clubhouse: Laietana & Nikki's"
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.com/e/blast-off-all-stars-english-stand-up-comedy-july-18-tickets-1992304403101",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": null,
-    "description": null,
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:00:00+02:00",
-    "genre": "standup",
-    "id": 132,
-    "language": "en",
-    "organization_id": 101,
-    "organization_name": "Blast Off Comedy",
-    "price_max": null,
-    "price_min": null,
-    "show_age_policy": null,
-    "show_series_id": 41,
-    "show_series_name": "Blast Off All Stars - English Stand-Up Comedy",
-    "show_series_slug": "blast-off-all-stars-english-stand-up-comedy",
-    "slug": "blast-off-all-stars-english-stand-up-comedy-july-18",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T19:30:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Blast Off All Stars - English Stand-Up Comedy | July 18",
-    "venue_accessibility_notes": null,
-    "venue_address": "1 Rue des Boulangers, 75005 Paris",
-    "venue_id": 46,
-    "venue_latitude": 48.845948,
-    "venue_longitude": 2.354251,
-    "venue_name": "La Pomme d'Eve"
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-night-comedy-7pm-leicester-square-tickets-1982562341332",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday night stand-up comedy show in Leicester Square, Central London",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:30:00+02:00",
-    "genre": "standup",
-    "id": 3443,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 667,
-    "show_series_name": "Saturday Night Comedy, 7PM, Leicester Square",
-    "show_series_slug": "saturday-night-comedy-7pm-leicester-square",
-    "slug": "saturday-night-comedy-7pm-leicester-square",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Night Comedy, 7PM, Leicester Square",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-night-dark-comedy-7pm-leicester-square-tickets-1982563373419",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday night stand-up comedy show in Leicester Square, Central London",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:30:00+02:00",
-    "genre": "standup",
-    "id": 3467,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 668,
-    "show_series_name": "Saturday Night Dark Comedy, 7PM, Leicester Square",
-    "show_series_slug": "saturday-night-dark-comedy-7pm-leicester-square",
-    "slug": "saturday-night-dark-comedy-7pm-leicester-square",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Night Dark Comedy, 7PM, Leicester Square",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-night-central-london-comedy-7pm-leicester-square-tickets-1982563546938",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday night stand-up comedy show in Leicester Square, Central London",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:30:00+02:00",
-    "genre": "standup",
-    "id": 3491,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 669,
-    "show_series_name": "Saturday Night Central London Comedy, 7PM, Leicester Square",
-    "show_series_slug": "saturday-night-central-london-comedy-7pm-leicester-square",
-    "slug": "saturday-night-central-london-comedy-7pm-leicester-square",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Night Central London Comedy, 7PM, Leicester Square",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-night-british-comedy-7pm-leicester-square-tickets-1982563798691",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday night stand-up comedy show in Leicester Square, Central London",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:30:00+02:00",
-    "genre": "standup",
-    "id": 3515,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 670,
-    "show_series_name": "Saturday Night British Comedy, 7PM, Leicester Square",
-    "show_series_slug": "saturday-night-british-comedy-7pm-leicester-square",
-    "slug": "saturday-night-british-comedy-7pm-leicester-square",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Night British Comedy, 7PM, Leicester Square",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-night-international-comedy-7pm-leicester-square-tickets-1982563998288",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Saturday night stand-up comedy show in Leicester Square, Central London",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:30:00+02:00",
-    "genre": "standup",
-    "id": 3539,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 13.0,
-    "show_age_policy": null,
-    "show_series_id": 671,
-    "show_series_name": "Saturday Night International Comedy, 7PM, Leicester Square",
-    "show_series_slug": "saturday-night-international-comedy-7pm-leicester-square",
-    "slug": "saturday-night-international-comedy-7pm-leicester-square",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Night International Comedy, 7PM, Leicester Square",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.es/e/the-spotlight-fri-sat-tickets-1991550989621",
-    "city_id": 20,
-    "city_name": "Barcelona",
-    "country_iso2": "ES",
-    "currency": "EUR",
-    "description": "Curated weekend line-ups with rock-solid stand-up sets and a featured headliner.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T21:45:00+02:00",
-    "genre": "standup",
-    "id": 4226,
-    "language": "en",
-    "organization_id": 23,
-    "organization_name": "The Comedy Clubhouse",
-    "price_max": null,
-    "price_min": 12.0,
-    "show_age_policy": null,
-    "show_series_id": 707,
-    "show_series_name": "The Spotlight  \u2022 Fri & Sat",
-    "show_series_slug": "the-spotlight-fri-sat",
-    "slug": "the-spotlight-fri-sat-4226",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "The Spotlight  \u2022 Fri & Sat",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": 13,
-    "venue_latitude": 41.3851,
-    "venue_longitude": 2.1734,
-    "venue_name": "The Comedy Clubhouse"
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/laugh-on-tap-brew-haha-english-comedy-showcase-at-brlo-brewery-tickets-1988316727857",
-    "city_id": 8,
-    "city_name": "Berlin",
-    "country_iso2": "DE",
-    "currency": "EUR",
-    "description": "The Yeast we can do is laugh! Special monthly English Comedy Showcase with experienced internationally touring comedians.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T22:30:00+02:00",
-    "genre": "standup",
-    "id": 2749,
-    "language": "en",
-    "organization_id": 116,
-    "organization_name": "Propaganda Comedy",
-    "price_max": null,
-    "price_min": 5.0,
-    "show_age_policy": null,
-    "show_series_id": 637,
-    "show_series_name": "Laugh on Tap - Brew Haha English Comedy Showcase at Brlo Brewery",
-    "show_series_slug": "laugh-on-tap-brew-haha-english-comedy-showcase-at-brlo-brewery",
-    "slug": "laugh-on-tap-brew-haha-english-comedy-showcase-at-brlo-brewery",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T20:30:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Laugh on Tap - Brew Haha English Comedy Showcase at Brlo Brewery",
-    "venue_accessibility_notes": null,
-    "venue_address": null,
-    "venue_id": null,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": null
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.co.uk/e/saturday-comedy-club-london-covent-garden-tickets-1987999746758",
-    "city_id": 74,
-    "city_name": "London",
-    "country_iso2": "GB",
-    "currency": "GBP",
-    "description": "Award-winning international comedy club in London, with live stand up shows in the heart of Covent Garden.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T23:30:00+02:00",
-    "genre": "standup",
-    "id": 3025,
-    "language": "en",
-    "organization_id": 14,
-    "organization_name": "The Stand Comedy Club",
-    "price_max": null,
-    "price_min": 20.0,
-    "show_age_policy": null,
-    "show_series_id": 648,
-    "show_series_name": "Saturday Comedy Club London | Covent Garden",
-    "show_series_slug": "saturday-comedy-club-london-covent-garden",
-    "slug": "saturday-comedy-club-london-covent-garden-3025",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T21:30:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "Saturday Comedy Club London | Covent Garden",
-    "venue_accessibility_notes": null,
-    "venue_address": "42 Earlham Street",
-    "venue_id": 160,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": "Comedy Carnival Covent Garden"
-  },
-  {
-    "canonical_event_url": "https://www.eventbrite.es/e/the-offenders-tickets-1986342634290",
-    "city_id": 20,
-    "city_name": "Barcelona",
-    "country_iso2": "ES",
-    "currency": "EUR",
-    "description": "Uncensored stand-up comedy.",
-    "doors_at": null,
-    "ends_at": "2026-07-18T23:45:00+02:00",
-    "genre": "standup",
-    "id": 4158,
-    "language": "en",
-    "organization_id": 23,
-    "organization_name": "The Comedy Clubhouse",
-    "price_max": null,
-    "price_min": 12.0,
-    "show_age_policy": null,
-    "show_series_id": 699,
-    "show_series_name": "The Offenders",
-    "show_series_slug": "the-offenders",
-    "slug": "the-offenders",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-07-18T22:00:00+02:00",
-    "status": "scheduled",
-    "timezone": "UTC",
-    "title": "The Offenders",
-    "venue_accessibility_notes": null,
-    "venue_address": "10 Carrer dels Canvis Nous",
-    "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": "The Comedy Clubhouse: Canvis Nous"
-  },
-  {
     "canonical_event_url": "https://www.eventbrite.co.uk/e/laughing-spree-comedy-english-stand-up-comedy-on-a-boat-free-shots-tickets-1987812396388",
     "city_id": 8,
     "city_name": "Berlin",
@@ -886,8 +358,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -952,8 +424,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -1183,8 +655,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -1777,8 +1249,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "28 Carrer de la Junta de Comer\u00e7",
     "venue_id": 185,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.379228,
+    "venue_longitude": 2.171852,
     "venue_name": "Secret Comedy Club Barcelona"
   },
   {
@@ -3262,8 +2734,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -3460,8 +2932,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -4087,8 +3559,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "28 Carrer de la Junta de Comer\u00e7",
     "venue_id": 185,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.379228,
+    "venue_longitude": 2.171852,
     "venue_name": "Secret Comedy Club Barcelona"
   },
   {
@@ -5209,8 +4681,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -5572,8 +5044,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -5638,8 +5110,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -5671,8 +5143,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -5704,8 +5176,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -9565,8 +9037,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -9664,8 +9136,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -10225,8 +9697,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -10423,8 +9895,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -12139,8 +11611,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -12172,8 +11644,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -12733,8 +12205,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -12865,8 +12337,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -13063,8 +12535,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -13096,8 +12568,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -14911,8 +14383,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -15406,8 +14878,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -15604,8 +15076,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -17155,8 +16627,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -17452,8 +16924,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -17485,8 +16957,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -17551,8 +17023,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "Gr\u00fcnberger Stra\u00dfe 84",
     "venue_id": 166,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.510867,
+    "venue_longitude": 13.461485,
     "venue_name": "The Wall Comedy"
   },
   {
@@ -17749,8 +17221,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -19300,8 +18772,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -19531,8 +19003,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -21214,8 +20686,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -21247,8 +20719,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -21379,8 +20851,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -21412,8 +20884,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -21643,8 +21115,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -23095,8 +22567,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -23128,8 +22600,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -23227,8 +22699,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -24910,8 +24382,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -25042,8 +24514,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -26659,8 +26131,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -26791,8 +26263,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -26824,8 +26296,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -27055,8 +26527,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -28408,8 +27880,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -28441,8 +27913,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -28573,8 +28045,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -30256,8 +29728,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -30289,8 +29761,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -30421,8 +29893,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -30454,8 +29926,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -30685,8 +30157,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -32005,8 +31477,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -32137,8 +31609,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -33688,8 +33160,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -33820,8 +33292,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "29 Sint Pieterspoortsteeg",
     "venue_id": 173,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 52.371408,
+    "venue_longitude": 4.894502,
     "venue_name": "Caf\u00e9 De Buurvrouw"
   },
   {
@@ -33853,8 +33325,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -34084,8 +33556,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -35470,8 +34942,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -37153,8 +36625,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -37186,8 +36658,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -37318,8 +36790,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -37549,8 +37021,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -38902,8 +38374,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -38935,8 +38407,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -40552,8 +40024,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -40684,8 +40156,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -40915,8 +40387,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -42301,8 +41773,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -43786,8 +43258,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -43819,8 +43291,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -43951,8 +43423,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -44182,8 +43654,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -45370,8 +44842,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "10 Carrer dels Canvis Nous",
     "venue_id": 180,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382932,
+    "venue_longitude": 2.181804,
     "venue_name": "The Comedy Clubhouse: Canvis Nous"
   },
   {
@@ -45403,8 +44875,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -46690,8 +46162,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -47482,8 +46954,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -47713,8 +47185,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -47944,8 +47416,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -48175,8 +47647,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -48406,8 +47878,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -48637,8 +48109,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -48868,8 +48340,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -49099,8 +48571,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -49330,8 +48802,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -49528,8 +49000,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -49693,8 +49165,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -49858,8 +49330,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50023,8 +49495,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50188,8 +49660,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50353,8 +49825,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50551,8 +50023,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50716,8 +50188,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -50881,8 +50353,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -51046,8 +50518,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
@@ -51211,8 +50683,8 @@
     "venue_accessibility_notes": null,
     "venue_address": "6 Via Laietana",
     "venue_id": 182,
-    "venue_latitude": null,
-    "venue_longitude": null,
+    "venue_latitude": 41.382317,
+    "venue_longitude": 2.181124,
     "venue_name": "The Comedy Clubhouse: Laietana"
   },
   {
