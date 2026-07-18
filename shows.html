@@ -48,6 +48,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .filterbar select:hover{border-color:var(--border2)}
 .filterbar .clear-filters{height:38px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer}
 .filterbar .clear-filters:hover{border-color:var(--border2);color:var(--text)}
+.filterbar .near-btn{height:38px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+.filterbar .near-btn:hover{border-color:var(--purple)}
+.filterbar .near-btn.active{background:var(--grad);border-color:transparent;color:#fff}
+.near-note{width:100%;text-align:center;font-size:12px;color:var(--muted);margin-top:-8px}
 .calscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
 .cal{min-width:900px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 .dow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-align:center;padding:6px 0 10px}
@@ -124,7 +128,12 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
       <option value="evening">Evening (5–9pm)</option>
       <option value="late">Late night (9pm–4am)</option>
     </select>
+    <select id="cityFilter" aria-label="Filter by city">
+      <option value="">All cities</option>
+    </select>
+    <button type="button" class="near-btn" id="nearMeBtn">📍 Near me</button>
     <button type="button" class="clear-filters" id="clearFilters">Clear filters</button>
+    <div class="near-note" id="nearNote"></div>
   </div>
   <div class="calscroll">
     <div class="cal" id="cal"></div>
@@ -141,10 +150,16 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
     &nbsp;·&nbsp;
     <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
   </div>
+  <div class="footer-feedback-cta" style="margin-top:8px">
+    <button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})"
+      style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">
+      Is something missing? Send us a message</button>
+  </div>
 </footer>
 
 <script src="comedy-atlas/atlas-track.js"></script>
 <script src="comedy-atlas/atlas-common.js"></script>
+<script src="comedy-atlas/atlas-feedback.js"></script>
 <script>
 (function () {
 "use strict";
@@ -162,7 +177,17 @@ const TODAY = A.parisNow().toLocaleDateString('sv-SE');
 const CELL_CAP = 4;
 const expandedCells = {};
 
-const state = { dow: '', tod: '' };
+const state = { dow: '', tod: '', city: '', near: null };
+// near = null (off) or { lat, lon, cityName } once geolocation resolves --
+// cityName is the nearest known-city centroid within CITY_NEAR_RADIUS_KM,
+// used as the city-level fallback for shows whose venue has no lat/lon
+// (venue coordinate coverage is ~64% overall; Berlin/London/Edinburgh are
+// mostly missing -- see BUILD_STATE.md). null cityName means the user
+// isn't within range of any city we track, so only venue-coordinate
+// matches apply.
+const VENUE_NEAR_RADIUS_KM = 25;
+const CITY_NEAR_RADIUS_KM = 60; // generous metro-area buffer for the fallback
+let CITIES = [];
 
 function dateKeySv(d){
   // parisDateKey() from atlas-common uses en-GB (dd/mm/yyyy); we need a
@@ -201,6 +226,8 @@ async function loadShows(){
         title: ev.title || 'Untitled show',
         venue: ev.venue_name || '',
         city: ev.city_name || '',
+        lat: typeof ev.venue_latitude === 'number' ? ev.venue_latitude : null,
+        lon: typeof ev.venue_longitude === 'number' ? ev.venue_longitude : null,
         org: ev.organization_name || '',
         seriesId: ev.show_series_id != null ? ev.show_series_id : null,
         url: ev.canonical_event_url,
@@ -214,10 +241,23 @@ async function loadShows(){
       };
     });
   } catch (e) { console.warn('[atlas] fetchEvents failed', e); SHOWS = []; }
+  populateCityFilter();
   render(); scrollToToday();
   A.fetchManifest().then(function (m) {
     A.setFreshness(document.getElementById('freshness-dot'), document.getElementById('freshness-text'), m);
   });
+}
+
+// City dropdown lists exactly the cities present in the loaded shows data
+// (not the full 117-row cities.json -- an empty-of-shows city in that list
+// would be a dead filter option), alphabetical.
+function populateCityFilter(){
+  const sel = document.getElementById('cityFilter');
+  const current = sel.value;
+  const cities = Array.from(new Set(SHOWS.map(s => s.city).filter(Boolean))).sort();
+  sel.innerHTML = '<option value="">All cities</option>' +
+    cities.map(c => `<option value="${A.escapeHtml(c)}">${A.escapeHtml(c)}</option>`).join('');
+  if (cities.indexOf(current) !== -1) sel.value = current;
 }
 
 // Groups by the same identity (show_series_id, or org+title fallback --
@@ -245,6 +285,22 @@ function matchesFilters(s){
   if (state.tod) {
     const buckets = A.makeTimeBuckets();
     if (!buckets.timeOfDay(s.date, state.tod)) return false;
+  }
+  if (state.city && s.city !== state.city) return false;
+  if (state.near) {
+    // Prefer real venue coordinates when this show has them: 25km radius,
+    // exact. When the venue has no coordinates (the majority case outside
+    // Paris -- ~64% overall coverage), fall back to city-level matching
+    // against the user's nearest known city rather than dropping the show
+    // outright -- a pure city filter would have kept it, so near-me must
+    // not be strictly worse than that.
+    if (s.lat != null && s.lon != null) {
+      if (A.distanceKm(state.near.lat, state.near.lon, s.lat, s.lon) > VENUE_NEAR_RADIUS_KM) return false;
+    } else if (state.near.cityName) {
+      if (s.city !== state.near.cityName) return false;
+    } else {
+      return false; // no venue coords AND user isn't near any known city
+    }
   }
   return true;
 }
@@ -334,10 +390,74 @@ document.getElementById('next').onclick=()=>{ view.setMonth(view.getMonth()+1); 
 document.getElementById('todayBtn').onclick=()=>{ view=new Date(); view.setDate(1); render(); scrollToToday(); };
 document.getElementById('dowFilter').onchange=(e)=>{ state.dow = e.target.value; render(); };
 document.getElementById('todFilter').onchange=(e)=>{ state.tod = e.target.value; render(); };
+document.getElementById('cityFilter').onchange=(e)=>{
+  state.city = e.target.value;
+  // City picker and "Near me" are alternate ways to set the SAME location
+  // filter, not two filters that stack -- picking a city while near-me is
+  // active would otherwise silently AND them down to (near AND that city),
+  // which reads as a bug ("I picked London but see nothing"), not a
+  // feature. Picking a city always wins and turns near-me off.
+  if (state.city) { state.near = null; setNearActive(false); document.getElementById('nearNote').textContent = ''; }
+  render();
+};
+
+function setNearActive(on){
+  document.getElementById('nearMeBtn').classList.toggle('active', on);
+}
+
+function nearestCityWithinRadius(lat, lon){
+  if (!CITIES.length) return null;
+  let best = null, bestDist = Infinity;
+  CITIES.forEach(c => {
+    if (typeof c.latitude !== 'number' || typeof c.longitude !== 'number') return;
+    const dist = A.distanceKm(lat, lon, c.latitude, c.longitude);
+    if (dist < bestDist) { bestDist = dist; best = c.name; }
+  });
+  return bestDist <= CITY_NEAR_RADIUS_KM ? best : null;
+}
+
+document.getElementById('nearMeBtn').onclick = () => {
+  const note = document.getElementById('nearNote');
+  if (state.near) { // toggle off
+    state.near = null; setNearActive(false); note.textContent = '';
+    render();
+    return;
+  }
+  if (!('geolocation' in navigator)) {
+    note.textContent = "Your browser doesn't support location — use the city dropdown instead.";
+    return;
+  }
+  note.textContent = 'Finding your location…';
+  navigator.geolocation.getCurrentPosition(
+    async (pos) => {
+      const lat = pos.coords.latitude, lon = pos.coords.longitude;
+      if (!CITIES.length) {
+        const c = await A.fetchCities();
+        CITIES = Array.isArray(c) ? c : [];
+      }
+      const cityName = nearestCityWithinRadius(lat, lon);
+      state.near = { lat: lat, lon: lon, cityName: cityName };
+      state.city = ''; document.getElementById('cityFilter').value = '';
+      setNearActive(true);
+      note.textContent = cityName
+        ? `Showing shows within ${VENUE_NEAR_RADIUS_KM}km, plus other ${cityName} listings.`
+        : "Showing shows with a known location within " + VENUE_NEAR_RADIUS_KM + "km — you're not near a city we track yet.";
+      render();
+    },
+    () => {
+      note.textContent = 'Location access was denied — no problem, use the city dropdown instead.';
+    },
+    { timeout: 8000, maximumAge: 300000 }
+  );
+};
+
 document.getElementById('clearFilters').onclick=()=>{
-  state.dow=''; state.tod='';
+  state.dow=''; state.tod=''; state.city=''; state.near=null;
   document.getElementById('dowFilter').value='';
   document.getElementById('todFilter').value='';
+  document.getElementById('cityFilter').value='';
+  setNearActive(false);
+  document.getElementById('nearNote').textContent = '';
   render();
 };
 loadShows();

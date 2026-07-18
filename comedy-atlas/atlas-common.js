@@ -15,6 +15,7 @@
 
   var DATA_URL = "../data/comedy-atlas/upcoming_events.json";
   var MANIFEST_URL = "../data/comedy-atlas/MANIFEST.json";
+  var CITIES_URL = "../data/comedy-atlas/cities.json";
 
   // Known Edinburgh Fringe free-festival umbrella organizations. These are
   // ORG names that appear on Edinburgh events (source IS the org — see
@@ -218,6 +219,33 @@
     return fetch(MANIFEST_URL, { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("no manifest"); return r.json(); })
       .catch(function () { return null; });
+  }
+
+  // Location filters (Phase 3b, 2026-07-18): cities.json carries every
+  // known city's centroid lat/lon (117 rows today) -- published alongside
+  // upcoming_events.json by the same publish_atlas_data.py, same MANIFEST.
+  // Used for the "Near me" city-level fallback: venue coordinate coverage
+  // is only ~64% overall (Paris ~complete; Berlin/London/Edinburgh mostly
+  // missing -- see BUILD_STATE.md), so a per-VENUE distance check alone
+  // would silently drop most shows in those cities even when the user is
+  // obviously in the right city. Degrades to null (never throws) so a
+  // fetch failure just disables city-level near-me fallback, not the page.
+  function fetchCities() {
+    return fetch(CITIES_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("no cities"); return r.json(); })
+      .catch(function () { return null; });
+  }
+
+  // Haversine great-circle distance in km. Standard formula, no dependency.
+  function distanceKm(lat1, lon1, lat2, lon2) {
+    var R = 6371;
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
   }
 
   function setFreshness(dotEl, textEl, manifest) {
@@ -503,6 +531,8 @@
     dropFrench: dropFrench,
     fetchEvents: fetchEvents,
     fetchManifest: fetchManifest,
+    fetchCities: fetchCities,
+    distanceKm: distanceKm,
     setFreshness: setFreshness,
     groupByCity: groupByCity,
     groupFestivals: groupFestivals,

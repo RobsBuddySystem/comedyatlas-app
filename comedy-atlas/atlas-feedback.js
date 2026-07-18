@@ -35,12 +35,29 @@
 
   function el(html) { var d = document.createElement("div"); d.innerHTML = html; return d.firstElementChild; }
 
+  // Per-subject copy for the "Is something missing?" footer CTA (every page,
+  // hand-authored + generated, see FOOTER in scripts/seo_common.py) vs. the
+  // generic floating pill. The endpoint itself has no separate "category"
+  // column -- FeedbackBody only has body/subject/email/page_ref (see
+  // apps/atlas_api/main.py's /feedback) -- so "category" is carried in the
+  // existing `subject` field rather than inventing a new one server-side.
+  var SUBJECT_COPY = {
+    suggestion: {
+      heading: "Tell us what's missing",
+      body: "Missing show, venue, comic, or city? Tell us and we'll add it.",
+      placeholder: "What's missing? Include the show/venue/comic name and city if you can."
+    }
+  };
+
+  var pendingSubject = null; // set by AtlasFeedback.open({subject}) before the modal exists yet
+  var openModalFn = null;    // bound once init() has built the DOM
+
   function init() {
     var style = document.createElement("style"); style.textContent = css; document.head.appendChild(style);
     var btn = el('<button class="atlas-fb-btn" aria-label="Send feedback">💬 Feedback</button>');
     var modal = el('<div class="atlas-fb-modal"><div class="atlas-fb-card">' +
-      '<h3>Help us improve ATLAS</h3>' +
-      '<p>Found a bug, missing show, or have an idea? Tell us — we read every note.</p>' +
+      '<h3 id="atlas-fb-heading">Help us improve ATLAS</h3>' +
+      '<p id="atlas-fb-copy">Found a bug, missing show, or have an idea? Tell us — we read every note.</p>' +
       '<textarea id="atlas-fb-body" placeholder="What should we fix or add?"></textarea>' +
       '<input id="atlas-fb-email" type="email" placeholder="Your email (optional, so we can reply)">' +
       '<div class="atlas-fb-row"><button class="atlas-fb-cancel">Cancel</button>' +
@@ -48,9 +65,20 @@
       '<div class="atlas-fb-msg" id="atlas-fb-msg"></div></div></div>');
     document.body.appendChild(btn); document.body.appendChild(modal);
 
-    function open() { modal.style.display = "flex"; }
+    var currentSubject = null;
+
+    function open(subject) {
+      currentSubject = subject || null;
+      var copy = (subject && SUBJECT_COPY[subject]) || null;
+      document.getElementById("atlas-fb-heading").textContent = copy ? copy.heading : "Help us improve ATLAS";
+      document.getElementById("atlas-fb-copy").textContent = copy ? copy.body :
+        "Found a bug, missing show, or have an idea? Tell us — we read every note.";
+      document.getElementById("atlas-fb-body").placeholder = copy ? copy.placeholder : "What should we fix or add?";
+      modal.style.display = "flex";
+      document.getElementById("atlas-fb-body").focus();
+    }
     function close() { modal.style.display = "none"; }
-    btn.addEventListener("click", open);
+    btn.addEventListener("click", function () { open(null); });
     modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
     modal.querySelector(".atlas-fb-cancel").addEventListener("click", close);
     modal.querySelector(".atlas-fb-send").addEventListener("click", function () {
@@ -62,14 +90,32 @@
       fetch(API_BASE + "/feedback", {
         method: "POST", credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ body: body, email: email || null, page_ref: location.pathname + location.search })
+        body: JSON.stringify({
+          body: body, email: email || null, subject: currentSubject,
+          page_ref: location.pathname + location.search
+        })
       }).then(function (r) { return r.json(); }).then(function (d) {
         msg.textContent = d.message || "Thank you!"; msg.style.color = "#3fb950";
         document.getElementById("atlas-fb-body").value = "";
         setTimeout(close, 1600);
       }).catch(function () { msg.textContent = "Could not send — try again."; msg.style.color = "#c41e3a"; });
     });
+
+    openModalFn = open;
+    if (pendingSubject !== undefined && pendingSubject !== null) { open(pendingSubject); pendingSubject = null; }
   }
+
+  // Public API so any page's footer CTA (or anything else) can open this
+  // same widget/backend instead of building a second feedback form. Safe to
+  // call before DOMContentLoaded -- the requested subject is queued and
+  // opened as soon as init() builds the modal.
+  window.AtlasFeedback = {
+    open: function (opts) {
+      var subject = (opts && opts.subject) || null;
+      if (openModalFn) { openModalFn(subject); } else { pendingSubject = subject; }
+    }
+  };
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
