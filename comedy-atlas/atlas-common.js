@@ -424,15 +424,24 @@
       if (price) metaParts.push(price);
       var meta = metaParts.join(' <span class="sep">·</span> ');
 
-      // 2026-07-18: same "listing card MUST link to our own event page"
-      // fix as renderEventCards -- the group's title links to its earliest
-      // occurrence's own page; each individual date in the list below
-      // links to THAT occurrence's own page too, so a recurring show is
-      // never a click-straight-to-tickets dead end at any level.
-      var primaryHref = primary.slug ? "event/" + encodeURIComponent(primary.slug) + "/" : null;
+      // 2026-07-18: the group's title links to the SHOW's own page
+      // (public_upcoming_events.show_series_slug, migration 0090) when a
+      // real show identity exists -- added specifically because the
+      // 692-show backfill earlier today created 711 real show pages that
+      // were technically live but never actually reachable by browsing
+      // the site (Robert: "did you put that on the site so people can
+      // see it?" -- the honest answer was no, this was the missing
+      // link). Falls back to the earliest occurrence's own event page
+      // for any group that hasn't been linked to a show_series yet
+      // (matches renderEventCards' per-event fallback), so a recurring
+      // show is never a click-straight-to-tickets dead end at any level
+      // either way.
+      var groupHref = primary.show_series_slug
+        ? "show/" + encodeURIComponent(primary.show_series_slug) + "/"
+        : (primary.slug ? "event/" + encodeURIComponent(primary.slug) + "/" : null);
       var groupTitleHtml = escapeHtml(g.title);
-      if (primaryHref) {
-        groupTitleHtml = '<a class="event-title-link" href="' + escapeHtml(primaryHref) + '">' + groupTitleHtml + "</a>";
+      if (groupHref) {
+        groupTitleHtml = '<a class="event-title-link" href="' + escapeHtml(groupHref) + '">' + groupTitleHtml + "</a>";
       }
 
       html += '<article class="event-card">';
