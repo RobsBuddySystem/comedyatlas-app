@@ -43,14 +43,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .month{font-size:22px;font-weight:800;letter-spacing:-.4px;min-width:220px;text-align:center}
 .today-btn{height:42px;padding:0 20px;border-radius:12px;border:0;font-size:14px;font-weight:800;cursor:pointer;color:#fff;background:var(--grad)}
 .today-btn:hover{opacity:.9}
+.filterbar{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 18px;flex-wrap:wrap}
+.filterbar select{height:38px;padding:0 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:600;cursor:pointer}
+.filterbar select:hover{border-color:var(--border2)}
+.filterbar .clear-filters{height:38px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer}
+.filterbar .clear-filters:hover{border-color:var(--border2);color:var(--text)}
 .calscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
 .cal{min-width:900px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 .dow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-align:center;padding:6px 0 10px}
-.cell{background:var(--card);border:1px solid var(--border);border-radius:14px;min-height:132px;padding:9px;display:flex;flex-direction:column;gap:7px;transition:.18s}
+.cell{background:var(--card);border:1px solid var(--border);border-radius:14px;min-height:132px;max-height:340px;overflow-y:auto;padding:9px;display:flex;flex-direction:column;gap:7px;transition:.18s}
 .cell:hover{border-color:var(--border2)}
 .cell.blank{background:transparent;border:0}
 .cell.past{opacity:.38}
 .cell.today{border:1px solid var(--gold)}
+.cell.dow-dimmed{opacity:.3}
+.cell-more{display:block;width:100%;background:transparent;border:1px dashed var(--border2);color:var(--muted);border-radius:8px;padding:5px 0;font-size:10.5px;font-weight:800;cursor:pointer;text-align:center;transition:.15s}
+.cell-more:hover{border-color:var(--purple);color:var(--text)}
+.ev-count{font-size:9px;font-weight:800;color:var(--dim);background:rgba(124,58,237,.1);border-radius:6px;padding:1px 5px}
 .cell-top{display:flex;align-items:center;justify-content:space-between}
 .cell-date{font-size:12px;color:var(--dim);font-weight:800}
 .cell.today .cell-date{color:var(--gold)}
@@ -97,6 +106,26 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
     <button class="navbtn" id="next" aria-label="Next month">&#8250;</button>
     <button class="today-btn" id="todayBtn">Today</button>
   </div>
+  <div class="filterbar">
+    <select id="dowFilter" aria-label="Filter by day of week">
+      <option value="">Every day</option>
+      <option value="0">Sundays</option>
+      <option value="1">Mondays</option>
+      <option value="2">Tuesdays</option>
+      <option value="3">Wednesdays</option>
+      <option value="4">Thursdays</option>
+      <option value="5">Fridays</option>
+      <option value="6">Saturdays</option>
+    </select>
+    <select id="todFilter" aria-label="Filter by time of day">
+      <option value="">Any time</option>
+      <option value="morning">Morning (4am–12pm)</option>
+      <option value="afternoon">Afternoon (12–5pm)</option>
+      <option value="evening">Evening (5–9pm)</option>
+      <option value="late">Late night (9pm–4am)</option>
+    </select>
+    <button type="button" class="clear-filters" id="clearFilters">Clear filters</button>
+  </div>
   <div class="calscroll">
     <div class="cal" id="cal"></div>
   </div>
@@ -126,10 +155,38 @@ let view = new Date(); view.setDate(1);
 
 const TODAY = A.parisNow().toLocaleDateString('sv-SE');
 
+// Per-cell display cap (Robert, 2026-07-18): day columns were getting
+// extremely long with everything a busy day tracks. Cap the always-visible
+// count and let a "+ N more" toggle expand the cell on demand instead of
+// blowing out the grid row height for every other day in the month.
+const CELL_CAP = 4;
+const expandedCells = {};
+
+const state = { dow: '', tod: '' };
+
 function dateKeySv(d){
   // parisDateKey() from atlas-common uses en-GB (dd/mm/yyyy); we need a
   // sortable sv-SE (yyyy-mm-dd) key to match the calendar grid's own dates.
   return d.toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' });
+}
+
+function parisHourOf(d){
+  return Number(d.toLocaleString('en-GB', { timeZone: 'Europe/Paris', hour: '2-digit', hour12: false }));
+}
+
+// "Tonight" extends past midnight to 4am (Robert, 2026-07-18, nightlife
+// convention -- a show starting at 1am still belongs to the PREVIOUS
+// calendar day's cell, not the next one). Mirrors the exact cutoff used by
+// atlas-common.js's makeTimeBuckets()/tonight and apps/atlas_api/main.py's
+// /shows/near default window, applied here to which cell a show renders
+// under rather than to a "now"-relative window.
+function cellDateKey(d){
+  if (parisHourOf(d) < 4) {
+    const shifted = new Date(d.getTime());
+    shifted.setDate(shifted.getDate() - 1);
+    return dateKeySv(shifted);
+  }
+  return dateKeySv(d);
 }
 
 async function loadShows(){
@@ -144,12 +201,14 @@ async function loadShows(){
         title: ev.title || 'Untitled show',
         venue: ev.venue_name || '',
         city: ev.city_name || '',
+        org: ev.organization_name || '',
+        seriesId: ev.show_series_id != null ? ev.show_series_id : null,
         url: ev.canonical_event_url,
         slug: ev.slug || '',
         eventId: ev.id,
         ticketHost: urlObj.hostname.toLowerCase().replace(/^www\./, ''),
         date: d,
-        dateKey: isNaN(d.getTime()) ? '' : dateKeySv(d),
+        dateKey: isNaN(d.getTime()) ? '' : cellDateKey(d),
         time: isNaN(d.getTime()) ? '' : A.fmtTime(d),
         verified: ev.status !== 'cancelled'
       };
@@ -161,9 +220,39 @@ async function loadShows(){
   });
 }
 
+// Groups by the same identity (show_series_id, or org+title fallback --
+// same convention as atlas-common.js's groupEventsByShow) + same venue and
+// clock time, so a show that legitimately runs twice in one night (e.g.
+// 8pm and 10pm sets) still shows as two cards, but a show duplicated in the
+// feed under identical time/venue collapses into ONE card instead of N
+// identical ones (Robert, 2026-07-18).
+function dedupe(evs){
+  const seen = {}; const order = [];
+  evs.forEach(function (s) {
+    const key = (s.seriesId != null ? 'series:' + s.seriesId : 'orgtitle:' + s.org + '||' + s.title)
+      + '||' + s.venue + '||' + s.time;
+    if (!seen[key]) { seen[key] = s; order.push(key); }
+  });
+  return order.map(k => seen[k]);
+}
+
+function matchesFilters(s){
+  // Weekday is derived from the show's own (already 4am-shifted) cell date
+  // key rather than the raw Date object's local getDay() -- the key is a
+  // plain yyyy-mm-dd Paris-calendar day, so parsing it at local noon avoids
+  // any UTC/local timezone-offset day-boundary mismatch.
+  if (state.dow !== '' && s.dateKey && String(new Date(s.dateKey + 'T12:00:00').getDay()) !== state.dow) return false;
+  if (state.tod) {
+    const buckets = A.makeTimeBuckets();
+    if (!buckets.timeOfDay(s.date, state.tod)) return false;
+  }
+  return true;
+}
+
 function showsOn(date){
   const ds = dateKeySv(date);
-  return SHOWS.filter(s=>s.dateKey===ds).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+  const evs = SHOWS.filter(s => s.dateKey === ds && matchesFilters(s));
+  return dedupe(evs).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
 }
 
 function render(){
@@ -180,11 +269,19 @@ function render(){
     const cell=document.createElement('div'); cell.className='cell';
     if(ds<TODAY) cell.className+=' past';
     if(ds===TODAY){ cell.className+=' today'; cell.id='todayCell'; }
+    // Day-of-week filter dims (rather than hides) non-matching cells --
+    // keeps the grid's shape/navigation intact while visually collapsing
+    // attention onto the chosen weekday, e.g. "only Fridays" (Robert,
+    // 2026-07-18).
+    if (state.dow !== '' && String(date.getDay()) !== state.dow) cell.className += ' dow-dimmed';
     const top=document.createElement('div'); top.className='cell-top';
     top.innerHTML = `<span class="cell-date">${d}</span>` + (ds===TODAY?'<span class="today-pill">TODAY</span>':'');
     cell.appendChild(top);
     const evs = showsOn(date);
-    evs.forEach(s=>{
+    const cellKey = ds;
+    const isExpanded = !!expandedCells[cellKey];
+    const capped = isExpanded ? evs : evs.slice(0, CELL_CAP);
+    capped.forEach(s=>{
       const a=document.createElement('a'); a.className='ev';
       // Every card must land on our OWN event page first (Phase 3b D1,
       // mirrors comedy-atlas/atlas-common.js's renderEventCards): if the
@@ -207,6 +304,20 @@ function render(){
         + (s.verified?`<span class="ev-ok">✓ verified</span>`:'');
       cell.appendChild(a);
     });
+    // Cap+expander (Robert, 2026-07-18): keeps every day column a fixed,
+    // manageable height by default -- a busy day expands in place on
+    // click instead of stretching its whole row (and every cell beside
+    // it) to fit N cards.
+    if (evs.length > CELL_CAP) {
+      const more=document.createElement('button');
+      more.type='button'; more.className='cell-more';
+      more.textContent = isExpanded ? 'Show less' : `+ ${evs.length - CELL_CAP} more`;
+      more.addEventListener('click', function(){
+        if (expandedCells[cellKey]) { delete expandedCells[cellKey]; } else { expandedCells[cellKey] = true; }
+        render();
+      });
+      cell.appendChild(more);
+    }
     if(ds===TODAY && !evs.length){ const e=document.createElement('div'); e.className='cell-empty'; e.textContent='No tracked show today'; cell.appendChild(e); }
     cal.appendChild(cell);
   }
@@ -221,6 +332,14 @@ function scrollToToday(){
 document.getElementById('prev').onclick=()=>{ view.setMonth(view.getMonth()-1); render(); };
 document.getElementById('next').onclick=()=>{ view.setMonth(view.getMonth()+1); render(); };
 document.getElementById('todayBtn').onclick=()=>{ view=new Date(); view.setDate(1); render(); scrollToToday(); };
+document.getElementById('dowFilter').onchange=(e)=>{ state.dow = e.target.value; render(); };
+document.getElementById('todFilter').onchange=(e)=>{ state.tod = e.target.value; render(); };
+document.getElementById('clearFilters').onclick=()=>{
+  state.dow=''; state.tod='';
+  document.getElementById('dowFilter').value='';
+  document.getElementById('todFilter').value='';
+  render();
+};
 loadShows();
 })();
 </script>
