@@ -67,7 +67,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
     <a href="/shows.html">Shows</a>
-    <a href="/comedy-atlas/trust.html">Trust</a>
     <a href="/comedy-atlas/partners.html">Partners</a>
     <a href="/comedy-atlas/blog/">Blog</a>
     <a href="/comedy-atlas/about.html">About</a>
@@ -77,6 +76,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="container">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">I'M A COMIC</div>
+  <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
+    <a href="booker.html" id="switch-portal-link">Switch to booker portal</a>
+    <span style="margin:0 8px;color:var(--muted)">·</span>
+    <a href="#" id="atlas-signout">Sign out</a>
+  </div>
   <div id="atlas-2fa-banner-slot"></div>
 
   <div id="signed-out" class="signed-out" style="display:none">
@@ -175,12 +179,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
 <script src="atlas-auth.js"></script>
+<script src="atlas-nav.js"></script>
 <script src="atlas-2fa.js"></script>
 <script>
 (function () {
   "use strict";
   var A = window.AtlasAuth;
   var meId = null;
+  window.AtlasNav.wireSignOut("#atlas-signout");
 
   function renderAvailability(rows) {
     var list = document.getElementById("avail-list");
@@ -380,6 +386,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   A.me().then(function (r) {
     meId = r.person_id;
     document.getElementById("app").style.display = "block";
+    document.getElementById("atlas-portal-bar").style.display = "block";
     loadCities().then(loadAll);
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
   }).catch(function () {

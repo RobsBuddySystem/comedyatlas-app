@@ -103,7 +103,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
     <a href="/shows.html">Shows</a>
-    <a href="/comedy-atlas/trust.html">Trust</a>
     <a href="/comedy-atlas/partners.html">Partners</a>
     <a href="/comedy-atlas/blog/">Blog</a>
     <a href="/comedy-atlas/about.html">About</a>
@@ -113,6 +112,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="container">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">I'M A BOOKER</div>
+  <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
+    <a href="comic.html" id="switch-portal-link">Switch to comic portal</a>
+    <span style="margin:0 8px;color:var(--muted)">·</span>
+    <a href="#" id="atlas-signout">Sign out</a>
+  </div>
   <div id="atlas-2fa-banner-slot"></div>
 
   <div id="signed-out" class="signed-out" style="display:none">
@@ -125,11 +129,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <h2>Claim a show — "this is my show, help me book it"</h2>
       <p class="privacy" style="margin-bottom:10px">Signed in with a
       verified Google account whose address obviously belongs to the show
-      (e.g. <code>frenchfriedcomedy@gmail.com</code> claiming "French Fried
-      Comedy Night")? It's ratified <b>instantly</b> — no waiting on a human
+      (e.g. <code>yourshowname@gmail.com</code> claiming "Comedy Night at
+      The Junction")? It's ratified <b>instantly</b> — no waiting on a human
       reviewer. Anything less obvious is queued for a quick manual check.</p>
-      <label for="claim-show">Show series ID</label>
-      <input id="claim-show" type="number">
+      <label for="claim-show">Show name</label>
+      <input id="claim-show" type="text" list="claim-show-list" autocomplete="off"
+             placeholder="Start typing the show's name…">
+      <datalist id="claim-show-list"></datalist>
+      <div class="msg" id="claim-show-hint" style="color:var(--muted)"></div>
       <label for="claim-name">Your name</label>
       <input id="claim-name" type="text">
       <label for="claim-contact">Your contact (kept internal)</label>
@@ -144,9 +151,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       show yet, add it here — you'll <b>own it instantly</b> and it appears on
       your calendar right away.</p>
       <label for="new-show-name">Show name</label>
-      <input id="new-show-name" type="text" placeholder="French Fried Comedy Night">
+      <input id="new-show-name" type="text" placeholder="e.g. Comedy Night at The Junction">
       <label for="new-show-venue">Venue name</label>
-      <input id="new-show-venue" type="text" placeholder="Le Velvet">
+      <input id="new-show-venue" type="text" placeholder="e.g. The Junction">
       <label for="new-show-city">City</label>
       <input id="new-show-city" type="text" list="cities-list" placeholder="Paris">
       <button id="do-create-show">Create &amp; own this show</button>
@@ -240,8 +247,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
       <div class="tray" id="invite-tray">
         <div id="tray-count" style="font-weight:700;margin-bottom:8px"></div>
-        <label for="tray-show">Show series ID (you must own this show)</label>
-        <input id="tray-show" type="number">
+        <label for="tray-show">Your show</label>
+        <select id="tray-show"><option value="">Loading your shows…</option></select>
         <label for="tray-booker-name">Your name (shown to the comics)</label>
         <input id="tray-booker-name" type="text">
         <label for="tray-booker-contact">Your contact (kept internal, never shown to them)</label>
@@ -256,8 +263,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     <div class="card">
       <h2>Invites for a show</h2>
-      <label for="invites-show">Show series ID (you must own this show)</label>
-      <input id="invites-show" type="number">
+      <label for="invites-show">Your show</label>
+      <select id="invites-show"><option value="">Loading your shows…</option></select>
       <button id="load-invites">Load invite statuses</button>
       <div class="msg" id="invites-msg"></div>
       <div id="invites-list" style="margin-top:10px"></div>
@@ -268,10 +275,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <p class="privacy" style="margin-bottom:10px">Message comics you already
       know from <b>your own WhatsApp</b> — free, no account linking. Each gets a
       one-tap Yes/No that tallies back here.</p>
-      <label for="wa-show">Show series ID (you must own this show)</label>
-      <input id="wa-show" type="number">
+      <label for="wa-show">Your show</label>
+      <select id="wa-show"><option value="">Loading your shows…</option></select>
       <label for="wa-msg">Message (optional — a default is used if blank)</label>
-      <input id="wa-msg" type="text" placeholder="Free for French Fried on Sept 16?">
+      <input id="wa-msg" type="text" placeholder="e.g. Free for Comedy Night on Sept 16?">
       <label for="wa-roster">Your comics — one per line: <code>Name, +phone</code></label>
       <textarea id="wa-roster" rows="4" placeholder="Betty, +33612345678&#10;Alexi, +33698765432"></textarea>
       <button id="wa-build">Get WhatsApp links</button>
@@ -285,7 +292,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       need to fill, drop the <b>one link</b> in your WhatsApp group, and see who's
       free for each date here — names attached, no app for your comics to learn.</p>
       <label for="poll-title">Title</label>
-      <input id="poll-title" type="text" placeholder="French Fried — September dates">
+      <input id="poll-title" type="text" placeholder="e.g. Comedy Night — September dates">
       <label for="poll-dates">Dates to fill (one per line, YYYY-MM-DD)</label>
       <textarea id="poll-dates" rows="3" placeholder="2026-09-16&#10;2026-09-23"></textarea>
       <button id="poll-create">Create poll &amp; get share link</button>
@@ -305,8 +312,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       code, no account needed.</p>
       <label for="avp-title">Page title</label>
       <input id="avp-title" type="text" placeholder="Blast Off Availability">
-      <label for="avp-shows">Show series IDs to include (comma-separated, blank = all shows you own)</label>
-      <input id="avp-shows" type="text" placeholder="12, 14">
+      <label for="avp-shows">Shows to include (none selected = all shows you own)</label>
+      <select id="avp-shows" multiple size="4"><option value="">Loading your shows…</option></select>
       <label for="avp-window">Rolling date window (days)</label>
       <input id="avp-window" type="number" value="60">
       <label for="avp-intro">Intro note (optional)</label>
@@ -365,7 +372,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       only until Robert arms a real provider.</p>
 
       <label for="el-name">New list name</label>
-      <input id="el-name" type="text" placeholder="e.g. French Fried attendees">
+      <input id="el-name" type="text" placeholder="e.g. Comedy Night attendees">
       <button id="el-create">Create list</button>
       <div class="msg" id="el-msg"></div>
 
@@ -402,8 +409,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     <div class="card">
       <h2>Post an open spot</h2>
-      <label for="opp-show">Show series ID (you must own this show)</label>
-      <input id="opp-show" type="number">
+      <label for="opp-show">Your show</label>
+      <select id="opp-show"><option value="">Loading your shows…</option></select>
       <div class="row">
         <div>
           <label for="opp-date">Date</label>
@@ -431,8 +438,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         <div class="tab2 active" data-t="known">Known comic</div>
         <div class="tab2" data-t="unknown">Invite someone not listed</div>
       </div>
-      <label for="inv-show">Show series ID (you must own this show)</label>
-      <input id="inv-show" type="number">
+      <label for="inv-show">Your show</label>
+      <select id="inv-show"><option value="">Loading your shows…</option></select>
 
       <div id="known-fields">
         <label for="inv-comic-id">Comic person ID</label>
@@ -474,11 +481,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
 <script src="atlas-auth.js"></script>
+<script src="atlas-nav.js"></script>
 <script src="atlas-2fa.js"></script>
 <script>
 (function () {
   "use strict";
   var A = window.AtlasAuth;
+  window.AtlasNav.wireSignOut("#atlas-signout");
 
   // City picker: same name-autocomplete pattern as comic.html's cityNameToId
   // -- a booker types "Paris", never a numeric city id (the bug this fixes).
@@ -498,6 +507,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   A.me().then(function (r) {
     document.getElementById("app").style.display = "block";
+    document.getElementById("atlas-portal-bar").style.display = "block";
     loadCities();
     loadMyShows();
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
@@ -519,12 +529,60 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
   });
 
-  // Claim a show
+  // Claim a show -- type-to-search picker (GET /booker/shows/search).
+  // claim-show is an UNCLAIMED show, so it can't come from myShows the way
+  // every other "your show" field now does; instead we search by name as
+  // the user types and resolve the typed text back to a show_series_id via
+  // a small label->id cache, exactly the pattern search-city/search-comics
+  // already use elsewhere on this page. The raw <input type=number> this
+  // replaces is the exact bug Robert reported: a real booker has no idea
+  // what their internal show_series id is.
   // ------------------------------------------------------------------
+  var claimShowCache = {}; // "Name (City)" -> show_series_id
+  var claimShowDebounce = null;
+
+  function claimShowLabel(s) {
+    return s.name + (s.city_name ? " (" + s.city_name + ")" : "") +
+      (s.venue_name ? " @ " + s.venue_name : "");
+  }
+
+  document.getElementById("claim-show").addEventListener("input", function () {
+    var input = this;
+    var hint = document.getElementById("claim-show-hint");
+    clearTimeout(claimShowDebounce);
+    var q = input.value.trim();
+    if (q.length < 2) {
+      hint.textContent = "";
+      return;
+    }
+    claimShowDebounce = setTimeout(function () {
+      A.get("/booker/shows/search?q=" + encodeURIComponent(q)).then(function (rows) {
+        var dl = document.getElementById("claim-show-list");
+        dl.innerHTML = "";
+        claimShowCache = {};
+        rows.forEach(function (s) {
+          var label = claimShowLabel(s);
+          claimShowCache[label] = s.show_series_id;
+          var o = document.createElement("option");
+          o.value = label;
+          dl.appendChild(o);
+        });
+        hint.textContent = rows.length
+          ? rows.length + " match(es) — pick one from the list."
+          : "No matching show found — try a shorter name, or use \"Create a show\" below if it's not listed yet.";
+      }).catch(function () { hint.textContent = ""; });
+    }, 250);
+  });
+
   document.getElementById("do-claim").addEventListener("click", function () {
     var msg = document.getElementById("claim-msg");
-    var showId = document.getElementById("claim-show").value;
-    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    var typed = document.getElementById("claim-show").value.trim();
+    var showId = claimShowCache[typed];
+    if (!showId) {
+      msg.textContent = "Type the show's name and pick one of the suggested matches.";
+      msg.className = "msg error";
+      return;
+    }
     A.post("/booker/shows/" + showId + "/claim", {
       claimant_name: document.getElementById("claim-name").value,
       claimant_contact: document.getElementById("claim-contact").value,
@@ -548,18 +606,38 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // ------------------------------------------------------------------
   var myShows = [];
 
+  // Every "your show" field that used to be a raw show_series_id
+  // <input type=number> -- a real booker has no idea what their internal
+  // id is (the exact bug reported: "if you click the arrow it just shows
+  // numbers not shows"). All of these are now <select>s sharing the SAME
+  // render logic, populated from /booker/my-shows once here, instead of
+  // each reinventing its own option-building code.
+  var SHOW_SELECT_IDS = ["cal-show", "tray-show", "invites-show", "wa-show",
+    "opp-show", "inv-show"];
+
+  function showOptionsHtml(rows) {
+    return rows.map(function (s) {
+      return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) +
+        (s.city_name ? " (" + A.escapeHtml(s.city_name) + ")" : "") + '</option>';
+    }).join("");
+  }
+
+  function populateShowSelect(id, rows) {
+    var sel = document.getElementById(id);
+    if (!sel) return;
+    sel.innerHTML = rows.length
+      ? showOptionsHtml(rows)
+      : '<option value="">No claimed shows yet</option>';
+  }
+
   function loadMyShows() {
     return A.get("/booker/my-shows").then(function (rows) {
       myShows = rows;
-      var sel = document.getElementById("cal-show");
-      if (!rows.length) {
-        sel.innerHTML = '<option value="">No claimed shows yet</option>';
-        return;
-      }
-      sel.innerHTML = rows.map(function (s) {
-        return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) +
-          (s.city_name ? " (" + A.escapeHtml(s.city_name) + ")" : "") + '</option>';
-      }).join("");
+      SHOW_SELECT_IDS.forEach(function (id) { populateShowSelect(id, rows); });
+      var avp = document.getElementById("avp-shows");
+      avp.innerHTML = rows.length
+        ? showOptionsHtml(rows)
+        : '<option value="">No claimed shows yet</option>';
     }).catch(function () {});
   }
 
@@ -845,7 +923,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var msg = document.getElementById("tray-msg");
     var showId = document.getElementById("tray-show").value;
     var ids = Object.keys(selected).map(function (id) { return parseInt(id, 10); });
-    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    if (!showId) { msg.textContent = "Pick your show first."; msg.className = "msg error"; return; }
     if (!ids.length) { msg.textContent = "Select at least one comic."; msg.className = "msg error"; return; }
     A.post("/booker/shows/" + showId + "/invite-batch", {
       comic_person_ids: ids,
@@ -878,7 +956,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   document.getElementById("load-invites").addEventListener("click", function () {
     var msg = document.getElementById("invites-msg");
     var showId = document.getElementById("invites-show").value;
-    if (!showId) { msg.textContent = "Enter the show series ID."; msg.className = "msg error"; return; }
+    if (!showId) { msg.textContent = "Pick your show first."; msg.className = "msg error"; return; }
     A.get("/booker/shows/" + showId + "/invites").then(function (rows) {
       renderInvites(rows);
       msg.textContent = rows.length + " invite(s)."; msg.className = "msg ok";
@@ -927,8 +1005,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var msg = document.getElementById("avp-msg"), out = document.getElementById("avp-link");
     var title = document.getElementById("avp-title").value.trim();
     if (!title) { msg.textContent = "Add a page title."; msg.className = "msg error"; return; }
-    var showsRaw = document.getElementById("avp-shows").value.trim();
-    var showIds = showsRaw ? showsRaw.split(",").map(function (s) { return parseInt(s.trim(), 10); }).filter(function (n) { return !isNaN(n); }) : null;
+    var selectedShows = Array.prototype.filter.call(
+      document.getElementById("avp-shows").selectedOptions,
+      function (o) { return o.value; }
+    ).map(function (o) { return parseInt(o.value, 10); });
+    var showIds = selectedShows.length ? selectedShows : null;
     var win = parseInt(document.getElementById("avp-window").value, 10) || 60;
     var intro = document.getElementById("avp-intro").value.trim() || null;
     A.post("/booker/availability-page", {
@@ -1172,7 +1253,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var out = document.getElementById("wa-msg-out");
     var links = document.getElementById("wa-links");
     var show = document.getElementById("wa-show").value;
-    if (!show) { out.textContent = "Enter your show series ID."; out.className = "msg error"; return; }
+    if (!show) { out.textContent = "Pick your show first."; out.className = "msg error"; return; }
     var comics = document.getElementById("wa-roster").value.split("\n").map(function (line) {
       var i = line.lastIndexOf(",");
       if (i < 0) return null;
