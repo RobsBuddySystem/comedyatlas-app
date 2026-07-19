@@ -221,8 +221,18 @@ function cellDateKey(d){
 async function loadShows(){
   try {
     const events = await A.fetchEvents();
+    // Language policy (2026-07-19, option (b), docs/atlas-ops/
+    // LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): A.fetchEvents() no longer
+    // filters by language itself (that used to happen via the now-removed
+    // dropFrench()) -- it can return real non-English rows and unconfirmed
+    // (null-language) ones. This root calendar has no language toggle of
+    // its own (unlike city.html), so it keeps the same English-DEFAULT
+    // behavior every other default-visitor surface uses; the full,
+    // all-languages listing for any city is one click away on that city's
+    // own /comedy-atlas/city.html?city=<name> page.
     SHOWS = events.filter(function (ev) {
-      return ev.canonical_event_url && ev.starts_at;
+      return ev.canonical_event_url && ev.starts_at
+        && (typeof A.matchesLanguage !== 'function' || A.matchesLanguage(ev, 'en'));
     }).map(function (ev) {
       const d = new Date(ev.starts_at);
       const urlObj = new URL(ev.canonical_event_url);

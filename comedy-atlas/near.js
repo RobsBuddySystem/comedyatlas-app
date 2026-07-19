@@ -113,6 +113,10 @@
       (ev.venue_name ? ' · ' + escapeHtml(ev.venue_name) : '') +
       (ev.city ? ' · ' + escapeHtml(ev.city) : '') +
       (price ? ' · ' + price : '') +
+      // Language policy (2026-07-19): this widget requests language=en by
+      // default (see fetchNear), but degrades honestly rather than
+      // fabricating "English" if a future caller ever drops that param.
+      (ev.language === undefined || ev.language ? '' : ' · Language not confirmed') +
       '</div></' + cardTag + '>';
   }
 
@@ -128,8 +132,15 @@
   }
 
   function fetchNear(lat, lon, panel) {
+    // Language policy (2026-07-19, option (b), docs/atlas-ops/
+    // LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): /shows/near's own default is
+    // "no filter" (documented, matches /v1/events), so this widget -- which
+    // has no language toggle of its own -- asks explicitly for English,
+    // matching every other default-visitor surface (city.html, the
+    // homepage strip). Nothing is hidden from the underlying data; a
+    // future "all languages" control here would just drop this param.
     var url = API_BASE + "/shows/near?lat=" + encodeURIComponent(lat) +
-      "&lon=" + encodeURIComponent(lon) + "&radius_km=25";
+      "&lon=" + encodeURIComponent(lon) + "&radius_km=25&language=en";
     fetch(url).then(function (r) {
       if (!r.ok) throw new Error("bad status " + r.status);
       return r.json();

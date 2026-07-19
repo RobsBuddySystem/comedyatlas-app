@@ -127,6 +127,7 @@ a.event-card:hover{border-color:var(--purple)}
 .badge.unverified{color:var(--muted);border-color:var(--muted);border-style:dashed}
 .badge.cancelled{color:var(--red);border-color:var(--red)}
 .badge.soldout{color:var(--gold);border-color:var(--gold)}
+.badge.lang-unconfirmed{color:var(--muted);border-color:var(--muted);border-style:dashed}
 .event-actions{margin-top:6px}
 .ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px}
 .ticket-link:hover{opacity:.9}
@@ -327,12 +328,23 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       html += '</div></section>';
     }
 
-    // Recently verified: the soonest shows across every city, grouped by
-    // date with a city badge per card (2026-07-19, Robert: the old flat
-    // 6-item list mixed every city together) -- capped per day and total
-    // days so this stays a taste, not a full listing (full listings live
-    // on /city/<slug>/).
-    var soon = events.slice().sort(function (a, b) {
+    // Coming up: the soonest shows across every city, grouped by date with
+    // a city badge per card (2026-07-19, Robert: the old flat 6-item list
+    // mixed every city together) -- capped per day and total days so this
+    // stays a taste, not a full listing (full listings live on /city/<slug>/).
+    // Renamed from "Recently verified" 2026-07-19 (badge-logic inversion:
+    // there's no blanket verification claim to make here any more).
+    // Language policy (2026-07-19, option (b), docs/atlas-ops/
+    // LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): the totals above (cities,
+    // "upcoming shows", festivals) are computed from the FULL `events`
+    // list, unfiltered -- an honest count of everything real, matching the
+    // "world's greatest resource" claim now that nothing is hidden. This
+    // curated strip is a taste, not a claim of completeness, and has no
+    // language toggle of its own (unlike city.html), so it stays
+    // English-default the same way near.js does; the full, all-languages
+    // list for any city is always one click away on that city's own page.
+    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "en"); });
+    var soon = soonAll.slice().sort(function (a, b) {
       return new Date(a.starts_at) - new Date(b.starts_at);
     }).slice(0, 60);
     html += '<section class="atlas-section"><h2>Coming up</h2>' +

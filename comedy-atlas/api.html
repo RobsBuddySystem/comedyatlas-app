@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>COMEDY ATLAS Public API</title>
+<meta name="description" content="Free, keyless, read-only API for upcoming stand-up shows, venues, organizers, and shows tracked by COMEDY ATLAS. Anonymous, rate-limited, CORS-open. Includes org-level CSV/ICS bulk export for festival and club programmers.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/api.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:20px}
+h1{font-size:26px;margin-bottom:10px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin:26px 0 12px}
+h3{font-size:15px;font-weight:700;margin-bottom:6px}
+p{margin-bottom:10px}
+.lead{color:var(--muted);font-size:15px;max-width:640px;margin-bottom:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+code{background:rgba(127,127,127,.15);padding:1px 6px;border-radius:5px;font-size:.92em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:rgba(127,127,127,.1);border:1px solid var(--border);border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.55;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+th{text-align:left;color:var(--muted);font-weight:600;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px 7px 0;border-bottom:1px solid var(--border);vertical-align:top}
+td code{white-space:nowrap}
+.endpoint{display:flex;align-items:center;gap:10px;margin-bottom:2px;flex-wrap:wrap}
+.method{font-size:11px;font-weight:800;color:#0a0e1a;background:var(--green);border-radius:5px;padding:2px 8px}
+.path{font-size:14.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600}
+.stat-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.stat{flex:1;min-width:160px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
+.stat .n{font-size:22px;font-weight:800}
+.stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+.notice{font-size:12px;color:var(--muted);margin-top:24px;padding:12px 14px;border:1px dashed var(--border);border-radius:10px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<div class="container" id="main-content">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">PUBLIC API — NO KEY REQUIRED</div>
+  <h1>A free, read-only API for stand-up shows worldwide</h1>
+  <p class="lead">Same idea as Songkick or Bandsintown, for stand-up comedy:
+  every endpoint below reads straight from the exact same public listings
+  data that pariscomedy.com's own pages show — nothing more, nothing
+  extra. Anonymous, no signup, no API key. Built for programmers,
+  aggregators, and anyone building on top of what's already public.</p>
+
+  <div class="card">
+    <div class="stat-row">
+      <div class="stat"><div class="n">Anonymous</div><div class="l">no account, no key, no auth header</div></div>
+      <div class="stat"><div class="n">60 / min</div><div class="l">generous per-IP rate limit</div></div>
+      <div class="stat"><div class="n">CORS open</div><div class="l">call it directly from a browser</div></div>
+    </div>
+  </div>
+
+  <h2>Base URL</h2>
+  <div class="card">
+    <pre>https://atlas-api.pariscomedy.com/v1/</pre>
+    <p style="font-size:13px;color:var(--muted)">All endpoints below are relative to this base. Every response is
+    JSON (UTF-8) except the two <code>.csv</code>/<code>.ics</code> export
+    routes, which are plain text.</p>
+  </div>
+
+  <h2>Endpoints</h2>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/events</span></div>
+    <p>Upcoming stand-up shows. Filterable, paged.</p>
+    <table>
+      <tr><th>param</th><th>type</th><th>meaning</th></tr>
+      <tr><td><code>city</code></td><td>string</td><td>city name, case-insensitive (e.g. <code>Paris</code>)</td></tr>
+      <tr><td><code>date_from</code></td><td>date</td><td>ISO date, inclusive lower bound on <code>starts_at</code></td></tr>
+      <tr><td><code>date_to</code></td><td>date</td><td>ISO date, inclusive upper bound on <code>starts_at</code></td></tr>
+      <tr><td><code>free_only</code></td><td>bool</td><td><code>true</code> to return only free shows</td></tr>
+      <tr><td><code>org</code></td><td>string</td><td>organizer slug (see <code>/v1/orgs/{slug}</code>)</td></tr>
+      <tr><td><code>language</code></td><td>string</td><td>filter by language code (e.g. <code>en</code>, <code>fr</code>, <code>it</code>), or <code>unconfirmed</code> for shows whose language hasn't been confirmed yet. <strong>Default: no filter</strong> — every language publishes, since language is a label here, never a gate; the site's own default visitor experience applies <code>language=en</code> client-side, not this API</td></tr>
+      <tr><td><code>limit</code></td><td>int</td><td>default 50, max 200</td></tr>
+      <tr><td><code>offset</code></td><td>int</td><td>default 0</td></tr>
+    </table>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/events?city=Paris&free_only=true&limit=20"
+curl "https://atlas-api.pariscomedy.com/v1/events?city=Barcelona&language=it"</pre>
+  </div>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/cities</span></div>
+    <p>Every city COMEDY ATLAS currently tracks.</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/cities"</pre>
+  </div>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/venues/{slug}</span></div>
+    <p>One venue's public detail (name, address, coordinates, capacity).</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/venues/le-kibele"</pre>
+  </div>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/orgs/{slug}</span></div>
+    <p>One organizer/club's public profile.</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/orgs/comedy-crush"</pre>
+  </div>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/shows/{slug}</span></div>
+    <p>One recurring show's public detail (format, frequency, typical duration).</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/shows/friday-night-standup"</pre>
+  </div>
+
+  <h2>Org bulk export — for festival &amp; club programmers</h2>
+  <p class="lead">Running a Fringe venue or a club and want your own listings
+  out, in one file, for your own site or calendar app? These two routes
+  return every upcoming show under one organizer, in full.</p>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/orgs/{slug}/events.csv</span></div>
+    <p>Every upcoming event for that organizer, one row each — title,
+    dates, venue, price/free signal, ticket link.</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/orgs/comedy-crush/events.csv" -o comedy-crush.csv</pre>
+  </div>
+
+  <div class="card">
+    <div class="endpoint"><span class="method">GET</span><span class="path">/v1/orgs/{slug}/events.ics</span></div>
+    <p>Same events as one RFC5545 calendar file (multi-<code>VEVENT</code>) —
+    subscribe in Google Calendar, Apple Calendar, Outlook, or any calendar
+    app that accepts an .ics URL.</p>
+    <pre>curl "https://atlas-api.pariscomedy.com/v1/orgs/comedy-crush/events.ics" -o comedy-crush.ics</pre>
+  </div>
+
+  <h2>Response shape</h2>
+  <div class="card">
+    <pre>GET /v1/events?city=Paris&limit=1
+
+{
+  "events": [
+    {
+      "id": 4821,
+      "slug": "friday-night-standup-4821",
+      "title": "Friday Night Stand-Up",
+      "starts_at": "2026-08-14T20:00:00+02:00",
+      "ends_at": null,
+      "timezone": "Europe/Paris",
+      "venue_name": "Le Kibele",
+      "venue_address": "12 rue de l'Échiquier",
+      "city_name": "Paris",
+      "country_iso2": "FR",
+      "price_min": null,
+      "price_max": null,
+      "currency": null,
+      "is_free": true,
+      "sold_out_status": "available",
+      "canonical_event_url": "https://www.eventbrite.com/e/...",
+      "atlas_url": "https://pariscomedy.com/comedy-atlas/event/friday-night-standup-4821/",
+      "ticket_url": "https://pariscomedy.com/comedy-atlas/go.html?e=4821"
+    }
+  ],
+  "paging": { "limit": 1, "offset": 0, "total": 2634 }
+}</pre>
+  </div>
+
+  <h2>Rate limits &amp; caching</h2>
+  <div class="card">
+    <p>60 requests/minute per IP, across all <code>/v1/</code> routes
+    combined. Over the limit returns <code>429</code>; wait a minute and
+    retry. Every response carries an <code>ETag</code> and a short
+    <code>Cache-Control: public, max-age=...</code> — send back
+    <code>If-None-Match</code> on your next request and get a cheap
+    <code>304</code> if nothing changed.</p>
+  </div>
+
+  <h2>What's never in a response</h2>
+  <div class="card">
+    <p>This API reads from the exact same public views the site itself
+    renders from, so it is <strong>structurally incapable</strong> of
+    returning a comic's or organizer's private contact details — no
+    email, no phone number, no booker-only contact field, ever. Only
+    what's already visible on a public page, plus the COMEDY ATLAS page
+    URL and the click-tracked <code>go.html</code> ticket redirect.</p>
+  </div>
+
+  <h2>Attribution</h2>
+  <div class="card">
+    <p>Free to use, no key, no approval needed. If you build something
+    public with this data, we just ask for a visible
+    "<strong>Powered by <a href="https://pariscomedy.com/comedy-atlas/">COMEDY ATLAS</a></strong>"
+    credit linking back to <code>https://pariscomedy.com/comedy-atlas/</code>.
+    Questions, or want to be featured? <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>.</p>
+  </div>
+
+  <div class="notice">
+  This API serves public listings data only. It is not a booking or
+  ticketing API — every ticket link routes to the organizer's own real
+  ticket page (via <code>ticket_url</code>). No SLA is offered today;
+  the 60/min limit and response shapes above are the current contract
+  and will be versioned (<code>/v1/</code>, <code>/v2/</code>, ...) rather
+  than silently broken.
+  </div>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+  </div>
+<div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>

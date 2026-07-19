@@ -138,6 +138,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .badge.unverified{color:var(--muted);border-color:var(--muted);border-style:dashed}
 .badge.cancelled{color:var(--red);border-color:var(--red)}
 .badge.soldout{color:var(--gold);border-color:var(--gold)}
+.badge.lang-unconfirmed{color:var(--muted);border-color:var(--muted);border-style:dashed}
 .event-actions{margin-top:6px}
 .ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px}
 .ticket-link:hover{opacity:.9}
@@ -249,8 +250,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <option value="paid">Paid only</option>
     </select>
     <select id="filter-lang" aria-label="Filter by language">
-      <option value="">All languages</option>
-      <option value="en">English</option>
+      <option value="en" selected>English</option>
+      <option value="all">All languages</option>
     </select>
     <select id="filter-tod" aria-label="Filter by time of day">
       <option value="">Any time of day</option>
@@ -384,7 +385,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     venue: params.get("venue") || "",
     price: params.get("price") || "",
     distanceSort: false,
-    lang: params.get("lang") || "",
+    // Language policy (2026-07-19, option (b)): default is "en" (English)
+    // -- nothing is hidden from the underlying data any more (migration
+    // 0102 dropped the view-level gate), but the DEFAULT experience stays
+    // English-first. "all" is the explicit opt-out; any other value is a
+    // specific language code (see buildLangOptions).
+    lang: params.get("lang") || "en",
     duration: params.get("duration") || "",
     org: orgParam,
     q: params.get("q") || ""
@@ -402,7 +408,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (state.format) p.set("format", state.format);
     if (state.venue) p.set("venue", state.venue);
     if (state.price) p.set("price", state.price);
-    if (state.lang) p.set("lang", state.lang);
+    if (state.lang && state.lang !== "en") p.set("lang", state.lang);
     if (state.duration) p.set("duration", state.duration);
     if (state.org) p.set("org", state.org);
     if (state.q) p.set("q", state.q);
@@ -572,6 +578,33 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
   }
 
+  // Language facet (2026-07-19, option (b)): "English" (default) and "All
+  // languages" are always present; any OTHER concrete language actually
+  // found in this city's data (e.g. Italian for Barcelona's The Comedy
+  // Clubhouse) gets its own option too, with a live count, so a visitor can
+  // filter straight to it without going through "All languages" first.
+  // Unconfirmed (null) rows never get their own option -- they only ever
+  // surface under "All languages" (see A.matchesLanguage), tagged "language
+  // not confirmed" on the card itself.
+  function buildLangOptions(events) {
+    var counts = {};
+    events.forEach(function (ev) {
+      if (ev.language && ev.language !== "en") {
+        counts[ev.language] = (counts[ev.language] || 0) + 1;
+      }
+    });
+    var codes = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+    langFilter.innerHTML =
+      '<option value="en">English</option>' +
+      '<option value="all">All languages</option>';
+    codes.forEach(function (code) {
+      var opt = document.createElement("option");
+      opt.value = code;
+      opt.textContent = A.languageLabel(code) + " (" + counts[code] + ")";
+      langFilter.appendChild(opt);
+    });
+  }
+
   function matchesSearch(ev, q) {
     if (!q) return true;
     q = q.toLowerCase();
@@ -613,7 +646,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       if (state.when === "day" && state.day && !buckets.day(d, formatIsoDay(state.day))) return false;
 
       if (state.tod && !buckets.timeOfDay(d, state.tod)) return false;
-      if (state.lang && ev.language !== state.lang) return false;
+      if (!A.matchesLanguage(ev, state.lang)) return false;
       if (state.format && A.deriveFormat(ev) !== state.format) return false;
       if (state.venue && venueKey(ev) !== state.venue) return false;
       if (state.org && ev.organization_name !== state.org) return false;
@@ -909,6 +942,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     buildVenueOptions(cityEvents);
     buildDurationOptions(cityEvents);
     buildOrgOptions(cityEvents);
+    buildLangOptions(cityEvents);
     syncControlsFromState();
     render();
   }).catch(renderError);

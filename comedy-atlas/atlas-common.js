@@ -6,9 +6,18 @@
  *
  * Data contract: data/comedy-atlas/upcoming_events.json + MANIFEST.json,
  * published by scripts/publish_atlas_data.py from the public_upcoming_events
- * view (migration 0046). That view is NOT city-scoped — it already carries
- * every city with approved, English-only (or explicitly-null-language)
+ * view. That view is NOT city-scoped — it carries every city's approved
  * upcoming events, so both pages read the exact same file.
+ *
+ * Language policy (2026-07-19, Robert's decision, option (b) — docs/
+ * atlas-ops/LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): migration
+ * 0102_language_label_not_gate dropped the view's old `language = 'en'`
+ * publish gate. `language` is now a LABEL on every row, not a filter — the
+ * data here can (and does) include real non-English shows and unconfirmed
+ * (`language: null`) ones. Nothing is hidden here in atlas-common.js either;
+ * `matchesLanguage`/`languageLabel`/`languageTag` below give every page a
+ * shared, English-DEFAULT filter with an explicit "all languages" opt-out,
+ * never a silent drop.
  */
 (function (global) {
   "use strict";
@@ -89,11 +98,45 @@
     return "";
   }
 
-  // Defense in depth, mirroring publish_atlas_data.py's own French refusal:
-  // never RENDER a French-labeled event even if one somehow reached the
-  // JSON. Never infers language for anything the data leaves blank.
-  function dropFrench(events) {
-    return events.filter(function (ev) { return ev.language !== "fr"; });
+  // --- Language: a LABEL, not a gate (2026-07-19, option (b)) -------------
+  // Replaces the old dropFrench() -- that function unconditionally REMOVED
+  // every French-labeled row from every page's data before any filter even
+  // ran, which is exactly the client-side mirror of the view-level gate
+  // migration 0102 removed from the database. A real French/Italian/etc.
+  // show is real, wanted data now; nothing in this file drops it. The
+  // default EXPERIENCE stays English-first: matchesLanguage below is what
+  // every page's filter calls, defaulting to "en" unless the visitor (or a
+  // page that deliberately shows everything) asks for "all" or a specific
+  // other code.
+  var LANGUAGE_LABELS = {
+    en: "English", fr: "Français", it: "Italiano", es: "Español",
+    de: "Deutsch", nl: "Nederlands", pt: "Português", pl: "Polski",
+    ca: "Català"
+  };
+
+  function languageLabel(code) {
+    if (!code) return null;
+    return LANGUAGE_LABELS[code] || (String(code).charAt(0).toUpperCase() + String(code).slice(1));
+  }
+
+  // lang: "" or "en" (the default) -> English only; "all" -> every language,
+  // including unconfirmed (null); any other value -> exact code match
+  // (unconfirmed rows never match a specific code — only "all" surfaces them).
+  function matchesLanguage(ev, lang) {
+    if (!lang || lang === "en") return ev.language === "en";
+    if (lang === "all") return true;
+    return ev.language === lang;
+  }
+
+  // Small badge, same idiom as statusBadge below — appears ONLY on a row
+  // whose language is genuinely unconfirmed (null), never claims "English"
+  // or any other value it doesn't have. A known non-English language is
+  // shown as plain text in the card meta line (renderEventCards /
+  // renderGroupedEventCards), not as a badge, to match the existing
+  // "English" meta-text convention those functions already used.
+  function languageTag(ev) {
+    if (ev.language) return "";
+    return '<span class="badge lang-unconfirmed">Language not confirmed</span>';
   }
 
   // --- Format derivation (Phase-3 listing-filtering-ux, 2026-07-14) -------
@@ -234,7 +277,11 @@
       return r.json();
     }).then(function (data) {
       if (!Array.isArray(data)) throw new Error("unexpected payload shape");
-      return dropFrench(data);
+      // 2026-07-19: no language filtering happens here any more (see the
+      // module docstring) — every page decides its OWN default via
+      // matchesLanguage, so a page that wants everything (or a specific
+      // non-English default) isn't forced through an English-only fetch.
+      return data;
     });
   }
 
@@ -401,7 +448,7 @@
         }
         if (venueBit) metaParts.push(venueBit);
         if (orgBit && orgBit !== venueBit) metaParts.push(orgBit);
-        if (ev.language === "en") metaParts.push("English");
+        if (ev.language && ev.language !== "en") metaParts.push(languageLabel(ev.language));
         if (price) metaParts.push(price);
         var meta = metaParts.join(' <span class="sep">·</span> ');
 
@@ -434,7 +481,7 @@
         html += '    <div class="event-title">' + titleText + "</div>";
         html += '    <div class="event-time">' + escapeHtml(fmtTime(x.d)) + "</div>";
         html += "  </div>";
-        html += '  <div class="event-meta">' + meta + " " + statusBadge(ev) + "</div>";
+        html += '  <div class="event-meta">' + meta + " " + statusBadge(ev) + languageTag(ev) + "</div>";
         html += "</" + cardTag + ">";
       });
       html += "</section>";
@@ -594,7 +641,7 @@
       var metaParts = [];
       if (venueBit) metaParts.push(venueBit);
       if (orgBit && orgBit !== venueBit) metaParts.push(orgBit);
-      if (primary.language === "en") metaParts.push("English");
+      if (primary.language && primary.language !== "en") metaParts.push(languageLabel(primary.language));
       if (price) metaParts.push(price);
       var meta = metaParts.join(' <span class="sep">·</span> ');
 
@@ -627,7 +674,7 @@
         html += '    <div class="event-time">' + escapeHtml(fmtTime(g.earliest)) + "</div>";
       }
       html += "  </div>";
-      html += '  <div class="event-meta">' + meta + " " + statusBadge(primary) + "</div>";
+      html += '  <div class="event-meta">' + meta + " " + statusBadge(primary) + languageTag(primary) + "</div>";
 
       if (g.events.length > 1) {
         var visible = g.events.slice(0, GROUPED_VISIBLE_DATES);
@@ -678,7 +725,10 @@
     fmtTime: fmtTime,
     fmtPrice: fmtPrice,
     statusBadge: statusBadge,
-    dropFrench: dropFrench,
+    LANGUAGE_LABELS: LANGUAGE_LABELS,
+    languageLabel: languageLabel,
+    matchesLanguage: matchesLanguage,
+    languageTag: languageTag,
     fetchEvents: fetchEvents,
     fetchManifest: fetchManifest,
     fetchCities: fetchCities,
