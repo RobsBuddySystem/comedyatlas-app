@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lolyamorous-a-speed-dating-comedy-show@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T200000Z
+DTEND:20260806T220000Z
+SUMMARY:LOLyamorous: A Speed-Dating Comedy Show
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lolyamoro
+ us-a-speed-dating-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/lolyamorous-a-speed-dating-c
+ omedy-show/
+END:VEVENT
+END:VCALENDAR

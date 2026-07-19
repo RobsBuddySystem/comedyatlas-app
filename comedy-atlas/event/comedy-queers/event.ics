@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-queers@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T201500Z
+DTEND:20260806T221500Z
+SUMMARY:Comedy Queers
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-qu
+ eers/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-queers/
+END:VEVENT
+END:VCALENDAR

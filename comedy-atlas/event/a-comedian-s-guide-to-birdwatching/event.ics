@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-comedian-s-guide-to-birdwatching@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260817T111500Z
+DTEND:20260817T131500Z
+SUMMARY:A Comedian's Guide to Birdwatching
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-comedia
+ n-s-guide-to-birdwatching/
+URL:https://comedyatlas.app/comedy-atlas/event/a-comedian-s-guide-to-birdwa
+ tching/
+END:VEVENT
+END:VCALENDAR

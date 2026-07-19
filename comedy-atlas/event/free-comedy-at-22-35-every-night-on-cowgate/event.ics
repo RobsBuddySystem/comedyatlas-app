@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:free-comedy-at-22-35-every-night-on-cowgate@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260809T213500Z
+DTEND:20260809T233500Z
+SUMMARY:FREE COMEDY AT 22:35 EVERY NIGHT ON COWGATE
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/free-come
+ dy-at-22-35-every-night-on-cowgate/
+URL:https://comedyatlas.app/comedy-atlas/event/free-comedy-at-22-35-every-n
+ ight-on-cowgate/
+END:VEVENT
+END:VCALENDAR

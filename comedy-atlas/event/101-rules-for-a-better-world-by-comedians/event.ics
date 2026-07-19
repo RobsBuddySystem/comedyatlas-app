@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:101-rules-for-a-better-world-by-comedians@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T104500Z
+DTEND:20260806T124500Z
+SUMMARY:101 Rules for a Better World (by Comedians)
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/101-rules
+ -for-a-better-world-by-comedians/
+URL:https://comedyatlas.app/comedy-atlas/event/101-rules-for-a-better-world
+ -by-comedians/
+END:VEVENT
+END:VCALENDAR

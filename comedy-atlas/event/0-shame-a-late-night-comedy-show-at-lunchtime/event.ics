@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:0-shame-a-late-night-comedy-show-at-lunchtime@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T133000Z
+DTEND:20260806T153000Z
+SUMMARY:0% Shame: A Late Night Comedy Show at Lunchtime
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/0-shame-a
+ -late-night-comedy-show-at-lunchtime/
+URL:https://comedyatlas.app/comedy-atlas/event/0-shame-a-late-night-comedy-
+ show-at-lunchtime/
+END:VEVENT
+END:VCALENDAR

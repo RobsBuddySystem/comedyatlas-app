@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:5-comedians-do-comedy-and-karaoke@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T191500Z
+DTEND:20260806T211500Z
+SUMMARY:5 Comedians Do Comedy and Karaoke
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/5-comedia
+ ns-do-comedy-and-karaoke/
+URL:https://comedyatlas.app/comedy-atlas/event/5-comedians-do-comedy-and-ka
+ raoke/
+END:VEVENT
+END:VCALENDAR

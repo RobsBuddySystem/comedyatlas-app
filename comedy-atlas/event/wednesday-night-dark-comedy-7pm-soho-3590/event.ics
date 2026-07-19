@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wednesday-night-dark-comedy-7pm-soho-3590@comedyatlas.app
+DTSTAMP:20260719T005419Z
+DTSTART:20260826T180000Z
+DTEND:20260826T193000Z
+SUMMARY:Wednesday Night Dark Comedy\, 7PM\, Soho
+LOCATION:London
+DESCRIPTION:Wednesday night stand-up comedy show in Soho\, Central London\n
+ More info: https://comedyatlas.app/comedy-atlas/event/wednesday-night-dark-
+ comedy-7pm-soho-3590/
+URL:https://comedyatlas.app/comedy-atlas/event/wednesday-night-dark-comedy-
+ 7pm-soho-3590/
+END:VEVENT
+END:VCALENDAR

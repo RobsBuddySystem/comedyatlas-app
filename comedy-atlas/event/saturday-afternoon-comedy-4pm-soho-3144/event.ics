@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-afternoon-comedy-4pm-soho-3144@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20261003T150000Z
+DTEND:20261003T163000Z
+SUMMARY:Saturday Afternoon Comedy\, 4PM\, Soho
+LOCATION:London
+DESCRIPTION:Saturday Afternoon stand-up comedy show in Soho\, Central Londo
+ n.\nMore info: https://comedyatlas.app/comedy-atlas/event/saturday-afternoo
+ n-comedy-4pm-soho-3144/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-comedy-4p
+ m-soho-3144/
+END:VEVENT
+END:VCALENDAR

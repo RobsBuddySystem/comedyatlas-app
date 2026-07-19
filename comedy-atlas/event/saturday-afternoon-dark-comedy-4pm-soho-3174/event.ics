@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-afternoon-dark-comedy-4pm-soho-3174@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20261205T160000Z
+DTEND:20261205T173000Z
+SUMMARY:Saturday Afternoon Dark Comedy\, 4PM\, Soho
+LOCATION:London
+DESCRIPTION:Saturday afternoon stand-up comedy show in Soho\, Central Londo
+ n.\nMore info: https://comedyatlas.app/comedy-atlas/event/saturday-afternoo
+ n-dark-comedy-4pm-soho-3174/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-dark-come
+ dy-4pm-soho-3174/
+END:VEVENT
+END:VCALENDAR

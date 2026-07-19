@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shitty-mic@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260720T190000Z
+DTEND:20260720T210000Z
+SUMMARY:Shitty Mic
+LOCATION:The Clubhouse: Laietana & Nikki's\, 6 Via Laietana\, Barcelona
+DESCRIPTION:From pros to newbies\, anyone can perform and everyone can be s
+ hit!\nMore info: https://comedyatlas.app/comedy-atlas/event/shitty-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/shitty-mic/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-cellar@comedyatlas.app
+DTSTAMP:20260719T005419Z
+DTSTART:20260808T191500Z
+DTEND:20260808T211500Z
+SUMMARY:THE COMEDY CELLAR
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-cellar/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-cellar/
+END:VEVENT
+END:VCALENDAR

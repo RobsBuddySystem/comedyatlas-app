@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anorak-comedy-presents-the-alternative-comedy-nightmare@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260811T211000Z
+DTEND:20260811T231000Z
+SUMMARY:ANORAK COMEDY PRESENTS: THE ALTERNATIVE COMEDY NIGHTMARE
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anorak-co
+ medy-presents-the-alternative-comedy-nightmare/
+URL:https://comedyatlas.app/comedy-atlas/event/anorak-comedy-presents-the-a
+ lternative-comedy-nightmare/
+END:VEVENT
+END:VCALENDAR

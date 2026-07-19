@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:irish-comedy-free-for-all@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T184500Z
+DTEND:20260806T204500Z
+SUMMARY:Irish Comedy Free-For-All
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/irish-com
+ edy-free-for-all/
+URL:https://comedyatlas.app/comedy-atlas/event/irish-comedy-free-for-all/
+END:VEVENT
+END:VCALENDAR

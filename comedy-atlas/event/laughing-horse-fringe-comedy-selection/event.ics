@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laughing-horse-fringe-comedy-selection@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260807T204500Z
+DTEND:20260807T224500Z
+SUMMARY:Laughing Horse Fringe Comedy Selection
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laughing-
+ horse-fringe-comedy-selection/
+URL:https://comedyatlas.app/comedy-atlas/event/laughing-horse-fringe-comedy
+ -selection/
+END:VEVENT
+END:VCALENDAR

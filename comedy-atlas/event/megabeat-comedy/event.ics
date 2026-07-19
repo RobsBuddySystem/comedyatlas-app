@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:megabeat-comedy@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260819T203000Z
+DTEND:20260819T223000Z
+SUMMARY:MEGABEAT COMEDY
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/megabeat-
+ comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/megabeat-comedy/
+END:VEVENT
+END:VCALENDAR

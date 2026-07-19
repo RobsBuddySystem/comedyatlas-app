@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:3-s-comedy-nights@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T210000Z
+DTEND:20260806T230000Z
+SUMMARY:3's Comedy: Nights
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/3-s-comed
+ y-nights/
+URL:https://comedyatlas.app/comedy-atlas/event/3-s-comedy-nights/
+END:VEVENT
+END:VCALENDAR

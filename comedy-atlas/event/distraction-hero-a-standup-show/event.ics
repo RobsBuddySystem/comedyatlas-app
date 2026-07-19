@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:distraction-hero-a-standup-show@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260815T131000Z
+DTEND:20260815T151000Z
+SUMMARY:DISTRACTION HERO – A STANDUP SHOW
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/distracti
+ on-hero-a-standup-show/
+URL:https://comedyatlas.app/comedy-atlas/event/distraction-hero-a-standup-s
+ how/
+END:VEVENT
+END:VCALENDAR

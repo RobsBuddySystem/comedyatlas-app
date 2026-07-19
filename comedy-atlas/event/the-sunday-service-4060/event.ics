@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-sunday-service-4060@comedyatlas.app
+DTSTAMP:20260719T005419Z
+DTSTART:20261011T180000Z
+DTEND:20261011T194500Z
+SUMMARY:The Sunday Service
+LOCATION:The Comedy Clubhouse: Laietana\, 6 Via Laietana\, Barcelona
+DESCRIPTION:A comedy show for sinners in search of silly salvation.\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/the-sunday-service-4060/
+URL:https://comedyatlas.app/comedy-atlas/event/the-sunday-service-4060/
+END:VEVENT
+END:VCALENDAR

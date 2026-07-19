@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sunday-night-comedy-7-30pm-covent-garden@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260719T183000Z
+DTEND:20260719T200000Z
+SUMMARY:Sunday Night Comedy\,  7:30PM\, Covent Garden
+LOCATION:London
+DESCRIPTION:Sunday night stand-up comedy show in Covent Garden\, Central Lo
+ ndon\nMore info: https://comedyatlas.app/comedy-atlas/event/sunday-night-co
+ medy-7-30pm-covent-garden/
+URL:https://comedyatlas.app/comedy-atlas/event/sunday-night-comedy-7-30pm-c
+ ovent-garden/
+END:VEVENT
+END:VCALENDAR

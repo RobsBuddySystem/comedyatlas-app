@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-mic-energy-4102@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20261215T200000Z
+DTEND:20261215T220000Z
+SUMMARY:Big Mic Energy
+LOCATION:The Comedy Clubhouse: Laietana\, 6 Via Laietana\, Barcelona
+DESCRIPTION:Open mic for women and non-binary comedians and newbies.\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/big-mic-energy-4102/
+URL:https://comedyatlas.app/comedy-atlas/event/big-mic-energy-4102/
+END:VEVENT
+END:VCALENDAR

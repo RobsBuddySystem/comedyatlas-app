@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:international-comedy-showcase@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T130000Z
+DTEND:20260806T150000Z
+SUMMARY:International Comedy Showcase
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/internati
+ onal-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/international-comedy-showcas
+ e/
+END:VEVENT
+END:VCALENDAR

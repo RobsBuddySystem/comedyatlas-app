@@ -414,6 +414,43 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       A.escapeHtml(msg) + '</p></div>';
   }
 
+  // Quick-win batch (2026-07-19, competitor+persona gap analysis) feature
+  // #3: SMART EMPTY STATES. When a time filter (tonight/weekend/week/a
+  // specific date) yields zero shows, a bare "no shows" message is a dead
+  // end — this instead surfaces the next real, upcoming show in this city
+  // (computed from the already-loaded, unfiltered `allEvents` array, never
+  // a fabricated date) and links straight to it. Only fires for a
+  // RESTRICTIVE time filter (not "all upcoming", which has no time-based
+  // explanation for zero results — the generic message there is honest:
+  // some other facet filter, or genuinely nothing in this city, is why).
+  var WHEN_EMPTY_LABELS = { tonight: "tonight", weekend: "this weekend", week: "this week" };
+
+  function findNextShow(events) {
+    var now = new Date();
+    var next = null;
+    for (var i = 0; i < events.length; i++) {
+      var d = new Date(events[i].starts_at);
+      if (isNaN(d.getTime()) || d < now) continue;
+      if (!next || d < new Date(next.starts_at)) next = events[i];
+    }
+    return next;
+  }
+
+  function renderSmartEmpty(timeLabel, ev) {
+    var d = new Date(ev.starts_at);
+    var dateStr = isNaN(d.getTime()) ? "" :
+      d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) +
+      " · " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+    var href = ev.show_series_slug
+      ? "show/" + encodeURIComponent(ev.show_series_slug) + "/"
+      : (ev.slug ? "event/" + encodeURIComponent(ev.slug) + "/" : null);
+    var titleHtml = A.escapeHtml(ev.title || "this show");
+    if (href) titleHtml = '<a href="' + href + '">' + titleHtml + "</a>";
+    app.innerHTML = '<div class="state-block">' +
+      '<h2>Nothing ' + A.escapeHtml(timeLabel) + ' in ' + A.escapeHtml(cityParam) + '</h2>' +
+      '<p>Next show is ' + A.escapeHtml(dateStr) + ': ' + titleHtml + '</p></div>';
+  }
+
   function renderError() {
     app.innerHTML = '<div class="state-block error"><h2>Couldn’t load ' + A.escapeHtml(cityParam) + ' shows</h2>' +
       '<p>The listings feed didn’t respond. Try again shortly, or check ' +
@@ -606,6 +643,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     if (!filtered.length) {
       resultCount.textContent = "0 shows match your filters";
+      var timeLabel = state.when === "day" && state.day
+        ? "on " + state.day
+        : WHEN_EMPTY_LABELS[state.when];
+      var nextShow = timeLabel ? findNextShow(allEvents) : null;
+      if (nextShow) {
+        renderSmartEmpty(timeLabel, nextShow);
+        return;
+      }
       renderEmpty("No " + cityParam + " shows match right now. Try widening your filters or picking a different time range.");
       return;
     }

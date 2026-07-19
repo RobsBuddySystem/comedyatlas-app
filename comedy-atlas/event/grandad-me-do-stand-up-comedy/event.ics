@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:grandad-me-do-stand-up-comedy@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T092000Z
+DTEND:20260806T112000Z
+SUMMARY:Grandad & Me Do Stand Up Comedy
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/grandad-m
+ e-do-stand-up-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/grandad-me-do-stand-up-comed
+ y/
+END:VEVENT
+END:VCALENDAR

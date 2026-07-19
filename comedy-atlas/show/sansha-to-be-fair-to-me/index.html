@@ -86,6 +86,10 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .privacy-note strong{color:var(--text)}
 .atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
 .atlas-toast.atlas-toast-visible{opacity:1}
+.add-to-calendar-link{display:inline-block;font-size:13px;font-weight:700;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:9px 16px;border-radius:8px}
+.add-to-calendar-link:hover{border-color:var(--purple-light)}
+.share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.share-btn:hover{border-color:var(--purple-light)}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -116,6 +120,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="field-row" style="margin-top:10px"><span>unknown</span><span class="sep">·</span><span><a href="/comedy-atlas/org/pbh-s-free-fringe/">PBH&#x27;s Free Fringe</a></span><span class="sep">·</span><span>Edinburgh</span></div>
 </header>
 <main id="main-content">
+<div class="card share-box">
+  <button type="button" class="share-btn" id="share-btn"
+          data-share-url="https://comedyatlas.app/comedy-atlas/show/sansha-to-be-fair-to-me/" data-share-title="SANSHA: TO BE FAIR TO ME">
+    ↗ Share
+  </button>
+  <div class="field-row" id="share-status" style="margin-top:6px"></div>
+</div>
 <div class="follow-box">
   <input type="email" id="follow-email" placeholder="you@example.com" aria-label="Email address to follow with (optional if logged in)">
   <button type="button" class="follow-btn" id="follow-btn"
@@ -217,6 +228,31 @@ window.atlasToast = window.atlasToast || function(msg){
       if(window.atlasToast){ window.atlasToast('Could not follow right now — try again later.'); }
       btn.disabled = false;
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('share-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var url = btn.dataset.shareUrl || location.href;
+    var title = btn.dataset.shareTitle || document.title;
+    var status = document.getElementById('share-status');
+    if(navigator.share){
+      navigator.share({title: title, url: url}).catch(function(){});
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        if(window.atlasToast){ window.atlasToast('Link copied'); }
+        if(status){ status.textContent = 'Link copied'; }
+      }).catch(function(){
+        if(status){ status.textContent = url; }
+      });
+      return;
+    }
+    if(status){ status.textContent = url; }
   });
 })();
 </script>

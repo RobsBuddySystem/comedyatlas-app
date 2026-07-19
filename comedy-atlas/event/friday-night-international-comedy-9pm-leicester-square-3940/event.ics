@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-international-comedy-9pm-leicester-square-3940@comedyatlas
+ .app
+DTSTAMP:20260719T005418Z
+DTSTART:20260814T200000Z
+DTEND:20260814T213000Z
+SUMMARY:Friday Night International Comedy\, 9PM\, Leicester Square
+LOCATION:London
+DESCRIPTION:Friday night stand-up comedy show in Leicester Square\, Central
+  London\nMore info: https://comedyatlas.app/comedy-atlas/event/friday-night
+ -international-comedy-9pm-leicester-square-3940/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-international-c
+ omedy-9pm-leicester-square-3940/
+END:VEVENT
+END:VCALENDAR

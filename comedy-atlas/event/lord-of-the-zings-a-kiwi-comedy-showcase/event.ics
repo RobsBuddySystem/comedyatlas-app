@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lord-of-the-zings-a-kiwi-comedy-showcase@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T123000Z
+DTEND:20260806T143000Z
+SUMMARY:Lord of the Zings: A Kiwi Comedy Showcase
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lord-of-t
+ he-zings-a-kiwi-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/lord-of-the-zings-a-kiwi-com
+ edy-showcase/
+END:VEVENT
+END:VCALENDAR

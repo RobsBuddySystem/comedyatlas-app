@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:100-scouse-comedy@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T194500Z
+DTEND:20260806T214500Z
+SUMMARY:100% Scouse Comedy
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/100-scous
+ e-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/100-scouse-comedy/
+END:VEVENT
+END:VCALENDAR

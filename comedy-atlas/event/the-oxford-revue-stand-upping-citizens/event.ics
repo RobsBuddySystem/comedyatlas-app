@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-oxford-revue-stand-upping-citizens@comedyatlas.app
+DTSTAMP:20260719T005419Z
+DTSTART:20260818T173000Z
+DTEND:20260818T193000Z
+SUMMARY:The Oxford Revue: Stand-upping Citizens
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-oxfor
+ d-revue-stand-upping-citizens/
+URL:https://comedyatlas.app/comedy-atlas/event/the-oxford-revue-stand-uppin
+ g-citizens/
+END:VEVENT
+END:VCALENDAR

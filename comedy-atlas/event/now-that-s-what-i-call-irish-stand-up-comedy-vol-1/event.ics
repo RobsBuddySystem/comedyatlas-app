@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:now-that-s-what-i-call-irish-stand-up-comedy-vol-1@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T130000Z
+DTEND:20260806T150000Z
+SUMMARY:Now That's What I Call Irish Stand-Up Comedy! Vol 1
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/now-that-
+ s-what-i-call-irish-stand-up-comedy-vol-1/
+URL:https://comedyatlas.app/comedy-atlas/event/now-that-s-what-i-call-irish
+ -stand-up-comedy-vol-1/
+END:VEVENT
+END:VCALENDAR

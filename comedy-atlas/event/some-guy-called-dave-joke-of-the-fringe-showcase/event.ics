@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:some-guy-called-dave-joke-of-the-fringe-showcase@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T130000Z
+DTEND:20260806T150000Z
+SUMMARY:(Some Guy Called) DAVE Joke of the Fringe Showcase
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/some-guy-
+ called-dave-joke-of-the-fringe-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/some-guy-called-dave-joke-of
+ -the-fringe-showcase/
+END:VEVENT
+END:VCALENDAR

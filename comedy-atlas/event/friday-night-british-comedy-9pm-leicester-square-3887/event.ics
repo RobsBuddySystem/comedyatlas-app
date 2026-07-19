@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-british-comedy-9pm-leicester-square-3887@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20261225T210000Z
+DTEND:20261225T223000Z
+SUMMARY:Friday Night British Comedy\, 9PM\, Leicester Square
+LOCATION:London
+DESCRIPTION:Friday night stand-up comedy show in Leicester Square\, Central
+  London\nMore info: https://comedyatlas.app/comedy-atlas/event/friday-night
+ -british-comedy-9pm-leicester-square-3887/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-british-comedy-
+ 9pm-leicester-square-3887/
+END:VEVENT
+END:VCALENDAR

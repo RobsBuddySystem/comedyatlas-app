@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nyc-punchlines-st-marks-comedy-showcase@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260819T122000Z
+DTEND:20260819T142000Z
+SUMMARY:NYC PUNCHLINES – ST. MARKS COMEDY SHOWCASE
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nyc-punch
+ lines-st-marks-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/nyc-punchlines-st-marks-come
+ dy-showcase/
+END:VEVENT
+END:VCALENDAR

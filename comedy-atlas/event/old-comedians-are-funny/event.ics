@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:old-comedians-are-funny@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T120000Z
+DTEND:20260806T140000Z
+SUMMARY:Old Comedians Are Funny
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/old-comed
+ ians-are-funny/
+URL:https://comedyatlas.app/comedy-atlas/event/old-comedians-are-funny/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:powerpoint-based-stand-up-and-improvised-comedy-show@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260825T001000Z
+DTEND:20260825T021000Z
+SUMMARY:Powerpoint based stand up and improvised comedy show
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/powerpoin
+ t-based-stand-up-and-improvised-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/powerpoint-based-stand-up-an
+ d-improvised-comedy-show/
+END:VEVENT
+END:VCALENDAR

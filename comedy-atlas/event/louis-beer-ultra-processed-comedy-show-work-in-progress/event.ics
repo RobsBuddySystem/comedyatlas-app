@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:louis-beer-ultra-processed-comedy-show-work-in-progress@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T094000Z
+DTEND:20260806T114000Z
+SUMMARY:Louis Beer: Ultra-Processed Comedy Show (Work in Progress)
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/louis-bee
+ r-ultra-processed-comedy-show-work-in-progress/
+URL:https://comedyatlas.app/comedy-atlas/event/louis-beer-ultra-processed-c
+ omedy-show-work-in-progress/
+END:VEVENT
+END:VCALENDAR

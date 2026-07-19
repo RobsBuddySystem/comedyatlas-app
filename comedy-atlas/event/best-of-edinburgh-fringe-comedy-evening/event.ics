@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:best-of-edinburgh-fringe-comedy-evening@comedyatlas.app
+DTSTAMP:20260719T005418Z
+DTSTART:20260806T193000Z
+DTEND:20260806T213000Z
+SUMMARY:Best of Edinburgh Fringe Comedy (Evening)
+LOCATION:Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/best-of-e
+ dinburgh-fringe-comedy-evening/
+URL:https://comedyatlas.app/comedy-atlas/event/best-of-edinburgh-fringe-com
+ edy-evening/
+END:VEVENT
+END:VCALENDAR
