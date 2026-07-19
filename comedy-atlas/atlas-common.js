@@ -280,15 +280,38 @@
     }) + " (Paris time).";
   }
 
-  function groupByCity(events) {
+  // citiesByName is an optional { "Riga": {country_name, country_iso2, ...}, ... }
+  // lookup built from cities.json (fetchCities()). When present, each returned
+  // entry carries `country` -- Robert's 2026-07-19 feedback ("I don't know
+  // where Riga is") is honored by ALWAYS attaching the country when known,
+  // not just for cities judged "not major": consistency beats a subjective
+  // major-city list, and it costs nothing for the cities everyone already
+  // recognizes (Paris, London).
+  function groupByCity(events, citiesByName) {
     var counts = {};
     events.forEach(function (ev) {
       var city = ev.city_name || "Unknown";
       counts[city] = (counts[city] || 0) + 1;
     });
     return Object.keys(counts).map(function (city) {
-      return { city: city, count: counts[city] };
+      var country = null;
+      if (citiesByName && citiesByName[city]) {
+        country = citiesByName[city].country_name || citiesByName[city].country_iso2 || null;
+      }
+      return { city: city, count: counts[city], country: country };
     }).sort(function (a, b) { return b.count - a.count; });
+  }
+
+  // Builds a { cityName: cityRow } lookup from cities.json's array shape
+  // (fetchCities()'s resolved value). Returns {} for null/non-array input
+  // rather than throwing, so a fetch failure just means no country labels.
+  function citiesByName(citiesArray) {
+    var map = {};
+    if (!Array.isArray(citiesArray)) return map;
+    citiesArray.forEach(function (c) {
+      if (c && c.name) map[c.name] = c;
+    });
+    return map;
   }
 
   function groupFestivals(events) {
@@ -307,7 +330,19 @@
   // then returns the HTML for the shared event-card list markup. Used by
   // both the hub's "recently verified" strip (small N) and the full
   // per-city view (all matching events).
-  function renderEventCards(events) {
+  //
+  // opts (2026-07-19, Robert: "there needs to be a better way of organising
+  // the shows" on the homepage strip, which mixed every city into one flat
+  // list):
+  //   showCityBadge -- prepend each card's meta row with a small city chip
+  //     (homepage strip spans many cities; a per-city page already knows
+  //     its own city and doesn't need this).
+  //   maxPerDay -- cap how many cards render per day-group (the rest are
+  //     simply not shown here, same "organization not redesign" spirit as
+  //     the day grouping itself; full listings remain on /city/<slug>/).
+  //   maxDays -- cap how many day-groups render at all.
+  function renderEventCards(events, opts) {
+    opts = opts || {};
     var withDates = events.map(function (ev) {
       return { ev: ev, d: new Date(ev.starts_at) };
     }).filter(function (x) {
@@ -325,16 +360,22 @@
       groups[groups.length - 1].items.push(x);
     });
 
+    if (opts.maxDays) groups = groups.slice(0, opts.maxDays);
+
     var html = "";
     groups.forEach(function (g) {
+      var items = opts.maxPerDay ? g.items.slice(0, opts.maxPerDay) : g.items;
       html += '<section class="day-group">';
       html += '<div class="day-heading">' + escapeHtml(fmtDayHeading(g.day)) + '</div>';
-      g.items.forEach(function (x) {
+      items.forEach(function (x) {
         var ev = x.ev;
         var venueBit = ev.venue_name ? escapeHtml(ev.venue_name) : null;
         var orgBit = ev.organization_name ? escapeHtml(ev.organization_name) : null;
         var price = fmtPrice(ev);
         var metaParts = [];
+        if (opts.showCityBadge && ev.city_name) {
+          metaParts.push('<span class="badge city-badge">' + escapeHtml(ev.city_name) + '</span>');
+        }
         if (venueBit) metaParts.push(venueBit);
         if (orgBit && orgBit !== venueBit) metaParts.push(orgBit);
         if (ev.language === "en") metaParts.push("English");
@@ -530,6 +571,7 @@
     distanceKm: distanceKm,
     setFreshness: setFreshness,
     groupByCity: groupByCity,
+    citiesByName: citiesByName,
     groupFestivals: groupFestivals,
     renderEventCards: renderEventCards,
     groupEventsByShow: groupEventsByShow,

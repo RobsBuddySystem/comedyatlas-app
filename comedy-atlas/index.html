@@ -87,6 +87,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .place-card .place-count{color:var(--gold);font-weight:700}
 .place-card .place-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
 
+/* "Also tracking" stub-city list (2026-07-19): compact links, not big
+   cards -- these are 1-2-show stubs from touring-organizer feeds, not
+   real per-city coverage yet (see docs/atlas-ops/ROADMAP_GAPS). */
+.stub-note{color:var(--muted);font-size:12.5px;margin-bottom:12px;max-width:640px}
+.stub-list{display:flex;flex-wrap:wrap;gap:8px 16px}
+.stub-list a{font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:5px 12px}
+.stub-list a:hover{color:var(--text);border-color:var(--purple)}
+.stub-list .stub-count{color:var(--gold);font-weight:700}
+.badge.city-badge{color:var(--purple-light);border-color:var(--purple-light);margin-right:4px}
+
 /* Event list (recently verified strip) */
 main{max-width:1100px;margin:0 auto;padding:8px 20px 40px}
 .day-group{margin-bottom:24px}
@@ -223,14 +233,34 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       '<p>Check back soon as more cities come online.</p></div>';
   }
 
-  function cityCard(entry) {
+  // FEATURED_MIN_SHOWS: cities with real registered-source coverage today
+  // (London/Edinburgh/Madrid/Amsterdam/Barcelona/Berlin/Paris/Dublin) all
+  // clear this bar comfortably; every other live city is a 1-5-show stub
+  // from a touring organizer's feed, not real per-city coverage (Robert,
+  // 2026-07-19: "I'm sure there's more than one show in Montreal" -- he's
+  // right, Montreal has exactly 1, a stray touring-act event, not a scene).
+  var FEATURED_MIN_SHOWS = 15;
+
+  // Always shows the country -- Robert's core need ("I don't know where
+  // Riga is") applies just as honestly to a city everyone already knows
+  // (Paris, London): consistency beats a subjective "major city" list.
+  function cityLabel(entry) {
     var slug = A.escapeHtml(entry.city);
+    return entry.country ? slug + ', ' + A.escapeHtml(entry.country) : slug;
+  }
+
+  function cityCard(entry) {
     var tag = "";
     if (entry.city === "Edinburgh") tag = '<div class="place-tag">Free Fringe city</div>';
     return '<a class="place-card" href="city.html?city=' + encodeURIComponent(entry.city) + '">' +
-      '<div class="place-name">' + slug + '</div>' +
+      '<div class="place-name">' + cityLabel(entry) + '</div>' +
       '<div class="place-meta"><span class="place-count">' + entry.count + '</span> upcoming show' +
       (entry.count === 1 ? '' : 's') + '</div>' + tag + '</a>';
+  }
+
+  function stubCityLink(entry) {
+    return '<a href="city.html?city=' + encodeURIComponent(entry.city) + '">' +
+      cityLabel(entry) + ' · <span class="stub-count">' + entry.count + '</span></a>';
   }
 
   function festivalCard(entry) {
@@ -242,10 +272,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       '<div class="place-tag">Free entry</div></a>';
   }
 
-  function render(events) {
+  function render(events, citiesJson) {
     if (!events.length) { renderEmpty(); return; }
 
-    var cities = A.groupByCity(events);
+    var cities = A.groupByCity(events, A.citiesByName(citiesJson));
+    var featured = cities.filter(function (c) { return c.count >= FEATURED_MIN_SHOWS; });
+    var stubs = cities.filter(function (c) { return c.count < FEATURED_MIN_SHOWS; });
     var festivals = A.groupFestivals(events);
 
     var totalShows = events.length;
@@ -256,8 +288,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var html = '';
 
     html += '<section class="atlas-section"><h2>Cities</h2><div class="card-grid">';
-    cities.forEach(function (c) { html += cityCard(c); });
-    html += '</div><div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities →</a></div></section>';
+    featured.forEach(function (c) { html += cityCard(c); });
+    html += '</div>';
+
+    if (stubs.length) {
+      html += '<div style="margin-top:20px">' +
+        '<p class="stub-note">Also tracking — cities where we\'ve spotted shows but don\'t yet have ' +
+        'full coverage:</p><div class="stub-list">' +
+        stubs.map(stubCityLink).join('') + '</div></div>';
+    }
+
+    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities →</a></div></section>';
 
     if (festivals.length) {
       html += '<section class="atlas-section"><h2>Festivals</h2><div class="card-grid">';
@@ -265,17 +306,23 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       html += '</div></section>';
     }
 
-    // Recently verified: the soonest 6 shows across every city, as a quick
-    // "network activity" taste of what COMEDY ATLAS covers today.
+    // Recently verified: the soonest shows across every city, grouped by
+    // date with a city badge per card (2026-07-19, Robert: the old flat
+    // 6-item list mixed every city together) -- capped per day and total
+    // days so this stays a taste, not a full listing (full listings live
+    // on /city/<slug>/).
     var soon = events.slice().sort(function (a, b) {
       return new Date(a.starts_at) - new Date(b.starts_at);
-    }).slice(0, 6);
-    html += '<section class="atlas-section"><h2>Recently verified</h2>' + A.renderEventCards(soon) + '</section>';
+    }).slice(0, 60);
+    html += '<section class="atlas-section"><h2>Recently verified</h2>' +
+      A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 5 }) + '</section>';
 
     app.innerHTML = html;
   }
 
-  A.fetchEvents().then(render).catch(renderError);
+  Promise.all([A.fetchEvents(), A.fetchCities()]).then(function (results) {
+    render(results[0], results[1]);
+  }).catch(renderError);
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
 })();
 </script>
