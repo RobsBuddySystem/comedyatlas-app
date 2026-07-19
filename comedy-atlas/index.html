@@ -9,6 +9,9 @@
 <link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
 <meta name="theme-color" content="#0a0e1a">
 <link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
@@ -53,12 +56,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .nav-links a:hover{color:var(--text)}
 
 /* Hero */
-.atlas-hero{max-width:1100px;margin:0 auto;padding:48px 20px 28px}
+.atlas-hero{max-width:1100px;margin:0 auto;padding:48px 20px 28px;display:flex;align-items:center;gap:32px;justify-content:space-between}
+.atlas-hero-copy{flex:1 1 480px;min-width:0}
 .atlas-wordmark{font-size:clamp(30px,6vw,48px);font-weight:800;letter-spacing:-1px;line-height:1.05}
 .atlas-wordmark .dot{color:var(--gold)}
 .atlas-tagline{color:var(--gold-light);font-size:18px;font-weight:700;margin-top:10px}
 .atlas-mission{color:var(--muted);font-size:16px;margin-top:8px;max-width:560px}
 .atlas-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.atlas-hero-figure{flex:0 0 auto;width:clamp(120px,18vw,200px);opacity:0;transform:translateY(10px) scale(.97);animation:atlas-hero-in .6s ease-out .1s forwards}
+.atlas-hero-figure img{width:100%;height:auto;display:block}
+@keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.atlas-hero-figure{opacity:1;transform:none;animation:none}}
+@media(max-width:640px){
+  .atlas-hero{flex-direction:column-reverse;text-align:center;gap:12px}
+  .atlas-hero-figure{width:clamp(96px,32vw,140px)}
+  .atlas-mission{max-width:none}
+  .atlas-cta-row{justify-content:center}
+}
 .cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700}
 .cta-btn.comic{background:var(--purple);color:#fff}
 .cta-btn.comic:hover{opacity:.9}
@@ -110,7 +124,7 @@ a.event-card:hover{border-color:var(--purple)}
 .event-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 10px}
 .event-meta .sep{opacity:.5}
 .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
-.badge.verified{color:var(--green);border-color:var(--green)}
+.badge.unverified{color:var(--muted);border-color:var(--muted);border-style:dashed}
 .badge.cancelled{color:var(--red);border-color:var(--red)}
 .badge.soldout{color:var(--gold);border-color:var(--gold)}
 .event-actions{margin-top:6px}
@@ -164,14 +178,23 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </nav>
 
 <header class="atlas-hero">
-  <div class="atlas-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
-  <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
-  <p class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
-    festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</p>
-  <div class="atlas-cta-row">
-    <a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/comic.html" class="cta-btn comic">I'm a comic →</a>
-    <a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/booker.html" class="cta-btn booker">I'm a booker →</a>
-    <a href="/comedy-atlas/login.html?role=fan&next=/comedy-atlas/itinerary.html" class="cta-btn fan">♥ For fans — save shows &amp; get alerts</a>
+  <div class="atlas-hero-copy">
+    <div class="atlas-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
+    <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
+    <p class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
+      festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</p>
+    <div class="atlas-cta-row">
+      <a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/comic.html" class="cta-btn comic">I'm a comic →</a>
+      <a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/booker.html" class="cta-btn booker">I'm a booker →</a>
+      <a href="/comedy-atlas/login.html?role=fan&next=/comedy-atlas/itinerary.html" class="cta-btn fan">♥ For fans — save shows &amp; get alerts</a>
+    </div>
+  </div>
+  <div class="atlas-hero-figure">
+    <picture>
+      <source srcset="/comedy-atlas/assets/brand/atlas-character-hero-600.webp" type="image/webp">
+      <img src="/comedy-atlas/assets/brand/atlas-character-hero-600.png" width="600" height="600"
+        alt="Cartoon Atlas straining under the weight of the globe while gripping a stand-up mic, the COMEDY ATLAS badge logo">
+    </picture>
   </div>
 </header>
 
@@ -191,11 +214,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="atlas-subscribe-mount container"></div>
 
 <p class="privacy-note container">
-  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
-  only. No comedian or organizer contact information is ever shown here — the
-  privacy relay is the product. Every listing links to the organizer's
-  official ticket page. <strong>Free:</strong> discovery and booking on
-  COMEDY ATLAS costs nothing, for comics or bookers.
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page. Discovery and booking on COMEDY ATLAS
+  is free, for comics and bookers alike.
 </p>
 
 <footer>
@@ -314,13 +335,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var soon = events.slice().sort(function (a, b) {
       return new Date(a.starts_at) - new Date(b.starts_at);
     }).slice(0, 60);
-    html += '<section class="atlas-section"><h2>Recently verified</h2>' +
+    html += '<section class="atlas-section"><h2>Coming up</h2>' +
       A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 5 }) + '</section>';
 
     app.innerHTML = html;
   }
 
-  Promise.all([A.fetchEvents(), A.fetchCities()]).then(function (results) {
+  // Defensive: A.fetchCities was added alongside this page's cities-tiering
+  // section (2026-07-19). A push repo whose atlas-common.js hasn't caught up
+  // yet (verified live 2026-07-19: pariscomedy-push-20260526-095907 was many
+  // commits stale) would otherwise throw here and silently kill the whole
+  // event-listing fetch. Falling back to an empty city list degrades to
+  // "no city tiering" instead of "page never loads".
+  var fetchCitiesSafe = typeof A.fetchCities === "function" ? A.fetchCities() : Promise.resolve([]);
+  Promise.all([A.fetchEvents(), fetchCitiesSafe]).then(function (results) {
     render(results[0], results[1]);
   }).catch(renderError);
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });

@@ -9,6 +9,9 @@
 <link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
 <meta name="theme-color" content="#0a0e1a">
 <link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
@@ -63,6 +66,12 @@ section p strong{color:var(--text)}
 .cta{display:inline-block;font-size:14px;font-weight:700;padding:10px 18px;border-radius:10px;border:1px solid var(--border)}
 .cta.primary{background:var(--purple);color:#fff;border-color:transparent}
 
+.about-figure{display:flex;align-items:center;gap:20px;margin-top:20px}
+.about-figure img{width:110px;height:110px;flex-shrink:0}
+.about-figure p{color:var(--muted);font-size:15px;margin:0}
+.about-figure p strong{color:var(--text)}
+@media(max-width:480px){.about-figure{flex-direction:column;text-align:center}}
+
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -87,6 +96,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <header>
   <h1>About COMEDY ATLAS<span class="dot">.</span></h1>
   <p class="lede">The world atlas of stand-up comedy — every show, every comic, every city, one place. Live across Europe today, building out city by city.</p>
+  <div class="about-figure">
+    <picture>
+      <source srcset="/comedy-atlas/assets/brand/atlas-character-hero-200.webp" type="image/webp">
+      <img src="/comedy-atlas/assets/brand/atlas-character-hero-200.png" width="200" height="200"
+        alt="Cartoon Atlas straining under the weight of the globe while gripping a stand-up mic, the COMEDY ATLAS badge logo">
+    </picture>
+    <p>Atlas has the whole comedy world on his shoulders — we just list it.</p>
+  </div>
 </header>
 
 <main id="main-content">
@@ -101,8 +118,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <ul class="rule-list">
     <li><strong>Verified venues.</strong> A venue is never published from a single, unconfirmed source — it needs corroboration from at least two independent sources (a festival programme, a second ticketing platform, an official venue site, or an OpenStreetMap match) before it appears on the map.</li>
     <li><strong>Stand-up only.</strong> Every listing passes a genre gate before publication — quizzes, karaoke, and other non-stand-up events at comedy venues are filtered out, not mixed in with real shows.</li>
-    <li><strong>The privacy relay is the product.</strong> COMEDY ATLAS shows public event and venue details only. A comic's or organizer's personal contact information — email, phone — is never displayed to another user. Every ticket link points to the organizer's own official page, never a scraped contact.</li>
-    <li><strong>Every fact is sourced.</strong> Each listing traces back to a specific source — an official venue site, a ticketing platform, a festival programme. No AI model writes a canonical fact; a local model may only draft a low-stakes suggestion for a human to approve or reject.</li>
+    <li><strong>We never publish contact info.</strong> A comic's or organizer's email or phone number is never shown to another user — full stop. Every ticket link goes straight to the organizer's own official page, never a scraped contact.</li>
+    <li><strong>Every fact is sourced.</strong> Each listing traces back to a specific source — an official venue site, a ticketing platform, a festival programme. No AI model writes a fact into a listing; a local model may only draft a low-stakes suggestion for a human to approve or reject.</li>
   </ul>
 </section>
 

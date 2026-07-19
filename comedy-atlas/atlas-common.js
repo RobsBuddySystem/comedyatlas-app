@@ -73,10 +73,20 @@
     return (Number(p) === 0 ? "Free" : (p + cur));
   }
 
+  // Badge logic inverted 2026-07-19 (Robert: a blanket "Verified" pill on
+  // every single row was never a real signal -- it rendered unconditionally
+  // for anything that wasn't cancelled/sold out, so it claimed a confidence
+  // level the data never actually carried). Default state now shows NOTHING;
+  // a tag only appears where there's a genuine, documented reason for doubt.
+  // Today that's `venue_name` missing -- an umbrella festival listing
+  // (Edinburgh PBH/Laughing Horse) stands in an organizer name for a real
+  // physical venue, so we can't vouch for the location the way we can for
+  // a venued show.
   function statusBadge(ev) {
     if (ev.status === "cancelled") return '<span class="badge cancelled">Cancelled</span>';
     if (ev.sold_out_status === "sold_out") return '<span class="badge soldout">Sold out</span>';
-    return '<span class="badge verified">Verified</span>';
+    if (!ev.venue_name) return '<span class="badge unverified">Unverified — check the ticket page</span>';
+    return "";
   }
 
   // Defense in depth, mirroring publish_atlas_data.py's own French refusal:
