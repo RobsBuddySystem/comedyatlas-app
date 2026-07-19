@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/show/lets-unionise-this-comedy-club/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EventSeries", "name": "LET\u2019S UNIONISE THIS COMEDY CLUB!", "organizer": {"@type": "Organization", "name": "The Stand Comedy Club"}, "url": "https://comedyatlas.app/comedy-atlas/show/lets-unionise-this-comedy-club/"}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "item": {"@context": "https://schema.org", "@type": "Event", "endDate": "2026-08-18T15:05:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "Edinburgh"}, "geo": {"@type": "GeoCoordinates", "latitude": 55.952982, "longitude": -3.199197}, "name": "Supercube George St \u2013 Room 7"}, "name": "LET\u2019S UNIONISE THIS COMEDY CLUB!", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 0.0, "priceCurrency": "GBP", "url": "https://freefringe.org.uk/shows/lets-unionise-this-comedy-club/"}, "startDate": "2026-08-10T14:15:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/lets-unionise-this-comedy-club/"}, "position": 1}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -167,7 +167,31 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </div>
 
-<div class="section-heading">Upcoming occurrences</div><div class="empty-state">No upcoming dates listed right now.</div><div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+<div class="section-heading">Upcoming occurrences</div><div class="event-card">
+  <div class="event-top">
+    <div class="event-title">LET’S UNIONISE THIS COMEDY CLUB!</div>
+    <div class="event-time">2026-08-10 14:15:00+02:00</div>
+  </div>
+  <div class="event-meta"><span>Supercube George St – Room 7</span><span class="sep">·</span><span>Edinburgh</span><span class="sep">·</span><span>0.00 GBP</span></div>
+  <a class="ticket-link" href="/comedy-atlas/event/lets-unionise-this-comedy-club/">View &amp; tickets →</a>
+</div><div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Supercube George St – Room 7</div>
+  <div id="show-venue-map" data-events='[{&quot;id&quot;: 519, &quot;slug&quot;: &quot;lets-unionise-this-comedy-club&quot;, &quot;title&quot;: &quot;LET\u2019S UNIONISE THIS COMEDY CLUB!&quot;, &quot;venue_id&quot;: 112, &quot;venue_name&quot;: &quot;Supercube George St \u2013 Room 7&quot;, &quot;venue_latitude&quot;: 55.952982, &quot;venue_longitude&quot;: -3.199197, &quot;canonical_event_url&quot;: &quot;https://freefringe.org.uk/shows/lets-unionise-this-comedy-club/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=55.952982%2C-3.199197" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:55.952982,-3.199197">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('show-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
 </main>
 <p class="privacy-note container">
   We never publish anyone's personal contact info. Every ticket link goes

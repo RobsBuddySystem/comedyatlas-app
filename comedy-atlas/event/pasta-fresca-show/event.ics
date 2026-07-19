@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pasta-fresca-show@comedyatlas.app
+DTSTAMP:20260719T205410Z
+DTSTART:20260726T170000Z
+DTEND:20260726T183000Z
+SUMMARY:Pasta Fresca Show
+LOCATION:The Clubhouse: Laietana & Nikki's\, 6 Via Laietana\, Barcelona
+DESCRIPTION:Spettacolo di impro stand-up comedy in italiano a Barcellona\, 
+ interattivo e divertente\, trattando temi di tendenza e grandi classici!\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/pasta-fresca-show/
+URL:https://comedyatlas.app/comedy-atlas/event/pasta-fresca-show/
+END:VEVENT
+END:VCALENDAR

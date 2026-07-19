@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bita-does-30-minutes@comedyatlas.app
+DTSTAMP:20260719T205409Z
+DTSTART:20260731T000000Z
+DTEND:20260731T013000Z
+SUMMARY:Bita Does 30 Minutes
+LOCATION:Wenona\, 1069 Bloor Street West\, Toronto
+DESCRIPTION:Some of Toronto's best comedians put on a show\, with Bita doin
+ g a 30 min set!\nMore info: https://comedyatlas.app/comedy-atlas/event/bita
+ -does-30-minutes/
+URL:https://comedyatlas.app/comedy-atlas/event/bita-does-30-minutes/
+END:VEVENT
+END:VCALENDAR

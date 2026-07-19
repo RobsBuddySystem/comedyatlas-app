@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-breakfast-club@comedyatlas.app
+DTSTAMP:20260719T205410Z
+DTSTART:20260817T094000Z
+DTEND:20260817T114000Z
+SUMMARY:The Breakfast Club
+LOCATION:The City Cafe / Nineties\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-break
+ fast-club/
+URL:https://comedyatlas.app/comedy-atlas/event/the-breakfast-club/
+END:VEVENT
+END:VCALENDAR

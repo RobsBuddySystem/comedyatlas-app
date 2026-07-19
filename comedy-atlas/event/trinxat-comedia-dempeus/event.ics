@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trinxat-comedia-dempeus@comedyatlas.app
+DTSTAMP:20260719T205411Z
+DTSTART:20260925T170000Z
+DTEND:20260925T190000Z
+SUMMARY:Trinxat • Comèdia Dempeus
+LOCATION:The Comedy Clubhouse: Laietana\, 6 Via Laietana\, Barcelona
+DESCRIPTION:Comèdia dempeus cada últim divendres de mes.\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/trinxat-comedia-dempeus/
+URL:https://comedyatlas.app/comedy-atlas/event/trinxat-comedia-dempeus/
+END:VEVENT
+END:VCALENDAR

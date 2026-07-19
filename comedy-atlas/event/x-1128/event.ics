@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:x-1128@comedyatlas.app
+DTSTAMP:20260719T205411Z
+DTSTART:20260731T170000Z
+DTEND:20260731T190000Z
+SUMMARY:Комедийное шоу «Вид на жительство»
+LOCATION:Street Fries Kitchen\, 19 Carrer d'Ausiàs Marc\, Barcelona
+DESCRIPTION:Комедийный чек-ап реальности\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/x-1128/
+URL:https://comedyatlas.app/comedy-atlas/event/x-1128/
+END:VEVENT
+END:VCALENDAR

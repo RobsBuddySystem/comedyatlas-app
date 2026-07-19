@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-tsonos-club-comedian@comedyatlas.app
+DTSTAMP:20260719T205409Z
+DTSTART:20260806T153000Z
+DTEND:20260806T173000Z
+SUMMARY:David Tsonos: Club Comedian
+LOCATION:Kick Ass Cowgate / Fringe Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-tso
+ nos-club-comedian/
+URL:https://comedyatlas.app/comedy-atlas/event/david-tsonos-club-comedian/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:starlight-rodeo@comedyatlas.app
+DTSTAMP:20260719T205410Z
+DTSTART:20260730T200000Z
+DTEND:20260730T214500Z
+SUMMARY:Starlight Rodeo
+LOCATION:The Comedy Clubhouse: Canvis Nous\, 10 Carrer dels Canvis Nous\, B
+ arcelona
+DESCRIPTION:A Comedy Variety Show that yee-haws out of this world.\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/starlight-rodeo/
+URL:https://comedyatlas.app/comedy-atlas/event/starlight-rodeo/
+END:VEVENT
+END:VCALENDAR

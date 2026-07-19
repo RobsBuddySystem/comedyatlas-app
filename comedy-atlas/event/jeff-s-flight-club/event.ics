@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-s-flight-club@comedyatlas.app
+DTSTAMP:20260719T205410Z
+DTSTART:20260806T220000Z
+DTEND:20260807T000000Z
+SUMMARY:Jeff's Flight Club >-)->
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-s-fl
+ ight-club/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-s-flight-club/
+END:VEVENT
+END:VCALENDAR

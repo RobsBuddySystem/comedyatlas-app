@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-young-cucks-toronto@comedyatlas.app
+DTSTAMP:20260719T205411Z
+DTSTART:20260730T233000Z
+DTEND:20260731T010000Z
+SUMMARY:The Young Cucks Toronto
+LOCATION:Moonlight Pub\, 1162 Danforth Avenue\, Toronto
+DESCRIPTION:dark\, dirty\, edgy comedy\nMore info: https://comedyatlas.app/
+ comedy-atlas/event/the-young-cucks-toronto/
+URL:https://comedyatlas.app/comedy-atlas/event/the-young-cucks-toronto/
+END:VEVENT
+END:VCALENDAR
