@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-against-genocide@comedyatlas.app
+DTSTAMP:20260719T125250Z
+DTSTART:20260807T180000Z
+DTEND:20260807T210000Z
+SUMMARY:Stand-Up Against Genocide
+LOCATION:Sin é\, 15 Ormond Quay Upper\, Dublin
+DESCRIPTION:Join us for a night of comedy for raise medical aid for Palesti
+ ne\nMore info: https://comedyatlas.app/comedy-atlas/event/stand-up-against-
+ genocide/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-against-genocide/
+END:VEVENT
+END:VCALENDAR
