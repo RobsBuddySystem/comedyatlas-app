@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kuhl-comedy-open-mic@comedyatlas.app
+DTSTAMP:20260719T111648Z
+DTSTART:20261006T173000Z
+DTEND:20261006T193000Z
+SUMMARY:Kuhl Comedy Open Mic
+LOCATION:Toloache\, 49 Rue de Clignancourt\, 75018 Paris\, Paris
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kuhl-come
+ dy-open-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/kuhl-comedy-open-mic/
+END:VEVENT
+END:VCALENDAR
