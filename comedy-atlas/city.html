@@ -336,7 +336,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   document.getElementById("city-wordmark").innerHTML = A.escapeHtml(cityParam) + '<span class="dot">.</span>';
   document.getElementById("city-current-name").textContent = cityParam;
 
-  var app = document.getElementById("app");
+  // 2026-07-19 P0 fix: this used to look up id="app", which doesn't exist
+  // on this page -- the actual listing container is <main id="main-content">
+  // (same id-mismatch bug class the homepage had, commit 3cba7ca). Every
+  // app.innerHTML write below (render/renderEmpty/renderSmartEmpty/
+  // renderError) was silently throwing "Cannot set properties of null" on
+  // EVERY city page, live, leaving every visitor stuck on "Loading shows…"
+  // forever -- found while live-verifying the smart-empty-state feature.
+  var app = document.getElementById("main-content");
   var freshnessText = document.getElementById("freshness-text");
   var freshnessDot = document.getElementById("freshness-dot");
   var searchInput = document.getElementById("filter-search");
