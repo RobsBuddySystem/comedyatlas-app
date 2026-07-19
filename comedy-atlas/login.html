@@ -64,11 +64,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="wrap" id="main-content">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <h1 id="heading">Sign in</h1>
-  <p class="sub" id="subheading">One account for comics and bookers.</p>
+  <p class="sub" id="subheading">One account for comics and bookers — or a free fan account to save shows and follow comics.</p>
 
   <div class="tabs">
     <div class="tab active" data-tab="login">Sign in</div>
     <div class="tab" data-tab="register">Create account</div>
+    <div class="tab" data-tab="fan">Fan</div>
   </div>
 
   <!-- Google Identity Services (GSI) button -- REUSES pariscomedy's existing
@@ -118,6 +119,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </select>
     <button id="reg-submit">Create account</button>
     <div class="msg" id="reg-msg"></div>
+  </div>
+
+  <div class="card" id="fan-card" style="display:none">
+    <p class="sub" style="margin-bottom:0">Fans save shows, follow comics
+    and shows, and get alerts when something they follow changes. Free,
+    no password — we only ever need an email to send you a one-click
+    sign-in link.</p>
+    <label for="fan-email">Email</label>
+    <input id="fan-email" type="email" autocomplete="email" placeholder="you@example.com">
+    <button id="fan-submit">Email me a sign-in link</button>
+    <div class="msg" id="fan-msg"></div>
   </div>
 
   <p class="hint">Contact info is never shown
@@ -179,6 +191,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         }
       } catch (e) { /* fall through */ }
     }
+    if (wantRole === "fan") { return PORTAL + "itinerary.html"; }
     return PORTAL + (wantRole === "booker" ? "booker.html" : "comic.html");
   }
   var next = destination();
@@ -211,15 +224,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var tabs = document.querySelectorAll(".tab");
   var loginCard = document.getElementById("login-card");
   var registerCard = document.getElementById("register-card");
+  var fanCard = document.getElementById("fan-card");
 
   function showTab(name) {
     tabs.forEach(function (t) { t.classList.toggle("active", t.dataset.tab === name); });
     loginCard.style.display = name === "login" ? "block" : "none";
     registerCard.style.display = name === "register" ? "block" : "none";
+    fanCard.style.display = name === "fan" ? "block" : "none";
   }
   tabs.forEach(function (t) { t.addEventListener("click", function () { showTab(t.dataset.tab); }); });
 
-  if (wantRole) {
+  if (wantRole === "fan") {
+    showTab("fan");
+  } else if (wantRole) {
     showTab("register");
     document.getElementById("reg-role").value = wantRole;
   }
@@ -278,6 +295,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       redirect();
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Registration failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  // Fan sign-up/sign-in -- free, password-less (ingest/fan_account.py):
+  // requesting a link for a new email transparently creates the fan
+  // account, matching itinerary.html's own pattern. return_to lands the
+  // fan on the itinerary/dashboard page (or wherever ?next pointed),
+  // already signed in, after they click the emailed link.
+  document.getElementById("fan-submit").addEventListener("click", function () {
+    var msg = document.getElementById("fan-msg");
+    msg.textContent = ""; msg.className = "msg";
+    var email = document.getElementById("fan-email").value.trim();
+    if (!email) { msg.textContent = "Enter an email address."; msg.className = "msg error"; return; }
+    A.post("/fan/request-link", {email: email, return_to: next}).then(function () {
+      msg.textContent = "Check your email for a sign-in link."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Could not send link.";
       msg.className = "msg error";
     });
   });

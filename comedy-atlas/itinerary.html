@@ -70,9 +70,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </nav>
 <div class="container" id="main-content">
   <div class="logo">My Itinerary<span class="dot">.</span></div>
-  <p class="sub">Shows you've saved across COMEDY ATLAS. Free account, no password —
-  we only ever need an email to send you a sign-in link. Share a read-only link with
-  friends for group trip planning.</p>
+  <p class="sub">Shows you've saved and comics/shows/venues you follow across COMEDY
+  ATLAS. Free account, no password — we only ever need an email to send you a
+  sign-in link. Share a read-only link with friends for group trip planning.</p>
 
   <div id="signed-out-card" class="card" style="display:none">
     <h2>Sign in to save shows</h2>
@@ -84,8 +84,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   <div id="signed-in" style="display:none">
     <div class="card">
+      <h2>Account</h2>
+      <p class="sub" style="margin-bottom:0" id="account-email"></p>
+    </div>
+
+    <div class="card">
       <h2>Saved shows</h2>
       <div id="shows-list"></div>
+    </div>
+
+    <div class="card">
+      <h2>Following</h2>
+      <div id="follows-list"></div>
     </div>
 
     <div class="card">
@@ -174,6 +184,43 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
   }
 
+  var ENTITY_LABELS = {
+    show_series: "Show", person: "Comic", organization: "Organizer",
+    venue: "Venue", event_instance: "Event",
+  };
+
+  function renderFollows(follows) {
+    var list = document.getElementById("follows-list");
+    if (!follows.length) {
+      list.innerHTML = '<div class="empty-state">Not following anything yet — hit '
+        + '"Follow" on any comic, show, venue, or organizer page.</div>';
+      return;
+    }
+    list.innerHTML = "";
+    follows.forEach(function (f) {
+      var row = document.createElement("div");
+      row.className = "show-row";
+      var label = ENTITY_LABELS[f.entity_type] || f.entity_type;
+      var name = A.escapeHtml(f.entity_name || label);
+      row.innerHTML =
+        '<div><div class="show-name">' + name + '</div>'
+        + '<div class="show-meta">' + A.escapeHtml(label) + '</div></div>'
+        + '<button class="small ghost" data-follow-id="' + f.follow_id + '">Unfollow</button>';
+      row.querySelector("button").addEventListener("click", function () {
+        A.api("/fan/follows/" + f.follow_id, {method: "DELETE"})
+          .then(loadFollows)
+          .catch(function (e) { setMsg("link-msg", e.body && e.body.detail ? e.body.detail : "Could not unfollow."); });
+      });
+      list.appendChild(row);
+    });
+  }
+
+  function loadFollows() {
+    A.get("/fan/follows").then(renderFollows).catch(function () {
+      renderFollows([]);
+    });
+  }
+
   function showSignedIn(me) {
     document.getElementById("signed-out-card").style.display = "none";
     document.getElementById("signed-in").style.display = "block";
@@ -181,9 +228,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     // (served from atlas-api.pariscomedy.com / api.comedyatlas.app), or an
     // absolute https://...  origin otherwise -- see atlas-auth.js.
     var apiOrigin = A.apiBase || location.origin;
+    document.getElementById("account-email").textContent = me.email;
     document.getElementById("ics-link").href = apiOrigin + "/fan/saved-shows.ics";
     document.getElementById("share-url").value = apiOrigin + "/itinerary/" + me.share_token;
     loadSavedShows();
+    loadFollows();
   }
 
   function showSignedOut() {
