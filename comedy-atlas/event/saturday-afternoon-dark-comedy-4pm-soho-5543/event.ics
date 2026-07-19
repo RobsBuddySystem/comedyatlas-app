@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-afternoon-dark-comedy-4pm-soho-5543@comedyatlas.app
+DTSTAMP:20260719T200203Z
+DTSTART:20261226T160000Z
+DTEND:20261226T173000Z
+SUMMARY:Saturday Afternoon Dark Comedy\, 4PM\, Soho
+LOCATION:JK Comedy Club Soho\, 6 Moor Street\, London
+DESCRIPTION:Saturday afternoon stand-up comedy show in Soho\, Central Londo
+ n.\nMore info: https://comedyatlas.app/comedy-atlas/event/saturday-afternoo
+ n-dark-comedy-4pm-soho-5543/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-dark-come
+ dy-4pm-soho-5543/
+END:VEVENT
+END:VCALENDAR

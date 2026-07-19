@@ -89,6 +89,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .add-to-calendar-link:hover{border-color:var(--purple-light)}
 .share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -138,6 +143,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">The Wall Comedy</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 4771, &quot;slug&quot;: &quot;saying-the-wrong-thing-comedy-in-english-in-berlin-4771&quot;, &quot;title&quot;: &quot;Saying the Wrong Thing: Comedy in English in Berlin&quot;, &quot;venue_id&quot;: 166, &quot;venue_name&quot;: &quot;The Wall Comedy&quot;, &quot;venue_latitude&quot;: 52.510867, &quot;venue_longitude&quot;: 13.461485, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.com/e/saying-the-wrong-thing-comedy-in-english-in-berlin-registration-1994307752172&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=52.510867%2C13.461485" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:52.510867,13.461485">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   <div class="save-box">
   <button type="button" class="save-btn" id="save-btn" data-event-id="4771">
@@ -207,16 +230,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 </main>
 <p class="privacy-note container">
-  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
-  only. No comedian or organizer contact information is ever shown here — the
-  privacy relay is the product. Every listing links to the organizer's
-  official ticket page.
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page.
 </p>
 <footer>
-  <div>COMEDY ATLAS — the world atlas of stand-up comedy, one verified listing at a time. Live across Europe today, building out city by city.</div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city. We never publish anyone's personal contact info. Every ticket link goes to the organizer's official page.</div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="atlas-track.js"></script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');
@@ -366,5 +388,6 @@ window.atlasToast = window.atlasToast || function(msg){
   });
 })();
 </script>
+<script src="/comedy-atlas/atlas-waitlist.js"></script>
 </body>
 </html>

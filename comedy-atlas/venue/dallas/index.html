@@ -90,6 +90,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .add-to-calendar-link:hover{border-color:var(--purple-light)}
 .share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -115,6 +120,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <header class="atlas-header">
   <a href="/comedy-atlas/" class="back-link">← COMEDY ATLAS</a>
   <div class="atlas-wordmark">Dallas<span class="dot">.</span></div>
+  
   <div class="atlas-subtitle">Venue</div>
   <p class="atlas-promise">Dallas on COMEDY ATLAS — Paris Comedy&#x27;s worldwide stand-up directory.</p>
   <div class="field-row" style="margin-top:10px"><span>Dallas</span><span class="sep">·</span><span>Dallas</span></div>
@@ -131,19 +137,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 
 
-<div class="section-heading">Upcoming events here</div><div class="empty-state">No upcoming dates listed right now.</div>
+<div class="section-heading">Upcoming events here</div><div class="empty-state">No upcoming dates listed right now.</div><div class="footer-feedback-cta a11y-feedback-cta" style="margin:10px 0 4px;font-size:13px"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'venue_accessibility'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Know this venue's accessibility? Tell us</button></div>
 </main>
 <p class="privacy-note container">
-  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
-  only. No comedian or organizer contact information is ever shown here — the
-  privacy relay is the product. Every listing links to the organizer's
-  official ticket page.
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page.
 </p>
 <footer>
-  <div>COMEDY ATLAS — the world atlas of stand-up comedy, one verified listing at a time. Live across Europe today, building out city by city.</div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city. We never publish anyone's personal contact info. Every ticket link goes to the organizer's official page.</div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="atlas-track.js"></script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');

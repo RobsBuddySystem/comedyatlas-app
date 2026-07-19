@@ -1,5 +1,5 @@
 {
-  "_comment": "COMEDY ATLAS ticket-referral config (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md). Single source of truth for go.html's outbound-redirect allowlist + affiliate params. Read at click time by go.html AND by scripts/atlas_ticket_clicks_report.py's tests -- keep both in sync by editing this one file, no regeneration step needed. ALLOWED_TICKET_HOSTS is derived from every hostname actually present in exports/upcoming_events.json's canonical_event_url column as of 2026-07-16 (eventbrite.com/.fr, freefestival.co.uk, freefringe.org.uk) plus meetup.com (an active collector target, see pipeline/registry.py, not yet appearing in live data). 2026-07-19 (ADR-021, organizer trust extended to EVENT_ADDITION): eventbrite.de and comedycafe.nl added -- the first live ticket-URL hosts from the newly organizer-trusted Berlin/Munich Eventbrite feeds and an Amsterdam club's own official ticketing site, surfaced by tests/test_atlas_partner_config.py against the freshly regenerated live export. Add a host here BEFORE it can appear as a working ticket link -- this is a safety allowlist, not a discovery mechanism.",
+  "_comment": "COMEDY ATLAS ticket-referral config (D1, docs/ATLAS_ROADMAP_DECISIONS_2026-07-16.md). Single source of truth for go.html's outbound-redirect allowlist + affiliate params. Read at click time by go.html AND by scripts/atlas_ticket_clicks_report.py's tests -- keep both in sync by editing this one file, no regeneration step needed. ALLOWED_TICKET_HOSTS is derived from every hostname actually present in exports/upcoming_events.json's canonical_event_url column as of 2026-07-16 (eventbrite.com/.fr, freefestival.co.uk, freefringe.org.uk) plus meetup.com (an active collector target, see pipeline/registry.py, not yet appearing in live data). 2026-07-19 (ADR-021, organizer trust extended to EVENT_ADDITION): eventbrite.de and comedycafe.nl added -- the first live ticket-URL hosts from the newly organizer-trusted Berlin/Munich Eventbrite feeds and an Amsterdam club's own official ticketing site, surfaced by tests/test_atlas_partner_config.py against the freshly regenerated live export. 2026-07-19 (migration 0097, Dublin default_language backfill): eventbrite.ie added -- the first live ticket-URL host from Hysteria Comedy Club / the Comedy Nomad / The Laughter Factory's Dublin Eventbrite listings, now publishable once those orgs' default_language stopped sitting NULL; surfaced the same way by the same test. Add a host here BEFORE it can appear as a working ticket link -- this is a safety allowlist, not a discovery mechanism.",
   "ALLOWED_TICKET_HOSTS": [
     "eventbrite.com",
     "eventbrite.fr",
@@ -7,6 +7,7 @@
     "eventbrite.nl",
     "eventbrite.es",
     "eventbrite.de",
+    "eventbrite.ie",
     "comedycafe.nl",
     "freefestival.co.uk",
     "freefringe.org.uk",

@@ -89,6 +89,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .add-to-calendar-link:hover{border-color:var(--purple-light)}
 .share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -138,6 +143,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Madrid Comedy Lab</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 5066, &quot;slug&quot;: &quot;stand-up-comedy-in-english-in-madrid-the-late-night-open-mic-5066&quot;, &quot;title&quot;: &quot;Stand-up Comedy in English in Madrid: The Late Night Open Mic&quot;, &quot;venue_id&quot;: 14, &quot;venue_name&quot;: &quot;Madrid Comedy Lab&quot;, &quot;venue_latitude&quot;: 40.4168, &quot;venue_longitude&quot;: -3.7038, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.es/e/stand-up-comedy-in-english-in-madrid-the-late-night-open-mic-tickets-1980806797453&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=40.416800%2C-3.703800" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:40.416800,-3.703800">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   <div class="save-box">
   <button type="button" class="save-btn" id="save-btn" data-event-id="5066">
@@ -158,22 +181,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="follow-status" id="follow-status"></div>
 </div>
   <div class="section-heading">You might also like</div><div class="event-card">
-  <div class="event-top">
-    <div class="event-title">Stand-up Comedy in English in Madrid: The Sunday Showcase</div>
-    <div class="event-time">2026-07-19 20:00:00+02:00</div>
-  </div>
-  <div class="event-meta"><span>Madrid Comedy Lab</span><span class="sep">·</span><span>Madrid</span><span class="sep">·</span><span>8.00 EUR</span></div>
-  <a class="ticket-link" href="/comedy-atlas/event/stand-up-comedy-in-english-in-madrid-the-sunday-showcase/">View &amp; tickets →</a>
-</div>
-<div class="event-card">
-  <div class="event-top">
-    <div class="event-title">Stand-up Comedy in English in Madrid: The Late Night Open Mic</div>
-    <div class="event-time">2026-07-19 22:00:00+02:00</div>
-  </div>
-  <div class="event-meta"><span>Madrid Comedy Lab</span><span class="sep">·</span><span>Madrid</span><span class="sep">·</span><span>7.00 EUR</span></div>
-  <a class="ticket-link" href="/comedy-atlas/event/stand-up-comedy-in-english-in-madrid-the-late-night-open-mic/">View &amp; tickets →</a>
-</div>
-<div class="event-card">
   <div class="event-top">
     <div class="event-title">Brave Potatoes Open Mic:   English Stand-up Comedy Open Mic</div>
     <div class="event-time">2026-07-21 20:30:00+02:00</div>
@@ -205,18 +212,33 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="event-meta"><span>Madrid Comedy Lab</span><span class="sep">·</span><span>Madrid</span><span class="sep">·</span><span>8.00 EUR</span></div>
   <a class="ticket-link" href="/comedy-atlas/event/stand-up-comedy-in-english-in-madrid-the-sunday-showcase-4997/">View &amp; tickets →</a>
 </div>
+<div class="event-card">
+  <div class="event-top">
+    <div class="event-title">Stand-up Comedy in English in Madrid: The Late Night Open Mic</div>
+    <div class="event-time">2026-07-26 22:00:00+02:00</div>
+  </div>
+  <div class="event-meta"><span>Madrid Comedy Lab</span><span class="sep">·</span><span>Madrid</span><span class="sep">·</span><span>7.00 EUR</span></div>
+  <a class="ticket-link" href="/comedy-atlas/event/stand-up-comedy-in-english-in-madrid-the-late-night-open-mic-5016/">View &amp; tickets →</a>
+</div>
+<div class="event-card">
+  <div class="event-top">
+    <div class="event-title">Brave Potatoes Open Mic:   English Stand-up Comedy Open Mic</div>
+    <div class="event-time">2026-07-28 20:30:00+02:00</div>
+  </div>
+  <div class="event-meta"><span>Madrid Comedy Lab</span><span class="sep">·</span><span>Madrid</span><span class="sep">·</span><span>7.00 EUR</span></div>
+  <a class="ticket-link" href="/comedy-atlas/event/brave-potatoes-open-mic-english-stand-up-comedy-open-mic-4964/">View &amp; tickets →</a>
+</div>
 </main>
 <p class="privacy-note container">
-  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
-  only. No comedian or organizer contact information is ever shown here — the
-  privacy relay is the product. Every listing links to the organizer's
-  official ticket page.
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page.
 </p>
 <footer>
-  <div>COMEDY ATLAS — the world atlas of stand-up comedy, one verified listing at a time. Live across Europe today, building out city by city.</div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city. We never publish anyone's personal contact info. Every ticket link goes to the organizer's official page.</div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="atlas-track.js"></script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');
@@ -366,5 +388,6 @@ window.atlasToast = window.atlasToast || function(msg){
   });
 })();
 </script>
+<script src="/comedy-atlas/atlas-waitlist.js"></script>
 </body>
 </html>

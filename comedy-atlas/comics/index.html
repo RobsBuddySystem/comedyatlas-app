@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comedians on COMEDY ATLAS</title>
+<meta name="description" content="Browse every comedian with a page on COMEDY ATLAS — real upcoming shows and past runs, sourced from public listings. Follow your favorites.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/comics/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comedians on COMEDY ATLAS">
+<meta property="og:description" content="Browse every comedian with a page on COMEDY ATLAS — real upcoming shows and past runs, sourced from public listings. Follow your favorites.">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/comics/">
+<meta name="twitter:card" content="summary">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+}
+:root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+.atlas-header{max-width:900px;margin:0 auto;padding:32px 20px 16px}
+.back-link{font-size:13px;color:var(--muted);margin-bottom:10px;display:inline-block}
+.back-link:hover{color:var(--text)}
+.atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
+.atlas-wordmark .dot{color:var(--gold)}
+.atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
+.field-row .sep{opacity:.5}
+.section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.event-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
+.event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.event-title{font-size:16px;font-weight:700;line-height:1.3}
+.event-time{font-size:13px;color:var(--gold);font-weight:700;white-space:nowrap}
+.event-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 10px}
+.ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px;margin-top:4px}
+.ticket-link:hover{opacity:.9}
+.empty-state{color:var(--muted);font-size:14px;padding:12px 0}
+.follow-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.follow-btn{background:var(--purple);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.follow-btn:hover{opacity:.9}
+.follow-btn:disabled{opacity:.6;cursor:default}
+#follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
+.follow-status{font-size:13px;color:var(--muted);margin-top:8px}
+.save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.save-btn{background:var(--gold);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn:hover{opacity:.9}
+.save-btn:disabled{opacity:.7;cursor:default}
+.save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+#save-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;min-width:220px}
+.save-email-btn{background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-status{font-size:13px;color:var(--muted);margin-top:8px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.directions-btn:hover{opacity:.9}
+.privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+.privacy-note strong{color:var(--text)}
+.atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
+.atlas-toast.atlas-toast-visible{opacity:1}
+.add-to-calendar-link{display:inline-block;font-size:13px;font-weight:700;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:9px 16px;border-radius:8px}
+.add-to-calendar-link:hover{border-color:var(--purple-light)}
+.share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+  .event-top{flex-direction:column;gap:2px}
+}
+</style>
+<style>
+.comics-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 32px;
+}
+.comics-header .stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.comics-header .stats strong { color: var(--gold); }
+.comics-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 12px;
+  display: flex;
+  gap: 10px;
+}
+.comics-tabs button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.comics-tabs button.active { border-color: var(--purple); color: var(--gold); }
+.comics-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.comic-city-group { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.comic-city-heading { font-size: 18px; margin: 22px 0 4px; }
+.comic-city-count { color: var(--muted); font-weight: 400; font-size: 14px; }
+.comic-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.comic-card:hover { border-color: var(--purple); }
+.comic-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.comic-city { color: var(--muted); font-size: 12.5px; }
+.comic-count { color: var(--gold); font-weight: 700; font-size: 12.5px; margin-top: 6px; }
+.comic-count-empty { color: var(--muted); font-weight: 400; }
+#comics-by-city { display: none; }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<header class="comics-header">
+  <a href="/comedy-atlas/" class="back-link">← COMEDY ATLAS</a>
+  <div class="atlas-wordmark">Comedians<span class="dot">.</span></div>
+  <p style="color: var(--muted); margin-top: 12px;">Every comedian with a page on
+  COMEDY ATLAS — real shows only, sourced from public listings. Follow your
+  favorites to hear about new dates.</p>
+  <div class="stats"><div><strong>130</strong> comedians</div></div>
+</header>
+<div class="comics-tabs">
+  <button type="button" id="tab-az" class="active" onclick="atlasComicsTab('az')">A–Z</button>
+  <button type="button" id="tab-city" onclick="atlasComicsTab('city')">By city</button>
+</div>
+<main id="main-content">
+<div id="comics-az" class="comics-grid">
+<a href="/comedy-atlas/comic/adam-bromley/" class="comic-card">
+  <div class="comic-name">Adam Bromley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/adrian-minkowicz/" class="comic-card">
+  <div class="comic-name">Adrian Minkowicz</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/aidan-jones/" class="comic-card">
+  <div class="comic-name">Aidan Jones</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/alastair-clark/" class="comic-card">
+  <div class="comic-name">Alastair Clark</div>
+  
+  <div class="comic-count">3 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/alex-leam/" class="comic-card">
+  <div class="comic-name">Alex Leam</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/alex-mason/" class="comic-card">
+  <div class="comic-name">Alex Mason</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alex-prescot/" class="comic-card">
+  <div class="comic-name">Alex Prescot</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alexander-bennett/" class="comic-card">
+  <div class="comic-name">Alexander Bennett</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alice-india/" class="comic-card">
+  <div class="comic-name">Alice India</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card">
+  <div class="comic-name">Alingon Mitra</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ana-little/" class="comic-card">
+  <div class="comic-name">Ana Little</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/andre/" class="comic-card">
+  <div class="comic-name">Andre</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/andrew-pipe/" class="comic-card">
+  <div class="comic-name">Andrew Pipe</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/andy-bucks/" class="comic-card">
+  <div class="comic-name">Andy Bucks</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/angela-bra/" class="comic-card">
+  <div class="comic-name">Angela Bra</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/anna-beros/" class="comic-card">
+  <div class="comic-name">Anna Beros</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card">
+  <div class="comic-name">Ashley Haden</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ava-beaux/" class="comic-card">
+  <div class="comic-name">Ava Beaux</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/barnaby-bear/" class="comic-card">
+  <div class="comic-name">Barnaby Bear</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card">
+  <div class="comic-name">Basil Bottler</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/becky-fury/" class="comic-card">
+  <div class="comic-name">Becky Fury</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card">
+  <div class="comic-name">Ben Ashurst</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/bernie-casey/" class="comic-card">
+  <div class="comic-name">Bernie Casey</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/bilal-rashid/" class="comic-card">
+  <div class="comic-name">Bilal Rashid</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/brennan-reece/" class="comic-card">
+  <div class="comic-name">Brennan Reece</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/caitriona-dowden/" class="comic-card">
+  <div class="comic-name">Caitriona Dowden</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/callum-mcclure/" class="comic-card">
+  <div class="comic-name">Callum Mcclure</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/cameron-sinclair-harris/" class="comic-card">
+  <div class="comic-name">Cameron Sinclair Harris</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/charlie-caper/" class="comic-card">
+  <div class="comic-name">Charlie Caper</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card">
+  <div class="comic-name">Charlie Lewis</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/christian-lavey/" class="comic-card">
+  <div class="comic-name">Christian Lavey</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/christopher-beanland/" class="comic-card">
+  <div class="comic-name">Christopher Beanland</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card">
+  <div class="comic-name">Cobin Millage</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card">
+  <div class="comic-name">Cordelia Graham</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dan-james/" class="comic-card">
+  <div class="comic-name">Dan James</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/danny-ward/" class="comic-card">
+  <div class="comic-name">Danny Ward</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card">
+  <div class="comic-name">Darren Walsh</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card">
+  <div class="comic-name">Dave Chawner</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dave-reubens/" class="comic-card">
+  <div class="comic-name">Dave Reubens</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/david-alnwick/" class="comic-card">
+  <div class="comic-name">David Alnwick</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card">
+  <div class="comic-name">David Tsonos</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card">
+  <div class="comic-name">Deage Paxton</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/devin-gray/" class="comic-card">
+  <div class="comic-name">Devin Gray</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card">
+  <div class="comic-name">Dr Jimmy</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card">
+  <div class="comic-name">Dr. Kara Kibara</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ed-mulvey/" class="comic-card">
+  <div class="comic-name">Ed Mulvey</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/eddy-hare/" class="comic-card">
+  <div class="comic-name">Eddy Hare</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/edith-alibec/" class="comic-card">
+  <div class="comic-name">Edith Alibec</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/elise-harris/" class="comic-card">
+  <div class="comic-name">Elise Harris</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card">
+  <div class="comic-name">Elliot Wengler</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card">
+  <div class="comic-name">Eryn Tett</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/freya-mcghee/" class="comic-card">
+  <div class="comic-name">Freya Mcghee</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/friz-frizzle/" class="comic-card">
+  <div class="comic-name">Friz Frizzle</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/gagan-gopal/" class="comic-card">
+  <div class="comic-name">Gagan Gopal</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card">
+  <div class="comic-name">Gary G Knightley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/george-coppen/" class="comic-card">
+  <div class="comic-name">George Coppen</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card">
+  <div class="comic-name">Henry Ginsberg</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/james-beatty/" class="comic-card">
+  <div class="comic-name">James Beatty</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jamie-leonard/" class="comic-card">
+  <div class="comic-name">Jamie Leonard</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jeff/" class="comic-card">
+  <div class="comic-name">Jeff</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card">
+  <div class="comic-name">Jeremy Dooley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/jim-hooker/" class="comic-card">
+  <div class="comic-name">Jim Hooker</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/john-robertson/" class="comic-card">
+  <div class="comic-name">John Robertson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/john-smith/" class="comic-card">
+  <div class="comic-name">John Smith</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/jon-hipkiss/" class="comic-card">
+  <div class="comic-name">Jon Hipkiss</div>
+  
+  <div class="comic-count">3 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card">
+  <div class="comic-name">Juliette Burton</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/karl-dagher/" class="comic-card">
+  <div class="comic-name">Karl Dagher</div>
+  
+  <div class="comic-count">8 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card">
+  <div class="comic-name">Katie-Rose Petley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/kim-hope/" class="comic-card">
+  <div class="comic-name">Kim Hope</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card">
+  <div class="comic-name">Lenny Sherman</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card">
+  <div class="comic-name">Lizzie Simpson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lorraine-hoodless/" class="comic-card">
+  <div class="comic-name">Lorraine Hoodless</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/louis-beer/" class="comic-card">
+  <div class="comic-name">Louis Beer</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/luke-mcqueen/" class="comic-card">
+  <div class="comic-name">Luke Mcqueen</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card">
+  <div class="comic-name">Lulu Popplewell</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card">
+  <div class="comic-name">Madeleine Munford</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/marc-salmon/" class="comic-card">
+  <div class="comic-name">Marc Salmon</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-dean-quinn/" class="comic-card">
+  <div class="comic-name">Mark Dean Quinn</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-row/" class="comic-card">
+  <div class="comic-name">Mark Row</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-silcox/" class="comic-card">
+  <div class="comic-name">Mark Silcox</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-simmons/" class="comic-card">
+  <div class="comic-name">Mark Simmons</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/mary-oconnell/" class="comic-card">
+  <div class="comic-name">Mary O’Connell</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mat-smith/" class="comic-card">
+  <div class="comic-name">Mat Smith</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mat-wills/" class="comic-card">
+  <div class="comic-name">Mat Wills</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/matt-hollins/" class="comic-card">
+  <div class="comic-name">Matt Hollins</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/matt-klein/" class="comic-card">
+  <div class="comic-name">Matt Klein</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/natalie-durkin/" class="comic-card">
+  <div class="comic-name">Natalie Durkin</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card">
+  <div class="comic-name">Nathan Cassidy</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/obie/" class="comic-card">
+  <div class="comic-name">Obie</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card">
+  <div class="comic-name">Olaf Falafel</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/oscar-wilde/" class="comic-card">
+  <div class="comic-name">Oscar Wilde</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card">
+  <div class="comic-name">Paddy Seery</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/paul-currie/" class="comic-card">
+  <div class="comic-name">Paul Currie</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/paul-richards/" class="comic-card">
+  <div class="comic-name">Paul Richards</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/phil-green/" class="comic-card">
+  <div class="comic-name">Phil Green</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/prateek-kohli/" class="comic-card">
+  <div class="comic-name">Prateek Kohli</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card">
+  <div class="comic-name">Rachel Morton-Young</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card">
+  <div class="comic-name">Raul Kohli</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card">
+  <div class="comic-name">Ray Fordyce</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/richard-wooflord/" class="comic-card">
+  <div class="comic-name">Richard Wooflord</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rik-wolters/" class="comic-card">
+  <div class="comic-name">Rik Wolters</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card">
+  <div class="comic-name">Rizal Van Geyzel</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/rob-duncan/" class="comic-card">
+  <div class="comic-name">Rob Duncan</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/robin-boot/" class="comic-card">
+  <div class="comic-name">Robin Boot</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card">
+  <div class="comic-name">Rohan Sharma</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card">
+  <div class="comic-name">Ryan Mold</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sally-anne-hayward/" class="comic-card">
+  <div class="comic-name">Sally-Anne Hayward</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/salma-habib-lyons/" class="comic-card">
+  <div class="comic-name">Salma Habib Lyons</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sam-see/" class="comic-card">
+  <div class="comic-name">Sam See</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sansha/" class="comic-card">
+  <div class="comic-name">Sansha</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/scott-manley-hadley/" class="comic-card">
+  <div class="comic-name">Scott Manley Hadley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/serena-smart/" class="comic-card">
+  <div class="comic-name">Serena Smart</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sibet-partee/" class="comic-card">
+  <div class="comic-name">Sibet Partee</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/sid-singh/" class="comic-card">
+  <div class="comic-name">Sid Singh</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/siobhan-dodd/" class="comic-card">
+  <div class="comic-name">Siobhan Dodd</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/sir-dickie-benson/" class="comic-card">
+  <div class="comic-name">Sir Dickie Benson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/soness/" class="comic-card">
+  <div class="comic-name">Soness</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/steffen-haanes/" class="comic-card">
+  <div class="comic-name">Steffen Haanes</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/stella-graham/" class="comic-card">
+  <div class="comic-name">Stella Graham</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card">
+  <div class="comic-name">Stephen Carlin</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/struan-logan/" class="comic-card">
+  <div class="comic-name">Struan Logan</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/stuart-lightbody/" class="comic-card">
+  <div class="comic-name">Stuart Lightbody</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card">
+  <div class="comic-name">Tez Ilyas</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tim-biglowe/" class="comic-card">
+  <div class="comic-name">Tim Biglowe</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tim-reeves/" class="comic-card">
+  <div class="comic-name">Tim Reeves</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tom/" class="comic-card">
+  <div class="comic-name">Tom</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card">
+  <div class="comic-name">Tom Lawrinson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/will-mars/" class="comic-card">
+  <div class="comic-name">Will Mars</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card">
+  <div class="comic-name">Will Sebag-Montefiore</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/zoe-brownstone/" class="comic-card">
+  <div class="comic-name">Zoe Brownstone</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+</div>
+<div id="comics-by-city">
+
+<div class="comic-city-group">
+  <h2 class="comic-city-heading">Other <span class="comic-city-count">(130)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/adam-bromley/" class="comic-card">
+  <div class="comic-name">Adam Bromley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/adrian-minkowicz/" class="comic-card">
+  <div class="comic-name">Adrian Minkowicz</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/aidan-jones/" class="comic-card">
+  <div class="comic-name">Aidan Jones</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/alastair-clark/" class="comic-card">
+  <div class="comic-name">Alastair Clark</div>
+  
+  <div class="comic-count">3 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/alex-leam/" class="comic-card">
+  <div class="comic-name">Alex Leam</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/alex-mason/" class="comic-card">
+  <div class="comic-name">Alex Mason</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alex-prescot/" class="comic-card">
+  <div class="comic-name">Alex Prescot</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alexander-bennett/" class="comic-card">
+  <div class="comic-name">Alexander Bennett</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alice-india/" class="comic-card">
+  <div class="comic-name">Alice India</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card">
+  <div class="comic-name">Alingon Mitra</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ana-little/" class="comic-card">
+  <div class="comic-name">Ana Little</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/andre/" class="comic-card">
+  <div class="comic-name">Andre</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/andrew-pipe/" class="comic-card">
+  <div class="comic-name">Andrew Pipe</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/andy-bucks/" class="comic-card">
+  <div class="comic-name">Andy Bucks</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/angela-bra/" class="comic-card">
+  <div class="comic-name">Angela Bra</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/anna-beros/" class="comic-card">
+  <div class="comic-name">Anna Beros</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card">
+  <div class="comic-name">Ashley Haden</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ava-beaux/" class="comic-card">
+  <div class="comic-name">Ava Beaux</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/barnaby-bear/" class="comic-card">
+  <div class="comic-name">Barnaby Bear</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card">
+  <div class="comic-name">Basil Bottler</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/becky-fury/" class="comic-card">
+  <div class="comic-name">Becky Fury</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card">
+  <div class="comic-name">Ben Ashurst</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/bernie-casey/" class="comic-card">
+  <div class="comic-name">Bernie Casey</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/bilal-rashid/" class="comic-card">
+  <div class="comic-name">Bilal Rashid</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/brennan-reece/" class="comic-card">
+  <div class="comic-name">Brennan Reece</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/caitriona-dowden/" class="comic-card">
+  <div class="comic-name">Caitriona Dowden</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/callum-mcclure/" class="comic-card">
+  <div class="comic-name">Callum Mcclure</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/cameron-sinclair-harris/" class="comic-card">
+  <div class="comic-name">Cameron Sinclair Harris</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/charlie-caper/" class="comic-card">
+  <div class="comic-name">Charlie Caper</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card">
+  <div class="comic-name">Charlie Lewis</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/christian-lavey/" class="comic-card">
+  <div class="comic-name">Christian Lavey</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/christopher-beanland/" class="comic-card">
+  <div class="comic-name">Christopher Beanland</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card">
+  <div class="comic-name">Cobin Millage</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card">
+  <div class="comic-name">Cordelia Graham</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dan-james/" class="comic-card">
+  <div class="comic-name">Dan James</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/danny-ward/" class="comic-card">
+  <div class="comic-name">Danny Ward</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card">
+  <div class="comic-name">Darren Walsh</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card">
+  <div class="comic-name">Dave Chawner</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dave-reubens/" class="comic-card">
+  <div class="comic-name">Dave Reubens</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/david-alnwick/" class="comic-card">
+  <div class="comic-name">David Alnwick</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card">
+  <div class="comic-name">David Tsonos</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card">
+  <div class="comic-name">Deage Paxton</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/devin-gray/" class="comic-card">
+  <div class="comic-name">Devin Gray</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card">
+  <div class="comic-name">Dr Jimmy</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card">
+  <div class="comic-name">Dr. Kara Kibara</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ed-mulvey/" class="comic-card">
+  <div class="comic-name">Ed Mulvey</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/eddy-hare/" class="comic-card">
+  <div class="comic-name">Eddy Hare</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/edith-alibec/" class="comic-card">
+  <div class="comic-name">Edith Alibec</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/elise-harris/" class="comic-card">
+  <div class="comic-name">Elise Harris</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card">
+  <div class="comic-name">Elliot Wengler</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card">
+  <div class="comic-name">Eryn Tett</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/freya-mcghee/" class="comic-card">
+  <div class="comic-name">Freya Mcghee</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/friz-frizzle/" class="comic-card">
+  <div class="comic-name">Friz Frizzle</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/gagan-gopal/" class="comic-card">
+  <div class="comic-name">Gagan Gopal</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card">
+  <div class="comic-name">Gary G Knightley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/george-coppen/" class="comic-card">
+  <div class="comic-name">George Coppen</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card">
+  <div class="comic-name">Henry Ginsberg</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/james-beatty/" class="comic-card">
+  <div class="comic-name">James Beatty</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jamie-leonard/" class="comic-card">
+  <div class="comic-name">Jamie Leonard</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jeff/" class="comic-card">
+  <div class="comic-name">Jeff</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card">
+  <div class="comic-name">Jeremy Dooley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/jim-hooker/" class="comic-card">
+  <div class="comic-name">Jim Hooker</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/john-robertson/" class="comic-card">
+  <div class="comic-name">John Robertson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/john-smith/" class="comic-card">
+  <div class="comic-name">John Smith</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/jon-hipkiss/" class="comic-card">
+  <div class="comic-name">Jon Hipkiss</div>
+  
+  <div class="comic-count">3 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card">
+  <div class="comic-name">Juliette Burton</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/karl-dagher/" class="comic-card">
+  <div class="comic-name">Karl Dagher</div>
+  
+  <div class="comic-count">8 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card">
+  <div class="comic-name">Katie-Rose Petley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/kim-hope/" class="comic-card">
+  <div class="comic-name">Kim Hope</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card">
+  <div class="comic-name">Lenny Sherman</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card">
+  <div class="comic-name">Lizzie Simpson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lorraine-hoodless/" class="comic-card">
+  <div class="comic-name">Lorraine Hoodless</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/louis-beer/" class="comic-card">
+  <div class="comic-name">Louis Beer</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/luke-mcqueen/" class="comic-card">
+  <div class="comic-name">Luke Mcqueen</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card">
+  <div class="comic-name">Lulu Popplewell</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card">
+  <div class="comic-name">Madeleine Munford</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/marc-salmon/" class="comic-card">
+  <div class="comic-name">Marc Salmon</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-dean-quinn/" class="comic-card">
+  <div class="comic-name">Mark Dean Quinn</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-row/" class="comic-card">
+  <div class="comic-name">Mark Row</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-silcox/" class="comic-card">
+  <div class="comic-name">Mark Silcox</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mark-simmons/" class="comic-card">
+  <div class="comic-name">Mark Simmons</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/mary-oconnell/" class="comic-card">
+  <div class="comic-name">Mary O’Connell</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mat-smith/" class="comic-card">
+  <div class="comic-name">Mat Smith</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/mat-wills/" class="comic-card">
+  <div class="comic-name">Mat Wills</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/matt-hollins/" class="comic-card">
+  <div class="comic-name">Matt Hollins</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/matt-klein/" class="comic-card">
+  <div class="comic-name">Matt Klein</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/natalie-durkin/" class="comic-card">
+  <div class="comic-name">Natalie Durkin</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card">
+  <div class="comic-name">Nathan Cassidy</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/obie/" class="comic-card">
+  <div class="comic-name">Obie</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card">
+  <div class="comic-name">Olaf Falafel</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/oscar-wilde/" class="comic-card">
+  <div class="comic-name">Oscar Wilde</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card">
+  <div class="comic-name">Paddy Seery</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/paul-currie/" class="comic-card">
+  <div class="comic-name">Paul Currie</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/paul-richards/" class="comic-card">
+  <div class="comic-name">Paul Richards</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/phil-green/" class="comic-card">
+  <div class="comic-name">Phil Green</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/prateek-kohli/" class="comic-card">
+  <div class="comic-name">Prateek Kohli</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card">
+  <div class="comic-name">Rachel Morton-Young</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card">
+  <div class="comic-name">Raul Kohli</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card">
+  <div class="comic-name">Ray Fordyce</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/richard-wooflord/" class="comic-card">
+  <div class="comic-name">Richard Wooflord</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rik-wolters/" class="comic-card">
+  <div class="comic-name">Rik Wolters</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card">
+  <div class="comic-name">Rizal Van Geyzel</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/rob-duncan/" class="comic-card">
+  <div class="comic-name">Rob Duncan</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/robin-boot/" class="comic-card">
+  <div class="comic-name">Robin Boot</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card">
+  <div class="comic-name">Rohan Sharma</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card">
+  <div class="comic-name">Ryan Mold</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sally-anne-hayward/" class="comic-card">
+  <div class="comic-name">Sally-Anne Hayward</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/salma-habib-lyons/" class="comic-card">
+  <div class="comic-name">Salma Habib Lyons</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sam-see/" class="comic-card">
+  <div class="comic-name">Sam See</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sansha/" class="comic-card">
+  <div class="comic-name">Sansha</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/scott-manley-hadley/" class="comic-card">
+  <div class="comic-name">Scott Manley Hadley</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/serena-smart/" class="comic-card">
+  <div class="comic-name">Serena Smart</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/sibet-partee/" class="comic-card">
+  <div class="comic-name">Sibet Partee</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/sid-singh/" class="comic-card">
+  <div class="comic-name">Sid Singh</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/siobhan-dodd/" class="comic-card">
+  <div class="comic-name">Siobhan Dodd</div>
+  
+  <div class="comic-count">2 upcoming shows</div>
+</a>
+<a href="/comedy-atlas/comic/sir-dickie-benson/" class="comic-card">
+  <div class="comic-name">Sir Dickie Benson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/soness/" class="comic-card">
+  <div class="comic-name">Soness</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/steffen-haanes/" class="comic-card">
+  <div class="comic-name">Steffen Haanes</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/stella-graham/" class="comic-card">
+  <div class="comic-name">Stella Graham</div>
+  
+  <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+</a>
+<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card">
+  <div class="comic-name">Stephen Carlin</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/struan-logan/" class="comic-card">
+  <div class="comic-name">Struan Logan</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/stuart-lightbody/" class="comic-card">
+  <div class="comic-name">Stuart Lightbody</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card">
+  <div class="comic-name">Tez Ilyas</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tim-biglowe/" class="comic-card">
+  <div class="comic-name">Tim Biglowe</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tim-reeves/" class="comic-card">
+  <div class="comic-name">Tim Reeves</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card">
+  <div class="comic-name">Tom Lawrinson</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/tom/" class="comic-card">
+  <div class="comic-name">Tom</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/will-mars/" class="comic-card">
+  <div class="comic-name">Will Mars</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card">
+  <div class="comic-name">Will Sebag-Montefiore</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a>
+<a href="/comedy-atlas/comic/zoe-brownstone/" class="comic-card">
+  <div class="comic-name">Zoe Brownstone</div>
+  
+  <div class="comic-count">1 upcoming show</div>
+</a></div>
+</div>
+</div>
+</main>
+<p class="privacy-note container">
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page.
+</p>
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city. We never publish anyone's personal contact info. Every ticket link goes to the organizer's official page.</div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="atlas-track.js"></script>
+<script>
+function atlasComicsTab(which) {
+  document.getElementById('comics-az').style.display = which === 'az' ? '' : 'none';
+  document.getElementById('comics-by-city').style.display = which === 'city' ? '' : 'none';
+  document.getElementById('tab-az').classList.toggle('active', which === 'az');
+  document.getElementById('tab-city').classList.toggle('active', which === 'city');
+}
+</script>
+</body>
+</html>

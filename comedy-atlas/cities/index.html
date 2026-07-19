@@ -88,6 +88,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .add-to-calendar-link:hover{border-color:var(--purple-light)}
 .share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -204,16 +209,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-wordmark">Cities<span class="dot">.</span></div>
   <p style="color: var(--muted); margin-top: 12px;">Browse stand-up comedy shows and open mics worldwide.</p>
   <div class="stats">
-    <div><strong>27</strong> cities</div>
-    <div><strong>2634</strong> upcoming shows</div>
+    <div><strong>29</strong> cities</div>
+    <div><strong>2791</strong> upcoming shows</div>
   </div>
 </header>
 <main id="main-content">
 <div class="cities-grid">
 <a href="/comedy-atlas/city/london/" class="city-card">
   <div class="city-name">London, UK</div>
-  <div class="city-count">1010 shows</div>
-  <div class="city-next-show">Sun, Jul 19 · 20:30</div>
+  <div class="city-count">1130 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 22:00</div>
 </a>
 <a href="/comedy-atlas/city/edinburgh/" class="city-card">
   <div class="city-name">Edinburgh, UK</div>
@@ -222,8 +227,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </a>
 <a href="/comedy-atlas/city/madrid/" class="city-card">
   <div class="city-name">Madrid, Spain</div>
-  <div class="city-count">339 shows</div>
-  <div class="city-next-show">Sun, Jul 19 · 20:00</div>
+  <div class="city-count">337 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 20:30</div>
 </a>
 <a href="/comedy-atlas/city/amsterdam/" class="city-card">
   <div class="city-name">Amsterdam, Netherlands</div>
@@ -237,18 +242,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </a>
 <a href="/comedy-atlas/city/berlin/" class="city-card">
   <div class="city-name">Berlin, Germany</div>
-  <div class="city-count">212 shows</div>
-  <div class="city-next-show">Sun, Jul 19 · 20:30</div>
+  <div class="city-count">245 shows</div>
+  <div class="city-next-show">Mon, Jul 20 · 20:00</div>
 </a>
 <a href="/comedy-atlas/city/paris/" class="city-card">
   <div class="city-name">Paris, France</div>
-  <div class="city-count">74 shows</div>
-  <div class="city-next-show">Sun, Jul 19 · 19:15</div>
+  <div class="city-count">75 shows</div>
+  <div class="city-next-show">Mon, Jul 20 · 20:15</div>
 </a>
 <a href="/comedy-atlas/city/dublin/" class="city-card">
   <div class="city-name">Dublin, Ireland</div>
-  <div class="city-count">26 shows</div>
-  <div class="city-next-show">Sun, Jul 19 · 21:00</div>
+  <div class="city-count">25 shows</div>
+  <div class="city-next-show">Fri, Jul 24 · 20:30</div>
 </a>
 </div>
 <div class="stub-section">
@@ -257,13 +262,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <a href="/comedy-atlas/city/porto/">Porto, Portugal · <span class="stub-count">5</span></a>
 <a href="/comedy-atlas/city/zurich/">Zurich, Switzerland · <span class="stub-count">4</span></a>
 <a href="/comedy-atlas/city/helsinki/">Helsinki, Finland · <span class="stub-count">3</span></a>
+<a href="/comedy-atlas/city/munich/">Munich, Germany · <span class="stub-count">3</span></a>
 <a href="/comedy-atlas/city/stockholm/">Stockholm, Sweden · <span class="stub-count">3</span></a>
 <a href="/comedy-atlas/city/vancouver/">Vancouver, Canada · <span class="stub-count">3</span></a>
+<a href="/comedy-atlas/city/aarhus/">Aarhus, Denmark · <span class="stub-count">2</span></a>
+<a href="/comedy-atlas/city/brussels/">Brussels, Belgium · <span class="stub-count">2</span></a>
 <a href="/comedy-atlas/city/budapest/">Budapest, Hungary · <span class="stub-count">2</span></a>
 <a href="/comedy-atlas/city/calgary/">Calgary, Canada · <span class="stub-count">2</span></a>
 <a href="/comedy-atlas/city/sofia/">Sofia, Bulgaria · <span class="stub-count">2</span></a>
 <a href="/comedy-atlas/city/vienna/">Vienna, Austria · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city/aarhus/">Aarhus, Denmark · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city/bratislava/">Bratislava, Slovakia · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city/milan/">Milan, Italy · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city/montreal/">Montreal, Canada · <span class="stub-count">1</span></a>
@@ -278,16 +285,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </main>
 <div class="atlas-subscribe-mount container" data-city=""></div>
 <p class="privacy-note container">
-  <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details
-  only. No comedian or organizer contact information is ever shown here — the
-  privacy relay is the product. Every listing links to the organizer's
-  official ticket page.
+  We never publish anyone's personal contact info. Every ticket link goes
+  to the organizer's official page.
 </p>
 <footer>
-  <div>COMEDY ATLAS — the world atlas of stand-up comedy, one verified listing at a time. Live across Europe today, building out city by city.</div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city. We never publish anyone's personal contact info. Every ticket link goes to the organizer's official page.</div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="atlas-track.js"></script>
 <script src="/comedy-atlas/atlas-city-subscribe.js"></script>
 </body>
 </html>
