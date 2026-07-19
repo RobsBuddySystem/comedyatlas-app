@@ -68,8 +68,25 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 #save-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;min-width:220px}
 .save-email-btn{background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .save-status{font-size:13px;color:var(--muted);margin-top:8px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
+.atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
+.atlas-toast.atlas-toast-visible{opacity:1}
+.add-to-calendar-link{display:inline-block;font-size:13px;font-weight:700;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:9px 16px;border-radius:8px}
+.add-to-calendar-link:hover{border-color:var(--purple-light)}
+.share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.share-btn:hover{border-color:var(--purple-light)}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -100,6 +117,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <p class="atlas-promise">City guides and data-driven stories, sourced from our own live listings -- never invented, always dated.</p>
 </header>
 <main id="main-content">
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/free-comedy-after-midnight-inside-edinburgh-s-laughing-horse-free-festival/">Free Comedy After Midnight: Inside Edinburgh&#x27;s Laughing Horse Free Festival</a></div>
+  <div class="post-byline">2026-07-19 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Edinburgh in August turns into one enormous comedy room, but the Laughing Horse Free Festival is the version of it that doesn&#x27;t ask you to pick a show in advance, budget for a ticket, or plan your evening around a…</p>
+</div>
 <div class="card">
   <div class="event-title"><a href="/comedy-atlas/blog/inside-la-pomme-d-eve-paris-s-busiest-english-comedy-address/">Inside La Pomme d&#x27;Eve: Paris&#x27;s busiest English comedy address</a></div>
   <div class="post-byline">2026-07-18 &middot; COMEDY ATLAS</div>
