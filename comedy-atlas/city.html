@@ -112,6 +112,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .result-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:4px 0 4px}
 .clear-filters{color:var(--purple-light);font-weight:700;cursor:pointer;background:none;border:none;font-family:inherit;font-size:13px}
 .clear-filters:hover{text-decoration:underline}
+.org-filter-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--purple-light);border-radius:10px;padding:10px 16px;margin-bottom:10px;font-size:14px;font-weight:600}
+.org-filter-banner #org-filter-clear{color:var(--purple-light)}
 
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .day-group{margin-bottom:28px}
@@ -261,6 +263,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </select>
   </div>
 
+  <div class="org-filter-banner" id="org-filter-banner" style="display:none">
+    <span id="org-filter-banner-text"></span>
+    <button type="button" class="clear-filters" id="org-filter-clear">✕ Clear</button>
+  </div>
+
   <div class="result-bar">
     <span id="result-count"></span>
     <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
@@ -272,7 +279,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div id="venue-map"></div>
 </div>
 
-<main id="app" aria-live="polite">
+<main id="main-content" aria-live="polite">
   <div class="state-block" id="loading-state">
     <div class="spinner" aria-hidden="true"></div>
     <p>Loading shows…</p>
@@ -346,6 +353,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var formatGrid = document.getElementById("format-grid");
   var resultCount = document.getElementById("result-count");
   var clearBtn = document.getElementById("clear-filters");
+  var orgBanner = document.getElementById("org-filter-banner");
+  var orgBannerText = document.getElementById("org-filter-banner-text");
+  var orgBannerClear = document.getElementById("org-filter-clear");
   var cityPromise = document.getElementById("city-promise");
 
   var allEvents = [];
@@ -517,12 +527,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return hay.indexOf(q) !== -1;
   }
 
+  // 2026-07-18 ("fans can't tell what's free" — Chuck's editorial desk,
+  // "free" is a top filter per Fringe research): ev.is_free (migration
+  // 0094, sourced from event_instances.audience_payment_type) is the
+  // primary signal now -- a genuinely free show frequently has no
+  // price_min at all (see atlas-common.js fmtPrice's docstring for the
+  // root cause), so this filter previously missed every free show that
+  // had no explicit $0 ticket price on file. price_min===0 stays as a
+  // fallback for rows is_free hasn't been backfilled onto yet.
   function matchesPrice(ev, price) {
     if (!price) return true;
     var min = ev.price_min == null ? null : Number(ev.price_min);
-    var isFree = min === 0;
+    var isFree = ev.is_free === true || min === 0;
     if (price === "free") return isFree;
-    if (price === "paid") return min != null && !isFree;
+    if (price === "paid") return !isFree && (min != null || ev.is_free === false);
     return true;
   }
 
@@ -569,6 +587,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   function render() {
     var filtered = applyFilters();
     buildFormatGrid(allEvents);
+
+    if (state.org) {
+      var orgGroupCount = A.groupEventsByShow(filtered).length;
+      orgBannerText.textContent = orgGroupCount + " show" + (orgGroupCount === 1 ? "" : "s") +
+        " by " + state.org;
+      orgBanner.style.display = "flex";
+    } else {
+      orgBanner.style.display = "none";
+    }
 
     if (venueMapEl && window.AtlasVenueMap) {
       window.AtlasVenueMap.render(venueMapEl, filtered, { basePath: "" });
@@ -655,6 +682,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     onFilterChange();
   });
 
+  // Bug #7 (2026-07-19 QA): homepage festival cards link to
+  // city.html?city=<x>&org=<y>, expecting a scoped "shows by this
+  // organizer" view -- the org= param was already read into state.org and
+  // applied in applyFilters() above, but nothing told the visitor the
+  // list was scoped, and there was no dedicated way to leave that scope
+  // without also resetting every other filter (When/day/format/etc via
+  // "Clear filters"). This banner + its own Clear control fixes both.
+  orgBannerClear.addEventListener("click", function () {
+    state.org = "";
+    onFilterChange();
+  });
+
   A.fetchEvents().then(function (data) {
     var cityEvents = data.filter(function (ev) { return ev.city_name === cityParam; });
 
@@ -664,8 +703,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       return;
     }
 
+    // 2026-07-18 ("fans can't tell what's free" — Chuck's editorial desk):
+    // is_free (migration 0094) checked FIRST -- a genuinely free show often
+    // carries no price_min at all (see atlas-common.js fmtPrice's
+    // docstring for the root cause), so this count previously undercounted
+    // free shows to exactly the ones with an explicit $0 price on file.
     var freeCount = cityEvents.filter(function (ev) {
-      return ev.price_min === 0 || ev.price_min === "0.00" || Number(ev.price_min) === 0;
+      return ev.is_free === true || ev.price_min === 0 || ev.price_min === "0.00" ||
+        Number(ev.price_min) === 0;
     }).length;
     cityPromise._total = cityEvents.length;
     cityPromise.textContent = cityEvents.length + " upcoming show" + (cityEvents.length === 1 ? "" : "s") +

@@ -13,7 +13,15 @@
   })(location.hostname);
 
   var css = "" +
-    ".atlas-fb-btn{position:fixed;right:16px;bottom:16px;z-index:9998;background:#7c3aed;color:#fff;border:none;border-radius:999px;padding:10px 16px;font:600 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}" +
+    // 2026-07-19 QA fix (bug #8, "floating FAB overlaps content at 390px"):
+    // bottom offset now reserves env(safe-area-inset-bottom) (iOS home-
+    // indicator / gesture bar), so on a notched/gesture phone the pill sits
+    // clear of the OS chrome instead of nearly touching it. Confirmed live
+    // at 390x844 pre-fix: the button's own bounding box (bottom ~832px in
+    // an 844px-tall viewport) left only ~12px clearance and its center
+    // point hit-tested to a real content node (a "You might also like"
+    // section heading) sitting underneath it.
+    ".atlas-fb-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9998;background:#7c3aed;color:#fff;border:none;border-radius:999px;padding:10px 16px;font:600 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}" +
     ".atlas-fb-btn:hover{opacity:.92}" +
     // 2026-07-17 frontend audit: on narrow viewports this fixed pill had
     // no scroll-safe reservation and sat directly on top of whatever card
@@ -21,7 +29,10 @@
     // obscuring real card text). Shrinking the footprint on mobile
     // directly reduces how much it can cover, without losing the
     // always-reachable fixed-position purpose the widget exists for.
-    "@media(max-width:480px){.atlas-fb-btn{padding:8px 12px;font-size:12px;right:12px;bottom:12px}}" +
+    // 2026-07-19: further shrunk to an icon-only circular button below
+    // 480px (was still a full "💬 Feedback" pill, wider than needed) and
+    // anchored with the same safe-area-aware bottom offset.
+    "@media(max-width:480px){.atlas-fb-btn{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:44px;height:44px;padding:0;font-size:18px;line-height:44px;text-align:center;border-radius:50%}.atlas-fb-btn-label{display:none}}" +
     ".atlas-fb-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center}" +
     ".atlas-fb-card{background:#111827;color:#f0f0f0;border:1px solid #1e2a3a;border-radius:12px;max-width:420px;width:calc(100% - 32px);padding:20px;font:14px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}" +
     "@media(prefers-color-scheme:light){.atlas-fb-card{background:#fff;color:#171512;border-color:#e2ddd2}}" +
@@ -54,7 +65,7 @@
 
   function init() {
     var style = document.createElement("style"); style.textContent = css; document.head.appendChild(style);
-    var btn = el('<button class="atlas-fb-btn" aria-label="Send feedback">💬 Feedback</button>');
+    var btn = el('<button class="atlas-fb-btn" aria-label="Send feedback">💬<span class="atlas-fb-btn-label"> Feedback</span></button>');
     var modal = el('<div class="atlas-fb-modal"><div class="atlas-fb-card">' +
       '<h3 id="atlas-fb-heading">Help us improve ATLAS</h3>' +
       '<p id="atlas-fb-copy">Found a bug, missing show, or have an idea? Tell us — we read every note.</p>' +

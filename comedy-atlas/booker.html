@@ -110,7 +110,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
-<div class="container">
+<div class="container" id="main-content">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">I'M A BOOKER</div>
   <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
@@ -507,6 +507,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).catch(function () {});
   }
 
+  // 2026-07-19 QA re-check (bug #3, "unauthenticated booker.html hammers
+  // auth/me + booker/* at ~60 req/s with no backoff"): this is the ONLY
+  // place this page calls A.me() -- one request, resolved once at load.
+  // On 401 the .catch() below shows #signed-out and stops; nothing here
+  // polls, retries, or re-calls A.me()/loadMyShows()/loadCities() on a
+  // timer (this file has zero setInterval/setTimeout-based auth polling --
+  // verified live 2026-07-19 with an anonymous session: exactly one
+  // auth/me call, no booker/* calls, #signed-out shown). Mirrors
+  // comic.html's identical single-call pattern below. If a future change
+  // adds any retry/backoff logic here, it MUST stop permanently after the
+  // first 401 -- never re-poll an unauthenticated session.
   A.me().then(function (r) {
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";
