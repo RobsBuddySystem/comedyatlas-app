@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
 <title>The Counting House / The Attic | COMEDY ATLAS | Paris Comedy</title>
 <meta name="description" content="The Counting House / The Attic on COMEDY ATLAS — Paris Comedy&#x27;s worldwide stand-up directory.">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/venue/the-counting-house-the-attic/">
@@ -135,7 +141,27 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="follow-status" id="follow-status"></div>
 </div>
-
+<div class="card claim-box" id="claim-box"
+     data-claim-kind="venue" data-claim-id="131">
+  <div id="claim-unclaimed">
+    <details>
+      <summary style="cursor:pointer"><strong>Is this your page?</strong> Claim it →</summary>
+      <div class="field-row" style="margin-top:6px">
+        Enter the email associated with this venue
+        and we'll send a one-click confirmation link. No cost, ever.
+      </div>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+        <input type="email" id="claim-email" placeholder="you@example.com"
+               aria-label="Email address to verify this claim">
+        <button type="button" id="claim-request-btn">Send confirmation link</button>
+      </div>
+      <div class="field-row" id="claim-request-status" style="margin-top:6px"></div>
+    </details>
+  </div>
+  <div id="claim-claimed" style="display:none">
+    <div class="field-row"><strong>&#10003; Claimed</strong> &mdash; this page is managed by its owner.</div>
+  </div>
+</div>
 
 <div class="section-heading">Upcoming events here</div><div class="event-card">
   <div class="event-top">
@@ -246,6 +272,75 @@ window.atlasToast = window.atlasToast || function(msg){
 })();
 </script>
 
+<script>
+(function(){
+  var box = document.getElementById('claim-box');
+  if(!box) return;
+  var kind = box.dataset.claimKind;
+  var id = box.dataset.claimId;
+  var apiBase = 'https://api.comedyatlas.app';
 
+  fetch(apiBase + '/claim/' + kind + '/' + id + '/status', {credentials: 'include'})
+    .then(function(resp){ return resp.ok ? resp.json() : null; })
+    .then(function(data){
+      if(!data || !data.claimed) return;
+      document.getElementById('claim-unclaimed').style.display = 'none';
+      document.getElementById('claim-claimed').style.display = '';
+    })
+    .catch(function(){});
+
+  var reqBtn = document.getElementById('claim-request-btn');
+  if(reqBtn){
+    reqBtn.addEventListener('click', function(){
+      var email = document.getElementById('claim-email').value.trim();
+      var status = document.getElementById('claim-request-status');
+      if(!email){ status.textContent = 'Enter an email address.'; return; }
+      reqBtn.disabled = true;
+      fetch(apiBase + '/claim/' + kind + '/' + id + '/request', {
+        method: 'POST', credentials: 'include',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      }).then(function(resp){
+        if(resp.ok){
+          status.textContent = 'Check your email for a confirmation link.';
+        } else {
+          status.textContent = 'Could not send a link right now — try again later.';
+          reqBtn.disabled = false;
+        }
+      }).catch(function(){
+        status.textContent = 'Could not send a link right now — try again later.';
+        reqBtn.disabled = false;
+      });
+    });
+  }
+
+  var unpubBtn = document.getElementById('claim-unpublish-btn');
+  if(unpubBtn){
+    unpubBtn.addEventListener('click', function(){
+      if(!window.confirm('Remove this page permanently? This cannot be undone.')) return;
+      var status = document.getElementById('claim-unpublish-status');
+      unpubBtn.disabled = true;
+      fetch(apiBase + '/claim/' + kind + '/' + id + '/unpublish', {
+        method: 'POST', credentials: 'include',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({})
+      }).then(function(resp){
+        if(resp.ok){
+          status.textContent = 'Removed. This page will stop appearing shortly.';
+        } else if(resp.status === 401 || resp.status === 403){
+          status.textContent = 'Sign in as the owner of this page to remove it.';
+          unpubBtn.disabled = false;
+        } else {
+          status.textContent = 'Could not remove this page right now — try again later.';
+          unpubBtn.disabled = false;
+        }
+      }).catch(function(){
+        status.textContent = 'Could not remove this page right now — try again later.';
+        unpubBtn.disabled = false;
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
