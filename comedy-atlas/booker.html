@@ -68,6 +68,13 @@ button.secondary{background:transparent;border:1px solid var(--purple);color:var
 .cal-row .cal-meta .cal-sub{color:var(--muted)}
 .cal-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:11.5px;color:var(--muted);margin-top:10px}
 .cal-legend span{display:flex;align-items:center;gap:5px}
+.analytics-item{padding:10px 0;border-bottom:1px solid var(--border)}
+.analytics-item:last-child{border-bottom:none}
+.analytics-item .analytics-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.analytics-item .analytics-name{font-weight:700;font-size:13px}
+.analytics-item .analytics-total{font-size:20px;font-weight:800;color:var(--gold)}
+.analytics-item .analytics-total span{font-size:11px;font-weight:600;color:var(--muted);margin-left:4px}
+.analytics-sparkline{display:block;margin-top:8px}
 .lineup-cols{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
 .lineup-slots,.lineup-palette{flex:1;min-width:240px}
 .lineup-slots h3,.lineup-palette h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:8px}
@@ -187,6 +194,21 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         <span><span class="cal-dot blue"></span> confirmed/locked</span>
         <span><span class="cal-dot gray"></span> past</span>
       </div>
+    </div>
+
+    <div class="card">
+      <h2>📈 Your numbers</h2>
+      <p class="privacy" style="margin-bottom:10px"><b>Ticket-link
+      clicks</b> on your own shows, last 30 days — every "tickets" button
+      on the site routes through a tracked redirect, so this is a real
+      count, not an estimate. (Page views aren't broken out per-show yet,
+      so this is clicks only, not impressions.)</p>
+      <div class="msg" id="an-msg"></div>
+      <div id="an-list"></div>
+      <p class="privacy" style="margin-top:10px">Want the fuller monthly
+      report — impressions <i>and</i> clicks, benchmarked against other
+      shows in your city? See
+      <a href="partners.html">Partner with COMEDY ATLAS</a>.</p>
     </div>
 
     <div class="card">
@@ -523,10 +545,66 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     document.getElementById("atlas-portal-bar").style.display = "block";
     loadCities();
     loadMyShows();
+    loadAnalytics();
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
   }).catch(function () {
     document.getElementById("signed-out").style.display = "block";
   });
+
+  // ------------------------------------------------------------------
+  // Your numbers (ROADMAP item 6 -- SELF-SERVE ORGANIZER ANALYTICS).
+  // GET /booker/analytics is owner-scoped server-side (see
+  // apps/atlas_api/routes_booker_analytics.py) -- this only renders
+  // whatever it returns, never filters client-side, so there is no
+  // client-side trust boundary to get wrong here.
+  // ------------------------------------------------------------------
+  function sparklineSvg(daily) {
+    var w = 220, h = 36, pad = 2;
+    var max = Math.max(1, Math.max.apply(null, daily));
+    var n = daily.length;
+    var step = n > 1 ? (w - pad * 2) / (n - 1) : 0;
+    var points = daily.map(function (v, i) {
+      var x = pad + i * step;
+      var y = h - pad - (v / max) * (h - pad * 2);
+      return x.toFixed(1) + "," + y.toFixed(1);
+    }).join(" ");
+    return '<svg class="analytics-sparkline" width="' + w + '" height="' + h +
+      '" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="Ticket-link clicks, last 30 days">' +
+      '<polyline points="' + points + '" fill="none" stroke="var(--gold)" stroke-width="2" ' +
+      'stroke-linejoin="round" stroke-linecap="round"></polyline></svg>';
+  }
+
+  function renderAnalytics(data) {
+    var list = document.getElementById("an-list");
+    var msg = document.getElementById("an-msg");
+    var shows = data.shows || [];
+    if (!shows.length) {
+      list.innerHTML = "";
+      msg.textContent = "No claimed shows yet — claim or create a show above to start tracking clicks.";
+      msg.className = "msg";
+      return;
+    }
+    msg.textContent = "";
+    list.innerHTML = shows.map(function (s) {
+      return '<div class="analytics-item">' +
+        '<div class="analytics-head">' +
+        '<span class="analytics-name">' + A.escapeHtml(s.name) + '</span>' +
+        '<span class="analytics-total">' + s.total_clicks +
+        '<span> ticket-link click' + (s.total_clicks === 1 ? "" : "s") + ' / 30d</span></span>' +
+        '</div>' +
+        sparklineSvg(s.daily) +
+        '</div>';
+    }).join("");
+  }
+
+  function loadAnalytics() {
+    return A.get("/booker/analytics").then(function (data) {
+      renderAnalytics(data);
+    }).catch(function () {
+      document.getElementById("an-msg").textContent = "Couldn't load your numbers right now.";
+      document.getElementById("an-msg").className = "msg error";
+    });
+  }
 
   // ------------------------------------------------------------------
   // Create a show (not scraped yet)
