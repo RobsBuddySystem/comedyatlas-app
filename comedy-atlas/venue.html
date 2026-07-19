@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Venue portal — COMEDY ATLAS</title>
+<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/venue.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<meta name="description" content="Private roster tools for a claimed venue: see which comics have actually played your room and tag them clean-family through adult so booking a kids matinee or a late blue show is never a guessing game.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}
+input,textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
+button{padding:10px 18px;border-radius:8px;border:none;background:var(--gold);color:#100c00;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
+button:hover{opacity:.9}
+button.secondary{background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
+button.small{padding:5px 10px;font-size:11.5px;margin-top:0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.row > *{flex:1;min-width:120px}
+.msg{margin-top:10px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.privacy{font-size:12px;color:var(--muted);margin-top:8px}
+.signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+.tabs2{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tab2{padding:6px 12px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:12.5px;color:var(--muted)}
+.tab2.active{border-color:var(--gold);color:var(--text);font-weight:700}
+.rating-pill{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.02em;margin-right:6px}
+.rating-pill.clean_family{color:var(--green);border:1px solid var(--green)}
+.rating-pill.pg{color:#3b82f6;border:1px solid #3b82f6}
+.rating-pill.edgy{color:var(--gold);border:1px solid var(--gold)}
+.rating-pill.adult{color:var(--red);border:1px solid var(--red)}
+.rating-pill.unrated{color:var(--muted);border:1px solid var(--muted)}
+.roster-row{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.roster-row .rr-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.roster-row .rr-name{font-weight:700}
+.roster-row .rr-meta{color:var(--muted);font-size:12px;margin-top:4px}
+.roster-row .rr-controls{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.roster-row select{width:auto;padding:5px 8px;font-size:12px}
+.roster-row button.remove{background:transparent;border:1px solid var(--red);color:var(--red)}
+.candidate-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.candidate-row .cand-meta{color:var(--muted);font-size:12px}
+.candidate-row.already button{display:none}
+.empty-note{color:var(--muted);font-size:13px;padding:8px 0}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/">COMEDY ATLAS</a>
+    <a href="/comedy-atlas/booker.html">Booker portal</a>
+    <a href="/comedy-atlas/venue.html" style="color:var(--gold);font-weight:700">Venue portal</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
+<div class="container" id="main-content">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">I RUN A VENUE</div>
+  <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
+    <a href="booker.html">Switch to booker portal</a>
+    <span style="margin:0 8px;color:var(--muted)">·</span>
+    <a href="#" id="atlas-signout">Sign out</a>
+  </div>
+
+  <div id="signed-out" class="signed-out" style="display:none">
+    <p>Sign in to manage your venue's private comic roster.</p>
+    <p style="margin-top:12px"><a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/venue.html">Sign in / create account →</a></p>
+  </div>
+
+  <div id="no-venues" class="card" style="display:none">
+    <h2>No claimed venue yet</h2>
+    <p style="font-size:13px;color:var(--muted)">This portal is only for
+    an approved <strong>venue</strong> claim (distinct from claiming a
+    show or organization on the booker portal). Venue claims are
+    reviewed by a human right now — email
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+    with your venue's name and how we can verify it's really you, and
+    we'll approve it and you'll see it here.</p>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="card">
+      <h2>Your venue</h2>
+      <label for="venue-select">Managing</label>
+      <select id="venue-select"></select>
+      <p class="privacy">Content ratings and notes below are PRIVATE to
+      your venue account. They are never shown on any public page, never
+      exported, and never visible to the comics themselves — this is a
+      booking tool for you, not a public review.</p>
+    </div>
+
+    <div class="card">
+      <h2>Roster</h2>
+      <div class="tabs2" id="rating-filter-tabs">
+        <div class="tab2 active" data-r="">All</div>
+        <div class="tab2" data-r="clean_family">Clean / Family</div>
+        <div class="tab2" data-r="pg">PG</div>
+        <div class="tab2" data-r="edgy">Edgy</div>
+        <div class="tab2" data-r="adult">Adult</div>
+      </div>
+      <div id="roster-list"></div>
+      <div id="roster-empty" class="empty-note" style="display:none">
+      Nothing in this band yet.</div>
+      <div id="roster-msg" class="msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Add from your event history</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:8px">
+      Comics who our own event data shows have actually performed at
+      your room — pulled from confirmed lineups, never re-typed.</p>
+      <div id="candidates-list"></div>
+      <div id="candidates-empty" class="empty-note" style="display:none">
+      No confirmed performance history for this venue yet.</div>
+    </div>
+
+    <div class="card">
+      <h2>Add manually</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:8px">
+      For a comic booked to play soon who isn't in our event data yet.
+      You'll need their numeric comic id (find it on their comic.html
+      page URL) — a name-search add-flow is a planned follow-up, see
+      docs/HANDBOOK.</p>
+      <div class="row">
+        <div>
+          <label for="manual-person-id">Comic person id</label>
+          <input type="number" id="manual-person-id" placeholder="e.g. 4021">
+        </div>
+        <div>
+          <label for="manual-rating">Content rating</label>
+          <select id="manual-rating">
+            <option value="">Unrated</option>
+            <option value="clean_family">Clean / Family</option>
+            <option value="pg">PG</option>
+            <option value="edgy">Edgy</option>
+            <option value="adult">Adult</option>
+          </select>
+        </div>
+      </div>
+      <label for="manual-notes">Notes (private)</label>
+      <textarea id="manual-notes" rows="2" placeholder="e.g. great for the Sunday matinee, don't book them together with X"></textarea>
+      <button id="do-manual-add">Add to roster</button>
+      <div id="manual-msg" class="msg"></div>
+    </div>
+  </div>
+
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</div>
+<footer>
+  COMEDY ATLAS — the world's greatest resource for comedy.
+  <div class="footer-links">
+    <a href="/comedy-atlas/">Home</a><span class="sep">·</span>
+    <a href="/about.html">About</a><span class="sep">·</span>
+    <a href="/comedy-atlas/blog/">Blog</a>
+  </div>
+</footer>
+<script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
+<script src="atlas-auth.js"></script>
+<script src="atlas-nav.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasAuth;
+  window.AtlasNav.wireSignOut("#atlas-signout");
+
+  var RATING_LABEL = {
+    clean_family: "Clean / Family", pg: "PG", edgy: "Edgy", adult: "Adult"
+  };
+  var currentVenueId = null;
+  var currentFilter = "";
+
+  function ratingPill(rating) {
+    var cls = rating || "unrated";
+    var label = rating ? RATING_LABEL[rating] : "Unrated";
+    return '<span class="rating-pill ' + cls + '">' + A.escapeHtml(label) + '</span>';
+  }
+
+  function renderRoster(rows) {
+    var list = document.getElementById("roster-list");
+    var empty = document.getElementById("roster-empty");
+    if (!rows.length) {
+      list.innerHTML = ""; empty.style.display = "block";
+      return;
+    }
+    empty.style.display = "none";
+    list.innerHTML = rows.map(function (r) {
+      return '<div class="roster-row" data-person="' + r.person_id + '">' +
+        '<div class="rr-head"><span class="rr-name">' + A.escapeHtml(r.stage_name) + '</span>' +
+        ratingPill(r.content_rating) + '</div>' +
+        (r.notes ? '<div class="rr-meta">' + A.escapeHtml(r.notes) + '</div>' : '') +
+        '<div class="rr-controls">' +
+        '<select class="rr-rating-select">' +
+        '<option value="">Unrated</option>' +
+        ['clean_family', 'pg', 'edgy', 'adult'].map(function (v) {
+          return '<option value="' + v + '"' + (r.content_rating === v ? ' selected' : '') + '>' +
+                 RATING_LABEL[v] + '</option>';
+        }).join("") +
+        '</select>' +
+        '<button class="small secondary rr-save">Save</button>' +
+        '<button class="small remove rr-remove">Remove</button>' +
+        '</div></div>';
+    }).join("");
+
+    list.querySelectorAll(".rr-save").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var row = btn.closest(".roster-row");
+        var personId = row.dataset.person;
+        var rating = row.querySelector(".rr-rating-select").value || null;
+        A.api("/venue/" + currentVenueId + "/roster/" + personId,
+              {method: "PATCH", body: JSON.stringify({content_rating: rating})})
+          .then(function () { loadRoster(); })
+          .catch(function (e) {
+            document.getElementById("roster-msg").textContent =
+              (e.body && e.body.detail) || "Failed to save.";
+            document.getElementById("roster-msg").className = "msg error";
+          });
+      });
+    });
+    list.querySelectorAll(".rr-remove").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var row = btn.closest(".roster-row");
+        var personId = row.dataset.person;
+        if (!confirm("Remove from roster?")) return;
+        A.api("/venue/" + currentVenueId + "/roster/" + personId, {method: "DELETE"})
+          .then(function () { loadRoster(); loadCandidates(); })
+          .catch(function () {});
+      });
+    });
+  }
+
+  function loadRoster() {
+    if (!currentVenueId) return;
+    var url = "/venue/" + currentVenueId + "/roster" +
+              (currentFilter ? "?content_rating=" + currentFilter : "");
+    A.get(url).then(function (r) { renderRoster(r.roster || []); })
+      .catch(function () { renderRoster([]); });
+  }
+
+  function renderCandidates(rows) {
+    var list = document.getElementById("candidates-list");
+    var empty = document.getElementById("candidates-empty");
+    var fresh = rows.filter(function (r) { return !r.already_on_roster; });
+    if (!fresh.length) { list.innerHTML = ""; empty.style.display = "block"; return; }
+    empty.style.display = "none";
+    list.innerHTML = fresh.map(function (r) {
+      return '<div class="candidate-row" data-person="' + r.person_id + '">' +
+        '<div><div>' + A.escapeHtml(r.stage_name) + '</div>' +
+        '<div class="cand-meta">played ' + r.times_performed + 'x, last ' +
+        new Date(r.last_performed_at).toLocaleDateString() + '</div></div>' +
+        '<button class="small cand-add">Add to roster</button></div>';
+    }).join("");
+    list.querySelectorAll(".cand-add").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var row = btn.closest(".candidate-row");
+        var personId = row.dataset.person;
+        A.post("/venue/" + currentVenueId + "/roster",
+               {comic_person_id: parseInt(personId, 10), source: "event_history"})
+          .then(function () { loadRoster(); loadCandidates(); })
+          .catch(function () {});
+      });
+    });
+  }
+
+  function loadCandidates() {
+    if (!currentVenueId) return;
+    A.get("/venue/" + currentVenueId + "/roster/candidates")
+      .then(function (r) { renderCandidates(r.candidates || []); })
+      .catch(function () { renderCandidates([]); });
+  }
+
+  document.getElementById("rating-filter-tabs").addEventListener("click", function (e) {
+    var tab = e.target.closest(".tab2");
+    if (!tab) return;
+    document.querySelectorAll("#rating-filter-tabs .tab2").forEach(function (t) {
+      t.classList.remove("active");
+    });
+    tab.classList.add("active");
+    currentFilter = tab.dataset.r || "";
+    loadRoster();
+  });
+
+  document.getElementById("do-manual-add").addEventListener("click", function () {
+    var msg = document.getElementById("manual-msg");
+    var personId = parseInt(document.getElementById("manual-person-id").value, 10);
+    if (!personId) { msg.textContent = "Enter a comic id."; msg.className = "msg error"; return; }
+    var rating = document.getElementById("manual-rating").value || null;
+    var notes = document.getElementById("manual-notes").value || null;
+    A.post("/venue/" + currentVenueId + "/roster",
+           {comic_person_id: personId, source: "manual", content_rating: rating, notes: notes})
+      .then(function () {
+        msg.textContent = "Added."; msg.className = "msg ok";
+        document.getElementById("manual-person-id").value = "";
+        document.getElementById("manual-notes").value = "";
+        loadRoster();
+      })
+      .catch(function (e) {
+        msg.textContent = (e.body && e.body.detail) || "Failed to add.";
+        msg.className = "msg error";
+      });
+  });
+
+  function selectVenue(venueId) {
+    currentVenueId = venueId;
+    loadRoster();
+    loadCandidates();
+  }
+
+  A.me().then(function () {
+    document.getElementById("atlas-portal-bar").style.display = "block";
+    return A.get("/venue/mine");
+  }).then(function (r) {
+    var venues = r.venues || [];
+    if (!venues.length) {
+      document.getElementById("no-venues").style.display = "block";
+      return;
+    }
+    document.getElementById("app").style.display = "block";
+    var sel = document.getElementById("venue-select");
+    sel.innerHTML = venues.map(function (v) {
+      return '<option value="' + v.venue_id + '">' + A.escapeHtml(v.venue_name) + '</option>';
+    }).join("");
+    sel.addEventListener("change", function () { selectVenue(parseInt(sel.value, 10)); });
+    selectVenue(venues[0].venue_id);
+  }).catch(function () {
+    document.getElementById("signed-out").style.display = "block";
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>
