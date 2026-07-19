@@ -340,7 +340,19 @@ function render(){
     const evs = showsOn(date);
     const cellKey = ds;
     const isExpanded = !!expandedCells[cellKey];
-    const capped = isExpanded ? evs : evs.slice(0, CELL_CAP);
+    // Listing diversity (2026-07-19, Robert: "JK Comedy Club Soho has the
+    // only visibility for London -- there needs to be a way to show other
+    // venues/shows"): a busy day's CELL_CAP used to just take the first
+    // few by time, which on a JK-heavy day meant the always-visible cards
+    // were all JK. Round-robin by venue FIRST (A.roundRobinByKey, shared
+    // with atlas-common.js's own city-page/homepage diversity fix),
+    // seeded by this cell's own date key so the pick is stable per day,
+    // THEN cap -- a different venue's show on the same day now has a real
+    // chance to be one of the always-visible cards instead of "+N more".
+    const diversified = A.roundRobinByKey
+      ? A.roundRobinByKey(evs, function (s) { return s.venue || s.org || ''; }, cellKey)
+      : evs;
+    const capped = isExpanded ? diversified : diversified.slice(0, CELL_CAP);
     capped.forEach(s=>{
       const a=document.createElement('a'); a.className='ev';
       // Every card must land on our OWN event page first (Phase 3b D1,

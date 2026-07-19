@@ -745,6 +745,21 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     // total-dates count below -- only the card rendering itself groups.
     var groups = A.groupEventsByShow(filtered);
 
+    // Listing diversity (2026-07-19, Robert: "JK Comedy Club Soho has the
+    // only visibility for London -- there needs to be a way to show other
+    // venues/shows"). groupEventsByShow's own order is strict "earliest
+    // occurrence first" -- verified live that this buries London's other
+    // 3 venues behind ~40+ JK Comedy Club groups (see atlas-common.js's
+    // interleaveGroupsByVenue docstring for the full data finding). Skipped
+    // entirely when near-me distance sort is active -- that's an explicit
+    // user choice for a DIFFERENT ordering (physical distance), not
+    // something diversity should second-guess. Seeded by city + today's
+    // Paris calendar date so the rotation is stable through a whole
+    // session/day (same filters -> same order) but not frozen forever.
+    if (!(state.distanceSort && userCoords)) {
+      groups = A.interleaveGroupsByVenue(groups, cityParam + "#" + A.parisDateKey(A.parisNow()));
+    }
+
     // Roadmap #14 — near-me sort. Reorders the SAME already-filtered group
     // list by distance from the visitor's last-shared location (state.when/
     // format/etc are unaffected -- this only changes ordering). A group

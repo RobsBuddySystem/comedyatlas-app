@@ -80,8 +80,8 @@
   // a tag only appears where there's a genuine, documented reason for doubt.
   // Today that's `venue_name` missing -- an umbrella festival listing
   // (Edinburgh PBH/Laughing Horse) stands in an organizer name for a real
-  // physical venue, so we can't vouch for the location the way we can for
-  // a venued show.
+  // physical venue (see the data-gaps note in city.html's header comment),
+  // so we can't vouch for the location the way we can for a venued show.
   function statusBadge(ev) {
     if (ev.status === "cancelled") return '<span class="badge cancelled">Cancelled</span>';
     if (ev.sold_out_status === "sold_out") return '<span class="badge soldout">Sold out</span>';
@@ -374,7 +374,20 @@
 
     var html = "";
     groups.forEach(function (g) {
-      var items = opts.maxPerDay ? g.items.slice(0, opts.maxPerDay) : g.items;
+      // Listing diversity (2026-07-19): when a day's items get capped by
+      // maxPerDay (the homepage "Recently verified" strip caps at 3/day
+      // across every city), pick which ones survive the cap via a
+      // round-robin over venue/organizer FIRST -- otherwise a single busy
+      // venue with several same-day shows fills the whole cap and a
+      // different venue on the same day never appears. Seeded by the
+      // day's own key so the pick is stable for that day. No-op when
+      // maxPerDay isn't set (full per-city listings keep every item).
+      var dayItems = opts.maxPerDay
+        ? roundRobinByKey(g.items, function (x) {
+            return x.ev.venue_name || x.ev.organization_name || "";
+          }, g.key)
+        : g.items;
+      var items = opts.maxPerDay ? dayItems.slice(0, opts.maxPerDay) : dayItems;
       html += '<section class="day-group">';
       html += '<div class="day-heading">' + escapeHtml(fmtDayHeading(g.day)) + '</div>';
       items.forEach(function (x) {
@@ -469,6 +482,97 @@
     });
     result.sort(function (a, b) { return a.earliest - b.earliest; });
     return result;
+  }
+
+  // --- Listing diversity / fair interleaving (2026-07-19) ----------------
+  // Robert: "JK Comedy Club Soho has the only visibility for London --
+  // there needs to be a way to show other venues/shows." Verified live
+  // against exports/upcoming_events.json before writing this: London has
+  // 1010 upcoming rows across only 47 distinct show_series, and JK Comedy
+  // Club's three rooms (Leicester Square/Soho/Covent Garden) account for
+  // 44 of those 47 groups -- the other 3 groups (Comedy Carnival Covent
+  // Garden, x1; The Comedy Store, x1) are real, live, ticketable shows
+  // that a strict "earliest date first" sort (groupEventsByShow's own
+  // ordering) buries: Comedy Carnival's earliest occurrence sorts behind
+  // ~17 JK groups, and The Comedy Store's two rows are the LAST two of
+  // 47 by date (October, months out) -- so a plain chronological list's
+  // first 12+ cards are 100% JK regardless of page size.
+  //
+  // A per-calendar-day round-robin (bucket by day, diversify within each
+  // bucket) was tried first and rejected: verified against the same real
+  // data that most individual days in this dataset only ever have ONE
+  // distinct venue's shows on them (e.g. Sunday is JK Covent Garden only,
+  // Tuesday is JK Soho only) -- diversifying WITHIN a single-venue day
+  // bucket is a no-op, so that approach would never have surfaced Comedy
+  // Carnival or The Comedy Store at all. What actually works, verified
+  // against this same data: a GLOBAL round-robin across organizer/venue
+  // queues (each queue internally still date-ascending), so every
+  // distinct venue gets a turn before any one venue gets a second card --
+  // round 1 alone guarantees all 5 London venues appear somewhere in the
+  // first 5 cards, comfortably inside "first 12".
+  //
+  // Deterministic, never Math.random (repo convention -- reproducible
+  // output for tests and for two visitors loading the same page the same
+  // day): `seed` rotates WHICH venue leads the rotation, string-hashed so
+  // it changes from one calendar day to the next (per Robert's "stable
+  // per day" ask -- a venue that led yesterday doesn't necessarily lead
+  // today) but is byte-identical for every request on the same day.
+  function _seedOffset(seed, modulus) {
+    if (!seed || modulus <= 1) return 0;
+    var h = 0;
+    for (var i = 0; i < seed.length; i++) {
+      h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+    }
+    return h % modulus;
+  }
+
+  // Generic building block: stable round-robin over `items`, keyed by
+  // keyFn(item) -- preserves each key's own relative order (its queue is
+  // just a filter of the original array, in original order), only the
+  // INTERLEAVING across keys is reordered. `seed` (any string) picks a
+  // deterministic starting key so repeated calls with the same seed
+  // produce byte-identical output (tests rely on this), and different
+  // seeds (e.g. a different calendar day) rotate which key leads.
+  function roundRobinByKey(items, keyFn, seed) {
+    var order = [];
+    var buckets = {};
+    items.forEach(function (it) {
+      var k = keyFn(it) || "";
+      if (!Object.prototype.hasOwnProperty.call(buckets, k)) {
+        buckets[k] = [];
+        order.push(k);
+      }
+      buckets[k].push(it);
+    });
+    if (order.length <= 1) return items.slice();
+
+    var offset = _seedOffset(seed, order.length);
+    var rotated = order.slice(offset).concat(order.slice(0, offset));
+
+    var result = [];
+    var remaining = items.length;
+    while (remaining > 0) {
+      for (var i = 0; i < rotated.length; i++) {
+        var bucket = buckets[rotated[i]];
+        if (bucket.length) {
+          result.push(bucket.shift());
+          remaining -= 1;
+        }
+      }
+    }
+    return result;
+  }
+
+  // Applies roundRobinByKey to groupEventsByShow()'s output specifically --
+  // key = venue_name, falling back to organization_name (same convention
+  // as city.html's own venueKey()), then the group's own key so a group
+  // with neither still gets its own bucket rather than colliding with
+  // every other unattributed group into one giant "" bucket.
+  function interleaveGroupsByVenue(groups, seed) {
+    return roundRobinByKey(groups, function (g) {
+      var primary = g.events[0];
+      return primary.venue_name || primary.organization_name || g.key;
+    }, seed);
   }
 
   // Renders groupEventsByShow()'s output: one card per show, its earliest
@@ -586,6 +690,8 @@
     renderEventCards: renderEventCards,
     groupEventsByShow: groupEventsByShow,
     renderGroupedEventCards: renderGroupedEventCards,
+    roundRobinByKey: roundRobinByKey,
+    interleaveGroupsByVenue: interleaveGroupsByVenue,
     FORMAT_LABELS: FORMAT_LABELS,
     deriveFormat: deriveFormat,
     DURATION_LABELS: DURATION_LABELS,
