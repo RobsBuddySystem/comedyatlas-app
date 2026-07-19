@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kim-hope-lather-rinse-repeat@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260814T121000Z
+DTEND:20260814T141000Z
+SUMMARY:Kim Hope: Lather\, Rinse\, Repeat
+LOCATION:The City Cafe / Nineties\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kim-hope-
+ lather-rinse-repeat/
+URL:https://comedyatlas.app/comedy-atlas/event/kim-hope-lather-rinse-repeat
+ /
+END:VEVENT
+END:VCALENDAR

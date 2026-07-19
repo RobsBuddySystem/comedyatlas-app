@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-dodgy-accent-show@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T173000Z
+DTEND:20260806T193000Z
+SUMMARY:The Dodgy Accent Show
+LOCATION:The Raging Bull / Cellar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-dodgy
+ -accent-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-dodgy-accent-show/
+END:VEVENT
+END:VCALENDAR

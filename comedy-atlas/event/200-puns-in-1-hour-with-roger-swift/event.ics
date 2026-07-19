@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:200-puns-in-1-hour-with-roger-swift@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T165000Z
+DTEND:20260806T185000Z
+SUMMARY:200 Puns in 1 Hour with Roger Swift
+LOCATION:The City Cafe / Hollywood\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/200-puns-
+ in-1-hour-with-roger-swift/
+URL:https://comedyatlas.app/comedy-atlas/event/200-puns-in-1-hour-with-roge
+ r-swift/
+END:VEVENT
+END:VCALENDAR

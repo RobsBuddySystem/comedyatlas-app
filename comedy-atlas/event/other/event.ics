@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:other@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T120000Z
+DTEND:20260806T140000Z
+SUMMARY:Other
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/other/
+URL:https://comedyatlas.app/comedy-atlas/event/other/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mat-smith-the-middle@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T090000Z
+DTEND:20260806T110000Z
+SUMMARY:Mat Smith: The Middle
+LOCATION:The City Cafe / Las Vegas\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mat-smith
+ -the-middle/
+URL:https://comedyatlas.app/comedy-atlas/event/mat-smith-the-middle/
+END:VEVENT
+END:VCALENDAR

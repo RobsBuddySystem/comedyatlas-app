@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1979-persianality-disorder@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260818T161500Z
+DTEND:20260818T181500Z
+SUMMARY:1979: Persianality Disorder
+LOCATION:Coco Boho / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/1979-pers
+ ianality-disorder/
+URL:https://comedyatlas.app/comedy-atlas/event/1979-persianality-disorder/
+END:VEVENT
+END:VCALENDAR

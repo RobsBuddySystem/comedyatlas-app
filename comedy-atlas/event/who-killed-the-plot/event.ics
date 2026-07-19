@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:who-killed-the-plot@comedyatlas.app
+DTSTAMP:20260719T122319Z
+DTSTART:20260807T173000Z
+DTEND:20260807T193000Z
+SUMMARY:Who Killed the Plot
+LOCATION:Coco Boho / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/who-kille
+ d-the-plot/
+URL:https://comedyatlas.app/comedy-atlas/event/who-killed-the-plot/
+END:VEVENT
+END:VCALENDAR

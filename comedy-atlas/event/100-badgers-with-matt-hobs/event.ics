@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:100-badgers-with-matt-hobs@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T142000Z
+DTEND:20260806T162000Z
+SUMMARY:100% Badgers with Matt Hobs
+LOCATION:The City Cafe / Hollywood\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/100-badge
+ rs-with-matt-hobs/
+URL:https://comedyatlas.app/comedy-atlas/event/100-badgers-with-matt-hobs/
+END:VEVENT
+END:VCALENDAR

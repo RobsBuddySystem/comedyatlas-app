@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:struan-logan-chaotic-good@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T000000Z
+DTEND:20260806T020000Z
+SUMMARY:Struan Logan: Chaotic Good
+LOCATION:The City Cafe / Las Vegas\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/struan-lo
+ gan-chaotic-good/
+URL:https://comedyatlas.app/comedy-atlas/event/struan-logan-chaotic-good/
+END:VEVENT
+END:VCALENDAR

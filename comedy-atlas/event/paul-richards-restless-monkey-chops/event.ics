@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-richards-restless-monkey-chops@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260819T170500Z
+DTEND:20260819T190500Z
+SUMMARY:PAUL RICHARDS: RESTLESS MONKEY CHOPS
+LOCATION:Brewdog Lothian Road\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-rich
+ ards-restless-monkey-chops/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-richards-restless-monke
+ y-chops/
+END:VEVENT
+END:VCALENDAR

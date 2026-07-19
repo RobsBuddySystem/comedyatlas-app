@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:uk-pun-off@comedyatlas.app
+DTSTAMP:20260719T122319Z
+DTSTART:20260806T123000Z
+DTEND:20260806T143000Z
+SUMMARY:UK Pun Off
+LOCATION:Bar 50 / Upstairs\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/uk-pun-of
+ f/
+URL:https://comedyatlas.app/comedy-atlas/event/uk-pun-off/
+END:VEVENT
+END:VCALENDAR

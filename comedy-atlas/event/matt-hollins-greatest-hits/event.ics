@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-hollins-greatest-hits@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260820T144500Z
+DTEND:20260820T164500Z
+SUMMARY:MATT HOLLINS – GREATEST HITS!
+LOCATION:Brewdog Lothian Road\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-holl
+ ins-greatest-hits/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-hollins-greatest-hits/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ahoy-bitches@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260808T180000Z
+DTEND:20260808T200000Z
+SUMMARY:AHOY BITCHES!
+LOCATION:Southsider – Side Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ahoy-bitc
+ hes/
+URL:https://comedyatlas.app/comedy-atlas/event/ahoy-bitches/
+END:VEVENT
+END:VCALENDAR

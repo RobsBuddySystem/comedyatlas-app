@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/show/callum-straford-does-a-show-in-a-karaoke-bar/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EventSeries", "name": "CALLUM STRAFORD DOES A SHOW IN A KARAOKE BAR", "organizer": {"@type": "Organization", "name": "PBH's Free Fringe"}, "url": "https://comedyatlas.app/comedy-atlas/show/callum-straford-does-a-show-in-a-karaoke-bar/"}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "item": {"@context": "https://schema.org", "@type": "Event", "endDate": "2026-08-28T14:10:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "Edinburgh"}, "geo": {"@type": "GeoCoordinates", "latitude": 55.952982, "longitude": -3.199197}, "name": "Supercube George St \u2013 Room 5"}, "name": "CALLUM STRAFORD DOES A SHOW IN A KARAOKE BAR", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 0.0, "priceCurrency": "GBP", "url": "https://freefringe.org.uk/shows/callum-straford-does-a-show-in-a-karaoke-bar/"}, "organizer": {"@type": "Organization", "name": "PBH's Free Fringe"}, "startDate": "2026-08-20T13:15:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/callum-straford-does-a-show-in-a-karaoke-bar/"}, "position": 1}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -161,7 +161,31 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </div>
 
-<div class="section-heading">Upcoming occurrences</div><div class="empty-state">No upcoming dates listed right now.</div><div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+<div class="section-heading">Upcoming occurrences</div><div class="event-card">
+  <div class="event-top">
+    <div class="event-title">CALLUM STRAFORD DOES A SHOW IN A KARAOKE BAR</div>
+    <div class="event-time">2026-08-20 13:15:00+02:00</div>
+  </div>
+  <div class="event-meta"><span>Supercube George St – Room 5</span><span class="sep">·</span><span>Edinburgh</span><span class="sep">·</span><span>0.00 GBP</span></div>
+  <a class="ticket-link" href="/comedy-atlas/event/callum-straford-does-a-show-in-a-karaoke-bar/">View &amp; tickets →</a>
+</div><div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Supercube George St – Room 5</div>
+  <div id="show-venue-map" data-events='[{&quot;id&quot;: 499, &quot;slug&quot;: &quot;callum-straford-does-a-show-in-a-karaoke-bar&quot;, &quot;title&quot;: &quot;CALLUM STRAFORD DOES A SHOW IN A KARAOKE BAR&quot;, &quot;venue_id&quot;: 102, &quot;venue_name&quot;: &quot;Supercube George St \u2013 Room 5&quot;, &quot;venue_latitude&quot;: 55.952982, &quot;venue_longitude&quot;: -3.199197, &quot;canonical_event_url&quot;: &quot;https://freefringe.org.uk/shows/callum-straford-does-a-show-in-a-karaoke-bar/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=55.952982%2C-3.199197" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:55.952982,-3.199197">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('show-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
 </main>
 <p class="privacy-note container">
   <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details

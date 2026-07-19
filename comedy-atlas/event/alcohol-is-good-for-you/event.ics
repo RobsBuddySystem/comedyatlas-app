@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alcohol-is-good-for-you@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T161500Z
+DTEND:20260806T181500Z
+SUMMARY:Alcohol is Good for You
+LOCATION:West Nic Records / Main Cellar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alcohol-i
+ s-good-for-you/
+URL:https://comedyatlas.app/comedy-atlas/event/alcohol-is-good-for-you/
+END:VEVENT
+END:VCALENDAR

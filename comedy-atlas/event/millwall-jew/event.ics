@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:millwall-jew@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T170000Z
+DTEND:20260806T190000Z
+SUMMARY:Millwall Jew
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/millwall-
+ jew/
+URL:https://comedyatlas.app/comedy-atlas/event/millwall-jew/
+END:VEVENT
+END:VCALENDAR

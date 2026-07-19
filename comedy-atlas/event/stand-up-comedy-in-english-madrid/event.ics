@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-comedy-in-english-madrid@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260725T203000Z
+DTEND:20260725T213000Z
+SUMMARY:Stand Up Comedy in English- Madrid
+LOCATION:Las Aguas Theater\, 8 Calle de las Aguas\, Madrid
+DESCRIPTION:Madrid's longest running stand up comedy show.\nLocated in the 
+ heart of Madrid's theater district at the legendary Teatro de las Aguas.\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-in-eng
+ lish-madrid/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-in-english-m
+ adrid/
+END:VEVENT
+END:VCALENDAR

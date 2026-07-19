@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rizal-van-geyzel-arrested@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T141500Z
+DTEND:20260806T161500Z
+SUMMARY:Rizal Van Geyzel: Arrested
+LOCATION:The Counting House / The Loft\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rizal-van
+ -geyzel-arrested/
+URL:https://comedyatlas.app/comedy-atlas/event/rizal-van-geyzel-arrested/
+END:VEVENT
+END:VCALENDAR

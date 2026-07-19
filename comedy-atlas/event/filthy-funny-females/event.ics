@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:filthy-funny-females@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T203000Z
+DTEND:20260806T223000Z
+SUMMARY:Filthy Funny Females
+LOCATION:The Three Sisters / Maggie's Chamber\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/filthy-fu
+ nny-females/
+URL:https://comedyatlas.app/comedy-atlas/event/filthy-funny-females/
+END:VEVENT
+END:VCALENDAR

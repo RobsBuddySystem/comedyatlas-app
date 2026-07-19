@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-irish-mob@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T164500Z
+DTEND:20260806T184500Z
+SUMMARY:The Irish Mob
+LOCATION:Kick Ass Cowgate / Fringe Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-irish
+ -mob/
+URL:https://comedyatlas.app/comedy-atlas/event/the-irish-mob/
+END:VEVENT
+END:VCALENDAR

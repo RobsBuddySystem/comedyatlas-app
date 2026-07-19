@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:what-doesnt-kill-you-makes-you-funnier@comedyatlas.app
+DTSTAMP:20260719T122319Z
+DTSTART:20260806T110000Z
+DTEND:20260806T130000Z
+SUMMARY:What Doesn’t Kill You Makes You Funnier
+LOCATION:The Counting House / The Attic\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/what-does
+ nt-kill-you-makes-you-funnier/
+URL:https://comedyatlas.app/comedy-atlas/event/what-doesnt-kill-you-makes-y
+ ou-funnier/
+END:VEVENT
+END:VCALENDAR

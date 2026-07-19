@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:basil-bottler-don-t-tell-no-one@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260819T153000Z
+DTEND:20260819T173000Z
+SUMMARY:Basil Bottler: Don't Tell No One
+LOCATION:The Three Sisters / Maggie's Chamber\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/basil-bot
+ tler-don-t-tell-no-one/
+URL:https://comedyatlas.app/comedy-atlas/event/basil-bottler-don-t-tell-no-
+ one/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eat-pray-cult@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T134500Z
+DTEND:20260806T154500Z
+SUMMARY:Eat Pray Cult
+LOCATION:Coco Boho / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eat-pray-
+ cult/
+URL:https://comedyatlas.app/comedy-atlas/event/eat-pray-cult/
+END:VEVENT
+END:VCALENDAR

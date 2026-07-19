@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-guest@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260808T160000Z
+DTEND:20260808T180000Z
+SUMMARY:THE GUEST
+LOCATION:BrewDog DogHouse Hotel\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-guest
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/the-guest/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anime-zing-game-show@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T140000Z
+DTEND:20260806T160000Z
+SUMMARY:Anime-Zing! Game Show
+LOCATION:The City Cafe / Las Vegas\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anime-zin
+ g-game-show/
+URL:https://comedyatlas.app/comedy-atlas/event/anime-zing-game-show/
+END:VEVENT
+END:VCALENDAR

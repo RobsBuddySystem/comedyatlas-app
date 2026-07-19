@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:best-in-class@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T180000Z
+DTEND:20260806T200000Z
+SUMMARY:Best In Class
+LOCATION:The Three Sisters / Maggie's Chamber\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/best-in-c
+ lass/
+URL:https://comedyatlas.app/comedy-atlas/event/best-in-class/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bound-and-gags@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T194000Z
+DTEND:20260806T214000Z
+SUMMARY:Bound and Gags
+LOCATION:The City Cafe / Nineties\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bound-and
+ -gags/
+URL:https://comedyatlas.app/comedy-atlas/event/bound-and-gags/
+END:VEVENT
+END:VCALENDAR

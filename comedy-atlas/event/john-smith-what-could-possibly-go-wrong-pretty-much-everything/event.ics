@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-smith-what-could-possibly-go-wrong-pretty-much-everything@comedyat
+ las.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260809T144500Z
+DTEND:20260809T164500Z
+SUMMARY:JOHN SMITH: WHAT COULD POSSIBLY GO WRONG? (PRETTY MUCH EVERYTHING)
+LOCATION:3 Old Monks\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-smit
+ h-what-could-possibly-go-wrong-pretty-much-everything/
+URL:https://comedyatlas.app/comedy-atlas/event/john-smith-what-could-possib
+ ly-go-wrong-pretty-much-everything/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-super-cube-presents-matt-smith@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260827T141000Z
+DTEND:20260827T161000Z
+SUMMARY:THE SUPER CUBE PRESENTS MATT SMITH
+LOCATION:Supercube Cowgate – Room 5\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-super
+ -cube-presents-matt-smith/
+URL:https://comedyatlas.app/comedy-atlas/event/the-super-cube-presents-matt
+ -smith/
+END:VEVENT
+END:VCALENDAR

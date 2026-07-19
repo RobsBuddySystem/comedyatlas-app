@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:leith-laughs-pick-of-the-fringe@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260808T140000Z
+DTEND:20260808T160000Z
+SUMMARY:Leith Laughs - Pick of the Fringe
+LOCATION:Brass Monkey Leith / Main Bar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/leith-lau
+ ghs-pick-of-the-fringe/
+URL:https://comedyatlas.app/comedy-atlas/event/leith-laughs-pick-of-the-fri
+ nge/
+END:VEVENT
+END:VCALENDAR

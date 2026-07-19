@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anna-beros-high-hoe@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260819T184500Z
+DTEND:20260819T204500Z
+SUMMARY:Anna Beros - High Hoe
+LOCATION:The Raging Bull / Cellar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anna-bero
+ s-high-hoe/
+URL:https://comedyatlas.app/comedy-atlas/event/anna-beros-high-hoe/
+END:VEVENT
+END:VCALENDAR

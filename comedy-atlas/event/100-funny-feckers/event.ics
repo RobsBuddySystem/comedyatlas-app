@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:100-funny-feckers@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T121500Z
+DTEND:20260806T141500Z
+SUMMARY:100% Funny Feckers
+LOCATION:The Hanover Tap / The Wee Tap\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/100-funny
+ -feckers/
+URL:https://comedyatlas.app/comedy-atlas/event/100-funny-feckers/
+END:VEVENT
+END:VCALENDAR

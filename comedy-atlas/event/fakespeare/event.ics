@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fakespeare@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260818T164500Z
+DTEND:20260818T184500Z
+SUMMARY:Fakespeare
+LOCATION:The Counting House / The Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fakespear
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/fakespeare/
+END:VEVENT
+END:VCALENDAR

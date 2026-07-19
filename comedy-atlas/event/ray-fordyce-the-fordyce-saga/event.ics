@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ray-fordyce-the-fordyce-saga@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T203500Z
+DTEND:20260806T223500Z
+SUMMARY:Ray Fordyce: The Fordyce Saga
+LOCATION:The City Cafe / Hollywood\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ray-fordy
+ ce-the-fordyce-saga/
+URL:https://comedyatlas.app/comedy-atlas/event/ray-fordyce-the-fordyce-saga
+ /
+END:VEVENT
+END:VCALENDAR

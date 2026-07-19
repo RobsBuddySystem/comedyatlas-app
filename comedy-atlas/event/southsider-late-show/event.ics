@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:southsider-late-show@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260807T230000Z
+DTEND:20260808T010000Z
+SUMMARY:SOUTHSIDER LATE SHOW
+LOCATION:Southsider – Side Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/southside
+ r-late-show/
+URL:https://comedyatlas.app/comedy-atlas/event/southsider-late-show/
+END:VEVENT
+END:VCALENDAR

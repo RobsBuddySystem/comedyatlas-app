@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-mason-obsessed@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260808T154500Z
+DTEND:20260808T174500Z
+SUMMARY:ALEX MASON: OBSESSED
+LOCATION:The Carbon Lounge – Room 3\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-maso
+ n-obsessed/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-mason-obsessed/
+END:VEVENT
+END:VCALENDAR

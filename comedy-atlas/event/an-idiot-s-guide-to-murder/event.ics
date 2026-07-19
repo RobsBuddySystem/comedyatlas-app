@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-idiot-s-guide-to-murder@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T150000Z
+DTEND:20260806T170000Z
+SUMMARY:An Idiot's Guide to Murder
+LOCATION:Brass Monkey / The Cinema Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-idiot-
+ s-guide-to-murder/
+URL:https://comedyatlas.app/comedy-atlas/event/an-idiot-s-guide-to-murder/
+END:VEVENT
+END:VCALENDAR

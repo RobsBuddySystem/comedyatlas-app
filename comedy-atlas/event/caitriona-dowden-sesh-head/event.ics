@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:caitriona-dowden-sesh-head@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260808T160000Z
+DTEND:20260808T180000Z
+SUMMARY:CAITRIONA DOWDEN: SESH HEAD
+LOCATION:The Carbon Lounge – Room 2\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/caitriona
+ -dowden-sesh-head/
+URL:https://comedyatlas.app/comedy-atlas/event/caitriona-dowden-sesh-head/
+END:VEVENT
+END:VCALENDAR

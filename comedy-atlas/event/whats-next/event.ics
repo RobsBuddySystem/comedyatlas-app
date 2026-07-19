@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:whats-next@comedyatlas.app
+DTSTAMP:20260719T122319Z
+DTSTART:20260808T170000Z
+DTEND:20260808T190000Z
+SUMMARY:WHAT’S NEXT
+LOCATION:Liquid Room – Studio\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/whats-nex
+ t/
+URL:https://comedyatlas.app/comedy-atlas/event/whats-next/
+END:VEVENT
+END:VCALENDAR

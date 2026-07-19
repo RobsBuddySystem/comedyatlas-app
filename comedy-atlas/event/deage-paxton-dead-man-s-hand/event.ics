@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deage-paxton-dead-man-s-hand@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T201500Z
+DTEND:20260806T221500Z
+SUMMARY:Deage Paxton: Dead Man's Hand
+LOCATION:The Counting House / The Loft\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deage-pax
+ ton-dead-man-s-hand/
+URL:https://comedyatlas.app/comedy-atlas/event/deage-paxton-dead-man-s-hand
+ /
+END:VEVENT
+END:VCALENDAR

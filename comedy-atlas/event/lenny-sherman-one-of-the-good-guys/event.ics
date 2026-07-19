@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lenny-sherman-one-of-the-good-guys@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260819T111500Z
+DTEND:20260819T131500Z
+SUMMARY:Lenny Sherman: One Of The Good Guys
+LOCATION:The Counting House / The Loft\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lenny-she
+ rman-one-of-the-good-guys/
+URL:https://comedyatlas.app/comedy-atlas/event/lenny-sherman-one-of-the-goo
+ d-guys/
+END:VEVENT
+END:VCALENDAR

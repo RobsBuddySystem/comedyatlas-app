@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:4-teachers-for-teachers@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T121500Z
+DTEND:20260806T141500Z
+SUMMARY:4 Teachers\, For Teachers
+LOCATION:The Counting House / The Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/4-teacher
+ s-for-teachers/
+URL:https://comedyatlas.app/comedy-atlas/event/4-teachers-for-teachers/
+END:VEVENT
+END:VCALENDAR

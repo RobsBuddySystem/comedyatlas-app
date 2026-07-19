@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-bromley-hyper-connected@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T111500Z
+DTEND:20260806T131500Z
+SUMMARY:Adam Bromley: Hyper-Connected
+LOCATION:Bar 50 / Upstairs\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-brom
+ ley-hyper-connected/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-bromley-hyper-connected
+ /
+END:VEVENT
+END:VCALENDAR

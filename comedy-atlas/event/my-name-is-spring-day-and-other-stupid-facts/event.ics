@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:my-name-is-spring-day-and-other-stupid-facts@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260817T124500Z
+DTEND:20260817T144500Z
+SUMMARY:My Name is Spring Day and Other Stupid Facts
+LOCATION:Bar 50 / The Garden Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/my-name-i
+ s-spring-day-and-other-stupid-facts/
+URL:https://comedyatlas.app/comedy-atlas/event/my-name-is-spring-day-and-ot
+ her-stupid-facts/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-night-in-english-11@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260723T183000Z
+DTEND:20260723T203000Z
+SUMMARY:Comedy Night in English
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ni
+ ght-in-english-11/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-night-in-english-11/
+END:VEVENT
+END:VCALENDAR

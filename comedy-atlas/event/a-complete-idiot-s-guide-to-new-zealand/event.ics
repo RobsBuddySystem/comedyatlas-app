@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-complete-idiot-s-guide-to-new-zealand@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T141500Z
+DTEND:20260806T161500Z
+SUMMARY:A Complete Idiot's Guide to New Zealand
+LOCATION:Kick Ass Cowgate / Fringe Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-complet
+ e-idiot-s-guide-to-new-zealand/
+URL:https://comedyatlas.app/comedy-atlas/event/a-complete-idiot-s-guide-to-
+ new-zealand/
+END:VEVENT
+END:VCALENDAR

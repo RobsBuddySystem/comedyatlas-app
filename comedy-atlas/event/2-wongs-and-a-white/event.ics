@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2-wongs-and-a-white@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T150000Z
+DTEND:20260806T170000Z
+SUMMARY:2 Wongs and a White
+LOCATION:The Pear Tree / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/2-wongs-a
+ nd-a-white/
+URL:https://comedyatlas.app/comedy-atlas/event/2-wongs-and-a-white/
+END:VEVENT
+END:VCALENDAR

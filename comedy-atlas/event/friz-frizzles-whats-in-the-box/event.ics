@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friz-frizzles-whats-in-the-box@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260808T110000Z
+DTEND:20260808T130000Z
+SUMMARY:FRIZ FRIZZLE’S WHAT’S IN THE BOX?
+LOCATION:Southsider – Side Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/friz-friz
+ zles-whats-in-the-box/
+URL:https://comedyatlas.app/comedy-atlas/event/friz-frizzles-whats-in-the-b
+ ox/
+END:VEVENT
+END:VCALENDAR

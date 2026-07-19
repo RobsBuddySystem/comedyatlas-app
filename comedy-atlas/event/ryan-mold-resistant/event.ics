@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ryan-mold-resistant@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T110000Z
+DTEND:20260806T130000Z
+SUMMARY:Ryan Mold: Resistant
+LOCATION:The Hanover Tap / The Wee Tap\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ryan-mold
+ -resistant/
+URL:https://comedyatlas.app/comedy-atlas/event/ryan-mold-resistant/
+END:VEVENT
+END:VCALENDAR

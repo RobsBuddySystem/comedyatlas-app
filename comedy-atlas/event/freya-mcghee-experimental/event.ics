@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:freya-mcghee-experimental@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260820T183000Z
+DTEND:20260820T203000Z
+SUMMARY:FREYA MCGHEE: EXPERIMENTAL
+LOCATION:The Carbon Lounge – Room 2\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/freya-mcg
+ hee-experimental/
+URL:https://comedyatlas.app/comedy-atlas/event/freya-mcghee-experimental/
+END:VEVENT
+END:VCALENDAR

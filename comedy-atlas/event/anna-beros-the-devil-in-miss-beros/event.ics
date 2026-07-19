@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anna-beros-the-devil-in-miss-beros@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260819T200000Z
+DTEND:20260819T220000Z
+SUMMARY:Anna Beros - The Devil in Miss Beros
+LOCATION:The Raging Bull / Cellar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anna-bero
+ s-the-devil-in-miss-beros/
+URL:https://comedyatlas.app/comedy-atlas/event/anna-beros-the-devil-in-miss
+ -beros/
+END:VEVENT
+END:VCALENDAR

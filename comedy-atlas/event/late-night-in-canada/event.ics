@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-night-in-canada@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T211500Z
+DTEND:20260806T231500Z
+SUMMARY:Late Night In Canada
+LOCATION:The Counting House / The Lounge\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/late-nigh
+ t-in-canada/
+URL:https://comedyatlas.app/comedy-atlas/event/late-night-in-canada/
+END:VEVENT
+END:VCALENDAR

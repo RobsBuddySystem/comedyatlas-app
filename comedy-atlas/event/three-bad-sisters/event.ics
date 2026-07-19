@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:three-bad-sisters@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260805T232500Z
+DTEND:20260806T012500Z
+SUMMARY:Three Bad Sisters
+LOCATION:The City Cafe / Nineties\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/three-bad
+ -sisters/
+URL:https://comedyatlas.app/comedy-atlas/event/three-bad-sisters/
+END:VEVENT
+END:VCALENDAR

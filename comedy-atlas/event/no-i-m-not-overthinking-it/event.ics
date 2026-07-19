@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:no-i-m-not-overthinking-it@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260824T123000Z
+DTEND:20260824T143000Z
+SUMMARY:No\, I'm Not Overthinking It.
+LOCATION:The Raging Bull / Cellar\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/no-i-m-no
+ t-overthinking-it/
+URL:https://comedyatlas.app/comedy-atlas/event/no-i-m-not-overthinking-it/
+END:VEVENT
+END:VCALENDAR

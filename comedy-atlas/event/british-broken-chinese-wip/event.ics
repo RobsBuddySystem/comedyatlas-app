@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:british-broken-chinese-wip@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260819T120000Z
+DTEND:20260819T140000Z
+SUMMARY:British. Broken. Chinese. (WIP)
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/british-b
+ roken-chinese-wip/
+URL:https://comedyatlas.app/comedy-atlas/event/british-broken-chinese-wip/
+END:VEVENT
+END:VCALENDAR

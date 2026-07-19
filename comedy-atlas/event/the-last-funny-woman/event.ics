@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-last-funny-woman@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260808T165500Z
+DTEND:20260808T185500Z
+SUMMARY:THE LAST FUNNY WOMAN
+LOCATION:Voodoo Rooms – carte blanche!\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-last-
+ funny-woman/
+URL:https://comedyatlas.app/comedy-atlas/event/the-last-funny-woman/
+END:VEVENT
+END:VCALENDAR

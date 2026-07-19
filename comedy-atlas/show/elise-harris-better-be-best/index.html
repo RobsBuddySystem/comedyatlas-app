@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/show/elise-harris-better-be-best/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EventSeries", "name": "ELISE HARRIS: BETTER BE BEST", "organizer": {"@type": "Organization", "name": "PBH's Free Fringe"}, "url": "https://comedyatlas.app/comedy-atlas/show/elise-harris-better-be-best/"}</script>
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "item": {"@context": "https://schema.org", "@type": "Event", "endDate": "2026-08-30T14:10:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "Edinburgh"}, "geo": {"@type": "GeoCoordinates", "latitude": 55.949379, "longitude": -3.186917}, "name": "Banshee Labyrinth \u2013 Cinema Room"}, "name": "ELISE HARRIS: BETTER BE BEST", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 0.0, "priceCurrency": "GBP", "url": "https://freefringe.org.uk/shows/elise-harris-better-be-best/"}, "organizer": {"@type": "Organization", "name": "PBH's Free Fringe"}, "startDate": "2026-08-08T13:20:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/elise-harris-better-be-best/"}, "position": 1}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -161,7 +161,31 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </div>
 
-<div class="section-heading">Upcoming occurrences</div><div class="empty-state">No upcoming dates listed right now.</div><div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+<div class="section-heading">Upcoming occurrences</div><div class="event-card">
+  <div class="event-top">
+    <div class="event-title">ELISE HARRIS: BETTER BE BEST</div>
+    <div class="event-time">2026-08-08 13:20:00+02:00</div>
+  </div>
+  <div class="event-meta"><span>Banshee Labyrinth – Cinema Room</span><span class="sep">·</span><span>Edinburgh</span><span class="sep">·</span><span>0.00 GBP</span></div>
+  <a class="ticket-link" href="/comedy-atlas/event/elise-harris-better-be-best/">View &amp; tickets →</a>
+</div><div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Banshee Labyrinth – Cinema Room</div>
+  <div id="show-venue-map" data-events='[{&quot;id&quot;: 504, &quot;slug&quot;: &quot;elise-harris-better-be-best&quot;, &quot;title&quot;: &quot;ELISE HARRIS: BETTER BE BEST&quot;, &quot;venue_id&quot;: 105, &quot;venue_name&quot;: &quot;Banshee Labyrinth \u2013 Cinema Room&quot;, &quot;venue_latitude&quot;: 55.949379, &quot;venue_longitude&quot;: -3.186917, &quot;canonical_event_url&quot;: &quot;https://freefringe.org.uk/shows/elise-harris-better-be-best/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=55.949379%2C-3.186917" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:55.949379,-3.186917">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('show-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
 </main>
 <p class="privacy-note container">
   <strong>Privacy:</strong> COMEDY ATLAS shows public event and venue details

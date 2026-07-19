@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-biglowe-plonka@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260808T111500Z
+DTEND:20260808T131500Z
+SUMMARY:TIM BIGLOWE: PLONKA
+LOCATION:Slow Progress Cafe & Records\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-biglo
+ we-plonka/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-biglowe-plonka/
+END:VEVENT
+END:VCALENDAR

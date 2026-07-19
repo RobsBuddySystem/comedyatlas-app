@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:obituary@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T131500Z
+DTEND:20260806T151500Z
+SUMMARY:Obituary
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/obituary/
+URL:https://comedyatlas.app/comedy-atlas/event/obituary/
+END:VEVENT
+END:VCALENDAR

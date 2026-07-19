@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lager-jus@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T201500Z
+DTEND:20260806T221500Z
+SUMMARY:Lager Jus
+LOCATION:Home Bar / Basement\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lager-jus
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/lager-jus/
+END:VEVENT
+END:VCALENDAR

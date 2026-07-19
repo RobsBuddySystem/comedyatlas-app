@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:toxic-femininity@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260805T234500Z
+DTEND:20260806T014500Z
+SUMMARY:Toxic Femininity
+LOCATION:The Three Sisters / Maggie's Front Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/toxic-fem
+ ininity/
+URL:https://comedyatlas.app/comedy-atlas/event/toxic-femininity/
+END:VEVENT
+END:VCALENDAR

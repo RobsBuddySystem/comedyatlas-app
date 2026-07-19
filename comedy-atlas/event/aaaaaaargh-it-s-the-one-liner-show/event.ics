@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aaaaaaargh-it-s-the-one-liner-show@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T153000Z
+DTEND:20260806T173000Z
+SUMMARY:Aaaaaaargh! It's the One Liner Show
+LOCATION:Dropkick Murphys / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aaaaaaarg
+ h-it-s-the-one-liner-show/
+URL:https://comedyatlas.app/comedy-atlas/event/aaaaaaargh-it-s-the-one-line
+ r-show/
+END:VEVENT
+END:VCALENDAR

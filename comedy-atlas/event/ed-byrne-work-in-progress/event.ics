@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ed-byrne-work-in-progress@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260824T150000Z
+DTEND:20260824T170000Z
+SUMMARY:Ed Byrne Work In Progress
+LOCATION:The Pear Tree / Main Room\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ed-byrne-
+ work-in-progress/
+URL:https://comedyatlas.app/comedy-atlas/event/ed-byrne-work-in-progress/
+END:VEVENT
+END:VCALENDAR

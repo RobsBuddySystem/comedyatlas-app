@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alingon-mitra-clean-cuts@comedyatlas.app
+DTSTAMP:20260719T122317Z
+DTSTART:20260806T093000Z
+DTEND:20260806T113000Z
+SUMMARY:Alingon Mitra: Clean Cuts
+LOCATION:Bar 50 / The Alcove\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alingon-m
+ itra-clean-cuts/
+URL:https://comedyatlas.app/comedy-atlas/event/alingon-mitra-clean-cuts/
+END:VEVENT
+END:VCALENDAR

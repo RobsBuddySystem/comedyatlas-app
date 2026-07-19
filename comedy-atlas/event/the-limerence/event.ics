@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-limerence@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260820T144500Z
+DTEND:20260820T164500Z
+SUMMARY:THE LIMERENCE
+LOCATION:BrewDog DogHouse Hotel\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-limer
+ ence/
+URL:https://comedyatlas.app/comedy-atlas/event/the-limerence/
+END:VEVENT
+END:VCALENDAR

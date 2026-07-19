@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:honkers@comedyatlas.app
+DTSTAMP:20260719T122318Z
+DTSTART:20260806T221000Z
+DTEND:20260807T001000Z
+SUMMARY:Honkers
+LOCATION:The City Cafe / Nineties\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/honkers/
+URL:https://comedyatlas.app/comedy-atlas/event/honkers/
+END:VEVENT
+END:VCALENDAR
