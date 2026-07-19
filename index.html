@@ -4,6 +4,39 @@
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/">
 <meta http-equiv="refresh" content="0; url=/comedy-atlas/">
 <script>location.replace("/comedy-atlas/" + location.search + location.hash);</script>
-</head><body style="background:#0b0b0f;color:#e8c86a;font-family:system-ui;text-align:center;padding-top:20vh">
+<style>
+/* Same canonical nav pattern as seo_common.ATLAS_APP_NAV (scripts/seo_common.py)
+   -- this root page is hand-authored (not generated), so the 2026-07-18 nav
+   pass that swept the generated entity/city pages missed it. Every href here
+   is root-relative and origin-safe for comedyatlas.app (see seo_common.py's
+   ATLAS_APP_NAV correctness notes: no /about.html or /europe.html at root --
+   those only exist on pariscomedy.com). */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0b0b0f;--card:#151520;--border:#242433;--text:#e8e8ea;--muted:#8899aa;--gold:#e8c86a}
+html,body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif}
+a{color:inherit;text-decoration:none}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700}
+.nav-logo .site-name{color:var(--gold)}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+main{text-align:center;padding-top:15vh}
+</style>
+</head><body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<main id="main-content">
 <p>Loading COMEDY ATLAS… <a style="color:#e8c86a" href="/comedy-atlas/">enter →</a></p>
+</main>
 </body></html>

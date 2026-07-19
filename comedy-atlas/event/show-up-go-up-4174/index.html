@@ -83,6 +83,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
+.atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
+.atlas-toast.atlas-toast-visible{opacity:1}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
@@ -110,7 +112,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-wordmark">Show Up Go Up<span class="dot">.</span></div>
   <div class="atlas-subtitle"><time datetime="2026-08-08T17:00:00+02:00">Sat, Aug 8 2026 · 17:00 (UTC+02:00)</time></div>
   <p class="atlas-promise">Show Up Go Up is Barcelona’s most relaxed open mic - where anyone who shows up can perform!</p>
-  <div class="field-row" style="margin-top:10px">The Clubhouse: Laietana &amp;amp; Nikki&amp;#x27;s, 6 Via Laietana, Barcelona — <a href="https://www.openstreetmap.org/search?query=The Clubhouse: Laietana &amp;amp; Nikki&amp;#x27;s, 6 Via Laietana, Barcelona" rel="nofollow noopener">map →</a></div>
+  <div class="field-row" style="margin-top:10px">The Clubhouse: Laietana &amp; Nikki&#x27;s, 6 Via Laietana, Barcelona — <a href="https://www.openstreetmap.org/search?query=The Clubhouse: Laietana &amp;amp; Nikki&amp;#x27;s, 6 Via Laietana, Barcelona" rel="nofollow noopener">map →</a></div>
   <div class="field-row">The Comedy Clubhouse</div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/show-up-go-up/">Show Up Go Up →</a></div>
   
@@ -198,6 +200,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script>
+window.atlasToast = window.atlasToast || function(msg){
+  var t = document.createElement('div');
+  t.className = 'atlas-toast';
+  t.setAttribute('role', 'alert');
+  t.textContent = msg;
+  document.body.appendChild(t);
+  requestAnimationFrame(function(){ t.classList.add('atlas-toast-visible'); });
+  setTimeout(function(){
+    t.classList.remove('atlas-toast-visible');
+    setTimeout(function(){ if(t.parentNode){ t.parentNode.removeChild(t); } }, 250);
+  }, 4500);
+};
+</script>
+<script>
 (function(){
   var btn = document.getElementById('follow-btn');
   var emailInput = document.getElementById('follow-email');
@@ -205,17 +221,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   if(!btn) return;
   btn.addEventListener('click', function(){
     var email = emailInput ? emailInput.value.trim() : '';
-    if(emailInput && !email){
-      status.textContent = 'Enter an email to follow.';
-      return;
-    }
     var payload = {
       entity_type: btn.dataset.entityType,
       entity_id: Number(btn.dataset.entityId)
     };
     if(email){ payload.email = email; }
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/follow', {
+    fetch('https://api.comedyatlas.app/follow', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -225,12 +237,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         status.textContent = email
           ? 'Check your email to confirm.'
           : 'Following.';
-      } else {
-        status.textContent = 'Could not follow right now — try again later.';
-        btn.disabled = false;
+        return;
       }
+      if((resp.status === 400 || resp.status === 401) && !email){
+        status.textContent = 'Enter your email above, or sign in, to follow.';
+        if(emailInput){ emailInput.focus(); }
+        btn.disabled = false;
+        return;
+      }
+      status.textContent = 'Could not follow right now — try again later.';
+      if(window.atlasToast){ window.atlasToast('Could not follow right now — try again later.'); }
+      btn.disabled = false;
     }).catch(function(){
       status.textContent = 'Could not follow right now — try again later.';
+      if(window.atlasToast){ window.atlasToast('Could not follow right now — try again later.'); }
       btn.disabled = false;
     });
   });
@@ -248,7 +268,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   function attemptSave(){
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/fan/saved-shows', {
+    fetch('https://api.comedyatlas.app/fan/saved-shows', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -263,10 +283,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         btn.disabled = false;
       } else {
         status.textContent = 'Could not save right now — try again later.';
+        if(window.atlasToast){ window.atlasToast('Could not save right now — try again later.'); }
         btn.disabled = false;
       }
     }).catch(function(){
       status.textContent = 'Could not save right now — try again later.';
+      if(window.atlasToast){ window.atlasToast('Could not save right now — try again later.'); }
       btn.disabled = false;
     });
   }
@@ -278,7 +300,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var email = emailInput.value.trim();
       if(!email){ status.textContent = 'Enter an email address.'; return; }
       emailBtn.disabled = true;
-      fetch('https://atlas-api.pariscomedy.com/fan/request-link', {
+      fetch('https://api.comedyatlas.app/fan/request-link', {
         method: 'POST',
         credentials: 'include',
         headers: {'Content-Type': 'application/json'},
@@ -290,10 +312,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
             + 'to come back here and finish saving.';
         } else {
           status.textContent = 'Could not send a link right now — try again later.';
+          if(window.atlasToast){ window.atlasToast('Could not send a link right now — try again later.'); }
         }
       }).catch(function(){
         emailBtn.disabled = false;
         status.textContent = 'Could not send a link right now — try again later.';
+        if(window.atlasToast){ window.atlasToast('Could not send a link right now — try again later.'); }
       });
     });
   }
