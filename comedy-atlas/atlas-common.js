@@ -98,6 +98,29 @@
     return "";
   }
 
+  // 2026-07-20 (Robert: "the site has no graphics or anything interesting"):
+  // migration 0105 added `photo_url`/`photo_source_name` to
+  // public_upcoming_events(_incl_improv), so upcoming_events.json now
+  // carries a real, verified (pipeline.photos.url_exists -- never the
+  // Laughing Horse listing page's onerror-masked-404 default) photo for
+  // some rows. NULL-safe by construction: an event with no photo_url
+  // returns "" here, so every card without a photo renders byte-identical
+  // to before this feature -- same convention as
+  // scripts/generate_entity_pages.py's render_event_thumb (mirrors it
+  // exactly, just in JS for the client-rendered pages). No width/height
+  // attributes for the same reason that function's docstring gives: this
+  // schema has no intrinsic-dimension column for any photo, so the fixed
+  // 64x64 CSS box (`.event-thumb`, `object-fit:cover`) is what actually
+  // prevents layout shift, not a fabricated attribute. `onerror` removes
+  // the element outright so a dead hotlinked third-party image (this repo
+  // never rehosts photo bytes, see pipeline/photos.py) never leaves a
+  // broken-icon glyph on the card.
+  function eventThumbHtml(ev) {
+    if (!ev.photo_url) return "";
+    return '<img class="event-thumb" src="' + escapeHtml(ev.photo_url) + '" alt="" ' +
+      'loading="lazy" onerror="this.remove()">';
+  }
+
   // --- Language: a LABEL, not a gate (2026-07-19, option (b)) -------------
   // Replaces the old dropFrench() -- that function unconditionally REMOVED
   // every French-labeled row from every page's data before any filter even
@@ -477,11 +500,16 @@
         var cardHrefAttr = eventHref ? ' href="' + escapeHtml(eventHref) + '"' : "";
 
         html += "<" + cardTag + ' class="event-card"' + cardHrefAttr + ">";
+        html += '  <div class="event-card-inner">';
+        html += eventThumbHtml(ev);
+        html += '  <div class="event-card-body">';
         html += '  <div class="event-top">';
         html += '    <div class="event-title">' + titleText + "</div>";
         html += '    <div class="event-time">' + escapeHtml(fmtTime(x.d)) + "</div>";
         html += "  </div>";
         html += '  <div class="event-meta">' + meta + " " + statusBadge(ev) + languageTag(ev) + "</div>";
+        html += "  </div>";
+        html += "  </div>";
         html += "</" + cardTag + ">";
       });
       html += "</section>";
@@ -666,6 +694,9 @@
       }
 
       html += '<article class="event-card">';
+      html += '  <div class="event-card-inner">';
+      html += eventThumbHtml(primary);
+      html += '  <div class="event-card-body">';
       html += '  <div class="event-top">';
       html += '    <div class="event-title">' + groupTitleHtml + "</div>";
       if (g.events.length > 1) {
@@ -693,6 +724,8 @@
       // (and, for a multi-date group, each date's own link) already route
       // to that show/event's dedicated page; the Official-tickets button
       // belongs exclusively there.
+      html += "  </div>";
+      html += "  </div>";
       html += "</article>";
     });
     return html;
