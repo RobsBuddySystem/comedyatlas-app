@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free poster maker — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/poster.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
+<meta name="description" content="Make a free poster for your comedy show — pick any show on COMEDY ATLAS and the title, date, venue and ticket link fill in automatically. Edit text, fonts and colors, add your own photo, download a print-ready PNG. Free means free.">
+<meta property="og:title" content="Free poster maker — COMEDY ATLAS">
+<meta property="og:description" content="Make an Instagram or print poster for your comedy show in one minute. Free, no account, nothing uploaded.">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/poster.html">
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<div class="container" id="main-content">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <div class="badge">FREE POSTER MAKER</div>
+  <p class="intro">Make a poster for your show in one minute. Pick a show and the
+  title, date, venue and ticket link fill themselves in — then tap any text to
+  edit it, swap fonts, drop in your own photo, and download a full-resolution
+  PNG. Everything happens on your device; your photo is never uploaded anywhere.</p>
+
+  <!-- STEP 1: pick a show (or blank canvas) -->
+  <div id="picker">
+    <div class="card">
+      <h2>Start from a show</h2>
+      <input id="show-search" type="search" placeholder="Search shows by name, venue or city…" autocomplete="off">
+      <div id="show-results" role="list"></div>
+      <p class="data-note" id="picker-note">Loading upcoming shows…</p>
+    </div>
+    <button class="blank-btn" id="blank-btn" type="button">Or start with a blank canvas →</button>
+  </div>
+
+  <!-- STEP 2: the editor -->
+  <div id="editor">
+    <a href="#" class="back-link" id="back-to-picker">← Pick a different show</a>
+    <div class="editor-grid">
+      <div class="canvas-col">
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="poster-canvas" width="1080" height="1080" aria-label="Poster canvas — tap text to select it, tap again to edit, drag to move"></canvas>
+          <textarea id="inline-editor" rows="2" aria-label="Edit text"></textarea>
+        </div>
+        <p class="canvas-hint">Tap text to select · tap again to edit · drag to move</p>
+      </div>
+
+      <div class="tools-col">
+        <div class="card">
+          <span class="tool-label">Size</span>
+          <div class="pill-row" id="size-row">
+            <button class="pill active" data-size="ig-post" type="button">IG post 1:1</button>
+            <button class="pill" data-size="ig-story" type="button">IG story 9:16</button>
+            <button class="pill" data-size="a4" type="button">A4 print</button>
+          </div>
+          <span class="tool-label">Template</span>
+          <div class="pill-row scroll" id="template-row">
+            <button class="pill active" data-template="classic" type="button">Classic gig</button>
+            <button class="pill" data-template="minimal" type="button">Minimalist</button>
+            <button class="pill" data-template="photo" type="button">Photo</button>
+            <button class="pill" data-template="fringe" type="button">Fringe flyer</button>
+            <button class="pill" data-template="marker" type="button">Open-mic</button>
+          </div>
+        </div>
+
+        <div class="card sel-tools" id="sel-tools">
+          <span class="tool-label">Font</span>
+          <div class="pill-row scroll" id="font-row">
+            <button class="pill font-pill-anton" data-font="anton" type="button">Anton</button>
+            <button class="pill font-pill-oswald" data-font="oswald" type="button">Oswald</button>
+            <button class="pill font-pill-playfair" data-font="playfair" type="button">Playfair</button>
+            <button class="pill font-pill-inter" data-font="inter" type="button">Inter</button>
+            <button class="pill font-pill-marker" data-font="marker" type="button">Marker</button>
+          </div>
+          <span class="tool-label">Text size</span>
+          <div class="stepper">
+            <button id="size-minus" type="button" aria-label="Smaller text">−</button>
+            <span id="size-value">—</span>
+            <button id="size-plus" type="button" aria-label="Bigger text">+</button>
+          </div>
+          <span class="tool-label">Color</span>
+          <div class="swatch-row" id="swatch-row">
+            <button class="swatch" data-color="#ffffff" style="background:#ffffff" type="button" aria-label="White"></button>
+            <button class="swatch" data-color="#171512" style="background:#171512" type="button" aria-label="Black"></button>
+            <button class="swatch" data-color="#c9a84c" style="background:#c9a84c" type="button" aria-label="Gold"></button>
+            <button class="swatch" data-color="#9d5ff5" style="background:#9d5ff5" type="button" aria-label="Purple"></button>
+            <button class="swatch" data-color="#c41e3a" style="background:#c41e3a" type="button" aria-label="Red"></button>
+            <input type="color" class="swatch" id="custom-color" value="#3fb950" aria-label="Custom color">
+          </div>
+          <span class="tool-label">Alignment</span>
+          <div class="pill-row" id="align-row">
+            <button class="pill" data-align="left" type="button">Left</button>
+            <button class="pill" data-align="center" type="button">Center</button>
+            <button class="pill" data-align="right" type="button">Right</button>
+          </div>
+          <div class="pill-row" style="margin-top:12px">
+            <button class="pill danger" id="delete-block" type="button">Delete text</button>
+          </div>
+        </div>
+        <div class="card" id="no-sel-card">
+          <p class="no-sel-note">Tap any text on the poster to change its font,
+          size, color or alignment — or add a new line below.</p>
+        </div>
+
+        <div class="card">
+          <span class="tool-label">Background</span>
+          <div class="pill-row" id="bg-row">
+            <button class="pill" data-bg="solid" type="button">Solid</button>
+            <button class="pill" data-bg="gradient" type="button">Gradient</button>
+            <label class="pill file-btn" id="bg-photo-btn">Photo…<input type="file" id="bg-file" accept="image/*"></label>
+          </div>
+          <div class="swatch-row" style="margin-top:8px" id="bg-swatch-row">
+            <button class="swatch" data-bgcolor="#0a0e1a" style="background:#0a0e1a" type="button" aria-label="Navy background"></button>
+            <button class="swatch" data-bgcolor="#1a0a2e" style="background:#1a0a2e" type="button" aria-label="Deep purple background"></button>
+            <button class="swatch" data-bgcolor="#c41e3a" style="background:#c41e3a" type="button" aria-label="Red background"></button>
+            <button class="swatch" data-bgcolor="#c9a84c" style="background:#c9a84c" type="button" aria-label="Gold background"></button>
+            <button class="swatch" data-bgcolor="#f7f5f0" style="background:#f7f5f0" type="button" aria-label="Cream background"></button>
+            <input type="color" class="swatch" id="bg-custom-color" value="#0a0e1a" aria-label="Custom background color">
+          </div>
+          <span class="tool-label">Darken photo (for readable text)</span>
+          <input type="range" id="darken-range" min="0" max="80" value="40" aria-label="Darken background photo">
+        </div>
+
+        <div class="card">
+          <div class="pill-row">
+            <button class="pill" id="add-text" type="button">＋ Add text</button>
+            <button class="pill" id="toggle-sticker" type="button">Atlas character</button>
+            <button class="pill active" id="toggle-credit" type="button">“made with COMEDY ATLAS”</button>
+          </div>
+          <div class="export-row">
+            <button class="pill primary" id="export-png" type="button">Download PNG</button>
+            <button class="pill" id="copy-png" type="button">Copy image</button>
+          </div>
+          <div id="status-msg" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.
+  The poster maker is free and runs entirely in your browser: no account, no watermark you
+  can’t remove, and your photos never leave your device.</div>
+</footer>
+<script src="poster.js"></script>
+</body>
+</html>

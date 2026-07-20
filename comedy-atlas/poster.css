@@ -1,0 +1,95 @@
+/* COMEDY ATLAS — free poster maker (poster.html)
+ * Self-contained: fonts below are bundled woff2 files in assets/fonts/,
+ * no CDN, no external request at runtime. Mobile-first (390px). */
+
+@font-face{font-family:'PosterAnton';src:url('assets/fonts/anton-400.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'PosterOswald';src:url('assets/fonts/oswald-600.woff2') format('woff2');font-weight:600;font-display:block}
+@font-face{font-family:'PosterPlayfair';src:url('assets/fonts/playfair-700.woff2') format('woff2');font-weight:700;font-display:block}
+@font-face{font-family:'PosterInter';src:url('assets/fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'PosterInter';src:url('assets/fonts/inter-700.woff2') format('woff2');font-weight:700;font-display:block}
+@font-face{font-family:'PosterMarker';src:url('assets/fonts/marker-400.woff2') format('woff2');font-weight:400;font-display:block}
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+
+.container{max-width:1060px;margin:0 auto;padding:24px 16px 60px}
+.logo{font-size:20px;font-weight:800;margin-bottom:6px}
+.logo .dot{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:14px}
+.intro{font-size:14px;color:var(--muted);max-width:620px;margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:12px}
+
+/* ---- step 1: pick a show ---- */
+#show-search{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:16px;font-family:inherit}
+#show-results{margin-top:10px;max-height:320px;overflow-y:auto}
+.show-row{display:block;width:100%;text-align:left;background:transparent;border:none;border-bottom:1px solid var(--border);padding:12px 6px;cursor:pointer;color:var(--text);font-family:inherit;font-size:14px}
+.show-row:hover,.show-row:focus{background:rgba(201,168,76,.08)}
+.show-row .sr-title{font-weight:700}
+.show-row .sr-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.blank-btn{margin-top:14px;width:100%;padding:13px;border-radius:10px;border:1px dashed var(--border);background:transparent;color:var(--muted);font-size:14px;cursor:pointer;font-family:inherit}
+.blank-btn:hover{color:var(--text);border-color:var(--gold)}
+.data-note{font-size:12px;color:var(--muted);margin-top:10px}
+
+/* ---- editor layout ---- */
+#editor{display:none}
+.editor-grid{display:flex;flex-direction:column;gap:14px}
+@media(min-width:900px){.editor-grid{flex-direction:row;align-items:flex-start}
+  .canvas-col{flex:1;min-width:0}
+  .tools-col{width:340px;flex-shrink:0;position:sticky;top:76px}}
+
+.canvas-wrap{position:relative;display:flex;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;overflow:hidden}
+#poster-canvas{max-width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.45);touch-action:none;cursor:grab}
+#inline-editor{position:absolute;display:none;background:rgba(10,14,26,.92);color:#fff;border:2px solid var(--gold);border-radius:8px;padding:8px 10px;font-size:16px;resize:none;outline:none;z-index:20;min-width:180px;font-family:inherit;line-height:1.25}
+.canvas-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* ---- pills & controls ---- */
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.pill-row.scroll{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.pill{padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap;min-height:40px}
+.pill:hover{color:var(--text)}
+.pill.active{border-color:var(--gold);color:var(--gold);font-weight:700}
+.pill.danger{border-color:var(--red);color:var(--red)}
+.pill.primary{background:var(--gold);border-color:var(--gold);color:#100c00;font-weight:800}
+.pill.primary:hover{opacity:.9;color:#100c00}
+
+.font-pill-anton{font-family:'PosterAnton',sans-serif;font-size:15px}
+.font-pill-oswald{font-family:'PosterOswald',sans-serif}
+.font-pill-playfair{font-family:'PosterPlayfair',serif}
+.font-pill-inter{font-family:'PosterInter',sans-serif}
+.font-pill-marker{font-family:'PosterMarker',cursive}
+
+.swatch-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.swatch{width:34px;height:34px;border-radius:50%;border:2px solid var(--border);cursor:pointer;padding:0;flex-shrink:0}
+.swatch.active{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,168,76,.4)}
+input[type=color].swatch{border-radius:50%;overflow:hidden;background:none}
+input[type=range]{width:100%;accent-color:var(--gold);min-height:34px}
+.tool-label{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:12px 0 6px}
+.tool-label:first-child{margin-top:0}
+.sel-tools{display:none}
+.sel-tools.on{display:block}
+.no-sel-note{font-size:13px;color:var(--muted)}
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button{width:44px;height:40px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:19px;cursor:pointer}
+.stepper span{font-size:13px;color:var(--muted);min-width:52px;text-align:center}
+.file-btn input{display:none}
+.export-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+#status-msg{font-size:13px;margin-top:10px;min-height:18px}
+#status-msg.ok{color:var(--green)}
+#status-msg.error{color:var(--red)}
+.back-link{font-size:13px;margin-bottom:12px;display:inline-block}
