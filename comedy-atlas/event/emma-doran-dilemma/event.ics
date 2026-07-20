@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emma-doran-dilemma@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20261024T190000Z
+DTEND:20261024T210000Z
+SUMMARY:Emma Doran: Dilemma
+LOCATION:Galway
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emma-dora
+ n-dilemma/
+URL:https://comedyatlas.app/comedy-atlas/event/emma-doran-dilemma/
+END:VEVENT
+END:VCALENDAR

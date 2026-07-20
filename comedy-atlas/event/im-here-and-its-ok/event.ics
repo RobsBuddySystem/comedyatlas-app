@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:im-here-and-its-ok@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260824T190000Z
+DTEND:20260824T195000Z
+SUMMARY:I’m Here and It’s Ok
+LOCATION:London
+DESCRIPTION:That's right\, after a 20-year hiatus from the big-time bright 
+ lights star of The Good\, The Bad & The Snugly\, as seen on ITV's Jeremy Be
+ adle's HotShots 1996\, John James Davies is back with a brand-new show. The
+  semi-improvised and entirely unfinished masterpiece\, I'm Here and It's OK
+ .\nMore info: https://comedyatlas.app/comedy-atlas/event/im-here-and-its-ok
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/im-here-and-its-ok/
+END:VEVENT
+END:VCALENDAR

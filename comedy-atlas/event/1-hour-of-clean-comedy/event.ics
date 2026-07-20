@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1-hour-of-clean-comedy@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20260803T173000Z
+DTEND:20260803T183000Z
+SUMMARY:1 Hour of Clean Comedy
+LOCATION:London
+DESCRIPTION:Full of laughs\, free from swears. This is sharp\, joke-heavy s
+ tand-up that's suitable for all. Following a fully sold out run in Edinburg
+ h 2025\, Callum Mackenzie and featured guests present an hour of non-stop l
+ aughs\, that you can listen to while sitting next to your nan.\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/1-hour-of-clean-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/1-hour-of-clean-comedy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-winter-revolution@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260810T200000Z
+DTEND:20260810T210000Z
+SUMMARY:Ian Winter Revolution
+LOCATION:London
+DESCRIPTION:It's time for Revolution. Ian Winters brave show is a selection
+  box of satire\, irony\, characterisation and the surreal blended with one 
+ liners. Ian is a comedian unafraid to address and throw stones at Cathedral
+ s and rotten state of politics.\nMore info: https://comedyatlas.app/comedy-
+ atlas/event/ian-winter-revolution/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-winter-revolution/
+END:VEVENT
+END:VCALENDAR

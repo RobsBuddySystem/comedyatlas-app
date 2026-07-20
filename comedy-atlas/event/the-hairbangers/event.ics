@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-hairbangers@comedyatlas.app
+DTSTAMP:20260720T201044Z
+DTSTART:20260824T193000Z
+DTEND:20260824T200000Z
+SUMMARY:The Hairbangers
+LOCATION:Camden Comedy Club\, 100 Camden High Street\, London
+DESCRIPTION:We are The Hairbangers. The greatest band you've never heard of
+ . Made up live. We'll take suggestions from the audience and invent an enti
+ re band on the spot - egos\, bangers and breakdowns included. No script. No
+  setlist. No idea what's about to happen.\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/the-hairbangers/
+URL:https://comedyatlas.app/comedy-atlas/event/the-hairbangers/
+END:VEVENT
+END:VCALENDAR

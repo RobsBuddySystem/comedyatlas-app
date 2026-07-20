@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-show-that-goes-backwards@comedyatlas.app
+DTSTAMP:20260720T201044Z
+DTSTART:20260809T140000Z
+DTEND:20260809T145000Z
+SUMMARY:The Show That Goes Backwards
+LOCATION:Camden Comedy Club\, 100 Camden High Street\, London
+DESCRIPTION:Our show tells a completely improvised story\, BACKWARDS! It’
+ s an improvised play that starts at the end and ends at the start! With jus
+ t a single word of inspiration taken from the audience\, the show starts wi
+ th the final scene of the story and the performers work backwards from ther
+ e to find out what happened before that\, and before that\, and so on. With
+  each preceding scene exploring what caused that final (first!) scene to be
+ . Each new scene jumps back in time\; sometimes by a little\, sometimes by 
+ a lot\, and in each new scene you will discover a new element of the tale\,
+  bit by bit piecing together how the story came together so that\, by the e
+ nd\, everything has become clear! Once the story has gone all the way back 
+ to the start\, the show then crescendos\, going back to that first (final!)
+  scene to see it again in a whole new light\, having now experienced all th
+ e parts of the story that lead up to this moment. From discovering why a br
+ ide ran out on her wedding\, to finding out why that\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/the-show-that-goes-backwards/
+URL:https://comedyatlas.app/comedy-atlas/event/the-show-that-goes-backwards
+ /
+END:VEVENT
+END:VCALENDAR

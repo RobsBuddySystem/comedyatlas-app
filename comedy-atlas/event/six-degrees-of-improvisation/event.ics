@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:six-degrees-of-improvisation@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260803T183000Z
+DTEND:20260803T193000Z
+SUMMARY:Six Degrees of Improvisation
+LOCATION:London
+DESCRIPTION:Be Right Back takes you on an improv journey between search ter
+ ms in their show\, Six Degrees of Improvisation. Taking inspiration from th
+ e audiences' online searches\, from the inane to the intellectual\, the cas
+ t connects two ideas in a high-wire act that's totally made up on the spot.
+  It’s the show you’ve been searching for...\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/six-degrees-of-improvisation/
+URL:https://comedyatlas.app/comedy-atlas/event/six-degrees-of-improvisation
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:my-first-time@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260824T140000Z
+DTEND:20260824T150000Z
+SUMMARY:My First Time
+LOCATION:London
+DESCRIPTION:First time\, first high\, first heartbreak\, FIRST ORGASM! This
+  one woman dramedy takes the audience on an unhinged ride through life's fi
+ rsts. Told through the manic lens of a girl in the throes of losing her vir
+ ginity. But much like the journey to self acceptance\, nothing is linear. T
+ old tangent style\, this outrageous comedy of errors (my errors)\, invites 
+ you to laugh\, cry and cringe along with me\, whilst reliving some of life'
+ s biggest and most embarrassing moments. Come lose my V-Plates with me!\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/my-first-time/
+URL:https://comedyatlas.app/comedy-atlas/event/my-first-time/
+END:VEVENT
+END:VCALENDAR

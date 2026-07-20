@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:starbugs-showtime@comedyatlas.app
+DTSTAMP:20260720T201044Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Starbugs: Showtime!
+LOCATION:Cologne
+DESCRIPTION:„SHOWTIME!“ Das neue Programm von Starbugs Comedy Sie haben
+  es wieder getan! Starbugs Comedy setzen noch einen drauf und heben mit ihr
+ em brandneuen Programm „SHOWTIME!“ in neue Sphären der Comedy ab. Und 
+ sie nehmen ihr Publikum von der ersten Sekunde an mit auf eine Reise durch 
+ die bunte Welt der Showszene. Noch nie war Comedy […]\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/starbugs-showtime/
+URL:https://comedyatlas.app/comedy-atlas/event/starbugs-showtime/
+END:VEVENT
+END:VCALENDAR

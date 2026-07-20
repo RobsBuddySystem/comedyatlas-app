@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nutting-really-matters@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260820T203000Z
+DTEND:20260820T212000Z
+SUMMARY:Nutting Really Matters
+LOCATION:London
+DESCRIPTION:Stewart Nutting presents a story-led stand-up show about nihili
+ sm\, burnout and the strange things we choose to care about anyway. Through
+  personal stories and quietly absurd observations\, he explores what it mea
+ ns to live in a world that often feels meaningless - and why we still find 
+ ourselves defending small joys\, pointless efforts and moments of whimsy. T
+ houghtful\, slightly bleak\, and unexpectedly warm\, this is comedy about o
+ verthinking life\, questioning everything\, and discovering that even if no
+ thing matters... it somehow still does.\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/nutting-really-matters/
+URL:https://comedyatlas.app/comedy-atlas/event/nutting-really-matters/
+END:VEVENT
+END:VCALENDAR

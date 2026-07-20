@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-bridge-too-farce@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20260815T123000Z
+DTEND:20260815T133000Z
+SUMMARY:A Bridge Too Farce
+LOCATION:Camden Comedy Club\, 100 Camden High Street\, London
+DESCRIPTION:Fresh from Drama School\, a group of comedic actors abandon all
+  their training to bring you 'A Bridge Too Farce'\, an improvised hour of m
+ adness\, games and spontaneity\, completely at the mercy of the audience. E
+ xpect bold characters and scenes of mayhem that spiral out of control!!\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/a-bridge-too-farce/
+URL:https://comedyatlas.app/comedy-atlas/event/a-bridge-too-farce/
+END:VEVENT
+END:VCALENDAR

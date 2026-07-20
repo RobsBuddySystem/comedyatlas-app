@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ship-happens@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260830T171500Z
+DTEND:20260830T180500Z
+SUMMARY:Ship Happens
+LOCATION:The Libra Theatre Cafe\, London
+DESCRIPTION:A slice of life set in the strangest of environments — a crui
+ se ship. A floating city of eccentric characters and unexpected locations\,
+  from the jail buried deep in the hull to the chandeliered ballroom ten dec
+ ks above. Each show throws a melange of guests and crew together\, bound fo
+ r a destination not yet known\, on a ship that won't exist tomorrow. Drama 
+ is certain\, comedy is guaranteed. Because out at sea ... Ship Happens. We 
+ are a team made up of highly experienced improvisers and stage actors that 
+ have all trained and regularly perform at The Free Association in London as
+  well as acclaimed performing arts schools including RADA and East 15.\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/ship-happens/
+URL:https://comedyatlas.app/comedy-atlas/event/ship-happens/
+END:VEVENT
+END:VCALENDAR

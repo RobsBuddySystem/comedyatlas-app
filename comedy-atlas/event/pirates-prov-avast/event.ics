@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pirates-prov-avast@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260816T183000Z
+DTEND:20260816T192000Z
+SUMMARY:Pirates Prov – Avast!
+LOCATION:London
+DESCRIPTION:Citizens beware - the dastardly crew of the vile sloop PiratesP
+ rov have been spotted ashore in Camden Town. Infamous for their improvised 
+ stories of adventure\, swashbuckling and booty-hunting\, these rambunctious
+  rogues will stop at nothing to entertain. So come aboard the good ship Pir
+ ates Prov for barrels full of freebootin’ shenanigans. You’d be a scurv
+ y ridden\, toothless scallywag to miss out.\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/pirates-prov-avast/
+URL:https://comedyatlas.app/comedy-atlas/event/pirates-prov-avast/
+END:VEVENT
+END:VCALENDAR

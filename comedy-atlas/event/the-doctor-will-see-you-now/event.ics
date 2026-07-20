@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-doctor-will-see-you-now@comedyatlas.app
+DTSTAMP:20260720T201044Z
+DTSTART:20260813T193000Z
+DTEND:20260813T203000Z
+SUMMARY:The Doctor Will See You Now
+LOCATION:London
+DESCRIPTION:Teetering on the edge of anarchy\, five strangers struggle to e
+ ndure the wait for their doctor’s appointments and each other\, in what i
+ s an incredibly cathartic play for anyone who has ever stepped foot in a ho
+ spital.\nMore info: https://comedyatlas.app/comedy-atlas/event/the-doctor-w
+ ill-see-you-now/
+URL:https://comedyatlas.app/comedy-atlas/event/the-doctor-will-see-you-now/
+END:VEVENT
+END:VCALENDAR

@@ -47,7 +47,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
 .field-row .sep{opacity:.5}
 .section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
-.event-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
+.event-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.event-card-inner{display:flex;gap:12px;align-items:flex-start}
+.event-card-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.event-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.event-photo-credit{font-size:11px;color:var(--muted);margin-top:2px}
+.event-hero{width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin:14px 0}
 .event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
 .event-title{font-size:16px;font-weight:700;line-height:1.3}
 .event-time{font-size:13px;color:var(--gold);font-weight:700;white-space:nowrap}
@@ -209,25 +214,30 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-wordmark">Cities<span class="dot">.</span></div>
   <p style="color: var(--muted); margin-top: 12px;">Browse stand-up comedy shows and open mics worldwide.</p>
   <div class="stats">
-    <div><strong>33</strong> cities</div>
-    <div><strong>3087</strong> upcoming shows</div>
+    <div><strong>35</strong> cities</div>
+    <div><strong>4718</strong> upcoming shows</div>
   </div>
 </header>
 <main id="main-content">
 <div class="cities-grid">
+<a href="/comedy-atlas/city.html?city=Montreal" class="city-card">
+  <div class="city-name">Montreal, Canada</div>
+  <div class="city-count">1282 shows</div>
+  <div class="city-next-show">Wed, Jul 22 · 02:00</div>
+</a>
 <a href="/comedy-atlas/city.html?city=London" class="city-card">
   <div class="city-name">London, UK</div>
-  <div class="city-count">1130 shows</div>
+  <div class="city-count">1252 shows</div>
   <div class="city-next-show">Tue, Jul 21 · 22:00</div>
 </a>
 <a href="/comedy-atlas/city.html?city=Barcelona" class="city-card">
   <div class="city-name">Barcelona, Spain</div>
-  <div class="city-count">511 shows</div>
-  <div class="city-next-show">Mon, Jul 20 · 19:30</div>
+  <div class="city-count">509 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 19:30</div>
 </a>
 <a href="/comedy-atlas/city.html?city=Edinburgh" class="city-card">
   <div class="city-name">Edinburgh, UK</div>
-  <div class="city-count">427 shows</div>
+  <div class="city-count">428 shows</div>
   <div class="city-next-show">Sun, Jul 26 · 01:00</div>
 </a>
 <a href="/comedy-atlas/city.html?city=Madrid" class="city-card">
@@ -242,13 +252,28 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </a>
 <a href="/comedy-atlas/city.html?city=Berlin" class="city-card">
   <div class="city-name">Berlin, Germany</div>
-  <div class="city-count">245 shows</div>
-  <div class="city-next-show">Mon, Jul 20 · 20:00</div>
+  <div class="city-count">243 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 20:30</div>
+</a>
+<a href="/comedy-atlas/city.html?city=Toronto" class="city-card">
+  <div class="city-name">Toronto, Canada</div>
+  <div class="city-count">107 shows</div>
+  <div class="city-next-show">Fri, Jul 24 · 02:00</div>
+</a>
+<a href="/comedy-atlas/city.html?city=Cologne" class="city-card">
+  <div class="city-name">Cologne, Germany</div>
+  <div class="city-count">91 shows</div>
+  <div class="city-next-show">Wed, Oct 21 · 18:30</div>
 </a>
 <a href="/comedy-atlas/city.html?city=Paris" class="city-card">
   <div class="city-name">Paris, France</div>
-  <div class="city-count">75 shows</div>
-  <div class="city-next-show">Mon, Jul 20 · 20:15</div>
+  <div class="city-count">74 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 19:00</div>
+</a>
+<a href="/comedy-atlas/city.html?city=Lisbon" class="city-card">
+  <div class="city-name">Lisbon, Portugal</div>
+  <div class="city-count">37 shows</div>
+  <div class="city-next-show">Tue, Jul 21 · 21:30</div>
 </a>
 <a href="/comedy-atlas/city.html?city=Dublin" class="city-card">
   <div class="city-name">Dublin, Ireland</div>
@@ -259,12 +284,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="stub-section">
 <p class="stub-note">Also tracking — cities where we've spotted shows but don't yet have full coverage:</p>
 <div class="stub-list">
-<a href="/comedy-atlas/city.html?city=Toronto">Toronto, Canada · <span class="stub-count">6</span></a>
+<a href="/comedy-atlas/city.html?city=Galway">Galway, Ireland · <span class="stub-count">6</span></a>
 <a href="/comedy-atlas/city.html?city=Porto">Porto, Portugal · <span class="stub-count">5</span></a>
 <a href="/comedy-atlas/city.html?city=Zurich">Zurich, Switzerland · <span class="stub-count">5</span></a>
-<a href="/comedy-atlas/city.html?city=Lisbon">Lisbon, Portugal · <span class="stub-count">4</span></a>
+<a href="/comedy-atlas/city.html?city=Munich">Munich, Germany · <span class="stub-count">4</span></a>
 <a href="/comedy-atlas/city.html?city=Helsinki">Helsinki, Finland · <span class="stub-count">3</span></a>
-<a href="/comedy-atlas/city.html?city=Munich">Munich, Germany · <span class="stub-count">3</span></a>
 <a href="/comedy-atlas/city.html?city=Stockholm">Stockholm, Sweden · <span class="stub-count">3</span></a>
 <a href="/comedy-atlas/city.html?city=Vancouver">Vancouver, Canada · <span class="stub-count">3</span></a>
 <a href="/comedy-atlas/city.html?city=Vienna">Vienna, Austria · <span class="stub-count">3</span></a>
@@ -277,7 +301,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <a href="/comedy-atlas/city.html?city=Bratislava">Bratislava, Slovakia · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city.html?city=Leeds">Leeds, UK · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city.html?city=Milan">Milan, Italy · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Montreal">Montreal, Canada · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city.html?city=Ottawa">Ottawa, Canada · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city.html?city=Reykjavik">Reykjavik, Iceland · <span class="stub-count">1</span></a>
 <a href="/comedy-atlas/city.html?city=Riga">Riga, Latvia · <span class="stub-count">1</span></a>

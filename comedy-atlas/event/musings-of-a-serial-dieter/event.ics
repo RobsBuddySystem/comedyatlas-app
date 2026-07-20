@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:musings-of-a-serial-dieter@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260818T183000Z
+DTEND:20260818T193000Z
+SUMMARY:Musings of a Serial Dieter
+LOCATION:London
+DESCRIPTION:Alison takes you down the rabbit hole of being a Serial Dieter.
+  Enduring the purgatory of never being content\, she explores the food conf
+ usion\, stirring in a mixed medium of music and mayhem. Served with a fat d
+ ollop of humour.\nMore info: https://comedyatlas.app/comedy-atlas/event/mus
+ ings-of-a-serial-dieter/
+URL:https://comedyatlas.app/comedy-atlas/event/musings-of-a-serial-dieter/
+END:VEVENT
+END:VCALENDAR

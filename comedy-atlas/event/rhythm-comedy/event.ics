@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rhythm-comedy@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20261107T190000Z
+DTEND:20261107T210000Z
+SUMMARY:Rhythm & Comedy!
+LOCATION:Cologne
+DESCRIPTION:Rhythm & Comedy – Die Show\, die gehört und gesehen werden m
+ uss! Laut\, echt und verdammt witzig! Rhythm & Comedy bringt Künstler auf 
+ die Bühne\, die mit Humor\, Musik und jeder Menge Power ihre Perspektiven 
+ teilen. Diese Show ist mehr als nur Stand-up: Es wird gelacht\, hinterfragt
+  und gefeiert! Denn Comedy kann mehr\, als nur […]\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/rhythm-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/rhythm-comedy/
+END:VEVENT
+END:VCALENDAR

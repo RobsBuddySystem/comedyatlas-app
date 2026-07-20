@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cornershop-showdown@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20260810T180000Z
+DTEND:20260810T185000Z
+SUMMARY:Cornershop Showdown
+LOCATION:Camden Comedy Club\, 100 Camden High Street\, London
+DESCRIPTION:Jake Yapp hosts Britain’s brightest new game show for 1976! I
+ t's a gleefully shambolic game show set in a 1970s corner shop where one lu
+ cky audience member could win a two-hour holiday for four in North Luton! 
+ ’Funny and smart in ways this paragraph cannot possibly convey’ - CHARL
+ IE BROOKER\nMore info: https://comedyatlas.app/comedy-atlas/event/cornersho
+ p-showdown/
+URL:https://comedyatlas.app/comedy-atlas/event/cornershop-showdown/
+END:VEVENT
+END:VCALENDAR

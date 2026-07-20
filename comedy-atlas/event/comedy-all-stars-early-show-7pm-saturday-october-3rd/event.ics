@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-all-stars-early-show-7pm-saturday-october-3rd@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20261003T230000Z
+DTEND:20261004T003000Z
+SUMMARY:COMEDY ALL STARS! ( Early Show / 7pm )| SATURDAY\, OCTOBER 3RD
+LOCATION:Deli Planet\, 895 Rue De la Gauchetière Ouest\, Montreal
+DESCRIPTION:Discover why the Montreal Comedy Club is the go-to destination 
+ for live comedy shows\, date nights\, and fun events in the city.\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/comedy-all-stars-early-show-7
+ pm-saturday-october-3rd/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-all-stars-early-show-
+ 7pm-saturday-october-3rd/
+END:VEVENT
+END:VCALENDAR

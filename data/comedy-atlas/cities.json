@@ -40,7 +40,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 107
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -86,7 +86,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 245
+      "en": 243
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -225,8 +225,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 248,
-      "unconfirmed": 263
+      "en": 247,
+      "unconfirmed": 262
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -286,7 +286,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 75
+      "en": 74
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -299,6 +299,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
+      "en": 33,
       "unconfirmed": 4
     },
     "latitude": 38.7223,
@@ -361,7 +362,7 @@
     "country_name": "Germany",
     "id": 31,
     "language_counts": {
-      "en": 3
+      "en": 4
     },
     "latitude": 48.1351,
     "longitude": 11.582,
@@ -387,7 +388,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 422,
+      "en": 423,
       "unconfirmed": 5
     },
     "latitude": 55.9533,
@@ -855,7 +856,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1130
+      "en": 1130,
+      "unconfirmed": 122
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -1012,7 +1014,9 @@
     "country_iso2": "IE",
     "country_name": "Ireland",
     "id": 88,
-    "language_counts": {},
+    "language_counts": {
+      "unconfirmed": 6
+    },
     "latitude": 53.2707,
     "longitude": -9.0568,
     "name": "Galway",
@@ -1235,7 +1239,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 1
+      "en": 511,
+      "unconfirmed": 771
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1357,5 +1362,18 @@
     "longitude": 153.4,
     "name": "Gold Coast",
     "timezone": "Australia/Brisbane"
+  },
+  {
+    "country_id": 7,
+    "country_iso2": "DE",
+    "country_name": "Germany",
+    "id": 120,
+    "language_counts": {
+      "unconfirmed": 91
+    },
+    "latitude": 50.9375,
+    "longitude": 6.9603,
+    "name": "Cologne",
+    "timezone": "Europe/Berlin"
   }
 ]

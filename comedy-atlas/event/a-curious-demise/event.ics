@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-curious-demise@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20260808T153000Z
+DTEND:20260808T162000Z
+SUMMARY:A Curious Demise
+LOCATION:London
+DESCRIPTION:Someone has died. The cause? Suspicious. The suspects? Everyone
+  they ever knew. A Curious Demise is a fully improvised show that begins at
+  the end. Each show opens on the untimely demise of a brand-new character\,
+  dreamed up on the spot from audience suggestions. Was it the best friend w
+ ith the suspicious smile? The coworker passed over for promotion one too ma
+ ny times? The ex who never quite let go? Part murder mystery\, part charact
+ er study\, part beautifully chaotic time machine — A Curious Demise is an
+  improv show that proves that every life\, no matter how ordinary\, ends wi
+ th one very good question. How did they meet their demise?\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/a-curious-demise/
+URL:https://comedyatlas.app/comedy-atlas/event/a-curious-demise/
+END:VEVENT
+END:VCALENDAR

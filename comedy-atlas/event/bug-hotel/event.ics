@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bug-hotel@comedyatlas.app
+DTSTAMP:20260720T201042Z
+DTSTART:20260803T203000Z
+DTEND:20260803T213000Z
+SUMMARY:Bug Hotel
+LOCATION:London
+DESCRIPTION:Welcome to the Bug Hotel. A fast-moving hour of stand-up from t
+ he Lovebugs Comedy collective. Your Night Manager\, Kieran Dee (G&B Comedy 
+ 2026 All Stars winner)\, guides your short stay through travel mishaps\, cu
+ ltural misunderstandings and the indignities of hotel workplace life. Each 
+ show introduces you to five comedians\, with no two shows the same. Check i
+ n for laughs. Check out the staff and guests. North London's finest hospita
+ lity awaits. Questionable service is included.\nMore info: https://comedyat
+ las.app/comedy-atlas/event/bug-hotel/
+URL:https://comedyatlas.app/comedy-atlas/event/bug-hotel/
+END:VEVENT
+END:VCALENDAR

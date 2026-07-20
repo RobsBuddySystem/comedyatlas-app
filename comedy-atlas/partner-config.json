@@ -13,7 +13,11 @@
     "comedycafe.nl",
     "freefestival.co.uk",
     "freefringe.org.uk",
-    "meetup.com"
+    "meetup.com",
+    "eventbrite.pt",
+    "camdenfringe.com",
+    "comedy.cologne",
+    "galwaycomedyfestival.ie"
   ],
   "PARTNER_PARAMS": {
     "_comment": "'*' applies to every outbound host; a bare hostname key applies only to that host and is merged over '*'. Empty today by design (no affiliate deal exists yet, D1) -- populate then no page regeneration is needed since go.html reads this file at click time.",

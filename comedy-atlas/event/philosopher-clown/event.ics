@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:philosopher-clown@comedyatlas.app
+DTSTAMP:20260720T201043Z
+DTSTART:20260806T180000Z
+DTEND:20260806T190000Z
+SUMMARY:Philosopher Clown
+LOCATION:London
+DESCRIPTION:Sketch comedy collides with lifestyle advice\, with a twist of 
+ philosophical reflection\, in this new show by writer-performer Peter Singe
+ r and his slightly insane comedy collaborators. You are forced to laugh\, c
+ ry and think as the seasoned comedy collective share three decades of comed
+ y and twisted life experience. And encourage you to share in it.\nMore info
+ : https://comedyatlas.app/comedy-atlas/event/philosopher-clown/
+URL:https://comedyatlas.app/comedy-atlas/event/philosopher-clown/
+END:VEVENT
+END:VCALENDAR
