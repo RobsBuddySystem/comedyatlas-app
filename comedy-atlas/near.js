@@ -1,7 +1,8 @@
 /* "Shows near me tonight" (Phase 3 geo discovery) -- self-contained, no
-   external libs. Injects a prominent button into the ATLAS hub, uses the
-   browser Geolocation API to get lat/lon, calls GET /shows/near on the
-   ATLAS API, and renders the result inline. Degrades cleanly:
+   external libs. Wires up the hero's own "Shows near me" button (2026-07-20:
+   promoted to the hero's primary CTA, see index.html), uses the browser
+   Geolocation API to get lat/lon, calls GET /shows/near on the ATLAS API,
+   and renders the result inline below the freshness bar. Degrades cleanly:
      - permission denied / no geolocation support -> "browse by city" link
      - zero results in range -> a plain "try a wider range" message
      - in flight -> a small spinner
@@ -28,8 +29,6 @@
 
   var css = "" +
     ".near-tonight-wrap{max-width:1100px;margin:0 auto;padding:0 20px 8px}" +
-    ".near-tonight-btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;background:#c9a84c;color:#100c00;border:none;cursor:pointer;font-family:inherit}" +
-    ".near-tonight-btn:hover{opacity:.9}" +
     ".near-tonight-panel{margin-top:16px}" +
     ".near-tonight-panel .state-block{text-align:center;padding:32px 20px;color:var(--muted,#8899aa)}" +
     ".near-tonight-panel .spinner{width:24px;height:24px;border:3px solid var(--border,#1e2a3a);border-top-color:var(--purple,#7c3aed);border-radius:50%;margin:0 auto 12px;animation:near-spin .8s linear infinite}" +
@@ -171,18 +170,25 @@
 
   function init() {
     injectCss();
+
+    // 2026-07-20 (Robert's hero simplification): "Shows near me" is now the
+    // hero's own PRIMARY CTA (id="near-tonight-btn", markup + .cta-btn.
+    // primary styling live in index.html itself) instead of a button this
+    // script injected below the freshness bar. This script now only wires
+    // the click handler + mounts the results panel -- it no longer creates
+    // the button. Fails closed (does nothing) if that hero button is ever
+    // missing, rather than silently reintroducing a second button.
+    var btn = document.getElementById("near-tonight-btn");
     var mountPoint = document.getElementById("freshness");
-    if (!mountPoint || !mountPoint.parentNode) return;
+    if (!btn || !mountPoint || !mountPoint.parentNode) return;
 
     var wrap = document.createElement("div");
     wrap.className = "near-tonight-wrap";
-    wrap.innerHTML = '<button type="button" class="near-tonight-btn" id="near-tonight-btn">' +
-      '📍 Shows near me tonight</button>' +
-      '<div class="near-tonight-panel" id="near-tonight-panel"></div>';
+    wrap.innerHTML = '<div class="near-tonight-panel" id="near-tonight-panel"></div>';
     mountPoint.parentNode.insertBefore(wrap, mountPoint.nextSibling);
 
     var panel = document.getElementById("near-tonight-panel");
-    document.getElementById("near-tonight-btn").addEventListener("click", function () {
+    btn.addEventListener("click", function () {
       onFindClick(panel);
     });
   }

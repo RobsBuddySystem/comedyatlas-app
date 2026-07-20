@@ -73,13 +73,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
 }
-.cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700}
-.cta-btn.comic{background:var(--purple);color:#fff}
-.cta-btn.comic:hover{opacity:.9}
-.cta-btn.booker{border:1px solid var(--gold);color:var(--gold)}
-.cta-btn.booker:hover{background:var(--gold);color:#100c00}
-.cta-btn.fan{border:1px solid var(--border);color:var(--muted)}
-.cta-btn.fan:hover{border-color:var(--purple-light);color:var(--text)}
+.cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.cta-btn.primary{background:var(--gold);color:#100c00;border:none}
+.cta-btn.primary:hover{opacity:.9}
+.cta-btn.secondary{border:1px solid var(--border);color:var(--muted);background:none}
+.cta-btn.secondary:hover{border-color:var(--purple-light);color:var(--text)}
+.industry-footnote{max-width:1100px;margin:0 auto;padding:4px 20px 0;font-size:13px;color:var(--muted)}
+.industry-footnote a{color:var(--purple-light);font-weight:700}
 
 /* Freshness / trust bar */
 .freshness{max-width:1100px;margin:0 auto;padding:0 20px 8px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -185,9 +185,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <p class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
       festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</p>
     <div class="atlas-cta-row">
-      <a href="/comedy-atlas/login.html?role=comic&next=/comedy-atlas/comic.html" class="cta-btn comic">I'm a comic →</a>
-      <a href="/comedy-atlas/login.html?role=booker&next=/comedy-atlas/booker.html" class="cta-btn booker">I'm a booker →</a>
-      <a href="/comedy-atlas/login.html?role=fan&next=/comedy-atlas/itinerary.html" class="cta-btn fan">♥ For fans — save shows &amp; get alerts</a>
+      <button type="button" class="cta-btn primary" id="near-tonight-btn">📍 Shows near me</button>
+      <a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse cities</a>
     </div>
   </div>
   <div class="atlas-hero-figure">
@@ -219,6 +218,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   to the organizer's official page. Discovery and booking on COMEDY ATLAS
   is free, for comics and bookers alike.
 </p>
+
+<p class="industry-footnote container">Run shows or perform? <a href="/comedy-atlas/login.html">Comics &amp; bookers →</a></p>
 
 <footer>
   <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>

@@ -23,7 +23,7 @@
  */
 "use strict";
 
-var CACHE_VERSION = "atlas-c1130eb101df";
+var CACHE_VERSION = "atlas-2edc667c9a26";
 var STATIC_CACHE = "atlas-static-" + CACHE_VERSION;
 var DATA_CACHE = "atlas-data-" + CACHE_VERSION;
 
