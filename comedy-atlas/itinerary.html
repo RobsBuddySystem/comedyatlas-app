@@ -86,6 +86,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="card">
       <h2>Account</h2>
       <p class="sub" style="margin-bottom:0" id="account-email"></p>
+      <label for="home-city-input">Home city — the site opens on it by default</label>
+      <input id="home-city-input" type="text" list="home-city-options"
+        placeholder="e.g. Paris" autocomplete="off"
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px">
+      <datalist id="home-city-options"></datalist>
+      <button class="small" id="home-city-save">Save home city</button>
+      <button class="small ghost" id="home-city-clear" style="margin-left:8px">Clear</button>
+      <div class="msg" id="home-city-msg"></div>
     </div>
 
     <div class="card">
@@ -123,12 +131,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a></div>
 <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
 <script src="atlas-auth.js"></script>
+<script src="atlas-geo.js"></script>
 <script>
 (function () {
   "use strict";
@@ -231,8 +241,58 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     document.getElementById("account-email").textContent = me.email;
     document.getElementById("ics-link").href = apiOrigin + "/fan/saved-shows.ics";
     document.getElementById("share-url").value = apiOrigin + "/itinerary/" + me.share_token;
+    initHomeCity(me);
     loadSavedShows();
     loadFollows();
+  }
+
+  // Home city (migration 0103 + /fan/home-city, atlas-geo.js): the site
+  // opens on this city by default for this fan. Options come from the same
+  // published cities.json the homepage uses; free-typed values are still
+  // validated server-side against covered cities.
+  function initHomeCity(me) {
+    var input = document.getElementById("home-city-input");
+    input.value = me.home_city || "";
+    fetch("../data/comedy-atlas/cities.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (cities) {
+        var dl = document.getElementById("home-city-options");
+        (cities || []).forEach(function (c) {
+          if (!c || !c.name) return;
+          var opt = document.createElement("option");
+          opt.value = c.name;
+          dl.appendChild(opt);
+        });
+      }).catch(function () { /* datalist is a convenience only */ });
+
+    function save(value) {
+      A.put("/fan/home-city", { home_city: value })
+        .then(function (res) {
+          input.value = res.home_city || "";
+          setMsg("home-city-msg", res.home_city
+            ? "Saved — the site now opens on " + res.home_city + " for you."
+            : "Cleared.", true);
+          // Mirror into the same local preference atlas-geo.js reads, so
+          // the change takes effect immediately on this device too.
+          try {
+            if (res.home_city && window.AtlasGeo) {
+              window.AtlasGeo.rememberManual(res.home_city);
+            } else if (!res.home_city) {
+              localStorage.removeItem("atlas_city_manual");
+            }
+          } catch (_) { /* ignore */ }
+        })
+        .catch(function (e) {
+          setMsg("home-city-msg",
+            e.body && e.body.detail ? e.body.detail : "Could not save.");
+        });
+    }
+    document.getElementById("home-city-save").addEventListener("click", function () {
+      save(input.value.trim());
+    });
+    document.getElementById("home-city-clear").addEventListener("click", function () {
+      save(null);
+    });
   }
 
   function showSignedOut() {

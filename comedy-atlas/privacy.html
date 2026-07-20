@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy — COMEDY ATLAS</title>
+<meta name="description" content="What COMEDY ATLAS collects, what it never does with your data, and how to reach us. Plain language, no legalese.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/privacy.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
+a{color:var(--purple-light);text-decoration:none}
+a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:28px;font-weight:800;letter-spacing:-.5px}
+h1 .dot{color:var(--gold)}
+p.sub{color:var(--muted);font-size:14px;margin:8px 0 28px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:10px}
+.card p{font-size:14.5px;margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+.card ul{padding-left:20px;font-size:14.5px}
+.card li{margin-bottom:8px}
+.never{color:var(--green);font-weight:700}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/partners.html">Partners</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+
+<div class="container" id="main-content">
+  <h1>Privacy<span class="dot">.</span></h1>
+  <p class="sub">Plain language, no legalese. Last updated 20 July 2026.</p>
+
+  <div class="card">
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Aggregate analytics.</strong> Which pages get visited, from
+        which countries and cities, on what kind of device. We look at this
+        data as totals and trends — "1,200 visits from London last month" —
+        never as individual browsing profiles.</li>
+      <li><strong>Standard server logs.</strong> Like every website, our
+        servers record technical request logs (including IP addresses) used
+        for security, debugging, and abuse prevention. They are not used to
+        profile you and are never published or sold.</li>
+      <li><strong>Coarse location for convenience.</strong> When you first
+        visit, we look up your IP against a local
+        <a href="https://db-ip.com" rel="noopener">DB-IP</a> city database
+        (licensed CC&nbsp;BY&nbsp;4.0) to suggest the nearest city we cover —
+        that's why the homepage can say "Shows near you in Paris". The lookup
+        is transient: the suggestion service returns only a city name, never
+        your IP or exact location, and your city preference is remembered in
+        your own browser (localStorage), not in an account profile — unless
+        you save a home city yourself. The "Shows near me" button is separate
+        and only uses your precise location if you explicitly tap it and
+        approve the browser prompt.</li>
+      <li><strong>Account data, if you sign up.</strong> Fans: an email
+        address (for magic-link sign-in), an optional display name, an
+        optional home city, and your saved shows and follows. Comics and
+        bookers: the profile details you choose to add.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>What we never do</h2>
+    <ul>
+      <li><span class="never">We never publish anyone's personal contact
+        info.</span> Getting in touch with a comic or booker always goes
+        through our relay — that protection is the product.</li>
+      <li><span class="never">We never sell personal data.</span> If we ever
+        share audience numbers with a sponsor or partner, it's aggregate
+        only — totals per city and country — never names, emails, IPs, or
+        individual histories.</li>
+      <li><span class="never">No ad trackers, no third-party analytics
+        scripts.</span> The only analytics beacon on this site is ours.</li>
+      <li><span class="never">No consent-wall theatre.</span> We don't need a
+        cookie banner because we don't do cross-site tracking. The one cookie
+        we set is a session cookie when you sign in.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Retention &amp; your choices</h2>
+    <ul>
+      <li>Technical logs are kept only as long as needed for security and
+        trend analysis, then reduced to aggregate statistics.</li>
+      <li>Your city preference lives in your own browser — clear your
+        browser storage and it's gone.</li>
+      <li>Signed-in fans can clear their display name and home city any time
+        from <a href="/comedy-atlas/itinerary.html">My Itinerary</a>, or ask
+        us to delete the account entirely.</li>
+      <li>Comics: listings are built from public information. If you want
+        your page changed or taken down, tell us — see the claim link on
+        your page or just email us.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Questions, corrections, deletions:
+      <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>.
+      A human reads it.</p>
+  </div>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+    <span class="sep">·</span>
+    <a href="/comedy-atlas/privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script src="atlas-track.js"></script>
+</body>
+</html>
