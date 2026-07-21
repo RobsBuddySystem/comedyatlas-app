@@ -60,8 +60,8 @@ section p{color:var(--muted);font-size:15px;margin-bottom:10px}
 section p strong{color:var(--text)}
 
 .rule-list{list-style:none}
-.rule-list li{display:flex;gap:10px;margin-bottom:12px;color:var(--muted);font-size:15px}
-.rule-list li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0}
+.rule-list li{position:relative;padding-left:26px;margin-bottom:12px;color:var(--muted);font-size:15px}
+.rule-list li::before{content:"✓";color:var(--green);font-weight:700;position:absolute;left:0;top:0}
 .rule-list li strong{color:var(--text)}
 
 .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
