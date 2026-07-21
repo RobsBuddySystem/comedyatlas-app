@@ -267,7 +267,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // from a touring organizer's feed, not real per-city coverage (Robert,
   // 2026-07-19: "I'm sure there's more than one show in Montreal" -- he's
   // right, Montreal has exactly 1, a stray touring-act event, not a scene).
-  var FEATURED_MIN_SHOWS = 15;
+  var FEATURED_MIN_SHOWS = 8;  // now counts UNIQUE shows (was 15 for raw showtimes)
 
   // Always shows the country -- Robert's core need ("I don't know where
   // Riga is") applies just as honestly to a city everyone already knows
@@ -282,7 +282,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (entry.city === "Edinburgh") tag = '<div class="place-tag">Free Fringe city</div>';
     return '<a class="place-card" href="city.html?city=' + encodeURIComponent(entry.city) + '">' +
       '<div class="place-name">' + cityLabel(entry) + '</div>' +
-      '<div class="place-meta"><span class="place-count">' + entry.count + '</span> upcoming show' +
+      '<div class="place-meta"><span class="place-count">' + entry.count + '</span> show' +
       (entry.count === 1 ? '' : 's') + '</div>' + tag + '</a>';
   }
 
@@ -308,8 +308,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var stubs = cities.filter(function (c) { return c.count < FEATURED_MIN_SHOWS; });
     var festivals = A.groupFestivals(events);
 
-    var totalShows = events.length;
-    statsRow.innerHTML = '<span><strong>' + totalShows + '</strong> upcoming shows</span>' +
+    // Unique shows, not raw showtimes — a weekly night is one show, not the
+    // ~176 future dates it's expanded into (see atlas-common.js showKey).
+    var totalShows = A.uniqueShowCount(events);
+    statsRow.innerHTML = '<span><strong>' + totalShows + '</strong> shows</span>' +
       '<span><strong>' + cities.length + '</strong> cities live</span>' +
       (festivals.length ? '<span><strong>' + festivals.length + '</strong> free festivals</span>' : '');
 

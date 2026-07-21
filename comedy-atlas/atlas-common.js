@@ -367,18 +367,38 @@
   // not just for cities judged "not major": consistency beats a subjective
   // major-city list, and it costs nothing for the cities everyone already
   // recognizes (Paris, London).
+  // A recurring show (a weekly night) is ONE show with many dated showtimes.
+  // Counting raw rows made Montreal read "1282 shows" when it has ~39 (the
+  // rest are that handful of nights expanded out to 2029). The honest,
+  // more-useful count is UNIQUE shows: a recurring show's series slug, or
+  // title+venue for a one-off. `count` is now unique shows; `showtimes`
+  // keeps the raw instance count for anywhere that wants it.
+  function showKey(ev) {
+    return ev.show_series_slug ||
+      ((ev.title || "") + "|" + (ev.venue_name || "") + "|" + (ev.city_name || ""));
+  }
+
+  function uniqueShowCount(events) {
+    var seen = {};
+    events.forEach(function (ev) { seen[showKey(ev)] = 1; });
+    return Object.keys(seen).length;
+  }
+
   function groupByCity(events, citiesByName) {
-    var counts = {};
+    var shows = {}, showtimes = {};
     events.forEach(function (ev) {
       var city = ev.city_name || "Unknown";
-      counts[city] = (counts[city] || 0) + 1;
+      showtimes[city] = (showtimes[city] || 0) + 1;
+      if (!shows[city]) shows[city] = {};
+      shows[city][showKey(ev)] = 1;
     });
-    return Object.keys(counts).map(function (city) {
+    return Object.keys(shows).map(function (city) {
       var country = null;
       if (citiesByName && citiesByName[city]) {
         country = citiesByName[city].country_name || citiesByName[city].country_iso2 || null;
       }
-      return { city: city, count: counts[city], country: country };
+      return { city: city, count: Object.keys(shows[city]).length,
+               showtimes: showtimes[city], country: country };
     }).sort(function (a, b) { return b.count - a.count; });
   }
 
@@ -768,6 +788,7 @@
     distanceKm: distanceKm,
     setFreshness: setFreshness,
     groupByCity: groupByCity,
+    uniqueShowCount: uniqueShowCount,
     citiesByName: citiesByName,
     groupFestivals: groupFestivals,
     renderEventCards: renderEventCards,
