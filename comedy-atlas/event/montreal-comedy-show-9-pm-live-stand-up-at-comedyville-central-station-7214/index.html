@@ -53,6 +53,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
 .field-row .sep{opacity:.5}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text)}
+.chip:hover{border-color:var(--purple)}
+.milestone-item{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border)}
+.milestone-item:last-child{border-bottom:none}
+.milestone-date{color:var(--gold);font-weight:700;margin-right:6px}
 .section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .event-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .event-card-inner{display:flex;gap:12px;align-items:flex-start}
@@ -121,6 +127,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
     <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/guide/">Guide</a>
     <a href="/comedy-atlas/partners.html">Partners</a>
     <a href="/comedy-atlas/blog/">Blog</a>
     <a href="/comedy-atlas/about.html">About</a>
@@ -156,6 +164,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
   <div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  
   
   <div class="save-box">
   <button type="button" class="save-btn" id="save-btn" data-event-id="7214">
@@ -219,11 +228,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     
     <div class="event-card-body">
       <div class="event-top">
-        <div class="event-title">Comedy Montreal ( Comedy Show Montreal ) at Comedy Club Montreal (8:30)</div>
+        <div class="event-title">Montreal Off The Cuff Comedy Show – Stand-Up, Crowd Work &amp; Improv at Comedy</div>
         <div class="event-time">2026-07-31 02:30:00+02:00</div>
       </div>
       <div class="event-meta"><span>Comedyville at Deli Planet – Inside Central Station (Gare Centrale)</span><span class="sep">·</span><span>Montreal</span><span class="sep">·</span><span>10.00 CAD</span></div>
-      <a class="ticket-link" href="/comedy-atlas/event/comedy-montreal-comedy-show-montreal-at-comedy-club-montreal-8-30-7240/">View &amp; tickets →</a>
+      <a class="ticket-link" href="/comedy-atlas/event/montreal-off-the-cuff-comedy-show-stand-up-crowd-work-improv-at-comedy/">View &amp; tickets →</a>
     </div>
   </div>
 </div>
@@ -232,11 +241,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     
     <div class="event-card-body">
       <div class="event-top">
-        <div class="event-title">Montreal Off The Cuff Comedy Show – Stand-Up, Crowd Work &amp; Improv at Comedy</div>
+        <div class="event-title">Comedy Montreal ( Comedy Show Montreal ) at Comedy Club Montreal (8:30)</div>
         <div class="event-time">2026-07-31 02:30:00+02:00</div>
       </div>
       <div class="event-meta"><span>Comedyville at Deli Planet – Inside Central Station (Gare Centrale)</span><span class="sep">·</span><span>Montreal</span><span class="sep">·</span><span>10.00 CAD</span></div>
-      <a class="ticket-link" href="/comedy-atlas/event/montreal-off-the-cuff-comedy-show-stand-up-crowd-work-improv-at-comedy/">View &amp; tickets →</a>
+      <a class="ticket-link" href="/comedy-atlas/event/comedy-montreal-comedy-show-montreal-at-comedy-club-montreal-8-30-7240/">View &amp; tickets →</a>
     </div>
   </div>
 </div>

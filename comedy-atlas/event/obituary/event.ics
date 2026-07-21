@@ -5,12 +5,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:obituary@comedyatlas.app
-DTSTAMP:20260720T201043Z
+DTSTAMP:20260721T152620Z
 DTSTART:20260806T131500Z
 DTEND:20260806T151500Z
 SUMMARY:Obituary
 LOCATION:Bar 50 / The Alcove\, Edinburgh
-DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/obituary/
+DESCRIPTION:What will other people say about you once you are dead? 75 year
+ -old stand-up comedian Ivor Dembina (Guardian ****) gets his retaliation in
+  first\, presenting his own obituary in a brand-new solo show.\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/obituary/
 URL:https://comedyatlas.app/comedy-atlas/event/obituary/
 END:VEVENT
 END:VCALENDAR

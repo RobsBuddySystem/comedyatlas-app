@@ -5,12 +5,13 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:movieoke@comedyatlas.app
-DTSTAMP:20260720T201043Z
+DTSTAMP:20260721T152620Z
 DTSTART:20260818T144500Z
 DTEND:20260818T164500Z
 SUMMARY:Movieoke!
 LOCATION:West Nic Records / Main Cellar\, Edinburgh
-DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/movieoke/
+DESCRIPTION:It\nMore info: https://comedyatlas.app/comedy-atlas/event/movie
+ oke/
 URL:https://comedyatlas.app/comedy-atlas/event/movieoke/
 END:VEVENT
 END:VCALENDAR

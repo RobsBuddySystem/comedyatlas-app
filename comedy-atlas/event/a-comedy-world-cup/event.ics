@@ -5,13 +5,14 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:a-comedy-world-cup@comedyatlas.app
-DTSTAMP:20260720T201042Z
+DTSTAMP:20260721T152619Z
 DTSTART:20260806T214500Z
 DTEND:20260806T234500Z
 SUMMARY:A Comedy World Cup
 LOCATION:Dragonfly  / The Other Room\, Edinburgh
-DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-comedy-
- world-cup/
+DESCRIPTION:This World Cup year we are bringing you a revolving door of the
+  Fringe\nMore info: https://comedyatlas.app/comedy-atlas/event/a-comedy-wor
+ ld-cup/
 URL:https://comedyatlas.app/comedy-atlas/event/a-comedy-world-cup/
 END:VEVENT
 END:VCALENDAR
