@@ -235,8 +235,8 @@
     "edition_year": 2026,
     "id": 16,
     "name": "Galway Comedy Festival",
-    "organization_id": null,
-    "organization_name": null,
+    "organization_id": 140,
+    "organization_name": "Galway Comedy Festival",
     "website_url": "https://www.galwaycomedyfestival.com/"
   },
   {
@@ -295,8 +295,8 @@
     "edition_year": 2026,
     "id": 20,
     "name": "Camden Fringe",
-    "organization_id": null,
-    "organization_name": null,
+    "organization_id": 142,
+    "organization_name": "Camden Fringe",
     "website_url": "https://camdenfringe.com/"
   },
   {
@@ -1135,8 +1135,38 @@
     "edition_year": 2026,
     "id": 76,
     "name": "Cologne Comedy Festival",
-    "organization_id": null,
-    "organization_name": null,
+    "organization_id": 141,
+    "organization_name": "Cologne Comedy Festival",
     "website_url": "https://comedy.cologne/"
+  },
+  {
+    "applications_close_at": null,
+    "applications_currently_open": false,
+    "applications_open_at": null,
+    "description": "Free-fringe umbrella promoter at the Edinburgh Festival Fringe (festival id=1) -- pay-what-you-want/donation shows across dozens of Edinburgh venues every August.",
+    "edition_ends_on": null,
+    "edition_starts_on": null,
+    "edition_status": null,
+    "edition_year": null,
+    "id": 145,
+    "name": "PBH's Free Fringe",
+    "organization_id": 102,
+    "organization_name": "PBH's Free Fringe",
+    "website_url": null
+  },
+  {
+    "applications_close_at": null,
+    "applications_currently_open": false,
+    "applications_open_at": null,
+    "description": "Free-fringe umbrella promoter at the Edinburgh Festival Fringe (festival id=1) -- pay-what-you-want/donation shows across dozens of Edinburgh venues every August.",
+    "edition_ends_on": null,
+    "edition_starts_on": null,
+    "edition_status": null,
+    "edition_year": null,
+    "id": 146,
+    "name": "Laughing Horse Free Festival",
+    "organization_id": 103,
+    "organization_name": "Laughing Horse Free Festival",
+    "website_url": null
   }
 ]

@@ -26,13 +26,6 @@
   var MANIFEST_URL = "../data/comedy-atlas/MANIFEST.json";
   var CITIES_URL = "../data/comedy-atlas/cities.json";
 
-  // Known Edinburgh Fringe free-festival umbrella organizations. These are
-  // ORG names that appear on Edinburgh events (source IS the org — see
-  // BUILD_STATE.md "EDINBURGH" section) — there is no separate `festivals`
-  // table row for them yet (public_festivals is empty today), so the
-  // festivals section is derived directly from event organizer names.
-  var FESTIVAL_ORGS = ["PBH's Free Fringe", "Laughing Horse Free Festival"];
-
   function escapeHtml(s) {
     if (s === null || s === undefined) return "";
     return String(s)
@@ -195,8 +188,8 @@
   // default -- pipeline/parse.py leaves it NULL rather than guess a bad one)
   // and is populated for ~100% of upcoming rows today. BUT: for umbrella
   // festival listings where venue_name is null (Edinburgh PBH/Laughing Horse
-  // -- the organizer's whole run stands in for a venue, see the file-header
-  // note above and atlas-common's own FESTIVAL_ORGS), starts_at/ends_at span
+  // -- the organizer's whole run stands in for a venue, see ev.is_festival/
+  // groupFestivals below), starts_at/ends_at span
   // the ENTIRE announced run (verified: median ~90min for venued rows vs.
   // multi-day spans for umbrella rows) -- using that span as a per-show
   // duration would be actively misleading, not just imprecise. So duration
@@ -414,13 +407,31 @@
     return map;
   }
 
+  // Data-driven (2026-07-25, replaces the old hardcoded FESTIVAL_ORGS name
+  // array -- Robert's report: the homepage was silently capped at whatever
+  // 2 orgs happened to be in that JS list while the real `festivals` table
+  // grew to 144 rows, 76 of them public, completely disconnected from it).
+  // `ev.is_festival` is a real column on public_upcoming_events (migration
+  // 0121): EXISTS(SELECT 1 FROM festivals WHERE organization_id =
+  // ev.organization_id AND visibility='public'), computed in the DB view
+  // and shipped in upcoming_events.json -- no client-side name matching.
+  //
+  // `allFree` (2026-07-25): unlike the old 2-org set (both donation-model
+  // Edinburgh free-fringe promoters), a real `festivals` row can be a
+  // ticketed festival (e.g. Camden Fringe, price_min 5-18) -- an entry is
+  // only flagged allFree when EVERY event counted has ev.is_free === true
+  // (never inferred from a NULL/unconfirmed price), so festivalCard()
+  // can show an honest "Free entry" tag instead of mislabeling a paid show.
   function groupFestivals(events) {
     var counts = {};
     events.forEach(function (ev) {
-      if (FESTIVAL_ORGS.indexOf(ev.organization_name) === -1) return;
+      if (!ev.is_festival) return;
       var key = ev.organization_name + "||" + (ev.city_name || "");
-      if (!counts[key]) counts[key] = { org: ev.organization_name, city: ev.city_name, count: 0 };
+      if (!counts[key]) {
+        counts[key] = { org: ev.organization_name, city: ev.city_name, count: 0, allFree: true };
+      }
       counts[key].count += 1;
+      if (ev.is_free !== true) counts[key].allFree = false;
     });
     return Object.keys(counts).map(function (k) { return counts[k]; })
       .sort(function (a, b) { return b.count - a.count; });
@@ -772,7 +783,6 @@
   global.AtlasCommon = {
     DATA_URL: DATA_URL,
     MANIFEST_URL: MANIFEST_URL,
-    FESTIVAL_ORGS: FESTIVAL_ORGS,
     escapeHtml: escapeHtml,
     fmtDayHeading: fmtDayHeading,
     fmtTime: fmtTime,

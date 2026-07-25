@@ -222,6 +222,60 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
 
     <div class="card">
+      <h2>📆 Add show dates</h2>
+      <p class="privacy" style="margin-bottom:10px">Scraper missed a date,
+      or you're starting a brand-new run? Add it here — a single date, or
+      a weekly recurrence like "every Tuesday at 19:00 for 4 weeks."</p>
+      <label for="occ-show">Your show</label>
+      <select id="occ-show"><option value="">Loading your shows…</option></select>
+
+      <div class="tabs2">
+        <div class="tab2 active" id="occ-tab-single">Single date</div>
+        <div class="tab2" id="occ-tab-recurring">Weekly recurrence</div>
+      </div>
+
+      <div id="occ-single-fields">
+        <div class="row">
+          <div>
+            <label for="occ-date">Date</label>
+            <input id="occ-date" type="date">
+          </div>
+          <div>
+            <label for="occ-time">Time</label>
+            <input id="occ-time" type="time" value="19:00">
+          </div>
+        </div>
+      </div>
+
+      <div id="occ-recurring-fields" style="display:none">
+        <div class="row">
+          <div>
+            <label for="occ-rec-start">Start date (first occurrence)</label>
+            <input id="occ-rec-start" type="date">
+          </div>
+          <div>
+            <label for="occ-rec-time">Time</label>
+            <input id="occ-rec-time" type="time" value="19:00">
+          </div>
+          <div>
+            <label for="occ-rec-weeks">Number of weeks</label>
+            <input id="occ-rec-weeks" type="number" min="1" max="52" value="4">
+          </div>
+        </div>
+        <p class="privacy">The start date doesn't need to already be the
+        right weekday — pick any date on or before your first show and
+        we'll roll forward to the next matching weekday automatically.</p>
+      </div>
+
+      <button id="occ-submit">Add date(s)</button>
+      <div class="msg" id="occ-msg"></div>
+
+      <h2 style="margin-top:18px">Upcoming dates on this show</h2>
+      <button class="secondary" id="occ-load" type="button">Refresh list</button>
+      <div id="occ-list" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
       <h2>📈 Your numbers</h2>
       <p class="privacy" style="margin-bottom:10px"><b>Ticket-link
       clicks</b> on your own shows, last 30 days — every "tickets" button
@@ -776,7 +830,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // render logic, populated from /booker/my-shows once here, instead of
   // each reinventing its own option-building code.
   var SHOW_SELECT_IDS = ["cal-show", "tray-show", "invites-show", "wa-show",
-    "opp-show", "inv-show"];
+    "opp-show", "inv-show", "occ-show"];
 
   function showOptionsHtml(rows) {
     return rows.map(function (s) {
@@ -872,6 +926,127 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load calendar.";
         msg.className = "msg error";
       });
+  });
+
+  // ------------------------------------------------------------------
+  // 📆 Add show dates (migration 0120; POST /booker/shows/{id}/occurrences
+  // + .../occurrences/recurring, GET/DELETE .../occurrences[/{id}])
+  // ------------------------------------------------------------------
+  var occMode = "single";
+
+  document.getElementById("occ-tab-single").addEventListener("click", function () {
+    occMode = "single";
+    document.getElementById("occ-tab-single").className = "tab2 active";
+    document.getElementById("occ-tab-recurring").className = "tab2";
+    document.getElementById("occ-single-fields").style.display = "block";
+    document.getElementById("occ-recurring-fields").style.display = "none";
+  });
+  document.getElementById("occ-tab-recurring").addEventListener("click", function () {
+    occMode = "recurring";
+    document.getElementById("occ-tab-recurring").className = "tab2 active";
+    document.getElementById("occ-tab-single").className = "tab2";
+    document.getElementById("occ-recurring-fields").style.display = "block";
+    document.getElementById("occ-single-fields").style.display = "none";
+  });
+
+  function occLoadList() {
+    var msg = document.getElementById("occ-msg");
+    var showId = document.getElementById("occ-show").value;
+    var list = document.getElementById("occ-list");
+    if (!showId) { list.innerHTML = ""; return; }
+    A.get("/booker/shows/" + showId + "/occurrences").then(function (rows) {
+      if (!rows.length) {
+        list.innerHTML = '<p style="color:var(--muted);font-size:13px">No dates yet — add one above.</p>';
+        return;
+      }
+      list.innerHTML = rows.map(function (r) {
+        var dt = new Date(r.starts_at);
+        var dateLabel = dt.toLocaleDateString(undefined, {month: "short", day: "numeric", year: "numeric"});
+        var timeLabel = dt.toLocaleTimeString(undefined, {hour: "2-digit", minute: "2-digit"});
+        var cancelled = r.status === "cancelled";
+        var btn = cancelled ? "" :
+          '<button class="secondary occ-cancel-btn" data-event-id="' + r.event_id +
+          '" type="button" style="margin:0;padding:4px 9px;font-size:11px">Cancel</button>';
+        return '<div class="cal-row">' +
+          '<div class="cal-meta"><div class="cal-title">' + dateLabel + ' · ' + timeLabel +
+          (cancelled ? " (cancelled)" : "") + '</div>' +
+          '<div class="cal-sub">' + A.escapeHtml(r.venue_name || "no venue set") +
+          ' · ' + (r.source === "manual" ? "added by you" : "from the scraper") + '</div></div>' +
+          btn + '</div>';
+      }).join("");
+      list.querySelectorAll(".occ-cancel-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var eventId = btn.getAttribute("data-event-id");
+          A.del("/booker/shows/" + showId + "/occurrences/" + eventId).then(function () {
+            occLoadList();
+          }).catch(function (e) {
+            msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to cancel.";
+            msg.className = "msg error";
+          });
+        });
+      });
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load dates.";
+      msg.className = "msg error";
+    });
+  }
+
+  document.getElementById("occ-load").addEventListener("click", occLoadList);
+  document.getElementById("occ-show").addEventListener("change", occLoadList);
+
+  document.getElementById("occ-submit").addEventListener("click", function () {
+    var msg = document.getElementById("occ-msg");
+    var showId = document.getElementById("occ-show").value;
+    if (!showId) {
+      msg.textContent = "Pick a show first.";
+      msg.className = "msg error";
+      return;
+    }
+
+    if (occMode === "single") {
+      var d = document.getElementById("occ-date").value;
+      var t = document.getElementById("occ-time").value;
+      if (!d || !t) {
+        msg.textContent = "Pick a date and time.";
+        msg.className = "msg error";
+        return;
+      }
+      A.post("/booker/shows/" + showId + "/occurrences", {
+        starts_at: d + "T" + t + ":00Z",
+      }).then(function () {
+        msg.textContent = "✅ Date added.";
+        msg.className = "msg ok";
+        occLoadList();
+      }).catch(function (e) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add date.";
+        msg.className = "msg error";
+      });
+    } else {
+      var startDate = document.getElementById("occ-rec-start").value;
+      var recTime = document.getElementById("occ-rec-time").value;
+      var weeks = parseInt(document.getElementById("occ-rec-weeks").value, 10);
+      if (!startDate || !recTime || !weeks) {
+        msg.textContent = "Fill in start date, time, and number of weeks.";
+        msg.className = "msg error";
+        return;
+      }
+      // JS Date.getUTCDay(): 0=Sunday..6=Saturday (date-only ISO strings
+      // parse as UTC midnight). The API's `weekday` follows python's
+      // date.weekday(): 0=Monday..6=Sunday -- convert here so the booker
+      // never has to think about the difference.
+      var jsDay = new Date(startDate + "T00:00:00Z").getUTCDay();
+      var pyWeekday = (jsDay + 6) % 7;
+      A.post("/booker/shows/" + showId + "/occurrences/recurring", {
+        start_date: startDate, weekday: pyWeekday, time: recTime, count: weeks,
+      }).then(function (rows) {
+        msg.textContent = "✅ " + rows.length + " date(s) added.";
+        msg.className = "msg ok";
+        occLoadList();
+      }).catch(function (e) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add recurring dates.";
+        msg.className = "msg error";
+      });
+    }
   });
 
   // ------------------------------------------------------------------

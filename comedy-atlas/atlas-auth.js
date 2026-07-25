@@ -51,6 +51,9 @@ window.AtlasAuth = (function () {
   function get(path) {
     return api(path, {method: "GET"});
   }
+  function del(path) {
+    return api(path, {method: "DELETE"});
+  }
 
   function me() {
     return get("/auth/me");
@@ -62,6 +65,6 @@ window.AtlasAuth = (function () {
     });
   }
 
-  return {api: api, post: post, put: put, get: get, me: me, escapeHtml: escapeHtml,
-           apiBase: API_BASE};
+  return {api: api, post: post, put: put, get: get, del: del, me: me,
+           escapeHtml: escapeHtml, apiBase: API_BASE};
 })();

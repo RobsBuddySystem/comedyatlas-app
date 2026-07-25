@@ -295,12 +295,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   }
 
   function festivalCard(entry) {
+    // 2026-07-25: now driven by ev.is_festival (real festivals.
+    // organization_id join, migration 0121) instead of the old 2-org
+    // hardcode -- a festival card can be a ticketed one (e.g. Camden
+    // Fringe, real price_min 5-18), so the "Free entry" tag/wording only
+    // renders when groupFestivals() confirmed EVERY counted event has
+    // is_free === true. Never assume free just because it's a festival.
     var url = 'city.html?city=' + encodeURIComponent(entry.city) + '&org=' + encodeURIComponent(entry.org);
+    var showWord = (entry.allFree ? 'free show' : 'show') + (entry.count === 1 ? '' : 's');
     return '<a class="place-card" href="' + url + '">' +
       '<div class="place-name">' + A.escapeHtml(entry.org) + '</div>' +
       '<div class="place-meta">' + A.escapeHtml(entry.city) + ' · <span class="place-count">' +
-      entry.count + '</span> free show' + (entry.count === 1 ? '' : 's') + '</div>' +
-      '<div class="place-tag">Free entry</div></a>';
+      entry.count + '</span> ' + showWord + '</div>' +
+      (entry.allFree ? '<div class="place-tag">Free entry</div>' : '') + '</a>';
   }
 
   function render(events, citiesJson) {
@@ -316,7 +323,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var totalShows = A.uniqueShowCount(events);
     statsRow.innerHTML = '<span><strong>' + totalShows + '</strong> shows</span>' +
       '<span><strong>' + cities.length + '</strong> cities live</span>' +
-      (festivals.length ? '<span><strong>' + festivals.length + '</strong> free festivals</span>' : '');
+      (festivals.length ? '<span><strong>' + festivals.length + '</strong> festivals</span>' : '');
 
     var html = '';
 
