@@ -543,8 +543,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // /booker/comics/search already accepts a `city` NAME param directly
   // (resolved server-side via public_cities ILIKE), so we just pass the
   // typed text through.
-  function loadCities() {
-    return A.get("/cities").then(function (rows) {
+  //
+  // /cities only ever returns 50 rows. With no query it used to be plain
+  // alphabetical, so late-alphabet cities (Paris, London, ...) fell past
+  // the cutoff and could never show up in the datalist on a bare page
+  // load -- the picker needs the TYPED text sent as `q` on every keystroke
+  // so the server's ILIKE filter narrows it instead. loadCities(q) now
+  // re-fetches (debounced) on each input event.
+  function loadCities(q) {
+    var url = "/cities" + (q && q.trim() ? "?q=" + encodeURIComponent(q.trim()) : "");
+    return A.get(url).then(function (rows) {
       var dl = document.getElementById("cities-list");
       dl.innerHTML = "";
       rows.forEach(function (c) {
@@ -553,6 +561,22 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       });
     }).catch(function () {});
   }
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      var args = arguments, ctx = this;
+      clearTimeout(t);
+      t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+    };
+  }
+  // Wire every city text input that shares the "cities-list" datalist to
+  // re-query /cities?q=<typed text> as the user types, debounced 250ms.
+  ["new-show-city", "search-city"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("input", debounce(function () {
+      loadCities(el.value);
+    }, 250));
+  });
 
   // 2026-07-19 QA re-check (bug #3, "unauthenticated booker.html hammers
   // auth/me + booker/* at ~60 req/s with no backoff"): this is the ONLY

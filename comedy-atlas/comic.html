@@ -237,9 +237,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   // City picker: name -> id, populated from the public /cities lookup so a
   // user types "Paris", never a numeric id (the bug this fixes).
+  //
+  // /cities only ever returns 50 rows. With no query it used to be plain
+  // alphabetical, so late-alphabet cities (Paris, London, ...) fell past
+  // the cutoff and could never resolve on a bare page load -- the picker
+  // needs the TYPED text sent as `q` on every keystroke so the server's
+  // ILIKE filter does the narrowing instead of relying on a static list
+  // containing every city the user might want. loadCities(q) now re-fetches
+  // (debounced) on each input event and MERGES results into cityNameToId
+  // so a value resolved from an earlier query stays resolvable later.
   var cityNameToId = {};
-  function loadCities() {
-    return A.get("/cities").then(function (rows) {
+  function loadCities(q) {
+    var url = "/cities" + (q && q.trim() ? "?q=" + encodeURIComponent(q.trim()) : "");
+    return A.get(url).then(function (rows) {
       var dl = document.getElementById("cities-list");
       dl.innerHTML = "";
       rows.forEach(function (c) {
@@ -255,6 +265,22 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var id = cityNameToId[val.trim().toLowerCase()];
     return id || null;
   }
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      var args = arguments, ctx = this;
+      clearTimeout(t);
+      t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+    };
+  }
+  // Wire every city text input that shares the "cities-list" datalist to
+  // re-query /cities?q=<typed text> as the user types, debounced 250ms.
+  ["home_city", "avail-city", "city-shows-city"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("input", debounce(function () {
+      loadCities(el.value);
+    }, 250));
+  });
 
   // Shows in my city -- see upcoming scraped shows in a city, tap a
   // toggle to publish "I'm available" for that show's date (PUT
