@@ -51,12 +51,34 @@ button:hover{opacity:.9}
 .invite-actions{display:flex;gap:8px;margin-top:6px}
 .invite-actions button{margin-top:0;padding:6px 12px;font-size:12px}
 .btn-decline{background:transparent;border:1px solid var(--red);color:var(--red)}
+.btn-secondary{background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
 .status-pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;color:var(--muted);border:1px solid var(--muted)}
+.status-pill.waiting{color:var(--purple-light);border-color:var(--purple)}
+.status-pill.counter-declined{color:var(--red);border-color:var(--red)}
+.counter-box{background:var(--bg);border:1px dashed var(--border);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:12.5px}
+.counter-box .counter-label{color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.04em;margin-bottom:3px}
+.counter-form{margin-top:8px}
+.counter-form textarea{min-height:50px}
+.counter-form .invite-actions{margin-top:8px}
 .privacy{font-size:12px;color:var(--muted)}
 .show-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
 .show-item .name{font-weight:700}
 .show-item .avail-toggle{margin-top:0;padding:6px 12px;font-size:12px;white-space:nowrap;flex:0 0 auto;background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
 .show-item .avail-toggle.on{background:var(--green);border-color:var(--green);color:#06240f}
+.field-label-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:10px 0 5px}
+.field-label-row label{margin:0}
+.pub-check{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);white-space:nowrap;cursor:pointer}
+.pub-check input{width:auto;padding:0}
+.photo-row{display:flex;align-items:center;gap:12px;margin-top:6px}
+.photo-preview{width:64px;height:64px;border-radius:8px;object-fit:cover;background:var(--border);flex:0 0 auto}
+.url-preview{font-size:14px;margin-top:8px;word-break:break-all}
+.url-preview strong{color:var(--gold)}
+.preview-pane{background:var(--bg);border:1px dashed var(--border);border-radius:10px;padding:16px;margin-top:12px;font-size:13px}
+.preview-pane .p-name{font-size:16px;font-weight:800;margin-bottom:6px}
+.preview-pane .p-field{margin:6px 0;color:var(--text)}
+.preview-pane .p-empty{color:var(--muted);font-style:italic}
+.publish-btn{background:var(--gold);color:#221a05}
+.publish-btn:hover{opacity:.9}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
@@ -101,11 +123,21 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div id="app" style="display:none">
     <div class="card">
       <h2>My profile</h2>
-      <label for="bio">Bio</label>
+      <p class="privacy" style="margin-bottom:6px">Everything below is
+      <strong>private by default</strong>. Check "Show on my public page"
+      next to a field to include it — nothing goes live until you hit
+      Publish in the card below.</p>
+      <div class="field-label-row">
+        <label for="bio" style="margin:0">Bio</label>
+        <label class="pub-check"><input type="checkbox" data-pubfield="bio"> Show on my public page</label>
+      </div>
       <textarea id="bio"></textarea>
       <div class="row">
         <div>
-          <label for="home_market">Home market</label>
+          <div class="field-label-row">
+            <label for="home_market" style="margin:0">Home market</label>
+            <label class="pub-check"><input type="checkbox" data-pubfield="home_market"> Public</label>
+          </div>
           <input id="home_market" type="text">
         </div>
         <div>
@@ -118,15 +150,62 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           </select>
         </div>
       </div>
-      <label for="home_city">Home city</label>
+      <div class="field-label-row">
+        <label for="home_city" style="margin:0">Home city</label>
+        <label class="pub-check"><input type="checkbox" data-pubfield="home_city"> Public</label>
+      </div>
       <input id="home_city" type="text" list="cities-list" placeholder="Start typing, e.g. Paris">
+
+      <div class="field-label-row">
+        <label for="demo_reel_url" style="margin:0">Demo reel (YouTube or Vimeo link)</label>
+        <label class="pub-check"><input type="checkbox" data-pubfield="demo_reel_url"> Public</label>
+      </div>
+      <input id="demo_reel_url" type="text" placeholder="https://youtube.com/watch?v=...">
+
+      <div class="field-label-row">
+        <label style="margin:0">Photo</label>
+        <label class="pub-check"><input type="checkbox" data-pubfield="photo"> Public</label>
+      </div>
+      <div class="photo-row">
+        <img id="photo-preview" class="photo-preview" alt="" style="display:none">
+        <input id="photo-file" type="file" accept="image/png,image/jpeg,image/webp">
+      </div>
+
       <button id="save-profile">Save profile</button>
       <div class="msg" id="profile-msg"></div>
     </div>
     <datalist id="cities-list"></datalist>
 
     <div class="card">
+      <h2>Your public page</h2>
+      <p class="privacy" style="margin-bottom:10px">Only fields you've
+      checked "Show on my public page" above (plus availability, below)
+      appear here. Nothing changes on your live page until you hit
+      Publish.</p>
+
+      <label for="vanity-slug">Your public URL</label>
+      <div class="row" style="align-items:center">
+        <div style="flex:0 0 auto;color:var(--muted);font-size:13px">comedyatlas.app/</div>
+        <input id="vanity-slug" type="text" placeholder="your-stage-name">
+      </div>
+      <button id="save-vanity-slug" type="button">Save URL</button>
+      <div class="msg" id="vanity-msg"></div>
+      <div class="url-preview" id="vanity-current" style="display:none">
+        Live at <strong><a id="vanity-current-link" href="#" target="_blank" rel="noopener"></a></strong>
+      </div>
+
+      <h2 style="margin-top:22px">Preview</h2>
+      <div class="preview-pane" id="preview-pane"></div>
+      <button id="publish-btn" type="button" class="publish-btn">Publish to my public page</button>
+      <div class="msg" id="publish-msg"></div>
+    </div>
+
+    <div class="card">
       <h2>My availability</h2>
+      <div class="field-label-row">
+        <span style="font-size:13px;color:var(--muted)">Let strangers see that you have open dates (never the exact dates unless a date itself is public)</span>
+        <label class="pub-check"><input type="checkbox" data-pubfield="availability"> Show on my public page</label>
+      </div>
       <div id="avail-list"></div>
       <div class="row" style="margin-top:12px">
         <div>
@@ -173,6 +252,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <p class="privacy" style="margin-bottom:10px">Private messages from show-runners.
       Their contact stays internal — respond here and it relays back to them.</p>
       <div id="invites-list"><p style="color:var(--muted);font-size:13px">Loading…</p></div>
+      <div class="msg" id="invites-msg"></div>
     </div>
 
     <div class="card" id="twofa-section"></div>
@@ -210,26 +290,118 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).join("");
   }
 
+  // Counter-offer negotiation (migration 0115 -- propose_counter/
+  // respond_to_counter). A pending invite (bo.status === "pending") can be
+  // in one of three counter states, per ingest/showrunner_portal.py's own
+  // docstrings:
+  //   - no counter yet (counter_status is null/undefined): show the usual
+  //     Interested/Not interested buttons PLUS a "Propose different terms"
+  //     form.
+  //   - counter_status === "proposed": the comic's counter is awaiting the
+  //     booker -- show it as pending, no buttons at all (propose_counter
+  //     refuses a second counter while one is still "proposed", so there is
+  //     nothing to offer here beyond "waiting").
+  //   - counter_status === "declined_by_booker": terminal for THAT counter
+  //     but not for the negotiation -- respond_to_offer has no
+  //     counter_status gate (still 'pending') and propose_counter
+  //     explicitly allows proposing again from this state (its docstring:
+  //     "falls through to the same UPDATE, resetting counter_status back to
+  //     'proposed'"), so both the original Interested/Not interested AND a
+  //     fresh counter form are valid here.
+  function refreshInvites() {
+    A.get("/comic/" + meId + "/invites").then(renderInvites);
+  }
+
+  function respondButtonsHtml(offerId) {
+    return '<div class="invite-actions">' +
+      '<button data-offer="' + offerId + '" data-accept="1">Interested</button>' +
+      '<button class="btn-decline" data-offer="' + offerId + '" data-accept="0">Not interested</button>' +
+      '</div>';
+  }
+
+  function counterFormHtml(offerId) {
+    return '<button class="btn-secondary counter-toggle" data-offer="' + offerId +
+      '" type="button">Propose different terms</button>' +
+      '<form class="counter-form" data-offer-form="' + offerId + '" style="display:none">' +
+      '<textarea placeholder="e.g. flat €20 or 20% of tickets, whichever is higher" required></textarea>' +
+      '<div class="invite-actions"><button type="submit">Send counter</button>' +
+      '<button type="button" class="btn-decline counter-cancel">Cancel</button></div></form>';
+  }
+
+  function renderOneInvite(r) {
+    var head = '<div class="invite-item"><div class="name">' + A.escapeHtml(r.show_name || "A show") + '</div>' +
+      '<div style="color:var(--muted)">' + A.escapeHtml(r.message || "") + '</div>';
+
+    if (r.status !== "pending") {
+      return head + '<span class="status-pill">' + A.escapeHtml(r.status) + '</span></div>';
+    }
+    if (r.counter_status === "proposed") {
+      return head +
+        '<div class="counter-box"><div class="counter-label">Your proposed terms</div>' +
+        A.escapeHtml(r.counter_terms || "") + '</div>' +
+        '<span class="status-pill waiting" style="margin-top:8px;display:inline-block">' +
+        'Waiting for their response</span></div>';
+    }
+    if (r.counter_status === "declined_by_booker") {
+      return head +
+        '<div class="counter-box"><div class="counter-label">Your counter (declined)</div>' +
+        A.escapeHtml(r.counter_terms || "") + '</div>' +
+        '<span class="status-pill counter-declined" style="margin-top:8px;display:inline-block">' +
+        'They declined your counter — original terms still stand</span>' +
+        respondButtonsHtml(r.offer_id) + counterFormHtml(r.offer_id) + '</div>';
+    }
+    return head + respondButtonsHtml(r.offer_id) + counterFormHtml(r.offer_id) + '</div>';
+  }
+
   function renderInvites(rows) {
     var list = document.getElementById("invites-list");
+    var msg = document.getElementById("invites-msg");
+    if (msg) { msg.textContent = ""; msg.className = "msg"; }
     if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
-    list.innerHTML = rows.map(function (r) {
-      var actions = r.status === "pending"
-        ? '<div class="invite-actions">' +
-          '<button data-offer="' + r.offer_id + '" data-accept="1">Interested</button>' +
-          '<button class="btn-decline" data-offer="' + r.offer_id + '" data-accept="0">Not interested</button>' +
-          '</div>'
-        : '<span class="status-pill">' + A.escapeHtml(r.status) + '</span>';
-      return '<div class="invite-item"><div class="name">' + A.escapeHtml(r.show_name || "A show") + '</div>' +
-        '<div style="color:var(--muted)">' + A.escapeHtml(r.message || "") + '</div>' + actions + '</div>';
-    }).join("");
-    list.querySelectorAll("button[data-offer]").forEach(function (btn) {
+    list.innerHTML = rows.map(renderOneInvite).join("");
+
+    list.querySelectorAll("button[data-offer][data-accept]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var offerId = btn.dataset.offer;
         var accept = btn.dataset.accept === "1";
+        btn.disabled = true;
         A.post("/comic/" + meId + "/invites/" + offerId + "/respond", {accept: accept})
-          .then(function () {
-            A.get("/comic/" + meId + "/invites").then(renderInvites);
+          .then(refreshInvites)
+          .catch(function (e) {
+            msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to respond.";
+            msg.className = "msg error";
+            btn.disabled = false;
+          });
+      });
+    });
+
+    list.querySelectorAll(".counter-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var form = list.querySelector('form[data-offer-form="' + btn.dataset.offer + '"]');
+        if (form) form.style.display = (form.style.display === "none") ? "block" : "none";
+      });
+    });
+
+    list.querySelectorAll(".counter-cancel").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        btn.closest("form").style.display = "none";
+      });
+    });
+
+    list.querySelectorAll("form[data-offer-form]").forEach(function (form) {
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var offerId = form.dataset.offerForm;
+        var terms = form.querySelector("textarea").value.trim();
+        if (!terms) return;
+        var submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        A.post("/comic/" + meId + "/invites/" + offerId + "/counter", {terms: terms})
+          .then(refreshInvites)
+          .catch(function (e) {
+            msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to send counter.";
+            msg.className = "msg error";
+            submitBtn.disabled = false;
           });
       });
     });
@@ -441,12 +613,158 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (id) loadCityShows(id);
   });
 
+  // ---------------------------------------------------------------
+  // Granular field-level publish (Robert's 2026-07-25 ruling): "only the
+  // things you click the check mark on will surface on your public
+  // page ... the publish button is granular now not later." Checkbox
+  // state here is PURELY client-side until the Publish button fires PUT
+  // /comic/{id}/public-fields — checking a box never calls the API by
+  // itself, matching "nothing goes live on a stray click."
+  // ---------------------------------------------------------------
+  var lastProfile = {};
+
+  function checkedPublicFields() {
+    return Array.prototype.slice
+      .call(document.querySelectorAll("[data-pubfield]"))
+      .filter(function (el) { return el.checked; })
+      .map(function (el) { return el.dataset.pubfield; });
+  }
+
+  function applyPublicFieldsToCheckboxes(fields) {
+    var set = {};
+    (fields || []).forEach(function (f) { set[f] = true; });
+    document.querySelectorAll("[data-pubfield]").forEach(function (el) {
+      el.checked = !!set[el.dataset.pubfield];
+    });
+  }
+
+  function renderPreview() {
+    var checked = {};
+    checkedPublicFields().forEach(function (f) { checked[f] = true; });
+    var bits = [];
+    var name = A.escapeHtml(lastProfile.stage_name || "Your stage name");
+    bits.push('<div class="p-name">' + name + '</div>');
+
+    if (checked.photo) {
+      var photoSrc = document.getElementById("photo-preview").src;
+      if (photoSrc && document.getElementById("photo-preview").style.display !== "none") {
+        bits.push('<img class="photo-preview" style="margin-bottom:8px" src="' + photoSrc + '" alt="">');
+      }
+    }
+    if (checked.bio) {
+      var bio = document.getElementById("bio").value.trim();
+      bits.push('<div class="p-field">' + (bio ? A.escapeHtml(bio) : '<span class="p-empty">(bio is empty)</span>') + '</div>');
+    }
+    var locBits = [];
+    if (checked.home_market && document.getElementById("home_market").value.trim()) {
+      locBits.push(A.escapeHtml(document.getElementById("home_market").value.trim()));
+    }
+    if (checked.home_city && document.getElementById("home_city").value.trim()) {
+      locBits.push(A.escapeHtml(document.getElementById("home_city").value.trim()));
+    }
+    if (locBits.length) bits.push('<div class="p-field">' + locBits.join(" · ") + '</div>');
+
+    if (checked.demo_reel_url && document.getElementById("demo_reel_url").value.trim()) {
+      bits.push('<div class="p-field">🎬 Demo reel linked</div>');
+    }
+    if (checked.availability) {
+      bits.push('<div class="p-field">📅 Shows availability status</div>');
+    }
+    var shownAny = checked.bio || checked.photo || checked.home_market ||
+      checked.home_city || checked.demo_reel_url || checked.availability;
+    if (!shownAny) {
+      bits.push('<div class="p-empty">Nothing is checked yet — your public page will show only your name.</div>');
+    }
+    document.getElementById("preview-pane").innerHTML = bits.join("");
+  }
+
+  document.addEventListener("input", function (e) {
+    if (["bio", "home_market", "home_city", "demo_reel_url"].indexOf(e.target.id) !== -1) renderPreview();
+  });
+  document.addEventListener("change", function (e) {
+    if (e.target.hasAttribute("data-pubfield")) renderPreview();
+  });
+
+  document.getElementById("publish-btn").addEventListener("click", function () {
+    var msg = document.getElementById("publish-msg");
+    var fields = checkedPublicFields();
+    var label = fields.length
+      ? "Publish these fields to your public page: " + fields.join(", ") + "?"
+      : "Publish with EVERYTHING unchecked? Your public page will show only your name.";
+    if (!window.confirm(label)) return;
+    A.put("/comic/" + meId + "/public-fields", {field_names: fields}).then(function () {
+      msg.textContent = "Published."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Publish failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  function renderVanityCurrent(slug) {
+    var box = document.getElementById("vanity-current");
+    if (!slug) { box.style.display = "none"; return; }
+    var url = "https://comedyatlas.app/" + slug;
+    document.getElementById("vanity-current-link").href = url;
+    document.getElementById("vanity-current-link").textContent = url;
+    box.style.display = "block";
+  }
+
+  document.getElementById("save-vanity-slug").addEventListener("click", function () {
+    var msg = document.getElementById("vanity-msg");
+    var slug = document.getElementById("vanity-slug").value.trim();
+    if (!slug) { msg.textContent = "Enter a URL first."; msg.className = "msg error"; return; }
+    A.put("/comic/" + meId + "/vanity-slug", {slug: slug}).then(function (r) {
+      msg.textContent = "Saved."; msg.className = "msg ok";
+      document.getElementById("vanity-slug").value = r.vanity_slug;
+      renderVanityCurrent(r.vanity_slug);
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "That URL isn't available.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("photo-file").addEventListener("change", function () {
+    var file = this.files && this.files[0];
+    if (!file) return;
+    var msg = document.getElementById("profile-msg");
+    var form = new FormData();
+    form.append("file", file);
+    fetch(A.apiBase + "/comic/" + meId + "/photo", {
+      method: "POST", credentials: "include", body: form,
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (body) {
+        if (!res.ok) { var err = new Error(body.detail || res.statusText); err.body = body; throw err; }
+        return body;
+      });
+    }).then(function (body) {
+      var img = document.getElementById("photo-preview");
+      img.src = A.apiBase + body.photo_url;
+      img.style.display = "block";
+      msg.textContent = "Photo uploaded."; msg.className = "msg ok";
+      renderPreview();
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Photo upload failed.";
+      msg.className = "msg error";
+    });
+  });
+
   function loadAll() {
     A.get("/comic/" + meId + "/profile").then(function (p) {
+      lastProfile = p;
       document.getElementById("bio").value = p.bio || "";
       document.getElementById("home_market").value = p.home_market || "";
       document.getElementById("touring_status").value = p.touring_status || "unknown";
       document.getElementById("home_city").value = p.home_city_name || "";
+      document.getElementById("demo_reel_url").value = p.demo_reel_url || "";
+      if (p.photo_url) {
+        var img = document.getElementById("photo-preview");
+        img.src = /^https?:\/\//.test(p.photo_url) ? p.photo_url : (A.apiBase + p.photo_url);
+        img.style.display = "block";
+      }
+      applyPublicFieldsToCheckboxes(p.public_fields);
+      document.getElementById("vanity-slug").value = p.vanity_slug || "";
+      renderVanityCurrent(p.vanity_slug);
+      renderPreview();
       // Preload the comic's home city's shows by default, so the "Shows in
       // my city" card is never blank on first load.
       if (p.home_city_id) {
@@ -457,7 +775,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     A.get("/comic/" + meId + "/availability").then(renderAvailability);
     // /opportunities fetch removed with the "Shows I could be available
     // for" card above -- see the comment on that card in the HTML.
-    A.get("/comic/" + meId + "/invites").then(renderInvites);
+    refreshInvites();
   }
 
   A.me().then(function (r) {
@@ -478,6 +796,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         home_market: document.getElementById("home_market").value,
         touring_status: document.getElementById("touring_status").value,
         home_city_id: resolveCity(document.getElementById("home_city").value),
+        demo_reel_url: document.getElementById("demo_reel_url").value,
       },
     }).then(function () {
       msg.textContent = "Saved."; msg.className = "msg ok";

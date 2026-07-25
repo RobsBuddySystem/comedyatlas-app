@@ -29,6 +29,7 @@ input,textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px s
 button{padding:10px 18px;border-radius:8px;border:none;background:var(--gold);color:#100c00;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
 button:hover{opacity:.9}
 button.secondary{background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
+button.danger{background:transparent;border:1px solid var(--red);color:var(--red)}
 .row{display:flex;gap:10px;flex-wrap:wrap}
 .row > *{flex:1;min-width:120px}
 .msg{margin-top:10px;font-size:13px}
@@ -48,13 +49,19 @@ button.secondary{background:transparent;border:1px solid var(--purple);color:var
 .comic-card .info{flex:1;min-width:0}
 .tray{position:sticky;bottom:0;background:var(--card);border:1px solid var(--gold);border-radius:12px;padding:14px;margin-top:10px;display:none}
 .tray.show{display:block}
-.invite-row{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;display:flex;justify-content:space-between;gap:10px}
+.invite-row{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.invite-row .invite-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.invite-terms{color:var(--muted);margin-top:4px;font-size:12.5px}
 .status-pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase}
 .status-pill.pending{color:var(--gold);border:1px solid var(--gold)}
 .status-pill.accepted{color:var(--green);border:1px solid var(--green)}
 .status-pill.declined{color:var(--red);border:1px solid var(--red)}
 .status-pill.already_invited{color:var(--muted);border:1px solid var(--muted)}
 .status-pill.sent{color:var(--green);border:1px solid var(--green)}
+.counter-box{background:var(--bg);border:1px dashed var(--gold);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:12.5px}
+.counter-box .counter-label{color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.04em;margin-bottom:3px}
+.counter-actions{display:flex;gap:8px;margin-top:8px}
+.counter-actions button{margin-top:0;padding:6px 12px;font-size:12px}
 .cal-dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:0 0 auto}
 .cal-dot.gray{background:var(--muted)}
 .cal-dot.red{background:var(--red)}
@@ -1288,20 +1295,75 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
   });
 
+  // Counter-offer negotiation (migration 0115 -- propose_counter/
+  // respond_to_counter). list_show_invites (ingest/showrunner_portal.py)
+  // already selects counter_terms/counter_status/countered_at alongside the
+  // original P2 offer-terms fields (spot_role/offered_fee_cents/
+  // offered_currency/call_time) -- this just renders what the API already
+  // returns. counter_terms is FREE TEXT the comic controls end to end, so
+  // it is ALWAYS passed through A.escapeHtml, never concatenated raw --
+  // same discipline as every other user-supplied string on this page.
+  var currentInvitesShowId = null;
+
+  function formatOfferedTerms(r) {
+    var parts = [];
+    if (r.spot_role) parts.push(A.escapeHtml(r.spot_role));
+    if (r.offered_fee_cents != null) {
+      parts.push((r.offered_fee_cents / 100).toFixed(2) + " " + A.escapeHtml(r.offered_currency || ""));
+    }
+    if (r.call_time) parts.push("call time " + A.escapeHtml(r.call_time));
+    return parts.length ? parts.join(" · ") : "no specific terms offered";
+  }
+
   function renderInvites(rows) {
     var el = document.getElementById("invites-list");
     if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
     el.innerHTML = rows.map(function (r) {
-      return '<div class="invite-row"><div>' + A.escapeHtml(r.comic_stage_name) +
+      var head = '<div class="invite-head"><div>' + A.escapeHtml(r.comic_stage_name) +
         ' <span style="color:var(--muted)">(id ' + r.comic_person_id + ')</span></div>' +
         '<div class="status-pill ' + A.escapeHtml(r.status) + '">' + A.escapeHtml(r.status) + '</div></div>';
+      var terms = '<div class="invite-terms">Offered: ' + formatOfferedTerms(r) + '</div>';
+      var counter = "";
+      if (r.counter_status === "proposed") {
+        counter = '<div class="counter-box"><div class="counter-label">Counter-proposal from the comic</div>' +
+          A.escapeHtml(r.counter_terms || "") + '</div>' +
+          '<div class="counter-actions">' +
+          '<button data-counter-offer="' + r.offer_id + '" data-counter-accept="1">Accept counter</button>' +
+          '<button class="danger" data-counter-offer="' + r.offer_id + '" data-counter-accept="0">Decline counter</button>' +
+          '</div>';
+      } else if (r.counter_status === "declined_by_booker") {
+        counter = '<div class="counter-box"><div class="counter-label">Countered terms (you declined)</div>' +
+          A.escapeHtml(r.counter_terms || "") + '</div>';
+      } else if (r.counter_status === "accepted_by_booker") {
+        counter = '<div class="counter-box"><div class="counter-label">Agreed terms (counter accepted)</div>' +
+          A.escapeHtml(r.counter_terms || "") + '</div>';
+      }
+      return '<div class="invite-row">' + head + terms + counter + '</div>';
     }).join("");
+
+    el.querySelectorAll("button[data-counter-offer]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var offerId = btn.dataset.counterOffer;
+        var accept = btn.dataset.counterAccept === "1";
+        var msg = document.getElementById("invites-msg");
+        btn.disabled = true;
+        A.post("/booker/shows/" + currentInvitesShowId + "/invites/" + offerId + "/counter-respond",
+          {accept: accept})
+          .then(function () {
+            loadInvitesForShow(currentInvitesShowId);
+          })
+          .catch(function (e) {
+            msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to respond to counter.";
+            msg.className = "msg error";
+            btn.disabled = false;
+          });
+      });
+    });
   }
 
-  document.getElementById("load-invites").addEventListener("click", function () {
+  function loadInvitesForShow(showId) {
     var msg = document.getElementById("invites-msg");
-    var showId = document.getElementById("invites-show").value;
-    if (!showId) { msg.textContent = "Pick your show first."; msg.className = "msg error"; return; }
+    currentInvitesShowId = showId;
     A.get("/booker/shows/" + showId + "/invites").then(function (rows) {
       renderInvites(rows);
       msg.textContent = rows.length + " invite(s)."; msg.className = "msg ok";
@@ -1309,6 +1371,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load invites.";
       msg.className = "msg error";
     });
+  }
+
+  document.getElementById("load-invites").addEventListener("click", function () {
+    var msg = document.getElementById("invites-msg");
+    var showId = document.getElementById("invites-show").value;
+    if (!showId) { msg.textContent = "Pick your show first."; msg.className = "msg error"; return; }
+    loadInvitesForShow(showId);
   });
 
   document.getElementById("poll-create").addEventListener("click", function () {
