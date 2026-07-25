@@ -177,6 +177,32 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .comic-count { color: var(--gold); font-weight: 700; font-size: 12.5px; margin-top: 6px; }
 .comic-count-empty { color: var(--muted); font-weight: 400; }
 #comics-by-city { display: none; }
+.comics-filter-bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.comics-filter-bar label { font-size: 13px; color: var(--muted); }
+#city-filter {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+}
+#city-filter-empty {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  color: var(--muted);
+  display: none;
+}
+.comic-card[data-filtered-out] { display: none !important; }
 </style>
 </head>
 <body>
@@ -204,17 +230,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <button type="button" id="tab-az" class="active" onclick="atlasComicsTab('az')">A–Z</button>
   <button type="button" id="tab-city" onclick="atlasComicsTab('city')">By city</button>
 </div>
+<div class="comics-filter-bar">
+  <label for="city-filter">Filter by city</label>
+  <select id="city-filter" onchange="atlasFilterByCity(this.value)">
+    <option value="">All cities</option>
+    <option value="Edinburgh">Edinburgh (56)</option>
+  </select>
+</div>
 <main id="main-content">
 <div id="comics-az" class="comics-grid">
-<a href="/comedy-atlas/comic/adam-bromley/" class="comic-card">
+<a href="/comedy-atlas/comic/adam-bromley/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9724_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Adam Bromley</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/aidan-jones/" class="comic-card">
+<a href="/comedy-atlas/comic/aidan-jones/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9651_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Aidan Jones</div>
@@ -222,31 +255,31 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/alice-india/" class="comic-card">
+<a href="/comedy-atlas/comic/alice-india/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9806_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alice India</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card">
+<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9820_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alingon Mitra</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ana-little/" class="comic-card">
+<a href="/comedy-atlas/comic/ana-little/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9548_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ana Little</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/angela-bra/" class="comic-card">
+<a href="/comedy-atlas/comic/angela-bra/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9495_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Angela Bra</div>
@@ -254,55 +287,55 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/anna-beros/" class="comic-card">
+<a href="/comedy-atlas/comic/anna-beros/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9740_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Anna Beros</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card">
+<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9576_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ashley Haden</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card">
+<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9814_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Basil Bottler</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/becky-fury/" class="comic-card">
+<a href="/comedy-atlas/comic/becky-fury/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9715_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Becky Fury</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card">
+<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9717_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ben Ashurst</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card">
+<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9773_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Charlie Lewis</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card">
+<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9602_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Cobin Millage</div>
@@ -310,15 +343,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card">
+<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9649_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Cordelia Graham</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/dan-james/" class="comic-card">
+<a href="/comedy-atlas/comic/dan-james/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9783_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dan James</div>
@@ -326,95 +359,95 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card">
+<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9627_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Darren Walsh</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card">
+<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9581_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dave Chawner</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card">
+<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9614_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">David Tsonos</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card">
+<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9689_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Deage Paxton</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/devin-gray/" class="comic-card">
+<a href="/comedy-atlas/comic/devin-gray/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9637_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Devin Gray</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card">
+<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9754_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dr Jimmy</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card">
+<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9791_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dr. Kara Kibara</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card">
+<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9709_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Elliot Wengler</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card">
+<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9509_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Eryn Tett</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card">
+<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9543_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Gary G Knightley</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card">
+<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9685_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Henry Ginsberg</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/james-beatty/" class="comic-card">
+<a href="/comedy-atlas/comic/james-beatty/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9567_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">James Beatty</div>
@@ -422,292 +455,735 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/jeff/" class="comic-card">
+<a href="/comedy-atlas/comic/jeff/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9484_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeff</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card">
+<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9697_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeremy Dooley</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/john-robertson/" class="comic-card">
+<a href="/comedy-atlas/comic/john-robertson/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9554_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">John Robertson</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card">
+<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9660_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Juliette Burton</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card">
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Katie-Rose Petley</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/kim-hope/" class="comic-card">
+<a href="/comedy-atlas/comic/kim-hope/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9733_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Kim Hope</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card">
+<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9745_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lenny Sherman</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card">
+<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9680_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lizzie Simpson</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/louis-beer/" class="comic-card">
+<a href="/comedy-atlas/comic/louis-beer/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9798_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Louis Beer</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card">
+<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9665_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lulu Popplewell</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card">
+<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9667_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Madeleine Munford</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/mark-row/" class="comic-card">
+<a href="/comedy-atlas/comic/mark-row/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9699_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mark Row</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/mat-smith/" class="comic-card">
+<a href="/comedy-atlas/comic/mat-smith/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9788_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mat Smith</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/mat-wills/" class="comic-card">
+<a href="/comedy-atlas/comic/mat-wills/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9514_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mat Wills</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card">
+<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9557_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nathan Cassidy</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card">
+<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9552_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Olaf Falafel</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card">
+<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9634_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Paddy Seery</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/paul-currie/" class="comic-card">
+<a href="/comedy-atlas/comic/paul-currie/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9555_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Paul Currie</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card">
+<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9530_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rachel Morton-Young</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card">
+<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9487_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Raul Kohli</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card">
+<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9541_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ray Fordyce</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card">
+<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9570_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rizal Van Geyzel</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card">
+<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9805_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rohan Sharma</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card">
+<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9606_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ryan Mold</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/sam-see/" class="comic-card">
+<a href="/comedy-atlas/comic/sam-see/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam See</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/serena-smart/" class="comic-card">
+<a href="/comedy-atlas/comic/serena-smart/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9833_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Serena Smart</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/sid-singh/" class="comic-card">
+<a href="/comedy-atlas/comic/sid-singh/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9562_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sid Singh</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/soness/" class="comic-card">
+<a href="/comedy-atlas/comic/soness/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9522_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Soness</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card">
+<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9657_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Stephen Carlin</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/struan-logan/" class="comic-card">
+<a href="/comedy-atlas/comic/struan-logan/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Struan Logan</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card">
+<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9655_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tez Ilyas</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card">
+<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9658_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tom Lawrinson</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/will-mars/" class="comic-card">
+<a href="/comedy-atlas/comic/will-mars/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9523_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Will Mars</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card">
+<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9592_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Will Sebag-Montefiore</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
 </div>
+<p id="city-filter-empty">No comedians listed for that city yet.</p>
 <div id="comics-by-city">
-
-<div class="comic-city-group">
-  <h2 class="comic-city-heading">Other <span class="comic-city-count">(61)</span></h2>
-  <div class="comics-grid"><a href="/comedy-atlas/comic/adam-bromley/" class="comic-card">
+<div class="comic-city-group" id="city-edinburgh">
+  <h2 class="comic-city-heading">Edinburgh <span class="comic-city-count">(56)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/adam-bromley/" class="comic-card" data-city="Edinburgh">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9724_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Adam Bromley</div>
-    
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/aidan-jones/" class="comic-card">
+<a href="/comedy-atlas/comic/alice-india/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9806_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Alice India</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9820_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Alingon Mitra</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ana-little/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9548_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ana Little</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/anna-beros/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9740_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Anna Beros</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">2 upcoming shows</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9576_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ashley Haden</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9814_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Basil Bottler</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/becky-fury/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9715_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Becky Fury</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9717_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ben Ashurst</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9773_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Charlie Lewis</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9649_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Cordelia Graham</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9627_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Darren Walsh</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9581_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dave Chawner</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9614_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">David Tsonos</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9689_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Deage Paxton</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/devin-gray/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9637_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Devin Gray</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9754_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dr Jimmy</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9791_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dr. Kara Kibara</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9709_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Elliot Wengler</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9509_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Eryn Tett</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9543_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Gary G Knightley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9685_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Henry Ginsberg</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeff/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9484_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeff</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9697_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeremy Dooley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/john-robertson/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9554_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">John Robertson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9660_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Juliette Burton</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Katie-Rose Petley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/kim-hope/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9733_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Kim Hope</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9745_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lenny Sherman</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9680_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lizzie Simpson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/louis-beer/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9798_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Louis Beer</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9665_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lulu Popplewell</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9667_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Madeleine Munford</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mark-row/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9699_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mark Row</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mat-smith/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9788_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mat Smith</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mat-wills/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9514_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mat Wills</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9557_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nathan Cassidy</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9552_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Olaf Falafel</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9634_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Paddy Seery</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/paul-currie/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9555_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Paul Currie</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9530_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rachel Morton-Young</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9487_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Raul Kohli</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9541_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ray Fordyce</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9570_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rizal Van Geyzel</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">2 upcoming shows</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9805_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rohan Sharma</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9606_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ryan Mold</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sam-see/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sam See</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/serena-smart/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9833_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Serena Smart</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sid-singh/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9562_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sid Singh</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/soness/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9522_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Soness</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9657_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Stephen Carlin</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/struan-logan/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Struan Logan</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9655_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Tez Ilyas</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9658_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Tom Lawrinson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/will-mars/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9523_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Will Mars</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card" data-city="Edinburgh">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9592_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Will Sebag-Montefiore</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
+  </div>
+</a></div>
+</div>
+<div class="comic-city-group">
+  <h2 class="comic-city-heading">Other <span class="comic-city-count">(5)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/aidan-jones/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9651_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Aidan Jones</div>
@@ -715,31 +1191,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/alice-india/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9806_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Alice India</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/alingon-mitra/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9820_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Alingon Mitra</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ana-little/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9548_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ana Little</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/angela-bra/" class="comic-card">
+<a href="/comedy-atlas/comic/angela-bra/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9495_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Angela Bra</div>
@@ -747,55 +1199,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/anna-beros/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9740_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Anna Beros</div>
-    
-    <div class="comic-count">2 upcoming shows</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ashley-haden/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9576_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ashley Haden</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/basil-bottler/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9814_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Basil Bottler</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/becky-fury/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9715_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Becky Fury</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ben-ashurst/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9717_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ben Ashurst</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/charlie-lewis/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9773_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Charlie Lewis</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card">
+<a href="/comedy-atlas/comic/cobin-millage/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9602_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Cobin Millage</div>
@@ -803,15 +1207,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/cordelia-graham/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9649_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Cordelia Graham</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/dan-james/" class="comic-card">
+<a href="/comedy-atlas/comic/dan-james/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9783_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dan James</div>
@@ -819,372 +1215,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/darren-walsh/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9627_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Darren Walsh</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/dave-chawner/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9581_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Dave Chawner</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/david-tsonos/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9614_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">David Tsonos</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/deage-paxton/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9689_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Deage Paxton</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/devin-gray/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9637_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Devin Gray</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/dr-jimmy/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9754_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Dr Jimmy</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/dr-kara-kibara/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9791_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Dr. Kara Kibara</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/elliot-wengler/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9709_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Elliot Wengler</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/eryn-tett/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9509_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Eryn Tett</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/gary-g-knightley/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9543_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Gary G Knightley</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/henry-ginsberg/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9685_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Henry Ginsberg</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/james-beatty/" class="comic-card">
+<a href="/comedy-atlas/comic/james-beatty/" class="comic-card" data-city="">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9567_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">James Beatty</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/jeff/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9484_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Jeff</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/jeremy-dooley/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9697_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Jeremy Dooley</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/john-robertson/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9554_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">John Robertson</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/juliette-burton/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9660_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Juliette Burton</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Katie-Rose Petley</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/kim-hope/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9733_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Kim Hope</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/lenny-sherman/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9745_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Lenny Sherman</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/lizzie-simpson/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9680_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Lizzie Simpson</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/louis-beer/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9798_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Louis Beer</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/lulu-popplewell/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9665_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Lulu Popplewell</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/madeleine-munford/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9667_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Madeleine Munford</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/mark-row/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9699_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Mark Row</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/mat-smith/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9788_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Mat Smith</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/mat-wills/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9514_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Mat Wills</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/nathan-cassidy/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9557_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Nathan Cassidy</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/olaf-falafel/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9552_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Olaf Falafel</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/paddy-seery/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9634_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Paddy Seery</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/paul-currie/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9555_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Paul Currie</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/rachel-morton-young/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9530_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Rachel Morton-Young</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/raul-kohli/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9487_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Raul Kohli</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ray-fordyce/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9541_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ray Fordyce</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9570_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Rizal Van Geyzel</div>
-    
-    <div class="comic-count">2 upcoming shows</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/rohan-sharma/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9805_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Rohan Sharma</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ryan-mold/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9606_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ryan Mold</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/sam-see/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Sam See</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/serena-smart/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9833_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Serena Smart</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/sid-singh/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9562_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Sid Singh</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/soness/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9522_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Soness</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/stephen-carlin/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9657_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Stephen Carlin</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/struan-logan/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Struan Logan</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/tez-ilyas/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9655_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Tez Ilyas</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/tom-lawrinson/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9658_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Tom Lawrinson</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/will-mars/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9523_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Will Mars</div>
-    
-    <div class="comic-count">1 upcoming show</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="comic-card">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9592_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Will Sebag-Montefiore</div>
-    
-    <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
 </div>
@@ -1204,6 +1240,23 @@ function atlasComicsTab(which) {
   document.getElementById('comics-by-city').style.display = which === 'city' ? '' : 'none';
   document.getElementById('tab-az').classList.toggle('active', which === 'az');
   document.getElementById('tab-city').classList.toggle('active', which === 'city');
+}
+// FILTER-BY-CITY (board item P5b, fixed 2026-07-25): filters the A-Z grid
+// by each card's data-city attribute (derived server-side from real
+// upcoming/past event cities -- see effective_city() in the generator).
+// Selecting a city always switches back to the A-Z tab so the filtered
+// result is actually visible (the "By city" panel ignores this control).
+function atlasFilterByCity(city) {
+  atlasComicsTab('az');
+  var cards = document.querySelectorAll('#comics-az .comic-card');
+  var shown = 0;
+  cards.forEach(function(card) {
+    var match = !city || card.getAttribute('data-city') === city;
+    if (match) { card.removeAttribute('data-filtered-out'); shown++; }
+    else { card.setAttribute('data-filtered-out', ''); }
+  });
+  document.getElementById('city-filter-empty').style.display = shown === 0 ? '' : 'none';
+  document.getElementById('comics-az').style.display = shown === 0 ? 'none' : '';
 }
 // BILATERAL LINKING: a city page links here as /comedy-atlas/comics/#city-<slug>.
 // The "By city" panel is display:none by default (JS tab toggle above), so a

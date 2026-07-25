@@ -151,20 +151,42 @@
     });
   }
 
+  // 2026-07-25 (Robert: iPad/iPhone report — button "does nothing"):
+  // iOS Safari has a long-standing WebKit bug where getCurrentPosition
+  // never calls EITHER callback -- ignoring its own `timeout` option --
+  // when the device's system-wide Location Services toggle is off (as
+  // opposed to just the per-site permission). The API-level timeout below
+  // is correct per spec but cannot be trusted on iOS, so this adds its
+  // own JS watchdog: if neither callback has fired within ~9s, force the
+  // fallback UI ourselves. `settled` guards against a late real callback
+  // firing after the watchdog already rendered the fallback.
   function onFindClick(panel) {
     if (!("geolocation" in navigator)) {
       renderFallback(panel, "Your browser doesn’t support location — pick a city below instead.");
       return;
     }
     renderLoading(panel);
+    var settled = false;
+    var watchdog = setTimeout(function () {
+      if (settled) return;
+      settled = true;
+      renderFallback(panel, "Couldn’t get your location — check that Location Services is on, " +
+        "or pick a city below instead.");
+    }, 9000);
     navigator.geolocation.getCurrentPosition(
       function (pos) {
+        if (settled) return;
+        settled = true;
+        clearTimeout(watchdog);
         fetchNear(pos.coords.latitude, pos.coords.longitude, panel);
       },
       function () {
+        if (settled) return;
+        settled = true;
+        clearTimeout(watchdog);
         renderFallback(panel, "Location access was denied — no problem, pick a city below instead.");
       },
-      { timeout: 8000, maximumAge: 300000 }
+      { timeout: 8000, maximumAge: 300000, enableHighAccuracy: false }
     );
   }
 
