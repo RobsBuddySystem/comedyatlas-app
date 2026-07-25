@@ -96,6 +96,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <label for="li-password">Password</label>
     <input id="li-password" type="password" autocomplete="current-password">
     <button id="li-submit">Sign in</button>
+    <div style="margin-top:8px;font-size:0.85em">
+      <a href="#" id="li-forgot">Forgot password?</a>
+    </div>
+    <div id="li-forgot-box" style="display:none;margin-top:10px">
+      <label for="li-forgot-email">We'll email you a one-time reset link
+      (expires in 30 minutes)</label>
+      <input id="li-forgot-email" type="email" autocomplete="email">
+      <button id="li-forgot-submit">Send reset link</button>
+    </div>
     <div class="msg" id="li-msg"></div>
     <div id="li-2fa-box" style="display:none;margin-top:14px">
       <label for="li-2fa-code">This account has two-factor sign-in enabled --
@@ -263,6 +272,30 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       redirect();
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Sign-in failed.";
+      msg.className = "msg error";
+    });
+  });
+
+  // Forgot password: reveal the email box, then POST /auth/forgot. The
+  // backend ALWAYS answers {sent:true} (no account enumeration), so the
+  // confirmation copy is deliberately unconditional.
+  document.getElementById("li-forgot").addEventListener("click", function (ev) {
+    ev.preventDefault();
+    var box = document.getElementById("li-forgot-box");
+    box.style.display = box.style.display === "none" ? "block" : "none";
+    var pre = document.getElementById("li-email").value;
+    if (pre) document.getElementById("li-forgot-email").value = pre;
+  });
+  document.getElementById("li-forgot-submit").addEventListener("click", function () {
+    var msg = document.getElementById("li-msg");
+    msg.textContent = ""; msg.className = "msg";
+    A.post("/auth/forgot", {
+      email: document.getElementById("li-forgot-email").value,
+    }).then(function () {
+      msg.textContent = "If that address has an account, a reset link is on its way. Check your inbox.";
+      msg.className = "msg ok";
+    }).catch(function () {
+      msg.textContent = "Could not send the reset email -- try again shortly.";
       msg.className = "msg error";
     });
   });

@@ -18,7 +18,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 83
+      "unconfirmed": 260
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -31,7 +31,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 237
+      "en": 230
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -44,7 +44,7 @@
     "country_name": "Ireland",
     "id": 14,
     "language_counts": {
-      "en": 24
+      "en": 23
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -57,8 +57,8 @@
     "country_name": "Netherlands",
     "id": 16,
     "language_counts": {
-      "en": 195,
-      "unconfirmed": 8
+      "en": 261,
+      "unconfirmed": 7
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -71,8 +71,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 240,
-      "unconfirmed": 165
+      "en": 236,
+      "unconfirmed": 261
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -85,7 +85,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 162,
+      "en": 335,
       "unconfirmed": 3
     },
     "latitude": 40.4168,
@@ -99,7 +99,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 69
+      "en": 68
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -112,8 +112,8 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 32,
-      "unconfirmed": 3
+      "en": 33,
+      "unconfirmed": 2
     },
     "latitude": 38.7223,
     "longitude": -9.1393,
@@ -126,7 +126,7 @@
     "country_name": "Switzerland",
     "id": 27,
     "language_counts": {
-      "en": 3
+      "en": 2
     },
     "latitude": 47.3769,
     "longitude": 8.5417,
@@ -152,7 +152,7 @@
     "country_name": "Germany",
     "id": 31,
     "language_counts": {
-      "en": 4
+      "en": 3
     },
     "latitude": 48.1351,
     "longitude": 11.582,
@@ -178,7 +178,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 410,
+      "en": 426,
       "unconfirmed": 5
     },
     "latitude": 55.9533,
@@ -205,11 +205,24 @@
     "country_name": "Italy",
     "id": 36,
     "language_counts": {
-      "en": 1
+      "en": 2
     },
     "latitude": 45.4642,
     "longitude": 9.19,
     "name": "Milan",
+    "timezone": "Europe/Rome"
+  },
+  {
+    "country_id": 26,
+    "country_iso2": "IT",
+    "country_name": "Italy",
+    "id": 37,
+    "language_counts": {
+      "en": 10
+    },
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "name": "Rome",
     "timezone": "Europe/Rome"
   },
   {
@@ -218,8 +231,7 @@
     "country_name": "Austria",
     "id": 38,
     "language_counts": {
-      "en": 2,
-      "unconfirmed": 1
+      "en": 3
     },
     "latitude": 48.2082,
     "longitude": 16.3738,
@@ -271,7 +283,7 @@
     "country_name": "Hungary",
     "id": 47,
     "language_counts": {
-      "en": 1
+      "en": 2
     },
     "latitude": 47.4979,
     "longitude": 19.0402,
@@ -344,12 +356,25 @@
     "timezone": "Atlantic/Reykjavik"
   },
   {
+    "country_id": 51,
+    "country_iso2": "MK",
+    "country_name": "North Macedonia",
+    "id": 65,
+    "language_counts": {
+      "en": 1
+    },
+    "latitude": 41.9981,
+    "longitude": 21.4254,
+    "name": "Skopje",
+    "timezone": "Europe/Skopje"
+  },
+  {
     "country_id": 17,
     "country_iso2": "GB",
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1048,
+      "en": 1128,
       "unconfirmed": 122
     },
     "latitude": 51.5074,
@@ -402,8 +427,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 148,
-      "unconfirmed": 346
+      "en": 505,
+      "unconfirmed": 765
     },
     "latitude": 45.5019,
     "longitude": -73.5674,

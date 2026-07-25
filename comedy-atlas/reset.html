@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reset password — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/reset.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e1a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.wrap{max-width:420px;margin:0 auto;padding:60px 20px}
+.logo{font-size:22px;font-weight:800;margin-bottom:28px}
+.logo .dot{color:var(--gold)}
+h1{font-size:20px;margin-bottom:6px}
+p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px}
+.card button{width:100%;margin-top:20px;padding:12px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+.card button:hover{opacity:.9}
+.msg{margin-top:14px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.hint{margin-top:20px;font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1>Choose a new password</h1>
+  <p class="sub">This link works once and expires 30 minutes after it was sent.</p>
+
+  <div class="card">
+    <label for="rp-password">New password (min 8 characters)</label>
+    <input id="rp-password" type="password" autocomplete="new-password">
+    <label for="rp-password2">Repeat new password</label>
+    <input id="rp-password2" type="password" autocomplete="new-password">
+    <button id="rp-submit">Set new password</button>
+    <div class="msg" id="rp-msg"></div>
+  </div>
+
+  <p class="hint">Link expired or already used?
+    <a href="/comedy-atlas/login.html">Request a new one from the sign-in page</a>.</p>
+</div>
+
+<script src="/comedy-atlas/atlas-auth.js"></script>
+<script>
+(function () {
+  var A = window.AtlasAuth;
+  var token = new URLSearchParams(location.search).get("token") || "";
+  var msg = document.getElementById("rp-msg");
+
+  // Same host logic as login.html: the session cookie set by /auth/reset
+  // lives on the api host of whichever domain served this page.
+  var PORTAL = (function (h) {
+    if (h === "comedyatlas.app" || h === "www.comedyatlas.app" || h === "api.comedyatlas.app") {
+      return "https://api.comedyatlas.app/comedy-atlas/";
+    }
+    return "https://atlas-api.pariscomedy.com/comedy-atlas/";
+  })(location.hostname);
+
+  if (!token) {
+    msg.textContent = "This page needs the link from your reset email.";
+    msg.className = "msg error";
+  }
+
+  document.getElementById("rp-submit").addEventListener("click", function () {
+    msg.textContent = ""; msg.className = "msg";
+    var p1 = document.getElementById("rp-password").value;
+    var p2 = document.getElementById("rp-password2").value;
+    if (p1 !== p2) {
+      msg.textContent = "The two passwords don't match.";
+      msg.className = "msg error";
+      return;
+    }
+    A.post("/auth/reset", {token: token, new_password: p1}).then(function (r) {
+      if (r && r.twofa_required) {
+        // 2FA accounts still owe their code -- finish on the sign-in page.
+        msg.textContent = "Password updated. Finish signing in with your 2FA code…";
+        msg.className = "msg ok";
+        setTimeout(function () { location.href = "/comedy-atlas/login.html"; }, 1200);
+        return;
+      }
+      msg.textContent = "Password updated — you're signed in.";
+      msg.className = "msg ok";
+      setTimeout(function () { location.href = PORTAL + "comic.html"; }, 900);
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Reset failed.";
+      msg.className = "msg error";
+    });
+  });
+})();
+</script>
+</body>
+</html>

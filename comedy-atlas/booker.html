@@ -136,6 +136,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 
   <div id="app" style="display:none">
+    <div class="card" id="no-shows-banner" style="display:none;border:1px solid var(--gold)">
+      <h2>👋 You don't have a show on ATLAS yet</h2>
+      <p class="privacy" style="margin-bottom:10px">Create it in 30 seconds —
+      you'll <b>own it instantly</b> and can invite comics right away. (Already
+      run a show that's listed but not yours? Use "Claim a show" below instead.)</p>
+      <button id="no-shows-cta" type="button">Create your show now →</button>
+    </div>
+
     <div class="card">
       <h2>Claim a show — "this is my show, help me book it"</h2>
       <p class="privacy" style="margin-bottom:10px">Signed in with a
@@ -620,6 +628,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     msg.textContent = "Creating…"; msg.className = "msg";
     A.post("/booker/shows/create", { show_name: name, venue_name: venue, city: city }).then(function (r) {
       msg.textContent = "Created & you own it — show #" + r.show_series_id + ". It's on your calendar now."; msg.className = "msg ok";
+      // Refresh the show list so the empty-state banner clears and every
+      // show <select> picks up the new show immediately (2026-07-24 review
+      // finding 1: the primary onboarding path left the stale banner up).
+      loadMyShows();
     }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
   });
 
@@ -698,6 +710,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // ------------------------------------------------------------------
   // My venue calendar
   // ------------------------------------------------------------------
+  // A 403 on an invite/owner-guarded call can now carry a STRUCTURED detail
+  // ({error, hint, create_show, claim_show}) instead of a plain string, when
+  // the booker tried to act on a show they never claimed/created (see
+  // apps/atlas_api/main.py's _owner_guarded). Surface the hint -- not the
+  // raw object -- so the booker learns "create the show and you own it
+  // instantly" right at the moment of failure instead of a generic error.
+  function inviteErrorMessage(e, fallback) {
+    var detail = e && e.body && e.body.detail;
+    if (detail && typeof detail === "object" && detail.create_show) {
+      return detail.hint || detail.error || fallback;
+    }
+    return (typeof detail === "string" && detail) || fallback;
+  }
+
   var myShows = [];
 
   // Every "your show" field that used to be a raw show_series_id
@@ -732,8 +758,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       avp.innerHTML = rows.length
         ? showOptionsHtml(rows)
         : '<option value="">No claimed shows yet</option>';
+      document.getElementById("no-shows-banner").style.display = rows.length ? "none" : "block";
     }).catch(function () {});
   }
+
+  document.getElementById("no-shows-cta").addEventListener("click", function () {
+    var target = document.getElementById("new-show-name");
+    target.scrollIntoView({behavior: "smooth", block: "center"});
+    target.focus();
+  });
 
   function currentYearMonth() {
     var v = document.getElementById("cal-month").value; // "YYYY-MM"
@@ -1032,7 +1065,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       selected = {};
       renderTray();
     }).catch(function (e) {
-      msg.textContent = e.body && e.body.detail ? e.body.detail : "Batch invite failed.";
+      msg.textContent = inviteErrorMessage(e, "Batch invite failed.");
       msg.className = "msg error";
     });
   });
@@ -1413,7 +1446,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     A.post("/booker/shows/" + showId + "/invite", payload).then(function (r) {
       msg.textContent = "Invite sent (offer #" + r.offer_id + ")."; msg.className = "msg ok";
     }).catch(function (e) {
-      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to send invite.";
+      msg.textContent = inviteErrorMessage(e, "Failed to send invite.");
       msg.className = "msg error";
     });
   });

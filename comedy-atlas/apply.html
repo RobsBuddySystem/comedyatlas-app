@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apply — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/apply.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.wrap{max-width:420px;margin:0 auto;padding:60px 20px}
+.logo{font-size:22px;font-weight:800;margin-bottom:28px}
+.logo .dot{color:var(--gold)}
+h1{font-size:20px;margin-bottom:6px}
+p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.show-info{margin-bottom:18px}
+.show-info .name{font-size:18px;font-weight:700;margin-bottom:4px}
+.show-info .meta{color:var(--muted);font-size:13.5px}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+input,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
+textarea{resize:vertical;min-height:70px}
+.card button{width:100%;margin-top:20px;padding:12px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+.card button:hover{opacity:.9}
+.card button:disabled{opacity:.5;cursor:default}
+.msg{margin-top:14px;font-size:13px}
+.msg.error{color:var(--red)}
+.msg.ok{color:var(--green)}
+.hint{margin-top:20px;font-size:12.5px;color:var(--muted)}
+.skeleton{color:var(--muted);font-size:14px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Calendar</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/guide/">Guide</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<div class="wrap" id="main-content">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1 id="heading">Apply for a spot</h1>
+  <p class="sub" id="subheading">No account needed — tell us who you are and
+  we'll pass it straight to the show.</p>
+
+  <div class="card" id="loading-card">
+    <p class="skeleton" id="loading-msg">Loading...</p>
+  </div>
+
+  <div class="card" id="apply-card" style="display:none">
+    <div class="show-info">
+      <div class="name" id="show-name"></div>
+      <div class="meta" id="show-meta"></div>
+    </div>
+    <label for="ap-stage-name">Stage name</label>
+    <input id="ap-stage-name" type="text" placeholder="Your stage name" autocomplete="name">
+    <label for="ap-email">Email</label>
+    <input id="ap-email" type="email" placeholder="you@example.com" autocomplete="email">
+    <label for="ap-note">Note (optional)</label>
+    <textarea id="ap-note" placeholder="Anything the show should know — links, availability, experience..."></textarea>
+    <button id="ap-submit">Apply</button>
+    <div class="msg" id="ap-msg"></div>
+  </div>
+
+  <p class="hint">We never publish anyone's personal contact info. COMEDY
+  ATLAS relays your application to the show — it never hands your email or
+  phone number to anyone directly.</p>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
+    <span class="sep">·</span>
+    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+  </div>
+<div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+
+<script src="atlas-track.js"></script>
+<script src="atlas-pwa.js"></script>
+<script src="atlas-auth.js"></script>
+<script src="atlas-nav.js"></script>
+<script>
+(function () {
+  "use strict";
+  // Same same-host API-base logic every ATLAS page uses (atlas-auth.js's
+  // window.AtlasAuth already resolves it from location.hostname); this page
+  // is entirely unauthenticated (no session cookie required either way --
+  // A.get/A.post send credentials:"include" harmlessly when none exist).
+  var A = window.AtlasAuth;
+
+  var params = new URLSearchParams(location.search);
+  var token = params.get("token");
+
+  var loadingCard = document.getElementById("loading-card");
+  var loadingMsg = document.getElementById("loading-msg");
+  var applyCard = document.getElementById("apply-card");
+
+  function showInvalid() {
+    loadingMsg.textContent = "This link is invalid or has been revoked. " +
+      "Ask the show for a fresh apply link.";
+  }
+
+  if (!token) {
+    showInvalid();
+  } else {
+    A.get("/apply/" + encodeURIComponent(token)).then(function (show) {
+      document.getElementById("show-name").textContent = show.show_name || "This show";
+      var bits = [];
+      if (show.venue_name) bits.push(show.venue_name);
+      if (show.city_name) bits.push(show.city_name);
+      if (show.format_type && show.format_type !== "unknown") bits.push(show.format_type.replace(/_/g, " "));
+      document.getElementById("show-meta").textContent = bits.join(" · ");
+      loadingCard.style.display = "none";
+      applyCard.style.display = "block";
+    }).catch(function () {
+      showInvalid();
+    });
+  }
+
+  document.getElementById("ap-submit") && document.getElementById("ap-submit").addEventListener("click", function () {
+    var btn = document.getElementById("ap-submit");
+    var msg = document.getElementById("ap-msg");
+    msg.textContent = ""; msg.className = "msg";
+
+    var stageName = document.getElementById("ap-stage-name").value.trim();
+    var email = document.getElementById("ap-email").value.trim();
+    var note = document.getElementById("ap-note").value.trim();
+
+    if (!stageName) { msg.textContent = "Enter your stage name."; msg.className = "msg error"; return; }
+    if (!email) { msg.textContent = "Enter a valid email."; msg.className = "msg error"; return; }
+
+    btn.disabled = true;
+    A.post("/apply/" + encodeURIComponent(token), {
+      stage_name: stageName, email: email, note: note || null,
+    }).then(function (r) {
+      msg.textContent = "Applied! We've let " + (r.show_name || "the show") +
+        " know — you'll hear back if selected.";
+      msg.className = "msg ok";
+      document.getElementById("ap-stage-name").value = "";
+      document.getElementById("ap-email").value = "";
+      document.getElementById("ap-note").value = "";
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Could not submit — try again shortly.";
+      msg.className = "msg error";
+    }).finally(function () {
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+<script src="atlas-feedback.js"></script>
+</body>
+</html>
