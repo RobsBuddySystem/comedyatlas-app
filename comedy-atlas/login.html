@@ -36,6 +36,10 @@ input,select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var
 .msg.error{color:var(--red)}
 .msg.ok{color:var(--green)}
 .hint{margin-top:20px;font-size:12.5px;color:var(--muted)}
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:44px}
+.pw-toggle{position:absolute;right:4px;top:4px;background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:6px 8px;line-height:1}
+.pw-toggle:hover{color:var(--text)}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
@@ -94,7 +98,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <label for="li-email">Email</label>
     <input id="li-email" type="email" autocomplete="email">
     <label for="li-password">Password</label>
-    <input id="li-password" type="password" autocomplete="current-password">
+    <div class="pw-wrap">
+      <input id="li-password" type="password" autocomplete="current-password">
+      <button type="button" class="pw-toggle" id="li-password-toggle" aria-label="Show password" aria-pressed="false">&#128065;</button>
+    </div>
     <button id="li-submit">Sign in</button>
     <div style="margin-top:8px;font-size:0.85em">
       <a href="#" id="li-forgot">Forgot password?</a>
@@ -120,7 +127,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <label for="reg-email">Email</label>
     <input id="reg-email" type="email" autocomplete="email">
     <label for="reg-password">Password (min 8 characters)</label>
-    <input id="reg-password" type="password" autocomplete="new-password">
+    <div class="pw-wrap">
+      <input id="reg-password" type="password" autocomplete="new-password">
+      <button type="button" class="pw-toggle" id="reg-password-toggle" aria-label="Show password" aria-pressed="false">&#128065;</button>
+    </div>
     <label for="reg-role">I am a...</label>
     <select id="reg-role">
       <option value="comic">Comic</option>
@@ -231,6 +241,48 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }
     });
   };
+
+  // Show/hide password toggle -- flips input[type] between "password" and
+  // "text" and updates the eye icon/aria state. Applies to both password
+  // fields (sign-in, create-account).
+  function wirePasswordToggle(inputId, toggleId) {
+    var input = document.getElementById(inputId);
+    var toggle = document.getElementById(toggleId);
+    if (!input || !toggle) return;
+    toggle.addEventListener("click", function () {
+      var showing = input.type === "text";
+      input.type = showing ? "password" : "text";
+      toggle.setAttribute("aria-pressed", String(!showing));
+      toggle.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+      toggle.textContent = showing ? "👁" : "🙈";
+    });
+  }
+  wirePasswordToggle("li-password", "li-password-toggle");
+  wirePasswordToggle("reg-password", "reg-password-toggle");
+
+  // Enter-to-submit: pressing Enter inside any field belonging to a given
+  // mini-form clicks that form's submit button, same as a native <form>
+  // would -- these are plain divs (not <form> elements), so this wiring is
+  // what makes Enter behave the way every user expects.
+  function wireEnterSubmit(fieldIds, submitId) {
+    var btn = document.getElementById(submitId);
+    if (!btn) return;
+    fieldIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter") {
+          ev.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+  wireEnterSubmit(["li-email", "li-password"], "li-submit");
+  wireEnterSubmit(["li-forgot-email"], "li-forgot-submit");
+  wireEnterSubmit(["li-2fa-code"], "li-2fa-submit");
+  wireEnterSubmit(["reg-stage-name", "reg-email", "reg-password", "reg-role"], "reg-submit");
+  wireEnterSubmit(["fan-email"], "fan-submit");
 
   var tabs = document.querySelectorAll(".tab");
   var loginCard = document.getElementById("login-card");

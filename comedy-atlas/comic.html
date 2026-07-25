@@ -27,6 +27,14 @@ a{color:var(--purple-light);text-decoration:none}
 label{display:block;font-size:13px;color:var(--muted);margin:10px 0 5px}
 input,textarea,select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:14px;font-family:inherit}
 textarea{min-height:70px;resize:vertical}
+#bio{min-height:220px}
+.series-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.series-item .series-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.series-item .series-head .name{font-weight:700}
+.series-item .series-head .venue{color:var(--muted)}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.date-chip{padding:6px 10px;font-size:12px;margin-top:0;border-radius:999px;background:transparent;border:1px solid var(--purple);color:var(--purple-light)}
+.date-chip.on{background:var(--green);border-color:var(--green);color:#06240f}
 button{padding:10px 18px;border-radius:8px;border:none;background:var(--purple);color:#fff;font-weight:700;font-size:13px;cursor:pointer;margin-top:12px}
 button:hover{opacity:.9}
 .row{display:flex;gap:10px;flex-wrap:wrap}
@@ -153,10 +161,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <a href="studio-captions.html"><button type="button">Open captions studio →</button></a>
     </div>
 
-    <div class="card">
-      <h2>Shows I could be available for</h2>
-      <div id="opp-list"><p style="color:var(--muted);font-size:13px">Loading…</p></div>
-    </div>
+    <!-- "Shows I could be available for" panel removed 2026-07-25 (Robert
+    portal test punch list): the /comic/{id}/opportunities matching engine
+    has no real matching data behind it yet, so this rendered as a broken
+    twin of the "Shows in my city" card above -- always near-empty, never
+    useful. Re-add this card (and renderOpportunities/the /opportunities
+    fetch below) once the matcher is real; until then it's dead weight. -->
 
     <div class="card">
       <h2>My invites</h2>
@@ -197,16 +207,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     list.innerHTML = rows.map(function (r) {
       return '<div class="avail-item"><span>' + A.escapeHtml(r.available_date) + '</span>' +
         '<span style="color:var(--muted)">' + A.escapeHtml(r.visibility) + '</span></div>';
-    }).join("");
-  }
-
-  function renderOpportunities(rows) {
-    var list = document.getElementById("opp-list");
-    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No open matches right now.</p>'; return; }
-    list.innerHTML = rows.map(function (r) {
-      return '<div class="opp-item"><div class="name">' + A.escapeHtml(r.show_name) + '</div>' +
-        '<div style="color:var(--muted)">' + A.escapeHtml(r.spot_role) + ' · ' +
-        A.escapeHtml(r.opportunity_date) + ' · ' + A.escapeHtml(r.pay_model) + '</div></div>';
     }).join("");
   }
 
@@ -282,6 +282,59 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
   }
 
+  function metaBitsFor(r) {
+    var doors = hhmm(r.doors_at);
+    var start = hhmm(r.starts_at);
+    var end = hhmm(r.ends_at);
+    var startEnd = end ? (start + "–" + end) : start;
+    var bits = [];
+    if (doors) bits.push("Doors " + doors);
+    bits.push("Show " + startEnd);
+    if (r.set_minutes) bits.push("Set " + r.set_minutes + "m");
+    if (r.pay_label) bits.push(r.pay_label);
+    return bits.join(" · ");
+  }
+
+  // One row per single show occurrence -- unchanged from before the
+  // recurring-series grouping below.
+  function showItemHtml(r) {
+    var when = A.escapeHtml((r.starts_at || "").slice(0, 10));
+    var label = r.available ? "I'm available ✓" : "I'm available ＋";
+    return '<div class="show-item"><div><div class="name">' + A.escapeHtml(r.title || "Show") + '</div>' +
+      '<div style="color:var(--muted)">' + A.escapeHtml(dateDisplay(r.starts_at)) +
+      (r.venue_name ? ' · ' + A.escapeHtml(r.venue_name) : '') + '</div>' +
+      '<div style="color:var(--muted)">' + A.escapeHtml(metaBitsFor(r)) + '</div>' +
+      '</div><button type="button" class="avail-toggle' +
+      (r.available ? ' on' : '') + '" data-event="' + r.event_id + '" data-date="' + when +
+      '" data-available="' + (r.available ? "1" : "0") + '">' + label + '</button></div>';
+  }
+
+  // Recurring show (same title + venue, multiple dates within the month --
+  // e.g. a weekly Open Mic Express) -- one row, with a date-chip per
+  // occurrence, instead of one full card per date. Each chip IS the
+  // per-date "I'm available +" toggle (title attribute carries that
+  // occurrence's doors/set/pay meta since the row itself no longer has
+  // room to show it per-date).
+  function seriesItemHtml(seriesRows) {
+    var head = seriesRows[0];
+    var chips = seriesRows.map(function (r) {
+      var when = A.escapeHtml((r.starts_at || "").slice(0, 10));
+      var label = r.available ? (dateDisplay(r.starts_at) + " ✓") : (dateDisplay(r.starts_at) + " ＋");
+      return '<button type="button" class="avail-toggle date-chip' +
+        (r.available ? ' on' : '') + '" data-event="' + r.event_id + '" data-date="' + when +
+        '" data-available="' + (r.available ? "1" : "0") + '" title="' +
+        A.escapeHtml(metaBitsFor(r)) + '">' + A.escapeHtml(label) + '</button>';
+    }).join("");
+    return '<div class="series-item"><div class="series-head"><span class="name">' +
+      A.escapeHtml(head.title || "Show") + '</span>' +
+      (head.venue_name ? '<span class="venue">' + A.escapeHtml(head.venue_name) + '</span>' : '') +
+      '</div><div class="chip-row">' + chips + '</div></div>';
+  }
+
+  function seriesKey(r) {
+    return (r.title || "Show") + "|" + (r.venue_name || "");
+  }
+
   function renderCityShows(rows) {
     var list = document.getElementById("city-shows-list");
     if (!rows.length) {
@@ -298,26 +351,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
 
     list.innerHTML = months.map(function (m) {
-      var cards = byMonth[m].map(function (r) {
-        var when = A.escapeHtml((r.starts_at || "").slice(0, 10));
-        var doors = hhmm(r.doors_at);
-        var start = hhmm(r.starts_at);
-        var end = hhmm(r.ends_at);
-        var startEnd = end ? (start + "–" + end) : start;
-        var metaBits = [];
-        if (doors) metaBits.push("Doors " + doors);
-        metaBits.push("Show " + startEnd);
-        if (r.set_minutes) metaBits.push("Set " + r.set_minutes + "m");
-        if (r.pay_label) metaBits.push(r.pay_label);
-        var label = r.available ? "I'm available ✓" : "I'm available ＋";
-        return '<div class="show-item" data-event="' + r.event_id + '" data-date="' +
-          when + '"><div><div class="name">' + A.escapeHtml(r.title || "Show") + '</div>' +
-          '<div style="color:var(--muted)">' + A.escapeHtml(dateDisplay(r.starts_at)) +
-          (r.venue_name ? ' · ' + A.escapeHtml(r.venue_name) : '') + '</div>' +
-          '<div style="color:var(--muted)">' + A.escapeHtml(metaBits.join(" · ")) + '</div>' +
-          '</div><button type="button" class="avail-toggle' +
-          (r.available ? ' on' : '') + '" data-available="' + (r.available ? "1" : "0") +
-          '">' + label + '</button></div>';
+      // Within the month, group by title+venue -- a recurring show (e.g.
+      // "Open Mic Express" running weekly at the same venue) collapses to
+      // ONE row with a date-chip list instead of one full card per date.
+      var seriesOrder = [];
+      var bySeries = {};
+      byMonth[m].forEach(function (r) {
+        var k = seriesKey(r);
+        if (!bySeries[k]) { bySeries[k] = []; seriesOrder.push(k); }
+        bySeries[k].push(r);
+      });
+      var cards = seriesOrder.map(function (k) {
+        var group = bySeries[k];
+        return group.length > 1 ? seriesItemHtml(group) : showItemHtml(group[0]);
       }).join("");
       return '<h3 style="color:var(--gold);font-size:12px;text-transform:uppercase;' +
         'letter-spacing:.05em;margin:14px 0 6px">' + A.escapeHtml(m) + '</h3>' + cards;
@@ -325,8 +371,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     list.querySelectorAll(".avail-toggle").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var item = btn.closest(".show-item");
-        var eventDate = item.dataset.date;
+        var eventDate = btn.dataset.date;
         if (btn.dataset.available === "1") {
           // Already marked available -- nothing to undo server-side yet;
           // just reflect the state (removal is optional per spec).
@@ -338,7 +383,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         }).then(function () {
           btn.dataset.available = "1";
           btn.classList.add("on");
-          btn.textContent = "I'm available ✓";
+          btn.textContent = btn.classList.contains("date-chip")
+            ? btn.textContent.replace(" ＋", " ✓")
+            : "I'm available ✓";
           btn.disabled = false;
         }).catch(function (e) {
           var msg = document.getElementById("city-shows-msg");
@@ -382,7 +429,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }
     });
     A.get("/comic/" + meId + "/availability").then(renderAvailability);
-    A.get("/comic/" + meId + "/opportunities").then(renderOpportunities);
+    // /opportunities fetch removed with the "Shows I could be available
+    // for" card above -- see the comment on that card in the HTML.
     A.get("/comic/" + meId + "/invites").then(renderInvites);
   }
 

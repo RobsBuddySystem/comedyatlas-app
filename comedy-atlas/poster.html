@@ -43,7 +43,7 @@
   <div id="picker">
     <div class="card">
       <h2>Start from a show</h2>
-      <input id="show-search" type="search" placeholder="Search shows by name, venue or city…" autocomplete="off">
+      <input id="show-search" type="search" placeholder="Search shows by name, venue or city…" autocomplete="off" spellcheck="true" lang="en">
       <div id="show-results" role="list"></div>
       <p class="data-note" id="picker-note">Loading upcoming shows…</p>
     </div>
@@ -57,7 +57,7 @@
       <div class="canvas-col">
         <div class="canvas-wrap" id="canvas-wrap">
           <canvas id="poster-canvas" width="1080" height="1080" aria-label="Poster canvas — tap text to select it, tap again to edit, drag to move"></canvas>
-          <textarea id="inline-editor" rows="2" aria-label="Edit text"></textarea>
+          <textarea id="inline-editor" rows="2" aria-label="Edit text" spellcheck="true" lang="en"></textarea>
         </div>
         <p class="canvas-hint">Tap text to select · tap again to edit · drag to move</p>
       </div>
@@ -159,6 +159,7 @@
   The poster maker is free and runs entirely in your browser: no account, no watermark you
   can’t remove, and your photos never leave your device.</div>
 </footer>
+<script src="atlas-auth.js"></script>
 <script src="poster.js"></script>
 </body>
 </html>

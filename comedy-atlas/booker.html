@@ -121,6 +121,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="container" id="main-content">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">I'M A BOOKER</div>
+  <!-- Signed-in identity header (2026-07-25 portal punch list, item 3):
+  stage_name + email come straight off /auth/me (people.stage_name,
+  person_credentials.email -- an enrichment join, not a schema change).
+  There is NO organization/title column on people or comics today, so an
+  editable "organization / title" line (e.g. "FFCN night programmer")
+  can't be stored yet -- that's schema work for the spec agent to pick up
+  (a nullable people.org_title-style column + a PUT profile field), not
+  something to invent ad hoc in this UI wave. Once that column exists,
+  wire an editable field in here the same way comic.html's bio field
+  works. -->
+  <div id="booker-identity" style="display:none;margin-bottom:14px">
+    <div id="booker-identity-name" style="font-size:16px;font-weight:700"></div>
+    <div id="booker-identity-email" style="font-size:13px;color:var(--muted)"></div>
+  </div>
   <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
     <a href="comic.html" id="switch-portal-link">Switch to comic portal</a>
     <span style="margin:0 8px;color:var(--muted)">·</span>
@@ -554,6 +568,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   A.me().then(function (r) {
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";
+    if (r.stage_name || r.email) {
+      document.getElementById("booker-identity-name").textContent = r.stage_name || "";
+      document.getElementById("booker-identity-email").textContent = r.email || "";
+      document.getElementById("booker-identity").style.display = "block";
+    }
     loadCities();
     loadMyShows();
     loadAnalytics();

@@ -6,8 +6,18 @@
  * <canvas> and NEVER leave the device. Fonts are bundled woff2 files
  * (assets/fonts/, see OFL-LICENSES.txt) declared in poster.css.
  *
- * Data contract: same as atlas-common.js — ../data/comedy-atlas/
- * upcoming_events.json published by scripts/publish_atlas_data.py.
+ * Data contract: GET /v1/events (apps/atlas_api/routes_public_api.py), via
+ * the SAME AtlasAuth.apiBase origin-resolution atlas-auth.js's portal pages
+ * use (script tag added 2026-07-25) -- NOT the ../data/comedy-atlas/
+ * upcoming_events.json static export atlas-common.js's site pages read.
+ * That export only exists on the GitHub-Pages apex deploy tree
+ * (comedyatlas.app/data/comedy-atlas/upcoming_events.json); poster.html is
+ * ALSO served live off api.comedyatlas.app (apps/atlas_api/main.py's
+ * StaticFiles-equivalent /comedy-atlas/{file_path} mount), which has no
+ * /data/ route at all -- every "Start from a show" search there 404'd
+ * (2026-07-25 Robert portal punch list, item 4a). /v1/events is a real API
+ * route that exists on both origins the page can be loaded from, so this
+ * is now correct regardless of which one served this page.
  * Picking a show prefills title / date / venue / ticket URL; the
  * ?event=<slug> query param (slug or show_series_slug) deep-links a
  * prefilled editor so show pages and the booker portal can offer a
@@ -22,7 +32,7 @@
 (function () {
   "use strict";
 
-  var DATA_URL = "../data/comedy-atlas/upcoming_events.json";
+  var EVENTS_ENDPOINT = "/v1/events?limit=200";
   var STICKER_URL = "assets/brand/atlas-character-hero-600.png";
 
   var SIZES = {
@@ -347,14 +357,26 @@
       dateLine: fmtDateLine(ev.starts_at),
       venueLine: ev.venue_name || "",
       addrLine: [ev.venue_address, ev.city_name].filter(Boolean).join(", "),
-      ticketsLine: slug ? "tickets: comedyatlas.app/comedy-atlas/show/" + slug : "tickets: comedyatlas.app"
+      // Real show page path (scripts/generate_entity_pages.py's show_href):
+      // /comedy-atlas/show/<slug>/ -- comedyatlas.app is the canonical short
+      // form shown on a printed poster; the full canonical URL still works,
+      // this is just the human-typeable line.
+      ticketsLine: slug ? "tickets: comedyatlas.app/comedy-atlas/show/" + slug + "/" : "tickets: comedyatlas.app"
     };
   }
 
   function loadEvents() {
-    return fetch(DATA_URL, { cache: "no-cache" })
+    // /v1/events is a public, unauthenticated, CORS-open-for-GET route
+    // (Access-Control-Allow-Origin: *) -- no credentials, which is also
+    // required here: a wildcard ACAO is incompatible with credentialed
+    // fetches. Same AtlasAuth.apiBase origin-resolution as the portal
+    // pages, so this works whether poster.html is loaded from the apex
+    // (static) or api.comedyatlas.app (dynamic) origin.
+    var base = (window.AtlasAuth && window.AtlasAuth.apiBase) || "";
+    return fetch(base + EVENTS_ENDPOINT, { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (rows) {
+      .then(function (data) {
+        var rows = data.events || [];
         var now = new Date();
         // one entry per series: the NEXT upcoming instance
         var bySeries = {};
