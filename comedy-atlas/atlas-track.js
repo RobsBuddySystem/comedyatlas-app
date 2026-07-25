@@ -11,6 +11,22 @@
 (function () {
   if (window.__pcTracked) return;
   window.__pcTracked = true;
+  var GA_MEASUREMENT_ID = 'G-1Q74JY864H';
+
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+
+    var googleTag = document.createElement('script');
+    googleTag.async = true;
+    googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+    document.head.appendChild(googleTag);
+  } catch (_) {
+    // Google Analytics is optional; keep the first-party tracker reliable.
+  }
+
   var API_BASE = 'https://api.pariscomedy.com';
   var sid = '';
   try {
