@@ -99,6 +99,24 @@ button.danger{background:transparent;border:1px solid var(--red);color:var(--red
 .cand-card .tier{font-size:10px;color:var(--gold)}
 .lineup-status{font-size:12px;color:var(--muted);margin:8px 0}
 .lineup-status.sent{color:var(--green);font-weight:700}
+.link-like{background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
+.cc-open-btn{white-space:nowrap}
+/* Comic CRM card modal (booker-private notes/tags/classification) */
+.cc-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;padding:20px;overflow-y:auto}
+.cc-overlay.show{display:flex;align-items:flex-start;justify-content:center}
+.cc-panel{background:var(--card);border:1px solid var(--gold);border-radius:12px;max-width:520px;width:100%;padding:22px;margin:30px 0}
+.cc-panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px}
+.cc-panel-head h3{font-size:18px}
+.cc-close{background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0;margin:0;line-height:1}
+.cc-section{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.cc-section h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:8px}
+.cc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.cc-tag{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:4px 10px;font-size:12px}
+.cc-tag button{margin:0;padding:0;background:transparent;border:none;color:var(--red);font-size:14px;cursor:pointer;line-height:1}
+.cc-note{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.cc-note:last-child{border-bottom:none}
+.cc-note .cc-note-time{color:var(--muted);font-size:11px;margin-bottom:2px}
+.cc-note-body{white-space:pre-wrap;word-break:break-word}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
@@ -575,6 +593,63 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
 
     <div class="card" id="twofa-section"></div>
+  </div>
+
+  <!-- Comic CRM card (migration 0065; ingest/booker_crm.py). Opened by
+  clicking "CRM card" wherever a comic already appears (search results,
+  invite rows, lineup candidates). Every field in here is scoped
+  server-side to THIS booker's own booker_person_id -- another booker
+  never sees it, and the comic never sees it at all (no comic-facing
+  route reads these tables). See the JS below for the full privacy note. -->
+  <div class="cc-overlay" id="cc-overlay">
+    <div class="cc-panel" role="dialog" aria-modal="true" aria-labelledby="cc-name">
+      <div class="cc-panel-head">
+        <div>
+          <h3 id="cc-name"></h3>
+          <div id="cc-public" style="color:var(--muted);font-size:13px;margin-top:2px"></div>
+        </div>
+        <button type="button" class="cc-close" id="cc-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <p class="privacy">🔒 Everything below is <b>private to you</b> (this booker
+      account only) — the comic is never shown your notes, tags, or
+      classification of them, and no other booker can see yours either.</p>
+      <div class="msg" id="cc-msg"></div>
+
+      <div class="cc-section">
+        <h4>Your classification</h4>
+        <label for="cc-tier">Standing tier (your own judgment call, not the show's slot)</label>
+        <select id="cc-tier">
+          <option value="">— not set —</option>
+          <option value="open_mic">open_mic</option>
+          <option value="bringer">bringer</option>
+          <option value="house">house</option>
+          <option value="mc_host">mc_host</option>
+          <option value="feature">feature</option>
+          <option value="headliner">headliner</option>
+          <option value="co_headliner">co_headliner</option>
+        </select>
+        <button type="button" id="cc-tier-save">Save classification</button>
+        <div class="msg" id="cc-tier-msg"></div>
+      </div>
+
+      <div class="cc-section">
+        <h4>Your tags</h4>
+        <div class="cc-tags" id="cc-tags-list"></div>
+        <div class="row" style="margin-top:8px">
+          <input id="cc-tag-input" type="text" placeholder="e.g. clean, corporate_ready" maxlength="80">
+          <button type="button" id="cc-tag-add" style="margin-top:0">Add tag</button>
+        </div>
+        <div class="msg" id="cc-tag-msg"></div>
+      </div>
+
+      <div class="cc-section">
+        <h4>Your notes (private log — never edited or deleted, only added to)</h4>
+        <textarea id="cc-note-input" rows="3" placeholder="e.g. Great crowd work, ran 2 min long, ask for the tight 5 next time…"></textarea>
+        <button type="button" id="cc-note-add">Add note</button>
+        <div class="msg" id="cc-note-msg"></div>
+        <div id="cc-notes-list" style="margin-top:10px"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1096,9 +1171,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       ? '<img class="comic-photo" src="' + A.escapeHtml(c.photo_url) + '" alt="">'
       : '<div class="comic-photo placeholder">🎤</div>';
     return '<div class="cand-card' + (picked ? ' picked' : '') + '" draggable="true" data-id="' + c.person_id + '">' +
-      photo + '<div><div>' + A.escapeHtml(c.stage_name) +
+      photo + '<div style="flex:1;min-width:0"><div>' + A.escapeHtml(c.stage_name) +
       (c.tier ? ' <span class="tier">' + A.escapeHtml(c.tier) + '</span>' : '') + '</div>' +
-      '<div style="color:var(--muted);font-size:11px">' + (c.sources || []).join(", ") + '</div></div></div>';
+      '<div style="color:var(--muted);font-size:11px">' + (c.sources || []).join(", ") + '</div></div>' +
+      '<button type="button" class="secondary cc-open-btn" data-id="' + c.person_id +
+      '" data-name="' + A.escapeHtml(c.stage_name) +
+      '" style="margin:0;padding:3px 8px;font-size:10px;flex:0 0 auto">CRM</button></div>';
   }
 
   function slotHtml(s) {
@@ -1127,6 +1205,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     document.getElementById("lu-candidates").innerHTML = (data.candidates || [])
       .map(function (c) { return candidateCardHtml(c, luPicked === c.person_id); }).join("");
     document.getElementById("lu-confirm").style.display = sent ? "none" : "inline-block";
+
+    // CRM card buttons stay live even on a locked/sent draft (viewing your
+    // own private notes on a comic has nothing to do with the lineup-send
+    // lock) -- wired before the `if (sent) return` below. stopPropagation
+    // keeps this click from also toggling the card's tap-to-assign "picked"
+    // state or starting an HTML5 drag.
+    document.querySelectorAll("#lu-candidates .cc-open-btn").forEach(function (btn) {
+      btn.addEventListener("mousedown", function (ev) { ev.stopPropagation(); });
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        ccOpen(parseInt(btn.dataset.id, 10), btn.dataset.name, null);
+      });
+    });
 
     if (sent) return; // locked draft: no drag/tap/clear wiring needed
 
@@ -1221,6 +1312,183 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       ids.map(function (id) { return selected[id]; }).join(", ");
   }
 
+  // ------------------------------------------------------------------
+  // Comic CRM card (migration 0065; ingest/booker_crm.py) -- 2026-07-25
+  // audit "panel parity" finding: this backend was fully built/tested
+  // (tests/test_booker_crm.py) with NO interface anywhere on booker.html.
+  //
+  // PRIVACY (verified in ingest/booker_crm.py + apps/atlas_api/main.py
+  // before building this): every classification/tag/note read+write below
+  // hits a route that is session-guarded (auth.require_person_id) AND,
+  // inside booker_crm.py, every query filters `WHERE booker_person_id =
+  // :b` using the CALLING booker's own id -- there is no parameter, path,
+  // or route anywhere that lets one booker pass another booker's id, and
+  // no route exposes these tables to the comic at all (comic.html never
+  // calls any /booker/comics/* endpoint). tests/test_booker_crm.py's
+  // test_cross_booker_privacy_is_never_leaked already proves this at the
+  // SQL layer; tests/test_booker_crm_api.py (added alongside this UI)
+  // proves it again at the HTTP/session layer with two real logged-in
+  // booker accounts.
+  //
+  // XSS: notes and tags are free text the booker themselves types, but
+  // are rendered right back on THEIR OWN screen -- still run through
+  // A.escapeHtml everywhere, same discipline as counter_terms above, so a
+  // note/tag containing "<script>" (or anything else) always renders as
+  // inert text, never executes.
+  // ------------------------------------------------------------------
+  var ccComicId = null;
+  var ccOverlay = document.getElementById("cc-overlay");
+
+  function ccPublicInfoHtml(p) {
+    var bits = [];
+    if (p.home_market) bits.push(A.escapeHtml(p.home_market));
+    if (p.touring_status) bits.push(A.escapeHtml(p.touring_status));
+    var line = bits.join(" · ");
+    var bio = p.bio ? '<div style="margin-top:4px">' + A.escapeHtml(p.bio) + '</div>' : "";
+    return (line ? "<div>" + line + "</div>" : "") + bio;
+  }
+
+  function ccOpen(id, name, publicInfo) {
+    ccComicId = id;
+    ["cc-msg", "cc-tier-msg", "cc-tag-msg", "cc-note-msg"].forEach(function (mid) {
+      var m = document.getElementById(mid);
+      m.textContent = ""; m.className = "msg";
+    });
+    document.getElementById("cc-tag-input").value = "";
+    document.getElementById("cc-note-input").value = "";
+    document.getElementById("cc-name").textContent = name || ("comic #" + id);
+    document.getElementById("cc-public").innerHTML = publicInfo ? ccPublicInfoHtml(publicInfo) : "";
+    document.getElementById("cc-tags-list").innerHTML = "";
+    document.getElementById("cc-notes-list").innerHTML = "";
+    document.getElementById("cc-tier").value = "";
+    ccOverlay.classList.add("show");
+    ccRefresh();
+  }
+
+  function ccClose() {
+    ccOverlay.classList.remove("show");
+    ccComicId = null;
+  }
+  document.getElementById("cc-close").addEventListener("click", ccClose);
+  ccOverlay.addEventListener("click", function (ev) {
+    if (ev.target === ccOverlay) ccClose();
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && ccOverlay.classList.contains("show")) ccClose();
+  });
+
+  function ccRenderTags(tags) {
+    var el = document.getElementById("cc-tags-list");
+    if (!tags.length) {
+      el.innerHTML = '<span style="color:var(--muted);font-size:12px">No tags yet.</span>';
+      return;
+    }
+    // A.escapeHtml on both the visible text AND the data-tag attribute --
+    // free-text tags render inert even if someone typed markup into one.
+    el.innerHTML = tags.map(function (t) {
+      return '<span class="cc-tag">' + A.escapeHtml(t) +
+        ' <button type="button" data-tag="' + A.escapeHtml(t) + '" title="Remove tag" aria-label="Remove tag">&#215;</button></span>';
+    }).join("");
+    el.querySelectorAll("button[data-tag]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var msg = document.getElementById("cc-tag-msg");
+        btn.disabled = true;
+        A.del("/booker/comics/" + ccComicId + "/tags?tag=" + encodeURIComponent(btn.dataset.tag))
+          .then(function () { return A.get("/booker/comics/" + ccComicId + "/tags"); })
+          .then(function (r) { ccRenderTags(r.tags || []); })
+          .catch(function (e) {
+            msg.textContent = (e.body && e.body.detail) || "Failed to remove tag.";
+            msg.className = "msg error";
+            btn.disabled = false;
+          });
+      });
+    });
+  }
+
+  function ccRenderNotes(notes) {
+    var el = document.getElementById("cc-notes-list");
+    if (!notes.length) {
+      el.innerHTML = '<p style="color:var(--muted);font-size:13px">No notes yet — add the first one above.</p>';
+      return;
+    }
+    el.innerHTML = notes.map(function (n) {
+      var dt = new Date(n.created_at);
+      var label = isNaN(dt.getTime()) ? "" : dt.toLocaleString();
+      return '<div class="cc-note"><div class="cc-note-time">' + A.escapeHtml(label) + '</div>' +
+        '<div class="cc-note-body">' + A.escapeHtml(n.note) + '</div></div>';
+    }).join("");
+  }
+
+  // Re-fetches every section after each write (add note / add tag /
+  // remove tag / set classification) so state never goes stale -- same
+  // "write then refetch" pattern the counter-offer + lineup builder above
+  // already use.
+  function ccRefresh() {
+    if (ccComicId == null) return;
+    var id = ccComicId;
+    var msg = document.getElementById("cc-msg");
+    Promise.all([
+      A.get("/booker/comics/" + id + "/classification"),
+      A.get("/booker/comics/" + id + "/tags"),
+      A.get("/booker/comics/" + id + "/notes"),
+    ]).then(function (results) {
+      if (ccComicId !== id) return; // panel closed/reopened on another comic mid-flight
+      var comic = results[0].comic;
+      if (comic && comic.stage_name) document.getElementById("cc-name").textContent = comic.stage_name;
+      document.getElementById("cc-tier").value = (results[0].classification && results[0].classification.tier) || "";
+      ccRenderTags(results[1].tags || []);
+      ccRenderNotes(results[2].notes || []);
+    }).catch(function (e) {
+      msg.textContent = (e.body && e.body.detail) || "Failed to load this comic's card.";
+      msg.className = "msg error";
+    });
+  }
+
+  document.getElementById("cc-tier-save").addEventListener("click", function () {
+    var msg = document.getElementById("cc-tier-msg");
+    var tier = document.getElementById("cc-tier").value;
+    if (!tier) { msg.textContent = "Pick a tier first."; msg.className = "msg error"; return; }
+    A.put("/booker/comics/" + ccComicId + "/classification", { tier: tier }).then(function () {
+      msg.textContent = "Saved."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = (e.body && e.body.detail) || "Failed to save."; msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("cc-tag-add").addEventListener("click", function () {
+    var msg = document.getElementById("cc-tag-msg");
+    var input = document.getElementById("cc-tag-input");
+    var tag = input.value.trim();
+    if (!tag) { msg.textContent = "Type a tag first."; msg.className = "msg error"; return; }
+    A.post("/booker/comics/" + ccComicId + "/tags", { tag: tag }).then(function () {
+      input.value = ""; msg.textContent = ""; msg.className = "msg";
+      return A.get("/booker/comics/" + ccComicId + "/tags");
+    }).then(function (r) { ccRenderTags(r.tags || []); }).catch(function (e) {
+      msg.textContent = (e.body && e.body.detail) || "Failed to add tag."; msg.className = "msg error";
+    });
+  });
+  document.getElementById("cc-tag-input").addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter") { ev.preventDefault(); document.getElementById("cc-tag-add").click(); }
+  });
+
+  document.getElementById("cc-note-add").addEventListener("click", function () {
+    var msg = document.getElementById("cc-note-msg");
+    var input = document.getElementById("cc-note-input");
+    var note = input.value.trim();
+    if (!note) { msg.textContent = "Write a note first."; msg.className = "msg error"; return; }
+    A.post("/booker/comics/" + ccComicId + "/notes", { note: note }).then(function () {
+      input.value = ""; msg.textContent = ""; msg.className = "msg";
+      return A.get("/booker/comics/" + ccComicId + "/notes");
+    }).then(function (r) { ccRenderNotes(r.notes || []); }).catch(function (e) {
+      msg.textContent = (e.body && e.body.detail) || "Failed to add note."; msg.className = "msg error";
+    });
+  });
+
+  // person_id -> the full /booker/comics/search row, so the CRM card can
+  // show public info (home_market/touring_status/bio/...) instantly
+  // without a second round-trip, from wherever a comic was last listed.
+  var searchResultsCache = {};
+
   document.getElementById("do-search").addEventListener("click", function () {
     var msg = document.getElementById("search-msg");
     var qs = new URLSearchParams();
@@ -1234,19 +1502,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     A.get("/booker/comics/search?" + qs.toString()).then(function (rows) {
       var el = document.getElementById("search-results");
       if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No matches.</p>'; return; }
+      searchResultsCache = {};
       el.innerHTML = rows.map(function (r) {
+        searchResultsCache[r.person_id] = r;
         var checked = selected[r.person_id] ? "checked" : "";
         var photo = r.photo_url
           ? '<img class="comic-photo" src="' + A.escapeHtml(r.photo_url) + '" alt="">'
           : '<div class="comic-photo placeholder">🎤</div>';
-        return '<label class="comic-card">' +
+        return '<div class="comic-card">' +
+          '<label style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;margin:0;cursor:pointer">' +
           '<input type="checkbox" data-id="' + r.person_id + '" data-name="' +
           A.escapeHtml(r.stage_name) + '" ' + checked + '>' +
           photo +
           '<div class="info"><div class="name">' + A.escapeHtml(r.stage_name) +
           ' <span style="color:var(--muted);font-weight:400">(id ' + r.person_id + ')</span></div>' +
           '<div style="color:var(--muted)">' + A.escapeHtml(r.home_market || "") + ' · ' +
-          A.escapeHtml(r.touring_status || "") + '</div></div></label>';
+          A.escapeHtml(r.touring_status || "") + '</div></div></label>' +
+          '<button type="button" class="secondary cc-open-btn" data-id="' + r.person_id +
+          '">CRM card</button></div>';
       }).join("");
       el.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
         cb.addEventListener("change", function () {
@@ -1254,6 +1527,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           if (cb.checked) { selected[id] = cb.dataset.name; }
           else { delete selected[id]; }
           renderTray();
+        });
+      });
+      el.querySelectorAll("button.cc-open-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var id = parseInt(btn.dataset.id, 10);
+          var r = searchResultsCache[id];
+          ccOpen(id, r ? r.stage_name : null, r || null);
         });
       });
       msg.textContent = rows.length + " comic(s) found."; msg.className = "msg ok";
@@ -1319,7 +1599,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var el = document.getElementById("invites-list");
     if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
     el.innerHTML = rows.map(function (r) {
-      var head = '<div class="invite-head"><div>' + A.escapeHtml(r.comic_stage_name) +
+      var head = '<div class="invite-head"><div>' +
+        '<button type="button" class="link-like cc-open-btn" data-id="' + r.comic_person_id +
+        '" data-name="' + A.escapeHtml(r.comic_stage_name) + '">' + A.escapeHtml(r.comic_stage_name) + '</button>' +
         ' <span style="color:var(--muted)">(id ' + r.comic_person_id + ')</span></div>' +
         '<div class="status-pill ' + A.escapeHtml(r.status) + '">' + A.escapeHtml(r.status) + '</div></div>';
       var terms = '<div class="invite-terms">Offered: ' + formatOfferedTerms(r) + '</div>';
@@ -1340,6 +1622,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }
       return '<div class="invite-row">' + head + terms + counter + '</div>';
     }).join("");
+
+    el.querySelectorAll("button.cc-open-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        ccOpen(parseInt(btn.dataset.id, 10), btn.dataset.name, null);
+      });
+    });
 
     el.querySelectorAll("button[data-counter-offer]").forEach(function (btn) {
       btn.addEventListener("click", function () {
