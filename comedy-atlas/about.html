@@ -148,12 +148,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <h2>Support the Atlas</h2>
   <p>COMEDY ATLAS is independent and built for comics who are starting out — free listings, no ticket cut, ever. It's run on nights, weekends, and one person's stubbornness. If it's helped you find a show, book a room, or get seen, a small donation helps keep it free for the next comic too. Any amount, no account needed, no strings attached.</p>
   <div class="cta-row">
-    <a id="support-donate-link" class="cta primary" href="#" rel="noopener" style="display:none">Support the Atlas →</a>
-    <span id="support-donate-pending" class="industry-footnote" style="margin:0">Donations are almost live here — check back very soon, or reach us at <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>.</span>
+    <a class="cta primary" href="mailto:hello@comedyatlas.app?subject=Donation" rel="noopener">Email us and we'll send you a secure payment link →</a>
+    <a id="support-donate-link" class="cta" href="#" rel="noopener" style="display:none">Support the Atlas via SumUp →</a>
   </div>
 </section>
 <script>
-/* Robert: to switch this section live, replace SUMUP_DONATION_LINK below
+/* Robert: to switch the SumUp button live, replace SUMUP_DONATION_LINK below
    with the real SumUp Payment Link URL and redeploy. Two-minute setup:
      1. Open the SumUp app (or business.sumup.com) -> Payments/Get paid ->
         Payment links -> Create a payment link.
@@ -166,14 +166,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
    this session verified (GET /v0.1/me, 2026-07-25) -- fixed-amount
    checkouts are API-creatable, but a reusable, donor-chosen-amount link
    is a dashboard/app-only feature. See ingest/finance_ledger.py's
-   module docstring for how a donation gets recorded once this is live. */
+   module docstring for how a donation gets recorded once this is live.
+   The mailto CTA above works today regardless -- it is the live interim
+   path, not a placeholder. */
 (function(){
   var SUMUP_DONATION_LINK = ""; // e.g. "https://pay.sumup.com/b2c/XXXXXXX"
   if (SUMUP_DONATION_LINK) {
     var a = document.getElementById("support-donate-link");
     a.href = SUMUP_DONATION_LINK;
     a.style.display = "";
-    document.getElementById("support-donate-pending").style.display = "none";
   }
 })();
 </script>
@@ -190,6 +191,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
     <span class="sep">·</span>
     <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
+    <span class="sep">·</span>
+    <a href="/comedy-atlas/about.html#support">Support us &#9829;</a>
   </div>
 <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
