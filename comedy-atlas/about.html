@@ -16,13 +16,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
 <meta name="description" content="What COMEDY ATLAS is, how listings are verified, and how comics, venues, and bookers get listed for free.">
-<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/about.html">
+<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="COMEDY ATLAS">
 <meta property="og:title" content="About — COMEDY ATLAS">
 <meta property="og:description" content="The world atlas of stand-up comedy — shows, comics, venues, and bookers, verified and free to list. Live across Europe today.">
-<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/about.html">
+<meta property="og:url" content="https://pariscomedy.com/comedy-atlas/about.html">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://pariscomedy.com/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":"https://pariscomedy.com/comedy-atlas/city.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -85,14 +87,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
-  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
   <div class="nav-links">
-    <a href="/shows.html">Calendar</a>
-    <a href="/comedy-atlas/comics/">Comics</a>
-    <a href="/comedy-atlas/guide/">Guide</a>
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
     <a href="/comedy-atlas/blog/">Blog</a>
-    <a href="/comedy-atlas/about.html">About</a>
-    <a href="/comedy-atlas/login.html">Log in</a>
+    <a href="/about.html">About</a>
   </div>
 </nav>
 
@@ -142,12 +142,46 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </section>
 
+<section id="support">
+  <h2>Support the Atlas</h2>
+  <p>COMEDY ATLAS is independent and built for comics who are starting out — free listings, no ticket cut, ever. It's run on nights, weekends, and one person's stubbornness. If it's helped you find a show, book a room, or get seen, a small donation helps keep it free for the next comic too. Any amount, no account needed, no strings attached.</p>
+  <div class="cta-row">
+    <a id="support-donate-link" class="cta primary" href="#" rel="noopener" style="display:none">Support the Atlas →</a>
+    <span id="support-donate-pending" class="industry-footnote" style="margin:0">Donations are almost live here — check back very soon, or reach us at <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>.</span>
+  </div>
+</section>
+<script>
+/* Robert: to switch this section live, replace SUMUP_DONATION_LINK below
+   with the real SumUp Payment Link URL and redeploy. Two-minute setup:
+     1. Open the SumUp app (or business.sumup.com) -> Payments/Get paid ->
+        Payment links -> Create a payment link.
+     2. Leave the amount OPEN (let the payer choose the amount) and turn
+        ON "reusable" (same link works for every future donor, not just
+        one payment).
+     3. Title it something like "Support COMEDY ATLAS" and copy the
+        resulting https://pay.sumup.com/b2c/... URL in below.
+   This can't be created via the SumUp REST API with the merchant token
+   this session verified (GET /v0.1/me, 2026-07-25) -- fixed-amount
+   checkouts are API-creatable, but a reusable, donor-chosen-amount link
+   is a dashboard/app-only feature. See ingest/finance_ledger.py's
+   module docstring for how a donation gets recorded once this is live. */
+(function(){
+  var SUMUP_DONATION_LINK = ""; // e.g. "https://pay.sumup.com/b2c/XXXXXXX"
+  if (SUMUP_DONATION_LINK) {
+    var a = document.getElementById("support-donate-link");
+    a.href = SUMUP_DONATION_LINK;
+    a.style.display = "";
+    document.getElementById("support-donate-pending").style.display = "none";
+  }
+})();
+</script>
+
 </main>
 
 <p class="industry-footnote container">Run shows or perform? <a href="/comedy-atlas/login.html">Comics &amp; bookers →</a></p>
 
 <footer>
-  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <span class="sep">·</span>

@@ -153,7 +153,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     };
     if(email){ payload.email = email; }
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/follow', {
+    fetch('https://api.comedyatlas.app/follow', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},

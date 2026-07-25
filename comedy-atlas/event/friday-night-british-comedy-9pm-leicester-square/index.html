@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Friday Night British Comedy, 9PM, Leicester Square | COMEDY ATLAS | Paris Comedy</title>
 <meta name="description" content="Friday night stand-up comedy show in Leicester Square, Central London">
-<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Friday Night British Comedy, 9PM, Leicester Square | COMEDY ATLAS">
 <meta property="og:description" content="Friday night stand-up comedy show in Leicester Square, Central London">
-<meta property="og:url" content="https://pariscomedy.com/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Friday night stand-up comedy show in Leicester Square, Central London", "endDate": "2026-07-17T23:30:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London"}, "name": "London"}, "name": "Friday Night British Comedy, 9PM, Leicester Square", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/friday-night-british-comedy-9pm-leicester-square-tickets-1983126603054"}, "organizer": {"@type": "Organization", "name": "The Stand Comedy Club"}, "startDate": "2026-07-17T22:00:00+02:00", "url": "https://pariscomedy.com/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Friday night stand-up comedy show in Leicester Square, Central London", "endDate": "2026-07-17T23:30:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London"}, "name": "London"}, "name": "Friday Night British Comedy, 9PM, Leicester Square", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/friday-night-british-comedy-9pm-leicester-square-tickets-1983126603054"}, "organizer": {"@type": "Organization", "name": "The Stand Comedy Club"}, "startDate": "2026-07-17T22:00:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     };
     if(email){ payload.email = email; }
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/follow', {
+    fetch('https://api.comedyatlas.app/follow', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -235,7 +235,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   function attemptSave(){
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/fan/saved-shows', {
+    fetch('https://api.comedyatlas.app/fan/saved-shows', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var email = emailInput.value.trim();
       if(!email){ status.textContent = 'Enter an email address.'; return; }
       emailBtn.disabled = true;
-      fetch('https://atlas-api.pariscomedy.com/fan/request-link', {
+      fetch('https://api.comedyatlas.app/fan/request-link', {
         method: 'POST',
         credentials: 'include',
         headers: {'Content-Type': 'application/json'},

@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     };
     if(email){ payload.email = email; }
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/follow', {
+    fetch('https://api.comedyatlas.app/follow', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -235,7 +235,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
   function attemptSave(){
     btn.disabled = true;
-    fetch('https://atlas-api.pariscomedy.com/fan/saved-shows', {
+    fetch('https://api.comedyatlas.app/fan/saved-shows', {
       method: 'POST',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'},
@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var email = emailInput.value.trim();
       if(!email){ status.textContent = 'Enter an email address.'; return; }
       emailBtn.disabled = true;
-      fetch('https://atlas-api.pariscomedy.com/fan/request-link', {
+      fetch('https://api.comedyatlas.app/fan/request-link', {
         method: 'POST',
         credentials: 'include',
         headers: {'Content-Type': 'application/json'},
