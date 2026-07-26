@@ -214,12 +214,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
   window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
 })();
-</script>
+</script><div class="section-heading">Comics on this show</div><div class="chip-row"><a class="chip" href="/comedy-atlas/comic/adrian-minkowicz/">Adrian Minkowicz</a></div>
 </main>
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
   <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
