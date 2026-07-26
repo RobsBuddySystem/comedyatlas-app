@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/thank-you.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e1a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--red:#c41e3a;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--purple-light);text-decoration:none}
+.wrap{max-width:520px;margin:0 auto;padding:60px 20px}
+.logo{font-size:22px;font-weight:800;margin-bottom:28px}
+.logo .dot{color:var(--gold)}
+h1{font-size:22px;margin-bottom:8px}
+p{margin-bottom:12px}
+p.sub{color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:8px}
+.amount{font-size:28px;font-weight:800;color:var(--gold)}
+.state{font-size:14px;color:var(--muted);margin-top:10px}
+.state.ok{color:var(--green)}
+.state.warn{color:var(--gold)}
+.links{margin-top:24px;font-size:14px}
+.links a{margin-right:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1 id="ty-title">Thank you</h1>
+  <p class="sub" id="ty-sub">Checking your payment with SumUp…</p>
+
+  <div class="card">
+    <div class="amount" id="ty-amount"></div>
+    <div class="state" id="ty-state"></div>
+    <p class="sub" style="margin-top:14px">Donations keep COMEDY ATLAS free for comics who are starting out — no listing fees, no cut of anyone's ticket.</p>
+  </div>
+
+  <div class="links">
+    <a href="/comedy-atlas/">← Back to the Atlas</a>
+    <a href="/comedy-atlas/about.html#support">About</a>
+  </div>
+</div>
+
+<script>
+/* Reports the REAL outcome of a donation, straight from SumUp.
+
+   This page never assumes a payment happened just because it was opened —
+   anyone can type this URL. GET /donate/status/{reference} polls SumUp
+   server-side and only reports "paid" when SumUp itself says PAID (the same
+   call that writes the finance ledger row). A donation that shows as pending
+   here is settled later by scripts/reconcile_sumup_donations.py, so the books
+   are complete either way. */
+(function(){
+  var API_BASE = (function (h) {
+    if (h === "atlas-api.pariscomedy.com" || h === "api.comedyatlas.app") return "";
+    if (h === "comedyatlas.app" || h === "www.comedyatlas.app") return "https://api.comedyatlas.app";
+    return "https://atlas-api.pariscomedy.com";
+  })(location.hostname);
+
+  var title = document.getElementById("ty-title");
+  var sub = document.getElementById("ty-sub");
+  var amountEl = document.getElementById("ty-amount");
+  var stateEl = document.getElementById("ty-state");
+
+  function ref(){
+    var m = /[?&]ref=([a-f0-9]{32})\b/i.exec(location.search);
+    return m ? m[1] : null;
+  }
+
+  function show(state, amount, provider_checked){
+    if (amount) amountEl.textContent = "€" + Number(amount).toFixed(2);
+    if (state === "paid") {
+      title.textContent = "Thank you — genuinely";
+      sub.textContent = "Your donation went through.";
+      stateEl.textContent = "Payment confirmed by SumUp. No receipt email is sent from here; SumUp emails you its own receipt.";
+      stateEl.className = "state ok";
+    } else if (state === "pending") {
+      title.textContent = "Thanks for coming back";
+      sub.textContent = provider_checked
+        ? "SumUp hasn't confirmed this payment yet."
+        : "We couldn't reach SumUp just now to check.";
+      stateEl.textContent = "If you completed the payment, it will land shortly — we reconcile against SumUp automatically, so nothing gets lost. If you changed your mind, nothing was charged.";
+      stateEl.className = "state warn";
+    } else if (state === "failed" || state === "expired") {
+      title.textContent = "That payment didn't go through";
+      sub.textContent = "Nothing was charged.";
+      stateEl.textContent = "You can try again from the About page, or email hello@comedyatlas.app and we'll sort it out directly.";
+      stateEl.className = "state warn";
+    }
+  }
+
+  var r = ref();
+  if (!r) {
+    title.textContent = "Thank you";
+    sub.textContent = "Nothing to confirm here.";
+    stateEl.textContent = "This page shows the result of a donation. If you were trying to donate, start from the About page.";
+    return;
+  }
+
+  fetch(API_BASE + "/donate/status/" + encodeURIComponent(r))
+    .then(function(res){ return res.json().then(function(b){ return {ok: res.ok, body: b}; }); })
+    .then(function(out){
+      if (!out.ok) throw new Error((out.body && out.body.detail) || "unknown");
+      show(out.body.status, out.body.amount_eur, out.body.provider_checked);
+    })
+    .catch(function(){
+      title.textContent = "Thank you";
+      sub.textContent = "We couldn't check the payment status just now.";
+      stateEl.textContent = "If you completed the payment it is recorded on SumUp's side and will be reconciled automatically. Questions: hello@comedyatlas.app";
+      stateEl.className = "state warn";
+    });
+})();
+</script>
+</body>
+</html>

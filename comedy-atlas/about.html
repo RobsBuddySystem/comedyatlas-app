@@ -147,35 +147,126 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <section id="support">
   <h2>Support the Atlas</h2>
   <p>COMEDY ATLAS is independent and built for comics who are starting out — free listings, no ticket cut, ever. It's run on nights, weekends, and one person's stubbornness. If it's helped you find a show, book a room, or get seen, a small donation helps keep it free for the next comic too. Any amount, no account needed, no strings attached.</p>
-  <div class="cta-row">
+  <div id="donate-form" style="display:none;margin-top:1rem">
+    <div class="donate-amounts" role="group" aria-label="Choose an amount">
+      <button type="button" class="cta donate-amount" data-cents="300">€3</button>
+      <button type="button" class="cta donate-amount" data-cents="500">€5</button>
+      <button type="button" class="cta donate-amount" data-cents="1000">€10</button>
+      <button type="button" class="cta donate-amount" data-cents="2500">€25</button>
+    </div>
+    <div class="donate-custom">
+      <label for="donate-other">Or any amount you like (€)</label>
+      <input id="donate-other" type="number" inputmode="decimal" min="1" max="500" step="0.5" placeholder="e.g. 7.50" autocomplete="off">
+    </div>
+    <div class="cta-row" style="margin-top:.75rem">
+      <button type="button" id="donate-go" class="cta primary">Donate €5 →</button>
+    </div>
+    <p id="donate-msg" class="donate-msg" role="status" aria-live="polite"></p>
+    <p class="donate-fineprint">Card payment is handled by SumUp on their own secure page — COMEDY ATLAS never sees or stores your card details. No account needed. One-off, nothing recurring.</p>
+  </div>
+  <div class="cta-row" id="donate-email-fallback">
     <a class="cta primary" href="mailto:hello@comedyatlas.app?subject=Donation" rel="noopener">Email us and we'll send you a secure payment link →</a>
-    <a id="support-donate-link" class="cta" href="#" rel="noopener" style="display:none">Support the Atlas via SumUp →</a>
   </div>
 </section>
+<style>
+.donate-amounts{display:flex;flex-wrap:wrap;gap:.5rem}
+.donate-amount[aria-pressed="true"]{border-color:currentColor;font-weight:700;text-decoration:underline}
+.donate-custom{margin-top:.75rem;display:flex;flex-direction:column;gap:.25rem;max-width:16rem}
+.donate-custom input{padding:.5rem;font:inherit;border:1px solid #8884;border-radius:.35rem;background:transparent;color:inherit}
+.donate-msg{min-height:1.4em;margin:.5rem 0 0}
+.donate-msg.error{color:#b00020}
+.donate-fineprint{font-size:.85rem;opacity:.75;margin-top:.5rem}
+</style>
 <script>
-/* Robert: to switch the SumUp button live, replace SUMUP_DONATION_LINK below
-   with the real SumUp Payment Link URL and redeploy. Two-minute setup:
-     1. Open the SumUp app (or business.sumup.com) -> Payments/Get paid ->
-        Payment links -> Create a payment link.
-     2. Leave the amount OPEN (let the payer choose the amount) and turn
-        ON "reusable" (same link works for every future donor, not just
-        one payment).
-     3. Title it something like "Support COMEDY ATLAS" and copy the
-        resulting https://pay.sumup.com/b2c/... URL in below.
-   This can't be created via the SumUp REST API with the merchant token
-   this session verified (GET /v0.1/me, 2026-07-25) -- fixed-amount
-   checkouts are API-creatable, but a reusable, donor-chosen-amount link
-   is a dashboard/app-only feature. See ingest/finance_ledger.py's
-   module docstring for how a donation gets recorded once this is live.
-   The mailto CTA above works today regardless -- it is the live interim
-   path, not a placeholder. */
+/* "Support the Atlas" — donor picks any amount, we create a SumUp hosted
+   checkout server-side with the merchant API key (POST /donate/checkout) and
+   send them to SumUp's own page to pay. Robert, 2026-07-26: no hand-made
+   dashboard payment link is needed, and none is used here.
+
+   The card is entered on SumUp's page, never on ours. This page never sees a
+   card number, and the SumUp key lives only in the API's environment.
+
+   If the API has no SumUp key configured (any dev deploy), /donate/config
+   reports enabled:false and we leave the email fallback showing instead of a
+   button that would fail. */
 (function(){
-  var SUMUP_DONATION_LINK = ""; // e.g. "https://pay.sumup.com/b2c/XXXXXXX"
-  if (SUMUP_DONATION_LINK) {
-    var a = document.getElementById("support-donate-link");
-    a.href = SUMUP_DONATION_LINK;
-    a.style.display = "";
+  var API_BASE = (function (h) {
+    if (h === "atlas-api.pariscomedy.com" || h === "api.comedyatlas.app") return "";
+    if (h === "comedyatlas.app" || h === "www.comedyatlas.app") return "https://api.comedyatlas.app";
+    return "https://atlas-api.pariscomedy.com";
+  })(location.hostname);
+
+  var form = document.getElementById("donate-form");
+  var fallback = document.getElementById("donate-email-fallback");
+  var go = document.getElementById("donate-go");
+  var other = document.getElementById("donate-other");
+  var msg = document.getElementById("donate-msg");
+  var buttons = [].slice.call(document.querySelectorAll(".donate-amount"));
+  var selected = 500, maxCents = 50000, minCents = 100;
+
+  function euro(cents){ return "€" + (cents % 100 === 0 ? (cents/100) : (cents/100).toFixed(2)); }
+
+  function setSelected(cents){
+    selected = cents;
+    buttons.forEach(function(b){
+      b.setAttribute("aria-pressed", String(Number(b.dataset.cents) === cents));
+    });
+    go.textContent = "Donate " + euro(cents) + " →";
   }
+
+  function say(text, isError){
+    msg.textContent = text || "";
+    msg.className = "donate-msg" + (isError ? " error" : "");
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener("click", function(){
+      other.value = "";
+      setSelected(Number(b.dataset.cents));
+      say("");
+    });
+  });
+
+  other.addEventListener("input", function(){
+    var v = parseFloat(other.value);
+    if (isNaN(v)) { setSelected(500); return; }
+    setSelected(Math.round(v * 100));
+  });
+
+  go.addEventListener("click", function(){
+    if (selected < minCents) { say("Minimum is " + euro(minCents) + ".", true); return; }
+    if (selected > maxCents) {
+      say("For more than " + euro(maxCents) + ", email hello@comedyatlas.app and we'll sort it out directly.", true);
+      return;
+    }
+    go.disabled = true;
+    say("Taking you to SumUp's secure payment page…");
+    fetch(API_BASE + "/donate/checkout", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({amount_cents: selected})
+    }).then(function(res){
+      return res.json().catch(function(){ return {}; }).then(function(body){
+        if (!res.ok || !body.checkout_url) {
+          throw new Error(body.detail || "We couldn't start the payment just now.");
+        }
+        location.href = body.checkout_url;
+      });
+    }).catch(function(err){
+      go.disabled = false;
+      say(err.message + " You can always email hello@comedyatlas.app instead.", true);
+    });
+  });
+
+  fetch(API_BASE + "/donate/config").then(function(r){ return r.json(); })
+    .then(function(cfg){
+      if (!cfg || !cfg.enabled) return;
+      if (cfg.min_amount_cents) minCents = cfg.min_amount_cents;
+      if (cfg.max_amount_cents) { maxCents = cfg.max_amount_cents; other.max = maxCents / 100; }
+      form.style.display = "";
+      fallback.style.display = "none";
+      setSelected(500);
+    }).catch(function(){ /* keep the email fallback */ });
 })();
 </script>
 
