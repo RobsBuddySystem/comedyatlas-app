@@ -47,10 +47,22 @@
     document.head.appendChild(style);
   }
 
-  function fmtTime(iso) {
+  // Formats in the EVENT's own timezone when the row carries one (migration
+  // 0125 + the 2026-07-26 export fix ship it on every event). Without a zone
+  // this fell back to the VIEWER's device zone, which is wrong for the same
+  // reason a hardcoded Europe/Paris was wrong in atlas-common.js: a show
+  // happens at its venue's local time, not the browser's. Reuses
+  // AtlasCommon.eventZone when that script is present so there is one
+  // definition of "which zone", not two that can drift.
+  function fmtTime(iso, ev) {
     try {
       var d = new Date(iso);
-      return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+      var zone = (window.AtlasCommon && window.AtlasCommon.eventZone)
+        ? window.AtlasCommon.eventZone(ev || {})
+        : (ev && ev.timezone) || undefined;
+      var opts = { hour: "numeric", minute: "2-digit" };
+      if (zone) opts.timeZone = zone;
+      return d.toLocaleTimeString([], opts);
     } catch (e) { return ""; }
   }
 
@@ -108,7 +120,7 @@
       '<div class="near-event-title">' + escapeHtml(ev.title || "Untitled show") + '</div>' +
       '<div class="near-event-dist">' + escapeHtml(ev.distance_km) + ' km away</div>' +
       '</div>' +
-      '<div class="near-event-meta">' + escapeHtml(fmtTime(ev.starts_at)) +
+      '<div class="near-event-meta">' + escapeHtml(fmtTime(ev.starts_at, ev)) +
       (ev.venue_name ? ' · ' + escapeHtml(ev.venue_name) : '') +
       (ev.city ? ' · ' + escapeHtml(ev.city) : '') +
       (price ? ' · ' + price : '') +

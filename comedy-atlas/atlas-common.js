@@ -36,15 +36,44 @@
       .replace(/'/g, "&#39;");
   }
 
-  function fmtDayHeading(d) {
+  /* A show's time belongs to ITS OWN city, not to Paris.
+
+     Bug this fixes (live until 2026-07-26): every date and time on the site
+     was formatted with a hardcoded timeZone: "Europe/Paris". A Montreal show
+     at 20:00 Sunday rendered as "Monday 02:00" — wrong time and wrong DAY —
+     and London shows ran an hour late against their own titles. 2,007 London
+     + 1,550 Toronto/Montreal events were affected; only Paris was right, by
+     coincidence. upcoming_events.json ships each event's IANA `timezone`
+     (migration 0125) plus a correctly-offset starts_at, so the zone is
+     already in hand wherever an event is rendered.
+
+     PARIS_TZ stays as the fallback for the rare row with no timezone, so
+     behaviour there is unchanged rather than newly wrong in some other way. */
+  var PARIS_TZ = "Europe/Paris";
+
+  function eventZone(ev) {
+    var tz = ev && ev.timezone;
+    // Guard against a bad value reaching Intl (it throws a RangeError, which
+    // would take out the whole listing render).
+    if (typeof tz !== "string" || tz.indexOf("/") === -1) return PARIS_TZ;
+    try {
+      new Date().toLocaleString("en-GB", { timeZone: tz });
+      return tz;
+    } catch (e) {
+      return PARIS_TZ;
+    }
+  }
+
+  function fmtDayHeading(d, zone) {
     return d.toLocaleDateString("en-GB", {
-      weekday: "long", day: "numeric", month: "long", timeZone: "Europe/Paris"
+      weekday: "long", day: "numeric", month: "long",
+      timeZone: zone || PARIS_TZ
     });
   }
 
-  function fmtTime(d) {
+  function fmtTime(d, zone) {
     return d.toLocaleTimeString("en-GB", {
-      hour: "2-digit", minute: "2-digit", timeZone: "Europe/Paris"
+      hour: "2-digit", minute: "2-digit", timeZone: zone || PARIS_TZ
     });
   }
 
@@ -455,7 +484,7 @@
   function renderEventCards(events, opts) {
     opts = opts || {};
     var withDates = events.map(function (ev) {
-      return { ev: ev, d: new Date(ev.starts_at) };
+      return { ev: ev, d: new Date(ev.starts_at), tz: eventZone(ev) };
     }).filter(function (x) {
       return !isNaN(x.d.getTime());
     }).sort(function (a, b) { return a.d - b.d; });
@@ -463,9 +492,11 @@
     var groups = [];
     var lastKey = null;
     withDates.forEach(function (x) {
-      var key = x.d.toLocaleDateString("en-GB", { timeZone: "Europe/Paris" });
+      // Group by the event's OWN local calendar day: a New York 19:00 show
+      // belongs under its own Sunday, not under Paris's Monday.
+      var key = x.d.toLocaleDateString("en-GB", { timeZone: x.tz });
       if (key !== lastKey) {
-        groups.push({ key: key, day: x.d, items: [] });
+        groups.push({ key: key, day: x.d, tz: x.tz, items: [] });
         lastKey = key;
       }
       groups[groups.length - 1].items.push(x);
@@ -490,7 +521,7 @@
         : g.items;
       var items = opts.maxPerDay ? dayItems.slice(0, opts.maxPerDay) : dayItems;
       html += '<section class="day-group">';
-      html += '<div class="day-heading">' + escapeHtml(fmtDayHeading(g.day)) + '</div>';
+      html += '<div class="day-heading">' + escapeHtml(fmtDayHeading(g.day, g.tz)) + '</div>';
       items.forEach(function (x) {
         var ev = x.ev;
         var venueBit = ev.venue_name ? escapeHtml(ev.venue_name) : null;
@@ -536,7 +567,7 @@
         html += '  <div class="event-card-body">';
         html += '  <div class="event-top">';
         html += '    <div class="event-title">' + titleText + "</div>";
-        html += '    <div class="event-time">' + escapeHtml(fmtTime(x.d)) + "</div>";
+        html += '    <div class="event-time">' + escapeHtml(fmtTime(x.d, x.tz)) + "</div>";
         html += "  </div>";
         html += '  <div class="event-meta">' + meta + " " + statusBadge(ev) + languageTag(ev) + "</div>";
         html += "  </div>";
@@ -733,7 +764,9 @@
       if (g.events.length > 1) {
         html += '    <div class="event-date-count">' + g.events.length + " dates</div>";
       } else {
-        html += '    <div class="event-time">' + escapeHtml(fmtTime(g.earliest)) + "</div>";
+        // `primary` is this group's own representative event, so its
+        // timezone is the right one for the single-date case.
+        html += '    <div class="event-time">' + escapeHtml(fmtTime(g.earliest, eventZone(primary))) + "</div>";
       }
       html += "  </div>";
       html += '  <div class="event-meta">' + meta + " " + statusBadge(primary) + languageTag(primary) + "</div>";
@@ -766,7 +799,8 @@
     var html = '<ul class="event-dates">';
     evs.forEach(function (ev) {
       var d = new Date(ev.starts_at);
-      var label = escapeHtml(fmtDayHeading(d)) + ", " + escapeHtml(fmtTime(d));
+      var zone = eventZone(ev);
+      var label = escapeHtml(fmtDayHeading(d, zone)) + ", " + escapeHtml(fmtTime(d, zone));
       var href = ev.slug ? "event/" + encodeURIComponent(ev.slug) + "/" : null;
       html += "<li>" + (href
         ? '<a class="event-date-link" href="' + escapeHtml(href) + '">' + label + "</a>"
@@ -786,6 +820,7 @@
     escapeHtml: escapeHtml,
     fmtDayHeading: fmtDayHeading,
     fmtTime: fmtTime,
+    eventZone: eventZone,
     fmtPrice: fmtPrice,
     statusBadge: statusBadge,
     LANGUAGE_LABELS: LANGUAGE_LABELS,
