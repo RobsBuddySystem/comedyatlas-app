@@ -383,6 +383,19 @@
     "timezone": "Europe/London"
   },
   {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 75,
+    "language_counts": {
+      "en": 21
+    },
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "name": "New York",
+    "timezone": "America/New_York"
+  },
+  {
     "country_id": 17,
     "country_iso2": "GB",
     "country_name": "UK",
@@ -407,6 +420,19 @@
     "longitude": -9.0568,
     "name": "Galway",
     "timezone": "Europe/Dublin"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 98,
+    "language_counts": {
+      "en": 21
+    },
+    "latitude": 44.9778,
+    "longitude": -93.265,
+    "name": "Minneapolis",
+    "timezone": "America/Chicago"
   },
   {
     "country_id": 3,
