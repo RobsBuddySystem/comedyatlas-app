@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tgif-prime-time-comedy@comedyatlas.app
+DTSTAMP:20260726T202050Z
+DTSTART:20260808T000000Z
+DTEND:20260808T020000Z
+SUMMARY:TGIF Prime Time Comedy
+LOCATION:New York
+DESCRIPTION:Prime-Time Comedy in Brooklyn!\n\nFEATURING SPECIAL GUEST COMED
+ IANS...\n\nLineup Below\nMore info: https://comedyatlas.app/comedy-atlas/ev
+ ent/tgif-prime-time-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/tgif-prime-time-comedy/
+END:VEVENT
+END:VCALENDAR

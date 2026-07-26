@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mohtasham-yaqub@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20261031T010000Z
+DTEND:20261031T030000Z
+SUMMARY:Mohtasham Yaqub
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mohtasham
+ -yaqub/
+URL:https://comedyatlas.app/comedy-atlas/event/mohtasham-yaqub/
+END:VEVENT
+END:VCALENDAR

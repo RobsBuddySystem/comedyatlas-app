@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tgif-late-night-comedy@comedyatlas.app
+DTSTAMP:20260726T202050Z
+DTSTART:20260808T020000Z
+DTEND:20260808T040000Z
+SUMMARY:TGIF Late Night Comedy
+LOCATION:New York
+DESCRIPTION:TGIF Comedy in Brooklyn!\n\nFEATURING SPECIAL GUEST COMEDIANS..
+ .\n\n(Lineup coming soon)\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/tgif-late-night-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/tgif-late-night-comedy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-open-mic@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20260801T030000Z
+DTEND:20260801T050000Z
+SUMMARY:Friday Night Open Mic
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/friday-ni
+ ght-open-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-open-mic/
+END:VEVENT
+END:VCALENDAR

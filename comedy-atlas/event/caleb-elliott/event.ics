@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:caleb-elliott@comedyatlas.app
+DTSTAMP:20260726T202048Z
+DTSTART:20261017T003000Z
+DTEND:20261017T023000Z
+SUMMARY:Caleb Elliott
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/caleb-ell
+ iott/
+URL:https://comedyatlas.app/comedy-atlas/event/caleb-elliott/
+END:VEVENT
+END:VCALENDAR

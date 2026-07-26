@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dingbats-open-mic@comedyatlas.app
+DTSTAMP:20260726T202048Z
+DTSTART:20260910T010027Z
+DTEND:20260910T023027Z
+SUMMARY:Dingbats Open Mic
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:Welcome to Dingbats open mic! Every Wednesday we've got 15 some
+ thing odd performers with hosted by our dynamic duo of Ashton and Madoo. Un
+ like the other mics at the Comedy Corner\, we encourage musical comedians t
+ o sign up and sing up. Sure would be nice if you came down for it.\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/dingbats-open-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/dingbats-open-mic/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sean-jordan@comedyatlas.app
+DTSTAMP:20260726T202050Z
+DTSTART:20260822T010000Z
+DTEND:20260822T023000Z
+SUMMARY:Sean Jordan
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sean-jord
+ an/
+URL:https://comedyatlas.app/comedy-atlas/event/sean-jordan/
+END:VEVENT
+END:VCALENDAR

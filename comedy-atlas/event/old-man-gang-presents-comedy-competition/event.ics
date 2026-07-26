@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:old-man-gang-presents-comedy-competition@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20260726T233000Z
+DTEND:20260727T013000Z
+SUMMARY:Old Man Gang Presents - Comedy Competition 
+LOCATION:New York
+DESCRIPTION:Old Man Gang Presents - Comedy Competition\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/old-man-gang-presents-comedy-competition
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/old-man-gang-presents-comedy
+ -competition/
+END:VEVENT
+END:VCALENDAR

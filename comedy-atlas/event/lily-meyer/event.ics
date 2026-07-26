@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lily-meyer@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20260912T010000Z
+DTEND:20260912T030000Z
+SUMMARY:Lily Meyer
+LOCATION:Minneapolis
+DESCRIPTION:Lily Meyer is a stand-up comedian\, writer\, and performer from
+  Minneapolis. She is a hired emcee at Acme Comedy Company and has opened fo
+ r comedians such as Brian Posehn\, Emma Willmann\, Joe Zimmerman\, and Ryan
+  Hamilton. Recently\, she became the co-producer of a (semi) weekly comedy 
+ show at Sisyphus Brewing. Since 2022\, she has been a contributing writer f
+ or RiffTrax. On Tiktok\, she has gained…\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/lily-meyer/
+URL:https://comedyatlas.app/comedy-atlas/event/lily-meyer/
+END:VEVENT
+END:VCALENDAR

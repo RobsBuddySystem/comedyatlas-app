@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-night-live-comedy@comedyatlas.app
+DTSTAMP:20260726T202050Z
+DTSTART:20260801T220000Z
+DTEND:20260802T000000Z
+SUMMARY:Saturday Night Live Comedy
+LOCATION:New York
+DESCRIPTION:Saturday Night Live! Comedy kicks starts the weekend off with a
+  bang featuring NYC's best comedians!\n\nFEATURING SPECIAL GUEST COMEDIANS.
+ ..\n\n(remainder of lineup coming soon)\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/saturday-night-live-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-night-live-comedy/
+END:VEVENT
+END:VCALENDAR

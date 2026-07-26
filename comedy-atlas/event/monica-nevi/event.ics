@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:monica-nevi@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20261010T010000Z
+DTEND:20261010T030000Z
+SUMMARY:Monica Nevi
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/monica-ne
+ vi/
+URL:https://comedyatlas.app/comedy-atlas/event/monica-nevi/
+END:VEVENT
+END:VCALENDAR

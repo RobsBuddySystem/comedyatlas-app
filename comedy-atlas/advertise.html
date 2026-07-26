@@ -85,8 +85,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   stage-time opportunities, bookers filling lineups, and venues managing
   their own listings — today concentrated in eight active markets by
   listing volume (Montreal, London, Edinburgh, Barcelona, Madrid, Amsterdam,
-  Toronto, Berlin), with lighter coverage growing across 37 cities that
-  already have at least one live listing.</p>
+  Toronto, Berlin), with New York and Minneapolis newly added, and lighter
+  coverage growing across 39 cities that already have at least one live
+  listing.</p>
 
   <h2>Where we actually are</h2>
   <div class="card">
@@ -97,49 +98,60 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     the size and shape of the actual catalog people are visiting the site
     to use — every number below comes straight from the live database, not
     a marketing deck.</p>
+    <!-- ADVERTISE_STATS_START -->
     <div class="stat-row">
-      <div class="stat"><div class="n">5,120</div><div class="l">live show listings right now</div></div>
-      <div class="stat"><div class="n">37</div><div class="l">cities with at least one live listing</div></div>
-      <div class="stat"><div class="n">596</div><div class="l">venues in the catalog</div></div>
-      <div class="stat"><div class="n">166</div><div class="l">comics tracked</div></div>
+      <div class="stat"><div class="n">4832</div><div class="l">live show listings right now</div></div>
+      <div class="stat"><div class="n">39</div><div class="l">cities with at least one live listing</div></div>
+      <div class="stat"><div class="n">603</div><div class="l">venues in the catalog</div></div>
+      <div class="stat"><div class="n">138</div><div class="l">comics with a public profile</div></div>
     </div>
-    <p style="margin-top:10px;font-size:12px;color:var(--muted)">Figures as
-    of 25 Jul 2026 11:37 CEST, queried live from the production database.
-    Growing — not a snapshot we plan to leave stale on this page.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--muted)">
+      Figures as of 26 Jul 2026, written into this page by
+      <code>scripts/generate_partners_stats.py</code> at publish time straight from the
+      production database -- not typed in by hand.
+      425 of the 603 venues are geocoded.
+      "Comics with a public profile" is what a visitor can browse today; the catalog tracks
+      194 names in total, and we quote the
+      smaller, checkable figure on purpose.
+    </p>
+    <p style="margin-top:10px;font-size:12px;color:var(--muted)">
+      <strong>Approval records:</strong> 4790 of our 4832
+      published listings (99.1%) have a traceable approval record in
+      the pipeline. <strong>42 do not</strong> -- their audit trail was severed
+      by an out-of-band bulk rewrite, and we would rather tell you that than round it to 100%.
+      3950 listings (81.7% of
+      everything published) were approved at the high-confidence bar: score &ge; 90 on the
+      table-driven confidence model, meaning independently corroborated by a second source or taken
+      straight from an official venue, promoter, festival or ticket-platform page. Method and SQL:
+      <code>docs/atlas-ops/PRECISION_2026-07-25.md</code>.
+    </p>
+    <!-- ADVERTISE_STATS_END -->
   </div>
 
   <h2>The quality proof</h2>
-  <div class="proof">
-    <div class="n">78.4%</div>
-    <div class="l">of every live listing on the site was approved at our system's
-    own high-confidence bar: independently corroborated by a second source, or
-    sourced directly from an official venue/promoter/festival page or a ticket
-    platform — the same threshold our pipeline requires before a listing is
-    allowed to publish without a human reviewing it first. The other 21.6%
-    still went through the identical scoring and approval pipeline, just at a
-    lower confidence score. <strong>Every one of our 5,120 live listings —
-    100% — has a traceable approval record</strong>: no listing on this site
-    appeared from nowhere.</div>
-  </div>
-  <p class="lead" style="margin-bottom:24px">That's not a vanity metric —
-  it's the real output of a table-driven confidence-scoring model, checked
-  against the live database the same day this page was written. This
-  number moves as the pipeline runs — it read 78.3% (3,997/5,106) about
-  five minutes earlier this same session, and 59.3% a few hours before
-  that, purely from ordinary ingest activity, not a methodology change.
-  Full methodology and the exact SQL are documented internally
-  (<code>docs/atlas-ops/PRECISION_2026-07-25.md</code>) and available on
-  request.</p>
+  <p class="lead" style="margin-bottom:24px">The approval-record and
+  high-confidence figures are in the box above, because they are
+  <strong>generated at publish time from the production database</strong> — the
+  same run that writes the counts. We used to print a fixed
+  "78.4%" here alongside the sentence "this number moves as the pipeline runs",
+  which was self-contradictory: the number was typed in and moved only when
+  someone retyped it. It is computed now. It is also a figure that genuinely
+  swings with ordinary ingest activity, so treat any single reading as a
+  snapshot, not a guarantee. Full methodology and the exact SQL:
+  <code>docs/atlas-ops/PRECISION_2026-07-25.md</code>, available on request.</p>
 
   <h2>What's offered</h2>
   <div class="tiers">
     <div class="tier">
-      <span class="tag now">Available now</span>
+      <span class="tag soon">Not available</span>
       <div class="name">Newsletter sponsorship</div>
       <ul>
-        <li>One sponsor slot in the "what's on" email digest to followers</li>
-        <li>Text + link, reviewed before every send — no auto-inserted ads</li>
-        <li>Good fit for a course intake, a festival, or a one-off launch</li>
+        <li><strong>Withdrawn 26 Jul 2026.</strong> This page previously listed it as
+        "available now" — that was wrong, and we're saying so rather than quietly
+        deleting it.</li>
+        <li>The "what's on" digest has <strong>one</strong> subscriber and has never
+        sent an issue. There is no audience to put a sponsor in front of.</li>
+        <li>We'll offer it again when there's a real list, and we'll tell you its size.</li>
       </ul>
     </div>
     <div class="tier">

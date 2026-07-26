@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laughs-in-the-east@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20260806T000000Z
+DTEND:20260806T020000Z
+SUMMARY:Laughs In The East
+LOCATION:New York
+DESCRIPTION:Wednesday Night in Brooklyn\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/laughs-in-the-east/
+URL:https://comedyatlas.app/comedy-atlas/event/laughs-in-the-east/
+END:VEVENT
+END:VCALENDAR

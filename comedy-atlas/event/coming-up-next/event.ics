@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:coming-up-next@comedyatlas.app
+DTSTAMP:20260726T202048Z
+DTSTART:20260816T010000Z
+DTEND:20260816T023000Z
+SUMMARY:Coming Up Next!
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:Coming Up Next! is a showcase featuring comics on the rise\, th
+ at are right here in your backyard\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/coming-up-next/
+URL:https://comedyatlas.app/comedy-atlas/event/coming-up-next/
+END:VEVENT
+END:VCALENDAR
