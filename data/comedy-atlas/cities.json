@@ -1,5 +1,18 @@
 [
   {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 2,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": -33.8688,
+    "longitude": 151.2093,
+    "name": "Sydney",
+    "timezone": "Australia/Sydney"
+  },
+  {
     "country_id": 2,
     "country_iso2": "BE",
     "country_name": "Belgium",
@@ -18,7 +31,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 257
+      "unconfirmed": 264
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -31,7 +44,8 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 226
+      "en": 226,
+      "unconfirmed": 4
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -42,9 +56,23 @@
     "country_id": 9,
     "country_iso2": "IE",
     "country_name": "Ireland",
+    "id": 13,
+    "language_counts": {
+      "unconfirmed": 4
+    },
+    "latitude": 51.8985,
+    "longitude": -8.4756,
+    "name": "Cork",
+    "timezone": "Europe/Dublin"
+  },
+  {
+    "country_id": 9,
+    "country_iso2": "IE",
+    "country_name": "Ireland",
     "id": 14,
     "language_counts": {
-      "en": 23
+      "en": 23,
+      "unconfirmed": 1
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -57,8 +85,8 @@
     "country_name": "Netherlands",
     "id": 16,
     "language_counts": {
-      "en": 261,
-      "unconfirmed": 6
+      "en": 262,
+      "unconfirmed": 7
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -71,8 +99,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 233,
-      "unconfirmed": 259
+      "en": 234,
+      "unconfirmed": 260
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -94,6 +122,19 @@
     "timezone": "Europe/Madrid"
   },
   {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 24,
+    "language_counts": {
+      "unconfirmed": 8
+    },
+    "latitude": 53.4808,
+    "longitude": -2.2426,
+    "name": "Manchester",
+    "timezone": "Europe/London"
+  },
+  {
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
@@ -112,8 +153,8 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 32,
-      "unconfirmed": 2
+      "en": 33,
+      "unconfirmed": 3
     },
     "latitude": 38.7223,
     "longitude": -9.1393,
@@ -126,7 +167,8 @@
     "country_name": "Switzerland",
     "id": 27,
     "language_counts": {
-      "en": 2
+      "en": 3,
+      "unconfirmed": 2
     },
     "latitude": 47.3769,
     "longitude": 8.5417,
@@ -179,7 +221,7 @@
     "id": 33,
     "language_counts": {
       "en": 425,
-      "unconfirmed": 5
+      "unconfirmed": 13
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -231,7 +273,8 @@
     "country_name": "Austria",
     "id": 38,
     "language_counts": {
-      "en": 3
+      "en": 13,
+      "unconfirmed": 8
     },
     "latitude": 48.2082,
     "longitude": 16.3738,
@@ -296,7 +339,7 @@
     "country_name": "Slovakia",
     "id": 50,
     "language_counts": {
-      "en": 1
+      "en": 2
     },
     "latitude": 48.1486,
     "longitude": 17.1077,
@@ -375,7 +418,7 @@
     "id": 74,
     "language_counts": {
       "en": 1111,
-      "unconfirmed": 122
+      "unconfirmed": 129
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -388,7 +431,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 21
+      "en": 21,
+      "unconfirmed": 2
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -396,16 +440,120 @@
     "timezone": "America/New_York"
   },
   {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 76,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "name": "Los Angeles",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 77,
+    "language_counts": {
+      "unconfirmed": 8
+    },
+    "latitude": 41.8781,
+    "longitude": -87.6298,
+    "name": "Chicago",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 78,
+    "language_counts": {
+      "unconfirmed": 9
+    },
+    "latitude": 55.8642,
+    "longitude": -4.2518,
+    "name": "Glasgow",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 79,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "name": "Bristol",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 80,
+    "language_counts": {
+      "unconfirmed": 17
+    },
+    "latitude": 52.4862,
+    "longitude": -1.8904,
+    "name": "Birmingham",
+    "timezone": "Europe/London"
+  },
+  {
     "country_id": 17,
     "country_iso2": "GB",
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 6
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
     "name": "Leeds",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 82,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 53.4084,
+    "longitude": -2.9916,
+    "name": "Liverpool",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 83,
+    "language_counts": {
+      "unconfirmed": 5
+    },
+    "latitude": 51.4816,
+    "longitude": -3.1791,
+    "name": "Cardiff",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 85,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 50.8225,
+    "longitude": -0.1372,
+    "name": "Brighton",
     "timezone": "Europe/London"
   },
   {
@@ -425,9 +573,114 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 89,
+    "language_counts": {
+      "unconfirmed": 13
+    },
+    "latitude": 42.3601,
+    "longitude": -71.0589,
+    "name": "Boston",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 90,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "name": "Austin",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 91,
+    "language_counts": {
+      "unconfirmed": 23
+    },
+    "latitude": 47.6062,
+    "longitude": -122.3321,
+    "name": "Seattle",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 92,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "name": "Portland",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 93,
+    "language_counts": {
+      "unconfirmed": 8
+    },
+    "latitude": 39.7392,
+    "longitude": -104.9903,
+    "name": "Denver",
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 94,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 33.749,
+    "longitude": -84.388,
+    "name": "Atlanta",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 95,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": 36.1627,
+    "longitude": -86.7816,
+    "name": "Nashville",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 96,
+    "language_counts": {
+      "unconfirmed": 4
+    },
+    "latitude": 39.9526,
+    "longitude": -75.1652,
+    "name": "Philadelphia",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 98,
     "language_counts": {
-      "en": 21
+      "en": 21,
+      "unconfirmed": 4
     },
     "latitude": 44.9778,
     "longitude": -93.265,
@@ -435,12 +688,105 @@
     "timezone": "America/Chicago"
   },
   {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 99,
+    "language_counts": {
+      "en": 1,
+      "unconfirmed": 4
+    },
+    "latitude": 32.7157,
+    "longitude": -117.1611,
+    "name": "San Diego",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 100,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 33.4484,
+    "longitude": -112.074,
+    "name": "Phoenix",
+    "timezone": "America/Phoenix"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 101,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 25.7617,
+    "longitude": -80.1918,
+    "name": "Miami",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 103,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": 29.7604,
+    "longitude": -95.3698,
+    "name": "Houston",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 104,
+    "language_counts": {
+      "unconfirmed": 21
+    },
+    "latitude": 32.7767,
+    "longitude": -96.797,
+    "name": "Dallas",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 105,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 42.3314,
+    "longitude": -83.0458,
+    "name": "Detroit",
+    "timezone": "America/Detroit"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 106,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 40.4406,
+    "longitude": -79.9959,
+    "name": "Pittsburgh",
+    "timezone": "America/New_York"
+  },
+  {
     "country_id": 3,
     "country_iso2": "CA",
     "country_name": "Canada",
     "id": 107,
     "language_counts": {
-      "en": 2
+      "en": 2,
+      "unconfirmed": 4
     },
     "latitude": 49.2827,
     "longitude": -123.1207,
@@ -453,8 +799,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 501,
-      "unconfirmed": 761
+      "en": 503,
+      "unconfirmed": 768
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -467,7 +813,8 @@
     "country_name": "Canada",
     "id": 109,
     "language_counts": {
-      "en": 2
+      "en": 2,
+      "unconfirmed": 7
     },
     "latitude": 51.0447,
     "longitude": -114.0719,
@@ -480,7 +827,8 @@
     "country_name": "Canada",
     "id": 110,
     "language_counts": {
-      "en": 1
+      "en": 1,
+      "unconfirmed": 2
     },
     "latitude": 45.4215,
     "longitude": -75.6972,
@@ -493,12 +841,65 @@
     "country_name": "Canada",
     "id": 111,
     "language_counts": {
-      "en": 1
+      "en": 1,
+      "unconfirmed": 1
     },
     "latitude": 49.8951,
     "longitude": -97.1384,
     "name": "Winnipeg",
     "timezone": "America/Winnipeg"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 112,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 53.5461,
+    "longitude": -113.4938,
+    "name": "Edmonton",
+    "timezone": "America/Edmonton"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 115,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": -31.9505,
+    "longitude": 115.8605,
+    "name": "Perth",
+    "timezone": "Australia/Perth"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 116,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": -34.9285,
+    "longitude": 138.6007,
+    "name": "Adelaide",
+    "timezone": "Australia/Adelaide"
+  },
+  {
+    "country_id": 1,
+    "country_iso2": "AU",
+    "country_name": "Australia",
+    "id": 117,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": -35.2809,
+    "longitude": 149.13,
+    "name": "Canberra",
+    "timezone": "Australia/Sydney"
   },
   {
     "country_id": 7,
