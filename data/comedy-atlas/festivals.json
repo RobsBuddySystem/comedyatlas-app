@@ -3,7 +3,7 @@
     "applications_close_at": null,
     "applications_currently_open": false,
     "applications_open_at": null,
-    "description": "World's largest arts/comedy fringe; this repo already has PBH/Laughing Horse free-fringe collectors for it.",
+    "description": "The world's largest arts festival, and the largest comedy festival anywhere. Thousands of shows across Edinburgh every August, including the free-fringe programmes run by PBH's Free Fringe and Laughing Horse.",
     "edition_ends_on": null,
     "edition_starts_on": null,
     "edition_status": "unknown",
@@ -12,6 +12,7 @@
     "name": "Edinburgh Festival Fringe",
     "organization_id": null,
     "organization_name": null,
+    "slug": "edinburgh-festival-fringe",
     "website_url": "https://www.edfringe.com/"
   },
   {
@@ -27,6 +28,7 @@
     "name": "Melbourne International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "melbourne-international-comedy-festival",
     "website_url": "https://www.comedyfestival.com.au/"
   },
   {
@@ -42,6 +44,7 @@
     "name": "Just for Laughs (Montreal)",
     "organization_id": null,
     "organization_name": null,
+    "slug": "just-for-laughs-montreal",
     "website_url": "https://www.hahaha.com/"
   },
   {
@@ -57,6 +60,7 @@
     "name": "JFL42 (Just for Laughs Toronto)",
     "organization_id": null,
     "organization_name": null,
+    "slug": "jfl42-just-for-laughs-toronto",
     "website_url": "https://jfl42.com/"
   },
   {
@@ -72,6 +76,7 @@
     "name": "Kilkenny Cat Laughs Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "kilkenny-cat-laughs-comedy-festival",
     "website_url": "https://www.thecatlaughs.com/"
   },
   {
@@ -87,6 +92,7 @@
     "name": "Leicester Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "leicester-comedy-festival",
     "website_url": "https://comedy-festival.co.uk/"
   },
   {
@@ -102,6 +108,7 @@
     "name": "Brighton Fringe",
     "organization_id": null,
     "organization_name": null,
+    "slug": "brighton-fringe",
     "website_url": "https://www.brightonfringe.org/"
   },
   {
@@ -117,6 +124,7 @@
     "name": "Adelaide Fringe",
     "organization_id": null,
     "organization_name": null,
+    "slug": "adelaide-fringe",
     "website_url": "https://adelaidefringe.com.au/"
   },
   {
@@ -132,6 +140,7 @@
     "name": "Sydney Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "sydney-comedy-festival",
     "website_url": "https://www.sydneycomedyfest.com.au/"
   },
   {
@@ -147,6 +156,7 @@
     "name": "NZ International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "nz-international-comedy-festival",
     "website_url": "https://comedyfestival.co.nz/"
   },
   {
@@ -162,6 +172,7 @@
     "name": "Moontower Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "moontower-comedy-festival",
     "website_url": "https://moontowercomedyfestival.com/"
   },
   {
@@ -177,6 +188,7 @@
     "name": "SF Sketchfest",
     "organization_id": null,
     "organization_name": null,
+    "slug": "sf-sketchfest",
     "website_url": "https://sfsketchfest.com/"
   },
   {
@@ -192,6 +204,7 @@
     "name": "Just for Laughs NorthWest",
     "organization_id": null,
     "organization_name": null,
+    "slug": "just-for-laughs-northwest",
     "website_url": "https://jflnorthwest.com/"
   },
   {
@@ -207,6 +220,7 @@
     "name": "Winnipeg Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "winnipeg-comedy-festival",
     "website_url": "https://winnipegcomedyfestival.com/"
   },
   {
@@ -222,6 +236,7 @@
     "name": "Boston Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "boston-comedy-festival",
     "website_url": "https://bostoncomedyfestival.com/"
   },
   {
@@ -237,6 +252,7 @@
     "name": "Galway Comedy Festival",
     "organization_id": 140,
     "organization_name": "Galway Comedy Festival",
+    "slug": "galway-comedy-festival",
     "website_url": "https://www.galwaycomedyfestival.com/"
   },
   {
@@ -252,6 +268,7 @@
     "name": "Glasgow International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "glasgow-international-comedy-festival",
     "website_url": "https://glasgowcomedyfestival.com/"
   },
   {
@@ -267,6 +284,7 @@
     "name": "Bath Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "bath-comedy-festival",
     "website_url": "https://bathcomedy.co.uk/"
   },
   {
@@ -282,6 +300,7 @@
     "name": "Machynlleth Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "machynlleth-comedy-festival",
     "website_url": "https://machfest.co.uk/"
   },
   {
@@ -297,6 +316,7 @@
     "name": "Camden Fringe",
     "organization_id": 142,
     "organization_name": "Camden Fringe",
+    "slug": "camden-fringe",
     "website_url": "https://camdenfringe.com/"
   },
   {
@@ -312,6 +332,7 @@
     "name": "Buxton Fringe",
     "organization_id": null,
     "organization_name": null,
+    "slug": "buxton-fringe",
     "website_url": "https://www.buxtonfringe.org.uk/"
   },
   {
@@ -327,6 +348,7 @@
     "name": "Nottingham Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "nottingham-comedy-festival",
     "website_url": "https://nottinghamcomedyfestival.com/"
   },
   {
@@ -342,6 +364,7 @@
     "name": "Bristol Comedy Garden",
     "organization_id": null,
     "organization_name": null,
+    "slug": "bristol-comedy-garden",
     "website_url": "https://bristolcomedygarden.co.uk/"
   },
   {
@@ -357,6 +380,7 @@
     "name": "Greenwich Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "greenwich-comedy-festival",
     "website_url": "https://greenwichcomedyfestival.com/"
   },
   {
@@ -372,6 +396,7 @@
     "name": "Cracker Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "cracker-comedy-festival",
     "website_url": "https://www.crackercomedyfestival.co.uk/"
   },
   {
@@ -387,6 +412,7 @@
     "name": "Manchester Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "manchester-comedy-festival",
     "website_url": "https://www.manchestercomedyfestival.com/"
   },
   {
@@ -402,6 +428,7 @@
     "name": "Latitude Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "latitude-festival",
     "website_url": "https://www.latitudefestival.com/"
   },
   {
@@ -417,6 +444,7 @@
     "name": "Amsterdam Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "amsterdam-fringe-festival",
     "website_url": "https://amsterdamfringefestival.nl/"
   },
   {
@@ -432,6 +460,7 @@
     "name": "Reykjavik Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "reykjavik-fringe-festival",
     "website_url": "https://reykjavikfringe.is/"
   },
   {
@@ -447,6 +476,7 @@
     "name": "Montreux Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "montreux-comedy-festival",
     "website_url": "https://www.montreuxcomedy.com/"
   },
   {
@@ -462,6 +492,7 @@
     "name": "Festival International du Rire (Liege)",
     "organization_id": null,
     "organization_name": null,
+    "slug": "festival-international-du-rire-liege",
     "website_url": "https://www.rire.be/"
   },
   {
@@ -477,6 +508,7 @@
     "name": "Prague Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "prague-fringe-festival",
     "website_url": "https://www.praguefringe.com/"
   },
   {
@@ -492,6 +524,7 @@
     "name": "Dublin Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "dublin-fringe-festival",
     "website_url": "https://fringefest.com/"
   },
   {
@@ -507,6 +540,7 @@
     "name": "Iveagh Gardens Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "iveagh-gardens-comedy-festival",
     "website_url": "https://www.iveaghgardens.ie/"
   },
   {
@@ -522,6 +556,7 @@
     "name": "Cork Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "cork-comedy-festival",
     "website_url": "https://www.corkcomedyfestival.com/"
   },
   {
@@ -537,6 +572,7 @@
     "name": "Big Pineapple Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "big-pineapple-comedy-festival",
     "website_url": "https://bigpineapplecomedy.com/"
   },
   {
@@ -552,6 +588,7 @@
     "name": "Bridgetown Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "bridgetown-comedy-festival",
     "website_url": "https://web.archive.org/web/2013*/bridgetowncomedy.com"
   },
   {
@@ -567,6 +604,7 @@
     "name": "Bentzen Ball Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "bentzen-ball-comedy-festival",
     "website_url": "https://www.bentzenball.com/"
   },
   {
@@ -582,6 +620,7 @@
     "name": "Out of Bounds Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "out-of-bounds-comedy-festival",
     "website_url": "https://oobcomedy.com/"
   },
   {
@@ -597,6 +636,7 @@
     "name": "Laughing Skull Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "laughing-skull-comedy-festival",
     "website_url": "https://laughingskullfest.com/"
   },
   {
@@ -612,6 +652,7 @@
     "name": "Women in Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "women-in-comedy-festival",
     "website_url": "https://www.womenincomedyfestival.com/"
   },
   {
@@ -627,6 +668,7 @@
     "name": "Great American Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "great-american-comedy-festival",
     "website_url": "https://greatamericancomedyfestival.com/"
   },
   {
@@ -642,6 +684,7 @@
     "name": "High Plains Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "high-plains-comedy-festival",
     "website_url": "https://highplainscomedyfestival.com/"
   },
   {
@@ -657,6 +700,7 @@
     "name": "Riot LA Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "riot-la-comedy-festival",
     "website_url": "https://riotla.com/"
   },
   {
@@ -672,6 +716,7 @@
     "name": "Clusterfest",
     "organization_id": null,
     "organization_name": null,
+    "slug": "clusterfest",
     "website_url": "https://web.archive.org/web/2019*/clusterfestsf.com"
   },
   {
@@ -687,6 +732,7 @@
     "name": "Chicago Improv Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "chicago-improv-festival",
     "website_url": "https://chicagoimprovfestival.org/"
   },
   {
@@ -702,6 +748,7 @@
     "name": "Del Close Marathon",
     "organization_id": null,
     "organization_name": null,
+    "slug": "del-close-marathon",
     "website_url": "https://www.ucbtheatre.com/"
   },
   {
@@ -717,6 +764,7 @@
     "name": "New York Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "new-york-comedy-festival",
     "website_url": "https://nycomedyfestival.com/"
   },
   {
@@ -732,6 +780,7 @@
     "name": "Gilda's LaughFest",
     "organization_id": null,
     "organization_name": null,
+    "slug": "gilda-s-laughfest",
     "website_url": "https://laughfestgr.org/"
   },
   {
@@ -747,6 +796,7 @@
     "name": "Seattle International Comedy Competition",
     "organization_id": null,
     "organization_name": null,
+    "slug": "seattle-international-comedy-competition",
     "website_url": "https://www.seattlecomedycompetition.com/"
   },
   {
@@ -762,6 +812,7 @@
     "name": "US Comedy Arts Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "us-comedy-arts-festival",
     "website_url": "https://web.archive.org/web/2007*/hbouscaf.com"
   },
   {
@@ -777,6 +828,7 @@
     "name": "Aspen Rooftop Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "aspen-rooftop-comedy-festival",
     "website_url": "https://rooftopcomedy.com/"
   },
   {
@@ -792,6 +844,7 @@
     "name": "Perth Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "perth-comedy-festival",
     "website_url": "https://perthcomedyfestival.com/"
   },
   {
@@ -807,6 +860,7 @@
     "name": "Brisbane Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "brisbane-comedy-festival",
     "website_url": "https://brisbanecomedyfestival.com/"
   },
   {
@@ -822,6 +876,7 @@
     "name": "Melbourne Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "melbourne-fringe-festival",
     "website_url": "https://melbournefringe.com.au/"
   },
   {
@@ -837,6 +892,7 @@
     "name": "Sydney Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "sydney-fringe-festival",
     "website_url": "https://sydneyfringe.com/"
   },
   {
@@ -852,6 +908,7 @@
     "name": "FRINGE WORLD Perth",
     "organization_id": null,
     "organization_name": null,
+    "slug": "fringe-world-perth",
     "website_url": "https://www.fringeworld.com.au/"
   },
   {
@@ -867,6 +924,7 @@
     "name": "NZ Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "nz-fringe-festival",
     "website_url": "https://fringe.nz/"
   },
   {
@@ -882,6 +940,7 @@
     "name": "Auckland Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "auckland-fringe-festival",
     "website_url": "https://aucklandfringe.co.nz/"
   },
   {
@@ -897,6 +956,7 @@
     "name": "Halifax Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "halifax-comedy-festival",
     "website_url": "https://www.hahaha.com/"
   },
   {
@@ -912,6 +972,7 @@
     "name": "Toronto Sketch Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "toronto-sketch-comedy-festival",
     "website_url": "https://www.sketchcomedyfestival.com/"
   },
   {
@@ -927,6 +988,7 @@
     "name": "Vancouver International Improv Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "vancouver-international-improv-festival",
     "website_url": "https://viif.ca/"
   },
   {
@@ -942,6 +1004,7 @@
     "name": "Vancouver Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "vancouver-fringe-festival",
     "website_url": "https://vancouverfringe.com/"
   },
   {
@@ -957,6 +1020,7 @@
     "name": "Edmonton International Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "edmonton-international-fringe-festival",
     "website_url": "https://www.fringetheatre.ca/"
   },
   {
@@ -972,6 +1036,7 @@
     "name": "Winnipeg Fringe Theatre Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "winnipeg-fringe-theatre-festival",
     "website_url": "https://www.winnipegfringe.com/"
   },
   {
@@ -987,6 +1052,7 @@
     "name": "Saskatoon Fringe Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "saskatoon-fringe-festival",
     "website_url": "https://www.saskatoonfringe.ca/"
   },
   {
@@ -1002,6 +1068,7 @@
     "name": "Vancouver Sketch Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "vancouver-sketch-comedy-festival",
     "website_url": "https://vancouversketchfest.ca/"
   },
   {
@@ -1017,6 +1084,7 @@
     "name": "Savanna International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "savanna-international-comedy-festival",
     "website_url": "https://www.savanna.co.za/"
   },
   {
@@ -1032,6 +1100,7 @@
     "name": "Hong Kong International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "hong-kong-international-comedy-festival",
     "website_url": "https://takeoutcomedy.com/"
   },
   {
@@ -1047,6 +1116,7 @@
     "name": "Singapore International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "singapore-international-comedy-festival",
     "website_url": "https://www.sicf.com.sg/"
   },
   {
@@ -1062,6 +1132,7 @@
     "name": "Kuala Lumpur International Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "kuala-lumpur-international-comedy-festival",
     "website_url": "https://www.klicf.com/"
   },
   {
@@ -1077,6 +1148,7 @@
     "name": "Cardiff Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "cardiff-comedy-festival",
     "website_url": "https://www.cardiffcomedyfestival.com/"
   },
   {
@@ -1092,6 +1164,7 @@
     "name": "Norwich Comedy Festival",
     "organization_id": null,
     "organization_name": null,
+    "slug": "norwich-comedy-festival",
     "website_url": "https://www.norwichcomedyfestival.co.uk/"
   },
   {
@@ -1107,6 +1180,7 @@
     "name": "Bumbershoot",
     "organization_id": null,
     "organization_name": null,
+    "slug": "bumbershoot",
     "website_url": "https://www.bumbershoot.com/"
   },
   {
@@ -1122,6 +1196,7 @@
     "name": "Melbourne International Comedy Festival Roadshow",
     "organization_id": null,
     "organization_name": null,
+    "slug": "melbourne-international-comedy-festival-roadshow",
     "website_url": "https://www.comedyfestival.com.au/roadshow"
   },
   {
@@ -1137,6 +1212,7 @@
     "name": "Cologne Comedy Festival",
     "organization_id": 141,
     "organization_name": "Cologne Comedy Festival",
+    "slug": "cologne-comedy-festival",
     "website_url": "https://comedy.cologne/"
   },
   {
@@ -1152,6 +1228,7 @@
     "name": "PBH's Free Fringe",
     "organization_id": 102,
     "organization_name": "PBH's Free Fringe",
+    "slug": "pbh-s-free-fringe",
     "website_url": null
   },
   {
@@ -1167,6 +1244,7 @@
     "name": "Laughing Horse Free Festival",
     "organization_id": 103,
     "organization_name": "Laughing Horse Free Festival",
+    "slug": "laughing-horse-free-festival",
     "website_url": null
   }
 ]

@@ -40,14 +40,14 @@ window.ATLAS_VISUALS_ENABLED = false;
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
 <meta name="description" content="COMEDY ATLAS: comics find shows, bookers find comics, free. Browse live comedy by city and festival, worldwide.">
-<link rel="canonical" href="https://pariscomedy.com/comedy-atlas/">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Paris Comedy">
 <meta property="og:title" content="COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking">
 <meta property="og:description" content="Comics find shows. Bookers find comics. Free.">
-<meta property="og:url" content="https://pariscomedy.com/comedy-atlas/">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://pariscomedy.com/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":"https://pariscomedy.com/comedy-atlas/city.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":"https://comedyatlas.app/comedy-atlas/city.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <style>
 /* ---------------------------------------------------------------------
    COMEDY ATLAS — HUB landing page. Self-contained static page (no build
@@ -197,12 +197,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
-  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
-    <a href="/shows.html">Shows</a>
-    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
+    <a href="/shows.html">Calendar</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/guide/">Guide</a>
     <a href="/comedy-atlas/blog/">Blog</a>
-    <a href="/about.html">About</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
 
@@ -253,7 +255,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <p class="industry-footnote container">Run shows or perform? <a href="/comedy-atlas/login.html">Comics &amp; bookers →</a></p>
 
 <footer>
-  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
   <div class="footer-links">
     <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
     <span class="sep">·</span>
@@ -299,6 +301,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // right, Montreal has exactly 1, a stray touring-act event, not a scene).
   var FEATURED_MIN_SHOWS = 8;  // now counts UNIQUE shows (was 15 for raw showtimes)
 
+  // Stale-push shims (same rationale as fetchCitiesSafe near the bottom of
+  // this file): these three AtlasCommon helpers landed 2026-07-26 with the
+  // festival work. A push repo still serving an older atlas-common.js would
+  // throw a TypeError mid-render and blank the whole homepage, so each one
+  // degrades to a value that simply omits the new feature.
+  function festivalsBySlugSafe(json) {
+    return typeof A.festivalsBySlug === "function" ? A.festivalsBySlug(json) : {};
+  }
+  function fmtDateRangeSafe(a, b) {
+    return typeof A.fmtDateRange === "function" ? A.fmtDateRange(a, b) : "";
+  }
+
   // Always shows the country -- Robert's core need ("I don't know where
   // Riga is") applies just as honestly to a city everyone already knows
   // (Paris, London): consistency beats a subjective "major city" list.
@@ -321,23 +335,61 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       cityLabel(entry) + ' · <span class="stub-count">' + entry.count + '</span></a>';
   }
 
-  function festivalCard(entry) {
+  // Festival link target, best-available-and-still-real, in this order
+  // (2026-07-26, Robert: "make all the festivals visible on the homepage
+  // with LINKS TO THEIR DEDICATED FESTIVAL PAGE on our site" -- this card
+  // used to link to a FILTERED CITY LISTING, city.html?city=..&org=..,
+  // which is not a festival page at all):
+  //   1. /comedy-atlas/festival/<festival slug>/ -- the festival's own page
+  //      (scripts/generate_festival_pages.py). Only when festivals.json
+  //      actually carried a slug for this organizer.
+  //   2. /comedy-atlas/org/<organization_slug>/ -- the organizer's page,
+  //      generated by scripts/generate_entity_pages.py from the SAME
+  //      organizations.slug column the export now ships (migration 0126).
+  //   3. the old city.html filter -- always resolves, since city.html is a
+  //      static page that filters client-side.
+  // Every step is a path this repo demonstrably generates; nothing here
+  // slugifies a display name, so no branch can invent a dead link.
+  function festivalUrl(entry, festivalSlugByOrgId) {
+    var fslug = entry.orgId ? festivalSlugByOrgId[entry.orgId] : null;
+    if (fslug) return '/comedy-atlas/festival/' + encodeURIComponent(fslug) + '/';
+    if (entry.orgSlug) return '/comedy-atlas/org/' + encodeURIComponent(entry.orgSlug) + '/';
+    return 'city.html?city=' + encodeURIComponent(entry.city) + '&org=' + encodeURIComponent(entry.org);
+  }
+
+  function festivalCard(entry, festivalSlugByOrgId) {
     // 2026-07-25: now driven by ev.is_festival (real festivals.
     // organization_id join, migration 0121) instead of the old 2-org
     // hardcode -- a festival card can be a ticketed one (e.g. Camden
     // Fringe, real price_min 5-18), so the "Free entry" tag/wording only
     // renders when groupFestivals() confirmed EVERY counted event has
     // is_free === true. Never assume free just because it's a festival.
-    var url = 'city.html?city=' + encodeURIComponent(entry.city) + '&org=' + encodeURIComponent(entry.org);
+    var url = festivalUrl(entry, festivalSlugByOrgId || {});
     var showWord = (entry.allFree ? 'free show' : 'show') + (entry.count === 1 ? '' : 's');
+    // Real run dates, straight from the earliest/latest starts_at we hold
+    // for this festival -- NOT festivals.edition_starts_on (NULL for all but
+    // 3 of 78 public festivals, so there is usually nothing there to print).
+    // Omitted entirely when the dates are missing/malformed.
+    var range = fmtDateRangeSafe(entry.firstDate, entry.lastDate);
     return '<a class="place-card" href="' + url + '">' +
       '<div class="place-name">' + A.escapeHtml(entry.org) + '</div>' +
       '<div class="place-meta">' + A.escapeHtml(entry.city) + ' · <span class="place-count">' +
       entry.count + '</span> ' + showWord + '</div>' +
+      (range ? '<div class="place-meta">' + A.escapeHtml(range) + '</div>' : '') +
       (entry.allFree ? '<div class="place-tag">Free entry</div>' : '') + '</a>';
   }
 
-  function render(events, citiesJson) {
+  // A public festival we hold a real record for but no programme: name,
+  // description and official website only (73 of 78 as of 2026-07-26).
+  // Rendered as a compact chip, exactly like the stub-city list, so the
+  // page never implies we have listings we don't -- the count is
+  // deliberately absent because there is nothing to count.
+  function festivalStubLink(f) {
+    return '<a href="/comedy-atlas/festival/' + encodeURIComponent(f.slug) + '/">' +
+      A.escapeHtml(f.name) + '</a>';
+  }
+
+  function render(events, citiesJson, festivalsJson) {
     if (!events.length) { renderEmpty(); return; }
 
     var cities = A.groupByCity(events, A.citiesByName(citiesJson));
@@ -345,12 +397,39 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var stubs = cities.filter(function (c) { return c.count < FEATURED_MIN_SHOWS; });
     var festivals = A.groupFestivals(events);
 
+    // festivals.json is the only complete festival list -- `events` can only
+    // ever reveal the festivals whose organizer is linked AND has upcoming
+    // events here (5 of 78 public festivals, measured 2026-07-26). Slug-less
+    // rows are dropped by festivalsBySlug: no slug means no page to link to.
+    var festivalRows = festivalsBySlugSafe(festivalsJson);
+    var festivalSlugs = Object.keys(festivalRows);
+    var festivalSlugByOrgId = {};
+    festivalSlugs.forEach(function (slug) {
+      var oid = festivalRows[slug].organization_id;
+      if (oid) festivalSlugByOrgId[oid] = slug;
+    });
+    // Every public festival that has NO programme on this site. Excludes any
+    // festival already shown as a card above (matched on organization_id, the
+    // exact key -- never on a name string).
+    var programmeOrgIds = {};
+    festivals.forEach(function (f) { if (f.orgId) programmeOrgIds[f.orgId] = true; });
+    var festivalStubs = festivalSlugs.map(function (s) { return festivalRows[s]; })
+      .filter(function (f) { return !(f.organization_id && programmeOrgIds[f.organization_id]); })
+      .sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
+
     // Unique shows, not raw showtimes -- a weekly night is one show, not the
     // ~176 future dates it's expanded into (see atlas-common.js showKey).
     var totalShows = A.uniqueShowCount(events);
+    // Festival total = distinct festival RECORDS that have a page, not the
+    // number of festival cards (groupFestivals splits an organizer per city,
+    // so a two-city festival would otherwise be counted twice). Counts only
+    // slugged rows, so every festival in this number has a page a visitor can
+    // actually open. Falls back to the card count when festivals.json didn't
+    // load, so the figure is never inflated by a guess.
+    var totalFestivals = festivalSlugs.length || festivals.length;
     statsRow.innerHTML = '<span><strong>' + totalShows + '</strong> shows</span>' +
       '<span><strong>' + cities.length + '</strong> cities live</span>' +
-      (festivals.length ? '<span><strong>' + festivals.length + '</strong> festivals</span>' : '');
+      (totalFestivals ? '<span><strong>' + totalFestivals + '</strong> festivals</span>' : '');
 
     var html = '';
 
@@ -367,10 +446,30 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities →</a></div></section>';
 
-    if (festivals.length) {
-      html += '<section class="atlas-section"><h2>Festivals</h2><div class="card-grid">';
-      festivals.forEach(function (f) { html += festivalCard(f); });
-      html += '</div></section>';
+    // FESTIVALS. Two honest tiers, same shape as the Cities section above:
+    // cards for the festivals whose programme is actually listed here, then a
+    // compact chip list for every other public festival we hold a record for.
+    // The chips carry NO count and NO dates, because we have neither -- those
+    // pages say so in as many words (see scripts/generate_festival_pages.py).
+    if (festivals.length || festivalStubs.length) {
+      html += '<section class="atlas-section"><h2>Festivals</h2>';
+      if (festivals.length) {
+        html += '<div class="card-grid">';
+        festivals.forEach(function (f) { html += festivalCard(f, festivalSlugByOrgId); });
+        html += '</div>';
+      }
+      if (festivalStubs.length) {
+        html += '<div style="margin-top:20px">' +
+          '<p class="stub-note">Also tracked — festivals we hold a verified record for but ' +
+          'whose programme we don\'t list yet. Each page has the festival\'s own official site:</p>' +
+          '<div class="stub-list">' + festivalStubs.map(festivalStubLink).join('') + '</div></div>';
+      }
+      if (festivalSlugs.length) {
+        html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
+          '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700">Browse all ' +
+          totalFestivals + ' festivals →</a></div>';
+      }
+      html += '</section>';
     }
 
     // Coming up: the soonest shows across every city, grouped by date with
@@ -405,8 +504,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // event-listing fetch. Falling back to an empty city list degrades to
   // "no city tiering" instead of "page never loads".
   var fetchCitiesSafe = typeof A.fetchCities === "function" ? A.fetchCities() : Promise.resolve([]);
-  Promise.all([A.fetchEvents(), fetchCitiesSafe]).then(function (results) {
-    render(results[0], results[1]);
+  // Same defensive shape as fetchCitiesSafe above, and for the same reason:
+  // A.fetchFestivals/festivalsBySlug/fmtDateRange were added 2026-07-26, and a
+  // push repo whose atlas-common.js hasn't caught up would otherwise throw and
+  // kill the entire listing render. Degrading to [] means the festival chips
+  // and the "Browse all" link are absent -- never a broken page, and never a
+  // link to a page that isn't there.
+  var fetchFestivalsSafe = typeof A.fetchFestivals === "function" ? A.fetchFestivals() : Promise.resolve([]);
+  Promise.all([A.fetchEvents(), fetchCitiesSafe, fetchFestivalsSafe]).then(function (results) {
+    render(results[0], results[1], results[2]);
   }).catch(renderError);
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
 })();

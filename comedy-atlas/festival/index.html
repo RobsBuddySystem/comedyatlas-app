@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comedy festivals | COMEDY ATLAS</title>
+<meta name="description" content="Every comedy festival COMEDY ATLAS tracks, with the shows we list and each festival&#x27;s official site.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/festival/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comedy festivals | COMEDY ATLAS">
+<meta property="og:description" content="Every comedy festival COMEDY ATLAS tracks, with the shows we list and each festival&#x27;s official site.">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/festival/">
+<meta name="twitter:card" content="summary">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+}
+:root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+.atlas-header{max-width:900px;margin:0 auto;padding:32px 20px 16px}
+.back-link{font-size:13px;color:var(--muted);margin-bottom:10px;display:inline-block}
+.back-link:hover{color:var(--text)}
+.atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
+.atlas-wordmark .dot{color:var(--gold)}
+.atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
+.field-row .sep{opacity:.5}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text)}
+.chip:hover{border-color:var(--purple)}
+.milestone-item{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border)}
+.milestone-item:last-child{border-bottom:none}
+.milestone-date{color:var(--gold);font-weight:700;margin-right:6px}
+.section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.event-card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.event-card-inner{display:flex;gap:12px;align-items:flex-start}
+.event-card-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.event-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.event-photo-credit{font-size:11px;color:var(--muted);margin-top:2px}
+.event-hero{width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin:14px 0}
+.event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.event-title{font-size:16px;font-weight:700;line-height:1.3}
+.event-time{font-size:13px;color:var(--gold);font-weight:700;white-space:nowrap}
+.event-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 10px}
+.ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px;margin-top:4px}
+.ticket-link:hover{opacity:.9}
+.empty-state{color:var(--muted);font-size:14px;padding:12px 0}
+.follow-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.follow-btn{background:var(--purple);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.follow-btn:hover{opacity:.9}
+.follow-btn:disabled{opacity:.6;cursor:default}
+#follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
+.follow-status{font-size:13px;color:var(--muted);margin-top:8px}
+.save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.save-btn{background:var(--gold);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn:hover{opacity:.9}
+.save-btn:disabled{opacity:.7;cursor:default}
+.save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+#save-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;min-width:220px}
+.save-email-btn{background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-status{font-size:13px;color:var(--muted);margin-top:8px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.directions-btn:hover{opacity:.9}
+.privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+.privacy-note strong{color:var(--text)}
+.atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
+.atlas-toast.atlas-toast-visible{opacity:1}
+.add-to-calendar-link{display:inline-block;font-size:13px;font-weight:700;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:9px 16px;border-radius:8px}
+.add-to-calendar-link:hover{border-color:var(--purple-light)}
+.share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+  .event-top{flex-direction:column;gap:2px}
+}
+</style>
+<style>
+.festivals-header {max-width:1100px;margin:0 auto;padding:24px 20px 32px}
+.festivals-header .atlas-wordmark {font-size:clamp(24px,5vw,40px);font-weight:800;letter-spacing:-1px}
+.festivals-header .stats {display:flex;gap:24px;margin-top:16px;font-size:14px;color:var(--muted)}
+.festivals-header .stats strong {color:var(--gold)}
+.cities-grid {max-width:1100px;margin:0 auto;padding:0 20px 40px;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.city-card {display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:18px;transition:border-color .15s;text-decoration:none}
+.city-card:hover {border-color:var(--purple)}
+.city-name {font-size:17px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.city-count {color:var(--gold);font-weight:700;font-size:14px}
+.city-next-show {color:var(--muted);font-size:12px;margin-top:10px}
+.stub-section {max-width:1100px;margin:0 auto;padding:0 20px 40px}
+.stub-note {color:var(--muted);font-size:12.5px;margin-bottom:12px;max-width:640px}
+.stub-list {display:flex;flex-wrap:wrap;gap:8px 16px}
+.stub-list a {font-size:13px;color:var(--muted);border:1px solid var(--border);
+  border-radius:999px;padding:5px 12px;text-decoration:none}
+.stub-list a:hover {color:var(--text);border-color:var(--purple)}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Calendar</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/guide/">Guide</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<header class="festivals-header">
+  <a href="/comedy-atlas/" class="back-link">← COMEDY ATLAS</a>
+  <div class="atlas-wordmark">Festivals<span class="dot">.</span></div>
+  <div class="stats">
+    <div><strong>78</strong> festivals tracked</div>
+    <div><strong>5</strong> with shows listed here</div>
+  </div>
+</header>
+<main id="main-content">
+<div class="cities-grid">
+<a class="city-card" href="/comedy-atlas/festival/camden-fringe/"><div class="city-name">Camden Fringe</div><div class="city-count">120 shows listed</div><div class="city-next-show">3 August 2026 – 30 August 2026</div></a>
+<a class="city-card" href="/comedy-atlas/festival/cologne-comedy-festival/"><div class="city-name">Cologne Comedy Festival</div><div class="city-count">91 shows listed</div><div class="city-next-show">19 October 2026 – 13 November 2026</div></a>
+<a class="city-card" href="/comedy-atlas/festival/galway-comedy-festival/"><div class="city-name">Galway Comedy Festival</div><div class="city-count">6 shows listed</div><div class="city-next-show">20 October 2026 – 26 October 2026</div></a>
+<a class="city-card" href="/comedy-atlas/festival/laughing-horse-free-festival/"><div class="city-name">Laughing Horse Free Festival</div><div class="city-count">206 shows listed</div></a>
+<a class="city-card" href="/comedy-atlas/festival/pbh-s-free-fringe/"><div class="city-name">PBH&#x27;s Free Fringe</div><div class="city-count">149 shows listed</div></a>
+</div>
+<div class="stub-section">
+<p class="stub-note">Also tracked — festivals we hold a verified record for but whose programme we don't list. Each page carries the festival's own official site.</p>
+<div class="stub-list">
+<a href="/comedy-atlas/festival/adelaide-fringe/">Adelaide Fringe</a>
+<a href="/comedy-atlas/festival/amsterdam-fringe-festival/">Amsterdam Fringe Festival</a>
+<a href="/comedy-atlas/festival/aspen-rooftop-comedy-festival/">Aspen Rooftop Comedy Festival</a>
+<a href="/comedy-atlas/festival/auckland-fringe-festival/">Auckland Fringe Festival</a>
+<a href="/comedy-atlas/festival/bath-comedy-festival/">Bath Comedy Festival</a>
+<a href="/comedy-atlas/festival/bentzen-ball-comedy-festival/">Bentzen Ball Comedy Festival</a>
+<a href="/comedy-atlas/festival/big-pineapple-comedy-festival/">Big Pineapple Comedy Festival</a>
+<a href="/comedy-atlas/festival/boston-comedy-festival/">Boston Comedy Festival</a>
+<a href="/comedy-atlas/festival/bridgetown-comedy-festival/">Bridgetown Comedy Festival</a>
+<a href="/comedy-atlas/festival/brighton-fringe/">Brighton Fringe</a>
+<a href="/comedy-atlas/festival/brisbane-comedy-festival/">Brisbane Comedy Festival</a>
+<a href="/comedy-atlas/festival/bristol-comedy-garden/">Bristol Comedy Garden</a>
+<a href="/comedy-atlas/festival/bumbershoot/">Bumbershoot</a>
+<a href="/comedy-atlas/festival/buxton-fringe/">Buxton Fringe</a>
+<a href="/comedy-atlas/festival/cardiff-comedy-festival/">Cardiff Comedy Festival</a>
+<a href="/comedy-atlas/festival/chicago-improv-festival/">Chicago Improv Festival</a>
+<a href="/comedy-atlas/festival/clusterfest/">Clusterfest</a>
+<a href="/comedy-atlas/festival/cork-comedy-festival/">Cork Comedy Festival</a>
+<a href="/comedy-atlas/festival/cracker-comedy-festival/">Cracker Comedy Festival</a>
+<a href="/comedy-atlas/festival/del-close-marathon/">Del Close Marathon</a>
+<a href="/comedy-atlas/festival/dublin-fringe-festival/">Dublin Fringe Festival</a>
+<a href="/comedy-atlas/festival/edinburgh-festival-fringe/">Edinburgh Festival Fringe</a>
+<a href="/comedy-atlas/festival/edmonton-international-fringe-festival/">Edmonton International Fringe Festival</a>
+<a href="/comedy-atlas/festival/festival-international-du-rire-liege/">Festival International du Rire (Liege)</a>
+<a href="/comedy-atlas/festival/fringe-world-perth/">FRINGE WORLD Perth</a>
+<a href="/comedy-atlas/festival/gilda-s-laughfest/">Gilda&#x27;s LaughFest</a>
+<a href="/comedy-atlas/festival/glasgow-international-comedy-festival/">Glasgow International Comedy Festival</a>
+<a href="/comedy-atlas/festival/great-american-comedy-festival/">Great American Comedy Festival</a>
+<a href="/comedy-atlas/festival/greenwich-comedy-festival/">Greenwich Comedy Festival</a>
+<a href="/comedy-atlas/festival/halifax-comedy-festival/">Halifax Comedy Festival</a>
+<a href="/comedy-atlas/festival/high-plains-comedy-festival/">High Plains Comedy Festival</a>
+<a href="/comedy-atlas/festival/hong-kong-international-comedy-festival/">Hong Kong International Comedy Festival</a>
+<a href="/comedy-atlas/festival/iveagh-gardens-comedy-festival/">Iveagh Gardens Comedy Festival</a>
+<a href="/comedy-atlas/festival/jfl42-just-for-laughs-toronto/">JFL42 (Just for Laughs Toronto)</a>
+<a href="/comedy-atlas/festival/just-for-laughs-montreal/">Just for Laughs (Montreal)</a>
+<a href="/comedy-atlas/festival/just-for-laughs-northwest/">Just for Laughs NorthWest</a>
+<a href="/comedy-atlas/festival/kilkenny-cat-laughs-comedy-festival/">Kilkenny Cat Laughs Comedy Festival</a>
+<a href="/comedy-atlas/festival/kuala-lumpur-international-comedy-festival/">Kuala Lumpur International Comedy Festival</a>
+<a href="/comedy-atlas/festival/latitude-festival/">Latitude Festival</a>
+<a href="/comedy-atlas/festival/laughing-skull-comedy-festival/">Laughing Skull Comedy Festival</a>
+<a href="/comedy-atlas/festival/leicester-comedy-festival/">Leicester Comedy Festival</a>
+<a href="/comedy-atlas/festival/machynlleth-comedy-festival/">Machynlleth Comedy Festival</a>
+<a href="/comedy-atlas/festival/manchester-comedy-festival/">Manchester Comedy Festival</a>
+<a href="/comedy-atlas/festival/melbourne-fringe-festival/">Melbourne Fringe Festival</a>
+<a href="/comedy-atlas/festival/melbourne-international-comedy-festival/">Melbourne International Comedy Festival</a>
+<a href="/comedy-atlas/festival/melbourne-international-comedy-festival-roadshow/">Melbourne International Comedy Festival Roadshow</a>
+<a href="/comedy-atlas/festival/montreux-comedy-festival/">Montreux Comedy Festival</a>
+<a href="/comedy-atlas/festival/moontower-comedy-festival/">Moontower Comedy Festival</a>
+<a href="/comedy-atlas/festival/new-york-comedy-festival/">New York Comedy Festival</a>
+<a href="/comedy-atlas/festival/norwich-comedy-festival/">Norwich Comedy Festival</a>
+<a href="/comedy-atlas/festival/nottingham-comedy-festival/">Nottingham Comedy Festival</a>
+<a href="/comedy-atlas/festival/nz-fringe-festival/">NZ Fringe Festival</a>
+<a href="/comedy-atlas/festival/nz-international-comedy-festival/">NZ International Comedy Festival</a>
+<a href="/comedy-atlas/festival/out-of-bounds-comedy-festival/">Out of Bounds Comedy Festival</a>
+<a href="/comedy-atlas/festival/perth-comedy-festival/">Perth Comedy Festival</a>
+<a href="/comedy-atlas/festival/prague-fringe-festival/">Prague Fringe Festival</a>
+<a href="/comedy-atlas/festival/reykjavik-fringe-festival/">Reykjavik Fringe Festival</a>
+<a href="/comedy-atlas/festival/riot-la-comedy-festival/">Riot LA Comedy Festival</a>
+<a href="/comedy-atlas/festival/saskatoon-fringe-festival/">Saskatoon Fringe Festival</a>
+<a href="/comedy-atlas/festival/savanna-international-comedy-festival/">Savanna International Comedy Festival</a>
+<a href="/comedy-atlas/festival/seattle-international-comedy-competition/">Seattle International Comedy Competition</a>
+<a href="/comedy-atlas/festival/sf-sketchfest/">SF Sketchfest</a>
+<a href="/comedy-atlas/festival/singapore-international-comedy-festival/">Singapore International Comedy Festival</a>
+<a href="/comedy-atlas/festival/sydney-comedy-festival/">Sydney Comedy Festival</a>
+<a href="/comedy-atlas/festival/sydney-fringe-festival/">Sydney Fringe Festival</a>
+<a href="/comedy-atlas/festival/toronto-sketch-comedy-festival/">Toronto Sketch Comedy Festival</a>
+<a href="/comedy-atlas/festival/us-comedy-arts-festival/">US Comedy Arts Festival</a>
+<a href="/comedy-atlas/festival/vancouver-fringe-festival/">Vancouver Fringe Festival</a>
+<a href="/comedy-atlas/festival/vancouver-international-improv-festival/">Vancouver International Improv Festival</a>
+<a href="/comedy-atlas/festival/vancouver-sketch-comedy-festival/">Vancouver Sketch Comedy Festival</a>
+<a href="/comedy-atlas/festival/winnipeg-comedy-festival/">Winnipeg Comedy Festival</a>
+<a href="/comedy-atlas/festival/winnipeg-fringe-theatre-festival/">Winnipeg Fringe Theatre Festival</a>
+<a href="/comedy-atlas/festival/women-in-comedy-festival/">Women in Comedy Festival</a>
+</div>
+</div>
+</main>
+
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+<script src="/comedy-atlas/atlas-track.js"></script>
+</body>
+</html>

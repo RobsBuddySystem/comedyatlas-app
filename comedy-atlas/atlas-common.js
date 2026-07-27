@@ -25,6 +25,7 @@
   var DATA_URL = "../data/comedy-atlas/upcoming_events.json";
   var MANIFEST_URL = "../data/comedy-atlas/MANIFEST.json";
   var CITIES_URL = "../data/comedy-atlas/cities.json";
+  var FESTIVALS_URL = "../data/comedy-atlas/festivals.json";
 
   function escapeHtml(s) {
     if (s === null || s === undefined) return "";
@@ -351,6 +352,42 @@
       .catch(function () { return null; });
   }
 
+  // festivals.json (published by the same publish_atlas_data.py run, from the
+  // public_festivals view) is the ONLY complete list of festivals. The
+  // upcoming_events feed can only ever reveal a festival whose ORGANIZER row
+  // is linked to it AND has upcoming events on our calendar -- 5 of the 78
+  // public festivals as of 2026-07-26. The other 73 are real, verified
+  // records with a name, a description and an official website but no
+  // programme here; they exist only in this file. Degrades to null (never
+  // throws) so a fetch failure just means the homepage shows the
+  // programme-bearing festivals and nothing else, rather than breaking.
+  function fetchFestivals() {
+    return fetch(FESTIVALS_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("no festivals"); return r.json(); })
+      .catch(function () { return null; });
+  }
+
+  // One row per FESTIVAL from festivals.json, keyed by slug. public_festivals
+  // LEFT JOINs festival_editions, so a festival with several editions on
+  // record appears once per edition -- keep the highest edition_year so no
+  // surface ever mixes two editions' dates. Rows without a `slug` are dropped
+  // entirely: with no slug there is no /comedy-atlas/festival/<slug>/ page to
+  // link to, and deriving one from the name would produce a dead or
+  // wrong-target link (festival slugs are assigned in the DB, migration 0127,
+  // and can carry a disambiguating suffix on collision).
+  function festivalsBySlug(festivalsJson) {
+    var out = {};
+    if (!Array.isArray(festivalsJson)) return out;
+    festivalsJson.forEach(function (f) {
+      if (!f || !f.slug) return;
+      var prev = out[f.slug];
+      if (!prev || (Number(f.edition_year) || 0) > (Number(prev.edition_year) || 0)) {
+        out[f.slug] = f;
+      }
+    });
+    return out;
+  }
+
   // Haversine great-circle distance in km. Standard formula, no dependency.
   function distanceKm(lat1, lon1, lat2, lon2) {
     var R = 6371;
@@ -451,19 +488,73 @@
   // only flagged allFree when EVERY event counted has ev.is_free === true
   // (never inferred from a NULL/unconfirmed price), so festivalCard()
   // can show an honest "Free entry" tag instead of mislabeling a paid show.
+  // `orgId`/`orgSlug` (2026-07-26): the organizer's id, and its real
+  // organizations.slug straight from public_upcoming_events.organization_slug
+  // (migration 0126). The slug is the ONLY authoritative way to build
+  // /comedy-atlas/org/<slug>/, and the id is the only safe key for matching a
+  // festival record to this group. NEVER slugify(organization_name) as a
+  // substitute and never match festivals on a name string: two orgs can
+  // slugify to the same value, and the page directory is written from the DB
+  // column, so a guessed slug can resolve to the WRONG org's page or 404.
+  // `orgSlug` stays null on a stale export predating 0126, which callers must
+  // treat as "no org page to link to" rather than guessing one.
+  //
+  // `firstDate`/`lastDate` are the ISO DATE PORTIONS (YYYY-MM-DD) of the
+  // earliest/latest starts_at in the group, found by STRING comparison.
+  // Deliberately not new Date(): the exporter already re-expresses starts_at
+  // in the event's OWN timezone (generate_public_exports.localize_event_times),
+  // so parsing it into a Date and reformatting would re-render an Edinburgh
+  // run date in the VISITOR's timezone and can shift it by a full day. That
+  // is not hypothetical -- a hardcoded Europe/Paris put 3,500+ Montreal and
+  // Toronto shows on the WRONG DAY live. Slicing the string keeps the
+  // festival's own local run dates exactly as published.
   function groupFestivals(events) {
     var counts = {};
     events.forEach(function (ev) {
       if (!ev.is_festival) return;
       var key = ev.organization_name + "||" + (ev.city_name || "");
       if (!counts[key]) {
-        counts[key] = { org: ev.organization_name, city: ev.city_name, count: 0, allFree: true };
+        counts[key] = {
+          org: ev.organization_name, city: ev.city_name, count: 0, allFree: true,
+          orgId: ev.organization_id || null,
+          orgSlug: ev.organization_slug || null,
+          firstDate: null, lastDate: null
+        };
       }
-      counts[key].count += 1;
-      if (ev.is_free !== true) counts[key].allFree = false;
+      var entry = counts[key];
+      entry.count += 1;
+      if (ev.is_free !== true) entry.allFree = false;
+      if (!entry.orgId && ev.organization_id) entry.orgId = ev.organization_id;
+      if (!entry.orgSlug && ev.organization_slug) entry.orgSlug = ev.organization_slug;
+      var day = ev.starts_at ? String(ev.starts_at).slice(0, 10) : null;
+      if (day && /^\d{4}-\d{2}-\d{2}$/.test(day)) {
+        if (!entry.firstDate || day < entry.firstDate) entry.firstDate = day;
+        if (!entry.lastDate || day > entry.lastDate) entry.lastDate = day;
+      }
     });
     return Object.keys(counts).map(function (k) { return counts[k]; })
       .sort(function (a, b) { return b.count - a.count; });
+  }
+
+  // "6 Aug 2026" / "3-30 Aug 2026" / "21 Oct - 13 Nov 2026" from the two
+  // YYYY-MM-DD strings groupFestivals produces. Assembled from the string
+  // parts by hand, never via new Date(), for the timezone reason documented
+  // above. Returns "" unless BOTH ends are present and well-formed -- a
+  // partial or malformed range is omitted rather than half-guessed.
+  var MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  function fmtDateRange(firstDate, lastDate) {
+    var re = /^(\d{4})-(\d{2})-(\d{2})$/;
+    var a = re.exec(firstDate || ""), b = re.exec(lastDate || "");
+    if (!a || !b) return "";
+    var y1 = a[1], m1 = MONTH_ABBR[Number(a[2]) - 1], d1 = String(Number(a[3]));
+    var y2 = b[1], m2 = MONTH_ABBR[Number(b[2]) - 1], d2 = String(Number(b[3]));
+    if (!m1 || !m2) return "";
+    if (firstDate === lastDate) return d1 + " " + m1 + " " + y1;
+    if (y1 !== y2) return d1 + " " + m1 + " " + y1 + " \u2013 " + d2 + " " + m2 + " " + y2;
+    if (m1 !== m2) return d1 + " " + m1 + " \u2013 " + d2 + " " + m2 + " " + y2;
+    return d1 + "\u2013" + d2 + " " + m2 + " " + y2;
   }
 
   // Groups already-filtered events into day-buckets in chronological order,
@@ -830,6 +921,9 @@
     fetchEvents: fetchEvents,
     fetchManifest: fetchManifest,
     fetchCities: fetchCities,
+    fetchFestivals: fetchFestivals,
+    festivalsBySlug: festivalsBySlug,
+    fmtDateRange: fmtDateRange,
     distanceKm: distanceKm,
     setFreshness: setFreshness,
     groupByCity: groupByCity,
