@@ -47,7 +47,7 @@ window.ATLAS_VISUALS_ENABLED = false;
 <meta property="og:description" content="Comics find shows. Bookers find comics. Free.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":"https://comedyatlas.app/comedy-atlas/city.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <style>
 /* ---------------------------------------------------------------------
    COMEDY ATLAS — HUB landing page. Self-contained static page (no build
@@ -111,6 +111,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .freshness{max-width:1100px;margin:0 auto;padding:0 20px 8px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .freshness .dot-live{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
 .freshness .dot-live.stale{background:var(--red)}
+/* GLOBAL SEARCH (work order §5). Sized to be the primary hero action on
+   mobile, where the character figure is already stacked above it. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.atlas-search{position:relative;display:flex;gap:8px;margin-top:18px;max-width:560px}
+.atlas-search input{flex:1 1 auto;min-width:0;padding:12px 14px;font-size:16px;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:8px}
+.atlas-search input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.atlas-search button{flex:0 0 auto}
+.atlas-suggest{position:absolute;top:100%;left:0;right:0;z-index:40;margin-top:4px;background:var(--card);border:1px solid var(--border);border-radius:8px;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.atlas-suggest a{display:block;padding:10px 14px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+.atlas-suggest a:last-child{border-bottom:0}
+.atlas-suggest a:hover,.atlas-suggest a[aria-selected="true"]{background:var(--border);color:var(--gold)}
+.atlas-suggest .sug-type{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-left:8px}
+@media(max-width:720px){.atlas-search{max-width:none;margin-left:auto;margin-right:auto}}
+/* Featured slots + empty states (work order §5 items 4-5, §12 Gate 2). */
+.slot-empty{color:var(--muted);font-size:14px;line-height:1.5;background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:14px 16px}
+.slot-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;margin-left:8px}
+.slot-label.editorial{background:rgba(212,175,55,.15);color:var(--gold)}
+.slot-label.sponsored{background:rgba(255,255,255,.10);color:var(--muted)}
 .stats-row{max-width:1100px;margin:0 auto;padding:6px 20px 0;font-size:13px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
 .stats-row strong{color:var(--gold)}
 
@@ -214,8 +232,25 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
     <p class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
       festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</p>
+    <!-- GLOBAL SEARCH (work order §5 "Search requirement"). A plain GET <form>
+         so it works with JavaScript disabled: the browser navigates to
+         /comedy-atlas/search/?q=... on its own. Autocomplete is layered on top
+         by JS and is purely an enhancement -- if it never loads, typing and
+         pressing Enter still works. The action URL is a FIXED contract with the
+         search page; do not change one without the other. -->
+    <form class="atlas-search" role="search" action="/comedy-atlas/search/" method="get">
+      <label class="visually-hidden" for="atlas-q">Search shows, comics, venues, festivals and cities</label>
+      <input id="atlas-q" name="q" type="search" autocomplete="off"
+             placeholder="Search shows, comics, venues, festivals, cities…"
+             aria-describedby="atlas-q-hint">
+      <button type="submit" class="cta-btn primary">Search</button>
+      <p id="atlas-q-hint" class="visually-hidden">
+        Results are grouped by type. Press Enter to see all matches.</p>
+      <div id="atlas-q-suggest" class="atlas-suggest" role="listbox" hidden></div>
+    </form>
     <div class="atlas-cta-row">
       <button type="button" class="cta-btn primary" id="near-tonight-btn">📍 Shows near me</button>
+      <a href="/shows.html" class="cta-btn secondary">All shows</a>
       <a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse cities</a>
     </div>
   </div>
@@ -319,6 +354,39 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   function cityLabel(entry) {
     var slug = A.escapeHtml(entry.city);
     return entry.country ? slug + ', ' + A.escapeHtml(entry.country) : slug;
+  }
+
+  // Deterministic daily rotation (work order §5 item 7: "rotating city
+  // discovery ... never imply the displayed cities are the only important
+  // ones"). Rotating by day-of-year rather than Math.random keeps the page
+  // stable within a day -- so it caches, and two visitors on the same day see
+  // the same thing -- while still changing over time. The ORDER of the input
+  // is preserved as a cycle, so the coverage ordering still decides who is
+  // adjacent to whom; only the starting point moves.
+  function rotateForToday(list) {
+    if (!list || list.length < 2) { return (list || []).slice(); }
+    var now = new Date();
+    var start = Date.UTC(now.getUTCFullYear(), 0, 0);
+    var dayOfYear = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - start) / 86400000);
+    var offset = ((dayOfYear % list.length) + list.length) % list.length;
+    return list.slice(offset).concat(list.slice(0, offset));
+  }
+
+  // Featured-comic card. Currently UNUSED because no featured selection source
+  // exists (see the featured-slot comment in render()); defined so the slot is
+  // real machinery rather than a promise, and so wiring Gate 6's
+  // featured_placements needs no new rendering code. Deliberately renders only
+  // fields we would actually have rights to show.
+  function comicFeatureCard(c) {
+    var name = c.stage_name || c.name || '';
+    var href = '/comedy-atlas/comic/' + encodeURIComponent(c.slug || '') + '/';
+    var label = c.sponsored
+      ? '<span class="slot-label sponsored">Sponsored</span>'
+      : '<span class="slot-label editorial">Featured</span>';
+    return '<a class="place-card" href="' + href + '">' +
+      '<div class="place-name">' + A.escapeHtml(name) + label + '</div>' +
+      (c.reason ? '<div class="place-meta">' + A.escapeHtml(c.reason) + '</div>' : '') +
+      '</a>';
   }
 
   function cityCard(entry) {
@@ -431,28 +499,130 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       '<span><strong>' + cities.length + '</strong> cities live</span>' +
       (totalFestivals ? '<span><strong>' + totalFestivals + '</strong> festivals</span>' : '');
 
+    // ---------------------------------------------------------------
+    // HOMEPAGE INFORMATION ARCHITECTURE (work order 2026-07-27 §5, Gate 2).
+    // Order is deliberate and was previously Cities -> Festivals -> Coming up.
+    // A visitor's first job is to attend a show, so upcoming shows now come
+    // first and city browsing moves below the fold. The globe must never push
+    // actionable shows down (§5), which is why the Atlas section sits after
+    // the show/festival/comic sections rather than under the hero.
+    //   1 hero + global search (static markup above)
+    //   2 Happening soon        <- actionable, first
+    //   3 Featured festivals    <- exactly 3, or an honest empty state
+    //   4 Featured comics       <- exactly 3, or an honest empty state
+    //   5 Explore the Atlas     <- map/globe + browse all cities
+    //   6 Cities                <- rotating discovery, not a fixed "major" list
+    //   7 Learn / News
+    //   8 Industry CTA
+    // ---------------------------------------------------------------
     var html = '';
 
-    html += '<section class="atlas-section"><h2>Cities</h2><div class="card-grid">';
-    featured.forEach(function (c) { html += cityCard(c); });
-    html += '</div>';
+    // 2. HAPPENING SOON. Capped at 6 cards (§5: "3 to 6 cards, with a
+    //    'See all shows' link") -- a taste, not a listing. Full listings live
+    //    on /shows.html and each city page.
+    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "en"); });
+    var soon = soonAll.slice().sort(function (a, b) {
+      return new Date(a.starts_at) - new Date(b.starts_at);
+    }).slice(0, 60);
+    html += '<section class="atlas-section"><h2>Happening soon</h2>' +
+      A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 2 }) +
+      '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
+      '<a href="/shows.html" style="color:var(--gold);font-weight:700">See all ' +
+      totalShows + ' shows &rarr;</a></div></section>';
 
+    // 3 + 4. FEATURED SLOTS. §5 allows a featured festival/comic ONLY when it
+    // is "genuinely featured/editorially selected or paid and labelled", and a
+    // featured comic additionally needs "a real profile, source-backed bio/photo,
+    // and a reason for selection".
+    //
+    // NEITHER EXISTS TODAY: there is no featured_placements table (that is Gate
+    // 6), no editorial selection process, and no provenance/rights fields on a
+    // comic's bio or photo. Picking three by event count or alphabetically and
+    // calling them "featured" would be exactly the invented-editorial claim the
+    // work order forbids. So the slots render their EMPTY state, which §12 Gate
+    // 2 and §13 both explicitly permit ("or remain safely empty").
+    //
+    // The machinery is real: swap the empty array below for placement rows and
+    // the labelled cards render. That is the only change needed.
+    var featuredFestivals = [];   // TODO(Gate 6): featured_placements, type=festival
+    var featuredComics = [];      // TODO(Gate 6): featured_placements, type=comic
+
+    html += '<section class="atlas-section"><h2>Featured festivals' +
+      '<span class="slot-label editorial">Editorial</span></h2>';
+    if (featuredFestivals.length) {
+      html += '<div class="card-grid">';
+      featuredFestivals.forEach(function (f) { html += festivalCard(f, festivalSlugByOrgId); });
+      html += '</div>';
+    } else {
+      html += '<p class="slot-empty">No featured festivals right now. We only feature a ' +
+        'festival when it has been editorially selected, or when a placement is paid and ' +
+        'labelled as such &mdash; never just because it is the biggest one we hold data for. ' +
+        '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700">' +
+        'Browse every festival &rarr;</a></p>';
+    }
+    html += '</section>';
+
+    html += '<section class="atlas-section"><h2>Featured comics' +
+      '<span class="slot-label editorial">Editorial</span></h2>';
+    if (featuredComics.length) {
+      html += '<div class="card-grid">';
+      featuredComics.forEach(function (c) { html += comicFeatureCard(c); });
+      html += '</div>';
+    } else {
+      html += '<p class="slot-empty">No featured comics right now. A comic is only ' +
+        'featured here once their profile has a sourced biography and a photo we have the ' +
+        'rights to use. We would rather show nothing than pick three at random. ' +
+        '<a href="/comedy-atlas/comics/" style="color:var(--gold);font-weight:700">' +
+        'Browse all comics &rarr;</a></p>';
+    }
+    html += '</section>';
+
+    // 5. EXPLORE THE ATLAS. The map mount (#atlas-viz-root) lives higher in the
+    //    document and is inert unless the flag is on, so this section is the
+    //    honest, always-working entry point to geographic browsing.
+    html += '<section class="atlas-section"><h2>Explore the Atlas</h2>' +
+      '<p class="stub-note">Browse the whole catalogue by place &mdash; ' +
+      cities.length + ' cities with listed shows, and ' + totalFestivals +
+      ' festival records worldwide.</p>' +
+      '<div class="atlas-cta-row" style="margin-top:14px">' +
+      '<a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse all cities</a>' +
+      '<a href="/comedy-atlas/festival/" class="cta-btn secondary">Browse all festivals</a>' +
+      '<a href="/comedy-atlas/comics/" class="cta-btn secondary">Browse all comics</a>' +
+      '</div></section>';
+
+    // 6. CITIES. §5 item 7: rotating discovery, "never imply the displayed
+    //    cities are the only important ones". Previously this rendered a fixed
+    //    tier of "featured" cities (>= FEATURED_MIN_SHOWS) which made a
+    //    permanent major/secondary distinction out of what is really just
+    //    today's coverage. Now: the same coverage ordering, but rotated by day
+    //    so the set changes, capped at 12 (§5 says 6-13), and captioned as a
+    //    sample rather than a ranking.
+    html += '<section class="atlas-section"><h2>Cities</h2>';
+    var rotated = rotateForToday(featured);
+    var shown = rotated.slice(0, 12);
+    if (shown.length) {
+      html += '<div class="card-grid">';
+      shown.forEach(function (c) { html += cityCard(c); });
+      html += '</div>';
+      html += '<p class="stub-note" style="margin-top:12px">A rotating sample of the ' +
+        cities.length + ' cities with listed shows &mdash; not a ranking, and not the ' +
+        'full list.</p>';
+    }
     if (stubs.length) {
       html += '<div style="margin-top:20px">' +
-        '<p class="stub-note">Also tracking — cities where we\'ve spotted shows but don\'t yet have ' +
+        '<p class="stub-note">Also tracking &mdash; cities where we\'ve spotted shows but don\'t yet have ' +
         'full coverage:</p><div class="stub-list">' +
         stubs.map(stubCityLink).join('') + '</div></div>';
     }
+    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities &rarr;</a></div></section>';
 
-    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities →</a></div></section>';
-
-    // FESTIVALS. Two honest tiers, same shape as the Cities section above:
-    // cards for the festivals whose programme is actually listed here, then a
-    // compact chip list for every other public festival we hold a record for.
-    // The chips carry NO count and NO dates, because we have neither -- those
-    // pages say so in as many words (see scripts/generate_festival_pages.py).
+    // FESTIVALS (full two-tier list). Kept below the featured slot: the
+    // featured slot is editorial, this is the complete honest inventory --
+    // cards for festivals whose programme we actually list, then chips for
+    // every other record. Chips carry NO count and NO dates because we have
+    // neither, and those pages say so in as many words.
     if (festivals.length || festivalStubs.length) {
-      html += '<section class="atlas-section"><h2>Festivals</h2>';
+      html += '<section class="atlas-section"><h2>All festivals</h2>';
       if (festivals.length) {
         html += '<div class="card-grid">';
         festivals.forEach(function (f) { html += festivalCard(f, festivalSlugByOrgId); });
@@ -460,39 +630,33 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }
       if (festivalStubs.length) {
         html += '<div style="margin-top:20px">' +
-          '<p class="stub-note">Also tracked — festivals we hold a verified record for but ' +
+          '<p class="stub-note">Also tracked &mdash; festivals we hold a verified record for but ' +
           'whose programme we don\'t list yet. Each page has the festival\'s own official site:</p>' +
           '<div class="stub-list">' + festivalStubs.map(festivalStubLink).join('') + '</div></div>';
       }
       if (festivalSlugs.length) {
         html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
           '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700">Browse all ' +
-          totalFestivals + ' festivals →</a></div>';
+          totalFestivals + ' festivals &rarr;</a></div>';
       }
       html += '</section>';
     }
 
-    // Coming up: the soonest shows across every city, grouped by date with
-    // a city badge per card (2026-07-19, Robert: the old flat 6-item list
-    // mixed every city together) -- capped per day and total days so this
-    // stays a taste, not a full listing (full listings live on /city/<slug>/).
-    // Renamed from "Recently verified" 2026-07-19 (badge-logic inversion:
-    // there's no blanket verification claim to make here any more).
-    // Language policy (2026-07-19, option (b), docs/atlas-ops/
-    // LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): the totals above (cities,
-    // "upcoming shows", festivals) are computed from the FULL `events`
-    // list, unfiltered -- an honest count of everything real, matching the
-    // "world's greatest resource" claim now that nothing is hidden. This
-    // curated strip is a taste, not a claim of completeness, and has no
-    // language toggle of its own (unlike city.html), so it stays
-    // English-default the same way near.js does; the full, all-languages
-    // list for any city is always one click away on that city's own page.
-    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "en"); });
-    var soon = soonAll.slice().sort(function (a, b) {
-      return new Date(a.starts_at) - new Date(b.starts_at);
-    }).slice(0, 60);
-    html += '<section class="atlas-section"><h2>Coming up</h2>' +
-      A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 5 }) + '</section>';
+    // 7. LEARN / NEWS.
+    html += '<section class="atlas-section"><h2>Learn &amp; news</h2>' +
+      '<div class="atlas-cta-row">' +
+      '<a href="/comedy-atlas/guide/" class="cta-btn secondary">Learn &mdash; open mic &amp; booking guides</a>' +
+      '<a href="/comedy-atlas/blog/" class="cta-btn secondary">News &amp; updates</a>' +
+      '</div></section>';
+
+    // 8. INDUSTRY CTA. Kept last (§4: partner/advertising material belongs in
+    //    a discreet "for industry" area, not in primary discovery).
+    html += '<section class="atlas-section"><h2>For industry</h2>' +
+      '<div class="atlas-cta-row">' +
+      '<a href="/comedy-atlas/apply.html" class="cta-btn secondary">Comics &mdash; get listed</a>' +
+      '<a href="/comedy-atlas/partners.html" class="cta-btn secondary">Venues, promoters &amp; festivals</a>' +
+      '</div></section>';
+
 
     app.innerHTML = html;
   }

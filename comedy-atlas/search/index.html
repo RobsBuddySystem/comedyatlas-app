@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/search/">
+<meta name="description" content="Search shows, comics, venues, festivals, cities and organizers across COMEDY ATLAS.">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+}
+:root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
+h1{font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.5px;margin:24px 0 16px}
+.search-box{display:flex;gap:8px;margin-bottom:16px}
+#q{flex:1;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit}
+#q:focus{outline:2px solid var(--purple-light);outline-offset:1px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;list-style:none}
+.tab{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.tab[aria-selected="true"]{color:var(--text);border-color:var(--gold);background:rgba(201,168,76,.12)}
+.tab .tab-n{color:var(--muted);font-weight:500;margin-left:4px}
+#status-line{font-size:13px;color:var(--muted);margin-bottom:10px;min-height:1.2em}
+#status-line[role="alert"]{color:var(--red)}
+ul#results{list-style:none}
+.result{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.result[aria-selected="true"],.result:hover{border-color:var(--purple-light)}
+.result:focus-within{outline:2px solid var(--purple-light);outline-offset:1px}
+.result a{display:block;color:inherit}
+.result-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.result-name{font-size:15px;font-weight:700}
+.result-type{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.result-meta{font-size:13px;color:var(--muted);margin-top:4px}
+mark{background:rgba(201,168,76,.35);color:inherit;border-radius:3px;padding:0 1px}
+.empty-state,.error-state{color:var(--muted);font-size:14px;padding:32px 12px;text-align:center}
+.error-state{color:var(--red)}
+.error-state button,.retry-btn{margin-top:10px;background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:20px}
+.pagination button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.pagination button:disabled{opacity:.4;cursor:default}
+.pagination span{font-size:13px;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+noscript .result-meta{margin-top:2px}
+[hidden]{display:none!important}
+@media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Calendar</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/guide/">Guide</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+</nav>
+<main id="main-content">
+  <h1>Search COMEDY ATLAS</h1>
+  <div class="search-box">
+    <label for="q" class="sr-only">Search shows, comics, venues, festivals, cities and organizers</label>
+    <input type="search" id="q" placeholder="Search shows, comics, venues, festivals, cities, organizers…"
+           autocomplete="off" aria-describedby="status-line" aria-controls="results">
+  </div>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Filter by type"></div>
+  <div id="status-line" aria-live="polite"></div>
+  <ul id="results" role="listbox" aria-label="Search results"></ul>
+  <div id="empty" class="empty-state" hidden>
+    No results<span id="empty-q"></span>. Try a different spelling, or fewer words.
+  </div>
+  <div id="error" class="error-state" hidden role="alert">
+    Search is temporarily unavailable — the search index failed to load.
+    <div><button type="button" id="retry-btn" class="retry-btn">Try again</button></div>
+  </div>
+  <nav class="pagination" id="pagination" hidden aria-label="Search result pages">
+    <button type="button" id="prev-btn">← Previous</button>
+    <span id="page-info"></span>
+    <button type="button" id="next-btn">Next →</button>
+  </nav>
+  <noscript>
+    <p style="color:var(--muted);font-size:13px;margin-top:16px">
+      This search box needs JavaScript. Browse instead:
+      <a href="/comedy-atlas/comics/">Comics</a> ·
+      <a href="/comedy-atlas/cities/">Cities</a> ·
+      <a href="/comedy-atlas/festival/">Festivals</a> ·
+      <a href="/shows.html">Shows</a>
+    </p>
+  </noscript>
+</main>
+<footer>
+  COMEDY ATLAS
+  <div><a href="/comedy-atlas/privacy.html">Privacy</a> · <a href="/comedy-atlas/about.html">About</a></div>
+</footer>
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------------
+  // Config / constants. INDEX_URL is root-absolute so this page works
+  // identically at any future nesting depth (same reasoning seo_common.py's
+  // ICON_HEAD_HTML uses for its own root-absolute links) -- this is the
+  // path scripts/generate_search_index.py's output is published to by
+  // publish_atlas_data.py (exports/search_index.json -> <site-repo>/
+  // data/comedy-atlas/search_index.json).
+  // ---------------------------------------------------------------------
+  var INDEX_URL = "/data/comedy-atlas/search_index.json";
+  var PAGE_SIZE = 20;
+  var DEBOUNCE_MS = 150;
+
+  var TYPES = [
+    { key: "", label: "All" },
+    { key: "event", label: "Shows" },
+    { key: "comic", label: "Comics" },
+    { key: "venue", label: "Venues" },
+    { key: "festival", label: "Festivals" },
+    { key: "city", label: "Cities" },
+    { key: "organizer", label: "Organizers" },
+  ];
+  var VALID_TYPE_KEYS = TYPES.map(function (t) { return t.key; }).filter(Boolean);
+
+  var qInput = document.getElementById("q");
+  var tabsEl = document.getElementById("tabs");
+  var resultsEl = document.getElementById("results");
+  var statusEl = document.getElementById("status-line");
+  var emptyEl = document.getElementById("empty");
+  var emptyQEl = document.getElementById("empty-q");
+  var errorEl = document.getElementById("error");
+  var retryBtn = document.getElementById("retry-btn");
+  var paginationEl = document.getElementById("pagination");
+  var prevBtn = document.getElementById("prev-btn");
+  var nextBtn = document.getElementById("next-btn");
+  var pageInfoEl = document.getElementById("page-info");
+
+  var ALL_RECORDS = null;   // raw records, straight from search_index.json
+  var HAYSTACKS = null;     // parallel array: precomputed lowercase match text
+  var state = { q: "", type: "", page: 1 };
+  var currentResults = [];  // records matching state.q/state.type, ALL of them (pre-pagination)
+  var selectedIndex = -1;   // keyboard-selected row within the current page's results
+  var debounceTimer = null;
+
+  // -----------------------------------------------------------------------
+  // URL <-> state. Every filter (q, type, page) round-trips through the
+  // querystring so a search is always a shareable/bookmarkable/back-
+  // button-safe link (spec §5: "filters preserved in the URL").
+  // -----------------------------------------------------------------------
+  function stateFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get("q") || "";
+    var type = params.get("type") || "";
+    if (VALID_TYPE_KEYS.indexOf(type) === -1) { type = ""; }
+    var page = parseInt(params.get("page"), 10);
+    if (!page || page < 1) { page = 1; }
+    return { q: q, type: type, page: page };
+  }
+
+  function urlFromState(s) {
+    var params = new URLSearchParams();
+    if (s.q) { params.set("q", s.q); }
+    if (s.type) { params.set("type", s.type); }
+    if (s.page && s.page > 1) { params.set("page", String(s.page)); }
+    var qs = params.toString();
+    return window.location.pathname + (qs ? "?" + qs : "");
+  }
+
+  function syncUrl(replace) {
+    var url = urlFromState(state);
+    if (replace) {
+      window.history.replaceState(state, "", url);
+    } else {
+      window.history.pushState(state, "", url);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Data loading
+  // -----------------------------------------------------------------------
+  function esc(s) {
+    var d = document.createElement("div");
+    d.textContent = s == null ? "" : String(s);
+    return d.innerHTML;
+  }
+
+  function buildHaystack(rec) {
+    var parts = [rec.name || ""];
+    if (rec.aliases) { parts = parts.concat(rec.aliases); }
+    if (rec.city) { parts.push(rec.city); }
+    return parts.join(" ␟ ").toLowerCase();
+  }
+
+  function loadIndex() {
+    errorEl.hidden = true;
+    statusEl.textContent = "Loading search index…";
+    return fetch(INDEX_URL, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) { throw new Error("HTTP " + r.status); }
+        return r.json();
+      })
+      .then(function (data) {
+        if (!Array.isArray(data)) { throw new Error("malformed index"); }
+        ALL_RECORDS = data;
+        HAYSTACKS = data.map(buildHaystack);
+        renderTabCounts();
+        runSearch();
+      })
+      .catch(function (err) {
+        ALL_RECORDS = null;
+        HAYSTACKS = null;
+        resultsEl.innerHTML = "";
+        emptyEl.hidden = true;
+        paginationEl.hidden = true;
+        statusEl.textContent = "";
+        errorEl.hidden = false;
+        // eslint-disable-next-line no-console
+        console.error("[atlas-search] failed to load " + INDEX_URL, err);
+      });
+  }
+
+  retryBtn.addEventListener("click", function () { loadIndex(); });
+
+  // -----------------------------------------------------------------------
+  // Tabs
+  // -----------------------------------------------------------------------
+  function renderTabCounts() {
+    tabsEl.innerHTML = "";
+    TYPES.forEach(function (t) {
+      var n = t.key ? ALL_RECORDS.filter(function (r) { return r.type === t.key; }).length
+                     : ALL_RECORDS.length;
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tab";
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("data-type", t.key);
+      btn.setAttribute("aria-selected", String(state.type === t.key));
+      btn.innerHTML = esc(t.label) + ' <span class="tab-n">(' + n + ")</span>";
+      btn.addEventListener("click", function () {
+        state.type = t.key;
+        state.page = 1;
+        syncUrl(false);
+        runSearch();
+      });
+      tabsEl.appendChild(btn);
+    });
+  }
+
+  function markTabSelected() {
+    Array.prototype.forEach.call(tabsEl.querySelectorAll(".tab"), function (btn) {
+      btn.setAttribute("aria-selected", String(btn.getAttribute("data-type") === state.type));
+    });
+  }
+
+  // -----------------------------------------------------------------------
+  // Search / rank. No result is ever invented from display text (spec
+  // §5): every match is a real substring hit against name/aliases/city
+  // pulled straight from search_index.json, nothing synthesized here.
+  // -----------------------------------------------------------------------
+  function highlight(text, q) {
+    if (!q || !text) { return esc(text); }
+    var idx = String(text).toLowerCase().indexOf(q.toLowerCase());
+    if (idx === -1) { return esc(text); }
+    var before = String(text).slice(0, idx);
+    var match = String(text).slice(idx, idx + q.length);
+    var after = String(text).slice(idx + q.length);
+    return esc(before) + "<mark>" + esc(match) + "</mark>" + esc(after);
+  }
+
+  function formatDate(iso) {
+    if (!iso) { return ""; }
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) { return ""; }
+      return d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+    } catch (e) { return ""; }
+  }
+
+  function metaLine(rec) {
+    var bits = [];
+    if (rec.city) { bits.push(rec.country ? rec.city + ", " + rec.country : rec.city); }
+    var d = formatDate(rec.date);
+    if (d) { bits.push(d); }
+    if (rec.status) { bits.push(rec.status); }
+    return bits.join(" · ");
+  }
+
+  var TYPE_LABEL = { event: "Show", comic: "Comic", venue: "Venue",
+                      festival: "Festival", city: "City", organizer: "Organizer" };
+
+  function runSearch() {
+    if (!ALL_RECORDS) { return; }
+    markTabSelected();
+    var q = state.q.trim().toLowerCase();
+    var matches = [];
+    for (var i = 0; i < ALL_RECORDS.length; i++) {
+      var rec = ALL_RECORDS[i];
+      if (state.type && rec.type !== state.type) { continue; }
+      if (q && HAYSTACKS[i].indexOf(q) === -1) { continue; }
+      matches.push(rec);
+    }
+    // Rank: exact-name match, then name-starts-with, then everything else
+    // (alias/city hits) -- each tier alphabetical by name so ordering is
+    // stable and never invented.
+    if (q) {
+      matches.sort(function (a, b) {
+        var an = (a.name || "").toLowerCase(), bn = (b.name || "").toLowerCase();
+        var rank = function (n) { return n === q ? 0 : (n.indexOf(q) === 0 ? 1 : 2); };
+        var ra = rank(an), rb = rank(bn);
+        if (ra !== rb) { return ra - rb; }
+        return an.localeCompare(bn);
+      });
+    }
+    currentResults = matches;
+    var maxPage = Math.max(1, Math.ceil(matches.length / PAGE_SIZE));
+    if (state.page > maxPage) { state.page = maxPage; }
+    renderResults();
+  }
+
+  function renderResults() {
+    resultsEl.innerHTML = "";
+    selectedIndex = -1;
+    var total = currentResults.length;
+    if (total === 0) {
+      emptyEl.hidden = false;
+      emptyQEl.textContent = state.q ? ' for "' + state.q + '"' : "";
+      paginationEl.hidden = true;
+      statusEl.textContent = "";
+      return;
+    }
+    emptyEl.hidden = true;
+    var start = (state.page - 1) * PAGE_SIZE;
+    var pageItems = currentResults.slice(start, start + PAGE_SIZE);
+    var q = state.q.trim();
+
+    pageItems.forEach(function (rec) {
+      var li = document.createElement("li");
+      li.className = "result";
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", "false");
+      var a = document.createElement("a");
+      a.href = rec.url;
+      var top = document.createElement("div");
+      top.className = "result-top";
+      var name = document.createElement("span");
+      name.className = "result-name";
+      name.innerHTML = highlight(rec.name, q);
+      var type = document.createElement("span");
+      type.className = "result-type";
+      type.textContent = TYPE_LABEL[rec.type] || rec.type;
+      top.appendChild(name);
+      top.appendChild(type);
+      var meta = document.createElement("div");
+      meta.className = "result-meta";
+      meta.textContent = metaLine(rec);
+      a.appendChild(top);
+      a.appendChild(meta);
+      li.appendChild(a);
+      resultsEl.appendChild(li);
+    });
+
+    var maxPage = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    statusEl.textContent = "Showing " + (start + 1) + "–" + Math.min(start + PAGE_SIZE, total) +
+      " of " + total + " result" + (total === 1 ? "" : "s") +
+      (maxPage > 1 ? " (page " + state.page + " of " + maxPage + ")" : "");
+    if (maxPage > 1) {
+      paginationEl.hidden = false;
+      prevBtn.disabled = state.page <= 1;
+      nextBtn.disabled = state.page >= maxPage;
+      pageInfoEl.textContent = "Page " + state.page + " of " + maxPage;
+    } else {
+      paginationEl.hidden = true;
+    }
+  }
+
+  prevBtn.addEventListener("click", function () {
+    if (state.page > 1) { state.page -= 1; syncUrl(false); renderResults(); window.scrollTo(0, 0); }
+  });
+  nextBtn.addEventListener("click", function () {
+    var maxPage = Math.max(1, Math.ceil(currentResults.length / PAGE_SIZE));
+    if (state.page < maxPage) { state.page += 1; syncUrl(false); renderResults(); window.scrollTo(0, 0); }
+  });
+
+  // -----------------------------------------------------------------------
+  // Keyboard navigation: ArrowDown/ArrowUp move a selection through the
+  // CURRENT page's results, Enter opens the selected (or first) result,
+  // Escape clears the query. Works from the search input itself so a user
+  // never has to Tab away to start navigating (spec §5: "keyboard
+  // navigation").
+  // -----------------------------------------------------------------------
+  function applySelection() {
+    var items = resultsEl.querySelectorAll(".result");
+    items.forEach(function (el, i) {
+      var on = i === selectedIndex;
+      el.setAttribute("aria-selected", String(on));
+      if (on) { el.scrollIntoView({ block: "nearest" }); }
+    });
+  }
+
+  qInput.addEventListener("keydown", function (e) {
+    var items = resultsEl.querySelectorAll(".result");
+    if (e.key === "ArrowDown") {
+      if (items.length === 0) { return; }
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      applySelection();
+    } else if (e.key === "ArrowUp") {
+      if (items.length === 0) { return; }
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, 0);
+      applySelection();
+    } else if (e.key === "Enter") {
+      var idx = selectedIndex >= 0 ? selectedIndex : 0;
+      var target = items[idx] && items[idx].querySelector("a");
+      if (target) { e.preventDefault(); window.location.href = target.href; }
+    } else if (e.key === "Escape") {
+      if (qInput.value) {
+        e.preventDefault();
+        qInput.value = "";
+        onQueryChange();
+      }
+    }
+  });
+
+  // -----------------------------------------------------------------------
+  // Input wiring (debounced live filtering -- doubles as the "autocomplete"
+  // behavior spec §5 asks for: results update as you type, no page reload).
+  // -----------------------------------------------------------------------
+  function onQueryChange() {
+    state.q = qInput.value;
+    state.page = 1;
+    syncUrl(true);
+    if (debounceTimer) { window.clearTimeout(debounceTimer); }
+    debounceTimer = window.setTimeout(runSearch, DEBOUNCE_MS);
+  }
+  qInput.addEventListener("input", onQueryChange);
+
+  window.addEventListener("popstate", function () {
+    state = stateFromUrl();
+    qInput.value = state.q;
+    if (ALL_RECORDS) { renderTabCounts(); runSearch(); }
+  });
+
+  // -----------------------------------------------------------------------
+  // Boot
+  // -----------------------------------------------------------------------
+  state = stateFromUrl();
+  qInput.value = state.q;
+  loadIndex();
+})();
+</script>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+</body>
+</html>

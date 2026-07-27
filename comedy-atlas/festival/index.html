@@ -116,8 +116,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <style>
 .festivals-header {max-width:1100px;margin:0 auto;padding:24px 20px 32px}
 .festivals-header .atlas-wordmark {font-size:clamp(24px,5vw,40px);font-weight:800;letter-spacing:-1px}
-.festivals-header .stats {display:flex;gap:24px;margin-top:16px;font-size:14px;color:var(--muted)}
+.festivals-header .stats {display:flex;gap:24px;margin-top:16px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .festivals-header .stats strong {color:var(--gold)}
+.festival-filters {max-width:1100px;margin:0 auto;padding:0 20px 8px;display:flex;
+  gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.festival-filters select {margin-left:6px;font:inherit;background:var(--card);
+  color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 8px}
+.festival-filters + .stub-note {max-width:1100px;margin:0 auto;padding:0 20px 20px}
 .cities-grid {max-width:1100px;margin:0 auto;padding:0 20px 40px;display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
 .city-card {display:block;background:var(--card);border:1px solid var(--border);
@@ -132,6 +137,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .stub-list a {font-size:13px;color:var(--muted);border:1px solid var(--border);
   border-radius:999px;padding:5px 12px;text-decoration:none}
 .stub-list a:hover {color:var(--text);border-color:var(--purple)}
+#ff-empty {display:none;max-width:1100px;margin:0 auto;padding:0 20px 40px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -151,96 +157,113 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <a href="/comedy-atlas/" class="back-link">← COMEDY ATLAS</a>
   <div class="atlas-wordmark">Festivals<span class="dot">.</span></div>
   <div class="stats">
-    <div><strong>78</strong> festivals tracked</div>
-    <div><strong>5</strong> with shows listed here</div>
+    <div><strong>78</strong> festival records</div>
+    <div><strong>5</strong> with programme data listed here</div>
+    <div><strong>3</strong> with confirmed edition dates</div>
   </div>
 </header>
-<main id="main-content">
-<div class="cities-grid">
-<a class="city-card" href="/comedy-atlas/festival/camden-fringe/"><div class="city-name">Camden Fringe</div><div class="city-count">120 shows listed</div><div class="city-next-show">3 August 2026 – 30 August 2026</div></a>
-<a class="city-card" href="/comedy-atlas/festival/cologne-comedy-festival/"><div class="city-name">Cologne Comedy Festival</div><div class="city-count">91 shows listed</div><div class="city-next-show">19 October 2026 – 13 November 2026</div></a>
-<a class="city-card" href="/comedy-atlas/festival/galway-comedy-festival/"><div class="city-name">Galway Comedy Festival</div><div class="city-count">6 shows listed</div><div class="city-next-show">20 October 2026 – 26 October 2026</div></a>
-<a class="city-card" href="/comedy-atlas/festival/laughing-horse-free-festival/"><div class="city-name">Laughing Horse Free Festival</div><div class="city-count">206 shows listed</div></a>
-<a class="city-card" href="/comedy-atlas/festival/pbh-s-free-fringe/"><div class="city-name">PBH&#x27;s Free Fringe</div><div class="city-count">149 shows listed</div></a>
+<div class="festival-filters" role="search" aria-label="Filter festivals">
+  <label>Country <select id="ff-country"><option value="">All</option><option value="DE">DE</option>
+<option value="GB">GB</option>
+<option value="IE">IE</option></select></label>
+  <label>Year <select id="ff-year"><option value="">All</option><option value="2026">2026</option></select></label>
+  <label>Status <select id="ff-status"><option value="">All</option><option value="planned">planned</option>
+<option value="unknown">unknown</option></select></label>
+  <label>Programme <select id="ff-programme">
+    <option value="">All</option>
+    <option value="listed">Programme listed</option>
+    <option value="linked">Organiser linked, no shows yet</option>
+    <option value="none">Record only</option>
+  </select></label>
 </div>
-<div class="stub-section">
+<p class="stub-note">Country, year and status come from data already on file — most festivals have none of the three recorded yet, so most results won't narrow by them. Nothing here is guessed to fill a filter.</p>
+<main id="main-content">
+<div class="cities-grid" data-filter-group>
+<a class="city-card" data-festival-filter data-country="GB" data-year="2026" data-status="planned" data-programme="listed" href="/comedy-atlas/festival/camden-fringe/"><div class="city-name">Camden Fringe</div><div class="city-count">120 shows listed</div><div class="city-next-show">3 August 2026 – 30 August 2026</div></a>
+<a class="city-card" data-festival-filter data-country="DE" data-year="2026" data-status="planned" data-programme="listed" href="/comedy-atlas/festival/cologne-comedy-festival/"><div class="city-name">Cologne Comedy Festival</div><div class="city-count">91 shows listed</div><div class="city-next-show">19 October 2026 – 13 November 2026</div></a>
+<a class="city-card" data-festival-filter data-country="IE" data-year="2026" data-status="planned" data-programme="listed" href="/comedy-atlas/festival/galway-comedy-festival/"><div class="city-name">Galway Comedy Festival</div><div class="city-count">6 shows listed</div><div class="city-next-show">20 October 2026 – 26 October 2026</div></a>
+<a class="city-card" data-festival-filter data-country="GB" data-year="" data-status="" data-programme="listed" href="/comedy-atlas/festival/laughing-horse-free-festival/"><div class="city-name">Laughing Horse Free Festival</div><div class="city-count">206 shows listed</div></a>
+<a class="city-card" data-festival-filter data-country="GB" data-year="" data-status="" data-programme="listed" href="/comedy-atlas/festival/pbh-s-free-fringe/"><div class="city-name">PBH&#x27;s Free Fringe</div><div class="city-count">149 shows listed</div></a>
+</div>
+<div class="stub-section" data-filter-group>
 <p class="stub-note">Also tracked — festivals we hold a verified record for but whose programme we don't list. Each page carries the festival's own official site.</p>
 <div class="stub-list">
-<a href="/comedy-atlas/festival/adelaide-fringe/">Adelaide Fringe</a>
-<a href="/comedy-atlas/festival/amsterdam-fringe-festival/">Amsterdam Fringe Festival</a>
-<a href="/comedy-atlas/festival/aspen-rooftop-comedy-festival/">Aspen Rooftop Comedy Festival</a>
-<a href="/comedy-atlas/festival/auckland-fringe-festival/">Auckland Fringe Festival</a>
-<a href="/comedy-atlas/festival/bath-comedy-festival/">Bath Comedy Festival</a>
-<a href="/comedy-atlas/festival/bentzen-ball-comedy-festival/">Bentzen Ball Comedy Festival</a>
-<a href="/comedy-atlas/festival/big-pineapple-comedy-festival/">Big Pineapple Comedy Festival</a>
-<a href="/comedy-atlas/festival/boston-comedy-festival/">Boston Comedy Festival</a>
-<a href="/comedy-atlas/festival/bridgetown-comedy-festival/">Bridgetown Comedy Festival</a>
-<a href="/comedy-atlas/festival/brighton-fringe/">Brighton Fringe</a>
-<a href="/comedy-atlas/festival/brisbane-comedy-festival/">Brisbane Comedy Festival</a>
-<a href="/comedy-atlas/festival/bristol-comedy-garden/">Bristol Comedy Garden</a>
-<a href="/comedy-atlas/festival/bumbershoot/">Bumbershoot</a>
-<a href="/comedy-atlas/festival/buxton-fringe/">Buxton Fringe</a>
-<a href="/comedy-atlas/festival/cardiff-comedy-festival/">Cardiff Comedy Festival</a>
-<a href="/comedy-atlas/festival/chicago-improv-festival/">Chicago Improv Festival</a>
-<a href="/comedy-atlas/festival/clusterfest/">Clusterfest</a>
-<a href="/comedy-atlas/festival/cork-comedy-festival/">Cork Comedy Festival</a>
-<a href="/comedy-atlas/festival/cracker-comedy-festival/">Cracker Comedy Festival</a>
-<a href="/comedy-atlas/festival/del-close-marathon/">Del Close Marathon</a>
-<a href="/comedy-atlas/festival/dublin-fringe-festival/">Dublin Fringe Festival</a>
-<a href="/comedy-atlas/festival/edinburgh-festival-fringe/">Edinburgh Festival Fringe</a>
-<a href="/comedy-atlas/festival/edmonton-international-fringe-festival/">Edmonton International Fringe Festival</a>
-<a href="/comedy-atlas/festival/festival-international-du-rire-liege/">Festival International du Rire (Liege)</a>
-<a href="/comedy-atlas/festival/fringe-world-perth/">FRINGE WORLD Perth</a>
-<a href="/comedy-atlas/festival/gilda-s-laughfest/">Gilda&#x27;s LaughFest</a>
-<a href="/comedy-atlas/festival/glasgow-international-comedy-festival/">Glasgow International Comedy Festival</a>
-<a href="/comedy-atlas/festival/great-american-comedy-festival/">Great American Comedy Festival</a>
-<a href="/comedy-atlas/festival/greenwich-comedy-festival/">Greenwich Comedy Festival</a>
-<a href="/comedy-atlas/festival/halifax-comedy-festival/">Halifax Comedy Festival</a>
-<a href="/comedy-atlas/festival/high-plains-comedy-festival/">High Plains Comedy Festival</a>
-<a href="/comedy-atlas/festival/hong-kong-international-comedy-festival/">Hong Kong International Comedy Festival</a>
-<a href="/comedy-atlas/festival/iveagh-gardens-comedy-festival/">Iveagh Gardens Comedy Festival</a>
-<a href="/comedy-atlas/festival/jfl42-just-for-laughs-toronto/">JFL42 (Just for Laughs Toronto)</a>
-<a href="/comedy-atlas/festival/just-for-laughs-montreal/">Just for Laughs (Montreal)</a>
-<a href="/comedy-atlas/festival/just-for-laughs-northwest/">Just for Laughs NorthWest</a>
-<a href="/comedy-atlas/festival/kilkenny-cat-laughs-comedy-festival/">Kilkenny Cat Laughs Comedy Festival</a>
-<a href="/comedy-atlas/festival/kuala-lumpur-international-comedy-festival/">Kuala Lumpur International Comedy Festival</a>
-<a href="/comedy-atlas/festival/latitude-festival/">Latitude Festival</a>
-<a href="/comedy-atlas/festival/laughing-skull-comedy-festival/">Laughing Skull Comedy Festival</a>
-<a href="/comedy-atlas/festival/leicester-comedy-festival/">Leicester Comedy Festival</a>
-<a href="/comedy-atlas/festival/machynlleth-comedy-festival/">Machynlleth Comedy Festival</a>
-<a href="/comedy-atlas/festival/manchester-comedy-festival/">Manchester Comedy Festival</a>
-<a href="/comedy-atlas/festival/melbourne-fringe-festival/">Melbourne Fringe Festival</a>
-<a href="/comedy-atlas/festival/melbourne-international-comedy-festival/">Melbourne International Comedy Festival</a>
-<a href="/comedy-atlas/festival/melbourne-international-comedy-festival-roadshow/">Melbourne International Comedy Festival Roadshow</a>
-<a href="/comedy-atlas/festival/montreux-comedy-festival/">Montreux Comedy Festival</a>
-<a href="/comedy-atlas/festival/moontower-comedy-festival/">Moontower Comedy Festival</a>
-<a href="/comedy-atlas/festival/new-york-comedy-festival/">New York Comedy Festival</a>
-<a href="/comedy-atlas/festival/norwich-comedy-festival/">Norwich Comedy Festival</a>
-<a href="/comedy-atlas/festival/nottingham-comedy-festival/">Nottingham Comedy Festival</a>
-<a href="/comedy-atlas/festival/nz-fringe-festival/">NZ Fringe Festival</a>
-<a href="/comedy-atlas/festival/nz-international-comedy-festival/">NZ International Comedy Festival</a>
-<a href="/comedy-atlas/festival/out-of-bounds-comedy-festival/">Out of Bounds Comedy Festival</a>
-<a href="/comedy-atlas/festival/perth-comedy-festival/">Perth Comedy Festival</a>
-<a href="/comedy-atlas/festival/prague-fringe-festival/">Prague Fringe Festival</a>
-<a href="/comedy-atlas/festival/reykjavik-fringe-festival/">Reykjavik Fringe Festival</a>
-<a href="/comedy-atlas/festival/riot-la-comedy-festival/">Riot LA Comedy Festival</a>
-<a href="/comedy-atlas/festival/saskatoon-fringe-festival/">Saskatoon Fringe Festival</a>
-<a href="/comedy-atlas/festival/savanna-international-comedy-festival/">Savanna International Comedy Festival</a>
-<a href="/comedy-atlas/festival/seattle-international-comedy-competition/">Seattle International Comedy Competition</a>
-<a href="/comedy-atlas/festival/sf-sketchfest/">SF Sketchfest</a>
-<a href="/comedy-atlas/festival/singapore-international-comedy-festival/">Singapore International Comedy Festival</a>
-<a href="/comedy-atlas/festival/sydney-comedy-festival/">Sydney Comedy Festival</a>
-<a href="/comedy-atlas/festival/sydney-fringe-festival/">Sydney Fringe Festival</a>
-<a href="/comedy-atlas/festival/toronto-sketch-comedy-festival/">Toronto Sketch Comedy Festival</a>
-<a href="/comedy-atlas/festival/us-comedy-arts-festival/">US Comedy Arts Festival</a>
-<a href="/comedy-atlas/festival/vancouver-fringe-festival/">Vancouver Fringe Festival</a>
-<a href="/comedy-atlas/festival/vancouver-international-improv-festival/">Vancouver International Improv Festival</a>
-<a href="/comedy-atlas/festival/vancouver-sketch-comedy-festival/">Vancouver Sketch Comedy Festival</a>
-<a href="/comedy-atlas/festival/winnipeg-comedy-festival/">Winnipeg Comedy Festival</a>
-<a href="/comedy-atlas/festival/winnipeg-fringe-theatre-festival/">Winnipeg Fringe Theatre Festival</a>
-<a href="/comedy-atlas/festival/women-in-comedy-festival/">Women in Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/adelaide-fringe/">Adelaide Fringe</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/amsterdam-fringe-festival/">Amsterdam Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/aspen-rooftop-comedy-festival/">Aspen Rooftop Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/auckland-fringe-festival/">Auckland Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/bath-comedy-festival/">Bath Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/bentzen-ball-comedy-festival/">Bentzen Ball Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/big-pineapple-comedy-festival/">Big Pineapple Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/boston-comedy-festival/">Boston Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/bridgetown-comedy-festival/">Bridgetown Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/brighton-fringe/">Brighton Fringe</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/brisbane-comedy-festival/">Brisbane Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/bristol-comedy-garden/">Bristol Comedy Garden</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/bumbershoot/">Bumbershoot</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/buxton-fringe/">Buxton Fringe</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/cardiff-comedy-festival/">Cardiff Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/chicago-improv-festival/">Chicago Improv Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/clusterfest/">Clusterfest</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/cork-comedy-festival/">Cork Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/cracker-comedy-festival/">Cracker Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/del-close-marathon/">Del Close Marathon</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/dublin-fringe-festival/">Dublin Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/edinburgh-festival-fringe/">Edinburgh Festival Fringe</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/edmonton-international-fringe-festival/">Edmonton International Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/festival-international-du-rire-liege/">Festival International du Rire (Liege)</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/fringe-world-perth/">FRINGE WORLD Perth</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/gilda-s-laughfest/">Gilda&#x27;s LaughFest</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/glasgow-international-comedy-festival/">Glasgow International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/great-american-comedy-festival/">Great American Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/greenwich-comedy-festival/">Greenwich Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/halifax-comedy-festival/">Halifax Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/high-plains-comedy-festival/">High Plains Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/hong-kong-international-comedy-festival/">Hong Kong International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/iveagh-gardens-comedy-festival/">Iveagh Gardens Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/jfl42-just-for-laughs-toronto/">JFL42 (Just for Laughs Toronto)</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/just-for-laughs-montreal/">Just for Laughs (Montreal)</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/just-for-laughs-northwest/">Just for Laughs NorthWest</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/kilkenny-cat-laughs-comedy-festival/">Kilkenny Cat Laughs Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/kuala-lumpur-international-comedy-festival/">Kuala Lumpur International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/latitude-festival/">Latitude Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/laughing-skull-comedy-festival/">Laughing Skull Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/leicester-comedy-festival/">Leicester Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/machynlleth-comedy-festival/">Machynlleth Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/manchester-comedy-festival/">Manchester Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/melbourne-fringe-festival/">Melbourne Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/melbourne-international-comedy-festival/">Melbourne International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/melbourne-international-comedy-festival-roadshow/">Melbourne International Comedy Festival Roadshow</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/montreux-comedy-festival/">Montreux Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/moontower-comedy-festival/">Moontower Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/new-york-comedy-festival/">New York Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/norwich-comedy-festival/">Norwich Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/nottingham-comedy-festival/">Nottingham Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/nz-fringe-festival/">NZ Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/nz-international-comedy-festival/">NZ International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/out-of-bounds-comedy-festival/">Out of Bounds Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/perth-comedy-festival/">Perth Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/prague-fringe-festival/">Prague Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/reykjavik-fringe-festival/">Reykjavik Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/riot-la-comedy-festival/">Riot LA Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/saskatoon-fringe-festival/">Saskatoon Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/savanna-international-comedy-festival/">Savanna International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/seattle-international-comedy-competition/">Seattle International Comedy Competition</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/sf-sketchfest/">SF Sketchfest</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/singapore-international-comedy-festival/">Singapore International Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/sydney-comedy-festival/">Sydney Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/sydney-fringe-festival/">Sydney Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/toronto-sketch-comedy-festival/">Toronto Sketch Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/us-comedy-arts-festival/">US Comedy Arts Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/vancouver-fringe-festival/">Vancouver Fringe Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/vancouver-international-improv-festival/">Vancouver International Improv Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/vancouver-sketch-comedy-festival/">Vancouver Sketch Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/winnipeg-comedy-festival/">Winnipeg Comedy Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/winnipeg-fringe-theatre-festival/">Winnipeg Fringe Theatre Festival</a>
+<a data-festival-filter data-country="" data-year="2026" data-status="unknown" data-programme="none" href="/comedy-atlas/festival/women-in-comedy-festival/">Women in Comedy Festival</a>
 </div>
 </div>
+<p id="ff-empty">No festivals match these filters.</p>
 </main>
 
 <footer>
@@ -251,5 +274,48 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script src="/comedy-atlas/atlas-track.js"></script>
+<script>
+(function () {
+  var country = document.getElementById('ff-country');
+  var year = document.getElementById('ff-year');
+  var status = document.getElementById('ff-status');
+  var programme = document.getElementById('ff-programme');
+  var empty = document.getElementById('ff-empty');
+  if (!country || !year || !status || !programme) return;
+
+  function matches(el) {
+    var c = country.value, y = year.value, s = status.value, p = programme.value;
+    if (c && el.getAttribute('data-country') !== c) return false;
+    if (y && el.getAttribute('data-year') !== y) return false;
+    if (s && el.getAttribute('data-status') !== s) return false;
+    if (p && el.getAttribute('data-programme') !== p) return false;
+    return true;
+  }
+
+  function apply() {
+    var items = document.querySelectorAll('[data-festival-filter]');
+    var visible = 0;
+    items.forEach(function (el) {
+      var ok = matches(el);
+      el.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    });
+    var groups = document.querySelectorAll('[data-filter-group]');
+    groups.forEach(function (g) {
+      var anyVisible = Array.prototype.some.call(
+        g.querySelectorAll('[data-festival-filter]'),
+        function (el) { return el.style.display !== 'none'; }
+      );
+      g.style.display = anyVisible ? '' : 'none';
+    });
+    if (empty) empty.style.display = visible ? 'none' : 'block';
+  }
+
+  [country, year, status, programme].forEach(function (sel) {
+    sel.addEventListener('change', apply);
+  });
+  apply();
+})();
+</script>
 </body>
 </html>

@@ -300,6 +300,61 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 }
 #comics-empty[hidden] { display: none; }
 .comic-card[hidden] { display: none !important; }
+/* VIEW TOGGLE (§8 secondary discovery view). Two plain toggle buttons, not
+   a <select> -- both options are always visible and reachable by keyboard
+   with a single Tab, and aria-pressed communicates state to a screen
+   reader without extra markup. */
+.view-row {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2px 20px 10px;
+  display: flex;
+  gap: 8px;
+}
+.view-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  min-height: 36px;
+}
+.view-btn:hover { border-color: var(--purple); }
+.view-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.view-btn.is-active { border-color: var(--purple); color: var(--gold); background: var(--card); }
+.view-btn .facet-n { color: var(--muted); font-weight: 400; }
+.view-btn.is-active .facet-n { color: inherit; }
+#next-view[hidden] { display: none; }
+/* .next-card shares .comic-card's visual language exactly (same photo +
+   name + two-line body layout) but is a DIFFERENT class -- this list is a
+   second, date-ordered VIEW of a subset of the same comics, not a second
+   copy competing with the "each comic rendered exactly once" invariant
+   the A-Z grid guards (see test_scales_to_ten_times_current_volume). */
+.next-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.next-card:hover { border-color: var(--purple); }
+.next-card[hidden] { display: none !important; }
+.next-group { padding: 0 20px; }
+.comics-empty-static {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+  color: var(--muted);
+}
+#next-empty[hidden] { display: none; }
 @media (max-width: 640px) {
   .comics-grid { grid-template-columns: 1fr; }
   #comics-toolbar { padding-top: 8px; }
@@ -332,6 +387,15 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <label for="comic-search">Search comedians by name</label>
     <input type="search" id="comic-search" placeholder="Start typing a name…" autocomplete="off" spellcheck="false">
   </div>
+  <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
+       default identity-first view; Next on stage is a date-first view of
+       only the 121 comics with a real upcoming date. Hidden with
+       the rest of the toolbar until JS can act on it -- with JS off the
+       A-Z view (which needs no script at all) is the whole page. -->
+  <div class="view-row" role="group" aria-label="Choose a view">
+    <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(121)</span></button>
+  </div>
   <details id="comics-facets">
     <summary>Filters</summary>
     <div class="facet-row" role="group" aria-label="Filter by city">
@@ -349,10 +413,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
       <span class="facet-label">Activity</span>
       <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(121)</span></button>
       <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(106)</span></button>
+      
     </div>
   </details>
 </div>
 <p id="comics-visible-count" role="status" aria-live="polite">Showing 138 of 138 comedians</p>
+<div id="az-view">
 <nav class="az-jump" aria-label="Jump to a letter">
   <a href="#letter-a">A</a>
   <a href="#letter-b">B</a>
@@ -388,7 +454,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9724_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Adam Bromley</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -396,7 +462,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Adrian%20Minkowicz%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Adrian Minkowicz</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -412,7 +478,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alastair%20Clark%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Alastair Clark</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">3 upcoming shows</div>
   </div>
 </a>
@@ -428,7 +494,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alex%20Mason%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Alex Mason</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -436,7 +502,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alex%20Prescot%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Alex Prescot</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -444,7 +510,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alexander%20Bennett%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Alexander Bennett</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -452,7 +518,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9806_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alice India</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -460,7 +526,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9820_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alingon Mitra</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -468,7 +534,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9548_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ana Little</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -484,7 +550,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andrew%20Pipe%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Andrew Pipe</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -492,7 +558,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andy%20Bucks%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Andy Bucks</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -508,7 +574,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9740_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Anna Beros</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -516,7 +582,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9576_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ashley Haden</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -527,7 +593,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9814_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Basil Bottler</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -535,7 +601,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9715_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Becky Fury</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -543,7 +609,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9717_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ben Ashurst</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -551,7 +617,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bernie%20Casey%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Bernie Casey</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -559,7 +625,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bilal%20Rashid%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Bilal Rashid</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -567,7 +633,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Brennan%20Reece%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Brennan Reece</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -578,7 +644,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Caitriona%20Dowden%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Caitriona Dowden</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -586,7 +652,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Cameron%20Sinclair%20Harris%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Cameron Sinclair Harris</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -594,7 +660,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9773_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Charlie Lewis</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -602,7 +668,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Christopher%20Beanland%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Christopher Beanland</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -618,7 +684,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9649_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Cordelia Graham</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -637,7 +703,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20Yazbek%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Daniel Yazbek</div>
-    <div class="comic-city">Amsterdam</div>
+    <div class="comic-city">Next in Amsterdam</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -645,7 +711,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Danny%20Ward%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Danny Ward</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -653,7 +719,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9627_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Darren Walsh</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -661,7 +727,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9581_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dave Chawner</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -677,7 +743,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9614_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">David Tsonos</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -685,7 +751,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9689_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Deage Paxton</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -693,7 +759,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9637_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Devin Gray</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -701,7 +767,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Diego%20Piemontese%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Diego Piemontese</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -709,7 +775,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9754_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dr Jimmy</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -717,7 +783,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9791_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dr. Kara Kibara</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -728,7 +794,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ed%20Mulvey%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Ed Mulvey</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -736,7 +802,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Eddy%20Hare%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Eddy Hare</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -744,7 +810,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Edith%20Alibec%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Edith Alibec</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -752,7 +818,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Elise%20Harris%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Elise Harris</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -760,7 +826,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9709_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Elliot Wengler</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -768,7 +834,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9509_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Eryn Tett</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -795,7 +861,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Freya%20Mcghee%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Freya Mcghee</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -803,7 +869,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Friz%20Frizzle%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Friz Frizzle</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a></div>
@@ -814,7 +880,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Gagan%20Gopal%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Gagan Gopal</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -822,7 +888,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9543_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Gary G Knightley</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -830,7 +896,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Coppen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">George Coppen</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -838,7 +904,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Zacharopoulos%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">George Zacharopoulos</div>
-    <div class="comic-city">Lisbon</div>
+    <div class="comic-city">Next in Lisbon</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -846,7 +912,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Giulia%20Nervi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Giulia Nervi</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -857,7 +923,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9685_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Henry Ginsberg</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -876,7 +942,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22James%20Roque%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">James Roque</div>
-    <div class="comic-city">Amsterdam</div>
+    <div class="comic-city">Next in Berlin</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -892,7 +958,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9484_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeff</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -900,7 +966,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9697_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeremy Dooley</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -908,7 +974,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jim%20Hooker%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Jim Hooker</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -916,7 +982,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9554_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">John Robertson</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -924,7 +990,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22John%20Smith%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">John Smith</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -932,7 +998,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jon%20Hipkiss%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Jon Hipkiss</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">3 upcoming shows</div>
   </div>
 </a>
@@ -940,7 +1006,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9660_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Juliette Burton</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -951,7 +1017,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Karl%20Dagher%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Karl Dagher</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">8 upcoming shows</div>
   </div>
 </a>
@@ -959,7 +1025,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Katie-Rose Petley</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -967,7 +1033,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9733_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Kim Hope</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -978,7 +1044,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9745_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lenny Sherman</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -986,7 +1052,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9680_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lizzie Simpson</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1002,7 +1068,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Lorraine%20Hoodless%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Lorraine Hoodless</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1010,7 +1076,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9798_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Louis Beer</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1018,7 +1084,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Luke%20Mcqueen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Luke Mcqueen</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1026,7 +1092,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9665_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lulu Popplewell</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1037,7 +1103,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9667_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Madeleine Munford</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1045,7 +1111,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Manuele%20Laghi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EML%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Manuele Laghi</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1053,7 +1119,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Marc%20Salmon%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Marc Salmon</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1061,7 +1127,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Dean%20Quinn%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Mark Dean Quinn</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1069,7 +1135,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9699_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mark Row</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1077,7 +1143,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Silcox%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Mark Silcox</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1085,7 +1151,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Simmons%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Mark Simmons</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -1093,7 +1159,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mary%20O%E2%80%99Connell%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Mary O’Connell</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1101,7 +1167,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9788_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mat Smith</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1109,7 +1175,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9514_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mat Wills</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1117,7 +1183,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Matt%20Hollins%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Matt Hollins</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1125,7 +1191,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Minidreamer%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMI%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Minidreamer</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1136,7 +1202,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nanni%20Mascena%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Nanni Mascena</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1144,7 +1210,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Natalie%20Durkin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3END%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Natalie Durkin</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1152,7 +1218,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9557_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nathan Cassidy</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1160,7 +1226,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Niccol%C3%B2%20Cometto%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Niccolò Cometto</div>
-    <div class="comic-city">Barcelona</div>
+    <div class="comic-city">Next in Barcelona</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1179,7 +1245,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9552_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Olaf Falafel</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1198,7 +1264,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9634_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Paddy Seery</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1206,7 +1272,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9555_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Paul Currie</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1214,7 +1280,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Paul%20Richards%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Paul Richards</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1222,7 +1288,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Phil%20Green%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Phil Green</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1230,7 +1296,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Prateek%20Kohli%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Prateek Kohli</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1241,7 +1307,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9530_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rachel Morton-Young</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1249,7 +1315,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9487_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Raul Kohli</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1257,7 +1323,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9541_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ray Fordyce</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1265,7 +1331,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ric%20Diez%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Ric Diez</div>
-    <div class="comic-city">Berlin</div>
+    <div class="comic-city">Next in Berlin</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1273,7 +1339,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Richard%20Wooflord%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Richard Wooflord</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1281,7 +1347,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Rik%20Wolters%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Rik Wolters</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1289,7 +1355,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9570_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rizal Van Geyzel</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -1297,7 +1363,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Rob%20Duncan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Rob Duncan</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1305,7 +1371,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Robin%20Boot%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Robin Boot</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1313,7 +1379,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9805_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rohan Sharma</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1321,7 +1387,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9606_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ryan Mold</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1332,7 +1398,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sally-Anne%20Hayward%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Sally-Anne Hayward</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -1340,7 +1406,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Salma%20Habib%20Lyons%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Salma Habib Lyons</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1348,7 +1414,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam See</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1356,7 +1422,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sammy%20Obeid%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Sammy Obeid</div>
-    <div class="comic-city">Amsterdam</div>
+    <div class="comic-city">Next in Amsterdam</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -1364,7 +1430,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sansha%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Sansha</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1372,7 +1438,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Scott%20Manley%20Hadley%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Scott Manley Hadley</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1380,7 +1446,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9833_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Serena Smart</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1396,7 +1462,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9562_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sid Singh</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1404,7 +1470,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Siobhan%20Dodd%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Siobhan Dodd</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
@@ -1412,7 +1478,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sir%20Dickie%20Benson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Sir Dickie Benson</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1420,7 +1486,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9522_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Soness</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1428,7 +1494,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Steffen%20Haanes%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Steffen Haanes</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1444,7 +1510,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9657_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Stephen Carlin</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1452,7 +1518,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Struan Logan</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1463,7 +1529,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9655_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tez Ilyas</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1471,7 +1537,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Thomas%20Henry%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Thomas Henry</div>
-    <div class="comic-city">Aarhus</div>
+    <div class="comic-city">Next in Aarhus</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1479,7 +1545,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tim%20Biglowe%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Tim Biglowe</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1487,7 +1553,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tim%20Reeves%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Tim Reeves</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1495,7 +1561,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tom%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Tom</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1503,7 +1569,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9658_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tom Lawrinson</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1514,7 +1580,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9523_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Will Mars</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
@@ -1522,7 +1588,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9592_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Will Sebag-Montefiore</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
@@ -1533,7 +1599,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Yvette%20Segan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EYS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Yvette Segan</div>
-    <div class="comic-city">Berlin</div>
+    
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a></div>
@@ -1544,13 +1610,988 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Zoe%20Brownstone%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EZB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Zoe Brownstone</div>
-    <div class="comic-city">Edinburgh</div>
+    <div class="comic-city">Next in Edinburgh</div>
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a></div>
 </section>
 <p id="comics-empty" hidden>No comedians match your search.</p>
 </main>
+</div>
+<div id="next-view" hidden>
+<section class="next-group" id="next-on-stage">
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(121)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/struan-logan/" class="next-card" data-city="Edinburgh" data-name="struan logan" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Struan Logan</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mat-smith/" class="next-card" data-city="Edinburgh" data-name="mat smith" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9788_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mat Smith</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alingon-mitra/" class="next-card" data-city="Edinburgh" data-name="alingon mitra" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9820_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Alingon Mitra</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/louis-beer/" class="next-card" data-city="Edinburgh" data-name="louis beer" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9798_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Louis Beer</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dr-jimmy/" class="next-card" data-city="Edinburgh" data-name="dr jimmy" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9754_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dr Jimmy</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/elliot-wengler/" class="next-card" data-city="Edinburgh" data-name="elliot wengler" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9709_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Elliot Wengler</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ryan-mold/" class="next-card" data-city="Edinburgh" data-name="ryan mold" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9606_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ryan Mold</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/adam-bromley/" class="next-card" data-city="Edinburgh" data-name="adam bromley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9724_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Adam Bromley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeremy-dooley/" class="next-card" data-city="Edinburgh" data-name="jeremy dooley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9697_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeremy Dooley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lulu-popplewell/" class="next-card" data-city="Edinburgh" data-name="lulu popplewell" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9665_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lulu Popplewell</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mark-row/" class="next-card" data-city="Edinburgh" data-name="mark row" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9699_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mark Row</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/will-sebag-montefiore/" class="next-card" data-city="Edinburgh" data-name="will sebag-montefiore" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9592_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Will Sebag-Montefiore</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/serena-smart/" class="next-card" data-city="Edinburgh" data-name="serena smart" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9833_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Serena Smart</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/olaf-falafel/" class="next-card" data-city="Edinburgh" data-name="olaf falafel" data-upcoming="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9552_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Olaf Falafel</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/paddy-seery/" class="next-card" data-city="Edinburgh" data-name="paddy seery" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9634_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Paddy Seery</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/raul-kohli/" class="next-card" data-city="Edinburgh" data-name="raul kohli" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9487_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Raul Kohli</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rizal-van-geyzel/" class="next-card" data-city="Edinburgh" data-name="rizal van geyzel" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9570_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rizal Van Geyzel</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ana-little/" class="next-card" data-city="Edinburgh" data-name="ana little" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9548_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ana Little</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sid-singh/" class="next-card" data-city="Edinburgh" data-name="sid singh" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9562_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sid Singh</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/will-mars/" class="next-card" data-city="Edinburgh" data-name="will mars" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9523_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Will Mars</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/david-tsonos/" class="next-card" data-city="Edinburgh" data-name="david tsonos" data-upcoming="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9614_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">David Tsonos</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mat-wills/" class="next-card" data-city="Edinburgh" data-name="mat wills" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9514_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mat Wills</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/stephen-carlin/" class="next-card" data-city="Edinburgh" data-name="stephen carlin" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9657_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Stephen Carlin</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tez-ilyas/" class="next-card" data-city="Edinburgh" data-name="tez ilyas" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9655_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Tez Ilyas</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dave-chawner/" class="next-card" data-city="Edinburgh" data-name="dave chawner" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9581_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dave Chawner</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lizzie-simpson/" class="next-card" data-city="Edinburgh" data-name="lizzie simpson" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9680_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lizzie Simpson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/john-robertson/" class="next-card" data-city="Edinburgh" data-name="john robertson" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9554_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">John Robertson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/nathan-cassidy/" class="next-card" data-city="Edinburgh" data-name="nathan cassidy" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9557_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nathan Cassidy</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/madeleine-munford/" class="next-card" data-city="Edinburgh" data-name="madeleine munford" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9667_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Madeleine Munford</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/cordelia-graham/" class="next-card" data-city="Edinburgh" data-name="cordelia graham" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9649_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Cordelia Graham</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/soness/" class="next-card" data-city="Edinburgh" data-name="soness" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9522_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Soness</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/eryn-tett/" class="next-card" data-city="Edinburgh" data-name="eryn tett" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9509_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Eryn Tett</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/juliette-burton/" class="next-card" data-city="Edinburgh" data-name="juliette burton" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9660_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Juliette Burton</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/deage-paxton/" class="next-card" data-city="Edinburgh" data-name="deage paxton" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9689_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Deage Paxton</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rachel-morton-young/" class="next-card" data-city="Edinburgh" data-name="rachel morton-young" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9530_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rachel Morton-Young</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/devin-gray/" class="next-card" data-city="Edinburgh" data-name="devin gray" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9637_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Devin Gray</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ray-fordyce/" class="next-card" data-city="Edinburgh" data-name="ray fordyce" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9541_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ray Fordyce</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ashley-haden/" class="next-card" data-city="Edinburgh" data-name="ashley haden" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9576_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ashley Haden</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeff/" class="next-card" data-city="Edinburgh" data-name="jeff" data-upcoming="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9484_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeff</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/becky-fury/" class="next-card" data-city="Edinburgh" data-name="becky fury" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9715_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Becky Fury</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/paul-currie/" class="next-card" data-city="Edinburgh" data-name="paul currie" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9555_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Paul Currie</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Fri, Aug 7 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mark-dean-quinn/" class="next-card" data-city="Edinburgh" data-name="mark dean quinn" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Dean%20Quinn%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Mark Dean Quinn</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/friz-frizzle/" class="next-card" data-city="Edinburgh" data-name="friz frizzle" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Friz%20Frizzle%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Friz Frizzle</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mark-simmons/" class="next-card" data-city="Edinburgh" data-name="mark simmons" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Simmons%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Mark Simmons</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/robin-boot/" class="next-card" data-city="Edinburgh" data-name="robin boot" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Robin%20Boot%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Robin Boot</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tim-biglowe/" class="next-card" data-city="Edinburgh" data-name="tim biglowe" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tim%20Biglowe%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Tim Biglowe</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/elise-harris/" class="next-card" data-city="Edinburgh" data-name="elise harris" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Elise%20Harris%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Elise Harris</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sir-dickie-benson/" class="next-card" data-city="Edinburgh" data-name="sir dickie benson" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sir%20Dickie%20Benson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Sir Dickie Benson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/george-coppen/" class="next-card" data-city="Edinburgh" data-name="george coppen" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Coppen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">George Coppen</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/luke-mcqueen/" class="next-card" data-city="Edinburgh" data-name="luke mcqueen" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Luke%20Mcqueen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Luke Mcqueen</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mary-oconnell/" class="next-card" data-city="Edinburgh" data-name="mary o’connell" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mary%20O%E2%80%99Connell%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Mary O’Connell</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/natalie-durkin/" class="next-card" data-city="Edinburgh" data-name="natalie durkin" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Natalie%20Durkin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3END%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Natalie Durkin</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alastair-clark/" class="next-card" data-city="Edinburgh" data-name="alastair clark" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alastair%20Clark%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Alastair Clark</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/eddy-hare/" class="next-card" data-city="Edinburgh" data-name="eddy hare" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Eddy%20Hare%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Eddy Hare</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mark-silcox/" class="next-card" data-city="Edinburgh" data-name="mark silcox" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mark%20Silcox%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Mark Silcox</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/karl-dagher/" class="next-card" data-city="Edinburgh" data-name="karl dagher" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Karl%20Dagher%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Karl Dagher</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/adrian-minkowicz/" class="next-card" data-city="Edinburgh" data-name="adrian minkowicz" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Adrian%20Minkowicz%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Adrian Minkowicz</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alexander-bennett/" class="next-card" data-city="Edinburgh" data-name="alexander bennett" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alexander%20Bennett%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Alexander Bennett</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/salma-habib-lyons/" class="next-card" data-city="Edinburgh" data-name="salma habib lyons" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Salma%20Habib%20Lyons%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Salma Habib Lyons</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/marc-salmon/" class="next-card" data-city="Edinburgh" data-name="marc salmon" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Marc%20Salmon%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Marc Salmon</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/prateek-kohli/" class="next-card" data-city="Edinburgh" data-name="prateek kohli" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Prateek%20Kohli%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Prateek Kohli</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/danny-ward/" class="next-card" data-city="Edinburgh" data-name="danny ward" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Danny%20Ward%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Danny Ward</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/zoe-brownstone/" class="next-card" data-city="Edinburgh" data-name="zoe brownstone" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Zoe%20Brownstone%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EZB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Zoe Brownstone</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/brennan-reece/" class="next-card" data-city="Edinburgh" data-name="brennan reece" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Brennan%20Reece%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Brennan Reece</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sansha/" class="next-card" data-city="Edinburgh" data-name="sansha" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sansha%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Sansha</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ed-mulvey/" class="next-card" data-city="Edinburgh" data-name="ed mulvey" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ed%20Mulvey%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Ed Mulvey</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alex-mason/" class="next-card" data-city="Edinburgh" data-name="alex mason" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alex%20Mason%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Alex Mason</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lorraine-hoodless/" class="next-card" data-city="Edinburgh" data-name="lorraine hoodless" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Lorraine%20Hoodless%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Lorraine Hoodless</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/christopher-beanland/" class="next-card" data-city="Edinburgh" data-name="christopher beanland" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Christopher%20Beanland%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Christopher Beanland</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/caitriona-dowden/" class="next-card" data-city="Edinburgh" data-name="caitriona dowden" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Caitriona%20Dowden%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Caitriona Dowden</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sammy-obeid/" class="next-card" data-city="Amsterdam" data-name="sammy obeid" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sammy%20Obeid%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Sammy Obeid</div>
+    <div class="comic-city">Amsterdam</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jon-hipkiss/" class="next-card" data-city="Edinburgh" data-name="jon hipkiss" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jon%20Hipkiss%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Jon Hipkiss</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rob-duncan/" class="next-card" data-city="Edinburgh" data-name="rob duncan" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Rob%20Duncan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Rob Duncan</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tim-reeves/" class="next-card" data-city="Edinburgh" data-name="tim reeves" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tim%20Reeves%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Tim Reeves</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/steffen-haanes/" class="next-card" data-city="Edinburgh" data-name="steffen haanes" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Steffen%20Haanes%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Steffen Haanes</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rik-wolters/" class="next-card" data-city="Edinburgh" data-name="rik wolters" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Rik%20Wolters%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Rik Wolters</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/edith-alibec/" class="next-card" data-city="Edinburgh" data-name="edith alibec" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Edith%20Alibec%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Edith Alibec</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/bilal-rashid/" class="next-card" data-city="Edinburgh" data-name="bilal rashid" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bilal%20Rashid%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Bilal Rashid</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 8 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/john-smith/" class="next-card" data-city="Edinburgh" data-name="john smith" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22John%20Smith%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">John Smith</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sun, Aug 9 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/daniel-yazbek/" class="next-card" data-city="Amsterdam" data-name="daniel yazbek" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20Yazbek%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Daniel Yazbek</div>
+    <div class="comic-city">Amsterdam</div>
+    <div class="comic-count">Sun, Aug 9 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/scott-manley-hadley/" class="next-card" data-city="Edinburgh" data-name="scott manley hadley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Scott%20Manley%20Hadley%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Scott Manley Hadley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sun, Aug 9 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/gagan-gopal/" class="next-card" data-city="Edinburgh" data-name="gagan gopal" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Gagan%20Gopal%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Gagan Gopal</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sun, Aug 9 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/bernie-casey/" class="next-card" data-city="Edinburgh" data-name="bernie casey" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bernie%20Casey%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Bernie Casey</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 10 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sam-see/" class="next-card" data-city="Edinburgh" data-name="sam see" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sam See</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 10 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alice-india/" class="next-card" data-city="Edinburgh" data-name="alice india" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9806_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Alice India</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Tue, Aug 11 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/kim-hope/" class="next-card" data-city="Edinburgh" data-name="kim hope" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9733_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Kim Hope</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Fri, Aug 14 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/richard-wooflord/" class="next-card" data-city="Edinburgh" data-name="richard wooflord" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Richard%20Wooflord%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Richard Wooflord</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 15 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tom-lawrinson/" class="next-card" data-city="Edinburgh" data-name="tom lawrinson" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9658_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Tom Lawrinson</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 15 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/charlie-lewis/" class="next-card" data-city="Edinburgh" data-name="charlie lewis" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9773_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Charlie Lewis</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ben-ashurst/" class="next-card" data-city="Edinburgh" data-name="ben ashurst" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9717_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ben Ashurst</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dr-kara-kibara/" class="next-card" data-city="Edinburgh" data-name="dr. kara kibara" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9791_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dr. Kara Kibara</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rohan-sharma/" class="next-card" data-city="Edinburgh" data-name="rohan sharma" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9805_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rohan Sharma</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/andrew-pipe/" class="next-card" data-city="Edinburgh" data-name="andrew pipe" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andrew%20Pipe%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Andrew Pipe</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/gary-g-knightley/" class="next-card" data-city="Edinburgh" data-name="gary g knightley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9543_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Gary G Knightley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/andy-bucks/" class="next-card" data-city="Edinburgh" data-name="andy bucks" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andy%20Bucks%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Andy Bucks</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 17 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/lenny-sherman/" class="next-card" data-city="Edinburgh" data-name="lenny sherman" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9745_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lenny Sherman</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/basil-bottler/" class="next-card" data-city="Edinburgh" data-name="basil bottler" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9814_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Basil Bottler</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/paul-richards/" class="next-card" data-city="Edinburgh" data-name="paul richards" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Paul%20Richards%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Paul Richards</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/anna-beros/" class="next-card" data-city="Edinburgh" data-name="anna beros" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9740_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Anna Beros</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="next-card" data-city="Edinburgh" data-name="katie-rose petley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Katie-Rose Petley</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/phil-green/" class="next-card" data-city="Edinburgh" data-name="phil green" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Phil%20Green%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Phil Green</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 20 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/matt-hollins/" class="next-card" data-city="Edinburgh" data-name="matt hollins" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Matt%20Hollins%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Matt Hollins</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 20 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/freya-mcghee/" class="next-card" data-city="Edinburgh" data-name="freya mcghee" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Freya%20Mcghee%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Freya Mcghee</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Thu, Aug 20 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jim-hooker/" class="next-card" data-city="Edinburgh" data-name="jim hooker" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jim%20Hooker%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Jim Hooker</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sat, Aug 22 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/tom/" class="next-card" data-city="Edinburgh" data-name="tom" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tom%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Tom</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sun, Aug 23 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/siobhan-dodd/" class="next-card" data-city="Edinburgh" data-name="siobhan dodd" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Siobhan%20Dodd%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Siobhan Dodd</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Sun, Aug 23 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/alex-prescot/" class="next-card" data-city="Edinburgh" data-name="alex prescot" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alex%20Prescot%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Alex Prescot</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/darren-walsh/" class="next-card" data-city="Edinburgh" data-name="darren walsh" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9627_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Darren Walsh</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sally-anne-hayward/" class="next-card" data-city="Edinburgh" data-name="sally-anne hayward" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sally-Anne%20Hayward%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Sally-Anne Hayward</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/henry-ginsberg/" class="next-card" data-city="Edinburgh" data-name="henry ginsberg" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9685_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Henry Ginsberg</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/cameron-sinclair-harris/" class="next-card" data-city="Edinburgh" data-name="cameron sinclair harris" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Cameron%20Sinclair%20Harris%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Cameron Sinclair Harris</div>
+    <div class="comic-city">Edinburgh</div>
+    <div class="comic-count">Mon, Aug 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/manuele-laghi/" class="next-card" data-city="Barcelona" data-name="manuele laghi" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Manuele%20Laghi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EML%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Manuele Laghi</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Aug 30 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/diego-piemontese/" class="next-card" data-city="Barcelona" data-name="diego piemontese" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Diego%20Piemontese%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Diego Piemontese</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Sep 6 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/thomas-henry/" class="next-card" data-city="Aarhus" data-name="thomas henry" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Thomas%20Henry%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Thomas Henry</div>
+    <div class="comic-city">Aarhus</div>
+    <div class="comic-count">Thu, Sep 10 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/george-zacharopoulos/" class="next-card" data-city="Lisbon" data-name="george zacharopoulos" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Zacharopoulos%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">George Zacharopoulos</div>
+    <div class="comic-city">Lisbon</div>
+    <div class="comic-count">Sat, Sep 12 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/minidreamer/" class="next-card" data-city="Barcelona" data-name="minidreamer" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Minidreamer%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMI%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Minidreamer</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Oct 18 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/giulia-nervi/" class="next-card" data-city="Barcelona" data-name="giulia nervi" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Giulia%20Nervi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Giulia Nervi</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Oct 25 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/james-roque/" class="next-card" data-city="Berlin" data-name="james roque" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22James%20Roque%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">James Roque</div>
+    <div class="comic-city">Berlin</div>
+    <div class="comic-count">Wed, Oct 28 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/nanni-mascena/" class="next-card" data-city="Barcelona" data-name="nanni mascena" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nanni%20Mascena%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Nanni Mascena</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Nov 1 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/niccolo-cometto/" class="next-card" data-city="Barcelona" data-name="niccolò cometto" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Niccol%C3%B2%20Cometto%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Niccolò Cometto</div>
+    <div class="comic-city">Barcelona</div>
+    <div class="comic-count">Sun, Nov 22 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ric-diez/" class="next-card" data-city="Berlin" data-name="ric diez" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ric%20Diez%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Ric Diez</div>
+    <div class="comic-city">Berlin</div>
+    <div class="comic-count">Thu, Nov 26 2026</div>
+  </div>
+</a></div>
+</section>
+<p id="next-empty" hidden>No comedians match your search.</p>
+</div>
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
@@ -1574,41 +2615,69 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // coalesced into a single animation frame.
 (function () {
   var TOTAL = 138;
+  var NEXT_TOTAL = 121;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');
   var emptyEl = document.getElementById('comics-empty');
+  var nextEmptyEl = document.getElementById('next-empty');
+  var azView = document.getElementById('az-view');
+  var nextView = document.getElementById('next-view');
+  var azBtn = document.getElementById('view-btn-az');
+  var nextBtn = document.getElementById('view-btn-next');
   var groups = [].slice.call(document.querySelectorAll('.letter-group'));
   if (!toolbar || !input || !countEl) return;
 
-  var index = [];
+  function readEntry(card) {
+    return {
+      node: card,
+      name: card.getAttribute('data-name') || '',
+      city: card.getAttribute('data-city') || '',
+      upcoming: parseInt(card.getAttribute('data-upcoming') || '0', 10) || 0,
+      festival: card.getAttribute('data-festival') === '1',
+      claimed: card.getAttribute('data-claimed') === '1',
+      shown: true
+    };
+  }
+
+  // A-Z VIEW index: one entry per letter-group section (unchanged shape).
+  var azIndex = [];
   groups.forEach(function (g) {
     var cards = [].slice.call(g.querySelectorAll('.comic-card'));
-    var entries = cards.map(function (card) {
-      return {
-        node: card,
-        name: card.getAttribute('data-name') || '',
-        city: card.getAttribute('data-city') || '',
-        upcoming: parseInt(card.getAttribute('data-upcoming') || '0', 10) || 0,
-        festival: card.getAttribute('data-festival') === '1',
-        shown: true
-      };
-    });
-    index.push({
+    azIndex.push({
       node: g,
-      entries: entries,
+      entries: cards.map(readEntry),
       countEl: g.querySelector('.letter-count'),
-      countShown: entries.length
+      countShown: cards.length
     });
   });
 
-  var state = { q: '', city: '', upcomingOnly: false, festivalOnly: false };
+  // NEXT-ON-STAGE VIEW index: a single flat group (§8 secondary discovery
+  // view, 2026-07-27) -- same filter predicate as the A-Z view, applied to
+  // a DIFFERENT, date-ordered subset of card nodes (.next-card, not
+  // .comic-card), so the two views can never double-count each other.
+  var nextSection = document.getElementById('next-on-stage');
+  var nextIndex = [];
+  if (nextSection) {
+    var nextCards = [].slice.call(nextSection.querySelectorAll('.next-card'));
+    nextIndex.push({
+      node: nextSection,
+      entries: nextCards.map(readEntry),
+      countEl: nextSection.querySelector('.letter-count'),
+      countShown: nextCards.length
+    });
+  }
 
-  function apply() {
+  var state = {
+    q: '', city: '', upcomingOnly: false, festivalOnly: false,
+    claimedOnly: false, view: 'az'
+  };
+
+  function applyIndex(idx) {
     var q = state.q;
     var shown = 0;
-    for (var i = 0; i < index.length; i++) {
-      var group = index[i];
+    for (var i = 0; i < idx.length; i++) {
+      var group = idx[i];
       var groupShown = 0;
       for (var j = 0; j < group.entries.length; j++) {
         var e = group.entries[j];
@@ -1616,14 +2685,15 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
                  (!state.city ||
                     (state.city === '__none__' ? e.city === '' : e.city === state.city)) &&
                  (!state.upcomingOnly || e.upcoming > 0) &&
-                 (!state.festivalOnly || e.festival);
+                 (!state.festivalOnly || e.festival) &&
+                 (!state.claimedOnly || e.claimed);
         if (ok !== e.shown) { e.node.hidden = !ok; e.shown = ok; }
         if (ok) { groupShown++; }
       }
-      // Hide a letter heading whose whole bucket filtered out, so the page
-      // never shows an "M (12)" heading above nothing -- and keep the
-      // per-letter count honest while a filter is active, so it can never
-      // claim "M (12)" when only 3 of those 12 are on screen.
+      // Hide a heading whose whole bucket filtered out, so the page never
+      // shows an "M (12)" heading above nothing -- and keep the per-group
+      // count honest while a filter is active, so it can never claim
+      // "M (12)" when only 3 of those 12 are on screen.
       group.node.hidden = groupShown === 0;
       if (group.countEl && groupShown !== group.countShown) {
         group.countEl.textContent = '(' + groupShown + ')';
@@ -1631,9 +2701,42 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
       }
       shown += groupShown;
     }
-    countEl.textContent = 'Showing ' + shown + ' of ' + TOTAL + ' comedians';
-    if (emptyEl) { emptyEl.hidden = shown !== 0; }
+    return shown;
   }
+
+  function apply() {
+    // Both views are always kept filtered in sync (cheap at this scale),
+    // so switching view never shows stale results from before the last
+    // keystroke -- only the ACTIVE view's count/empty message is surfaced.
+    var azShown = applyIndex(azIndex);
+    var nextShown = applyIndex(nextIndex);
+    if (state.view === 'next') {
+      countEl.textContent = 'Showing ' + nextShown + ' of ' + NEXT_TOTAL + ' comedians';
+      if (nextEmptyEl) { nextEmptyEl.hidden = nextShown !== 0 || NEXT_TOTAL === 0; }
+      if (emptyEl) { emptyEl.hidden = true; }
+    } else {
+      countEl.textContent = 'Showing ' + azShown + ' of ' + TOTAL + ' comedians';
+      if (emptyEl) { emptyEl.hidden = azShown !== 0; }
+      if (nextEmptyEl) { nextEmptyEl.hidden = true; }
+    }
+  }
+
+  function setView(v) {
+    state.view = v;
+    if (azBtn) {
+      azBtn.classList.toggle('is-active', v === 'az');
+      azBtn.setAttribute('aria-pressed', v === 'az' ? 'true' : 'false');
+    }
+    if (nextBtn) {
+      nextBtn.classList.toggle('is-active', v === 'next');
+      nextBtn.setAttribute('aria-pressed', v === 'next' ? 'true' : 'false');
+    }
+    if (azView) { azView.hidden = v !== 'az'; }
+    if (nextView) { nextView.hidden = v !== 'next'; }
+    apply();
+  }
+  if (azBtn) { azBtn.addEventListener('click', function () { setView('az'); }); }
+  if (nextBtn) { nextBtn.addEventListener('click', function () { setView('next'); }); }
 
   var frame = null;
   function schedule() {
@@ -1680,6 +2783,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   }
   toggleChip(document.getElementById('facet-upcoming'), 'upcomingOnly');
   toggleChip(document.getElementById('facet-festival'), 'festivalOnly');
+  toggleChip(document.getElementById('facet-claimed'), 'claimedOnly');
 
   // BILATERAL LINKING: generate_city_pages.py links here as
   // /comedy-atlas/comics/#city-<slug> (shared city_anchor_id()). That id is
