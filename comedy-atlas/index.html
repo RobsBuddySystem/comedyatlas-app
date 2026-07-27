@@ -392,6 +392,40 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       '</a>';
   }
 
+  // Placements published for one homepage slot, in file order.
+  function placementsFor(slot) {
+    if (!Array.isArray(window.__ATLAS_PLACEMENTS__)) { return []; }
+    return window.__ATLAS_PLACEMENTS__.filter(function (p) {
+      return p && p.placement === slot;
+    });
+  }
+
+  // The section heading must never assert "Editorial" over a paid placement.
+  // Derived from what is actually in the slot: if ANY card is sponsored the
+  // heading says so, because a visitor reads the heading before the cards.
+  // (§11: "No paid result may look organic without disclosure.")
+  function slotHeadingLabel(list) {
+    if (!list || !list.length) { return ''; }
+    var anySponsored = list.some(function (p) { return p.kind === 'sponsored'; });
+    return anySponsored
+      ? '<span class="slot-label sponsored">Includes paid placement</span>'
+      : '<span class="slot-label editorial">Editorial</span>';
+  }
+
+  // One renderer for every featured entity type. The label comes from the row's
+  // `kind`/`sponsor_label`, never from the template -- which is what makes the
+  // database constraints meaningful.
+  function placementCard(p) {
+    var label = p.kind === 'sponsored'
+      ? '<span class="slot-label sponsored">' +
+          A.escapeHtml(p.sponsor_label || 'Sponsored') + '</span>'
+      : '<span class="slot-label editorial">Featured</span>';
+    return '<a class="place-card" href="' + A.escapeHtml(p.url || '#') + '">' +
+      '<div class="place-name">' + A.escapeHtml(p.name || '') + label + '</div>' +
+      (p.reason ? '<div class="place-meta">' + A.escapeHtml(p.reason) + '</div>' : '') +
+      '</a>';
+  }
+
   function cityCard(entry) {
     var tag = "";
     if (entry.city === "Edinburgh") tag = '<div class="place-tag">Free Fringe city</div>';
@@ -547,14 +581,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     //
     // The machinery is real: swap the empty array below for placement rows and
     // the labelled cards render. That is the only change needed.
-    var featuredFestivals = [];   // TODO(Gate 6): featured_placements, type=festival
-    var featuredComics = [];      // TODO(Gate 6): featured_placements, type=comic
+    // Fed by data/comedy-atlas/featured_placements.json, which
+    // scripts/generate_featured_placements_export.py writes from the
+    // featured_placements table -- only status='live' rows inside their window,
+    // with the entity resolved to a real public slug.
+    //
+    // These were hardcoded `[]` until 2026-07-27. The data model and its CHECK
+    // constraints existed but nothing read them, so a valid placement could
+    // never have appeared. PRODUCTION IS STILL EMPTY, and that is correct: no
+    // placement has been editorially selected or sold. The difference is that
+    // the day one is, it renders -- with its own label -- and no code changes.
+    var featuredFestivals = placementsFor("homepage_festivals");
+    var featuredComics = placementsFor("homepage_comics");
 
     html += '<section class="atlas-section"><h2>Featured festivals' +
-      '<span class="slot-label editorial">Editorial</span></h2>';
+      slotHeadingLabel(featuredFestivals) + '</h2>';
     if (featuredFestivals.length) {
       html += '<div class="card-grid">';
-      featuredFestivals.forEach(function (f) { html += festivalCard(f, festivalSlugByOrgId); });
+      featuredFestivals.forEach(function (f) { html += placementCard(f); });
       html += '</div>';
     } else {
       html += '<p class="slot-empty">No featured festivals right now. We only feature a ' +
@@ -566,10 +610,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     html += '</section>';
 
     html += '<section class="atlas-section"><h2>Featured comics' +
-      '<span class="slot-label editorial">Editorial</span></h2>';
+      slotHeadingLabel(featuredComics) + '</h2>';
     if (featuredComics.length) {
       html += '<div class="card-grid">';
-      featuredComics.forEach(function (c) { html += comicFeatureCard(c); });
+      featuredComics.forEach(function (c) { html += placementCard(c); });
       html += '</div>';
     } else {
       html += '<p class="slot-empty">No featured comics right now. A comic is only ' +
@@ -678,9 +722,22 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // and the "Browse all" link are absent -- never a broken page, and never a
   // link to a page that isn't there.
   var fetchFestivalsSafe = typeof A.fetchFestivals === "function" ? A.fetchFestivals() : Promise.resolve([]);
-  Promise.all([A.fetchEvents(), fetchCitiesSafe, fetchFestivalsSafe]).then(function (results) {
-    render(results[0], results[1], results[2]);
-  }).catch(renderError);
+
+  // Featured placements. Resolves to [] on ANY failure -- a missing or malformed
+  // placements file must never take the homepage down, because the slots are
+  // decoration and the show listings are the product. An empty result renders
+  // the honest empty state, which is also production's current correct state.
+  var fetchPlacementsSafe = fetch("/data/comedy-atlas/featured_placements.json",
+                                  { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (j) { return Array.isArray(j) ? j : []; })
+    .catch(function () { return []; });
+
+  Promise.all([A.fetchEvents(), fetchCitiesSafe, fetchFestivalsSafe, fetchPlacementsSafe])
+    .then(function (results) {
+      window.__ATLAS_PLACEMENTS__ = results[3];
+      render(results[0], results[1], results[2]);
+    }).catch(renderError);
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
 })();
 </script>
