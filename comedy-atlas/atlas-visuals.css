@@ -1,0 +1,155 @@
+/*
+ * COMEDY ATLAS — Atlas Visuals v1 styles (site/comedy-atlas/atlas-visuals.css)
+ *
+ * Design tokens only reference index.html's existing :root palette
+ * (--bg/--card/--border/--text/--muted/--purple/--gold/--green) so this
+ * reads as part of the same page, not a bolted-on widget, and stays
+ * theme-aware for free (index.html's light-mode @media block already
+ * overrides those variables; this file never hardcodes a colour that
+ * would fight it). New layer-colour tokens live here, not in JS —
+ * atlas-layers.js only ever names a CSS custom property.
+ */
+:root{
+  --atlas-layer-shows:var(--gold);
+  --atlas-layer-venues:var(--purple-light);
+  --atlas-layer-festivals:var(--green);
+  --atlas-layer-openmics:#2dd4bf;
+  --atlas-layer-comics:var(--muted);
+  /* "Night sky" surface for the map (2026-07-27 design pass): three-stop
+     radial gradient (bright core -> the page's own --bg -> a near-black
+     edge) rather than a flat fill, plus a separate vignette rect layered
+     on top in the SVG itself (see atlas-visuals.js's buildSurface). */
+  --atlas-map-water-hi:#182338;
+  --atlas-map-water:#0a0e1a;
+  --atlas-map-water-lo:#05070d;
+  --atlas-map-grid:#28374d;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --atlas-map-water-hi:#ffffff;
+    --atlas-map-water:#e9f1f7;
+    --atlas-map-water-lo:#c9d8e6;
+    --atlas-map-grid:#b9c8d8;
+  }
+}
+
+.atlas-viz{max-width:1100px;margin:20px auto 0;padding:0 20px}
+.atlas-viz-shell{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:20px 20px 16px;display:flex;flex-direction:column;gap:14px;
+}
+
+/* Header row: title + search */
+.atlas-viz-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.atlas-viz-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold)}
+.atlas-viz-search{position:relative;flex:0 1 260px;min-width:180px}
+.atlas-viz-search input{
+  width:100%;padding:9px 12px 9px 32px;border-radius:999px;border:1px solid var(--border);
+  background:var(--bg);color:var(--text);font-size:13px;font-family:inherit;
+}
+.atlas-viz-search input:focus{outline:2px solid var(--purple-light);outline-offset:1px}
+.atlas-viz-search::before{
+  content:"🔎";position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  font-size:12px;opacity:.7;pointer-events:none;
+}
+
+/* Layer toggle row */
+.atlas-viz-layers{display:flex;flex-wrap:wrap;gap:8px}
+.atlas-layer-toggle{
+  display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;
+  padding:6px 12px 6px 10px;border-radius:999px;border:1px solid var(--border);
+  background:var(--bg);color:var(--muted);cursor:pointer;user-select:none;
+  transition:border-color .15s,color .15s;
+}
+.atlas-layer-toggle:hover{border-color:var(--purple-light)}
+.atlas-layer-toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.atlas-layer-toggle .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;background:var(--layer-color,var(--muted))}
+.atlas-layer-toggle[data-checked="true"]{color:var(--text);border-color:var(--layer-color,var(--purple-light))}
+.atlas-layer-toggle[data-checked="false"]{opacity:.55}
+.atlas-layer-toggle .count{color:var(--muted);font-weight:500}
+.atlas-layer-toggle.is-empty{opacity:.4;cursor:not-allowed}
+
+/* Map + list split -- map gets the majority of the width; at 39 real
+   cities (several clustered tightly in Europe) it needs the room to keep
+   dots/labels legible rather than fighting the list for space. */
+.atlas-viz-body{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(240px,1fr);gap:16px}
+@media(max-width:800px){.atlas-viz-body{grid-template-columns:1fr}}
+
+.atlas-map-wrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--atlas-map-grid);box-shadow:inset 0 0 40px rgba(0,0,0,.25)}
+.atlas-map-svg{display:block;width:100%;height:auto;aspect-ratio:2/1.05}
+.atlas-map-svg .atlas-grid-line{stroke:var(--atlas-map-grid);stroke-width:.6;opacity:.55}
+.atlas-map-svg .atlas-grid-line-major{opacity:.9;stroke-width:.8}
+
+.atlas-map-point{cursor:pointer}
+.atlas-map-point-glow{opacity:.45;transition:opacity .15s ease,r .15s ease}
+.atlas-map-point-core{opacity:.95;transition:opacity .15s ease,r .15s ease,filter .15s ease}
+.atlas-map-point:hover .atlas-map-point-core,.atlas-map-point:focus .atlas-map-point-core,
+.atlas-map-point.is-linked .atlas-map-point-core{filter:brightness(1.3)}
+.atlas-map-point:hover .atlas-map-point-glow,.atlas-map-point:focus .atlas-map-point-glow,
+.atlas-map-point.is-linked .atlas-map-point-glow{opacity:.75}
+.atlas-map-point.is-linked .atlas-map-point-core{stroke:#fff;stroke-width:1.5}
+.atlas-map-point.is-hidden{display:none}
+.atlas-map-point:focus{outline:none}
+.atlas-map-point:focus .atlas-map-point-core{stroke:#fff;stroke-width:2}
+
+.atlas-map-label{
+  font:700 12px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  fill:var(--text);paint-order:stroke;stroke:var(--atlas-map-water-lo);stroke-width:3px;
+  stroke-linejoin:round;pointer-events:none;opacity:.92;
+}
+.atlas-map-label.is-hidden{display:none}
+
+@media(prefers-reduced-motion:no-preference){
+  .atlas-map-point.is-entering .atlas-map-point-core{animation:atlas-point-in .5s ease-out both}
+  .atlas-map-point.is-entering .atlas-map-point-glow{animation:atlas-point-in .6s ease-out both}
+}
+@keyframes atlas-point-in{from{r:0;opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .atlas-map-point-core,.atlas-map-point-glow,
+  .atlas-map-point.is-entering .atlas-map-point-core,
+  .atlas-map-point.is-entering .atlas-map-point-glow{animation:none!important;transition:none!important}
+}
+
+.atlas-map-empty-note{
+  position:absolute;left:10px;bottom:8px;font-size:11px;color:var(--muted);
+  background:rgba(0,0,0,.5);padding:3px 8px;border-radius:6px;
+}
+@media(prefers-color-scheme:light){.atlas-map-empty-note{background:rgba(255,255,255,.75)}}
+
+/* Fallback / accessible list -- stretches to match the map's rendered
+   height (grid's default align-items:stretch on .atlas-viz-body) and
+   scrolls internally, so all 39 real cities are one scroll away rather
+   than a tall page-pushing block. */
+.atlas-viz-list-panel{display:flex;flex-direction:column;min-height:0}
+.atlas-viz-list-heading{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+.atlas-viz-list{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1;min-height:220px;max-height:460px;border:1px solid var(--border);border-radius:10px}
+.atlas-viz-list li{border-bottom:1px solid var(--border)}
+.atlas-viz-list li:last-child{border-bottom:none}
+.atlas-viz-list a{
+  display:flex;justify-content:space-between;gap:8px;align-items:baseline;
+  padding:9px 12px;font-size:13px;color:var(--text);
+}
+.atlas-viz-list a:hover,.atlas-viz-list a:focus{background:var(--bg)}
+.atlas-viz-list li.is-linked a{background:var(--bg);box-shadow:inset 3px 0 0 var(--gold)}
+.atlas-viz-list .avl-name{font-weight:600}
+.atlas-viz-list .avl-meta{color:var(--muted);font-size:12px;white-space:nowrap}
+.atlas-viz-list .avl-empty{padding:14px 12px;color:var(--muted);font-size:13px}
+
+.atlas-viz-comics-note{font-size:12px;color:var(--muted);border-top:1px dashed var(--border);padding-top:10px;margin-top:2px}
+
+/* Loading / off states */
+.atlas-viz-loading{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+/* [hidden] has the same specificity as the class rule above and loses to
+   it on source order alone (the UA stylesheet's `[hidden]{display:none}`
+   comes first) -- without this, JS setting .hidden=true on this row does
+   nothing visually and a "Loading…" row can survive in a screenshot taken
+   long after loading actually finished. This combined selector's higher
+   specificity (0-2-0 vs 0-1-0) makes hidden win unconditionally. */
+.atlas-viz-loading[hidden]{display:none}
+.atlas-viz-loading .spinner-sm{width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite}
+@media(prefers-reduced-motion:reduce){.atlas-viz-loading .spinner-sm{animation:none}}
+
+@media(max-width:600px){
+  .atlas-viz-head{flex-direction:column;align-items:stretch}
+  .atlas-viz-search{flex:1 1 auto}
+}

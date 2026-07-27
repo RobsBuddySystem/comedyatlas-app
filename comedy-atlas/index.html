@@ -6,6 +6,33 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <title>COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking</title>
+<script>
+/* ATLAS VISUALS v1 feature flag (ATLAS-VISUALS-V1, 2026-07-27). Everything
+   this flag gates lives in atlas-layers.js / atlas-visuals-data.js /
+   atlas-visuals.js / atlas-visuals.css plus the single empty
+   #atlas-viz-root mount point in the body below -- nothing else on this
+   page depends on it.
+   TURN OFF / ROLLBACK: set the constant below to false (fastest, one-line
+   diff), OR append ?atlas=0 to the URL for a one-load override without
+   editing this file, OR delete the four atlas-visuals* files, the
+   #atlas-viz-root div, and the small mount <script> near the end of
+   <body> -- any one of these fully restores today's homepage. ?atlas=1
+   forces it on for one page load (review before flipping the default). */
+// DEFAULT OFF until the visual pass clears review (2026-07-27). The map still
+// wastes most of its canvas on empty ocean and its European labels collide.
+// Opt in per-load with ?atlas=1 to review it live; ?atlas=0 forces off.
+window.ATLAS_VISUALS_ENABLED = false;
+(function () {
+  try {
+    var qp = new URLSearchParams(window.location.search).get("atlas");
+    if (qp === "1") // DEFAULT OFF until the visual pass clears review (2026-07-27). The map still
+// wastes most of its canvas on empty ocean and its European labels collide.
+// Opt in per-load with ?atlas=1 to review it live; ?atlas=0 forces off.
+window.ATLAS_VISUALS_ENABLED = false;
+    if (qp === "0") window.ATLAS_VISUALS_ENABLED = false;
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
+</script>
 <link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
 <meta name="theme-color" content="#0a0e1a">
 <link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
@@ -204,6 +231,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </header>
 
+<!-- ATLAS VISUALS v1 mount point -- always present, but stays empty (no
+     markup, no fetches, no CSS loaded) unless window.ATLAS_VISUALS_ENABLED
+     is true. See the flag block in <head> for how to flip/roll this back. -->
+<div id="atlas-viz-root"></div>
+
 <div class="freshness" id="freshness">
   <span class="dot-live" id="freshness-dot"></span>
   <span id="freshness-text">Checking data freshness…</span>
@@ -387,5 +419,26 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-feedback.js"></script>
 <script src="near.js"></script>
 <script src="atlas-geo.js"></script>
+
+<!-- ATLAS VISUALS v1 (ATLAS-VISUALS-V1, 2026-07-27) -- three independent
+     files (data adapter / layer registry / renderer, see each file's own
+     header) plus this small mount script. Fully inert when the flag in
+     <head> is false: no stylesheet is inserted, AtlasVisuals.mount() is
+     never called, #atlas-viz-root stays empty. -->
+<script src="atlas-layers.js"></script>
+<script src="atlas-visuals-data.js"></script>
+<script src="atlas-visuals.js"></script>
+<script>
+(function () {
+  "use strict";
+  if (!window.ATLAS_VISUALS_ENABLED) return;
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "atlas-visuals.css";
+  document.head.appendChild(link);
+  var root = document.getElementById("atlas-viz-root");
+  if (root && window.AtlasVisuals) window.AtlasVisuals.mount(root);
+})();
+</script>
 </body>
 </html>

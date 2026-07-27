@@ -8,7 +8,7 @@
     {
       "filename": "cities.json",
       "row_count": 39,
-      "sha256": "daa69515a1a8f72e4a0e608293bb820b9a7741f408f810b0bd07fdaa1c8264e1"
+      "sha256": "e5996a43e17518058d8ec178509585745f4e081d65e471a804045efe52154bce"
     },
     {
       "filename": "organizations.json",
@@ -22,8 +22,8 @@
     },
     {
       "filename": "upcoming_events.json",
-      "row_count": 3619,
-      "sha256": "9c2b2713e2dd221b7d815a6546ac703b1f93ba68800d66a4ddad1a5cf0b139f7"
+      "row_count": 3618,
+      "sha256": "7d614c454b229950241d4e336fc68c24ad5c65b88f15d7e61968a55e5fc34881"
     },
     {
       "filename": "public_booking_methods.json",
@@ -46,6 +46,6 @@
       "sha256": "d6b80aa5ee3c1f07fa16c9d9f621da7788ae4d6013f200b93fcb5c6774f224cc"
     }
   ],
-  "generated_at": "2026-07-27T02:49:45.640326+00:00",
+  "generated_at": "2026-07-27T05:30:03.323808+00:00",
   "source_exports_dir": "/Users/chuck/Documents/Claude/Projects/comedy-network-db/exports"
 }
