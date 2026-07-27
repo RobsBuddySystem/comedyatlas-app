@@ -341,7 +341,16 @@
   function fmtDateLine(iso) {
     // Use the event's own wall-clock time (strip the offset) so the poster
     // always shows venue-local time no matter where it's being made.
-    var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso || "");
+    // Accept BOTH separators. The static export (data/comedy-atlas/
+    // upcoming_events.json) writes ISO-8601 "T", but the live API
+    // (/v1/events, which is what this picker actually fetches) serializes
+    // datetimes with a SPACE: "2026-07-27 19:30:00+02:00". This regex required
+    // "T", so on the live site fmtDateLine returned null for EVERY show and the
+    // poster's date line was silently blank -- both in the prefilled state and
+    // in each search row's meta line. Caught by test_poster_maker's
+    // "date must be prefilled" assertion, which was being written off as a
+    // fixture/date-prefill quirk; it was reporting a real user-facing bug.
+    var m = /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/.exec(iso || "");
     if (!m) return null;
     var d = new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]);
     var day = d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
