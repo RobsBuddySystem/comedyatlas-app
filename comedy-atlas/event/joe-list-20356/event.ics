@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-list-20356@comedyatlas.app
+DTSTAMP:20260728T201907Z
+DTSTART:20270206T000000Z
+DTEND:20270206T020000Z
+SUMMARY:Joe List
+LOCATION:Kansas City
+DESCRIPTION:* Front Row Table for 2 - covers admission for 2 people. You do
+  NOT need to buy two front row tables for 2 people.\n\n* Preferred Seats - 
+ are seats as close to the stage as we can get you\, based on your arrival a
+ nd we hold them until 5 minutes prior to the show.\n\n* General Admission -
+  generally starts in the back half of the showroom.\n\n* Party Table for 10
+  - is a designated table located in the front of the GA Secation and covers
+  admission for up to 10 people. Food/Drink not included.\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/joe-list-20356/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-list-20356/
+END:VEVENT
+END:VCALENDAR

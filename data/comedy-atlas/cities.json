@@ -1,5 +1,18 @@
 [
   {
+    "country_id": 2,
+    "country_iso2": "BE",
+    "country_name": "Belgium",
+    "id": 3,
+    "language_counts": {
+      "en": 5
+    },
+    "latitude": 50.8503,
+    "longitude": 4.3517,
+    "name": "Brussels",
+    "timezone": "Europe/Brussels"
+  },
+  {
     "country_id": 3,
     "country_iso2": "CA",
     "country_name": "Canada",
@@ -18,7 +31,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 218
+      "en": 219
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -72,7 +85,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 157,
+      "en": 167,
       "unconfirmed": 2
     },
     "latitude": 40.4168,
@@ -86,7 +99,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 63
+      "en": 65
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -99,7 +112,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 31,
+      "en": 34,
       "unconfirmed": 2
     },
     "latitude": 38.7223,
@@ -139,7 +152,7 @@
     "country_name": "Germany",
     "id": 31,
     "language_counts": {
-      "en": 2
+      "en": 3
     },
     "latitude": 48.1351,
     "longitude": 11.582,
@@ -166,7 +179,7 @@
     "id": 33,
     "language_counts": {
       "en": 424,
-      "unconfirmed": 5
+      "unconfirmed": 8
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -304,6 +317,19 @@
     "timezone": "Europe/Sofia"
   },
   {
+    "country_id": 38,
+    "country_iso2": "SI",
+    "country_name": "Slovenia",
+    "id": 52,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 46.0569,
+    "longitude": 14.5058,
+    "name": "Ljubljana",
+    "timezone": "Europe/Ljubljana"
+  },
+  {
     "country_id": 39,
     "country_iso2": "EE",
     "country_name": "Estonia",
@@ -362,7 +388,7 @@
     "id": 74,
     "language_counts": {
       "en": 1027,
-      "unconfirmed": 122
+      "unconfirmed": 144
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -413,6 +439,33 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 92,
+    "language_counts": {
+      "en": 6,
+      "unconfirmed": 723
+    },
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "name": "Portland",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 96,
+    "language_counts": {
+      "unconfirmed": 183
+    },
+    "latitude": 39.9526,
+    "longitude": -75.1652,
+    "name": "Philadelphia",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 98,
     "language_counts": {
       "en": 21
@@ -441,8 +494,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 141,
-      "unconfirmed": 342
+      "en": 185,
+      "unconfirmed": 381
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -500,5 +553,254 @@
     "longitude": 6.9603,
     "name": "Cologne",
     "timezone": "Europe/Berlin"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 121,
+    "language_counts": {
+      "unconfirmed": 174
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Oklahoma City",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 122,
+    "language_counts": {
+      "unconfirmed": 128
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Tulsa",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 123,
+    "language_counts": {
+      "en": 1,
+      "unconfirmed": 323
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Washington",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 124,
+    "language_counts": {
+      "unconfirmed": 61
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Fort Collins",
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 125,
+    "language_counts": {
+      "unconfirmed": 117
+    },
+    "latitude": 39.0997,
+    "longitude": -94.5786,
+    "name": "Kansas City",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 126,
+    "language_counts": {
+      "unconfirmed": 75
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Bloomington",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 127,
+    "language_counts": {
+      "unconfirmed": 17
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Tempe",
+    "timezone": "America/Phoenix"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 128,
+    "language_counts": {
+      "en": 2,
+      "unconfirmed": 257
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Raleigh",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 131,
+    "language_counts": {
+      "unconfirmed": 166
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Louisville",
+    "timezone": "America/Kentucky/Louisville"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 132,
+    "language_counts": {
+      "unconfirmed": 192
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Chandler",
+    "timezone": "America/Phoenix"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 133,
+    "language_counts": {
+      "unconfirmed": 211
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Naples",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 134,
+    "language_counts": {
+      "unconfirmed": 116
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Appleton",
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 135,
+    "language_counts": {
+      "unconfirmed": 168
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Spokane",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 136,
+    "language_counts": {
+      "unconfirmed": 117
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Fort Wayne",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 137,
+    "language_counts": {
+      "unconfirmed": 312
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Tacoma",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 138,
+    "language_counts": {
+      "unconfirmed": 108
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Burlington",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 139,
+    "language_counts": {
+      "unconfirmed": 4
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Salt Lake City",
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 140,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "West Jordan",
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 141,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Ogden",
+    "timezone": "America/Denver"
   }
 ]

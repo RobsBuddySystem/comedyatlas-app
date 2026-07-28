@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-20324@comedyatlas.app
+DTSTAMP:20260728T201907Z
+DTSTART:20261023T023000Z
+DTEND:20261023T043000Z
+SUMMARY:Open Mic
+LOCATION:Kansas City
+DESCRIPTION:Sign up between 8:30pm and 9:00pm.  3 minute sets.  Bucket dr
+ aw.\nMore info: https://comedyatlas.app/comedy-atlas/event/open-mic-20324/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-20324/
+END:VEVENT
+END:VCALENDAR
