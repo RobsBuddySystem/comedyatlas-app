@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matinee-with-ry-daddy@comedyatlas.app
+DTSTAMP:20260726T202049Z
+DTSTART:20260726T210000Z
+DTEND:20260726T230000Z
+SUMMARY:Matinee with Ry Daddy
+LOCATION:New York Comedy Club\, 241 East 24th Street\, New York
+DESCRIPTION:It’s never too early to get your comedy fix! Skip out of work
+  early and join us for this "matinee" mix of fresh faces\, club faves\, and
+  citywide stars.\n\nFeaturing\nOlivia Stadler\nJenny Tian\nGibran Saleem\nP
+ edro Gonzalez\nAmanda Gail\nRyan Dacalos\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/matinee-with-ry-daddy/
+URL:https://comedyatlas.app/comedy-atlas/event/matinee-with-ry-daddy/
+END:VEVENT
+END:VCALENDAR

@@ -1,18 +1,5 @@
 [
   {
-    "country_id": 2,
-    "country_iso2": "BE",
-    "country_name": "Belgium",
-    "id": 3,
-    "language_counts": {
-      "en": 1
-    },
-    "latitude": 50.8503,
-    "longitude": 4.3517,
-    "name": "Brussels",
-    "timezone": "Europe/Brussels"
-  },
-  {
     "country_id": 3,
     "country_iso2": "CA",
     "country_name": "Canada",
@@ -31,7 +18,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 220
+      "en": 218
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -71,7 +58,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 231,
+      "en": 230,
       "unconfirmed": 158
     },
     "latitude": 41.3851,
@@ -85,7 +72,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 158,
+      "en": 157,
       "unconfirmed": 2
     },
     "latitude": 40.4168,
@@ -99,7 +86,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 65
+      "en": 63
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
