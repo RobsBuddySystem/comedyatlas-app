@@ -304,13 +304,29 @@
       if (body.length < 3) { msg.textContent = "Please add a message."; msg.style.color = "#c41e3a"; return; }
       if (currentQuickPick) body = "[" + currentQuickPick + "] " + body;
       msg.textContent = "Sending…"; msg.style.color = "#8899aa";
+      // Founding-tester feedback tag (beta.html): the /feedback endpoint has
+      // no dedicated "context" column either, same convention as subject/
+      // quick-pick above -- but here it's genuinely additive (a new key on
+      // an existing JSON object, not text stuffed into `body`), so any
+      // backend that doesn't recognise it yet just ignores the extra field.
+      // Set whenever the CURRENT page is beta.html, or -- so it still
+      // applies to feedback sent from elsewhere during the same beta
+      // session (e.g. this pill clicked from a portal page reached via
+      // beta.html) -- whenever beta.html has previously set
+      // localStorage.atlas_beta = "1".
+      var isBetaContext = /(^|\/)beta\.html$/.test(location.pathname);
+      if (!isBetaContext) {
+        try { isBetaContext = localStorage.getItem("atlas_beta") === "1"; } catch (_) { /* ignore */ }
+      }
+      var payload = {
+        body: body, email: email || null, subject: currentSubject,
+        page_ref: location.pathname + location.search
+      };
+      if (isBetaContext) payload.context = "beta";
       fetch(API_BASE + "/feedback", {
         method: "POST", credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          body: body, email: email || null, subject: currentSubject,
-          page_ref: location.pathname + location.search
-        })
+        body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); }).then(function (d) {
         msg.textContent = d.message || "Thank you!"; msg.style.color = "#3fb950";
         document.getElementById("atlas-fb-body").value = "";
