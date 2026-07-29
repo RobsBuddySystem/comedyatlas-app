@@ -111,7 +111,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <div class="container" id="main-content">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">I'M A COMIC</div>
+  <!-- 2026-07-29: Robert reported his name was not shown at the top of the
+       portal. It wasn't -- the stage name appeared ONLY inside the public-
+       profile preview card further down, so nothing above the fold said whose
+       account this was. That matters most in the case he hit: two portals
+       (comic/booker) and a session you cannot see the identity of. -->
   <div id="atlas-portal-bar" style="display:none;margin-bottom:16px;font-size:13px">
+    <span id="signed-in-as" style="display:none">
+      <strong style="color:var(--gold)" id="signed-in-name"></strong>
+      <span style="margin:0 8px;color:var(--muted)">·</span>
+    </span>
     <a href="booker.html" id="switch-portal-link">Switch to booker portal</a>
     <span style="margin:0 8px;color:var(--muted)">·</span>
     <a href="#" id="atlas-signout">Sign out</a>
@@ -573,24 +582,38 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     list.querySelectorAll(".avail-toggle").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var eventDate = btn.dataset.date;
-        if (btn.dataset.available === "1") {
-          // Already marked available -- nothing to undo server-side yet;
-          // just reflect the state (removal is optional per spec).
-          return;
-        }
+        var isChip = btn.classList.contains("date-chip");
+        var marking = btn.dataset.available !== "1";
+
+        // 2026-07-29: this used to `return` when the date was already marked,
+        // with the comment "nothing to undo server-side yet". Robert hit it
+        // immediately -- a slot that cannot be un-clicked. There is now a
+        // DELETE route, so the toggle is a real toggle in both directions. A
+        // date marked by mistake is worse than one never marked: the booker
+        // matching query joins person_availability and shows him as free.
         btn.disabled = true;
-        A.put("/comic/" + meId + "/availability", {
-          dates: [{ available_date: eventDate, city_id: cityShowsCityId, note: null }],
-        }).then(function () {
-          btn.dataset.available = "1";
-          btn.classList.add("on");
-          btn.textContent = btn.classList.contains("date-chip")
-            ? btn.textContent.replace(" ＋", " ✓")
-            : "I'm available ✓";
+        var req = marking
+          ? A.put("/comic/" + meId + "/availability", {
+              dates: [{ available_date: eventDate, city_id: cityShowsCityId, note: null }],
+            })
+          : A.del("/comic/" + meId + "/availability", { dates: [eventDate] });
+
+        req.then(function () {
+          btn.dataset.available = marking ? "1" : "0";
+          btn.classList.toggle("on", marking);
+          if (isChip) {
+            btn.textContent = marking
+              ? btn.textContent.replace(" ＋", " ✓")
+              : btn.textContent.replace(" ✓", " ＋");
+          } else {
+            btn.textContent = marking ? "I'm available ✓" : "I'm available";
+          }
           btn.disabled = false;
         }).catch(function (e) {
           var msg = document.getElementById("city-shows-msg");
-          msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to save availability.";
+          msg.textContent = e.body && e.body.detail
+            ? e.body.detail
+            : (marking ? "Failed to save availability." : "Failed to withdraw availability.");
           msg.className = "msg error";
           btn.disabled = false;
         });
@@ -754,6 +777,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   function loadAll() {
     A.get("/comic/" + meId + "/profile").then(function (p) {
       lastProfile = p;
+      // Whose account is this? Shown at the top, not only in the preview card.
+      // Stays hidden rather than printing a placeholder if the profile has no
+      // stage name -- an invented "Your stage name" at the top of a signed-in
+      // portal reads as the account being broken.
+      if (p.stage_name) {
+        document.getElementById("signed-in-name").textContent = p.stage_name;
+        document.getElementById("signed-in-as").style.display = "";
+      }
       document.getElementById("bio").value = p.bio || "";
       document.getElementById("home_market").value = p.home_market || "";
       document.getElementById("touring_status").value = p.touring_status || "unknown";

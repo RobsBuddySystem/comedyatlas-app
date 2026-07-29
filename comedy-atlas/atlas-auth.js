@@ -51,8 +51,15 @@ window.AtlasAuth = (function () {
   function get(path) {
     return api(path, {method: "GET"});
   }
-  function del(path) {
-    return api(path, {method: "DELETE"});
+  // `data` is optional and backwards-compatible: every existing caller passes
+  // a path alone and still sends no body. Added 2026-07-29 for availability
+  // withdrawal (DELETE /comic/{id}/availability takes the dates to remove) --
+  // without it the second argument was silently dropped and the request 422'd
+  // on a missing body, which looks exactly like "the button does nothing".
+  function del(path, data) {
+    var opts = {method: "DELETE"};
+    if (data !== undefined) opts.body = JSON.stringify(data);
+    return api(path, opts);
   }
 
   function me() {
