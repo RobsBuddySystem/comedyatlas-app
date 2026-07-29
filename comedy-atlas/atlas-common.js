@@ -317,6 +317,32 @@
     };
   }
 
+  /* Drop events whose start time has already passed.
+   *
+   * WHY THIS EXISTS (2026-07-29). upcoming_events.json is a SNAPSHOT. It is
+   * correct when written and decays every minute afterwards, because "upcoming"
+   * is a claim measured against the reader's clock, not against publish time.
+   *
+   * On 2026-07-29 the live homepage headlined "HAPPENING SOON — TUESDAY 28 JULY"
+   * and listed four shows from the previous evening. Nothing was broken in the
+   * usual sense: the database was right, the export was right when generated,
+   * and the page rendered exactly what it was given. The file was simply six
+   * hours old and nobody re-checked the time on the way in.
+   *
+   * Rows with a missing or unparseable start time are KEPT. A missing timestamp
+   * is not evidence that a show is over, and silently deleting real listings is
+   * the opposite failure and just as dishonest.
+   */
+  function dropExpired(rows, now) {
+    var cutoff = (now || new Date()).getTime();
+    return rows.filter(function (ev) {
+      if (!ev || !ev.starts_at) return true;
+      var t = new Date(ev.starts_at).getTime();
+      if (isNaN(t)) return true;
+      return t >= cutoff;
+    });
+  }
+
   function fetchEvents() {
     return fetch(DATA_URL, { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
@@ -327,7 +353,14 @@
       // module docstring) — every page decides its OWN default via
       // matchesLanguage, so a page that wants everything (or a specific
       // non-English default) isn't forced through an English-only fetch.
-      return data;
+      //
+      // 2026-07-29: expired rows ARE dropped here, for every page at once.
+      // This is the right layer for it -- the file is re-fetched on every page
+      // view, so filtering on arrival re-applies the truth test at the moment a
+      // human is actually looking, however far behind the publish job has
+      // fallen. It also corrects the derived counts ("N shows"), which were
+      // being computed over expired rows.
+      return dropExpired(data);
     });
   }
 
@@ -908,6 +941,9 @@
   global.AtlasCommon = {
     DATA_URL: DATA_URL,
     MANIFEST_URL: MANIFEST_URL,
+    // Exported so any page that loads events by another route can apply the
+    // same freshness rule, and so it is directly testable.
+    dropExpired: dropExpired,
     escapeHtml: escapeHtml,
     fmtDayHeading: fmtDayHeading,
     fmtTime: fmtTime,
