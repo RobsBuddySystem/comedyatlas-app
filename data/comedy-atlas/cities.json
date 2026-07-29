@@ -31,7 +31,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 219
+      "en": 218
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -72,7 +72,7 @@
     "id": 20,
     "language_counts": {
       "en": 230,
-      "unconfirmed": 158
+      "unconfirmed": 157
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -664,9 +664,22 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 129,
+    "language_counts": {
+      "unconfirmed": 7
+    },
+    "latitude": 39.7684,
+    "longitude": -86.1581,
+    "name": "Indianapolis",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 130,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 7
     },
     "latitude": null,
     "longitude": null,
@@ -757,7 +770,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 311
+      "unconfirmed": 316
     },
     "latitude": null,
     "longitude": null,
