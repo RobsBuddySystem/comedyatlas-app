@@ -18,7 +18,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 254
+      "unconfirmed": 253
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -401,8 +401,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 7,
-      "unconfirmed": 26
+      "en": 2,
+      "unconfirmed": 24
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -442,7 +442,7 @@
     "id": 92,
     "language_counts": {
       "en": 6,
-      "unconfirmed": 723
+      "unconfirmed": 722
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -455,7 +455,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 183
+      "unconfirmed": 182
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -494,8 +494,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 185,
-      "unconfirmed": 381
+      "en": 183,
+      "unconfirmed": 380
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -653,7 +653,7 @@
     "id": 128,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 257
+      "unconfirmed": 256
     },
     "latitude": null,
     "longitude": null,
@@ -664,9 +664,22 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 130,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Alpharetta",
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 166
+      "unconfirmed": 167
     },
     "latitude": null,
     "longitude": null,
@@ -731,7 +744,7 @@
     "country_name": "United States",
     "id": 136,
     "language_counts": {
-      "unconfirmed": 117
+      "unconfirmed": 118
     },
     "latitude": null,
     "longitude": null,
