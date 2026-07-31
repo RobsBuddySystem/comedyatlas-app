@@ -354,10 +354,20 @@ export function renderLiveCounter(rootEl, payload) {
 export const NEAR_ME_STATUS_TEXT = {
   locating: "Locating you…",
   unsupported: "Location isn't supported by this browser.",
-  denied: "Location permission was denied.",
+  denied: "Location permission was denied. Enable it in your browser or device settings to use Near Me.",
   unavailable: "We couldn't get your location. Please try again.",
+  timeout: "Finding your location took too long. Please try again.",
   "none-in-range": "No comedy cities found near you yet.",
 };
+
+/* States that are dead ends for geolocation itself (2026-08-01) — each gets
+ * a "Search a city instead" escape so the visitor is never stuck. `locating`
+ * is deliberately excluded: it always resolves on its own via
+ * getCurrentPosition's own timeout (see experience.js), so no escape is
+ * needed for it. */
+const STATES_WITH_SEARCH_ESCAPE = new Set([
+  "unsupported", "denied", "unavailable", "timeout", "none-in-range",
+]);
 
 export function renderNearMe(rootEl, opts) {
   const options = opts || {};
@@ -375,23 +385,58 @@ export function renderNearMe(rootEl, opts) {
   });
   rootEl.appendChild(button);
 
-  // Honest status line — see header comment. No CSS class of its own is
-  // required for this to be a real, visible, screen-reader-announced state;
-  // `globe-chrome.css` is frozen for this fix, so this intentionally relies
-  // on no bespoke styling to be functionally correct.
-  const status = document.createElement("p");
+  /* BUGFIX (2026-08-01, Robert-reported): this used to be a bare <p> with no
+   * CSS, no dismiss and no way out — "Location permission was denied."
+   * rendered as a large block that overlapped the live counter and never
+   * went away. It is now a bounded card (globe-chrome.css
+   * .atlas-globe-nearme-status) with:
+   *   - a text span (still role=status/aria-live=polite, still announced)
+   *   - a "Search a city instead" action for every dead-end state, wired to
+   *     options.onSearchInstead so this component never has to know HOW
+   *     search is focused, only that it should be
+   *   - an explicit dismiss (×) so the visitor can always close it manually
+   * `setStatus(null)` (success, or an explicit dismiss) hides it entirely
+   * via `display:none` (no [data-state] attribute) rather than leaving an
+   * empty box in the layout. */
+  const status = document.createElement("div");
   status.className = "atlas-globe-nearme-status";
   status.setAttribute("role", "status");
   status.setAttribute("aria-live", "polite");
+
+  const textEl = document.createElement("span");
+  textEl.className = "atlas-globe-nearme-status-text";
+  status.appendChild(textEl);
+
+  const searchBtn = document.createElement("button");
+  searchBtn.type = "button";
+  searchBtn.className = "atlas-globe-nearme-status-action";
+  searchBtn.textContent = "Search a city instead";
+  searchBtn.style.display = "none";
+  searchBtn.addEventListener("click", () => {
+    setStatus(null);
+    if (typeof options.onSearchInstead === "function") options.onSearchInstead();
+  });
+  status.appendChild(searchBtn);
+
+  const dismissBtn = document.createElement("button");
+  dismissBtn.type = "button";
+  dismissBtn.className = "atlas-globe-nearme-status-dismiss";
+  dismissBtn.textContent = "×";
+  dismissBtn.setAttribute("aria-label", "Dismiss");
+  dismissBtn.addEventListener("click", () => setStatus(null));
+  status.appendChild(dismissBtn);
+
   rootEl.appendChild(status);
 
   function setStatus(state) {
     const text = state ? NEAR_ME_STATUS_TEXT[state] || "" : "";
-    status.textContent = text;
+    textEl.textContent = text;
     if (state && text) {
       status.setAttribute("data-state", state);
+      searchBtn.style.display = STATES_WITH_SEARCH_ESCAPE.has(state) ? "" : "none";
     } else {
       status.removeAttribute("data-state");
+      searchBtn.style.display = "none";
     }
   }
 

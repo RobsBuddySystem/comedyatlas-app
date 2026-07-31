@@ -275,6 +275,30 @@ export function createCameraController(camera, renderer, callbacks) {
    * only, never required by any other module). */
   let rotationState = 'idle';
 
+  /**
+   * SELECTION LOCK (2026-07-31, live bug: "the globe keeps rotating after a
+   * city is selected").
+   *
+   * Root cause: `focusOnLatLng` set a tween but never touched `rotationState`.
+   * `update()` returns early while a tween is in flight, then clears it on the
+   * final frame — and the VERY NEXT frame falls straight through to the idle
+   * auto-rotate branch, because as far as the state machine was concerned
+   * nothing had happened. The camera flew to the city and immediately began
+   * spinning away from it. There was no state meaning "a city is selected",
+   * so no amount of timing adjustment could have fixed it.
+   *
+   * `selectionLocked` is that missing state. While it is true, auto-rotation
+   * is off REGARDLESS of `rotationState` — including after a drag ends, which
+   * is the case a resume-timer approach always got wrong.
+   *
+   * The full machine, in the terms the interaction is specified in:
+   *   AUTO_ROTATING       = !selectionLocked && rotationState 'idle'
+   *   USER_DRAGGING       = rotationState 'interacting'
+   *   FLYING_TO_CITY      = selectionLocked && tween !== null
+   *   CITY_SELECTED_LOCKED= selectionLocked && tween === null
+   */
+  let selectionLocked = false;
+
   let tween = null; // {fromLat, fromLng, fromAlt, toLat, toLng, toAlt, start, duration}
 
   let disposed = false;
@@ -429,11 +453,21 @@ export function createCameraController(camera, renderer, callbacks) {
         rotationState = 'idle';
         onIdle();
       }
+      // NOTE: falling through to the lock check below is deliberate. When a
+      // city is selected the user may still drag and zoom, but letting go must
+      // NOT restart the spin — the inactivity timer alone would.
+    }
+
+    if (selectionLocked) {
+      // CITY_SELECTED_LOCKED. The camera holds wherever it is (the flown-to
+      // city, or wherever the user dragged it) until the selection is
+      // explicitly cleared. This is the whole fix.
       return;
     }
 
     if (rotationState !== 'idle') {
-      // paused-reduced-motion or paused-hidden: no auto-rotation, ever.
+      // interacting (still within the resume delay), paused-reduced-motion or
+      // paused-hidden: no auto-rotation.
       return;
     }
 
@@ -457,6 +491,20 @@ export function createCameraController(camera, renderer, callbacks) {
     const targetAltitude = typeof options.altitude === 'number' ? options.altitude : CITY_FOCUS_ALTITUDE;
     const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
 
+    // `lock: true` means "this fly-to is a city SELECTION" -> hold the camera
+    // there afterwards instead of resuming the idle spin. Defaults to true:
+    // every existing caller of focusOnLatLng in this codebase is a city
+    // selection (experience.js selectCity), and the failure mode of forgetting
+    // the flag is the exact live bug being fixed. A caller that genuinely
+    // wants a non-locking fly-to must now say so explicitly.
+    if (options.lock !== false) {
+      selectionLocked = true;
+      // A brand-new selection supersedes any in-flight animation AND any
+      // pending idle-resume: assigning `tween` below replaces the old one, so
+      // there is never a second tween loop running against this camera.
+      rotationState = rotationState === 'interacting' ? 'interacting' : 'idle';
+    }
+
     tween = {
       fromLat: currentLat,
       fromLng: currentLng,
@@ -472,10 +520,35 @@ export function createCameraController(camera, renderer, callbacks) {
 
   /** Reframes to the default world view (Europe + Africa + the Americas). */
   function resetToWorldView() {
+    // Recentring is the explicit "show me the world again" gesture, so it must
+    // NOT lock: it flies out and then resumes the idle spin.
     focusOnLatLng(WORLD_VIEW_LAT, WORLD_VIEW_LNG, {
       duration: DEFAULT_FOCUS_DURATION_MS,
       altitude: WORLD_VIEW_ALTITUDE,
+      lock: false,
     });
+    clearSelectionLock();
+  }
+
+  /**
+   * Releases CITY_SELECTED_LOCKED. Auto-rotation does not restart the instant
+   * the lock drops: `lastInteractionAt` is stamped to now and the state set to
+   * `interacting`, so the existing IDLE_RESUME_DELAY_MS inactivity period runs
+   * first. That delay is intentional and shared with every other interaction —
+   * the spin never resumes merely because an animation ended.
+   */
+  function clearSelectionLock() {
+    if (!selectionLocked) return;
+    selectionLocked = false;
+    if (rotationState !== 'paused-reduced-motion' && rotationState !== 'paused-hidden') {
+      rotationState = 'interacting';
+      lastInteractionAt = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    }
+  }
+
+  /** True while a city selection is holding the camera. */
+  function isSelectionLocked() {
+    return selectionLocked;
   }
 
   /** @returns {number} camera altitude in globe radii above the surface —
@@ -488,6 +561,27 @@ export function createCameraController(camera, renderer, callbacks) {
    * "idle" | "interacting" | "paused-reduced-motion" | "paused-hidden". */
   function rotationStateNow() {
     return rotationState;
+  }
+
+  /**
+   * The interaction state machine, in the four names the behaviour is
+   * specified in. Derived, never stored twice — a second stored copy is how
+   * two sources of truth drift apart.
+   *
+   * @returns {'AUTO_ROTATING'|'USER_DRAGGING'|'FLYING_TO_CITY'
+   *           |'CITY_SELECTED_LOCKED'|'PAUSED_REDUCED_MOTION'|'PAUSED_HIDDEN'}
+   */
+  function interactionState() {
+    if (rotationState === 'paused-reduced-motion') return 'PAUSED_REDUCED_MOTION';
+    if (rotationState === 'paused-hidden') return 'PAUSED_HIDDEN';
+    // USER_DRAGGING is reported ahead of the lock deliberately: the user IS
+    // dragging, and the spec explicitly keeps drag/zoom available while a city
+    // is selected. The lock still governs BEHAVIOUR throughout (update() checks
+    // selectionLocked, not this string) — this is a description of what the
+    // user is doing, not the thing that decides whether the globe spins.
+    if (rotationState === 'interacting') return 'USER_DRAGGING';
+    if (selectionLocked) return tween ? 'FLYING_TO_CITY' : 'CITY_SELECTED_LOCKED';
+    return 'AUTO_ROTATING';
   }
 
   function dispose() {
@@ -521,6 +615,9 @@ export function createCameraController(camera, renderer, callbacks) {
     altitude,
     dispose,
     rotationState: rotationStateNow,
+    interactionState,
+    clearSelectionLock,
+    isSelectionLocked,
   };
 }
 

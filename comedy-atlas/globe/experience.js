@@ -255,6 +255,32 @@ function createNearMeHandler(deps) {
       deps.setStatus('unsupported');
       return;
     }
+
+    // Permissions API pre-check (2026-08-01): if the browser can tell us the
+    // permission is ALREADY denied, say so immediately instead of calling
+    // getCurrentPosition again. Browsers that remember a denial don't
+    // re-show a system prompt on a second call -- they just fire the error
+    // callback again -- so this isn't required for correctness, but it
+    // avoids a pointless round trip and (on some browsers) a console
+    // warning, and gets the honest message on screen faster. Support is
+    // optional and best-effort: not every browser implements
+    // navigator.permissions, and Safari in particular is inconsistent about
+    // it, so absence of the API just falls through to the real request
+    // below rather than being treated as an error.
+    const permissions = deps.getPermissions ? deps.getPermissions() : null;
+    if (permissions && typeof permissions.query === 'function') {
+      permissions.query({ name: 'geolocation' }).then((status) => {
+        if (status && status.state === 'denied') {
+          deps.setStatus('denied');
+          return;
+        }
+        requestPosition();
+      }, requestPosition);
+      return;
+    }
+    requestPosition();
+
+    function requestPosition() {
     deps.setStatus('locating');
     geolocation.getCurrentPosition(
       (position) => {
@@ -278,18 +304,21 @@ function createNearMeHandler(deps) {
       },
       (error) => {
         // GeolocationPositionError codes: 1 = PERMISSION_DENIED,
-        // 2 = POSITION_UNAVAILABLE, 3 = TIMEOUT. Only PERMISSION_DENIED
-        // gets its own copy (the user made a deliberate choice); the other
-        // two are both "we couldn't get a fix" from the visitor's point of
-        // view and share the `unavailable` state.
+        // 2 = POSITION_UNAVAILABLE, 3 = TIMEOUT. Each gets its own honest
+        // state (2026-08-01: TIMEOUT used to be folded into 'unavailable' --
+        // separated because "took too long" and "couldn't get a fix at all"
+        // call for different next actions from the visitor).
         if (error && error.code === 1) {
           deps.setStatus('denied');
+        } else if (error && error.code === 3) {
+          deps.setStatus('timeout');
         } else {
           deps.setStatus('unavailable');
         }
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 }
     );
+    }
   };
 }
 
@@ -427,6 +456,7 @@ export function mount(rootEl, options) {
   let sheetHandle = null; // CP8: mobile bottom sheet wrapping panelHandle's content
   let touchGuardHandle = null; // CP8: two-finger pinch-zoom guard (sheet.js)
   let railOverlayKeydownHandler = null; // CP8: document-level Escape handler, see buildChrome
+  let onKeyDown = null; // Escape-to-deselect (2026-07-31 selection-lock work)
   let fallbackHandle = null;
   let selectorRail = null;
   let selectorBar = null;
@@ -511,9 +541,28 @@ export function mount(rootEl, options) {
     if (markers) markers.setSelectedId(selectedId);
     if (controller) {
       const city = findCityById(selectedId);
-      if (city) controller.focusOnLatLng(city.latitude, city.longitude);
+      if (city) {
+        // Locks the camera on arrival (camera.js `selectionLocked`). Before
+        // this, the globe flew to the city and then immediately resumed the
+        // idle spin, carrying the selected city off-screen while its panel
+        // stayed open — the 2026-07-31 live bug.
+        controller.focusOnLatLng(city.latitude, city.longitude);
+      } else if (controller.clearSelectionLock) {
+        // selectCity(null) is a real deselect: release the camera so the
+        // world view can breathe again after the usual inactivity delay.
+        controller.clearSelectionLock();
+      }
     }
     openPanelFor(findCityById(selectedId));
+  }
+
+  /**
+   * The explicit "I'm done with this city" gesture. Without this there was no
+   * way to leave CITY_SELECTED_LOCKED at all — grep for a deselect path before
+   * 2026-07-31 returns nothing, so the panel could be opened and never closed.
+   */
+  function clearSelection() {
+    selectCity(null);
   }
 
   /**
@@ -721,8 +770,26 @@ export function mount(rootEl, options) {
     // CP5 already built and CP9's homepage flag-off/flag-on paths both use.
     const recenterBtn = rootEl.querySelector('[data-role="recenter"]');
     if (recenterBtn) {
-      recenterBtn.addEventListener('click', () => controller.resetToWorldView());
+      // Recentring is also the DESELECT gesture. resetToWorldView() alone
+      // released the camera lock but left the city panel open, which reads as
+      // "still selected" while the globe spins away — the same incoherence in
+      // a different place. clearSelection() drops the marker selection, closes
+      // the panel and releases the lock; resetToWorldView() then flies out.
+      recenterBtn.addEventListener('click', () => {
+        clearSelection();
+        controller.resetToWorldView();
+      });
     }
+
+    // Escape is the conventional "close this" key and costs nothing to honour.
+    // Without it, keyboard users had no deselect path at all.
+    onKeyDown = (ev) => {
+      if (ev.key === 'Escape' && selectedId) {
+        clearSelection();
+        controller.resetToWorldView();
+      }
+    };
+    rootEl.ownerDocument.addEventListener('keydown', onKeyDown);
 
     // CP8: the compact "Layers" button reveals the SAME rail (one
     // createLayerSelector instance, per legend.js's own header comment —
@@ -786,11 +853,21 @@ export function mount(rootEl, options) {
     };
     const nearMeOnClick = createNearMeHandler({
       getGeolocation: () => (typeof navigator !== 'undefined' ? navigator.geolocation : undefined),
+      getPermissions: () => (typeof navigator !== 'undefined' ? navigator.permissions : undefined),
       getCities: () => currentPayload.cities,
       focusCity: (id) => selectCity(id),
       setStatus: setNearMeStatus,
     });
-    nearMeHandle = renderNearMe(rootEl.querySelector('[data-role="nearme"]'), { onClick: nearMeOnClick });
+    nearMeHandle = renderNearMe(rootEl.querySelector('[data-role="nearme"]'), {
+      onClick: nearMeOnClick,
+      // "Search a city instead" (2026-08-01): a Near Me dead end must not be
+      // a dead end. Focuses the same search input a marker click or manual
+      // search already uses -- no parallel UI, just moves focus into it.
+      onSearchInstead: () => {
+        const input = rootEl.querySelector('.atlas-globe-search input');
+        if (input) input.focus();
+      },
+    });
 
     const searchInputEl = rootEl.querySelector('.atlas-globe-search input');
     if (searchInputEl) {
@@ -873,8 +950,13 @@ export function mount(rootEl, options) {
   const handle = {
     selectCity,
     setLayer,
+    clearSelection,
     destroy() {
       destroyed = true;
+      if (onKeyDown) {
+        rootEl.ownerDocument.removeEventListener('keydown', onKeyDown);
+        onKeyDown = null;
+      }
       cleanupWebGL();
       if (sheetHandle) sheetHandle.destroy();
       if (panelHandle) panelHandle.destroy();

@@ -18,7 +18,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 249
+      "unconfirmed": 250
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -71,8 +71,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 228,
-      "unconfirmed": 153
+      "en": 249,
+      "unconfirmed": 174
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -85,7 +85,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 166,
+      "en": 165,
       "unconfirmed": 2
     },
     "latitude": 40.4168,
@@ -99,7 +99,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 61
+      "en": 64
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -179,7 +179,7 @@
     "id": 33,
     "language_counts": {
       "en": 425,
-      "unconfirmed": 5
+      "unconfirmed": 6
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -291,6 +291,19 @@
     "timezone": "Europe/Budapest"
   },
   {
+    "country_id": 35,
+    "country_iso2": "HR",
+    "country_name": "Croatia",
+    "id": 49,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 45.815,
+    "longitude": 15.9819,
+    "name": "Zagreb",
+    "timezone": "Europe/Zagreb"
+  },
+  {
     "country_id": 37,
     "country_iso2": "SK",
     "country_name": "Slovakia",
@@ -387,8 +400,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1029,
-      "unconfirmed": 122
+      "en": 1023,
+      "unconfirmed": 144
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -559,10 +572,10 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 179
+      "unconfirmed": 185
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.472989,
+    "longitude": -97.517054,
     "name": "Oklahoma City",
     "timezone": "America/Chicago"
   },
@@ -601,8 +614,8 @@
     "language_counts": {
       "unconfirmed": 59
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 40.587178,
+    "longitude": -105.077011,
     "name": "Fort Collins",
     "timezone": "America/Denver"
   },
@@ -640,8 +653,8 @@
     "language_counts": {
       "unconfirmed": 18
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 33.425512,
+    "longitude": -111.940016,
     "name": "Tempe",
     "timezone": "America/Phoenix"
   },
@@ -665,7 +678,7 @@
     "country_name": "United States",
     "id": 129,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 12
     },
     "latitude": 39.7684,
     "longitude": -86.1581,
@@ -680,8 +693,8 @@
     "language_counts": {
       "unconfirmed": 7
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 34.075596,
+    "longitude": -84.294596,
     "name": "Alpharetta",
     "timezone": "America/New_York"
   },
@@ -691,7 +704,7 @@
     "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 176
+      "unconfirmed": 183
     },
     "latitude": null,
     "longitude": null,
@@ -717,7 +730,7 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 215
+      "unconfirmed": 216
     },
     "latitude": null,
     "longitude": null,
@@ -743,7 +756,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 175
+      "unconfirmed": 178
     },
     "latitude": null,
     "longitude": null,
@@ -758,8 +771,8 @@
     "language_counts": {
       "unconfirmed": 123
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 41.07999,
+    "longitude": -85.138602,
     "name": "Fort Wayne",
     "timezone": "America/Indiana/Indianapolis"
   },
@@ -797,8 +810,8 @@
     "language_counts": {
       "unconfirmed": 106
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 40.75962,
+    "longitude": -111.886797,
     "name": "Salt Lake City",
     "timezone": "America/Denver"
   },
@@ -810,8 +823,8 @@
     "language_counts": {
       "unconfirmed": 17
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 40.606134,
+    "longitude": -111.939521,
     "name": "West Jordan",
     "timezone": "America/Denver"
   },
