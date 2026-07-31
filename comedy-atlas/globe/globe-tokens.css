@@ -1,0 +1,131 @@
+/*
+ * COMEDY ATLAS — Interactive Globe: scoped design tokens
+ * (site/comedy-atlas/globe/globe-tokens.css)
+ *
+ * CHECKPOINT 4 of docs/superpowers/plans/2026-07-30-comedy-atlas-globe.md.
+ *
+ * SCOPING RULE (non-negotiable, Global Constraint #2 / plan Step 1):
+ * every custom property here is declared on `.atlas-globe-root`, never on
+ * a bare `:root {}`. The globe is one section of one page — it must never
+ * restyle anything else on the site. `tests/test_globe_registry.py`'s
+ * test_chrome_tokens_are_scoped_not_global asserts this file contains no
+ * bare `:root {` selector.
+ *
+ * REUSE VS. DIVERGENCE from site/comedy-atlas/atlas-visuals.css
+ * (read in full before writing this file, per instructions):
+ *
+ *   REUSED (existing token, same value, referenced directly):
+ *     --atlas-globe-ocean-hi   -> var(--atlas-map-water-hi)
+ *     --atlas-globe-ocean      -> var(--atlas-map-water)
+ *     --atlas-globe-ocean-lo   -> var(--atlas-map-water-lo)
+ *     --atlas-globe-grid       -> var(--atlas-map-grid)
+ *     --atlas-globe-gold       -> var(--gold)         (matches --atlas-layer-shows)
+ *     --atlas-globe-muted      -> var(--muted)         (matches --atlas-layer-comics)
+ *     --atlas-globe-live       -> var(--red)           (site already defines a red)
+ *     --atlas-globe-cream      -> var(--text)          (site's dark-mode --text is
+ *                                                        already near-white/cream, #f0f0f0)
+ *     --atlas-globe-amber      -> var(--gold-light)    (site's existing lighter gold)
+ *     --atlas-globe-panel-bg   -> var(--card)
+ *     --atlas-globe-panel-border -> var(--border)
+ *     --atlas-globe-page-bg    -> var(--bg)
+ *
+ *   DIVERGED (spec value kept, existing token differs — documented, not silent):
+ *     --atlas-globe-violet: Global Constraint #10 and the CP6 marker legend
+ *       require a violet ring specifically for FESTIVALS. The existing
+ *       --atlas-layer-festivals token is `var(--green)` (#3fb950), not
+ *       violet — reusing it would contradict the spec's fixed palette.
+ *       We keep a new violet value, borrowed from the *hue family* of the
+ *       site's existing --purple-light (#9d5ff5, currently bound to the
+ *       VENUES layer) rather than inventing an unrelated hue, but it is
+ *       declared as its own token because its semantic meaning (festival)
+ *       does not match --atlas-layer-festivals' existing meaning.
+ *     --atlas-globe-orange: no existing site token is orange. New value,
+ *       chosen to sit between --atlas-globe-gold and --atlas-globe-live on
+ *       the warm ramp for the "active" marker tier (CP6 step 1).
+ *
+ * All of the above will be repeated in docs/COMEDY_ATLAS_GLOBE_IMPLEMENTATION.md
+ * (Checkpoint 10) verbatim from this comment block.
+ *
+ * ADDED IN CHECKPOINT 5 (Earth + camera), by explicit Opus gate instruction
+ * after CP5's first pass shipped an atmosphere rim that technically
+ * rendered but was practically invisible — the shader was correctly wired,
+ * but it drove its colour off `--atlas-globe-ocean-hi`, a dark navy
+ * (#182338), not an actual pale blue. `earth.js` needs a real pale-blue
+ * token for the atmospheric limb per spec §6 / Global Constraint #10:
+ *     --atlas-globe-atmosphere -- thin, soft, pale-blue rim colour.
+ *       No existing site token is pale blue (the closest, --purple-light,
+ *       is violet and already claimed by --atlas-globe-violet above), so
+ *       this is a new value, not a divergence from an existing one.
+ */
+
+.atlas-globe-root{
+  /* Ocean / atmosphere — reused verbatim from the existing 2D map so the
+     globe and atlas-visuals.js read as the same "night sky" surface. */
+  --atlas-globe-ocean-hi:var(--atlas-map-water-hi,#182338);
+  --atlas-globe-ocean:var(--atlas-map-water,#0a0e1a);
+  --atlas-globe-ocean-lo:var(--atlas-map-water-lo,#05070d);
+  --atlas-globe-grid:var(--atlas-map-grid,#28374d);
+
+  /* Chrome surfaces — reused from the page's own card/border/bg tokens. */
+  --atlas-globe-page-bg:var(--bg,#0a0e1a);
+  --atlas-globe-panel-bg:var(--card,#111827);
+  --atlas-globe-panel-border:var(--border,#1e2a3a);
+  --atlas-globe-cream:var(--text,#f0f0f0);
+  --atlas-globe-muted:var(--muted,#8899aa);
+
+  /* Activity-marker ramp (Global Constraint #10: gold/amber/orange/red/violet). */
+  --atlas-globe-gold:var(--gold,#c9a84c);        /* hub */
+  --atlas-globe-amber:var(--gold-light,#e8c96a); /* emerging / secondary */
+  --atlas-globe-orange:#d9822b;                  /* active (new — no existing token) */
+  --atlas-globe-live:var(--red,#c41e3a);         /* live / imminent pulse */
+  --atlas-globe-violet:#8a5cf6;                  /* festival ring (diverges from
+                                                     --atlas-layer-festivals=green,
+                                                     see header note) */
+  --atlas-globe-selected:var(--atlas-globe-cream); /* cream selection ring */
+  --atlas-globe-atmosphere:#9fd0ff; /* pale-blue atmospheric rim (CP5) — see
+                                        header note; no existing token fit */
+
+  /* Motion + spacing shared by every globe/chrome module. */
+  --atlas-globe-radius:14px;
+  --atlas-globe-radius-sm:8px;
+  --atlas-globe-gap:12px;
+  --atlas-globe-focus-ring:2px solid var(--atlas-globe-amber);
+  --atlas-globe-transition-fast:120ms ease;
+  --atlas-globe-transition:220ms ease;
+}
+
+/*
+ * DELIBERATELY NO `@media (prefers-color-scheme: light)` OVERRIDE HERE.
+ *
+ * BUGFIX (2026-07-31, Bug #4 — "force dark"): this file used to carry a
+ * light-mode block that flipped --atlas-globe-panel-bg to white and the
+ * text tokens to near-black whenever the VIEWER's OS/browser preference
+ * was "light". Headless Chromium's own default emulated preference is
+ * "light" (confirmed by direct matchMedia instrumentation) -- which meant
+ * every screenshot of this feature taken without an explicit
+ * `color_scheme="dark"` context (i.e. most of them, until this was
+ * noticed) was silently captured in a light theme that directly
+ * contradicted the approved design.
+ *
+ * Global Constraint #10 and the approved mockup both fix the globe's
+ * visual identity as dark cinematic — deep blue-black ocean, warm
+ * gold/amber/orange/red/violet markers, cream typography — REGARDLESS of
+ * the viewer's system theme. A globe is an inherently dark surface, the
+ * same way a video player or a star map stays dark/black chrome no matter
+ * what theme the surrounding OS is in; it is not "the page", it is a
+ * self-contained scene.
+ *
+ * The REST OF comedyatlas.app keeps its ordinary light/dark theming via
+ * the site's own (non `--atlas-globe-*`) tokens — this file is scoped to
+ * `.atlas-globe-root` only (see the scoping rule at the top of this file)
+ * and this exception applies to that scope alone.
+ *
+ * DO NOT reintroduce a `prefers-color-scheme: light` block in this file.
+ * If a future agent is tempted to "restore" one because it looks like a
+ * missing feature: it isn't missing, it was removed on purpose, and
+ * restoring it silently regresses every globe screenshot back to the
+ * wrong theme without any test failing (that gap is exactly why
+ * tests/test_globe_e2e.py now asserts the panel background is dark under
+ * an explicitly emulated `color_scheme="light"` context — see
+ * test_forced_dark_theme_holds_under_emulated_light_preference).
+ */

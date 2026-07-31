@@ -1,0 +1,677 @@
+/*
+ * COMEDY ATLAS — Interactive Globe: chrome shell layout
+ * (site/comedy-atlas/globe/globe-chrome.css)
+ *
+ * CHECKPOINT 4 of docs/superpowers/plans/2026-07-30-comedy-atlas-globe.md.
+ * Updated mid-checkpoint to match Robert's approved visual mockup
+ * (coordinator note, 2026-07-30) — supersedes the looser prose layout in
+ * the plan's CP4 Step 2. Scoped tokens (globe-tokens.css) are a hard
+ * prerequisite; everything below reads `--atlas-globe-*` only, never a
+ * bare colour, and every selector is namespaced under `.atlas-globe-root`
+ * so nothing outside the globe section is restyled.
+ *
+ * DOM CONTRACT for CP5/CP6/CP7/CP8/CP9 (this file styles these classes;
+ * experience.js assembles the actual markup in later checkpoints):
+ *
+ *   .atlas-globe-root                     outermost scope (tokens attach here)
+ *     .atlas-globe-shell                  full-bleed canvas + chrome stage
+ *       .atlas-globe-canvas-wrap          Earth <canvas> mounts here (CP5)
+ *       .atlas-globe-topbar
+ *         .atlas-globe-brand              logo mark + wordmark + subtitle
+ *         .atlas-globe-search             pill search input (behaviour: CP7)
+ *         .atlas-globe-topnav             4 icon+label nav items
+ *       .atlas-globe-rail                 left vertical layer nav (this file
+ *                                         + legend.js's GlobeLayerSelector)
+ *       .atlas-globe-bottomleft
+ *         .atlas-globe-nearme             "Near Me" pill button
+ *         .atlas-globe-livecount          live-shows-now counter (data-driven)
+ *       .atlas-globe-legend-wrap          centred under the globe
+ *         .atlas-globe-legend             4-item marker-colour legend
+ *         .atlas-globe-hint               "Drag to rotate..." hint row
+ *       .atlas-globe-panel-col            reserved column for CP6's panel.js
+ *       .atlas-globe-layers-bar           bottom-right duplicate layer bar
+ *                                         (same GlobeLayerSelector instance,
+ *                                         second mount point — NOT a second
+ *                                         source of truth, see legend.js)
+ *     .atlas-globe-footer                 full-width footer strip
+ *       .atlas-globe-footer-left          tagline + Contribute button
+ *       .atlas-globe-footer-stats         5 data-driven stat entries
+ *
+ * Mobile (<=600px): rail collapses to a single compact "Layers" button
+ * (sheet.js, CP8, wires its behaviour); the reserved panel column becomes
+ * a bottom sheet; the footer stat strip wraps to two rows. No rule here
+ * ever produces horizontal overflow — verified at 320/375/390/430px with
+ * a real headless browser in tests/test_globe_registry.py.
+ */
+
+.atlas-globe-root{
+  /* BUGFIX (2026-07-31, CP9 integration defect 2a/2b/2c — real-homepage-only
+   * illegibility): globe-tokens.css (frozen, not touched by this fix)
+   * defines --atlas-globe-cream / --atlas-globe-muted / --atlas-globe-panel-bg
+   * / --atlas-globe-panel-border / --atlas-globe-page-bg as `var(--text, …)`,
+   * `var(--muted, …)`, `var(--card, …)`, `var(--border, …)`, `var(--bg, …)`
+   * — a fallback that only ever applies when the referenced site token is
+   * genuinely UNDEFINED. Every CP4-CP8 test harness page defines no such
+   * tokens at all, so the safe fallback (cream #f0f0f0, etc.) was always
+   * what rendered — including in world_view_labels.png, the "renders
+   * correctly" reference screenshot cited in this bugfix's own brief.
+   * site/comedy-atlas/index.html DOES define --text/--muted/--bg/--card/
+   * --border (its own <style> block), and — same trap as D-E's already-
+   * fixed globe-tokens.css light-mode block — flips them to LIGHT-theme
+   * values (--text:#171512, near-black) under `prefers-color-scheme:
+   * light`, which is Chromium's own default emulated preference (see D-E's
+   * comment in globe-tokens.css for the precedent). Real measurement,
+   * cp9_flag_on_homepage.png: rail labels / legend text / footer kicker
+   * all computed to rgb(23,21,18) — the SITE's light-mode --text, not the
+   * intended cream — on a near-black field. A THIRD instance of the same
+   * path/token-resolution class of trap this integration keeps hitting
+   * (ASSET_BASE, cityHref/searchIndexUrl, and now this).
+   * Cannot fix in globe-tokens.css itself (frozen for this pass) — so this
+   * pins the ambient tokens it depends on, scoped to .atlas-globe-root only,
+   * to their real dark-mode values (identical to index.html's own always-on
+   * <style> declaration, i.e. what actually renders under a dark preference
+   * or with no override at all — nothing new is invented here). A directly
+   * declared custom property on an element always wins over one the element
+   * only inherited, regardless of specificity or source order, so this is
+   * robust however these two stylesheets end up ordered in <head>. Scoped
+   * to `.atlas-globe-root`'s own subtree — the rest of the page keeps
+   * following the site's real light/dark theme untouched. */
+  --bg:#0a0e1a;
+  --card:#111827;
+  --border:#1e2a3a;
+  --text:#f0f0f0;
+  --muted:#8899aa;
+
+  position:relative;
+  box-sizing:border-box;
+  color:var(--atlas-globe-cream);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+.atlas-globe-root *,.atlas-globe-root *::before,.atlas-globe-root *::after{box-sizing:inherit}
+
+.atlas-globe-shell{
+  position:relative;
+  width:100%;
+  min-height:520px;
+  max-width:100%;
+  overflow:hidden;
+  border-radius:var(--atlas-globe-radius);
+  /* Full-bleed near-black stage per the approved mockup — deliberately a
+     shade darker than --atlas-globe-ocean so the Earth (CP5) reads as an
+     object floating in space rather than filling the whole panel. */
+  background:radial-gradient(120% 120% at 32% 45%,var(--atlas-globe-ocean-hi) 0%,#05070b 60%,#020306 100%);
+  border:1px solid var(--atlas-globe-panel-border);
+}
+
+.atlas-globe-canvas-wrap{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-left:6%;
+  pointer-events:none; /* CP5 re-enables pointer events on the canvas itself */
+}
+.atlas-globe-canvas-wrap canvas{pointer-events:auto}
+
+/* Recenter control (CP8) — mobile-only (see the @media block below for the
+   visible declaration); hidden here by default so desktop layout, already
+   twice-repaired, is never touched by this checkpoint. */
+.atlas-globe-recenter{display:none}
+
+/* BUGFIX (2026-07-31, Bug #2 REGRESSION FOUND AND REVERTED).
+ *
+ * The `.atlas-globe-shell::after` opaque scrim that previously lived here
+ * (2026-07-31, first attempt) was itself a regression, confirmed by
+ * inspecting tests/globe_screenshots/city_selected_paris.png directly: it
+ * did not sit on empty ocean below the globe, it painted a flat, dead
+ * -straight horizontal line across the visibly rendered sphere, reading as
+ * an amputated planet -- materially worse than the untidy overlap it
+ * replaced, and a direct violation of Constraint #10's cinematic identity.
+ * DELETED outright. You cannot fix a layout collision by painting over the
+ * thing you collided with.
+ *
+ * The real fix does not touch this file's canvas/shell geometry at all --
+ * it makes the rendered sphere itself small enough and framed high enough
+ * that the legend/hint/layers-bar band sits on genuinely empty dark field.
+ * That is entirely a camera concern (see camera.js: WORLD_VIEW_TARGET_
+ * DIAMETER_FRACTION + FRAME_BOTTOM_RESERVE_FRACTION and the
+ * computeWorldViewAltitude/computeVerticalFrameShiftPx functions), so
+ * nothing here needed to change. This comment is left as a marker so a
+ * future pass doesn't reintroduce a scrim to "fix" the same symptom.
+ */
+
+/* ---------------------------------------------------------------- */
+/* Top bar: brand (left) / search (centre) / nav (right)             */
+/* ---------------------------------------------------------------- */
+.atlas-globe-topbar{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 20px 0;
+  flex-wrap:wrap;
+}
+
+.atlas-globe-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.atlas-globe-brand-mark{
+  width:34px;height:34px;flex-shrink:0;
+  color:var(--atlas-globe-gold);
+}
+.atlas-globe-brand-mark svg{width:100%;height:100%;display:block}
+.atlas-globe-brand-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.atlas-globe-brand-word{
+  font:800 15px/1 Georgia,'Times New Roman',serif;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--atlas-globe-gold);
+  white-space:nowrap;
+}
+.atlas-globe-brand-sub{font-size:11px;color:var(--atlas-globe-cream);opacity:.65;white-space:nowrap}
+
+.atlas-globe-search{
+  flex:1 1 320px;
+  max-width:520px;
+  position:relative;
+  margin:0 8px;
+}
+.atlas-globe-search input{
+  width:100%;
+  padding:10px 40px 10px 16px;
+  border-radius:999px;
+  border:1px solid var(--atlas-globe-panel-border);
+  background:rgba(5,7,11,.72);
+  color:var(--atlas-globe-cream);
+  font-size:13px;
+  font-family:inherit;
+}
+.atlas-globe-search input::placeholder{color:var(--atlas-globe-muted)}
+.atlas-globe-search input:focus{outline:var(--atlas-globe-focus-ring);outline-offset:1px}
+.atlas-globe-search-icon{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;color:var(--atlas-globe-muted);pointer-events:none;
+}
+.atlas-globe-search-icon svg{width:100%;height:100%;display:block}
+
+.atlas-globe-topnav{display:flex;align-items:flex-start;gap:18px;flex-shrink:0}
+.atlas-globe-topnav-item{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  background:none;border:none;color:var(--atlas-globe-cream);cursor:pointer;
+  font-family:inherit;padding:4px 2px;
+}
+.atlas-globe-topnav-item .atlas-globe-icon{width:18px;height:18px;color:var(--atlas-globe-cream);opacity:.85}
+.atlas-globe-topnav-item .atlas-globe-icon svg{width:100%;height:100%;display:block}
+.atlas-globe-topnav-item span{font-size:10px;letter-spacing:.04em;opacity:.75;white-space:nowrap}
+.atlas-globe-topnav-item:hover .atlas-globe-icon,
+.atlas-globe-topnav-item:focus-visible .atlas-globe-icon{opacity:1;color:var(--atlas-globe-gold)}
+.atlas-globe-topnav-item:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:2px;border-radius:6px}
+
+/* ---------------------------------------------------------------- */
+/* Left vertical rail: World / Shows Now / Venues / Festivals /      */
+/* Comics / Connections / History                                   */
+/* ---------------------------------------------------------------- */
+.atlas-globe-rail{
+  position:absolute;
+  /* BUGFIX (2026-07-31): was `bottom:150px`, which (stacked directly above
+     the "Near Me" pill at the same left edge) left only ~272px of vertical
+     room -- not enough for all 7 items (World / Shows Now / Venues /
+     Festivals / Comics / Connections / History), so the last two were
+     clipped off the visible area and "Near Me" crowded the remainder. The
+     rail now runs the full left-edge height (top:96 to bottom:16); "Near
+     Me" + the live counter move beside it (see .atlas-globe-bottomleft
+     below) instead of underneath it, so the two never compete for the
+     same vertical space. */
+  left:16px;top:96px;bottom:16px;
+  z-index:2;
+  width:64px;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 4px;
+  border-radius:var(--atlas-globe-radius);
+  background:rgba(5,7,11,.6);
+  border:1px solid var(--atlas-globe-panel-border);
+  overflow-y:auto;
+  margin:0;
+}
+.atlas-globe-rail legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.atlas-globe-rail-item{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:8px 2px;border-radius:var(--atlas-globe-radius-sm);
+  cursor:pointer;text-align:center;
+  transition:background var(--atlas-globe-transition-fast);
+}
+.atlas-globe-rail-item:hover{background:rgba(255,255,255,.05)}
+.atlas-globe-rail-item input{position:absolute;opacity:0;width:1px;height:1px}
+.atlas-globe-rail-item .atlas-globe-icon{width:18px;height:18px;color:var(--atlas-globe-muted)}
+.atlas-globe-rail-item .atlas-globe-icon svg{width:100%;height:100%;display:block}
+.atlas-globe-rail-item span{font-size:9px;letter-spacing:.02em;color:var(--atlas-globe-muted);line-height:1.15}
+.atlas-globe-rail-item[data-active="true"]{background:rgba(201,168,76,.14)}
+.atlas-globe-rail-item[data-active="true"] .atlas-globe-icon{color:var(--atlas-globe-gold)}
+.atlas-globe-rail-item[data-active="true"] span{color:var(--atlas-globe-cream)}
+.atlas-globe-rail-item:has(input:focus-visible){outline:var(--atlas-globe-focus-ring);outline-offset:1px}
+.atlas-globe-rail-item[data-disabled="true"]{opacity:.35;cursor:not-allowed}
+
+/* Compact mobile trigger that replaces the rail below 600px. */
+.atlas-globe-rail-compact{
+  display:none;
+  align-items:center;gap:6px;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(5,7,11,.72);border:1px solid var(--atlas-globe-panel-border);
+  color:var(--atlas-globe-cream);font-size:12px;font-family:inherit;cursor:pointer;
+  min-height:44px;
+}
+.atlas-globe-rail-compact .atlas-globe-icon{width:16px;height:16px}
+
+/* ---------------------------------------------------------------- */
+/* Bottom-left: Near Me + Live-shows-now counter                     */
+/* ---------------------------------------------------------------- */
+.atlas-globe-bottomleft{
+  /* BUGFIX (2026-07-31): was `left:16px;bottom:96px`, directly beneath the
+     rail's old (too-short) footprint -- the two visibly overlapped. Now
+     sits to the RIGHT of the (now full-height) rail at the same bottom
+     baseline, so rail and "Near Me" occupy disjoint horizontal bands
+     instead of stacking. 100px clears the rail's own ~71px measured width
+     (left:16 + width) plus a small gap. */
+  position:absolute;left:100px;bottom:16px;z-index:2;
+  display:flex;flex-direction:column;gap:12px;align-items:flex-start;
+}
+.atlas-globe-nearme{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:999px;
+  background:rgba(5,7,11,.72);border:1px solid var(--atlas-globe-panel-border);
+  color:var(--atlas-globe-cream);font-size:12.5px;font-weight:600;font-family:inherit;
+  cursor:pointer;min-height:44px;
+}
+.atlas-globe-nearme .atlas-globe-icon{width:14px;height:14px;color:var(--atlas-globe-gold)}
+.atlas-globe-nearme:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:2px}
+
+.atlas-globe-livecount{display:flex;flex-direction:column;gap:2px;padding-left:4px}
+.atlas-globe-livecount-label{display:flex;align-items:center;gap:6px}
+.atlas-globe-livecount-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--atlas-globe-live);
+  box-shadow:0 0 0 3px rgba(196,30,58,.25);flex-shrink:0;
+}
+.atlas-globe-livecount-text{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;line-height:1.3;color:var(--atlas-globe-muted)}
+.atlas-globe-livecount-number{
+  font-size:26px;font-weight:800;color:var(--atlas-globe-live);line-height:1;
+}
+/* Honest empty state — never hidden, never a guessed number. */
+.atlas-globe-livecount-number[data-empty="true"]{color:var(--atlas-globe-muted);font-size:13px;font-weight:600}
+
+/* ---------------------------------------------------------------- */
+/* Legend + hint, centred under the globe                            */
+/* ---------------------------------------------------------------- */
+.atlas-globe-legend-wrap{
+  /* BUGFIX (Fable review #6, second collision, 2026-07-31): this was
+     `left:50%; transform:translateX(-50%); max-width:90%`, i.e. centred on
+     the FULL stage and free to grow to 90% of it. The right-hand column
+     (.atlas-globe-panel-col / .atlas-globe-layers-bar) is 32% wide and
+     anchored right:16px, so at every desktop width the legend's right end
+     ran underneath it -- measured 50px x 35px of overlap at 1280, 1440 and
+     1680, which is what hid the "Festival" legend item in
+     tests/globe_screenshots/city_selected_paris.png.
+     Anchoring to BOTH edges instead of centring on the stage makes the
+     clearance structural: the legend now occupies exactly the space between
+     the left rail and the right column, and centres itself within that,
+     so it cannot collide at any width. The right offset repeats the right
+     column's own `clamp` so the two can never disagree. */
+  position:absolute;left:50%;bottom:96px;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
+  /* Stay centred, but never wide enough to reach either side column. Capping
+     SYMMETRICALLY is what makes this safe: because the element is centred,
+     one cap guarantees clearance on BOTH sides, so it needs no knowledge of
+     what sits on the left (rail, "Near Me" pill, live counter) — only of the
+     right column, which is the wider side. An earlier attempt anchored
+     left/right explicitly and promptly collided with the "Near Me" pill,
+     because it had to guess the left cluster's width. The clamp repeats the
+     right column's own sizing so the two can never drift apart. */
+  max-width:calc(100% - 2 * (clamp(260px, 32%, 380px) + 32px));
+}
+.atlas-globe-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.atlas-globe-legend-item{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--atlas-globe-cream);opacity:.9}
+.atlas-globe-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+.atlas-globe-legend-dot[data-tier="hub"]{background:var(--atlas-globe-gold)}
+.atlas-globe-legend-dot[data-tier="active"]{background:var(--atlas-globe-orange)}
+.atlas-globe-legend-dot[data-tier="live"]{background:var(--atlas-globe-live)}
+.atlas-globe-legend-dot[data-tier="festival"]{background:var(--atlas-globe-violet)}
+
+.atlas-globe-hint{
+  display:flex;align-items:center;gap:6px;
+  font-size:10.5px;color:var(--atlas-globe-muted);opacity:.8;
+}
+.atlas-globe-hint .atlas-globe-icon{width:12px;height:12px}
+
+/* ---------------------------------------------------------------- */
+/* Right-hand reserved panel column (CP6 mounts panel.js here)        */
+/* ---------------------------------------------------------------- */
+.atlas-globe-panel-col{
+  position:absolute;right:16px;top:96px;bottom:150px;
+  z-index:3;width:32%;min-width:260px;max-width:380px;
+  display:flex;flex-direction:column;gap:10px;
+  pointer-events:none; /* re-enabled by CP6's panel content when it mounts */
+  /* BUGFIX (Fable adversarial review finding #6, MED/HIGH): `top:96px;
+     bottom:150px` only ever fixes this element's own OUTER box height —
+     it does nothing to stop CHILDREN from rendering taller than that box.
+     With no overflow rule, panel.js content (e.g. the Paris city panel's
+     stat grid + "EXPLORE PARIS"/"NEXT SHOWS" CTAs) simply painted past the
+     bottom of this box and on top of .atlas-globe-legend-wrap and
+     .atlas-globe-layers-bar, which sit lower in DOM/paint order at
+     overlapping screen coordinates — confirmed directly against
+     tests/globe_screenshots/city_selected_paris.png ("EXPLORE PARIS" half
+     -hidden behind the legend row, "NEXT SHOWS" behind the layers bar).
+     `overflow-y:auto` makes this column clip and scroll ITS OWN content
+     instead of letting it escape into neighbouring chrome, at every
+     viewport this file handles (desktop here; the @media(max-width:600px)
+     block already gives the mobile sheet its own independent scroll via
+     .atlas-globe-sheet-body, so this rule is inert there — harmless, not
+     load-bearing, on mobile). `overflow-x:hidden` pairs with it so a
+     slightly-too-wide child (e.g. a long venue name) can never introduce a
+     horizontal scrollbar on top of the vertical one.
+
+     ...EXCEPT that rule alone did NOT fix it, and a rendered probe proved
+     it (2026-07-31). `.atlas-globe-panel` is a FLEX ITEM of this column, so
+     it gets stretched to exactly the column's height (272px) — its own box
+     therefore always "fits", this column's scrollHeight equals its
+     clientHeight, and `overflow-y:auto` here consequently never engages.
+     The panel's CONTENT still painted straight out of the bottom: measured
+     "EXPLORE PARIS" at y=514 and "View all shows in Paris" at y=764 against
+     a column ending at y=508, directly on top of the layers bar (y=527-643).
+     The scroll has to go on the panel's OWN inner container instead — see
+     .atlas-globe-panel / .atlas-globe-panel-scroll below. This column keeps
+     `overflow:hidden` as a backstop so nothing can ever escape it again. */
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+.atlas-globe-panel-col > *{pointer-events:auto}
+.atlas-globe-panel-col:empty{display:none}
+
+/* BUGFIX (Fable review #6, real root cause, 2026-07-31).
+   panel.js has ALWAYS built `.atlas-globe-panel > .atlas-globe-panel-scroll`
+   (panel.js:625,628) — a scroll container the stylesheet never styled. So
+   the element existed, was named for exactly this job, and did nothing.
+   Giving it the overflow it was named for is the actual fix; everything
+   above was treating the symptom one level too high.
+   `min-height:0` on both is required: a flex item's default `min-height:auto`
+   refuses to shrink below its content, which silently defeats any overflow
+   rule on it. */
+.atlas-globe-panel{
+  display:flex;flex-direction:column;
+  min-height:0;
+  overflow:hidden;
+}
+.atlas-globe-panel-scroll{
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+.atlas-globe-layers-bar{
+  /* BUGFIX (2026-07-31, Bug #1): this rule previously declared background/
+     border/padding but NO `position`, so the element rendered in normal
+     document flow at full width directly beneath the topbar -- colliding
+     with the left rail and shoving "Near Me" and the legend row down onto
+     the globe. Per the approved mockup this is a bottom-RIGHT bar, sitting
+     under the reserved panel column (same right offset and width as
+     .atlas-globe-panel-col, so the two stack cleanly as one column) and
+     clear of the panel's own `bottom:150px` footprint, the rail, and the
+     footer strip at every width the desktop breakpoint covers. */
+  position:absolute;
+  right:16px;bottom:16px;
+  z-index:2;
+  width:32%;min-width:260px;max-width:380px;
+  border-radius:var(--atlas-globe-radius);
+  background:rgba(5,7,11,.72);border:1px solid var(--atlas-globe-panel-border);
+  padding:10px 12px;
+}
+.atlas-globe-layers-bar legend{
+  font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--atlas-globe-muted);
+  padding:0 0 6px;
+}
+.atlas-globe-layers-bar-row{display:flex;flex-wrap:wrap;gap:10px}
+.atlas-globe-layers-bar-item{
+  display:flex;align-items:center;gap:6px;font-size:11px;color:var(--atlas-globe-muted);
+  cursor:pointer;padding:4px 6px;border-radius:6px;
+}
+.atlas-globe-layers-bar-item input{position:absolute;opacity:0;width:1px;height:1px}
+.atlas-globe-layers-bar-item .atlas-globe-icon{width:14px;height:14px}
+.atlas-globe-layers-bar-item[data-active="true"]{color:var(--atlas-globe-cream)}
+.atlas-globe-layers-bar-item[data-active="true"] .atlas-globe-icon{color:var(--atlas-globe-gold)}
+.atlas-globe-layers-bar-item:has(input:focus-visible){outline:var(--atlas-globe-focus-ring);outline-offset:1px}
+.atlas-globe-layers-bar-item[data-disabled="true"]{opacity:.4;cursor:not-allowed}
+
+/* ---------------------------------------------------------------- */
+/* Footer strip                                                      */
+/* ---------------------------------------------------------------- */
+.atlas-globe-footer{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  flex-wrap:wrap;
+  margin-top:10px;padding:16px 20px;
+  border-radius:var(--atlas-globe-radius);
+  background:#05070b;border:1px solid var(--atlas-globe-panel-border);
+}
+.atlas-globe-footer-left{display:flex;flex-direction:column;gap:6px;min-width:0}
+.atlas-globe-footer-kicker{
+  display:flex;align-items:center;gap:6px;
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--atlas-globe-cream);opacity:.85;
+}
+.atlas-globe-footer-kicker .atlas-globe-heart{color:var(--atlas-globe-live);width:11px;height:11px}
+.atlas-globe-footer-copy{font-size:12px;color:var(--atlas-globe-muted);max-width:44ch}
+.atlas-globe-contribute{
+  align-self:flex-start;margin-top:4px;
+  padding:8px 16px;border-radius:999px;
+  background:transparent;border:1px solid var(--atlas-globe-gold);color:var(--atlas-globe-gold);
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;font-family:inherit;min-height:44px;
+}
+.atlas-globe-contribute:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:2px}
+
+.atlas-globe-footer-stats{display:flex;flex-wrap:wrap;gap:22px}
+.atlas-globe-stat{display:flex;align-items:center;gap:8px}
+.atlas-globe-stat .atlas-globe-icon{width:16px;height:16px;color:var(--atlas-globe-gold);flex-shrink:0}
+.atlas-globe-stat-text{display:flex;flex-direction:column;line-height:1.1}
+.atlas-globe-stat-number{font-size:18px;font-weight:800;color:var(--atlas-globe-cream)}
+.atlas-globe-stat-number[data-empty="true"]{font-size:13px;font-weight:600;color:var(--atlas-globe-muted)}
+.atlas-globe-stat-label{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--atlas-globe-muted)}
+
+/* ---------------------------------------------------------------- */
+/* Fallback list (no-WebGL) — laid out independently of the 3D chrome */
+/* ---------------------------------------------------------------- */
+.atlas-globe-fallback{padding:16px 20px;background:var(--atlas-globe-panel-bg);border:1px solid var(--atlas-globe-panel-border);border-radius:var(--atlas-globe-radius)}
+.atlas-globe-fallback-search{margin-bottom:12px}
+.atlas-globe-fallback-search input{
+  width:100%;padding:10px 14px;border-radius:999px;
+  border:1px solid var(--atlas-globe-panel-border);background:var(--atlas-globe-page-bg);
+  color:var(--atlas-globe-cream);font-size:13px;font-family:inherit;
+}
+.atlas-globe-fallback-search input:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:1px}
+.atlas-globe-fallback-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-height:520px;overflow-y:auto}
+.atlas-globe-fallback-item{border:1px solid var(--atlas-globe-panel-border);border-radius:var(--atlas-globe-radius-sm);padding:10px 12px}
+.atlas-globe-fallback-item a{color:var(--atlas-globe-gold);text-decoration:none;font-weight:700}
+.atlas-globe-fallback-item a:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:2px}
+.atlas-globe-fallback-item-meta{font-size:11.5px;color:var(--atlas-globe-muted);margin-top:2px}
+.atlas-globe-fallback-empty{padding:20px;text-align:center;color:var(--atlas-globe-muted);font-size:13px}
+
+/* ---------------------------------------------------------------- */
+/* Loading state                                                     */
+/* ---------------------------------------------------------------- */
+.atlas-globe-loading{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  min-height:320px;color:var(--atlas-globe-cream);
+}
+.atlas-globe-loading-mark{width:48px;height:48px;color:var(--atlas-globe-gold)}
+.atlas-globe-loading-mark svg{width:100%;height:100%;display:block}
+.atlas-globe-loading-ring{
+  width:64px;height:64px;border-radius:50%;
+  border:1.5px solid var(--atlas-globe-grid);
+  border-top-color:var(--atlas-globe-gold);
+  animation:atlas-globe-spin 1.1s linear infinite;
+}
+@media (prefers-reduced-motion:reduce){
+  .atlas-globe-loading-ring{animation:none}
+}
+@keyframes atlas-globe-spin{to{transform:rotate(360deg)}}
+.atlas-globe-loading-text{font-size:12px;color:var(--atlas-globe-muted);letter-spacing:.04em}
+
+/* ---------------------------------------------------------------- */
+/* Responsive: 430px and below (covers the 320/375/390/430 test set)  */
+/* ---------------------------------------------------------------- */
+@media (max-width:600px){
+  /* CP8: the globe stage itself (canvas + overlay chrome) must occupy
+     ~55-65% of the initial viewport height on mobile, per the plan. A
+     viewport-relative height (rather than the old fixed `min-height:420px`,
+     which said nothing about the viewport at all) is what makes that a real,
+     measurable guarantee instead of an accident of a tall/short device. */
+  .atlas-globe-shell{height:60vh;min-height:360px;max-height:640px}
+  .atlas-globe-topbar{padding:14px 12px 0;gap:10px}
+  .atlas-globe-brand-word{font-size:13px}
+  .atlas-globe-search{order:3;flex:1 1 100%;margin:0}
+  .atlas-globe-topnav{gap:10px}
+  .atlas-globe-topnav-item span{display:none}
+
+  /* CP8: one-finger rotate + two-finger pinch-zoom (sheet.js's
+     attachTouchGestureGuard) both need the browser's OWN touch gestures
+     (page scroll, pull-to-refresh, native pinch-zoom-the-page) out of the
+     way on the canvas, or they fight the globe's own pointer handling. */
+  .atlas-globe-canvas-wrap canvas{touch-action:none}
+
+  .atlas-globe-rail{display:none}
+  .atlas-globe-rail-compact{display:inline-flex;position:absolute;left:12px;bottom:12px;z-index:2}
+  /* CP8: the compact button's whole reason to exist is to reveal the SAME
+     rail (one source of truth, per legend.js's own header comment) as a
+     temporary overlay — experience.js toggles this attribute, never a
+     second layer-selector instance. */
+  .atlas-globe-rail[data-mobile-open="true"]{
+    display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;
+    position:fixed;left:12px;right:12px;top:auto;bottom:64px;
+    width:auto;max-height:56vh;overflow-y:auto;
+    z-index:7;
+  }
+  .atlas-globe-rail[data-mobile-open="true"] .atlas-globe-rail-item{
+    flex:1 1 28%;min-height:44px;justify-content:center;
+  }
+
+  /* CP8: recenter control — always-visible, always-reachable 44px target
+     (Global Constraint: touch targets >=44px), independent of whichever
+     layer/sheet state the user is in. */
+  .atlas-globe-recenter{
+    display:inline-flex;align-items:center;justify-content:center;
+    position:absolute;right:12px;bottom:12px;z-index:3;
+    width:44px;height:44px;border-radius:999px;
+    background:rgba(5,7,11,.72);border:1px solid var(--atlas-globe-panel-border);
+    color:var(--atlas-globe-cream);cursor:pointer;
+  }
+  .atlas-globe-recenter .atlas-globe-icon{width:18px;height:18px}
+  .atlas-globe-recenter:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:2px}
+
+  .atlas-globe-bottomleft{left:12px;bottom:64px;max-width:52%;gap:10px}
+  /* BUGFIX (2026-07-31, CP9): on mobile the live counter sat directly on
+     the bright globe render with no background of its own (unlike the
+     "Near Me" pill just above it), so it read as overlapping/illegible
+     against city lights -- see tests/globe_screenshots/mobile_city_sheet.png.
+     Giving it the same dark pill treatment as .atlas-globe-nearme (desktop
+     is untouched; this whole block is already scoped to max-width:600px)
+     makes it legible over any part of the globe and visually separates it
+     from the pill above instead of floating on top of the render. */
+  .atlas-globe-livecount{
+    background:rgba(5,7,11,.72);border:1px solid var(--atlas-globe-panel-border);
+    border-radius:12px;padding:6px 12px 7px 8px;
+  }
+  .atlas-globe-livecount-number{font-size:20px}
+
+  .atlas-globe-legend-wrap{display:none} /* mobile sheet (CP8) surfaces this data instead */
+
+  .atlas-globe-panel-col{
+    position:static;width:100%;max-width:100%;min-width:0;
+    margin-top:8px;
+  }
+  /* CP8: once sheet.js's mountBottomSheet has populated the reserved panel
+     column with a real `.atlas-globe-sheet`, the column itself becomes a
+     fixed bottom overlay instead of sitting in normal document flow below
+     the footer — that is what makes it read as a "sheet" at all. Scoped
+     with :has() (already an established technique in this file — see
+     `.atlas-globe-rail-item:has(input:focus-visible)` above) so this rule
+     only ever applies once real sheet content exists; an empty panel column
+     is unaffected and still collapses via the existing `:empty` rule. */
+  .atlas-globe-panel-col:has(.atlas-globe-sheet){
+    position:fixed;left:0;right:0;bottom:0;top:auto;
+    width:100%;max-width:100%;min-width:0;margin:0;
+    z-index:6;pointer-events:none;
+  }
+  .atlas-globe-panel-col:has(.atlas-globe-sheet) > *{pointer-events:auto}
+
+  .atlas-globe-sheet{
+    display:flex;flex-direction:column;
+    background:var(--atlas-globe-panel-bg);
+    border:1px solid var(--atlas-globe-panel-border);
+    border-radius:16px 16px 0 0;
+    box-shadow:0 -10px 28px rgba(0,0,0,.5);
+    overflow:hidden;
+    /* Partial vs full MUST differ measurably (CP8 requirement) — the two
+       states below are asserted directly by tests/test_globe_e2e.py. */
+    max-height:82vh;
+  }
+  .atlas-globe-sheet[data-state="partial"]{max-height:32vh}
+  .atlas-globe-sheet[data-state="full"]{max-height:82vh}
+  .atlas-globe-sheet-handle{
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    width:100%;min-height:44px;
+    background:none;border:none;padding:8px 0;margin:0;
+    font-family:inherit;cursor:grab;touch-action:none;
+  }
+  .atlas-globe-sheet-handle:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:-3px}
+  .atlas-globe-sheet-grip{
+    width:36px;height:4px;border-radius:999px;
+    background:var(--atlas-globe-muted);opacity:.7;
+  }
+  .atlas-globe-sheet-body{overflow-y:auto;flex:1 1 auto;-webkit-overflow-scrolling:touch}
+  .atlas-globe-sheet-body .atlas-globe-panel{
+    border:none;border-radius:0;background:transparent;max-height:none;
+  }
+
+  .atlas-globe-layers-bar{display:none} /* mobile uses the compact rail trigger, one control surface */
+
+  .atlas-globe-footer{flex-direction:column;align-items:flex-start;padding:14px}
+  .atlas-globe-footer-stats{gap:14px;width:100%}
+  .atlas-globe-stat-number{font-size:15px}
+}
+
+@media (max-width:360px){
+  .atlas-globe-footer-stats{gap:10px}
+  .atlas-globe-stat-label{font-size:8.5px}
+}
+
+/* ---------------------------------------------------------------------------
+   Data-unavailable state (Fable globe review #5, 2026-07-31).
+   Shown INSTEAD of the globe chrome when globe-cities.json cannot be loaded,
+   or loads but contains no cities. Deliberately replaces the whole surface:
+   the bug being fixed was chrome rendering "0 COUNTRIES / 0 VENUES", which
+   reads as a confident statement that the world has no comedy in it.
+   --------------------------------------------------------------------------- */
+.atlas-globe-unavailable{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;min-height:320px;padding:40px 24px;text-align:center;
+  /* The dark surface is REQUIRED, not decoration. This state replaces the
+     globe stage, and the stage is the only thing on the homepage that
+     supplies a dark background (Robert's decision D-E: the globe is always
+     dark). Without it these cream-on-light strings rendered almost invisible
+     against the light homepage — caught by looking at the render, never by a
+     test, which is the recurring lesson of this whole build. */
+  background:var(--atlas-globe-stage-bg, #05070b);
+  border:1px solid var(--atlas-globe-panel-border);
+  border-radius:var(--atlas-globe-radius);
+}
+.atlas-globe-unavailable-title{
+  font-size:15px;font-weight:600;color:var(--atlas-globe-cream);margin:0;
+}
+.atlas-globe-unavailable-note{
+  font-size:12px;line-height:1.5;color:var(--atlas-globe-muted);
+  margin:0;max-width:42ch;
+}
+.atlas-globe-unavailable-link{
+  margin-top:4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--atlas-globe-cream);border:1px solid var(--atlas-globe-muted);
+  border-radius:4px;padding:8px 16px;text-decoration:none;
+}
+.atlas-globe-unavailable-link:hover,
+.atlas-globe-unavailable-link:focus-visible{
+  border-color:var(--atlas-globe-cream);
+}

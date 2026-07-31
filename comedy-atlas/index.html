@@ -29,6 +29,48 @@ window.ATLAS_VISUALS_ENABLED = false;
     if (qp === "0") { window.ATLAS_VISUALS_ENABLED = false; }
   } catch (e) { /* malformed query string -- keep the default above */ }
 })();
+
+/* COMEDY ATLAS interactive globe feature flag (CP9,
+   docs/superpowers/plans/2026-07-30-comedy-atlas-globe.md). Same
+   query-param convention as ATLAS_VISUALS_ENABLED above, plus sessionStorage
+   persistence for the session (Robert's decision D-D / CP9 step 3):
+   ?globe=1 forces it on AND remembers that choice for THIS TAB ONLY. It is
+   deliberately sessionStorage, not localStorage -- site/comedy-atlas/*.html is
+   served live from the working tree, so a localStorage flag would leave the
+   globe permanently on for any visitor who ever hit ?globe=1 on the live host.
+   Closing the tab clears it; ?globe=0 turns it off explicitly. Everything
+   this flag gates lives in site/comedy-atlas/globe/* plus the single
+   #atlas-globe-root mount point inside the "Explore the Atlas" section
+   below -- nothing else on this page depends on it.
+   DEFAULT ON since 2026-07-31 — Robert gave the explicit go to launch after
+   all 12 findings of the CP11 adversarial review were closed and the result
+   was verified against production data at 1280/1440/1680 and on mobile.
+   `?globe=0` remains the escape hatch: it force-disables for the session and
+   falls back to the previous "Explore the Atlas" CTA row, which is still in
+   the page and still renders whenever this flag is off. */
+window.ATLAS_GLOBE_ENABLED = true;
+(function () {
+  try {
+    var qp = new URLSearchParams(window.location.search).get("globe");
+    if (qp === "1") {
+      window.ATLAS_GLOBE_ENABLED = true;
+      try { sessionStorage.setItem("atlasGlobeEnabled", "1"); } catch (e) { /* storage unavailable */ }
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+    } else if (qp === "0") {
+      window.ATLAS_GLOBE_ENABLED = false;
+      try { sessionStorage.setItem("atlasGlobeEnabled", "0"); } catch (e) { /* storage unavailable */ }
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+    } else {
+      var stored = null;
+      /* Clear any flag left in localStorage by the pre-fix build -- without
+         this, an existing visitor stays stuck with the globe forever. */
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+      try { stored = sessionStorage.getItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+      if (stored === "1") { window.ATLAS_GLOBE_ENABLED = true; }
+      else if (stored === "0") { window.ATLAS_GLOBE_ENABLED = false; }
+    }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
 </script>
 <link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
 <meta name="theme-color" content="#0a0e1a">
@@ -550,6 +592,66 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return 'city.html?city=' + encodeURIComponent(entry.city) + '&org=' + encodeURIComponent(entry.org);
   }
 
+  // CP9 (2026-07-31): mounts AtlasGlobeExperience into #atlas-globe-root,
+  // ONLY when window.ATLAS_GLOBE_ENABLED is true (see the flag script in
+  // <head> -- default OFF). Called from render(), right after app.innerHTML
+  // = html assigns the section-5 markup that contains the mount div, so the
+  // element is guaranteed to exist by the time this runs -- no polling, no
+  // MutationObserver. Uses a dynamic import() (valid in a classic, non-module
+  // script) because experience.js and everything it imports are real ES
+  // modules; a plain <script src> tag cannot load them.
+  //
+  // THREE path overrides are MANDATORY here (see experience.js's own header
+  // comment, which documents all three): this module's defaults assume it
+  // mounts one directory level below site/comedy-atlas/ (matching its own
+  // test harnesses), but index.html mounts directly at site/comedy-atlas/
+  // itself -- one level shallower:
+  //   - cityHref must resolve to "city/<slug>/" (default "../city/<slug>/")
+  //   - searchIndexUrl must resolve to "../data/comedy-atlas/search_index.json"
+  //     (default "../../data/comedy-atlas/search_index.json"), exactly
+  //     matching atlas-common.js's own CITIES_URL/DATA_URL constant.
+  //   - assetBase (earth.js's texture directory) must resolve to
+  //     "assets/globe/" (default "../assets/globe/"). MISSED in the first
+  //     CP9 integration pass because earth.js had no override hook at the
+  //     time -- all three texture fetches 404'd against the non-existent
+  //     site/assets/globe/, and the Earth rendered as a black disc. Fixed
+  //     by threading `assetBase` through experience.js's mount() option
+  //     into createEarth(); see earth.js's own header comment.
+  // dataUrl gets the same one-level-shallower treatment for the same reason.
+  function mountAtlasGlobeIfEnabled() {
+    if (!window.ATLAS_GLOBE_ENABLED) return;
+    var root = document.getElementById("atlas-globe-root");
+    if (!root) return;
+    // Same "insert the stylesheet via JS only when the flag is on" idiom as
+    // the ATLAS VISUALS mount script near the end of <body> -- globe-tokens.css
+    // and globe-chrome.css are otherwise never loaded, so a flag-off visitor
+    // pays zero extra bytes for this feature. mount() itself injects no
+    // stylesheet of its own (see every CP2-CP8 test harness's own <head>,
+    // which always links both files explicitly) -- it must be done here.
+    ["globe/globe-tokens.css", "globe/globe-chrome.css"].forEach(function (href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    });
+    import("./globe/experience.js").then(function (mod) {
+      mod.mount(root, {
+        dataUrl: "../data/comedy-atlas/globe-cities.json",
+        searchIndexUrl: "../data/comedy-atlas/search_index.json",
+        assetBase: "assets/globe/",
+        cityHref: function (city) {
+          var slug = (city && city.slug) || "";
+          return "city/" + slug + "/";
+        }
+      });
+    }).catch(function (e) {
+      // The globe failing to load must never break the rest of the
+      // homepage -- the existing CTA row right below #atlas-globe-root
+      // already gives visitors a working path to the same content.
+      if (window.console && console.warn) console.warn("Atlas globe mount failed:", e);
+    });
+  }
+
   function festivalCard(entry, festivalSlugByOrgId) {
     // 2026-07-25: now driven by ev.is_festival (real festivals.
     // organization_id join, migration 0121) instead of the old 2-org
@@ -715,7 +817,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     // 5. EXPLORE THE ATLAS. The map mount (#atlas-viz-root) lives higher in the
     //    document and is inert unless the flag is on, so this section is the
     //    honest, always-working entry point to geographic browsing.
+    //
+    //    CP9 (2026-07-31): #atlas-globe-root is the interactive-globe mount
+    //    point, ?globe=1-gated, DEFAULT OFF (see the flag script in <head>).
+    //    It sits ABOVE the existing CTA row, which stays exactly as it was --
+    //    with the flag off, #atlas-globe-root stays empty and this section
+    //    renders identically to before this change.
     html += '<section class="atlas-section"><h2>Explore the Atlas</h2>' +
+      '<div id="atlas-globe-root"></div>' +
       '<p class="stub-note">Browse the whole catalogue by place &mdash; ' +
       cities.length + ' cities with listed shows, and ' + totalFestivals +
       ' festival records worldwide.</p>' +
@@ -794,6 +903,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 
     app.innerHTML = html;
+    mountAtlasGlobeIfEnabled();
   }
 
   // Defensive: A.fetchCities was added alongside this page's cities-tiering
