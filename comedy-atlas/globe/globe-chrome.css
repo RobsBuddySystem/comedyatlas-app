@@ -720,3 +720,108 @@
 .atlas-globe-unavailable-link:focus-visible{
   border-color:var(--atlas-globe-cream);
 }
+
+/* ---------------------------------------------------------------------------
+   MapLibre venue markers + city panel (2026-08-01 renderer replacement).
+   Colours are set inline from VENUE_STATE_COLORS in map-experience.js so the
+   JS stays the single source of truth for what each state MEANS; this file
+   owns size, shape and motion only.
+   --------------------------------------------------------------------------- */
+.atlas-map-venue{
+  width:16px;height:16px;border-radius:50%;
+  border:2px solid rgba(255,248,231,.9);
+  box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 2px 6px rgba(0,0,0,.5);
+  cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.atlas-map-venue:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:3px}
+
+/* A LIVE venue pulses. Everything else is deliberately static: motion is a
+   scarce signal and spending it on "upcoming" would make "happening now"
+   mean nothing. */
+.atlas-map-venue--live{animation:atlas-venue-pulse 1.8s ease-in-out infinite}
+@keyframes atlas-venue-pulse{
+  0%,100%{box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 0 rgba(255,45,111,.55)}
+  50%    {box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 10px rgba(255,45,111,0)}
+}
+@media (prefers-reduced-motion: reduce){
+  /* Honour the preference, but keep the venue DISTINGUISHABLE -- a live
+     venue must not become indistinguishable from an upcoming one just
+     because motion is off. A permanent ring replaces the pulse. */
+  .atlas-map-venue--live{
+    animation:none;
+    box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 7px rgba(255,45,111,.42);
+  }
+}
+
+.atlas-map-venue-badge{
+  position:absolute;top:-7px;right:-9px;
+  min-width:16px;height:16px;padding:0 4px;
+  border-radius:999px;
+  background:#05070b;color:var(--atlas-globe-cream);
+  border:1px solid var(--atlas-globe-panel-border);
+  font-size:10px;font-weight:700;line-height:14px;text-align:center;
+  font-family:inherit;
+}
+
+/* Venue detail panel (opened by clicking a marker) */
+.atlas-map-venue-panel{display:flex;flex-direction:column;gap:10px}
+.atlas-map-venue-panel-name{
+  font-size:15px;font-weight:700;color:var(--atlas-globe-cream);margin:0;
+}
+.atlas-map-venue-panel-address{
+  font-size:11.5px;color:var(--atlas-globe-muted);margin:0;
+}
+.atlas-map-show{
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 10px;border-radius:var(--atlas-globe-radius-sm);
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--atlas-globe-panel-border);
+  text-decoration:none;
+}
+.atlas-map-show:hover{border-color:var(--atlas-globe-gold)}
+.atlas-map-show-title{font-size:12.5px;font-weight:600;color:var(--atlas-globe-cream)}
+.atlas-map-show-when{font-size:11px;color:var(--atlas-globe-muted)}
+.atlas-map-show-live{
+  font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#ff2d6f;
+}
+.atlas-map-show-estimated{
+  font-size:9.5px;color:var(--atlas-globe-muted);font-style:italic;
+}
+.atlas-map-unmapped-note{
+  font-size:11px;color:var(--atlas-globe-muted);line-height:1.45;
+  padding-top:6px;border-top:1px solid var(--atlas-globe-panel-border);
+}
+
+/* MapLibre provider: the map is LIGHT at city zoom (OpenFreeMap Liberty),
+   unlike the near-black three.js stage this chrome was designed against.
+   Panels therefore need their own opaque backing or their cream text renders
+   washed out and unreadable on pale streets -- caught by looking at a real
+   London render, exactly the class of bug that a passing test suite misses.
+   Scoped to .atlas-map-root so the three.js rollback keeps its original look. */
+.atlas-map-root .atlas-globe-panel{
+  background:rgba(5,7,11,.92);
+  border:1px solid var(--atlas-globe-panel-border);
+  border-radius:var(--atlas-globe-radius);
+  padding:14px 16px;
+  backdrop-filter:blur(6px);
+  max-height:100%;
+  overflow-y:auto;
+}
+.atlas-map-root .atlas-globe-panel-col{
+  overflow:hidden;
+  pointer-events:none;
+}
+.atlas-map-root .atlas-globe-panel-col > *{pointer-events:auto}
+/* The topbar sits over pale streets too. */
+.atlas-map-root .atlas-globe-topbar{
+  background:linear-gradient(180deg,rgba(5,7,11,.85) 0%,rgba(5,7,11,0) 100%);
+  padding-bottom:18px;
+}
+.atlas-map-root .atlas-globe-search input{
+  background:rgba(5,7,11,.92);
+  border:1px solid var(--atlas-globe-panel-border);
+  color:var(--atlas-globe-cream);
+}

@@ -17,7 +17,7 @@
 <meta property="og:description" content="Friday night stand-up comedy show in Leicester Square, Central London">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/friday-late-night-comedy-9pm-leicester-square-3908/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Friday night stand-up comedy show in Leicester Square, Central London", "endDate": "2026-12-04T22:30:00+00:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "Coventry Street"}, "name": "JK Comedy Club Leicester Square"}, "name": "Friday Late Night Comedy, 9PM, Leicester Square", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/friday-late-night-comedy-9pm-leicester-square-tickets-1983126930032", "validFrom": "2026-07-17T09:00:12.003585+02:00"}, "startDate": "2026-12-04T21:00:00+00:00", "url": "https://comedyatlas.app/comedy-atlas/event/friday-late-night-comedy-9pm-leicester-square-3908/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Friday night stand-up comedy show in Leicester Square, Central London", "endDate": "2026-12-04T22:30:00+00:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "Coventry Street"}, "geo": {"@type": "GeoCoordinates", "latitude": 51.51013, "longitude": -0.133642}, "name": "JK Comedy Club Leicester Square"}, "name": "Friday Late Night Comedy, 9PM, Leicester Square", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/friday-late-night-comedy-9pm-leicester-square-tickets-1983126930032", "validFrom": "2026-07-17T09:00:12.003585+02:00"}, "startDate": "2026-12-04T21:00:00+00:00", "url": "https://comedyatlas.app/comedy-atlas/event/friday-late-night-comedy-9pm-leicester-square-3908/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -143,7 +143,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-subtitle"><time datetime="2026-12-04T22:00:00+01:00">Fri, Dec 4 2026 · 21:00 (UTC+00:00)</time></div>
   <p class="atlas-promise">Friday night stand-up comedy show in Leicester Square, Central London</p>
   
-  <div class="field-row" style="margin-top:10px">JK Comedy Club Leicester Square, Coventry Street, London — <a href="https://www.openstreetmap.org/search?query=JK Comedy Club Leicester Square, Coventry Street, London" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=JK+Comedy+Club+Leicester+Square%2C+Coventry+Street%2C+London" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">JK Comedy Club Leicester Square, Coventry Street, London — <a href="https://www.openstreetmap.org/?mlat=51.510130&amp;mlon=-0.133642#map=17/51.510130/-0.133642" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=51.510130,-0.133642" rel="nofollow noopener">directions →</a></div>
   <div class="field-row"></div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/friday-late-night-comedy-9pm-leicester-square/">Friday Late Night Comedy, 9PM, Leicester Square →</a></div>
   <div class="field-row"><span>Price: 13.00 GBP</span></div>
@@ -165,7 +165,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">JK Comedy Club Leicester Square</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 3908, &quot;slug&quot;: &quot;friday-late-night-comedy-9pm-leicester-square-3908&quot;, &quot;title&quot;: &quot;Friday Late Night Comedy, 9PM, Leicester Square&quot;, &quot;venue_id&quot;: 493, &quot;venue_name&quot;: &quot;JK Comedy Club Leicester Square&quot;, &quot;venue_latitude&quot;: 51.51013, &quot;venue_longitude&quot;: -0.133642, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.co.uk/e/friday-late-night-comedy-9pm-leicester-square-tickets-1983126930032&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=51.510130%2C-0.133642" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:51.510130,-0.133642">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   <div class="save-box">
@@ -205,12 +222,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     
     <div class="event-card-body">
       <div class="event-top">
-        <div class="event-title">Saturday Afternoon International Comedy, 5PM, Leicester Square</div>
+        <div class="event-title">Saturday Afternoon Comedy, 5PM, Leicester Square</div>
         <div class="event-time">2026-08-01 18:00:00+02:00</div>
       </div>
       <div class="event-meta"><span>JK Comedy Club Leicester Square</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
       
-      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-international-comedy-5pm-leicester-square/">View &amp; tickets →</a>
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-comedy-5pm-leicester-square-10372/">View &amp; tickets →</a>
     </div>
   </div>
 </div>
@@ -219,12 +236,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     
     <div class="event-card-body">
       <div class="event-top">
-        <div class="event-title">Saturday Afternoon Comedy, 5PM, Leicester Square</div>
+        <div class="event-title">Saturday Afternoon International Comedy, 5PM, Leicester Square</div>
         <div class="event-time">2026-08-01 18:00:00+02:00</div>
       </div>
       <div class="event-meta"><span>JK Comedy Club Leicester Square</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
       
-      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-comedy-5pm-leicester-square-10372/">View &amp; tickets →</a>
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-international-comedy-5pm-leicester-square/">View &amp; tickets →</a>
     </div>
   </div>
 </div>
@@ -244,20 +261,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 <div class="event-card">
   <div class="event-card-inner">
-    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186515022%2F2992660777411%2F1%2Foriginal.20260609-170419?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=9b90a458def7916d2611e442622413ab" alt="Saturday Night International Comedy, 7PM, Leicester Square" loading="lazy" onerror="this.remove()">
-    <div class="event-card-body">
-      <div class="event-top">
-        <div class="event-title">Saturday Night International Comedy, 7PM, Leicester Square</div>
-        <div class="event-time">2026-08-01 20:00:00+02:00</div>
-      </div>
-      <div class="event-meta"><span>JK Comedy Club Leicester Square</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
-      
-      <a class="ticket-link" href="/comedy-atlas/event/saturday-night-international-comedy-7pm-leicester-square-3541/">View &amp; tickets →</a>
-    </div>
-  </div>
-</div>
-<div class="event-card">
-  <div class="event-card-inner">
     <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186514982%2F2992660777411%2F1%2Foriginal.20260609-170355?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=9f4e742036b29cf7034d8eccced4ad59" alt="Saturday Night Comedy, 7PM, Leicester Square" loading="lazy" onerror="this.remove()">
     <div class="event-card-body">
       <div class="event-top">
@@ -267,6 +270,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="event-meta"><span>JK Comedy Club Leicester Square</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
       
       <a class="ticket-link" href="/comedy-atlas/event/saturday-night-comedy-7pm-leicester-square-3445/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div>
+<div class="event-card">
+  <div class="event-card-inner">
+    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186515008%2F2992660777411%2F1%2Foriginal.20260609-170411?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=3335e82aba84b717c11f62862097f0fb" alt="Saturday Night Central London Comedy, 7PM, Leicester Square" loading="lazy" onerror="this.remove()">
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Saturday Night Central London Comedy, 7PM, Leicester Square</div>
+        <div class="event-time">2026-08-01 20:00:00+02:00</div>
+      </div>
+      <div class="event-meta"><span>JK Comedy Club Leicester Square</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-night-central-london-comedy-7pm-leicester-square-3493/">View &amp; tickets →</a>
     </div>
   </div>
 </div>

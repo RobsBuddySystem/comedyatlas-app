@@ -17,7 +17,7 @@
 <meta property="og:description" content="Got a short film, music video, or indie project? Screen it live in our outdoor backyard! Bring your cast, crew, and friends!">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/free-backyard-screen-your-own-short-film-or-video-night/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Got a short film, music video, or indie project? Screen it live in our outdoor backyard! Bring your cast, crew, and friends!", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York", "streetAddress": "10 Cooper St."}, "name": "The Tiny Cupboard"}, "name": "Free Backyard Screen-Your-Own Short Film or Video Night", "organizer": {"@type": "Organization", "name": "The Tiny Cupboard"}, "startDate": "2026-07-29T20:30:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/free-backyard-screen-your-own-short-film-or-video-night/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Got a short film, music video, or indie project? Screen it live in our outdoor backyard! Bring your cast, crew, and friends!", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York", "streetAddress": "10 Cooper St."}, "geo": {"@type": "GeoCoordinates", "latitude": 40.683692, "longitude": -73.911214}, "name": "The Tiny Cupboard"}, "name": "Free Backyard Screen-Your-Own Short Film or Video Night", "organizer": {"@type": "Organization", "name": "The Tiny Cupboard"}, "startDate": "2026-07-29T20:30:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/free-backyard-screen-your-own-short-film-or-video-night/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -143,7 +143,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-subtitle"><time datetime="2026-07-30T02:30:00+02:00">Wed, Jul 29 2026 · 20:30 (UTC-04:00)</time></div>
   <p class="atlas-promise">Got a short film, music video, or indie project? Screen it live in our outdoor backyard! Bring your cast, crew, and friends!</p>
   
-  <div class="field-row" style="margin-top:10px">The Tiny Cupboard, 10 Cooper St., New York — <a href="https://www.openstreetmap.org/search?query=The Tiny Cupboard, 10 Cooper St., New York" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=The+Tiny+Cupboard%2C+10+Cooper+St.%2C+New+York" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">The Tiny Cupboard, 10 Cooper St., New York — <a href="https://www.openstreetmap.org/?mlat=40.683692&amp;mlon=-73.911214#map=17/40.683692/-73.911214" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=40.683692,-73.911214" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">The Tiny Cupboard</div>
   
   <div class="field-row"><span>Price: Free</span></div>
@@ -159,7 +159,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">The Tiny Cupboard</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 11418, &quot;slug&quot;: &quot;free-backyard-screen-your-own-short-film-or-video-night&quot;, &quot;title&quot;: &quot;Free Backyard Screen-Your-Own Short Film or Video Night&quot;, &quot;venue_id&quot;: 678, &quot;venue_name&quot;: &quot;The Tiny Cupboard&quot;, &quot;venue_latitude&quot;: 40.683692, &quot;venue_longitude&quot;: -73.911214, &quot;canonical_event_url&quot;: &quot;https://www.thetinycupboard.com/events/free-backyard-screen-your-own-short-film-or-video-night&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=40.683692%2C-73.911214" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:40.683692,-73.911214">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

@@ -71,6 +71,31 @@ window.ATLAS_GLOBE_ENABLED = true;
     }
   } catch (e) { /* malformed query string -- keep the default above */ }
 })();
+
+/* MAP PROVIDER (2026-08-01). "maplibre" is the real map: NASA Blue Marble
+   WMTS raster at world zoom, OpenFreeMap vector streets at city zoom, and
+   real Comedy Atlas venue markers. "current" is the original three.js globe,
+   retained ONLY as a rollback — it renders a single 2048x1024 texture on a
+   sphere (~19.5km per texel) and therefore cannot be sharp at city zoom.
+   ?map=current forces the rollback for the session; ?map=maplibre forces the
+   new one. Session-scoped for the same reason the globe flag is: an opt-in
+   or opt-out must not become permanent for a visitor. */
+window.ATLAS_MAP_PROVIDER = "maplibre";
+(function () {
+  try {
+    var mp = new URLSearchParams(window.location.search).get("map");
+    if (mp === "current" || mp === "maplibre") {
+      window.ATLAS_MAP_PROVIDER = mp;
+      try { sessionStorage.setItem("atlasMapProvider", mp); } catch (e) { /* unavailable */ }
+    } else {
+      var storedMp = null;
+      try { storedMp = sessionStorage.getItem("atlasMapProvider"); } catch (e) { /* unavailable */ }
+      if (storedMp === "current" || storedMp === "maplibre") {
+        window.ATLAS_MAP_PROVIDER = storedMp;
+      }
+    }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
 </script>
 <link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
 <meta name="theme-color" content="#0a0e1a">
@@ -622,6 +647,143 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (!window.ATLAS_GLOBE_ENABLED) return;
     var root = document.getElementById("atlas-globe-root");
     if (!root) return;
+    // PROVIDER SWITCH (2026-08-01). "maplibre" is the real map (NASA Blue
+    // Marble WMTS at world zoom, OpenFreeMap streets at city zoom, real
+    // venue markers). "current" is the original three.js globe, kept ONLY
+    // as a rollback per Robert's instruction -- it cannot render a sharp
+    // city because it paints a single 2048x1024 texture onto a sphere.
+    // ?map=current forces the old renderer for one session.
+    if (window.ATLAS_MAP_PROVIDER === "maplibre") {
+      mountAtlasMapLibre(root);
+    } else {
+      mountAtlasThreeGlobe(root);
+    }
+  }
+
+  /* MapLibre provider mount. Loads the vendored maplibre-gl (no CDN), then
+     map-experience.js, then wires: search -> selectCity, marker click ->
+     venue panel, Escape/recenter -> clearSelection. */
+  function mountAtlasMapLibre(root) {
+    ["vendor/maplibre-gl/maplibre-gl.css",
+     "globe/globe-tokens.css",
+     "globe/globe-chrome.css"].forEach(function (href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    });
+
+    var shell = document.createElement("div");
+    shell.className = "atlas-globe-root atlas-map-root";
+    shell.innerHTML =
+      '<div class="atlas-globe-shell">'
+      + '<div class="atlas-map-canvas" style="position:absolute;inset:0"></div>'
+      + '<div class="atlas-globe-topbar">'
+      +   '<div class="atlas-globe-brand"><div class="atlas-globe-wordmark">COMEDY ATLAS</div>'
+      +   '<div class="atlas-globe-tagline">The world of stand-up comedy.</div></div>'
+      +   '<div class="atlas-globe-search"><input type="text" '
+      +     'placeholder="Search a city…" aria-label="Search a city"></div>'
+      + '</div>'
+      + '<div class="atlas-globe-panel-col" data-role="panel"></div>'
+      + '</div>';
+    root.innerHTML = "";
+    root.appendChild(shell);
+
+    var canvasEl = shell.querySelector(".atlas-map-canvas");
+    var panelEl = shell.querySelector('[data-role="panel"]');
+    var inputEl = shell.querySelector(".atlas-globe-search input");
+
+    var script = document.createElement("script");
+    script.src = "vendor/maplibre-gl/maplibre-gl.js";
+    script.onload = function () {
+      import("./globe/map-experience.js").then(function (mod) {
+        var handle = mod.mount(canvasEl, {
+          worldDataUrl: "../data/map/cities.geojson",
+          cityDataUrlFor: function (slug) { return "../data/map/cities/" + slug + ".json"; },
+          onCitySelected: function (payload) { renderCityPanel(payload); },
+          onVenueSelected: function (venue) { renderVenuePanel(payload_venue(venue)); }
+        });
+
+        function payload_venue(v) { return v; }
+
+        function renderCityPanel(payload) {
+          panelEl.innerHTML = "";
+          var box = document.createElement("div");
+          box.className = "atlas-globe-panel";
+          var h = document.createElement("h2");
+          h.className = "atlas-map-venue-panel-name";
+          h.textContent = (payload.city && payload.city.name) || "City";
+          box.appendChild(h);
+          var sub = document.createElement("p");
+          sub.className = "atlas-map-venue-panel-address";
+          var mapped = (payload.venues || []).length;
+          var shows = (payload.venues || []).reduce(function (n, v) {
+            return n + mod.__internal.activeShows(v.shows).length; }, 0);
+          sub.textContent = mapped + " venue" + (mapped === 1 ? "" : "s")
+            + " on the map · " + shows + " current/upcoming show"
+            + (shows === 1 ? "" : "s");
+          box.appendChild(sub);
+          var note = mod.__internal.buildUnmappedNote(document, payload.unmappedVenues);
+          if (note) box.appendChild(note);
+          panelEl.appendChild(box);
+        }
+
+        function renderVenuePanel(venue) {
+          panelEl.innerHTML = "";
+          var box = document.createElement("div");
+          box.className = "atlas-globe-panel";
+          box.appendChild(mod.__internal.buildVenuePanel(document, venue));
+          panelEl.appendChild(box);
+        }
+
+        /* Search: resolve a typed city name against the SAME cities.geojson
+           the world view already loaded, then selectCity(slug). No second
+           search index, no fuzzy guessing at a city that isn't in the data. */
+        var cityIndex = [];
+        fetch("../data/map/cities.geojson").then(function (r) { return r.json(); })
+          .then(function (gj) {
+            cityIndex = (gj.features || []).map(function (f) {
+              return { slug: f.properties.slug, name: f.properties.name,
+                       norm: String(f.properties.name || "").toLowerCase() };
+            });
+          }).catch(function () { /* search degrades; map still works */ });
+
+        function runSearch() {
+          var q = (inputEl.value || "").trim().toLowerCase();
+          if (!q) return;
+          var hit = cityIndex.filter(function (c) { return c.norm === q; })[0]
+                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) === 0; })[0]
+                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) !== -1; })[0];
+          if (hit) handle.selectCity(hit.slug);
+        }
+        inputEl.addEventListener("keydown", function (ev) {
+          if (ev.key === "Enter") { ev.preventDefault(); runSearch(); }
+        });
+
+        document.addEventListener("keydown", function (ev) {
+          if (ev.key === "Escape" && handle.isSelectionLocked()) {
+            handle.clearSelection();
+            panelEl.innerHTML = "";
+          }
+        });
+
+        window.__atlasMapDebug = {
+          get map() { return handle.map; },
+          isSelectionLocked: function () { return handle.isSelectionLocked(); },
+          getSelectedCity: function () { return handle.getSelectedCity(); },
+          selectCity: function (slug) { return handle.selectCity(slug); },
+          clearSelection: function () { handle.clearSelection(); panelEl.innerHTML = ""; }
+        };
+      });
+    };
+    document.head.appendChild(script);
+  }
+
+  /* ROLLBACK PROVIDER: the original three.js globe. Reached only when
+     ATLAS_MAP_PROVIDER is "current" (?map=current). Kept per Robert's
+     instruction so the new map can be rolled back instantly; it is NOT
+     the default and cannot render a sharp city view. */
+  function mountAtlasThreeGlobe(root) {
     // Same "insert the stylesheet via JS only when the flag is on" idiom as
     // the ATLAS VISUALS mount script near the end of <body> -- globe-tokens.css
     // and globe-chrome.css are otherwise never loaded, so a flag-off visitor

@@ -17,7 +17,7 @@
 <meta property="og:description" content="Saturday Afternoon stand-up comedy show in Soho, Central London.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-comedy-4pm-soho-3138/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.", "endDate": "2026-08-22T17:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "6 Moor Street"}, "name": "JK Comedy Club Soho"}, "name": "Saturday Afternoon Comedy, 4PM, Soho", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/saturday-afternoon-comedy-4pm-soho-tickets-1977981223084", "validFrom": "2026-07-17T09:00:12.003585+02:00"}, "startDate": "2026-08-22T16:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-comedy-4pm-soho-3138/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Saturday Afternoon stand-up comedy show in Soho, Central London.", "endDate": "2026-08-22T17:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "6 Moor Street"}, "geo": {"@type": "GeoCoordinates", "latitude": 51.513397, "longitude": -0.129807}, "name": "JK Comedy Club Soho"}, "name": "Saturday Afternoon Comedy, 4PM, Soho", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 13.0, "priceCurrency": "GBP", "url": "https://www.eventbrite.co.uk/e/saturday-afternoon-comedy-4pm-soho-tickets-1977981223084", "validFrom": "2026-07-17T09:00:12.003585+02:00"}, "startDate": "2026-08-22T16:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/saturday-afternoon-comedy-4pm-soho-3138/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -143,7 +143,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-subtitle"><time datetime="2026-08-22T17:00:00+02:00">Sat, Aug 22 2026 · 16:00 (UTC+01:00)</time></div>
   <p class="atlas-promise">Saturday Afternoon stand-up comedy show in Soho, Central London.</p>
   
-  <div class="field-row" style="margin-top:10px">JK Comedy Club Soho, 6 Moor Street, London — <a href="https://www.openstreetmap.org/search?query=JK Comedy Club Soho, 6 Moor Street, London" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=JK+Comedy+Club+Soho%2C+6+Moor+Street%2C+London" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">JK Comedy Club Soho, 6 Moor Street, London — <a href="https://www.openstreetmap.org/?mlat=51.513397&amp;mlon=-0.129807#map=17/51.513397/-0.129807" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=51.513397,-0.129807" rel="nofollow noopener">directions →</a></div>
   <div class="field-row"></div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/saturday-afternoon-comedy-4pm-soho/">Saturday Afternoon Comedy, 4PM, Soho →</a></div>
   <div class="field-row"><span>Price: 13.00 GBP</span></div>
@@ -165,7 +165,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">JK Comedy Club Soho</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 3138, &quot;slug&quot;: &quot;saturday-afternoon-comedy-4pm-soho-3138&quot;, &quot;title&quot;: &quot;Saturday Afternoon Comedy, 4PM, Soho&quot;, &quot;venue_id&quot;: 492, &quot;venue_name&quot;: &quot;JK Comedy Club Soho&quot;, &quot;venue_latitude&quot;: 51.513397, &quot;venue_longitude&quot;: -0.129807, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.co.uk/e/saturday-afternoon-comedy-4pm-soho-tickets-1977981223084&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=51.513397%2C-0.129807" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:51.513397,-0.129807">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   <div class="save-box">
@@ -202,20 +219,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 <div class="event-card">
   <div class="event-card-inner">
-    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704516%2F2992660777411%2F1%2Foriginal.20260611-185335?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=72f36050ca520d9bc3dad831ad389576" alt="Saturday Afternoon Dark Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
-    <div class="event-card-body">
-      <div class="event-top">
-        <div class="event-title">Saturday Afternoon Dark Comedy, 4PM, Soho</div>
-        <div class="event-time">2026-08-01 17:00:00+02:00</div>
-      </div>
-      <div class="event-meta"><span>JK Comedy Club Soho</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
-      
-      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-dark-comedy-4pm-soho-3156/">View &amp; tickets →</a>
-    </div>
-  </div>
-</div>
-<div class="event-card">
-  <div class="event-card-inner">
     <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704531%2F2992660777411%2F1%2Foriginal.20260611-185346?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=36d624c695500b0d82936d44caf6a0b5" alt="Saturday Afternoon British Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
     <div class="event-card-body">
       <div class="event-top">
@@ -230,20 +233,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 <div class="event-card">
   <div class="event-card-inner">
-    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704538%2F2992660777411%2F1%2Foriginal.20260611-185353?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=7563ee13b9a28557499124236be8f6e6" alt="Saturday Afternoon International Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
-    <div class="event-card-body">
-      <div class="event-top">
-        <div class="event-title">Saturday Afternoon International Comedy, 4PM, Soho</div>
-        <div class="event-time">2026-08-01 17:00:00+02:00</div>
-      </div>
-      <div class="event-meta"><span>JK Comedy Club Soho</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
-      
-      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-international-comedy-4pm-soho-3219/">View &amp; tickets →</a>
-    </div>
-  </div>
-</div>
-<div class="event-card">
-  <div class="event-card-inner">
     <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704513%2F2992660777411%2F1%2Foriginal.20260611-185329?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=55f9071f9c73787c01565f02344e79d5" alt="Saturday Afternoon Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
     <div class="event-card-body">
       <div class="event-top">
@@ -253,6 +242,34 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="event-meta"><span>JK Comedy Club Soho</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
       
       <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-comedy-4pm-soho-3135/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div>
+<div class="event-card">
+  <div class="event-card-inner">
+    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704516%2F2992660777411%2F1%2Foriginal.20260611-185335?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=72f36050ca520d9bc3dad831ad389576" alt="Saturday Afternoon Dark Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Saturday Afternoon Dark Comedy, 4PM, Soho</div>
+        <div class="event-time">2026-08-01 17:00:00+02:00</div>
+      </div>
+      <div class="event-meta"><span>JK Comedy Club Soho</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-dark-comedy-4pm-soho-3156/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div>
+<div class="event-card">
+  <div class="event-card-inner">
+    <img class="event-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186704538%2F2992660777411%2F1%2Foriginal.20260611-185353?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=7563ee13b9a28557499124236be8f6e6" alt="Saturday Afternoon International Comedy, 4PM, Soho" loading="lazy" onerror="this.remove()">
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Saturday Afternoon International Comedy, 4PM, Soho</div>
+        <div class="event-time">2026-08-01 17:00:00+02:00</div>
+      </div>
+      <div class="event-meta"><span>JK Comedy Club Soho</span><span class="sep">·</span><span>London</span><span class="sep">·</span><span>13.00 GBP</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-afternoon-international-comedy-4pm-soho-3219/">View &amp; tickets →</a>
     </div>
   </div>
 </div>

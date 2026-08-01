@@ -17,7 +17,7 @@
 <meta property="og:description" content="Before comedy shows; hang out in the backyard or game bar behind the comedy club for a paint &amp; sip night. Free just support the bar.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/paint-sip-in-the-backyard-or-game-bar/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Before comedy shows; hang out in the backyard or game bar behind the comedy club for a paint & sip night. Free just support the bar.", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York", "streetAddress": "10 Cooper St."}, "name": "The Tiny Cupboard"}, "name": "Paint & Sip in the Backyard or Game Bar", "organizer": {"@type": "Organization", "name": "The Tiny Cupboard"}, "startDate": "2026-07-30T18:30:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/paint-sip-in-the-backyard-or-game-bar/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Before comedy shows; hang out in the backyard or game bar behind the comedy club for a paint & sip night. Free just support the bar.", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York", "streetAddress": "10 Cooper St."}, "geo": {"@type": "GeoCoordinates", "latitude": 40.683692, "longitude": -73.911214}, "name": "The Tiny Cupboard"}, "name": "Paint & Sip in the Backyard or Game Bar", "organizer": {"@type": "Organization", "name": "The Tiny Cupboard"}, "startDate": "2026-07-30T18:30:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/paint-sip-in-the-backyard-or-game-bar/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -143,7 +143,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-subtitle"><time datetime="2026-07-31T00:30:00+02:00">Thu, Jul 30 2026 · 18:30 (UTC-04:00)</time></div>
   <p class="atlas-promise">Before comedy shows; hang out in the backyard or game bar behind the comedy club for a paint &amp; sip night. Free just support the bar.</p>
   
-  <div class="field-row" style="margin-top:10px">The Tiny Cupboard, 10 Cooper St., New York — <a href="https://www.openstreetmap.org/search?query=The Tiny Cupboard, 10 Cooper St., New York" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=The+Tiny+Cupboard%2C+10+Cooper+St.%2C+New+York" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">The Tiny Cupboard, 10 Cooper St., New York — <a href="https://www.openstreetmap.org/?mlat=40.683692&amp;mlon=-73.911214#map=17/40.683692/-73.911214" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=40.683692,-73.911214" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">The Tiny Cupboard</div>
   
   <div class="field-row"><span>Price: Free</span></div>
@@ -159,7 +159,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <div class="section-heading">Venue &amp; directions</div>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">The Tiny Cupboard</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 11421, &quot;slug&quot;: &quot;paint-sip-in-the-backyard-or-game-bar&quot;, &quot;title&quot;: &quot;Paint &amp; Sip in the Backyard or Game Bar&quot;, &quot;venue_id&quot;: 678, &quot;venue_name&quot;: &quot;The Tiny Cupboard&quot;, &quot;venue_latitude&quot;: 40.683692, &quot;venue_longitude&quot;: -73.911214, &quot;canonical_event_url&quot;: &quot;https://www.thetinycupboard.com/events/paint-sip-in-the-backyard-or-game-bar-2026-07-30183000&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=40.683692%2C-73.911214" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:40.683692,-73.911214">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   
