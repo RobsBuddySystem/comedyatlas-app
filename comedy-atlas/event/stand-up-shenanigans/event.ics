@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-shenanigans@comedyatlas.app
+DTSTAMP:20260814T000000Z
+DTSTART:20260814T000000Z
+DTEND:20260814T020000Z
+SUMMARY:Stand Up Shenanigans 
+LOCATION:New York
+DESCRIPTION:Weekend Warmup comedy in Brooklyn! FEATURING SPECIAL GUEST COM
+ EDIANS...Line up Below\nMore info: https://comedyatlas.app/comedy-atlas/eve
+ nt/stand-up-shenanigans/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-shenanigans/
+END:VEVENT
+END:VCALENDAR

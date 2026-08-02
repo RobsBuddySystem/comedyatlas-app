@@ -531,7 +531,9 @@ export function buildVenuePanel(doc, venue) {
   return wrap;
 }
 
-/** Honest note about venues we hold but cannot place on the map. */
+/** Honest note about REAL venues we hold but cannot place on the map because
+ * we have no verified coordinates for them. Never used for shows that have
+ * no venue at all — see buildUnassignedNote for that, distinct, state. */
 export function buildUnmappedNote(doc, unmapped) {
   if (!unmapped || !unmapped.count) return null;
   const p = doc.createElement('p');
@@ -545,6 +547,27 @@ export function buildUnmappedNote(doc, unmapped) {
   return p;
 }
 
+/**
+ * Honest note about shows that have NO venue assigned at all (2026-08-02
+ * fix). This is a fundamentally different state from buildUnmappedNote's
+ * "we have a venue but no verified coordinates for it" — there is no venue
+ * record here to describe, so the copy must never imply one exists. This is
+ * the direct fix for the production bug where such shows were invented into
+ * a fake unmappedVenues entry ({"id": null, "name": null, ...}) and reported
+ * with the "no verified coordinates" copy that presumes a real venue.
+ */
+export function buildUnassignedNote(doc, unassignedShowCount) {
+  const count = unassignedShowCount || 0;
+  if (!count) return null;
+  const p = doc.createElement('p');
+  p.className = 'atlas-map-unassigned-note';
+  p.textContent =
+    `${count} upcoming show${count === 1 ? '' : 's'} in this city `
+    + `don't have a venue assigned yet, so ${count === 1 ? 'it can' : 'they can'} `
+    + "not be placed on the map.";
+  return p;
+}
+
 export const __internal = {
   venueState,
   activeShows,
@@ -553,6 +576,7 @@ export const __internal = {
   formatShowWhen,
   buildVenuePanel,
   buildUnmappedNote,
+  buildUnassignedNote,
   nasaOpacityForZoom,
   VENUE_STATE_COLORS,
   IDLE_RESUME_DELAY_MS,

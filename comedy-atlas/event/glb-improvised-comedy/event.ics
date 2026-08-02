@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:glb-improvised-comedy@comedyatlas.app
+DTSTAMP:20260807T193000Z
+DTSTART:20260807T193000Z
+DTEND:20260807T203000Z
+SUMMARY:GLB – Improvised Comedy
+LOCATION:Comedy Cafe Berlin\, Berlin
+DESCRIPTION:GLB is CCB’s premier improv team\, Berlin’s longest running
+  English-language longform improv team and has performed to packed houses a
+ cross Europe. With a suggestion from the audience\, GLB sets off...\n\\n\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/glb-improvised-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/glb-improvised-comedy/
+END:VEVENT
+END:VCALENDAR

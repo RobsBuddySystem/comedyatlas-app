@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-comedy-23902@comedyatlas.app
+DTSTAMP:20260814T220000Z
+DTSTART:20260814T220000Z
+DTEND:20260815T000000Z
+SUMMARY:Friday Night Comedy
+LOCATION:New York
+DESCRIPTION:Eastville Comedy Club is Brooklyn's oldest comedy club\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/friday-night-comedy-23902/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-comedy-23902/
+END:VEVENT
+END:VCALENDAR

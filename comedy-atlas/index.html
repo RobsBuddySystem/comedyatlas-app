@@ -725,6 +725,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           box.appendChild(sub);
           var note = mod.__internal.buildUnmappedNote(document, payload.unmappedVenues);
           if (note) box.appendChild(note);
+          var unassignedNote = mod.__internal.buildUnassignedNote(document, payload.unassignedShowCount);
+          if (unassignedNote) box.appendChild(unassignedNote);
           panelEl.appendChild(box);
         }
 

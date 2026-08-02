@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:indie-concert-series@comedyatlas.app
+DTSTAMP:20260802T220000Z
+DTSTART:20260802T220000Z
+DTEND:20260803T000000Z
+SUMMARY:Indie Concert Series 
+LOCATION:The Tiny Cupboard\, 10 Cooper St.\, New York
+DESCRIPTION:Performances by a slate of local indie artists every SundayCome
+  support Brooklyn's indie/local music scene and jam out to tunes across gen
+ res. Grab a drink and hang out: Who knows what gems you might discover!\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/indie-concert-series/
+URL:https://comedyatlas.app/comedy-atlas/event/indie-concert-series/
+END:VEVENT
+END:VCALENDAR

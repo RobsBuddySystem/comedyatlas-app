@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-fernandez@comedyatlas.app
+DTSTAMP:20260828T013000Z
+DTSTART:20260828T013000Z
+DTEND:20260828T030000Z
+SUMMARY:Joe Fernandez
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-ferna
+ ndez/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-fernandez/
+END:VEVENT
+END:VCALENDAR

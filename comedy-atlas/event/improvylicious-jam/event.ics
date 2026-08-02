@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:improvylicious-jam@comedyatlas.app
+DTSTAMP:20260805T193000Z
+DTSTART:20260805T193000Z
+DTEND:20260805T203000Z
+SUMMARY:Improvylicious Jam
+LOCATION:Comedy Cafe Berlin\, Berlin
+DESCRIPTION:Improvylicious Jam\, hosted by Destiny\\'s Step Child\, is an o
+ pen stage for anyone looking to practice\, have fun or try out long-form im
+ prov for the first time\, in particular those...\n\\n\nMore info: https://c
+ omedyatlas.app/comedy-atlas/event/improvylicious-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/improvylicious-jam/
+END:VEVENT
+END:VCALENDAR

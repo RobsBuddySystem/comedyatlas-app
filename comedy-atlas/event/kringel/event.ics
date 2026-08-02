@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kringel@comedyatlas.app
+DTSTAMP:20260806T180000Z
+DTSTART:20260806T180000Z
+DTEND:20260806T190000Z
+SUMMARY:Kringel
+LOCATION:Comedy Cafe Berlin\, Berlin
+DESCRIPTION:Improv Comedy ist eine schnelle und witzige Form des Improtheat
+ ers. Das Publikum gibt ein Wort oder eine kurze Anekdote als Initialzündun
+ gvor. Daraus entstehen aus dem Stehgreif eine ganze Reihe von...\n\\n\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/kringel/
+URL:https://comedyatlas.app/comedy-atlas/event/kringel/
+END:VEVENT
+END:VCALENDAR

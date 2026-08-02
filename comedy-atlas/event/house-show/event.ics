@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:house-show@comedyatlas.app
+DTSTAMP:20260807T180000Z
+DTSTART:20260807T180000Z
+DTEND:20260807T190000Z
+SUMMARY:House Show
+LOCATION:Comedy Cafe Berlin\, Berlin
+DESCRIPTION:CCB House Teams perform longform improv comedy! Every Friday of
+  the month\, CCB features its 4 House Teams: Brace! Brace!\, Handshake\, Ca
+ piche\, and Secret Lovers! About the teams: Brace! Brace!...\n\\n\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/house-show/
+URL:https://comedyatlas.app/comedy-atlas/event/house-show/
+END:VEVENT
+END:VCALENDAR
