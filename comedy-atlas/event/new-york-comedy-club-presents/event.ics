@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-york-comedy-club-presents@comedyatlas.app
+DTSTAMP:20260806T233000Z
+DTSTART:20260806T233000Z
+DTEND:20260807T013000Z
+SUMMARY:New York Comedy Club Presents
+LOCATION:New York
+DESCRIPTION:Spent the day exploring the Met or strolling through Central Pa
+ rk? Cap it off with a night of killer stand-up just around the corner. Each
+  show is a fast-paced showcase of top-tier comics\, big laughs\, and good v
+ ibes only—whether you’re a local or in town for the weekend. It’s int
+ imate\, unfiltered\, and unforgettable—the perfect blend of neighborhood 
+ charm and New York edge.\nMore info: https://comedyatlas.app/comedy-atlas/e
+ vent/new-york-comedy-club-presents/
+URL:https://comedyatlas.app/comedy-atlas/event/new-york-comedy-club-present
+ s/
+END:VEVENT
+END:VCALENDAR

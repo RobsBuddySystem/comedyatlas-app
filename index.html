@@ -1,42 +1,1140 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<title>COMEDY ATLAS</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/">
-<meta http-equiv="refresh" content="0; url=/comedy-atlas/">
-<script>location.replace("/comedy-atlas/" + location.search + location.hash);</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<title>COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking</title>
+<script>
+/* ATLAS VISUALS v1 feature flag (ATLAS-VISUALS-V1, 2026-07-27). Everything
+   this flag gates lives in atlas-layers.js / atlas-visuals-data.js /
+   atlas-visuals.js / atlas-visuals.css plus the single empty
+   #atlas-viz-root mount point in the body below -- nothing else on this
+   page depends on it.
+   TURN OFF / ROLLBACK: set the constant below to false (fastest, one-line
+   diff), OR append ?atlas=0 to the URL for a one-load override without
+   editing this file, OR delete the four atlas-visuals* files, the
+   #atlas-viz-root div, and the small mount <script> near the end of
+   <body> -- any one of these fully restores today's homepage. ?atlas=1
+   forces it on for one page load (review before flipping the default). */
+// DEFAULT OFF until the visual pass clears review (2026-07-27). The map still
+// wastes most of its canvas on empty ocean and its European labels collide.
+// Opt in per-load with ?atlas=1 to review it live; ?atlas=0 forces off.
+window.ATLAS_VISUALS_ENABLED = false;
+(function () {
+  try {
+    var qp = new URLSearchParams(window.location.search).get("atlas");
+    if (qp === "1") { window.ATLAS_VISUALS_ENABLED = true; }
+    if (qp === "0") { window.ATLAS_VISUALS_ENABLED = false; }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
+
+/* COMEDY ATLAS interactive globe feature flag (CP9,
+   docs/superpowers/plans/2026-07-30-comedy-atlas-globe.md). Same
+   query-param convention as ATLAS_VISUALS_ENABLED above, plus sessionStorage
+   persistence for the session (Robert's decision D-D / CP9 step 3):
+   ?globe=1 forces it on AND remembers that choice for THIS TAB ONLY. It is
+   deliberately sessionStorage, not localStorage -- site/comedy-atlas/*.html is
+   served live from the working tree, so a localStorage flag would leave the
+   globe permanently on for any visitor who ever hit ?globe=1 on the live host.
+   Closing the tab clears it; ?globe=0 turns it off explicitly. Everything
+   this flag gates lives in site/comedy-atlas/globe/* plus the single
+   #atlas-globe-root mount point inside the "Explore the Atlas" section
+   below -- nothing else on this page depends on it.
+   DEFAULT ON since 2026-07-31 — Robert gave the explicit go to launch after
+   all 12 findings of the CP11 adversarial review were closed and the result
+   was verified against production data at 1280/1440/1680 and on mobile.
+   `?globe=0` remains the escape hatch: it force-disables for the session and
+   falls back to the previous "Explore the Atlas" CTA row, which is still in
+   the page and still renders whenever this flag is off. */
+window.ATLAS_GLOBE_ENABLED = true;
+(function () {
+  try {
+    var qp = new URLSearchParams(window.location.search).get("globe");
+    if (qp === "1") {
+      window.ATLAS_GLOBE_ENABLED = true;
+      try { sessionStorage.setItem("atlasGlobeEnabled", "1"); } catch (e) { /* storage unavailable */ }
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+    } else if (qp === "0") {
+      window.ATLAS_GLOBE_ENABLED = false;
+      try { sessionStorage.setItem("atlasGlobeEnabled", "0"); } catch (e) { /* storage unavailable */ }
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+    } else {
+      var stored = null;
+      /* Clear any flag left in localStorage by the pre-fix build -- without
+         this, an existing visitor stays stuck with the globe forever. */
+      try { localStorage.removeItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+      try { stored = sessionStorage.getItem("atlasGlobeEnabled"); } catch (e) { /* storage unavailable */ }
+      if (stored === "1") { window.ATLAS_GLOBE_ENABLED = true; }
+      else if (stored === "0") { window.ATLAS_GLOBE_ENABLED = false; }
+    }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
+
+/* MAP PROVIDER (2026-08-01). "maplibre" is the real map: NASA Blue Marble
+   WMTS raster at world zoom, OpenFreeMap vector streets at city zoom, and
+   real Comedy Atlas venue markers. "current" is the original three.js globe,
+   retained ONLY as a rollback — it renders a single 2048x1024 texture on a
+   sphere (~19.5km per texel) and therefore cannot be sharp at city zoom.
+   ?map=current forces the rollback for the session; ?map=maplibre forces the
+   new one. Session-scoped for the same reason the globe flag is: an opt-in
+   or opt-out must not become permanent for a visitor. */
+window.ATLAS_MAP_PROVIDER = "maplibre";
+(function () {
+  try {
+    var mp = new URLSearchParams(window.location.search).get("map");
+    if (mp === "current" || mp === "maplibre") {
+      window.ATLAS_MAP_PROVIDER = mp;
+      try { sessionStorage.setItem("atlasMapProvider", mp); } catch (e) { /* unavailable */ }
+    } else {
+      var storedMp = null;
+      try { storedMp = sessionStorage.getItem("atlasMapProvider"); } catch (e) { /* unavailable */ }
+      if (storedMp === "current" || storedMp === "maplibre") {
+        window.ATLAS_MAP_PROVIDER = storedMp;
+      }
+    }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+})();
+</script>
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<meta name="description" content="COMEDY ATLAS: comics find shows, bookers find comics, free. Browse live comedy by city and festival, worldwide.">
+<link rel="canonical" href="https://comedyatlas.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="COMEDY ATLAS">
+<meta property="og:title" content="COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking">
+<meta property="og:description" content="Comics find shows. Bookers find comics. Free.">
+<meta property="og:url" content="https://comedyatlas.app/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <style>
-/* Same canonical nav pattern as seo_common.ATLAS_APP_NAV (scripts/seo_common.py)
-   -- this root page is hand-authored (not generated), so the 2026-07-18 nav
-   pass that swept the generated entity/city pages missed it. Every href here
-   is root-relative and origin-safe for comedyatlas.app (see seo_common.py's
-   ATLAS_APP_NAV correctness notes: no /about.html or /europe.html at root --
-   those only exist on pariscomedy.com). */
+/* ---------------------------------------------------------------------
+   COMEDY ATLAS — HUB landing page. Self-contained static page (no build
+   step, no external CDN). Palette matches pariscomedy.com's existing dark
+   theme (see pariscomedy-push-20260526-095907/index.html) so this reads as
+   part of the same site, not a bolted-on tool. Shared card/list styling
+   also used by city.html (per-city view) for visual continuity.
+   ------------------------------------------------------------------- */
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0b0b0f;--card:#151520;--border:#242433;--text:#e8e8ea;--muted:#8899aa;--gold:#e8c86a}
-html,body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
+  --red:#e34b64;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): missing --gold light-mode override,
+     same root cause as generate_entity_pages.py's CSS constant. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}
+}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
 a{color:inherit;text-decoration:none}
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
-.skip-link:focus{left:0}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px}
-.nav-logo{font-size:16px;font-weight:700}
-.nav-logo .site-name{color:var(--gold)}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-logo .atlas-name{color:var(--gold)}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a:hover{color:var(--text)}
-main{text-align:center;padding-top:15vh}
+
+/* Hero */
+.atlas-hero{max-width:1100px;margin:0 auto;padding:48px 20px 28px;display:flex;align-items:center;gap:32px;justify-content:space-between}
+.atlas-hero-copy{flex:1 1 480px;min-width:0}
+.atlas-wordmark{font-size:clamp(30px,6vw,48px);font-weight:800;letter-spacing:-1px;line-height:1.05}
+.atlas-wordmark .dot{color:var(--gold)}
+.atlas-tagline{color:var(--gold-light);font-size:18px;font-weight:700;margin-top:10px}
+.atlas-mission{color:var(--muted);font-size:16px;margin-top:8px;max-width:560px}
+.atlas-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.atlas-hero-figure{flex:0 0 auto;width:clamp(120px,18vw,200px);opacity:0;transform:translateY(10px) scale(.97);animation:atlas-hero-in .6s ease-out .1s forwards}
+.atlas-hero-figure img{width:100%;height:auto;display:block}
+@keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.atlas-hero-figure{opacity:1;transform:none;animation:none}}
+@media(max-width:640px){
+  .atlas-hero{flex-direction:column-reverse;text-align:center;gap:12px}
+  .atlas-hero-figure{width:clamp(96px,32vw,140px)}
+  .atlas-mission{max-width:none}
+  .atlas-cta-row{justify-content:center}
+}
+.cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.cta-btn.primary{background:var(--gold-btn);color:#100c00;border:none}
+.cta-btn.primary:hover{opacity:.9}
+.cta-btn.secondary{border:1px solid var(--border);color:var(--muted);background:none}
+.cta-btn.secondary:hover{border-color:var(--purple-light);color:var(--text)}
+.industry-footnote{max-width:1100px;margin:0 auto;padding:4px 20px 0;font-size:13px;color:var(--muted)}
+.industry-footnote a{color:var(--purple-light);font-weight:700}
+
+/* Freshness / trust bar */
+.freshness{max-width:1100px;margin:0 auto;padding:0 20px 8px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.freshness .dot-live{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+.freshness .dot-live.stale{background:var(--red)}
+/* GLOBAL SEARCH (work order §5). Sized to be the primary hero action on
+   mobile, where the character figure is already stacked above it. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.atlas-search{position:relative;display:flex;gap:8px;margin-top:18px;max-width:560px}
+.atlas-search input{flex:1 1 auto;min-width:0;padding:12px 14px;font-size:16px;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:8px}
+.atlas-search input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.atlas-search button{flex:0 0 auto}
+.atlas-suggest{position:absolute;top:100%;left:0;right:0;z-index:40;margin-top:4px;background:var(--card);border:1px solid var(--border);border-radius:8px;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.atlas-suggest a{display:block;padding:10px 14px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+.atlas-suggest a:last-child{border-bottom:0}
+.atlas-suggest a:hover,.atlas-suggest a[aria-selected="true"]{background:var(--border);color:var(--gold)}
+.atlas-suggest .sug-type{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-left:8px}
+@media(max-width:720px){.atlas-search{max-width:none;margin-left:auto;margin-right:auto}}
+/* Featured slots + empty states (work order §5 items 4-5, §12 Gate 2). */
+.slot-empty{color:var(--muted);font-size:14px;line-height:1.5;background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:14px 16px}
+.slot-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;margin-left:8px}
+.slot-label.editorial{background:rgba(212,175,55,.15);color:var(--gold)}
+.slot-label.sponsored{background:rgba(255,255,255,.10);color:var(--muted)}
+.stats-row{max-width:1100px;margin:0 auto;padding:6px 20px 0;font-size:13px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.stats-row strong{color:var(--gold)}
+
+/* Section shell */
+.atlas-section{max-width:1100px;margin:0 auto;padding:32px 20px 8px}
+.atlas-section h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* City / festival card grids */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.place-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;display:block;transition:border-color .15s}
+.place-card:hover{border-color:var(--purple)}
+.place-card .place-name{font-size:17px;font-weight:700}
+.place-card .place-meta{color:var(--muted);font-size:13px;margin-top:6px}
+.place-card .place-count{color:var(--gold);font-weight:700}
+.place-card .place-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
+
+/* ATLAS_HOME_ENABLED city grid (2026-07-28). Reuses .card-grid/.place-card
+   exactly -- only difference is list semantics (<ul role="list"><li>) for
+   real screen-reader/keyboard list navigation instead of a bare div grid.
+   list-style/margin/padding reset is scoped to this class so it never
+   touches the pre-existing .card-grid divs elsewhere on the page. */
+.atlas-home-citygrid{list-style:none;margin:0;padding:0}
+
+/* "Also tracking" stub-city list (2026-07-19): compact links, not big
+   cards -- these are 1-2-show stubs from touring-organizer feeds, not
+   real per-city coverage yet (see docs/atlas-ops/ROADMAP_GAPS). */
+.stub-note{color:var(--muted);font-size:12.5px;margin-bottom:12px;max-width:640px}
+.stub-list{display:flex;flex-wrap:wrap;gap:8px 16px}
+.stub-list a{font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:5px 12px}
+.stub-list a:hover{color:var(--text);border-color:var(--purple)}
+.stub-list .stub-count{color:var(--gold);font-weight:700}
+.badge.city-badge{position:relative;z-index:2;background:rgba(124,58,237,.14);color:var(--purple-light);border-color:var(--purple-light);margin-right:4px;white-space:nowrap;flex-shrink:0}
+
+/* Event list (recently verified strip) */
+main{max-width:1100px;margin:0 auto;padding:8px 20px 40px}
+.day-group{margin-bottom:24px}
+.day-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.event-card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.event-card-inner{display:flex;gap:12px;align-items:flex-start}
+.event-card-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.event-thumb{width:64px;height:64px;min-width:64px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--card);display:block;overflow:hidden}
+a.event-card{color:inherit;text-decoration:none;transition:border-color .15s}
+a.event-card:hover{border-color:var(--purple)}
+.event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.event-title{font-size:16px;font-weight:700;line-height:1.3}
+.event-time{font-size:13px;color:var(--gold);font-weight:700;white-space:nowrap}
+.event-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 10px}
+.event-meta .sep{opacity:.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.badge.unverified{color:var(--muted);border-color:var(--muted);border-style:dashed}
+.badge.cancelled{color:var(--red);border-color:var(--red)}
+.badge.soldout{color:var(--gold);border-color:var(--gold)}
+.badge.lang-unconfirmed{color:var(--muted);border-color:var(--muted);border-style:dashed}
+.event-actions{margin-top:6px}
+.ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px}
+.ticket-link:hover{opacity:.9}
+.ticket-link.disabled{background:transparent;border:1px solid var(--border);color:var(--muted)}
+
+/* States */
+.state-block{text-align:center;padding:60px 20px;color:var(--muted)}
+.state-block h2{color:var(--text);font-size:20px;margin-bottom:8px;border:none;text-transform:none;letter-spacing:0}
+.state-block.error{color:var(--red)}
+.spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--purple);border-radius:50%;margin:0 auto 16px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.privacy-note{max-width:1100px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;margin-top:20px}
+.privacy-note strong{color:var(--text)}
+
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+  .event-top{flex-direction:column;gap:2px}
+}
+
+/*
+  ---------------------------------------------------------------------
+  READY-TO-PASTE HOMEPAGE NAV SNIPPET has moved to a dedicated file:
+  site/comedy-atlas/HOMEPAGE_SNIPPET.html (Phase-3 §6.2). Nothing here
+  modifies the live homepage. See that file for the exact markup + the
+  human/deploy steps.
+  ---------------------------------------------------------------------
+*/
 </style>
-</head><body>
+</head>
+<body>
+
 <a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
+    <a href="/comedy-atlas/search/">Explore</a>
     <a href="/shows.html">Shows</a>
-    <a href="/comedy-atlas/partners.html">Partners</a>
-    <a href="/comedy-atlas/blog/">Blog</a>
-    <a href="/comedy-atlas/about.html">About</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/venues/">Venues</a>
+    <a href="/comedy-atlas/festival/">Festivals</a>
+    <a href="/comedy-atlas/history/">History</a>
+    <a href="/comedy-atlas/guide/">Learn</a>
+    <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
-<main id="main-content">
-<p>Loading COMEDY ATLAS… <a style="color:#e8c86a" href="/comedy-atlas/">enter →</a></p>
+
+<header class="atlas-hero">
+  <div class="atlas-hero-copy">
+    <div class="atlas-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
+    <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
+    <h1 class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
+      festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</h1>
+    <!-- GLOBAL SEARCH (work order §5 "Search requirement"). A plain GET <form>
+         so it works with JavaScript disabled: the browser navigates to
+         /comedy-atlas/search/?q=... on its own. Autocomplete is layered on top
+         by JS and is purely an enhancement -- if it never loads, typing and
+         pressing Enter still works. The action URL is a FIXED contract with the
+         search page; do not change one without the other. -->
+    <form class="atlas-search" role="search" action="/comedy-atlas/search/" method="get">
+      <label class="visually-hidden" for="atlas-q">Search shows, comics, venues, festivals and cities</label>
+      <input id="atlas-q" name="q" type="search" autocomplete="off"
+             placeholder="Search shows, comics, venues, festivals, cities…"
+             aria-describedby="atlas-q-hint">
+      <button type="submit" class="cta-btn primary">Search</button>
+      <p id="atlas-q-hint" class="visually-hidden">
+        Results are grouped by type. Press Enter to see all matches.</p>
+      <div id="atlas-q-suggest" class="atlas-suggest" role="listbox" hidden></div>
+    </form>
+    <div class="atlas-cta-row">
+      <button type="button" class="cta-btn primary" id="near-tonight-btn">📍 Shows near me</button>
+      <a href="/shows.html" class="cta-btn secondary">All shows</a>
+      <a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse cities</a>
+    </div>
+  </div>
+  <div class="atlas-hero-figure">
+    <picture>
+      <source srcset="/comedy-atlas/assets/brand/atlas-character-hero-600.webp" type="image/webp">
+      <img src="/comedy-atlas/assets/brand/atlas-character-hero-600.png" width="600" height="600"
+        alt="Cartoon Atlas straining under the weight of the globe while gripping a stand-up mic, the COMEDY ATLAS badge logo">
+    </picture>
+  </div>
+</header>
+
+<!-- ATLAS VISUALS v1 mount point -- always present, but stays empty (no
+     markup, no fetches, no CSS loaded) unless window.ATLAS_VISUALS_ENABLED
+     is true. See the flag block in <head> for how to flip/roll this back. -->
+<div id="atlas-viz-root"></div>
+
+<div class="freshness" id="freshness">
+  <span class="dot-live" id="freshness-dot"></span>
+  <span id="freshness-text">Checking data freshness…</span>
+</div>
+<div class="stats-row" id="stats-row"></div>
+
+<main id="main-content" aria-live="polite" tabindex="-1">
+  <div class="state-block" id="loading-state">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Loading COMEDY ATLAS…</p>
+  </div>
 </main>
-</body></html>
+
+<div class="atlas-subscribe-mount container"></div>
+
+<p class="privacy-note container"> Discovery and booking on COMEDY ATLAS
+  is free, for comics and bookers alike.
+</p>
+
+<!-- ATLAS_HOME_ENABLED city grid (Day-2 launch, 2026-07-28). First homepage
+     discovery surface: a plain 2D grid of cities, counted client-side from
+     the SAME /data/comedy-atlas/upcoming_events.json the page already fetches
+     above -- no globe, no map library, no new dependency, no second fetch of
+     any new endpoint. Deliberately placed AFTER all existing homepage content
+     (search, happening-soon, featured slots, the existing "Explore the
+     Atlas"/"Cities" sections, learn/industry CTAs) so it adds a surface
+     without displacing or reordering anything that already ships -- the
+     "Find shows" path above stays the primary path.
+
+     FEATURE FLAG / ROLLBACK: gated on the data-atlas-home attribute on the
+     <section> below, not a fetched flags.json (that data dir is generated,
+     not owned by this file). Default is "off" -- the section stays [hidden],
+     nothing fetches, zero console errors. To publish: flip the attribute to
+     data-atlas-home="on" (one-line diff, reversible the same way). Do not
+     wire this to atlas-visuals.js or #atlas-viz-root -- unrelated surface,
+     unrelated flag, per §11 "feature-flagged and reversible in one change"
+     meaning ONE change per surface, not a shared switch.
+
+     LINK TARGET: city.html?city=<name>, the exact pattern the existing
+     cityCard()/stubCityLink() helpers above already use for every other
+     city link on this page. The per-city static page at
+     /comedy-atlas/city/<slug>/ (scripts/generate_city_pages.py) is only
+     generated for cities present in upcoming_events.json AT GENERATION TIME;
+     nothing available to this client-side script can confirm that a given
+     city's static page was actually built for the CURRENT data snapshot, so
+     re-deriving scripts/seo_common.py's slugify() here could promise a page
+     that 404s. city.html is a static page that filters client-side and
+     therefore always resolves, so it is the only link target this script can
+     guarantee -- consistent with how the rest of the page already treats
+     "canonical enough to link to" for cities. -->
+<section class="atlas-section" id="atlas-home-citygrid" data-atlas-home="off" hidden>
+  <h2>Explore Stand-up Comedy Worldwide</h2>
+  <ul class="card-grid atlas-home-citygrid" id="atlas-home-citygrid-list" role="list"></ul>
+</section>
+
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+
+<script src="/comedy-atlas/atlas-track.js"></script>
+<script src="/comedy-atlas/atlas-pwa.js"></script>
+<script src="/comedy-atlas/atlas-common.js"></script>
+<!-- ATLAS_HOME_ENABLED city grid init -- must load after atlas-common.js
+     (needs window.AtlasCommon) but the #atlas-home-citygrid markup itself
+     lives earlier in the body, before <footer>; see the big comment there
+     for the flag/rollback contract and why the link target is
+     city.html?city=<name>. -->
+<script>
+(function () {
+  "use strict";
+  var section = document.getElementById("atlas-home-citygrid");
+  var list = document.getElementById("atlas-home-citygrid-list");
+  if (!section || !list) return;
+
+  // Fail closed: any value other than the literal "on" renders nothing and
+  // never fetches -- this is the whole rollback mechanism.
+  if (section.getAttribute("data-atlas-home") !== "on") return;
+
+  var A = window.AtlasCommon;
+  if (!A || typeof A.fetchEvents !== "function" || typeof A.groupByCity !== "function") return;
+
+  function cityGridCard(entry) {
+    var name = A.escapeHtml(entry.city);
+    var label = entry.country ? name + ", " + A.escapeHtml(entry.country) : name;
+    return '<li><a class="place-card" href="/comedy-atlas/city.html?city=' + encodeURIComponent(entry.city) + '">' +
+      '<div class="place-name">' + label + '</div>' +
+      '<div class="place-meta"><span class="place-count">' + entry.count + '</span> show' +
+      (entry.count === 1 ? '' : 's') + '</div></a></li>';
+  }
+
+  var fetchCitiesSafe = typeof A.fetchCities === "function" ? A.fetchCities() : Promise.resolve([]);
+
+  Promise.all([A.fetchEvents(), fetchCitiesSafe])
+    .then(function (results) {
+      var events = results[0], citiesJson = results[1];
+      if (!Array.isArray(events) || !events.length) return;
+      // Every count here is Object.keys(...).length inside groupByCity --
+      // the same real, unique-show count the "Cities" section above computes
+      // from the same fetch. Nothing in this file hardcodes a city or a
+      // number.
+      var cities = A.groupByCity(events, A.citiesByName(citiesJson));
+      if (!cities.length) return;
+      list.innerHTML = cities.map(cityGridCard).join("");
+      section.hidden = false;
+    })
+    .catch(function () { /* leave hidden -- a failed fetch here must never
+      surface as a broken section on an otherwise-working homepage */ });
+})();
+</script>
+<script src="/comedy-atlas/atlas-city-subscribe.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.AtlasCommon;
+
+  var app = document.getElementById("main-content");
+  var freshnessText = document.getElementById("freshness-text");
+  var freshnessDot = document.getElementById("freshness-dot");
+  var statsRow = document.getElementById("stats-row");
+
+  function renderError() {
+    app.innerHTML = '<div class="state-block error"><h2>Couldn’t load COMEDY ATLAS</h2>' +
+      '<p>The listings feed didn’t respond. Try again shortly, or check ' +
+      '<a href="/shows.html" style="color:var(--purple-light);text-decoration:underline">the full shows page</a>.</p></div>';
+  }
+
+  function renderEmpty() {
+    app.innerHTML = '<div class="state-block"><h2>No shows to show — yet</h2>' +
+      '<p>Check back soon as more cities come online.</p></div>';
+  }
+
+  // FEATURED_MIN_SHOWS: cities with real registered-source coverage today
+  // (London/Edinburgh/Madrid/Amsterdam/Barcelona/Berlin/Paris/Dublin) all
+  // clear this bar comfortably; every other live city is a 1-5-show stub
+  // from a touring organizer's feed, not real per-city coverage (Robert,
+  // 2026-07-19: "I'm sure there's more than one show in Montreal" -- he's
+  // right, Montreal has exactly 1, a stray touring-act event, not a scene).
+  var FEATURED_MIN_SHOWS = 8;  // now counts UNIQUE shows (was 15 for raw showtimes)
+
+  // Stale-push shims (same rationale as fetchCitiesSafe near the bottom of
+  // this file): these three AtlasCommon helpers landed 2026-07-26 with the
+  // festival work. A push repo still serving an older atlas-common.js would
+  // throw a TypeError mid-render and blank the whole homepage, so each one
+  // degrades to a value that simply omits the new feature.
+  function festivalsBySlugSafe(json) {
+    return typeof A.festivalsBySlug === "function" ? A.festivalsBySlug(json) : {};
+  }
+  function fmtDateRangeSafe(a, b) {
+    return typeof A.fmtDateRange === "function" ? A.fmtDateRange(a, b) : "";
+  }
+
+  // Always shows the country -- Robert's core need ("I don't know where
+  // Riga is") applies just as honestly to a city everyone already knows
+  // (Paris, London): consistency beats a subjective "major city" list.
+  function cityLabel(entry) {
+    var slug = A.escapeHtml(entry.city);
+    return entry.country ? slug + ', ' + A.escapeHtml(entry.country) : slug;
+  }
+
+  // Deterministic daily rotation (work order §5 item 7: "rotating city
+  // discovery ... never imply the displayed cities are the only important
+  // ones"). Rotating by day-of-year rather than Math.random keeps the page
+  // stable within a day -- so it caches, and two visitors on the same day see
+  // the same thing -- while still changing over time. The ORDER of the input
+  // is preserved as a cycle, so the coverage ordering still decides who is
+  // adjacent to whom; only the starting point moves.
+  function rotateForToday(list) {
+    if (!list || list.length < 2) { return (list || []).slice(); }
+    var now = new Date();
+    var start = Date.UTC(now.getUTCFullYear(), 0, 0);
+    var dayOfYear = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - start) / 86400000);
+    var offset = ((dayOfYear % list.length) + list.length) % list.length;
+    return list.slice(offset).concat(list.slice(0, offset));
+  }
+
+  // Featured-comic card. Currently UNUSED because no featured selection source
+  // exists (see the featured-slot comment in render()); defined so the slot is
+  // real machinery rather than a promise, and so wiring Gate 6's
+  // featured_placements needs no new rendering code. Deliberately renders only
+  // fields we would actually have rights to show.
+  function comicFeatureCard(c) {
+    var name = c.stage_name || c.name || '';
+    var href = '/comedy-atlas/comic/' + encodeURIComponent(c.slug || '') + '/';
+    var label = c.sponsored
+      ? '<span class="slot-label sponsored">Sponsored</span>'
+      : '<span class="slot-label editorial">Featured</span>';
+    return '<a class="place-card" href="' + href + '">' +
+      '<div class="place-name">' + A.escapeHtml(name) + label + '</div>' +
+      (c.reason ? '<div class="place-meta">' + A.escapeHtml(c.reason) + '</div>' : '') +
+      '</a>';
+  }
+
+  // Placements published for one homepage slot, in file order.
+  function placementsFor(slot) {
+    if (!Array.isArray(window.__ATLAS_PLACEMENTS__)) { return []; }
+    return window.__ATLAS_PLACEMENTS__.filter(function (p) {
+      return p && p.placement === slot;
+    });
+  }
+
+  // The section heading must never assert "Editorial" over a paid placement.
+  // Derived from what is actually in the slot: if ANY card is sponsored the
+  // heading says so, because a visitor reads the heading before the cards.
+  // (§11: "No paid result may look organic without disclosure.")
+  function slotHeadingLabel(list) {
+    if (!list || !list.length) { return ''; }
+    var anySponsored = list.some(function (p) { return p.kind === 'sponsored'; });
+    return anySponsored
+      ? '<span class="slot-label sponsored">Includes paid placement</span>'
+      : '<span class="slot-label editorial">Editorial</span>';
+  }
+
+  // One renderer for every featured entity type. The label comes from the row's
+  // `kind`/`sponsor_label`, never from the template -- which is what makes the
+  // database constraints meaningful.
+  function placementCard(p) {
+    var label = p.kind === 'sponsored'
+      ? '<span class="slot-label sponsored">' +
+          A.escapeHtml(p.sponsor_label || 'Sponsored') + '</span>'
+      : '<span class="slot-label editorial">Featured</span>';
+    return '<a class="place-card" href="' + A.escapeHtml(p.url || '#') + '">' +
+      '<div class="place-name">' + A.escapeHtml(p.name || '') + label + '</div>' +
+      (p.reason ? '<div class="place-meta">' + A.escapeHtml(p.reason) + '</div>' : '') +
+      '</a>';
+  }
+
+  function cityCard(entry) {
+    var tag = "";
+    if (entry.city === "Edinburgh") tag = '<div class="place-tag">Free Fringe city</div>';
+    return '<a class="place-card" href="/comedy-atlas/city.html?city=' + encodeURIComponent(entry.city) + '">' +
+      '<div class="place-name">' + cityLabel(entry) + '</div>' +
+      '<div class="place-meta"><span class="place-count">' + entry.count + '</span> show' +
+      (entry.count === 1 ? '' : 's') + '</div>' + tag + '</a>';
+  }
+
+  function stubCityLink(entry) {
+    return '<a href="/comedy-atlas/city.html?city=' + encodeURIComponent(entry.city) + '">' +
+      cityLabel(entry) + ' · <span class="stub-count">' + entry.count + '</span></a>';
+  }
+
+  // Festival link target, best-available-and-still-real, in this order
+  // (2026-07-26, Robert: "make all the festivals visible on the homepage
+  // with LINKS TO THEIR DEDICATED FESTIVAL PAGE on our site" -- this card
+  // used to link to a FILTERED CITY LISTING, city.html?city=..&org=..,
+  // which is not a festival page at all):
+  //   1. /comedy-atlas/festival/<festival slug>/ -- the festival's own page
+  //      (scripts/generate_festival_pages.py). Only when festivals.json
+  //      actually carried a slug for this organizer.
+  //   2. /comedy-atlas/org/<organization_slug>/ -- the organizer's page,
+  //      generated by scripts/generate_entity_pages.py from the SAME
+  //      organizations.slug column the export now ships (migration 0126).
+  //   3. the old city.html filter -- always resolves, since city.html is a
+  //      static page that filters client-side.
+  // Every step is a path this repo demonstrably generates; nothing here
+  // slugifies a display name, so no branch can invent a dead link.
+  function festivalUrl(entry, festivalSlugByOrgId) {
+    var fslug = entry.orgId ? festivalSlugByOrgId[entry.orgId] : null;
+    if (fslug) return '/comedy-atlas/festival/' + encodeURIComponent(fslug) + '/';
+    if (entry.orgSlug) return '/comedy-atlas/org/' + encodeURIComponent(entry.orgSlug) + '/';
+    return '/comedy-atlas/city.html?city=' + encodeURIComponent(entry.city) + '&org=' + encodeURIComponent(entry.org);
+  }
+
+  // CP9 (2026-07-31): mounts AtlasGlobeExperience into #atlas-globe-root,
+  // ONLY when window.ATLAS_GLOBE_ENABLED is true (see the flag script in
+  // <head> -- default OFF). Called from render(), right after app.innerHTML
+  // = html assigns the section-5 markup that contains the mount div, so the
+  // element is guaranteed to exist by the time this runs -- no polling, no
+  // MutationObserver. Uses a dynamic import() (valid in a classic, non-module
+  // script) because experience.js and everything it imports are real ES
+  // modules; a plain <script src> tag cannot load them.
+  //
+  // THREE path overrides are MANDATORY here (see experience.js's own header
+  // comment, which documents all three): this module's defaults assume it
+  // mounts one directory level below site/comedy-atlas/ (matching its own
+  // test harnesses), but index.html mounts directly at site/comedy-atlas/
+  // itself -- one level shallower:
+  //   - cityHref must resolve to "city/<slug>/" (default "../city/<slug>/")
+  //   - searchIndexUrl must resolve to "../data/comedy-atlas/search_index.json"
+  //     (default "../../data/comedy-atlas/search_index.json"), exactly
+  //     matching atlas-common.js's own CITIES_URL/DATA_URL constant.
+  //   - assetBase (earth.js's texture directory) must resolve to
+  //     "assets/globe/" (default "../assets/globe/"). MISSED in the first
+  //     CP9 integration pass because earth.js had no override hook at the
+  //     time -- all three texture fetches 404'd against the non-existent
+  //     site/assets/globe/, and the Earth rendered as a black disc. Fixed
+  //     by threading `assetBase` through experience.js's mount() option
+  //     into createEarth(); see earth.js's own header comment.
+  // dataUrl gets the same one-level-shallower treatment for the same reason.
+  function mountAtlasGlobeIfEnabled() {
+    if (!window.ATLAS_GLOBE_ENABLED) return;
+    var root = document.getElementById("atlas-globe-root");
+    if (!root) return;
+    // PROVIDER SWITCH (2026-08-01). "maplibre" is the real map (NASA Blue
+    // Marble WMTS at world zoom, OpenFreeMap streets at city zoom, real
+    // venue markers). "current" is the original three.js globe, kept ONLY
+    // as a rollback per Robert's instruction -- it cannot render a sharp
+    // city because it paints a single 2048x1024 texture onto a sphere.
+    // ?map=current forces the old renderer for one session.
+    if (window.ATLAS_MAP_PROVIDER === "maplibre") {
+      mountAtlasMapLibre(root);
+    } else {
+      mountAtlasThreeGlobe(root);
+    }
+  }
+
+  /* MapLibre provider mount. Loads the vendored maplibre-gl (no CDN), then
+     map-experience.js, then wires: search -> selectCity, marker click ->
+     venue panel, Escape/recenter -> clearSelection. */
+  function mountAtlasMapLibre(root) {
+    ["/comedy-atlas/vendor/maplibre-gl/maplibre-gl.css",
+     "/comedy-atlas/globe/globe-tokens.css",
+     "/comedy-atlas/globe/globe-chrome.css"].forEach(function (href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    });
+
+    var shell = document.createElement("div");
+    shell.className = "atlas-globe-root atlas-map-root";
+    shell.innerHTML =
+      '<div class="atlas-globe-shell">'
+      + '<div class="atlas-map-canvas" style="position:absolute;inset:0"></div>'
+      + '<div class="atlas-globe-topbar">'
+      +   '<div class="atlas-globe-brand"><div class="atlas-globe-wordmark">COMEDY ATLAS</div>'
+      +   '<div class="atlas-globe-tagline">The world of stand-up comedy.</div></div>'
+      +   '<div class="atlas-globe-search"><input type="text" '
+      +     'placeholder="Search a city…" aria-label="Search a city"></div>'
+      + '</div>'
+      + '<div class="atlas-globe-panel-col" data-role="panel"></div>'
+      + '</div>';
+    root.innerHTML = "";
+    root.appendChild(shell);
+
+    var canvasEl = shell.querySelector(".atlas-map-canvas");
+    var panelEl = shell.querySelector('[data-role="panel"]');
+    var inputEl = shell.querySelector(".atlas-globe-search input");
+
+    var script = document.createElement("script");
+    script.src = "/comedy-atlas/vendor/maplibre-gl/maplibre-gl.js";
+    script.onload = function () {
+      import("/comedy-atlas/globe/map-experience.js").then(function (mod) {
+        var handle = mod.mount(canvasEl, {
+          worldDataUrl: "../data/map/cities.geojson",
+          cityDataUrlFor: function (slug) { return "../data/map/cities/" + slug + ".json"; },
+          onCitySelected: function (payload) { renderCityPanel(payload); },
+          onVenueSelected: function (venue) { renderVenuePanel(payload_venue(venue)); }
+        });
+
+        function payload_venue(v) { return v; }
+
+        function renderCityPanel(payload) {
+          panelEl.innerHTML = "";
+          var box = document.createElement("div");
+          box.className = "atlas-globe-panel";
+          var h = document.createElement("h2");
+          h.className = "atlas-map-venue-panel-name";
+          h.textContent = (payload.city && payload.city.name) || "City";
+          box.appendChild(h);
+          // H2 (2026-08-03): visitor-facing "N shows across M mapped venues"
+          // + "N additional dates..." + "View all <City> shows" link,
+          // replacing the old two-notes-in-database-vocabulary render. The
+          // link target mirrors the exact cityHref pattern the (older)
+          // three.js globe mount already uses lower in this file ("city/" +
+          // slug + "/", relative to this comedy-atlas/index.html page).
+          var slug = (payload.city && payload.city.slug) || "";
+          var cityHref = slug ? "city/" + slug + "/" : null;
+          var summary = mod.__internal.buildCityMapSummary(document, payload, cityHref);
+          box.appendChild(summary);
+          panelEl.appendChild(box);
+        }
+
+        function renderVenuePanel(venue) {
+          panelEl.innerHTML = "";
+          var box = document.createElement("div");
+          box.className = "atlas-globe-panel";
+          box.appendChild(mod.__internal.buildVenuePanel(document, venue));
+          panelEl.appendChild(box);
+        }
+
+        /* Search: resolve a typed city name against the SAME cities.geojson
+           the world view already loaded, then selectCity(slug). No second
+           search index, no fuzzy guessing at a city that isn't in the data. */
+        var cityIndex = [];
+        fetch("../data/map/cities.geojson").then(function (r) { return r.json(); })
+          .then(function (gj) {
+            cityIndex = (gj.features || []).map(function (f) {
+              return { slug: f.properties.slug, name: f.properties.name,
+                       norm: String(f.properties.name || "").toLowerCase() };
+            });
+          }).catch(function () { /* search degrades; map still works */ });
+
+        function runSearch() {
+          var q = (inputEl.value || "").trim().toLowerCase();
+          if (!q) return;
+          var hit = cityIndex.filter(function (c) { return c.norm === q; })[0]
+                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) === 0; })[0]
+                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) !== -1; })[0];
+          if (hit) handle.selectCity(hit.slug);
+        }
+        inputEl.addEventListener("keydown", function (ev) {
+          if (ev.key === "Enter") { ev.preventDefault(); runSearch(); }
+        });
+
+        document.addEventListener("keydown", function (ev) {
+          if (ev.key === "Escape" && handle.isSelectionLocked()) {
+            handle.clearSelection();
+            panelEl.innerHTML = "";
+          }
+        });
+
+        window.__atlasMapDebug = {
+          get map() { return handle.map; },
+          isSelectionLocked: function () { return handle.isSelectionLocked(); },
+          getSelectedCity: function () { return handle.getSelectedCity(); },
+          selectCity: function (slug) { return handle.selectCity(slug); },
+          clearSelection: function () { handle.clearSelection(); panelEl.innerHTML = ""; }
+        };
+      });
+    };
+    document.head.appendChild(script);
+  }
+
+  /* ROLLBACK PROVIDER: the original three.js globe. Reached only when
+     ATLAS_MAP_PROVIDER is "current" (?map=current). Kept per Robert's
+     instruction so the new map can be rolled back instantly; it is NOT
+     the default and cannot render a sharp city view. */
+  function mountAtlasThreeGlobe(root) {
+    // Same "insert the stylesheet via JS only when the flag is on" idiom as
+    // the ATLAS VISUALS mount script near the end of <body> -- globe-tokens.css
+    // and globe-chrome.css are otherwise never loaded, so a flag-off visitor
+    // pays zero extra bytes for this feature. mount() itself injects no
+    // stylesheet of its own (see every CP2-CP8 test harness's own <head>,
+    // which always links both files explicitly) -- it must be done here.
+    ["/comedy-atlas/globe/globe-tokens.css", "/comedy-atlas/globe/globe-chrome.css"].forEach(function (href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    });
+    import("/comedy-atlas/globe/experience.js").then(function (mod) {
+      var handle = mod.mount(root, {
+        dataUrl: "../data/comedy-atlas/globe-cities.json",
+        searchIndexUrl: "../data/comedy-atlas/search_index.json",
+        assetBase: "/comedy-atlas/assets/globe/",
+        cityHref: function (city) {
+          var slug = (city && city.slug) || "";
+          return "/comedy-atlas/city/" + slug + "/";
+        }
+      });
+      /* Read-only diagnostics handle. Exists so an automated browser check can
+         assert the CAMERA actually stopped when a city is selected, rather than
+         inferring it from a screenshot — the 2026-07-31 "globe keeps spinning"
+         bug was invisible to every assertion we had and only showed up by
+         watching the camera move. Exposes no mutators and no data the page
+         hasn't already fetched. */
+      /* Getters, not snapshots: `handle._debug` is populated asynchronously
+         once the dataset resolves and the scene is built, so reading it at
+         mount time captures nulls. */
+      try {
+        window.__atlasGlobeDebug = {
+          get camera() { return handle && handle._debug ? handle._debug.camera : null; },
+          get controller() { return handle && handle._debug ? handle._debug.controller : null; },
+          clearSelection: function () { if (handle && handle.clearSelection) handle.clearSelection(); }
+        };
+      } catch (e) { /* diagnostics only — never break the page */ }
+    }).catch(function (e) {
+      // The globe failing to load must never break the rest of the
+      // homepage -- the existing CTA row right below #atlas-globe-root
+      // already gives visitors a working path to the same content.
+      if (window.console && console.warn) console.warn("Atlas globe mount failed:", e);
+    });
+  }
+
+  function festivalCard(entry, festivalSlugByOrgId) {
+    // 2026-07-25: now driven by ev.is_festival (real festivals.
+    // organization_id join, migration 0121) instead of the old 2-org
+    // hardcode -- a festival card can be a ticketed one (e.g. Camden
+    // Fringe, real price_min 5-18), so the "Free entry" tag/wording only
+    // renders when groupFestivals() confirmed EVERY counted event has
+    // is_free === true. Never assume free just because it's a festival.
+    var url = festivalUrl(entry, festivalSlugByOrgId || {});
+    var showWord = (entry.allFree ? 'free show' : 'show') + (entry.count === 1 ? '' : 's');
+    // Real run dates, straight from the earliest/latest starts_at we hold
+    // for this festival -- NOT festivals.edition_starts_on (NULL for all but
+    // 3 of 78 public festivals, so there is usually nothing there to print).
+    // Omitted entirely when the dates are missing/malformed.
+    var range = fmtDateRangeSafe(entry.firstDate, entry.lastDate);
+    return '<a class="place-card" href="' + url + '">' +
+      '<div class="place-name">' + A.escapeHtml(entry.org) + '</div>' +
+      '<div class="place-meta">' + A.escapeHtml(entry.city) + ' · <span class="place-count">' +
+      entry.count + '</span> ' + showWord + '</div>' +
+      (range ? '<div class="place-meta">' + A.escapeHtml(range) + '</div>' : '') +
+      (entry.allFree ? '<div class="place-tag">Free entry</div>' : '') + '</a>';
+  }
+
+  // A public festival we hold a real record for but no programme: name,
+  // description and official website only (73 of 78 as of 2026-07-26).
+  // Rendered as a compact chip, exactly like the stub-city list, so the
+  // page never implies we have listings we don't -- the count is
+  // deliberately absent because there is nothing to count.
+  function festivalStubLink(f) {
+    return '<a href="/comedy-atlas/festival/' + encodeURIComponent(f.slug) + '/">' +
+      A.escapeHtml(f.name) + '</a>';
+  }
+
+  function render(events, citiesJson, festivalsJson) {
+    if (!events.length) { renderEmpty(); return; }
+
+    var cities = A.groupByCity(events, A.citiesByName(citiesJson));
+    var featured = cities.filter(function (c) { return c.count >= FEATURED_MIN_SHOWS; });
+    var stubs = cities.filter(function (c) { return c.count < FEATURED_MIN_SHOWS; });
+    var festivals = A.groupFestivals(events);
+
+    // festivals.json is the only complete festival list -- `events` can only
+    // ever reveal the festivals whose organizer is linked AND has upcoming
+    // events here (5 of 78 public festivals, measured 2026-07-26). Slug-less
+    // rows are dropped by festivalsBySlug: no slug means no page to link to.
+    var festivalRows = festivalsBySlugSafe(festivalsJson);
+    var festivalSlugs = Object.keys(festivalRows);
+    var festivalSlugByOrgId = {};
+    festivalSlugs.forEach(function (slug) {
+      var oid = festivalRows[slug].organization_id;
+      if (oid) festivalSlugByOrgId[oid] = slug;
+    });
+    // Every public festival that has NO programme on this site. Excludes any
+    // festival already shown as a card above (matched on organization_id, the
+    // exact key -- never on a name string).
+    var programmeOrgIds = {};
+    festivals.forEach(function (f) { if (f.orgId) programmeOrgIds[f.orgId] = true; });
+    var festivalStubs = festivalSlugs.map(function (s) { return festivalRows[s]; })
+      .filter(function (f) { return !(f.organization_id && programmeOrgIds[f.organization_id]); })
+      .sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
+
+    // Unique shows, not raw showtimes -- a weekly night is one show, not the
+    // ~176 future dates it's expanded into (see atlas-common.js showKey).
+    var totalShows = A.uniqueShowCount(events);
+    // Festival total = distinct festival RECORDS that have a page, not the
+    // number of festival cards (groupFestivals splits an organizer per city,
+    // so a two-city festival would otherwise be counted twice). Counts only
+    // slugged rows, so every festival in this number has a page a visitor can
+    // actually open. Falls back to the card count when festivals.json didn't
+    // load, so the figure is never inflated by a guess.
+    var totalFestivals = festivalSlugs.length || festivals.length;
+    statsRow.innerHTML = '<span><strong>' + totalShows + '</strong> shows</span>' +
+      '<span><strong>' + cities.length + '</strong> cities live</span>' +
+      (totalFestivals ? '<span><strong>' + totalFestivals + '</strong> festivals</span>' : '');
+
+    // ---------------------------------------------------------------
+    // HOMEPAGE INFORMATION ARCHITECTURE (work order 2026-07-27 §5, Gate 2).
+    // Order is deliberate and was previously Cities -> Festivals -> Coming up.
+    // A visitor's first job is to attend a show, so upcoming shows now come
+    // first and city browsing moves below the fold. The globe must never push
+    // actionable shows down (§5), which is why the Atlas section sits after
+    // the show/festival/comic sections rather than under the hero.
+    //   1 hero + global search (static markup above)
+    //   2 Happening soon        <- actionable, first
+    //   3 Featured festivals    <- exactly 3, or an honest empty state
+    //   4 Featured comics       <- exactly 3, or an honest empty state
+    //   5 Explore the Atlas     <- map/globe + browse all cities
+    //   6 Cities                <- rotating discovery, not a fixed "major" list
+    //   7 Learn / News
+    //   8 Industry CTA
+    // ---------------------------------------------------------------
+    var html = '';
+
+    // 2. HAPPENING SOON. Capped at 6 cards (§5: "3 to 6 cards, with a
+    //    'See all shows' link") -- a taste, not a listing. Full listings live
+    //    on /shows.html and each city page.
+    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "en"); });
+    var soon = soonAll.slice().sort(function (a, b) {
+      return new Date(a.starts_at) - new Date(b.starts_at);
+    }).slice(0, 60);
+    html += '<section class="atlas-section"><h2>Happening soon</h2>' +
+      A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 2 }) +
+      '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
+      '<a href="/shows.html" style="color:var(--gold);font-weight:700;text-decoration:underline">See all ' +
+      totalShows + ' shows &rarr;</a></div></section>';
+
+    // 3 + 4. FEATURED SLOTS. §5 allows a featured festival/comic ONLY when it
+    // is "genuinely featured/editorially selected or paid and labelled", and a
+    // featured comic additionally needs "a real profile, source-backed bio/photo,
+    // and a reason for selection".
+    //
+    // NEITHER EXISTS TODAY: there is no featured_placements table (that is Gate
+    // 6), no editorial selection process, and no provenance/rights fields on a
+    // comic's bio or photo. Picking three by event count or alphabetically and
+    // calling them "featured" would be exactly the invented-editorial claim the
+    // work order forbids. So the slots render their EMPTY state, which §12 Gate
+    // 2 and §13 both explicitly permit ("or remain safely empty").
+    //
+    // The machinery is real: swap the empty array below for placement rows and
+    // the labelled cards render. That is the only change needed.
+    // Fed by data/comedy-atlas/featured_placements.json, which
+    // scripts/generate_featured_placements_export.py writes from the
+    // featured_placements table -- only status='live' rows inside their window,
+    // with the entity resolved to a real public slug.
+    //
+    // These were hardcoded `[]` until 2026-07-27. The data model and its CHECK
+    // constraints existed but nothing read them, so a valid placement could
+    // never have appeared. PRODUCTION IS STILL EMPTY, and that is correct: no
+    // placement has been editorially selected or sold. The difference is that
+    // the day one is, it renders -- with its own label -- and no code changes.
+    var featuredFestivals = placementsFor("homepage_festivals");
+    var featuredComics = placementsFor("homepage_comics");
+
+    html += '<section class="atlas-section"><h2>Featured festivals' +
+      slotHeadingLabel(featuredFestivals) + '</h2>';
+    if (featuredFestivals.length) {
+      html += '<div class="card-grid">';
+      featuredFestivals.forEach(function (f) { html += placementCard(f); });
+      html += '</div>';
+    } else {
+      html += '<p class="slot-empty">No featured festivals right now. We only feature a ' +
+        'festival when it has been editorially selected, or when a placement is paid and ' +
+        'labelled as such &mdash; never just because it is the biggest one we hold data for. ' +
+        '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700;text-decoration:underline">' +
+        'Browse every festival &rarr;</a></p>';
+    }
+    html += '</section>';
+
+    html += '<section class="atlas-section"><h2>Featured comics' +
+      slotHeadingLabel(featuredComics) + '</h2>';
+    if (featuredComics.length) {
+      html += '<div class="card-grid">';
+      featuredComics.forEach(function (c) { html += placementCard(c); });
+      html += '</div>';
+    } else {
+      html += '<p class="slot-empty">No featured comics right now. A comic is only ' +
+        'featured here once their profile has a sourced biography and a photo we have the ' +
+        'rights to use. We would rather show nothing than pick three at random. ' +
+        '<a href="/comedy-atlas/comics/" style="color:var(--gold);font-weight:700;text-decoration:underline">' +
+        'Browse all comics &rarr;</a></p>';
+    }
+    html += '</section>';
+
+    // 5. EXPLORE THE ATLAS. The map mount (#atlas-viz-root) lives higher in the
+    //    document and is inert unless the flag is on, so this section is the
+    //    honest, always-working entry point to geographic browsing.
+    //
+    //    CP9 (2026-07-31): #atlas-globe-root is the interactive-globe mount
+    //    point, ?globe=1-gated, DEFAULT OFF (see the flag script in <head>).
+    //    It sits ABOVE the existing CTA row, which stays exactly as it was --
+    //    with the flag off, #atlas-globe-root stays empty and this section
+    //    renders identically to before this change.
+    html += '<section class="atlas-section"><h2>Explore the Atlas</h2>' +
+      '<div id="atlas-globe-root"></div>' +
+      '<p class="stub-note">Browse the whole catalogue by place &mdash; ' +
+      cities.length + ' cities with listed shows, and ' + totalFestivals +
+      ' festival records worldwide.</p>' +
+      '<div class="atlas-cta-row" style="margin-top:14px">' +
+      '<a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse all cities</a>' +
+      '<a href="/comedy-atlas/festival/" class="cta-btn secondary">Browse all festivals</a>' +
+      '<a href="/comedy-atlas/comics/" class="cta-btn secondary">Browse all comics</a>' +
+      '</div></section>';
+
+    // 6. CITIES. §5 item 7: rotating discovery, "never imply the displayed
+    //    cities are the only important ones". Previously this rendered a fixed
+    //    tier of "featured" cities (>= FEATURED_MIN_SHOWS) which made a
+    //    permanent major/secondary distinction out of what is really just
+    //    today's coverage. Now: the same coverage ordering, but rotated by day
+    //    so the set changes, capped at 12 (§5 says 6-13), and captioned as a
+    //    sample rather than a ranking.
+    html += '<section class="atlas-section"><h2>Cities</h2>';
+    var rotated = rotateForToday(featured);
+    var shown = rotated.slice(0, 12);
+    if (shown.length) {
+      html += '<div class="card-grid">';
+      shown.forEach(function (c) { html += cityCard(c); });
+      html += '</div>';
+      html += '<p class="stub-note" style="margin-top:12px">A rotating sample of the ' +
+        cities.length + ' cities with listed shows &mdash; not a ranking, and not the ' +
+        'full list.</p>';
+    }
+    if (stubs.length) {
+      html += '<div style="margin-top:20px">' +
+        '<p class="stub-note">Also tracking &mdash; cities where we\'ve spotted shows but don\'t yet have ' +
+        'full coverage:</p><div class="stub-list">' +
+        stubs.map(stubCityLink).join('') + '</div></div>';
+    }
+    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse all ' + cities.length + ' cities &rarr;</a></div></section>';
+
+    // FESTIVALS (full two-tier list). Kept below the featured slot: the
+    // featured slot is editorial, this is the complete honest inventory --
+    // cards for festivals whose programme we actually list, then chips for
+    // every other record. Chips carry NO count and NO dates because we have
+    // neither, and those pages say so in as many words.
+    if (festivals.length || festivalStubs.length) {
+      html += '<section class="atlas-section"><h2>All festivals</h2>';
+      if (festivals.length) {
+        html += '<div class="card-grid">';
+        festivals.forEach(function (f) { html += festivalCard(f, festivalSlugByOrgId); });
+        html += '</div>';
+      }
+      if (festivalStubs.length) {
+        html += '<div style="margin-top:20px">' +
+          '<p class="stub-note">Also tracked &mdash; festivals we hold a verified record for but ' +
+          'whose programme we don\'t list yet. Each page has the festival\'s own official site:</p>' +
+          '<div class="stub-list">' + festivalStubs.map(festivalStubLink).join('') + '</div></div>';
+      }
+      if (festivalSlugs.length) {
+        html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
+          '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse all ' +
+          totalFestivals + ' festivals &rarr;</a></div>';
+      }
+      html += '</section>';
+    }
+
+    // 7. LEARN / NEWS.
+    html += '<section class="atlas-section"><h2>Learn &amp; news</h2>' +
+      '<div class="atlas-cta-row">' +
+      '<a href="/comedy-atlas/guide/" class="cta-btn secondary">Learn &mdash; open mic &amp; booking guides</a>' +
+      '<a href="/comedy-atlas/blog/" class="cta-btn secondary">News &amp; updates</a>' +
+      '</div></section>';
+
+    // 8. INDUSTRY CTA. Kept last (§4: partner/advertising material belongs in
+    //    a discreet "for industry" area, not in primary discovery).
+    html += '<section class="atlas-section"><h2>For industry</h2>' +
+      '<div class="atlas-cta-row">' +
+      '<a href="/comedy-atlas/apply.html" class="cta-btn secondary">Comics &mdash; get listed</a>' +
+      '<a href="/comedy-atlas/partners.html" class="cta-btn secondary">Venues, promoters &amp; festivals</a>' +
+      '</div></section>';
+
+
+    app.innerHTML = html;
+    mountAtlasGlobeIfEnabled();
+  }
+
+  // Defensive: A.fetchCities was added alongside this page's cities-tiering
+  // section (2026-07-19). A push repo whose atlas-common.js hasn't caught up
+  // yet (verified live 2026-07-19: pariscomedy-push-20260526-095907 was many
+  // commits stale) would otherwise throw here and silently kill the whole
+  // event-listing fetch. Falling back to an empty city list degrades to
+  // "no city tiering" instead of "page never loads".
+  var fetchCitiesSafe = typeof A.fetchCities === "function" ? A.fetchCities() : Promise.resolve([]);
+  // Same defensive shape as fetchCitiesSafe above, and for the same reason:
+  // A.fetchFestivals/festivalsBySlug/fmtDateRange were added 2026-07-26, and a
+  // push repo whose atlas-common.js hasn't caught up would otherwise throw and
+  // kill the entire listing render. Degrading to [] means the festival chips
+  // and the "Browse all" link are absent -- never a broken page, and never a
+  // link to a page that isn't there.
+  var fetchFestivalsSafe = typeof A.fetchFestivals === "function" ? A.fetchFestivals() : Promise.resolve([]);
+
+  // Featured placements. Resolves to [] on ANY failure -- a missing or malformed
+  // placements file must never take the homepage down, because the slots are
+  // decoration and the show listings are the product. An empty result renders
+  // the honest empty state, which is also production's current correct state.
+  var fetchPlacementsSafe = fetch("/data/comedy-atlas/featured_placements.json",
+                                  { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (j) { return Array.isArray(j) ? j : []; })
+    .catch(function () { return []; });
+
+  Promise.all([A.fetchEvents(), fetchCitiesSafe, fetchFestivalsSafe, fetchPlacementsSafe])
+    .then(function (results) {
+      window.__ATLAS_PLACEMENTS__ = results[3];
+      render(results[0], results[1], results[2]);
+    }).catch(renderError);
+  A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
+})();
+</script>
+<script src="/comedy-atlas/near.js"></script>
+<script src="/comedy-atlas/atlas-geo.js"></script>
+
+<!-- ATLAS VISUALS v1 (ATLAS-VISUALS-V1, 2026-07-27) -- three independent
+     files (data adapter / layer registry / renderer, see each file's own
+     header) plus this small mount script. Fully inert when the flag in
+     <head> is false: no stylesheet is inserted, AtlasVisuals.mount() is
+     never called, #atlas-viz-root stays empty. -->
+<script src="/comedy-atlas/atlas-layers.js"></script>
+<script src="/comedy-atlas/atlas-visuals-data.js"></script>
+<script src="/comedy-atlas/atlas-visuals.js"></script>
+<script>
+(function () {
+  "use strict";
+  if (!window.ATLAS_VISUALS_ENABLED) return;
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/comedy-atlas/atlas-visuals.css";
+  document.head.appendChild(link);
+  var root = document.getElementById("atlas-viz-root");
+  if (root && window.AtlasVisuals) window.AtlasVisuals.mount(root);
+})();
+</script>
+</body>
+</html>

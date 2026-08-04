@@ -58,10 +58,10 @@
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
   --gold:#c9a84c;--gold-light:#e8c96a;
-  --red:#c41e3a;--green:#3fb950;
+  --red:#e34b64;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--red:#c41e3a;--green:#2b7e37;--purple-light:#8b42f3}
 }
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
@@ -70,7 +70,8 @@ img{max-width:100%;display:block}
 .container{max-width:900px;margin:0 auto;padding:0 20px}
 
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a:hover{color:var(--text)}
@@ -173,12 +174,14 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
 .venue-map-locate-btn:hover{border-color:var(--purple-light)}
-.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-summary{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.venue-map-summary-primary{font-size:13px;font-weight:700;color:var(--text);margin:0}
+.venue-map-summary-secondary{font-size:12px;color:var(--muted);margin:0;line-height:1.4}
 .venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
 .venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
 .venue-map-popup strong{display:block;margin-bottom:4px}
 .venue-map-popup-row{font-size:13px;padding:2px 0}
-.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
+.venue-map-popup-row a{color:var(--purple-light);font-weight:700}
 
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
@@ -193,6 +196,42 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   .nav-links{font-size:13px;gap:14px}
   .event-top{flex-direction:column;gap:2px}
 }
+
+/* I3 (2026-08-04, Wave 1 §5.2 -- calendar day journey). Every cell is a
+   large tap target (min 44px, Robert's binding UI direction) that is
+   ALWAYS just a link/count -- never event content -- so the narrow-cell
+   internal-scroll defect this replaces cannot recur regardless of whether
+   a day has 0, 1, 5, or 170 shows. */
+.calendar-grid-wrap{max-width:900px;margin:0 auto 14px;padding:0 20px}
+.calendar-grid-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.calendar-grid-head button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;min-width:44px;min-height:44px;font-size:16px;font-weight:700;cursor:pointer}
+.calendar-grid-head button:hover{border-color:var(--purple-light)}
+#calendar-month-label{font-size:14px;font-weight:700}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;padding:6px 2px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:600}
+.cal-cell.cal-cell-link{cursor:pointer}
+.cal-cell.cal-cell-link:hover{border-color:var(--purple-light)}
+.cal-cell.cal-cell-empty{color:var(--muted);border-style:dashed;font-weight:400}
+.cal-cell-count{font-size:11px;color:var(--gold);font-weight:700;margin-top:2px}
+.cal-cell[aria-expanded="true"]{border-color:var(--purple);background:rgba(124,58,237,.15)}
+
+/* Day-sheet dialog (progressive enhancement, atlas-calendar.js openDaySheet) */
+.cal-sheet-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:3000;display:flex;align-items:flex-end;justify-content:center}
+@media(min-width:640px){.cal-sheet-overlay{align-items:center}}
+.cal-sheet{background:var(--card);border:1px solid var(--border);border-radius:16px 16px 0 0;max-width:560px;width:100%;max-height:82vh;display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:640px){.cal-sheet{border-radius:16px;max-height:74vh}}
+.cal-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.cal-sheet-head h2{font-size:16px;font-weight:800}
+.cal-sheet-close{background:none;border:none;color:var(--text);font-size:24px;line-height:1;min-width:44px;min-height:44px;cursor:pointer}
+.cal-sheet-list{overflow-y:auto;padding:8px}
+.cal-sheet-row{display:flex;align-items:center;gap:12px;padding:12px 10px;border-radius:10px;min-height:44px}
+.cal-sheet-row:hover{background:var(--bg)}
+.cal-sheet-thumb{width:48px;height:48px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.cal-sheet-row-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cal-sheet-row-title{font-weight:700;font-size:14px}
+.cal-sheet-row-meta{font-size:12.5px;color:var(--muted)}
+.cal-sheet-empty{padding:20px;color:var(--muted);text-align:center}
+.cal-sheet-fullpage{display:block;text-align:center;padding:14px;border-top:1px solid var(--border);font-weight:700;color:var(--purple-light)}
 </style>
 </head>
 <body>
@@ -215,7 +254,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <header class="atlas-header">
   <a href="index.html" class="back-link">← All cities and festivals</a>
-  <div class="atlas-wordmark" id="city-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
+  <!-- P1-6 (2026-08-02): real server-rendered <h1>, not a <div> -- this
+       page is a real public content page (per-city stand-up listings),
+       not a utility surface, so it earns an H1 like any other indexable
+       page. The default text below is what an anonymous/no-JS visitor
+       and any crawler that doesn't execute the inline script sees; the
+       existing JS at the bottom of this file (line ~344,
+       `document.getElementById("city-wordmark").innerHTML = ...`)
+       updates this SAME element in place once ?city= is known -- one
+       heading, server-rendered default then client-refined, never a
+       second competing heading. -->
+  <h1 class="atlas-wordmark" id="city-wordmark">COMEDY ATLAS<span class="dot">.</span></h1>
   <p class="atlas-promise" id="city-promise">Loading city…</p>
 </header>
 
@@ -241,6 +290,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </select>
     <input type="date" id="filter-day" aria-label="Pick a date" style="display:none">
     <button type="button" id="near-me-toggle" class="near-me-toggle" aria-pressed="false">📍 Sort by distance</button>
+    <!-- I3 (2026-08-04, Wave 1 §5.2): the calendar day journey's entry
+         point. Replaces the live "+ 166 more" defect (a single narrow
+         cell expanding into a 3,974px internal scroll -- see
+         CODEX_ATLAS_BASIC_FUNCTIONALITY_AUDIT_2026-08-04.md) with a real
+         month grid. Every day cell below is ALWAYS just a link to the
+         canonical /comedy-atlas/calendar/YYYY-MM-DD/ page -- see
+         atlas-calendar.js's module docstring for why that eliminates the
+         whole bug class rather than patching the one pixel measurement. -->
+    <button type="button" id="calendar-toggle" class="near-me-toggle" aria-pressed="false" aria-expanded="false" aria-controls="calendar-grid-wrap">📅 Calendar view</button>
+  </div>
+
+  <div id="calendar-grid-wrap" class="calendar-grid-wrap" style="display:none">
+    <div class="calendar-grid-head">
+      <button type="button" id="calendar-prev-month" aria-label="Previous month">&larr;</button>
+      <span id="calendar-month-label" aria-live="polite"></span>
+      <button type="button" id="calendar-next-month" aria-label="Next month">&rarr;</button>
+    </div>
+    <div id="calendar-grid" class="calendar-grid" role="group" aria-label="Pick a day"></div>
   </div>
 
   <div id="format-grid" class="format-grid" style="display:none"></div>
@@ -294,7 +361,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div id="venue-map"></div>
 </div>
 
-<main id="main-content" aria-live="polite">
+<main id="main-content" aria-live="polite" tabindex="-1">
   <div class="state-block" id="loading-state">
     <div class="spinner" aria-hidden="true"></div>
     <p>Loading shows…</p>
@@ -307,15 +374,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links">
-    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
-    <span class="sep">·</span>
-    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/privacy.html">Privacy</a>
-  </div>
-<div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
@@ -331,6 +394,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </script>
 <script src="atlas-city-subscribe.js"></script>
 <script src="atlas-venue-map.js"></script>
+<script src="atlas-calendar.js"></script>
 <script>
 (function () {
   "use strict";
@@ -354,7 +418,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   document.getElementById("city-current-name").textContent = cityParam;
 
   // 2026-07-19 P0 fix: this used to look up id="app", which doesn't exist
-  // on this page -- the actual listing container is <main id="main-content">
+  // on this page -- the actual listing container is the single <main>
+  // element below whose id the skip-link targets (P0-1, 2026-08-02: this
+  // comment used to spell that id out as a literal HTML attribute, which
+  // made a naive text-based staged-tree scan for a second occurrence of
+  // that exact attribute count this COMMENT as a duplicate main target --
+  // see scripts/audit/chrome_scan.py, which is exactly that kind of scan.
+  // Rephrased so no literal `id=` attribute string appears twice in this
+  // file even though only one real element ever carries it)
   // (same id-mismatch bug class the homepage had, commit 3cba7ca). Every
   // app.innerHTML write below (render/renderEmpty/renderSmartEmpty/
   // renderError) was silently throwing "Cannot set properties of null" on
@@ -382,6 +453,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var orgBannerClear = document.getElementById("org-filter-clear");
   var cityPromise = document.getElementById("city-promise");
   var nearMeToggle = document.getElementById("near-me-toggle");
+  var calendarToggle = document.getElementById("calendar-toggle");
+  var calendarWrap = document.getElementById("calendar-grid-wrap");
+  var calendarGrid = document.getElementById("calendar-grid");
+  var calendarMonthLabel = document.getElementById("calendar-month-label");
+  var calendarPrevBtn = document.getElementById("calendar-prev-month");
+  var calendarNextBtn = document.getElementById("calendar-next-month");
 
   var allEvents = [];
   var visibleLimit = PAGE_SIZE;
@@ -747,6 +824,88 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     );
   });
 
+  // I3 (2026-08-04, Wave 1 §5.2) -- calendar day journey entry point. See
+  // atlas-calendar.js's module docstring: every day cell below is ALWAYS
+  // just a real <a>/count, never event content, so the narrow-cell
+  // internal-scroll defect this replaces (CODEX_ATLAS_BASIC_FUNCTIONALITY_
+  // AUDIT_2026-08-04.md) cannot recur at any count (0/1/5/170 all render
+  // the same way: a number in a box). Clicking a populated cell opens an
+  // accessible day-sheet (focus trap, Escape, restored focus,
+  // aria-expanded/aria-controls) built from events ALREADY loaded here --
+  // no extra fetch -- while `<a href>` still points at the real, separately
+  // generated canonical day page, so keyboard/mouse/touch, direct URL, and
+  // back button all work identically whether or not this script runs.
+  var calendarMonth = null;
+  var CAL = window.AtlasCalendar;
+
+  // Applies every CURRENT facet filter (format/venue/price/lang/tod/org/
+  // search) except the time-window ones (when/day) -- a month grid needs
+  // counts across the WHOLE month, not just today's "when" bucket -- by
+  // reusing applyFilters() itself (never a second, divergent copy of the
+  // same filter predicates) with when/day temporarily neutralized.
+  function eventsForCalendar() {
+    var savedWhen = state.when, savedDay = state.day;
+    state.when = "all";
+    state.day = "";
+    var filtered = applyFilters();
+    state.when = savedWhen;
+    state.day = savedDay;
+    return filtered;
+  }
+
+  function calendarFilterParams() {
+    return { city: cityParam, format: state.format, venue: state.venue, lang: state.lang };
+  }
+
+  function renderMiniCalendar() {
+    if (!CAL || !calendarGrid) return;
+    if (!calendarMonth) calendarMonth = new Date();
+    var events = eventsForCalendar();
+    var cells = CAL.buildMonthCells(events, calendarMonth);
+    calendarMonthLabel.textContent = calendarMonth.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+    calendarGrid.innerHTML = "";
+    cells.forEach(function (cell) {
+      var dayNum = Number(cell.date.split("-")[2]);
+      var el = document.createElement(cell.count ? "a" : "div");
+      el.className = "cal-cell" + (cell.count ? " cal-cell-link" : " cal-cell-empty");
+      el.innerHTML = "<span>" + dayNum + "</span>" +
+        (cell.count ? '<span class="cal-cell-count">' + cell.count + "</span>" : "");
+      if (cell.count) {
+        el.href = CAL.dayPageHref(cell.date, calendarFilterParams());
+        el.setAttribute("aria-expanded", "false");
+        el.setAttribute("aria-label", cell.count + (cell.count === 1 ? " show" : " shows") + " on " + cell.date);
+        el.addEventListener("click", function (evt) {
+          evt.preventDefault();
+          CAL.openDaySheet({
+            trigger: el,
+            dateKey: cell.date,
+            events: cell.events,
+            dayHref: el.href
+          });
+        });
+      }
+      calendarGrid.appendChild(el);
+    });
+  }
+
+  calendarToggle.addEventListener("click", function () {
+    var opening = calendarWrap.style.display === "none";
+    calendarWrap.style.display = opening ? "" : "none";
+    calendarToggle.setAttribute("aria-pressed", opening ? "true" : "false");
+    calendarToggle.setAttribute("aria-expanded", opening ? "true" : "false");
+    if (opening) renderMiniCalendar();
+  });
+
+  calendarPrevBtn.addEventListener("click", function () {
+    calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1);
+    renderMiniCalendar();
+  });
+
+  calendarNextBtn.addEventListener("click", function () {
+    calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1);
+    renderMiniCalendar();
+  });
+
   function render() {
     var filtered = applyFilters();
     buildFormatGrid(allEvents);
@@ -864,6 +1023,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     syncControlsFromState();
     syncUrl();
     render();
+    // Keep the mini-calendar's per-day counts honest against whatever
+    // facet filters are currently active (directive §5.2: "preserve
+    // active filters") -- only worth the recompute while it's actually
+    // visible.
+    if (calendarWrap && calendarWrap.style.display !== "none") renderMiniCalendar();
   }
 
   whenFilter.addEventListener("change", function () {
@@ -961,6 +1125,5 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
 })();
 </script>
-<script src="atlas-feedback.js"></script>
 </body>
 </html>

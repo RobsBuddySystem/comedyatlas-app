@@ -97,7 +97,6 @@
       "padding:14px 16px;font:14px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;" +
       "box-shadow:0 4px 20px rgba(0,0,0,.35);display:flex;gap:12px;align-items:center;" +
       "max-width:420px;margin:0 auto}" +
-      "@media(prefers-color-scheme:light){.atlas-pwa-hint{background:#fff;color:#171512;border-color:#e2ddd2}}" +
       ".atlas-pwa-hint-body{flex:1;min-width:0}" +
       ".atlas-pwa-hint-title{font-weight:700;margin-bottom:2px}" +
       ".atlas-pwa-hint-copy{font-size:12.5px;color:#8899aa}" +
@@ -106,6 +105,17 @@
       "padding:7px 12px;cursor:pointer;white-space:nowrap}" +
       ".atlas-pwa-install-btn{background:#7c3aed;color:#fff;border:none}" +
       ".atlas-pwa-dismiss-btn{background:transparent;border:1px solid #8899aa;color:inherit}" +
+      // P1-2 (2026-08-02, WCAG 2.1 AA): placed AFTER every base rule above
+      // (source-order matters for equal-specificity CSS -- see atlas-
+      // track.js's fix comment). #8899aa measured 2.68-2.92:1 against the
+      // light card/bg, under both the 4.5:1 text minimum (.atlas-pwa-hint-
+      // copy) and the 3:1 non-text minimum (.atlas-pwa-dismiss-btn's
+      // border). Reuses the same #5a5348 every other page's light-mode
+      // --muted already resolves to.
+      "@media(prefers-color-scheme:light){" +
+      ".atlas-pwa-hint{background:#fff;color:#171512;border-color:#e2ddd2}" +
+      ".atlas-pwa-hint-copy{color:#5a5348}" +
+      ".atlas-pwa-dismiss-btn{border-color:#5a5348}}" +
       "@media(max-width:480px){.atlas-pwa-hint{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px))}}";
     document.head.appendChild(style);
   }

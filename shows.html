@@ -12,13 +12,15 @@
 :root{
   --purple:#7c3aed;--purple-light:#9d5ff5;
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--border2:#2a3a4e;
-  --text:#f0f0f0;--muted:#8899aa;--dim:#5b6b7a;
-  --gold:#c9a84c;--gold-light:#e8c96a;
-  --red:#c41e3a;--green:#3fb950;
+  --text:#f0f0f0;--muted:#8899aa;--dim:#728496;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
+  --red:#e34b64;--green:#3fb950;
   --grad:linear-gradient(135deg,#7c3aed 0%,#c9a84c 100%);
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--border2:#d5cfc2;--text:#171512;--muted:#5a5348;--dim:#8a8272}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): missing --gold light-mode override,
+     same root cause as generate_entity_pages.py's CSS constant. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--border2:#d5cfc2;--text:#171512;--muted:#5a5348;--dim:#756e61;--gold:#766024;--gold-light:#796013;--red:#c41e3a;--green:#2b7e37;--purple-light:#8b42f3}
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -69,7 +71,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .cell-top{display:flex;align-items:center;justify-content:space-between}
 .cell-date{font-size:12px;color:var(--dim);font-weight:800}
 .cell.today .cell-date{color:var(--gold)}
-.today-pill{font-size:9px;font-weight:900;letter-spacing:.08em;padding:2px 7px;border-radius:20px;color:#100c00;background:var(--gold)}
+.today-pill{font-size:9px;font-weight:900;letter-spacing:.08em;padding:2px 7px;border-radius:20px;color:#100c00;background:var(--gold-btn)}
 .ev{display:block;background:rgba(124,58,237,.08);border:1px solid var(--border);border-radius:10px;padding:7px 9px;transition:.16s;position:relative;overflow:hidden}
 .ev:hover{border-color:var(--purple)}
 .ev-time{font-size:11px;font-weight:900;color:var(--gold-light)}
@@ -86,12 +88,11 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
-<a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
     <a href="/comedy-atlas/search/">Explore</a>
-    <a href="/shows.html">Shows</a>
+    <a href="/shows.html" class="nav-active" aria-current="page">Shows</a>
     <a href="/comedy-atlas/comics/">Comics</a>
     <a href="/comedy-atlas/venues/">Venues</a>
     <a href="/comedy-atlas/festival/">Festivals</a>
@@ -102,7 +103,7 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
   </div>
 </nav>
 
-<div class="hero" id="main-content">
+<div class="hero" id="main-content" tabindex="-1">
   <h1>Comedy <span class="g">Calendar</span></h1>
   <p>Every upcoming stand-up show tracked by COMEDY ATLAS, worldwide. Tap any show for the organizer's official ticket page.</p>
 </div>
@@ -150,21 +151,12 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
 </div>
 
 <footer>
-  <div class="footer-links">
-    <a href="/comedy-atlas/">Home</a>
-    <a href="/shows.html">Shows</a>
-  </div>
-  <div>
-    <a href="https://www.instagram.com/comedyatlasapp/" target="_blank" rel="noopener">Instagram</a>
-    &nbsp;·&nbsp;
-    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
-  </div>
-  <div class="footer-feedback-cta" style="margin-top:8px">
-    <button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})"
-      style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">
-      Is something missing? Send us a message</button>
-  </div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="comedy-atlas/atlas-track.js"></script>
 <script src="comedy-atlas/atlas-common.js"></script>

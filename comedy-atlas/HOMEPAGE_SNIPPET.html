@@ -38,4 +38,13 @@
   label should read "COMEDY ATLAS" or something shorter on mobile widths
   (the existing nav-links already wraps at 620px per index.html's own
   media query, so a long label is not new risk, just worth a look).
+
+  P0-6 (2026-08-02, launch-readiness audit sec 3.5) reviewed this file for
+  the analytics-consent-gate task: it carries no atlas-track.js include,
+  which is correct as-is -- this fragment is never served on its own (see
+  the first line above), so there is no live page here for an analytics
+  beacon or a consent banner to attach to. Whenever this snippet is
+  actually pasted into the live pariscomedy.com index.html, that page
+  already loads atlas-track.js itself (root <script src="comedy-atlas/
+  atlas-track.js">) -- no separate wiring needed.
 -->

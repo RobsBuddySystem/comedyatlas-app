@@ -32,10 +32,12 @@
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
   --gold:#c9a84c;--gold-light:#e8c96a;
-  --red:#c41e3a;--green:#3fb950;
+  --red:#e34b64;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): missing --gold light-mode override,
+     same root cause as generate_entity_pages.py's CSS constant. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--red:#c41e3a;--green:#2b7e37}
 }
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
@@ -45,7 +47,8 @@ a{color:inherit;text-decoration:none}
 .industry-footnote a{color:inherit;font-weight:700;text-decoration:underline}
 
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a:hover{color:var(--text)}
@@ -114,7 +117,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </header>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <section>
   <h2>What this is</h2>
@@ -279,23 +282,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <span class="sep">·</span>
-    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
-    <span class="sep">·</span>
-    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/about.html#support">Support us &#9829;</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/privacy.html">Privacy</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/terms.html">Terms</a>
-  </div>
-<div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="atlas-track.js"></script>
-<script src="atlas-feedback.js"></script>
 </body>
 </html>

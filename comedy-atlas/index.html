@@ -107,14 +107,14 @@ window.ATLAS_MAP_PROVIDER = "maplibre";
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
 <meta name="description" content="COMEDY ATLAS: comics find shows, bookers find comics, free. Browse live comedy by city and festival, worldwide.">
-<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/">
+<link rel="canonical" href="https://comedyatlas.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="COMEDY ATLAS">
 <meta property="og:title" content="COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking">
 <meta property="og:description" content="Comics find shows. Bookers find comics. Free.">
-<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/">
+<meta property="og:url" content="https://comedyatlas.app/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/comedy-atlas/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <style>
 /* ---------------------------------------------------------------------
    COMEDY ATLAS — HUB landing page. Self-contained static page (no build
@@ -128,11 +128,13 @@ window.ATLAS_MAP_PROVIDER = "maplibre";
   --purple:#7c3aed;--purple-light:#9d5ff5;
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
-  --gold:#c9a84c;--gold-light:#e8c96a;
-  --red:#c41e3a;--green:#3fb950;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
+  --red:#e34b64;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): missing --gold light-mode override,
+     same root cause as generate_entity_pages.py's CSS constant. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}
 }
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
@@ -142,7 +144,8 @@ img{max-width:100%;display:block}
 
 /* Nav */
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
 .nav-logo .atlas-name{color:var(--gold)}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
@@ -161,13 +164,26 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 @keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.atlas-hero-figure{opacity:1;transform:none;animation:none}}
 @media(max-width:640px){
-  .atlas-hero{flex-direction:column-reverse;text-align:center;gap:12px}
-  .atlas-hero-figure{width:clamp(96px,32vw,140px)}
+  /* I1 (Wave 1 5.1, 2026-08-04): flex-direction:column-reverse alone left
+     align-items:center (the base .atlas-hero rule, never overridden here)
+     in force. In a column-direction flex container, align-items governs
+     the CROSS axis (width) -- "center" sizes each item to its own
+     preferred/max-content width instead of stretching it to the
+     container, so .atlas-hero-copy rendered at its unwrapped content
+     width (296px, driven by the "COMEDY ATLAS." wordmark's 30px clamp
+     floor) even inside a 192px viewport (400% zoom on a 768px layout) --
+     document.documentElement.scrollWidth 260+ > clientWidth 192,
+     reproduced live with Playwright, see
+     tests/test_chrome_touch_targets.py. align-items:stretch makes the
+     item fill the container's actual width so its own text wraps inside
+     it, same as every other block on the page. */
+  .atlas-hero{flex-direction:column-reverse;align-items:stretch;text-align:center;gap:12px}
+  .atlas-hero-figure{width:clamp(96px,32vw,140px);align-self:center}
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
 }
 .cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
-.cta-btn.primary{background:var(--gold);color:#100c00;border:none}
+.cta-btn.primary{background:var(--gold-btn);color:#100c00;border:none}
 .cta-btn.primary:hover{opacity:.9}
 .cta-btn.secondary{border:1px solid var(--border);color:var(--muted);background:none}
 .cta-btn.secondary:hover{border-color:var(--purple-light);color:var(--text)}
@@ -307,8 +323,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-hero-copy">
     <div class="atlas-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
     <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
-    <p class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
-      festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</p>
+    <h1 class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
+      festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</h1>
     <!-- GLOBAL SEARCH (work order §5 "Search requirement"). A plain GET <form>
          so it works with JavaScript disabled: the browser navigates to
          /comedy-atlas/search/?q=... on its own. Autocomplete is layered on top
@@ -351,7 +367,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 </div>
 <div class="stats-row" id="stats-row"></div>
 
-<main id="main-content" aria-live="polite">
+<main id="main-content" aria-live="polite" tabindex="-1">
   <div class="state-block" id="loading-state">
     <div class="spinner" aria-hidden="true"></div>
     <p>Loading COMEDY ATLAS…</p>
@@ -402,17 +418,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links">
-    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
-    <span class="sep">·</span>
-    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/privacy.html">Privacy</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/about.html#support">Support us &#9829;</a>
-  </div>
-<div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
@@ -478,7 +488,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   function renderError() {
     app.innerHTML = '<div class="state-block error"><h2>Couldn’t load COMEDY ATLAS</h2>' +
       '<p>The listings feed didn’t respond. Try again shortly, or check ' +
-      '<a href="/shows.html" style="color:var(--purple-light)">the full shows page</a>.</p></div>';
+      '<a href="/shows.html" style="color:var(--purple-light);text-decoration:underline">the full shows page</a>.</p></div>';
   }
 
   function renderEmpty() {
@@ -714,19 +724,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           h.className = "atlas-map-venue-panel-name";
           h.textContent = (payload.city && payload.city.name) || "City";
           box.appendChild(h);
-          var sub = document.createElement("p");
-          sub.className = "atlas-map-venue-panel-address";
-          var mapped = (payload.venues || []).length;
-          var shows = (payload.venues || []).reduce(function (n, v) {
-            return n + mod.__internal.activeShows(v.shows).length; }, 0);
-          sub.textContent = mapped + " venue" + (mapped === 1 ? "" : "s")
-            + " on the map · " + shows + " current/upcoming show"
-            + (shows === 1 ? "" : "s");
-          box.appendChild(sub);
-          var note = mod.__internal.buildUnmappedNote(document, payload.unmappedVenues);
-          if (note) box.appendChild(note);
-          var unassignedNote = mod.__internal.buildUnassignedNote(document, payload.unassignedShowCount);
-          if (unassignedNote) box.appendChild(unassignedNote);
+          // H2 (2026-08-03): visitor-facing "N shows across M mapped venues"
+          // + "N additional dates..." + "View all <City> shows" link,
+          // replacing the old two-notes-in-database-vocabulary render. The
+          // link target mirrors the exact cityHref pattern the (older)
+          // three.js globe mount already uses lower in this file ("city/" +
+          // slug + "/", relative to this comedy-atlas/index.html page).
+          var slug = (payload.city && payload.city.slug) || "";
+          var cityHref = slug ? "city/" + slug + "/" : null;
+          var summary = mod.__internal.buildCityMapSummary(document, payload, cityHref);
+          box.appendChild(summary);
           panelEl.appendChild(box);
         }
 
@@ -934,7 +941,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     html += '<section class="atlas-section"><h2>Happening soon</h2>' +
       A.renderEventCards(soon, { showCityBadge: true, maxPerDay: 3, maxDays: 2 }) +
       '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
-      '<a href="/shows.html" style="color:var(--gold);font-weight:700">See all ' +
+      '<a href="/shows.html" style="color:var(--gold);font-weight:700;text-decoration:underline">See all ' +
       totalShows + ' shows &rarr;</a></div></section>';
 
     // 3 + 4. FEATURED SLOTS. §5 allows a featured festival/comic ONLY when it
@@ -974,7 +981,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       html += '<p class="slot-empty">No featured festivals right now. We only feature a ' +
         'festival when it has been editorially selected, or when a placement is paid and ' +
         'labelled as such &mdash; never just because it is the biggest one we hold data for. ' +
-        '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700">' +
+        '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700;text-decoration:underline">' +
         'Browse every festival &rarr;</a></p>';
     }
     html += '</section>';
@@ -989,7 +996,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       html += '<p class="slot-empty">No featured comics right now. A comic is only ' +
         'featured here once their profile has a sourced biography and a photo we have the ' +
         'rights to use. We would rather show nothing than pick three at random. ' +
-        '<a href="/comedy-atlas/comics/" style="color:var(--gold);font-weight:700">' +
+        '<a href="/comedy-atlas/comics/" style="color:var(--gold);font-weight:700;text-decoration:underline">' +
         'Browse all comics &rarr;</a></p>';
     }
     html += '</section>';
@@ -1038,7 +1045,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         'full coverage:</p><div class="stub-list">' +
         stubs.map(stubCityLink).join('') + '</div></div>';
     }
-    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700">Browse all ' + cities.length + ' cities &rarr;</a></div></section>';
+    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/cities/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse all ' + cities.length + ' cities &rarr;</a></div></section>';
 
     // FESTIVALS (full two-tier list). Kept below the featured slot: the
     // featured slot is editorial, this is the complete honest inventory --
@@ -1060,7 +1067,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }
       if (festivalSlugs.length) {
         html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">' +
-          '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700">Browse all ' +
+          '<a href="/comedy-atlas/festival/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse all ' +
           totalFestivals + ' festivals &rarr;</a></div>';
       }
       html += '</section>';
@@ -1119,7 +1126,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   A.fetchManifest().then(function (m) { A.setFreshness(freshnessDot, freshnessText, m); });
 })();
 </script>
-<script src="atlas-feedback.js"></script>
 <script src="near.js"></script>
 <script src="atlas-geo.js"></script>
 

@@ -19,10 +19,18 @@
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
   --gold:#c9a84c;--gold-light:#e8c96a;
-  --red:#c41e3a;--green:#3fb950;
+  --red:#e34b64;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): same missing-light-override bug as
+     generate_entity_pages.py's CSS constant, found by a11y_scan.py's
+     full-tree sweep -- this file sits in a subdirectory a glob of
+     site/comedy-atlas/*.html alone misses, so it was fixed in a later
+     pass than the rest. --red's DARK value also darkened separately
+     (kept light) since #status-line[role="alert"] uses it as text and
+     the original failed against the dark bg/card too -- see the report's
+     "red token" note. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--red:#c41e3a;--green:#2b7e37}
 }
 :root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
 :root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
@@ -40,19 +48,34 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 h1{font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.5px;margin:24px 0 16px}
 .search-box{display:flex;gap:8px;margin-bottom:16px}
-#q{flex:1;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit}
+#q{flex:1;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;min-height:44px;box-sizing:border-box}
 #q:focus{outline:2px solid var(--purple-light);outline-offset:1px}
+/* Touch targets >=44px CSS px (coordinator usability audit, 2026-08-04:
+   "Search filter buttons (All / Shows / Comics / Venues / Festivals /
+   Cities / Organizers): 32px tall, 73% of the 44px minimum"). min-height
+   on the button itself, not just padding, guarantees the box never falls
+   under 44px regardless of font metrics. */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;list-style:none}
-.tab{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.tab{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;min-height:44px;box-sizing:border-box}
 .tab[aria-selected="true"]{color:var(--text);border-color:var(--gold);background:rgba(201,168,76,.12)}
 .tab .tab-n{color:var(--muted);font-weight:500;margin-left:4px}
 #status-line{font-size:13px;color:var(--muted);margin-bottom:10px;min-height:1.2em}
 #status-line[role="alert"]{color:var(--red)}
 ul#results{list-style:none}
-.result{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+/* Thumbnail-first result row (coordinator usability audit, 2026-08-04:
+   search results measured at 0% image coverage -- a text-only list).
+   Real photo for a comic/event where the index carries one (rec.photo);
+   every other result gets the SAME deterministic name-initial monogram
+   scripts/placeholder_avatar.py established for the comics/venues/shows
+   directories, generated client-side (avatarDataUri() below) so the JSON
+   payload never has to carry embedded image bytes for the vast majority
+   of rows that have no real photo at all. */
+.result{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;min-height:44px}
 .result[aria-selected="true"],.result:hover{border-color:var(--purple-light)}
 .result:focus-within{outline:2px solid var(--purple-light);outline-offset:1px}
-.result a{display:block;color:inherit}
+.result a{display:flex;gap:12px;align-items:center;color:inherit;width:100%;min-width:0}
+.result-thumb{width:44px;height:44px;border-radius:9px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.result-body{min-width:0;flex:1}
 .result-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
 .result-name{font-size:15px;font-weight:700}
 .result-type{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:2px 8px;white-space:nowrap}
@@ -60,13 +83,16 @@ ul#results{list-style:none}
 mark{background:rgba(201,168,76,.35);color:inherit;border-radius:3px;padding:0 1px}
 .empty-state,.error-state{color:var(--muted);font-size:14px;padding:32px 12px;text-align:center}
 .error-state{color:var(--red)}
-.error-state button,.retry-btn{margin-top:10px;background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.error-state button,.retry-btn{margin-top:10px;background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;min-height:44px}
 .pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:20px}
-.pagination button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.pagination button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;min-height:44px}
 .pagination button:disabled{opacity:.4;cursor:default}
 .pagination span{font-size:13px;color:var(--muted)}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
 noscript .result-meta{margin-top:2px}
 [hidden]{display:none!important}
 @media(max-width:600px){.nav-links{font-size:13px;gap:14px}}
@@ -74,11 +100,10 @@ noscript .result-meta{margin-top:2px}
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
-<a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
   <div class="nav-links">
-    <a href="/comedy-atlas/search/">Explore</a>
+    <a href="/comedy-atlas/search/" class="nav-active" aria-current="page">Explore</a>
     <a href="/shows.html">Shows</a>
     <a href="/comedy-atlas/comics/">Comics</a>
     <a href="/comedy-atlas/venues/">Venues</a>
@@ -89,7 +114,7 @@ noscript .result-meta{margin-top:2px}
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
-<main id="main-content">
+<main id="main-content" tabindex="-1">
   <h1>Search COMEDY ATLAS</h1>
   <div class="search-box">
     <label for="q" class="sr-only">Search shows, comics, venues, festivals, cities and organizers</label>
@@ -115,15 +140,19 @@ noscript .result-meta{margin-top:2px}
     <p style="color:var(--muted);font-size:13px;margin-top:16px">
       This search box needs JavaScript. Browse instead:
       <a href="/comedy-atlas/comics/">Comics</a> ·
+      <a href="/comedy-atlas/venues/">Venues</a> ·
+      <a href="/comedy-atlas/show/">Shows &amp; series</a> ·
       <a href="/comedy-atlas/cities/">Cities</a> ·
       <a href="/comedy-atlas/festival/">Festivals</a> ·
-      <a href="/shows.html">Shows</a>
+      <a href="/shows.html">Calendar</a>
     </p>
   </noscript>
 </main>
 <footer>
-  COMEDY ATLAS
-  <div><a href="/comedy-atlas/privacy.html">Privacy</a> · <a href="/comedy-atlas/about.html">About</a></div>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script>
 (function () {
@@ -141,9 +170,15 @@ noscript .result-meta{margin-top:2px}
   var PAGE_SIZE = 20;
   var DEBOUNCE_MS = 150;
 
+  // "show" (I2, 2026-08-04, Wave 1 §5.3): permanent show-series entities
+  // (e.g. "The Comedy Embassy"), a DIFFERENT thing from "event" (one DATED
+  // performance) -- see scripts/generate_search_index.py's fetch_shows()
+  // docstring. Labelled "Series" here so it never reads as a second
+  // "Shows" tab next to the existing dated-event one.
   var TYPES = [
     { key: "", label: "All" },
     { key: "event", label: "Shows" },
+    { key: "show", label: "Series" },
     { key: "comic", label: "Comics" },
     { key: "venue", label: "Venues" },
     { key: "festival", label: "Festivals" },
@@ -214,11 +249,29 @@ noscript .result-meta{margin-top:2px}
     return d.innerHTML;
   }
 
+  // ACCENT-INSENSITIVE MATCHING (I2, 2026-08-04, directive §5.3: "Normalize
+  // case, accents, punctuation, leading articles, and aliases without
+  // erasing entity identity"). Same NFD-normalize-and-strip-combining-
+  // diacriticals technique generate_comics_index.py's own H4 fix (2026-08-03)
+  // already established for the comics directory's client-side search --
+  // reused verbatim here so a visitor who cannot type "é" still finds
+  // "Café Comedy" by typing "cafe comedy", on every page that searches by
+  // name, not just one of them. Applied identically to indexed haystacks
+  // (once, at load time) and every keystroke's query, so the substring
+  // comparison in runSearch() never has to know accents exist.
+  function foldAccents(s) {
+    try {
+      return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    } catch (e) {
+      return s; // pre-NFD browser: degrades to the old exact-accent match
+    }
+  }
+
   function buildHaystack(rec) {
     var parts = [rec.name || ""];
     if (rec.aliases) { parts = parts.concat(rec.aliases); }
     if (rec.city) { parts.push(rec.city); }
-    return parts.join(" ␟ ").toLowerCase();
+    return foldAccents(parts.join(" ␟ ").toLowerCase());
   }
 
   function loadIndex() {
@@ -315,13 +368,59 @@ noscript .result-meta{margin-top:2px}
     return bits.join(" · ");
   }
 
-  var TYPE_LABEL = { event: "Show", comic: "Comic", venue: "Venue",
+  var TYPE_LABEL = { event: "Show", show: "Series", comic: "Comic", venue: "Venue",
                       festival: "Festival", city: "City", organizer: "Organizer" };
+
+  // THUMBNAILS (I2, 2026-08-04, coordinator usability audit: search
+  // results measured at 0% image coverage). rec.photo (comic/event only --
+  // see generate_search_index.py's ALLOWED_KEYS docstring for why no other
+  // type ever carries one) is a real photo when present; every other
+  // result gets a deterministic initials-monogram, generated client-side
+  // so the JSON payload never needs to embed image bytes for the vast
+  // majority of rows with no real photo. Same palette/initials/determinism
+  // rules as scripts/placeholder_avatar.py (one swatch per record, stable
+  // across reloads) -- a different hash implementation (no sha256 in a
+  // dependency-free inline script), but the same NOT-a-real-photo contract:
+  // a plain initials-on-color square, never a fabricated image of a person
+  // or place.
+  var AVATAR_PALETTE = ["#7c3aed", "#9d5ff5", "#c9a84c", "#5b21b6",
+                         "#8b6f2e", "#4c1d95", "#a67c00", "#6d28d9"];
+
+  function avatarInitials(name) {
+    var words = (name || "").match(/[A-Za-z0-9À-ɏ]+/g);
+    if (!words || !words.length) { return "?"; }
+    if (words.length === 1) { return words[0].slice(0, 2).toUpperCase(); }
+    return (words[0][0] + words[1][0]).toUpperCase();
+  }
+
+  function avatarSwatch(key) {
+    var h = 0;
+    var s = key || "";
+    for (var i = 0; i < s.length; i++) {
+      h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    }
+    return AVATAR_PALETTE[Math.abs(h) % AVATAR_PALETTE.length];
+  }
+
+  function avatarDataUri(name, key) {
+    var initials = avatarInitials(name);
+    var color = avatarSwatch(key);
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img">' +
+      '<rect width="120" height="120" rx="18" fill="' + color + '"/>' +
+      '<text x="60" y="64" text-anchor="middle" ' +
+      'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" ' +
+      'font-size="46" font-weight="700" fill="#f5f0e6">' + esc(initials) + '</text></svg>';
+    return "data:image/svg+xml," + encodeURIComponent(svg);
+  }
+
+  function thumbSrc(rec) {
+    return rec.photo || avatarDataUri(rec.name, rec.url || rec.name || "");
+  }
 
   function runSearch() {
     if (!ALL_RECORDS) { return; }
     markTabSelected();
-    var q = state.q.trim().toLowerCase();
+    var q = foldAccents(state.q.trim().toLowerCase());
     var matches = [];
     for (var i = 0; i < ALL_RECORDS.length; i++) {
       var rec = ALL_RECORDS[i];
@@ -334,7 +433,7 @@ noscript .result-meta{margin-top:2px}
     // stable and never invented.
     if (q) {
       matches.sort(function (a, b) {
-        var an = (a.name || "").toLowerCase(), bn = (b.name || "").toLowerCase();
+        var an = foldAccents((a.name || "").toLowerCase()), bn = foldAccents((b.name || "").toLowerCase());
         var rank = function (n) { return n === q ? 0 : (n.indexOf(q) === 0 ? 1 : 2); };
         var ra = rank(an), rb = rank(bn);
         if (ra !== rb) { return ra - rb; }
@@ -370,6 +469,16 @@ noscript .result-meta{margin-top:2px}
       li.setAttribute("aria-selected", "false");
       var a = document.createElement("a");
       a.href = rec.url;
+      var thumb = document.createElement("img");
+      thumb.className = "result-thumb";
+      thumb.src = thumbSrc(rec);
+      thumb.alt = "";
+      thumb.loading = "lazy";
+      thumb.addEventListener("error", function () {
+        this.src = avatarDataUri(rec.name, rec.url || rec.name || "");
+      });
+      var body = document.createElement("div");
+      body.className = "result-body";
       var top = document.createElement("div");
       top.className = "result-top";
       var name = document.createElement("span");
@@ -383,8 +492,10 @@ noscript .result-meta{margin-top:2px}
       var meta = document.createElement("div");
       meta.className = "result-meta";
       meta.textContent = metaLine(rec);
-      a.appendChild(top);
-      a.appendChild(meta);
+      body.appendChild(top);
+      body.appendChild(meta);
+      a.appendChild(thumb);
+      a.appendChild(body);
       li.appendChild(a);
       resultsEl.appendChild(li);
     });

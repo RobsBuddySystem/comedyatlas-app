@@ -12,14 +12,18 @@
 <link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#c41e3a;--green:#3fb950}
-@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#e34b64;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
 a{color:var(--purple-light);text-decoration:none}
 a:hover{text-decoration:underline}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
-.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a{color:var(--muted)}
@@ -58,9 +62,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </nav>
 
-<div class="container" id="main-content">
+<div class="container" id="main-content" tabindex="-1">
   <h1>Privacy<span class="dot">.</span></h1>
-  <p class="sub">Plain language, no legalese. Last updated 20 July 2026.</p>
+  <p class="sub">Plain language, no legalese. Last updated 2 August 2026.</p>
 
   <div class="card">
     <h2>What we collect</h2>
@@ -92,6 +96,46 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 
   <div class="card">
+    <h2>Analytics &amp; cookies</h2>
+    <p>We run two separate analytics tools. They are not the same thing, and
+      only one of them needs your permission:</p>
+    <ul>
+      <li><strong>Our own first-party beacon</strong> (page path, referrer,
+        screen size, browser language, and a random per-tab session id —
+        never a name, email, or IP stored against it) posts straight to our
+        own API. It has no third-party recipient and sets no cross-site
+        cookie. This is the aggregate-analytics data described above, it
+        runs on every visit, and we treat it as strictly necessary to
+        operate the site — so it is <strong>not</strong> gated behind the
+        choice below.</li>
+      <li><strong>Google Analytics (GA4, measurement ID
+        <code>G-1Q74JY864H</code>)</strong> is optional and off by default.
+        On your first visit you'll see a banner with an Accept and a Reject
+        button — <strong>rejecting is exactly as easy as accepting</strong>,
+        one click either way, no pre-ticked box, no follow-up nag. No
+        request to Google of any kind is made, and no Google cookie
+        (<code>_ga</code>, <code>_gid</code>) is set, unless and until you
+        click Accept. Google acts as the processor; the purpose is
+        aggregate traffic and audience measurement (visits, pages, rough
+        location from IP, device/browser type) — we never send it a name,
+        email, or account id. Data retention follows Google's own GA4
+        property configuration, not a setting we control; see
+        <a href="https://policies.google.com/privacy" rel="noopener">Google's
+        privacy policy</a> for how Google itself handles it.</li>
+      <li>COMEDY ATLAS and <a href="https://pariscomedy.com">pariscomedy.com</a>
+        share this one GA4 property (same project, two domains), with
+        Google's cross-domain linking configured so moving between the two
+        doesn't fragment a session into a false "referral" in either
+        site's traffic reports.</li>
+      <li>Change your mind any time:
+        <button type="button" onclick="if(window.AtlasConsent)window.AtlasConsent.showBanner();"
+          style="background:none;border:none;padding:0;font:inherit;color:var(--purple-light);text-decoration:underline;cursor:pointer">reopen
+          the analytics choice</button>, or clear your browser's storage to
+        reset it.</li>
+    </ul>
+  </div>
+
+  <div class="card">
     <h2>What we never do</h2>
     <ul>
       <li><span class="never">We never publish anyone's personal contact
@@ -101,17 +145,25 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         share audience numbers with a sponsor or partner, it's aggregate
         only — totals per city and country — never names, emails, IPs, or
         individual histories.</li>
-      <li><span class="never">No ad trackers, no third-party analytics
-        scripts.</span> The only analytics beacon on this site is ours.</li>
-      <li><span class="never">No consent-wall theatre.</span> We don't need a
-        cookie banner because we don't do cross-site tracking. The one cookie
-        we set is a session cookie when you sign in.</li>
+      <li><span class="never">No ad trackers, no cross-site retargeting, no
+        data brokers.</span> Neither analytics tool above shares data with
+        an ad network, and nothing on this site follows you to another
+        site.</li>
+      <li><span class="never">No dark patterns in the consent choice.</span>
+        Reject is the same size, same click count, and same one-step
+        process as Accept — see "Analytics &amp; cookies" above.</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>Retention &amp; your choices</h2>
     <ul>
+      <li>Your Google Analytics choice (accept/reject) lives in your own
+        browser's storage, not our servers — reject it, accept it, or
+        reopen the banner and change it any time (see "Analytics &amp;
+        cookies" above). Clearing your browser storage resets it to
+        "not asked yet", and the banner will show again on your next
+        visit.</li>
       <li>Technical logs are kept only as long as needed for security and
         trend analysis, then reduced to aggregate statistics.</li>
       <li>Your city preference lives in your own browser — clear your
@@ -135,16 +187,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links">
-    <a href="https://instagram.com/comedyatlasapp" target="_blank" rel="noopener">Instagram</a>
-    <span class="sep">·</span>
-    <a href="mailto:contact@comedyatlas.app">contact@comedyatlas.app</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/privacy.html">Privacy</a>
-    <span class="sep">·</span>
-    <a href="/comedy-atlas/terms.html">Terms</a>
-  </div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="atlas-track.js"></script>
 </body>

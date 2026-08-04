@@ -74,10 +74,21 @@
   }
 
   // Signed-in fan's home city; resolves to city name or null. Never rejects.
+  //
+  // `?quiet=1` (P1-3, 2026-08-02): this runs on EVERY page load for EVERY
+  // visitor, the overwhelming majority of whom have never signed in --
+  // the bare (no quiet=1) endpoint correctly 401s for them, but a browser
+  // logs any non-2xx fetch response as a console error regardless of how
+  // this .catch() handles it, so plain visitors got a visible "failed to
+  // load resource: 401" on every single page. The `quiet=1` variant always
+  // answers 200 (`{signed_in:false}` anonymous, `{signed_in:true,
+  // ...profile}` authenticated) -- same information, no error-level log.
   function fanHomeCity() {
-    return fetch(API_BASE + "/fan/me", { credentials: "include" })
-      .then(function (r) { if (!r.ok) throw new Error("not signed in"); return r.json(); })
-      .then(function (me) { return (me && me.home_city) ? String(me.home_city) : null; })
+    return fetch(API_BASE + "/fan/me?quiet=1", { credentials: "include" })
+      .then(function (r) { if (!r.ok) throw new Error("fan/me request failed"); return r.json(); })
+      .then(function (me) {
+        return (me && me.signed_in && me.home_city) ? String(me.home_city) : null;
+      })
       .catch(function () { return null; });
   }
 

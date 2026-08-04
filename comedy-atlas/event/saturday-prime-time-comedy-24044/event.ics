@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-prime-time-comedy-24044@comedyatlas.app
+DTSTAMP:20260816T000000Z
+DTSTART:20260816T000000Z
+DTEND:20260816T020000Z
+SUMMARY:Saturday Prime Time Comedy
+LOCATION:New York
+DESCRIPTION:Saturday Prime Time Comedy!FEATURING SPECIAL GUEST COMEDIANS...
+ (Lineup coming soon)\nMore info: https://comedyatlas.app/comedy-atlas/event
+ /saturday-prime-time-comedy-24044/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-prime-time-comedy-2
+ 4044/
+END:VEVENT
+END:VCALENDAR

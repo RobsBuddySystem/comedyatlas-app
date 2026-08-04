@@ -531,41 +531,90 @@ export function buildVenuePanel(doc, venue) {
   return wrap;
 }
 
-/** Honest note about REAL venues we hold but cannot place on the map because
- * we have no verified coordinates for them. Never used for shows that have
- * no venue at all — see buildUnassignedNote for that, distinct, state. */
-export function buildUnmappedNote(doc, unmapped) {
-  if (!unmapped || !unmapped.count) return null;
-  const p = doc.createElement('p');
-  p.className = 'atlas-map-unmapped-note';
-  const shows = unmapped.unmappedShowCount || 0;
-  p.textContent =
-    `${unmapped.count} more venue${unmapped.count === 1 ? '' : 's'} in this city `
-    + `(${shows} show${shows === 1 ? '' : 's'}) ${unmapped.count === 1 ? 'is' : 'are'} `
-    + 'not on the map yet — we have no verified coordinates for '
-    + `${unmapped.count === 1 ? 'it' : 'them'}.`;
-  return p;
-}
-
 /**
- * Honest note about shows that have NO venue assigned at all (2026-08-02
- * fix). This is a fundamentally different state from buildUnmappedNote's
- * "we have a venue but no verified coordinates for it" — there is no venue
- * record here to describe, so the copy must never imply one exists. This is
- * the direct fix for the production bug where such shows were invented into
- * a fake unmappedVenues entry ({"id": null, "name": null, ...}) and reported
- * with the "no verified coordinates" copy that presumes a real venue.
+ * H2 (2026-08-03): the visitor-facing summary for a city's map panel.
+ *
+ * Replaces the two notes this file used to render (removed 2026-08-03) that
+ * described the map's two internal "why isn't this show pinned" states in
+ * database vocabulary — a real venue this repo holds but cannot verify
+ * coordinates for, and a show with no venue record at all. Both states were
+ * added honestly (2026-08-02, so a visitor was never told a gap simply
+ * didn't exist) but explained in the register of the schema that produced
+ * them, not the register of someone deciding whether to come to a show.
+ * That reads like a database error on a page about to be shown to real
+ * venues and comics.
+ *
+ * This function keeps the same honesty — the two underlying counts are
+ * still summed here, never dropped — while describing the result the way a
+ * visitor would want it: how many shows they can see pinned right now, how
+ * many more exist whose pin isn't ready yet, and a link so an unpinned show
+ * is always still one click away, never actually hidden. Robert's copy
+ * pattern (his own wording, task H2 brief):
+ *
+ *   Primary:   "20 upcoming shows across 4 mapped venues."
+ *   Secondary: "22 additional dates have locations still being confirmed."
+ *              (the paragraph is omitted entirely when this count is 0 —
+ *              never rendered as "0 additional dates...", which would be
+ *              noise, not honesty)
+ *   Link:      "View all <City> shows"
+ *
+ * A city with 0 mapped venues still gets an honest primary line ("N
+ * upcoming shows across 0 mapped venues.") — never a coverage claim that
+ * isn't true.
+ *
+ * @param {Document} doc
+ * @param {object} payload city-map payload (scripts/map_data/build.py shape:
+ *   .venues[], .unmappedVenues.unmappedShowCount, .unassignedShowCount,
+ *   .city.name/.slug)
+ * @param {string|null} [cityHref] href for the "View all <City> shows" link.
+ *   No link is rendered when this is falsy (caller has none to offer).
+ * @returns {HTMLElement} a <div class="atlas-map-summary"> with 1-3 <p> children.
  */
-export function buildUnassignedNote(doc, unassignedShowCount) {
-  const count = unassignedShowCount || 0;
-  if (!count) return null;
-  const p = doc.createElement('p');
-  p.className = 'atlas-map-unassigned-note';
-  p.textContent =
-    `${count} upcoming show${count === 1 ? '' : 's'} in this city `
-    + `don't have a venue assigned yet, so ${count === 1 ? 'it can' : 'they can'} `
-    + "not be placed on the map.";
-  return p;
+export function buildCityMapSummary(doc, payload, cityHref) {
+  const venues = Array.isArray(payload && payload.venues) ? payload.venues : [];
+  const mappedVenueCount = venues.length;
+  const mappedShowCount = venues.reduce(
+    (n, v) => n + activeShows(v && v.shows).length, 0);
+
+  // Both honest P0-1/2026-08-02 counts, summed rather than explained by
+  // cause — see the function docstring above.
+  const unassignedCount = (payload && payload.unassignedShowCount) || 0;
+  const unmappedCount = (payload && payload.unmappedVenues
+    && payload.unmappedVenues.unmappedShowCount) || 0;
+  const additionalCount = unassignedCount + unmappedCount;
+
+  const cityName = (payload && payload.city && payload.city.name) || 'this city';
+
+  const wrap = doc.createElement('div');
+  wrap.className = 'atlas-map-summary';
+
+  const primary = doc.createElement('p');
+  primary.className = 'atlas-map-summary-primary';
+  primary.textContent =
+    `${mappedShowCount} upcoming show${mappedShowCount === 1 ? '' : 's'} `
+    + `across ${mappedVenueCount} mapped venue${mappedVenueCount === 1 ? '' : 's'}.`;
+  wrap.appendChild(primary);
+
+  if (additionalCount > 0) {
+    const secondary = doc.createElement('p');
+    secondary.className = 'atlas-map-summary-secondary';
+    secondary.textContent = additionalCount === 1
+      ? '1 additional date has a location still being confirmed.'
+      : `${additionalCount} additional dates have locations still being confirmed.`;
+    wrap.appendChild(secondary);
+  }
+
+  if (cityHref) {
+    const linkP = doc.createElement('p');
+    linkP.className = 'atlas-map-summary-link';
+    const a = doc.createElement('a');
+    a.href = cityHref;
+    a.textContent = `View all ${cityName} shows`;
+    linkP.appendChild(a);
+    wrap.appendChild(linkP);
+  }
+
+  return wrap;
 }
 
 export const __internal = {
@@ -575,8 +624,7 @@ export const __internal = {
   fitPaddingFor,
   formatShowWhen,
   buildVenuePanel,
-  buildUnmappedNote,
-  buildUnassignedNote,
+  buildCityMapSummary,
   nasaOpacityForZoom,
   VENUE_STATE_COLORS,
   IDLE_RESUME_DELAY_MS,

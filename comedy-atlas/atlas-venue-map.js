@@ -141,6 +141,64 @@
       .sort(function (a, b) { return a.distance_km - b.distance_km; });
   }
 
+  // ---- honest map-coverage summary (H3, 2026-08-03) ----------------------
+  //
+  // Robert's pattern (applied first on the homepage MapLibre city panel,
+  // task H2): "N upcoming shows across M mapped venues." / "K additional
+  // dates have locations still being confirmed." This map used to render
+  // ONLY the mapped count ("N mapped venues") and, at zero mapped venues,
+  // a generic "No mapped venues yet" message that never stated how many
+  // real, already-filtered events were being left off the map entirely --
+  // silent omission, the exact dishonesty this pattern exists to fix. The
+  // events themselves were never hidden from the page (the card list above
+  // the map always had them), but the map's OWN summary text claimed
+  // nothing was wrong. This section makes the map say what it's leaving
+  // out, same rules as the homepage panel: never invent a venue, never
+  // hide a valid show from the list above, counts truthful, singular/
+  // plural/zero handled explicitly.
+  //
+  // totalCount: every event this map was asked to render (city.html passes
+  //   its already-filtered `filtered` array -- the same count the page's
+  //   own "N shows match your filters" line uses, so the two numbers on
+  //   the page can never disagree).
+  // venues: the ALREADY-COORDINATE-FILTERED groups from groupByVenue().
+  function mapSummaryCounts(totalCount, venues) {
+    var mappedVenueCount = venues.length;
+    var mappedShowCount = venues.reduce(function (n, v) { return n + v.events.length; }, 0);
+    var additionalCount = Math.max(0, totalCount - mappedShowCount);
+    return {
+      mappedShowCount: mappedShowCount,
+      mappedVenueCount: mappedVenueCount,
+      additionalCount: additionalCount
+    };
+  }
+
+  function mapSummaryText(totalCount, venues) {
+    var counts = mapSummaryCounts(totalCount, venues);
+    var primary = counts.mappedShowCount + " upcoming show" +
+      (counts.mappedShowCount === 1 ? "" : "s") + " across " +
+      counts.mappedVenueCount + " mapped venue" +
+      (counts.mappedVenueCount === 1 ? "" : "s") + ".";
+    var secondary = null;
+    if (counts.additionalCount > 0) {
+      secondary = counts.additionalCount === 1
+        ? "1 additional date has a location still being confirmed."
+        : counts.additionalCount + " additional dates have locations still being confirmed.";
+    }
+    return { primary: primary, secondary: secondary };
+  }
+
+  function summaryHtml(totalCount, venues) {
+    var text = mapSummaryText(totalCount, venues);
+    var html = '<div class="venue-map-summary">' +
+      '<p class="venue-map-summary-primary">' + escapeHtml(text.primary) + "</p>";
+    if (text.secondary) {
+      html += '<p class="venue-map-summary-secondary">' + escapeHtml(text.secondary) + "</p>";
+    }
+    html += "</div>";
+    return html;
+  }
+
   function eventLinkHref(ev) {
     if (ev.slug) return "/comedy-atlas/event/" + ev.slug + "/";
     if (ev.canonical_event_url) {
@@ -210,10 +268,17 @@
   function render(container, events, opts) {
     opts = opts || {};
     var basePath = opts.basePath || "";
+    var totalCount = events.length;
     var venues = groupByVenue(events);
 
     if (!venues.length) {
+      // H3: even with nothing to plot, the honest counts still render --
+      // "0 upcoming shows across 0 mapped venues." plus the truthful
+      // additional-dates line when totalCount > 0. Previously this branch
+      // said only "No mapped venues yet", never how many real events were
+      // being left off the map.
       container.innerHTML =
+        summaryHtml(totalCount, venues) +
         '<div class="venue-map-empty">No mapped venues yet for this view — ' +
         "venue coordinates are added as our OSM verification work reaches " +
         "each city. Nothing is guessed: a venue only gets a pin once its " +
@@ -224,14 +289,12 @@
     container.innerHTML =
       '<div class="venue-map-toolbar">' +
       '<button type="button" class="venue-map-locate-btn">📍 Show my location on this map</button>' +
-      '<span class="venue-map-count"></span>' +
       "</div>" +
+      summaryHtml(totalCount, venues) +
       '<div class="venue-map-canvas" style="height:360px;border-radius:12px;overflow:hidden"></div>' +
       '<div class="venue-map-status"></div>';
 
-    var countEl = container.querySelector(".venue-map-count");
-    countEl.textContent = venues.length + " mapped venue" + (venues.length === 1 ? "" : "s");
-
+    var summaryPrimaryEl = container.querySelector(".venue-map-summary-primary");
     var mapEl = container.querySelector(".venue-map-canvas");
     var statusEl = container.querySelector(".venue-map-status");
     var locateBtn = container.querySelector(".venue-map-locate-btn");
@@ -307,8 +370,11 @@
             }).addTo(map).bindTooltip("You are here", { permanent: false });
             markers.push(youMarker);
             var sorted = sortByDistance(venues, lat, lon);
-            countEl.textContent = venues.length + " mapped venue" + (venues.length === 1 ? "" : "s") +
-              " — nearest: " + escapeHtml(sorted[0].name) + " (" + sorted[0].distance_km + " km)";
+            if (summaryPrimaryEl) {
+              var baseText = mapSummaryText(totalCount, venues).primary;
+              summaryPrimaryEl.textContent = baseText.replace(/\.$/, "") +
+                " — nearest: " + sorted[0].name + " (" + sorted[0].distance_km + " km)";
+            }
             map.setView([lat, lon], 12);
           },
           function () {
@@ -331,6 +397,9 @@
     sortByDistance: sortByDistance,
     eventLinkHref: eventLinkHref,
     popupHtml: popupHtml,
+    mapSummaryCounts: mapSummaryCounts,
+    mapSummaryText: mapSummaryText,
+    summaryHtml: summaryHtml,
     render: render
   };
 })(typeof window !== "undefined" ? window : global);

@@ -25,15 +25,41 @@
     cssInjected = true;
     var css = "" +
       ".atlas-sub-block{border:1px solid var(--border,#1e2a3a);border-radius:12px;padding:18px 20px;margin:20px auto;max-width:640px;background:var(--card,#111827);color:var(--text,#f0f0f0)}" +
-      "@media(prefers-color-scheme:light){.atlas-sub-block{background:#fff;color:#171512;border-color:#e2ddd2}}" +
       ".atlas-sub-block h3{font-size:15px;margin:0 0 4px}" +
       ".atlas-sub-block p{font-size:12.5px;color:#8899aa;margin:0 0 10px}" +
       ".atlas-sub-row{display:flex;gap:8px;flex-wrap:wrap}" +
       ".atlas-sub-row input[type=email],.atlas-sub-row input[type=text]{flex:1;min-width:160px;padding:9px 11px;border-radius:8px;border:1px solid #1e2a3a;background:transparent;color:inherit;font:inherit}" +
+      // I1 (Wave 1 5.1, 2026-08-04): the 160px min-width above (each input
+      // requesting its own 160px even after wrapping to its own row) is
+      // wider than the padded content box of a viewport at 400% zoom
+      // (768/4=192px CSS px, minus .container's 20px each-side padding =
+      // 152px available) -- causes a real, reproducible horizontal
+      // scrollbar on every page carrying this mount point (homepage +
+      // every city page), Playwright-verified 2026-08-04, see
+      // tests/test_chrome_touch_targets.py. flex-wrap:wrap already puts
+      // each input on its own line at narrow widths; this override just
+      // lets that single input actually shrink to fit instead of holding
+      // a hard 160px floor past the point where anything needs to share
+      // the row with it.
+      "@media(max-width:420px){.atlas-sub-row input[type=email],"
+      + ".atlas-sub-row input[type=text]{min-width:0;width:100%}}" +
       ".atlas-sub-row button{padding:9px 16px;border-radius:8px;border:none;font-weight:700;cursor:pointer;background:#7c3aed;color:#fff}" +
       ".atlas-sub-row button:hover{opacity:.92}" +
       ".atlas-sub-msg{font-size:12.5px;margin-top:8px}" +
-      ".atlas-sub-consent{font-size:11.5px;color:#8899aa;margin-top:8px}";
+      ".atlas-sub-consent{font-size:11.5px;color:#8899aa;margin-top:8px}" +
+      // P1-2 (2026-08-02, WCAG 2.1 AA): placed AFTER the base rules above
+      // (not interleaved, see atlas-track.js's own fix for why source
+      // order matters for equal-specificity CSS) so this wins the cascade
+      // in light mode. #8899aa (this widget's own hardcoded blue-gray,
+      // same literal value as every other page's --muted dark-mode value)
+      // measured 2.68-2.92:1 against the light-mode card/bg, well under
+      // 4.5:1 -- reused the SAME #5a5348 every other page's light-mode
+      // --muted already resolves to (verified 6.97:1 against #f7f5f0),
+      // not a new color choice.
+      "@media(prefers-color-scheme:light){" +
+      ".atlas-sub-block{background:#fff;color:#171512;border-color:#e2ddd2}" +
+      ".atlas-sub-block p{color:#5a5348}" +
+      ".atlas-sub-consent{color:#5a5348}}";
     var style = document.createElement("style");
     style.textContent = css;
     document.head.appendChild(style);

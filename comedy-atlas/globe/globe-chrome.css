@@ -795,6 +795,22 @@
   padding-top:6px;border-top:1px solid var(--atlas-globe-panel-border);
 }
 
+/* H2 (2026-08-03): city-panel summary (buildCityMapSummary) -- primary
+   "N shows across M mapped venues" line, optional secondary "N additional
+   dates..." line, and the "View all <City> shows" link. */
+.atlas-map-summary{display:flex;flex-direction:column;gap:6px}
+.atlas-map-summary-primary{
+  font-size:13px;font-weight:600;color:var(--atlas-globe-cream);margin:0;
+}
+.atlas-map-summary-secondary{
+  font-size:11.5px;color:var(--atlas-globe-muted);margin:0;line-height:1.4;
+}
+.atlas-map-summary-link{margin:2px 0 0}
+.atlas-map-summary-link a{
+  font-size:12px;color:var(--atlas-globe-gold);text-decoration:none;
+}
+.atlas-map-summary-link a:hover{text-decoration:underline}
+
 /* MapLibre provider: the map is LIGHT at city zoom (OpenFreeMap Liberty),
    unlike the near-black three.js stage this chrome was designed against.
    Panels therefore need their own opaque backing or their cream text renders

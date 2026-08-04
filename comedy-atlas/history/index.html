@@ -6,6 +6,12 @@
 <title>History &amp; influence — COMEDY ATLAS</title>
 <meta name="description" content="A sourced archive of stand-up history and influence. Every entry and every relationship carries its evidence.">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/history/">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="History &amp; influence — COMEDY ATLAS">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/history/">
@@ -13,10 +19,25 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c}
-@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#fff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#fff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024}}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.55}
 a{color:inherit}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.nav-logo{min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+}
+
 main{max-width:820px;margin:0 auto;padding:32px 20px 64px}
 h1{font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.5px}
 .lede{color:var(--muted);margin-top:10px;font-size:17px}
@@ -44,13 +65,13 @@ ul.bar strong{color:var(--text)}
     <a href="/comedy-atlas/comics/">Comics</a>
     <a href="/comedy-atlas/venues/">Venues</a>
     <a href="/comedy-atlas/festival/">Festivals</a>
-    <a href="/comedy-atlas/history/">History</a>
+    <a href="/comedy-atlas/history/" class="nav-active" aria-current="page">History</a>
     <a href="/comedy-atlas/guide/">Learn</a>
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
 </nav>
-<main id="main-content">
+<main id="main-content" tabindex="-1">
   <h1>History &amp; influence</h1>
   <p class="lede">A sourced archive of stand-up: who did what, where, and who
     shaped whom. Every entry and every relationship carries its evidence.</p>
@@ -94,5 +115,6 @@ ul.bar strong{color:var(--text)}
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
+<script defer src="/comedy-atlas/atlas-track.js"></script>
 </body>
 </html>

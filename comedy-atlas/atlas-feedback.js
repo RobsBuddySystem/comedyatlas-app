@@ -44,10 +44,19 @@
     // rule were written second it would win at EVERY width, including
     // narrow ones, and the toggle would never become visible.
     style.textContent =
+      // I1 (Wave 1 5.1, 2026-08-04): was 36x36 with an invisible ::before
+      // padding the pointer-event hit area out to 44x44 (G11 Part B,
+      // 2026-08-03). That pseudo-element is not part of the real
+      // <button>'s own layout box, so getBoundingClientRect() on the
+      // button itself -- what a touch-target auditor checks, and what
+      // Robert (poor eyesight, wants large simple controls) actually
+      // sees -- stayed 36x36. Measured live with Playwright, see
+      // tests/test_chrome_touch_targets.py. Now a real 44x44 box: both
+      // correctly measured and visibly larger.
       ".atlas-nav-toggle{display:none;align-items:center;justify-content:center;" +
-      "width:36px;height:36px;border:1px solid var(--border,#1e2a3a);border-radius:8px;" +
-      "background:transparent;color:var(--text,inherit);cursor:pointer;padding:0;" +
-      "font-size:18px;line-height:1;margin-left:auto}" +
+      "position:relative;width:44px;height:44px;border:1px solid var(--border,#1e2a3a);" +
+      "border-radius:8px;background:transparent;color:var(--text,inherit);cursor:pointer;" +
+      "padding:0;font-size:18px;line-height:1;margin-left:auto;box-sizing:border-box}" +
       ".atlas-nav-toggle:hover{border-color:var(--purple,#7c3aed)}" +
       "@media(max-width:480px){" +
       ".atlas-nav-toggle{display:inline-flex}" +
@@ -139,7 +148,6 @@
     "@media(max-width:480px){.atlas-fb-btn{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:44px;height:44px;padding:0;font-size:18px;line-height:44px;text-align:center;border-radius:50%}.atlas-fb-btn-label{display:none}}" +
     ".atlas-fb-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center}" +
     ".atlas-fb-card{background:#111827;color:#f0f0f0;border:1px solid #1e2a3a;border-radius:12px;max-width:420px;width:calc(100% - 32px);padding:20px;font:14px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}" +
-    "@media(prefers-color-scheme:light){.atlas-fb-card{background:#fff;color:#171512;border-color:#e2ddd2}}" +
     ".atlas-fb-card h3{margin:0 0 4px;font-size:16px}.atlas-fb-card p{margin:0 0 12px;color:#8899aa;font-size:12.5px}" +
     ".atlas-fb-card textarea,.atlas-fb-card input{width:100%;box-sizing:border-box;padding:9px 11px;border-radius:8px;border:1px solid #1e2a3a;background:transparent;color:inherit;font:inherit;margin-bottom:10px}" +
     ".atlas-fb-card textarea{min-height:90px;resize:vertical}" +
@@ -153,7 +161,25 @@
     ".atlas-fb-quickpicks{display:none;flex-wrap:wrap;gap:6px;margin-bottom:10px}" +
     ".atlas-fb-qp{font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;" +
     "border:1px solid #8899aa;background:transparent;color:inherit;cursor:pointer}" +
-    ".atlas-fb-qp.active{border-color:#7c3aed;background:rgba(124,58,237,.15);color:#9d5ff5}";
+    ".atlas-fb-qp.active{border-color:#7c3aed;background:rgba(124,58,237,.15);color:#9d5ff5}" +
+    // P1-2 (2026-08-02, WCAG 2.1 AA): placed AFTER every base rule above
+    // (not interleaved -- equal-specificity CSS is source-order-sensitive,
+    // an earlier media-query rule loses to a later unconditional rule of
+    // the same specificity; see atlas-track.js/atlas-city-subscribe.js's
+    // own fix comments for the same trap) so this wins the cascade in
+    // light mode. #8899aa measured 2.68-2.92:1 against the light card/bg
+    // (fails both the 4.5:1 text minimum on .atlas-fb-card p/.atlas-fb-
+    // cancel and the 3:1 non-text minimum on the border-only .atlas-fb-qp
+    // chip); #9d5ff5 (.atlas-fb-qp.active text) measured 3.58-3.90:1,
+    // under 4.5:1. Reuses the SAME #5a5348/#8b42f3 every other page's
+    // light-mode --muted/--purple-light already resolves to -- not new
+    // color choices, see this repo's site-wide P1-2 token fix.
+    "@media(prefers-color-scheme:light){" +
+    ".atlas-fb-card{background:#fff;color:#171512;border-color:#e2ddd2}" +
+    ".atlas-fb-card p{color:#5a5348}" +
+    ".atlas-fb-cancel{border-color:#5a5348;color:#5a5348}" +
+    ".atlas-fb-qp{border-color:#5a5348}" +
+    ".atlas-fb-qp.active{color:#8b42f3}}";
 
   function el(html) { var d = document.createElement("div"); d.innerHTML = html; return d.firstElementChild; }
 
@@ -290,13 +316,26 @@
       modal.style.display = "flex";
       document.getElementById("atlas-fb-body").focus();
     }
-    function close() { modal.style.display = "none"; }
+    function close() { modal.style.display = "none"; btn.focus(); }
     btn.addEventListener("click", function () {
       var venueSlug = detectVenueSlug();
       open(venueSlug ? { venueSlug: venueSlug } : null);
     });
     modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
     modal.querySelector(".atlas-fb-cancel").addEventListener("click", close);
+    // P1-2 (2026-08-02, WCAG 2.1 AA / 2.1.2 No Keyboard Trap): the modal
+    // had click-outside-closes and a Cancel button, but no Escape-key
+    // close -- found by a real keyboard-driven Playwright check (open via
+    // the floating button, press Escape, modal stayed open). Only listens
+    // while THIS modal is actually visible (display:flex), so it can't
+    // interfere with any other Escape handler on the page (e.g. the
+    // hamburger nav's own, separately-scoped listener above). Also
+    // returns focus to the trigger button on close (click-outside/Cancel
+    // paths too, via the shared `close()`), so keyboard focus is never
+    // left on a hidden element after any close path.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.style.display === "flex") close();
+    });
     modal.querySelector(".atlas-fb-send").addEventListener("click", function () {
       var body = document.getElementById("atlas-fb-body").value.trim();
       var email = document.getElementById("atlas-fb-email").value.trim();

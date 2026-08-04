@@ -9,11 +9,11 @@
 <link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/comedy-atlas/icons/atlas-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/comedy-atlas/icons/atlas-favicon-16.png">
-<title>ENGLISH STAND UP COMEDY OPEN MIC @Aveiro | COMEDY ATLAS</title>
+<title>ENGLISH STAND UP COMEDY OPEN MIC @Aveiro — Porto Show | COMEDY ATLAS</title>
 <meta name="description" content="ENGLISH STAND UP COMEDY OPEN MIC @Aveiro on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/show/english-stand-up-comedy-open-mic-aveiro/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ENGLISH STAND UP COMEDY OPEN MIC @Aveiro | COMEDY ATLAS">
+<meta property="og:title" content="ENGLISH STAND UP COMEDY OPEN MIC @Aveiro — Porto Show | COMEDY ATLAS">
 <meta property="og:description" content="ENGLISH STAND UP COMEDY OPEN MIC @Aveiro on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/show/english-stand-up-comedy-open-mic-aveiro/">
 <meta name="twitter:card" content="summary">
@@ -25,24 +25,49 @@
   --purple:#7c3aed;--purple-light:#9d5ff5;
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
-  --gold:#c9a84c;--gold-light:#e8c96a;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
   --red:#c41e3a;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA pass): the light-mode override below used
+     to redefine --bg/--card/--border/--text/--muted but NOT --gold/--gold-
+     light, so every gold-on-light-background text node (headings, event
+     times, milestone dates, save-button label, .reliable-badge, and every
+     page/generator that imports this CSS constant -- city pages, comics
+     index, cities index, blog, guide, newsletter -- see the import sites
+     grepped for this fix) silently kept the DARK-mode gold #c9a84c, which
+     measures 2.10:1 against --bg #f7f5f0 and 2.29:1 against --card #ffffff
+     -- both well under the 4.5:1 WCAG 2.1 AA text-contrast minimum (axe-
+     core's "color-contrast" rule, the dominant finding across every
+     audited page: 66 nodes on Paris city, 58 on Comics, 8 on a
+     representative event page). Darkened gold (#766024 / #796013) keeps
+     the same hue/brand identity, verified >=5.5:1 against BOTH light
+     backgrounds (contrast math run 2026-08-02, WCAG relative-luminance
+     formula) -- dark mode is completely untouched.*/
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 }
 :root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
-:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:900px;margin:0 auto;padding:0 20px}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative}
 .nav-logo .site-name{color:var(--muted);font-weight:500}
 .nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
 .nav-links a:hover{color:var(--text)}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.nav-logo{min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+}
+
 .atlas-header{max-width:900px;margin:0 auto;padding:32px 20px 16px}
 .back-link{font-size:13px;color:var(--muted);margin-bottom:10px;display:inline-block}
 .back-link:hover{color:var(--text)}
@@ -81,7 +106,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 #follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
 .follow-status{font-size:13px;color:var(--muted);margin-top:8px}
 .save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
-.save-btn{background:var(--gold);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn{background:var(--gold-btn);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
 .save-btn:hover{opacity:.9}
 .save-btn:disabled{opacity:.7;cursor:default}
 .save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
@@ -96,8 +121,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
 .venue-map-popup strong{display:block;margin-bottom:4px}
 .venue-map-popup-row{font-size:13px;padding:2px 0}
-.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
-.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.venue-map-popup-row a{color:var(--purple-light);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold-btn);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
 .directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
@@ -112,12 +137,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
 .reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
 .tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
-footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
-.footer-links{margin-top:8px}
-.footer-links a{color:var(--muted)}
-.footer-links a:hover{color:var(--text)}
 @media(max-width:600px){
-  .nav-links{font-size:13px;gap:14px}
   .event-top{flex-direction:column;gap:2px}
 }
 </style>
@@ -139,15 +159,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </nav>
 <header class="atlas-header">
-  <a href="/comedy-atlas/" class="back-link">← COMEDY ATLAS</a>
-  <div class="atlas-wordmark">ENGLISH STAND UP COMEDY OPEN MIC @Aveiro<span class="dot">.</span></div>
+  <a href="/" class="back-link">← COMEDY ATLAS</a>
+  <h1 class="atlas-wordmark">ENGLISH STAND UP COMEDY OPEN MIC @Aveiro<span class="dot">.</span></h1>
   
   <div class="atlas-subtitle">Show</div>
   <p class="atlas-promise">ENGLISH STAND UP COMEDY OPEN MIC @Aveiro on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.</p>
   
   <div class="field-row" style="margin-top:10px"><span>unknown</span><span class="sep">·</span><span><a href="/comedy-atlas/org/comedy-cachet/">Comedy Cachet</a></span><span class="sep">·</span><span>Porto</span></div>
 </header>
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 <div class="card share-box">
   <button type="button" class="share-btn" id="share-btn"
           data-share-url="https://comedyatlas.app/comedy-atlas/show/english-stand-up-comedy-open-mic-aveiro/" data-share-title="ENGLISH STAND UP COMEDY OPEN MIC @Aveiro">
@@ -189,7 +209,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 </div>
 
-<div class="section-heading">Upcoming occurrences</div><div class="event-card">
+<h2 class="section-heading">Upcoming occurrences</h2><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -216,7 +236,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <a class="ticket-link" href="/comedy-atlas/event/english-stand-up-comedy-open-mic-aveiro-45/">View &amp; tickets →</a>
     </div>
   </div>
-</div><div class="section-heading">Venue &amp; directions</div><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+</div><h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
 </main>
 
 <footer>
@@ -226,7 +246,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
-<script src="/comedy-atlas/atlas-track.js"></script>
+<script defer src="/comedy-atlas/atlas-track.js"></script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');

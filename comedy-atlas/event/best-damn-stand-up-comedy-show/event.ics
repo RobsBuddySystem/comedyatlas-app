@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:best-damn-stand-up-comedy-show@comedyatlas.app
+DTSTAMP:20260816T003000Z
+DTSTART:20260816T003000Z
+DTEND:20260816T014500Z
+SUMMARY:Best Damn Stand-Up Comedy Show
+LOCATION:SoCap Comedy (The Social Capital)\, 154 Danforth Avenue\, Toronto
+DESCRIPTION:A guaranteed night out with some of the best standup comedians 
+ in Toronto.\nMore info: https://comedyatlas.app/comedy-atlas/event/best-dam
+ n-stand-up-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/best-damn-stand-up-comedy-sh
+ ow/
+END:VEVENT
+END:VCALENDAR
