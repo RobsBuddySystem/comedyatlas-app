@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stand-Up Comedy in Toronto: Shows, Open Mics &amp; Tickets | COMEDY ATLAS</title>
-<meta name="description" content="Find live stand-up comedy in Toronto: 250 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
+<meta name="description" content="Find live stand-up comedy in Toronto: 274 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
 <meta name="keywords" content="stand-up comedy in Toronto, comedy shows Toronto, Toronto comedy club, comedy in Toronto tonight, english comedy Toronto, open mic comedy Toronto, free comedy Toronto, comedy tickets Toronto, things to do in Toronto tonight, live comedy Toronto">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/city-guide/toronto/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stand-Up Comedy in Toronto: Shows, Open Mics &amp; Tickets | COMEDY ATLAS">
-<meta property="og:description" content="Find live stand-up comedy in Toronto: 250 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
+<meta property="og:description" content="Find live stand-up comedy in Toronto: 274 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/city-guide/toronto/">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -17,14 +17,17 @@
   --purple:#7c3aed;--purple-light:#9d5ff5;
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
-  --gold:#c9a84c;--gold-light:#e8c96a;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
   --red:#c41e3a;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): same missing --gold light-mode override
+     bug as generate_entity_pages.py's CSS constant -- see that file's fix
+     comment for the full contrast-math writeup. Same darkened values. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 }
 :root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
-:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
 a{color:inherit;text-decoration:none}
@@ -67,7 +70,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 #follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
 .follow-status{font-size:13px;color:var(--muted);margin-top:8px}
 .save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
-.save-btn{background:var(--gold);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn{background:var(--gold-btn);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
 .save-btn:hover{opacity:.9}
 .save-btn:disabled{opacity:.7;cursor:default}
 .save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
@@ -82,8 +85,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
 .venue-map-popup strong{display:block;margin-bottom:4px}
 .venue-map-popup-row{font-size:13px;padding:2px 0}
-.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
-.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.venue-map-popup-row a{color:var(--purple-light);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold-btn);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
 .directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
@@ -111,7 +114,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .post-body p{margin:0 0 16px}
 .post-body h2{font-size:19px;margin:26px 0 10px}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Stand-Up Comedy in Toronto: Shows, Open Mics & Tickets","datePublished":"2026-08-01","dateModified":"2026-08-01","author":{"@type":"Organization","name":"COMEDY ATLAS"},"keywords":"stand-up comedy in Toronto, comedy shows Toronto, Toronto comedy club, comedy in Toronto tonight, english comedy Toronto, open mic comedy Toronto, free comedy Toronto, comedy tickets Toronto, things to do in Toronto tonight, live comedy Toronto","url":"https://comedyatlas.app/comedy-atlas/city-guide/toronto/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Stand-Up Comedy in Toronto: Shows, Open Mics & Tickets","datePublished":"2026-08-05","dateModified":"2026-08-05","author":{"@type":"Organization","name":"COMEDY ATLAS"},"keywords":"stand-up comedy in Toronto, comedy shows Toronto, Toronto comedy club, comedy in Toronto tonight, english comedy Toronto, open mic comedy Toronto, free comedy Toronto, comedy tickets Toronto, things to do in Toronto tonight, live comedy Toronto","url":"https://comedyatlas.app/comedy-atlas/city-guide/toronto/"}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -132,13 +135,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <main class="container" style="max-width:760px;margin:0 auto;padding:24px 20px">
 <article>
 <h1>Stand-Up Comedy in Toronto: Shows, Open Mics &amp; Tickets</h1>
-<p class="muted" style="color:#888;font-size:13px">Live comedy guide · updated 2026-08-01</p>
-<p>Looking for <strong>stand-up comedy in Toronto</strong>? COMEDY ATLAS tracks <strong>250 upcoming live comedy shows</strong> in Toronto right now — open mics, showcases, and club nights — each with the date, venue, and a link to official tickets. This guide is generated from live listings and updates as new shows are confirmed.</p>
+<p class="muted" style="color:#888;font-size:13px">Live comedy guide · updated 2026-08-05</p>
+<p>Looking for <strong>stand-up comedy in Toronto</strong>? COMEDY ATLAS tracks <strong>274 upcoming live comedy shows</strong> in Toronto right now — open mics, showcases, and club nights — each with the date, venue, and a link to official tickets. This guide is generated from live listings and updates as new shows are confirmed.</p>
 <p><strong>Free comedy in Toronto:</strong> 22 of the current shows are free to attend. <a href="/comedy-atlas/city.html?city=Toronto&price=free">See all free comedy shows in Toronto</a>.</p>
-<h2>Comedy clubs &amp; venues in Toronto</h2><p>The busiest rooms for live comedy in Toronto right now:</p><ul><li>Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill — 245 upcoming shows</li><li>Alumnae Theatre Company — 2 upcoming shows</li><li>Reid&#x27;s Distillery — 1 upcoming show</li><li>Isabel Bader Theatre — 1 upcoming show</li><li>Harmony Cafe — 1 upcoming show</li></ul>
+<h2>Comedy clubs &amp; venues in Toronto</h2><p>The busiest rooms for live comedy in Toronto right now:</p><ul><li>Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill — 268 upcoming shows</li><li>Alumnae Theatre Company — 2 upcoming shows</li><li>SoCap Comedy (The Social Capital) — 2 upcoming shows</li><li>Isabel Bader Theatre — 1 upcoming show</li><li>Harmony Cafe — 1 upcoming show</li></ul>
 <h2>Regular comedy nights in Toronto</h2><p>Recurring shows and open mics you can plan around:</p><ul><li><a href="/comedy-atlas/show/punchline-playground-bet-on-the-set/">Punchline playground - Bet on the Set</a></li></ul>
-<h2>Upcoming comedy shows in Toronto</h2><ul><li><a href="/comedy-atlas/event/friday-keys-toronto-stand-up-comedy-club-comedy-show-legends-only-2026-6713/">FRIDAY KEYS TORONTO STAND UP COMEDY CLUB COMEDY SHOW | (LEGENDS ONLY 2026) — 2026-07-31 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/all-indian-comedy-show-torontos-funniest-monthly-stand-up-desi-event-10272/">ALL INDIAN COMEDY SHOW – TORONTO’S FUNNIEST MONTHLY STAND-UP DESI EVENT — 2026-07-31 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/all-middle-eastern-comedy-show-torontos-funniest-stand-up-event-10295/">ALL MIDDLE EASTERN COMEDY SHOW – TORONTO’S FUNNIEST STAND-UP EVENT — 2026-08-01 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/edgy-no-filter-comedy-show-canceled-offensive-show-toronto-stand-up-10318/">EDGY NO FILTER COMEDY SHOW  (CANCELED OFFENSIVE SHOW) – TORONTO STAND UP — 2026-08-01 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/saturdays-all-star-legends-at-keys-toronto-stand-up-comedy-club-show-10341/">SATURDAYS ALL STAR LEGENDS - AT KEYS TORONTO STAND UP COMEDY CLUB SHOW — 2026-08-01 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li></ul><p><a href="/comedy-atlas/city.html?city=Toronto">See the full Toronto comedy calendar &rarr;</a></p>
-<p>Tickets for paid shows start around CAD10; many open mics are free. Every ticket link on COMEDY ATLAS goes straight to the organizer&rsquo;s official page — we never resell.</p>
+<h2>Upcoming comedy shows in Toronto</h2><ul><li><a href="/comedy-atlas/event/toronto-stand-up-comedy-night-climate-comedy-5-tix-things-to-do/">Toronto Stand-Up Comedy Night | Climate Comedy – $5 Tix (things to do) — 2026-08-05 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/stand-up-comedy-open-mic-workshops-free-events-in-toronto-comedy-shows-10225/">STAND UP COMEDY (OPEN MIC) - WORKSHOPS FREE EVENTS IN TORONTO COMEDY SHOWS — 2026-08-05 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/thursday-keys-stand-up-comedy-club-legendary-open-mic-toronto-comedy-show-6759/">THURSDAY KEYS STAND UP COMEDY CLUB (LEGENDARY OPEN MIC) TORONTO COMEDY SHOW — 2026-08-06 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li><li><a href="/comedy-atlas/event/stand-up-comedy-in-broken-english-victor-patrascan-in-toronto-5273/">Stand up Comedy in broken English • Victor Patrascan in Toronto — 2026-08-07 · Isabel Bader Theatre</a></li><li><a href="/comedy-atlas/event/friday-keys-toronto-stand-up-comedy-club-comedy-show-legends-only-2026-6715/">FRIDAY KEYS TORONTO STAND UP COMEDY CLUB COMEDY SHOW | (LEGENDS ONLY 2026) — 2026-08-07 · Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill</a></li></ul><p><a href="/comedy-atlas/city.html?city=Toronto">See the full Toronto comedy calendar &rarr;</a></p>
+<p>Tickets for paid shows start around CAD5; many open mics are free. Every ticket link on COMEDY ATLAS goes straight to the organizer&rsquo;s official page — we never resell.</p>
 <p>COMEDY ATLAS is a free worldwide directory of English-language stand-up comedy. Run a show in Toronto? <a href="/comedy-atlas/city.html?city=Toronto">Add or claim your listing</a> so audiences can find you.</p>
 </article>
 </main>

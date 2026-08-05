@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stand-Up Comedy in Paris: Shows, Open Mics &amp; Tickets | COMEDY ATLAS</title>
-<meta name="description" content="Find live stand-up comedy in Paris: 64 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
+<meta name="description" content="Find live stand-up comedy in Paris: 61 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
 <meta name="keywords" content="stand-up comedy in Paris, comedy shows Paris, Paris comedy club, comedy in Paris tonight, english comedy Paris, open mic comedy Paris, free comedy Paris, comedy tickets Paris, things to do in Paris tonight, live comedy Paris">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/city-guide/paris/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stand-Up Comedy in Paris: Shows, Open Mics &amp; Tickets | COMEDY ATLAS">
-<meta property="og:description" content="Find live stand-up comedy in Paris: 64 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
+<meta property="og:description" content="Find live stand-up comedy in Paris: 61 upcoming shows, open mics and comedy clubs with dates and official tickets. Updated daily by COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/city-guide/paris/">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -17,14 +17,17 @@
   --purple:#7c3aed;--purple-light:#9d5ff5;
   --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
   --text:#f0f0f0;--muted:#8899aa;
-  --gold:#c9a84c;--gold-light:#e8c96a;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
   --red:#c41e3a;--green:#3fb950;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+  /* P1-2 (2026-08-02, WCAG 2.1 AA): same missing --gold light-mode override
+     bug as generate_entity_pages.py's CSS constant -- see that file's fix
+     comment for the full contrast-math writeup. Same darkened values. */
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 }
 :root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
-:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
 a{color:inherit;text-decoration:none}
@@ -67,7 +70,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 #follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
 .follow-status{font-size:13px;color:var(--muted);margin-top:8px}
 .save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
-.save-btn{background:var(--gold);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn{background:var(--gold-btn);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
 .save-btn:hover{opacity:.9}
 .save-btn:disabled{opacity:.7;cursor:default}
 .save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
@@ -82,8 +85,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
 .venue-map-popup strong{display:block;margin-bottom:4px}
 .venue-map-popup-row{font-size:13px;padding:2px 0}
-.venue-map-popup-row a{color:var(--purple,#7c3aed);font-weight:700}
-.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.venue-map-popup-row a{color:var(--purple-light);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold-btn);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
 .directions-btn:hover{opacity:.9}
 .privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 .privacy-note strong{color:var(--text)}
@@ -111,7 +114,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .post-body p{margin:0 0 16px}
 .post-body h2{font-size:19px;margin:26px 0 10px}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Stand-Up Comedy in Paris: Shows, Open Mics & Tickets","datePublished":"2026-08-01","dateModified":"2026-08-01","author":{"@type":"Organization","name":"COMEDY ATLAS"},"keywords":"stand-up comedy in Paris, comedy shows Paris, Paris comedy club, comedy in Paris tonight, english comedy Paris, open mic comedy Paris, free comedy Paris, comedy tickets Paris, things to do in Paris tonight, live comedy Paris","url":"https://comedyatlas.app/comedy-atlas/city-guide/paris/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Stand-Up Comedy in Paris: Shows, Open Mics & Tickets","datePublished":"2026-08-05","dateModified":"2026-08-05","author":{"@type":"Organization","name":"COMEDY ATLAS"},"keywords":"stand-up comedy in Paris, comedy shows Paris, Paris comedy club, comedy in Paris tonight, english comedy Paris, open mic comedy Paris, free comedy Paris, comedy tickets Paris, things to do in Paris tonight, live comedy Paris","url":"https://comedyatlas.app/comedy-atlas/city-guide/paris/"}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -132,12 +135,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <main class="container" style="max-width:760px;margin:0 auto;padding:24px 20px">
 <article>
 <h1>Stand-Up Comedy in Paris: Shows, Open Mics &amp; Tickets</h1>
-<p class="muted" style="color:#888;font-size:13px">Live comedy guide · updated 2026-08-01</p>
-<p>Looking for <strong>stand-up comedy in Paris</strong>? COMEDY ATLAS tracks <strong>64 upcoming live comedy shows</strong> in Paris right now — open mics, showcases, and club nights — each with the date, venue, and a link to official tickets. This guide is generated from live listings and updates as new shows are confirmed.</p>
-<p><strong>Free comedy in Paris:</strong> 32 of the current shows are free to attend. <a href="/comedy-atlas/city.html?city=Paris&price=free">See all free comedy shows in Paris</a>.</p>
-<h2>Comedy clubs &amp; venues in Paris</h2><p>The busiest rooms for live comedy in Paris right now:</p><ul><li>Velvet Bar — 14 upcoming shows</li><li>Ma Cocotte du Faubourg — 11 upcoming shows</li><li>Le Kibele — 9 upcoming shows</li><li>La Pomme d&#x27;Eve — 6 upcoming shows</li><li>Toloache — 4 upcoming shows</li><li>Salle Colonne — 2 upcoming shows</li></ul>
-<h2>Regular comedy nights in Paris</h2><p>Recurring shows and open mics you can plan around:</p><ul><li><a href="/comedy-atlas/show/blast-off-all-stars-english-stand-up-comedy/">Blast Off All Stars - English Stand-Up Comedy</a></li><li><a href="/comedy-atlas/show/green-mic-comedy-show/">Green Mic Comedy Show</a></li><li><a href="/comedy-atlas/show/open-green-mic-monday-madness/">Open Green Mic — Monday Madness</a></li><li><a href="/comedy-atlas/show/the-open-mic-express-english-stand-up-comedy/">The Open Mic Express - English Stand-Up Comedy</a></li><li><a href="/comedy-atlas/show/improvised-powerpoint-comedy-show-in-english/">Improvised PowerPoint Comedy Show in English</a></li><li><a href="/comedy-atlas/show/kuhl-comedy-show/">Kuhl Comedy Show</a></li></ul>
-<h2>Upcoming comedy shows in Paris</h2><ul><li><a href="/comedy-atlas/event/blast-off-all-stars-english-stand-up-comedy-august-1/">Blast Off All Stars - English Stand-Up Comedy | August 1 — 2026-08-01 · La Pomme d&#x27;Eve</a></li><li><a href="/comedy-atlas/event/green-mic-comedy-show-93/">Green Mic Comedy Show — 2026-08-02 · Ma Cocotte du Faubourg</a></li><li><a href="/comedy-atlas/event/open-green-mic-monday-madness-104/">Open Green Mic — Monday Madness — 2026-08-03 · Ma Cocotte du Faubourg</a></li><li><a href="/comedy-atlas/event/the-open-mic-express-english-stand-up-comedy-august-4/">The Open Mic Express - English Stand-Up Comedy | August 4 — 2026-08-04 · Le Kibele</a></li><li><a href="/comedy-atlas/event/the-open-mic-express-english-stand-up-comedy-august-6/">The Open Mic Express - English Stand-Up Comedy | August 6 — 2026-08-06 · Le Kibele</a></li></ul><p><a href="/comedy-atlas/city.html?city=Paris">See the full Paris comedy calendar &rarr;</a></p>
+<p class="muted" style="color:#888;font-size:13px">Live comedy guide · updated 2026-08-05</p>
+<p>Looking for <strong>stand-up comedy in Paris</strong>? COMEDY ATLAS tracks <strong>61 upcoming live comedy shows</strong> in Paris right now — open mics, showcases, and club nights — each with the date, venue, and a link to official tickets. This guide is generated from live listings and updates as new shows are confirmed.</p>
+<p><strong>Free comedy in Paris:</strong> 31 of the current shows are free to attend. <a href="/comedy-atlas/city.html?city=Paris&price=free">See all free comedy shows in Paris</a>.</p>
+<h2>Comedy clubs &amp; venues in Paris</h2><p>The busiest rooms for live comedy in Paris right now:</p><ul><li>Velvet Bar — 14 upcoming shows</li><li>Ma Cocotte du Faubourg — 9 upcoming shows</li><li>Le Kibele — 8 upcoming shows</li><li>La Pomme d&#x27;Eve — 6 upcoming shows</li><li>Toloache — 4 upcoming shows</li><li>Salle Colonne — 2 upcoming shows</li></ul>
+<h2>Regular comedy nights in Paris</h2><p>Recurring shows and open mics you can plan around:</p><ul><li><a href="/comedy-atlas/show/the-open-mic-express-english-stand-up-comedy/">The Open Mic Express - English Stand-Up Comedy</a></li><li><a href="/comedy-atlas/show/improvised-powerpoint-comedy-show-in-english/">Improvised PowerPoint Comedy Show in English</a></li><li><a href="/comedy-atlas/show/green-mic-comedy-show/">Green Mic Comedy Show</a></li><li><a href="/comedy-atlas/show/open-green-mic-monday-madness/">Open Green Mic — Monday Madness</a></li><li><a href="/comedy-atlas/show/kuhl-comedy-show/">Kuhl Comedy Show</a></li><li><a href="/comedy-atlas/show/comedy-crush-wednesday-show/">Comedy Crush Wednesday Show</a></li></ul>
+<h2>Upcoming comedy shows in Paris</h2><ul><li><a href="/comedy-atlas/event/the-open-mic-express-english-stand-up-comedy-august-6/">The Open Mic Express - English Stand-Up Comedy | August 6 — 2026-08-06 · Le Kibele</a></li><li><a href="/comedy-atlas/event/the-open-mic-express-english-stand-up-comedy-august-7/">The Open Mic Express - English Stand-Up Comedy | August 7 — 2026-08-07 · Le Kibele</a></li><li><a href="/comedy-atlas/event/improvised-powerpoint-comedy-show-in-english-august-8/">Improvised PowerPoint Comedy Show in English | August 8 — 2026-08-08 · La Pomme d&#x27;Eve</a></li><li><a href="/comedy-atlas/event/green-mic-comedy-show-94/">Green Mic Comedy Show — 2026-08-09 · Ma Cocotte du Faubourg</a></li><li><a href="/comedy-atlas/event/open-green-mic-monday-madness-105/">Open Green Mic — Monday Madness — 2026-08-10 · Ma Cocotte du Faubourg</a></li></ul><p><a href="/comedy-atlas/city.html?city=Paris">See the full Paris comedy calendar &rarr;</a></p>
 <p>Tickets for paid shows start around EUR16; many open mics are free. Every ticket link on COMEDY ATLAS goes straight to the organizer&rsquo;s official page — we never resell.</p>
 <p>COMEDY ATLAS is a free worldwide directory of English-language stand-up comedy. Run a show in Paris? <a href="/comedy-atlas/city.html?city=Paris">Add or claim your listing</a> so audiences can find you.</p>
 </article>
