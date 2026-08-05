@@ -53,8 +53,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .footer-links{margin-top:8px}
 .footer-links a{color:var(--muted)}
 .footer-links a:hover{color:var(--text)}
-.nav-logo::before,.footer-feedback-cta button::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:44px;min-height:44px}
-.footer-feedback-cta button{position:relative}
+.nav-logo{min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
 @media(max-width:600px){
   .nav-links{font-size:13px;gap:14px}
 }
@@ -157,6 +157,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <p class="atlas-promise">An automated record of what entered our live listings each week -- not edited journalism, see the Blog for that.</p>
 </header>
 <main id="main-content" tabindex="-1">
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/changelog/what-s-new-this-week-in-bloomington-comedy-jul-29-aug-5-2026/">What&#x27;s New This Week in Bloomington Comedy (Jul 29-Aug 5, 2026)</a></div>
+  <div class="post-byline">2026-08-05 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Here&#x27;s what changed in Bloomington&#x27;s stand-up comedy scene between Jul 29 and Aug 5, 2026: 3 newly listed dates entered the COMEDY ATLAS listings this week. Below is exactly what&#x27;s new, venue by venue and show by show.</p>
+</div>
 <div class="card">
   <div class="event-title"><a href="/comedy-atlas/changelog/what-s-new-this-week-in-bloomington-comedy-jul-28-aug-4-2026/">What&#x27;s New This Week in Bloomington Comedy (Jul 28-Aug 4, 2026)</a></div>
   <div class="post-byline">2026-08-04 &middot; COMEDY ATLAS</div>
