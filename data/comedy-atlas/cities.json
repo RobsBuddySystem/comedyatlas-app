@@ -100,7 +100,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 61
+      "en": 62
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -179,8 +179,8 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 423,
-      "unconfirmed": 5
+      "en": 422,
+      "unconfirmed": 7
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -245,7 +245,8 @@
     "country_name": "Sweden",
     "id": 40,
     "language_counts": {
-      "en": 2
+      "en": 2,
+      "unconfirmed": 2
     },
     "latitude": 59.3293,
     "longitude": 18.0686,
@@ -258,7 +259,8 @@
     "country_name": "Finland",
     "id": 44,
     "language_counts": {
-      "en": 2
+      "en": 2,
+      "unconfirmed": 2
     },
     "latitude": 60.1699,
     "longitude": 24.9384,
@@ -416,7 +418,7 @@
     "id": 75,
     "language_counts": {
       "en": 9,
-      "unconfirmed": 33
+      "unconfirmed": 40
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -456,7 +458,7 @@
     "id": 92,
     "language_counts": {
       "en": 4,
-      "unconfirmed": 473
+      "unconfirmed": 472
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -469,7 +471,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 134
+      "unconfirmed": 132
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -548,7 +550,7 @@
     "country_name": "United States",
     "id": 122,
     "language_counts": {
-      "unconfirmed": 87
+      "unconfirmed": 85
     },
     "latitude": null,
     "longitude": null,
@@ -641,7 +643,7 @@
     "country_name": "United States",
     "id": 129,
     "language_counts": {
-      "unconfirmed": 17
+      "unconfirmed": 19
     },
     "latitude": 39.7684,
     "longitude": -86.1581,
@@ -719,7 +721,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 128
+      "unconfirmed": 126
     },
     "latitude": null,
     "longitude": null,
