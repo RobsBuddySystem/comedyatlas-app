@@ -572,7 +572,14 @@ export function buildVenuePanel(doc, venue) {
  */
 export function buildCityMapSummary(doc, payload, cityHref) {
   const venues = Array.isArray(payload && payload.venues) ? payload.venues : [];
-  const mappedVenueCount = venues.length;
+  // 2026-08-07: the payload now includes venues with NO current dates (the
+  // catalogue lists a venue whether or not a source feeds its calendar).
+  // Count them separately -- "66 shows across 10 venues" would be a lie when
+  // 7 of the 10 have no dates; "across 3, plus 7 more listed" is the truth.
+  const venuesWithShows = venues.filter(
+    (v) => activeShows(v && v.shows).length > 0);
+  const mappedVenueCount = venuesWithShows.length;
+  const showlessVenueCount = venues.length - venuesWithShows.length;
   const mappedShowCount = venues.reduce(
     (n, v) => n + activeShows(v && v.shows).length, 0);
 
@@ -594,6 +601,15 @@ export function buildCityMapSummary(doc, payload, cityHref) {
     `${mappedShowCount} upcoming show${mappedShowCount === 1 ? '' : 's'} `
     + `across ${mappedVenueCount} mapped venue${mappedVenueCount === 1 ? '' : 's'}.`;
   wrap.appendChild(primary);
+
+  if (showlessVenueCount > 0) {
+    const alsoListed = doc.createElement('p');
+    alsoListed.className = 'atlas-map-summary-secondary';
+    alsoListed.textContent = showlessVenueCount === 1
+      ? '1 more venue is on the map with no upcoming dates listed.'
+      : `${showlessVenueCount} more venues are on the map with no upcoming dates listed.`;
+    wrap.appendChild(alsoListed);
+  }
 
   if (additionalCount > 0) {
     const secondary = doc.createElement('p');
