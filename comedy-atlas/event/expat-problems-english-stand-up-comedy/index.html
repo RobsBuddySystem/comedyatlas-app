@@ -17,7 +17,7 @@
 <meta property="og:description" content="Hilarious &#x27;fish out of water&#x27; comedy for expats living abroad!">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/expat-problems-english-stand-up-comedy/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Hilarious 'fish out of water' comedy for expats living abroad!", "endDate": "2026-07-31T21:30:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "AT", "addressLocality": "Vienna", "streetAddress": "45 Lerchenfelder Stra\u00dfe"}, "name": "Shebeen International Pub"}, "name": "EXPAT PROBLEMS \u2022 English Stand-Up Comedy", "organizer": {"@type": "Organization", "name": "Comedy For Expats", "url": "https://comedyatlas.app/comedy-atlas/org/comedy-for-expats/"}, "startDate": "2026-07-31T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/expat-problems-english-stand-up-comedy/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Hilarious 'fish out of water' comedy for expats living abroad!", "endDate": "2026-07-31T21:30:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "AT", "addressLocality": "Vienna", "streetAddress": "45 Lerchenfelder Stra\u00dfe"}, "geo": {"@type": "GeoCoordinates", "latitude": 48.206374, "longitude": 16.348949}, "name": "Shebeen International Pub"}, "name": "EXPAT PROBLEMS \u2022 English Stand-Up Comedy", "organizer": {"@type": "Organization", "name": "Comedy For Expats", "url": "https://comedyatlas.app/comedy-atlas/org/comedy-for-expats/"}, "startDate": "2026-07-31T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/expat-problems-english-stand-up-comedy/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-07-31T19:30:00+02:00">Fri, Jul 31 2026 · 19:30 (UTC+02:00)</time></div>
   <p class="atlas-promise">Hilarious &#x27;fish out of water&#x27; comedy for expats living abroad!</p>
   
-  <div class="field-row" style="margin-top:10px">Shebeen International Pub, 45 Lerchenfelder Straße, Vienna — <a href="https://www.openstreetmap.org/search?query=Shebeen International Pub, 45 Lerchenfelder Straße, Vienna" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Shebeen+International+Pub%2C+45+Lerchenfelder+Stra%C3%9Fe%2C+Vienna" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Shebeen International Pub, 45 Lerchenfelder Straße, Vienna — <a href="https://www.openstreetmap.org/?mlat=48.206374&amp;mlon=16.348949#map=17/48.206374/16.348949" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=48.206374,16.348949" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Comedy For Expats</div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/expat-problems-english-stand-up-comedy/">EXPAT PROBLEMS • English Stand-Up Comedy →</a></div>
   
@@ -179,7 +179,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Shebeen International Pub</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 52, &quot;slug&quot;: &quot;expat-problems-english-stand-up-comedy&quot;, &quot;title&quot;: &quot;EXPAT PROBLEMS \u2022 English Stand-Up Comedy&quot;, &quot;venue_id&quot;: 264, &quot;venue_name&quot;: &quot;Shebeen International Pub&quot;, &quot;venue_latitude&quot;: 48.206374, &quot;venue_longitude&quot;: 16.348949, &quot;canonical_event_url&quot;: &quot;https://www.meetup.com/viennacomedy/events/315426761/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=48.206374%2C16.348949" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:48.206374,16.348949">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

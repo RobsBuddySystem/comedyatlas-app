@@ -17,7 +17,7 @@
 <meta property="og:description" content="Award-winning international comedy club in London, with live stand up shows in the heart of Covent Garden.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/saturday-comedy-club-london-covent-garden-3025/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Award-winning international comedy club in London, with live stand up shows in the heart of Covent Garden.", "endDate": "2026-07-18T22:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "42 Earlham Street"}, "name": "Comedy Carnival Covent Garden"}, "name": "Saturday Comedy Club London | Covent Garden", "startDate": "2026-07-18T20:30:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/saturday-comedy-club-london-covent-garden-3025/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Award-winning international comedy club in London, with live stand up shows in the heart of Covent Garden.", "endDate": "2026-07-18T22:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "London", "streetAddress": "42 Earlham Street"}, "geo": {"@type": "GeoCoordinates", "latitude": 51.513758, "longitude": -0.125976}, "name": "Comedy Carnival Covent Garden"}, "name": "Saturday Comedy Club London | Covent Garden", "startDate": "2026-07-18T20:30:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/saturday-comedy-club-london-covent-garden-3025/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-07-18T21:30:00+02:00">Sat, Jul 18 2026 · 20:30 (UTC+01:00)</time></div>
   <p class="atlas-promise">Award-winning international comedy club in London, with live stand up shows in the heart of Covent Garden.</p>
   
-  <div class="field-row" style="margin-top:10px">Comedy Carnival Covent Garden, 42 Earlham Street, London — <a href="https://www.openstreetmap.org/search?query=Comedy Carnival Covent Garden, 42 Earlham Street, London" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Comedy+Carnival+Covent+Garden%2C+42+Earlham+Street%2C+London" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Comedy Carnival Covent Garden, 42 Earlham Street, London — <a href="https://www.openstreetmap.org/?mlat=51.513758&amp;mlon=-0.125976#map=17/51.513758/-0.125976" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=51.513758,-0.125976" rel="nofollow noopener">directions →</a></div>
   <div class="field-row"></div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/saturday-comedy-club-london-covent-garden/">Saturday Comedy Club London | Covent Garden →</a></div>
   <div class="field-row"><span>Price: 20.00 GBP</span></div>
@@ -179,7 +179,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Comedy Carnival Covent Garden</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 3025, &quot;slug&quot;: &quot;saturday-comedy-club-london-covent-garden-3025&quot;, &quot;title&quot;: &quot;Saturday Comedy Club London | Covent Garden&quot;, &quot;venue_id&quot;: 160, &quot;venue_name&quot;: &quot;Comedy Carnival Covent Garden&quot;, &quot;venue_latitude&quot;: 51.513758, &quot;venue_longitude&quot;: -0.125976, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.co.uk/e/saturday-comedy-club-london-covent-garden-tickets-1987999746758&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=51.513758%2C-0.125976" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:51.513758,-0.125976">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

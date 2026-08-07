@@ -17,7 +17,7 @@
 <meta property="og:description" content="Looking for the best stand-up comedy show in Montreal? Every Wednesday night, Estrella, 1165 St Laurent, brings you an unforgettable evening">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/wednesday-night-stand-up-comedy-the-best-english-comedy-show/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Looking for the best stand-up comedy show in Montreal? Every Wednesday night, Estrella, 1165 St Laurent, brings you an unforgettable evening", "endDate": "2026-08-05T21:30:00-04:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "CA", "addressLocality": "Montreal", "streetAddress": "1165 Boulevard Saint-Laurent"}, "name": "Estrella Restaurant"}, "name": "Wednesday Night Stand-Up Comedy  \u2013 The Best English Comedy Show", "organizer": {"@type": "Organization", "name": "mtlcomedyclub.com"}, "startDate": "2026-08-05T20:00:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/wednesday-night-stand-up-comedy-the-best-english-comedy-show/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Looking for the best stand-up comedy show in Montreal? Every Wednesday night, Estrella, 1165 St Laurent, brings you an unforgettable evening", "endDate": "2026-08-05T21:30:00-04:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "CA", "addressLocality": "Montreal", "streetAddress": "1165 Boulevard Saint-Laurent"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.509157, "longitude": -73.561709}, "name": "Estrella Restaurant"}, "name": "Wednesday Night Stand-Up Comedy  \u2013 The Best English Comedy Show", "organizer": {"@type": "Organization", "name": "mtlcomedyclub.com"}, "startDate": "2026-08-05T20:00:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/wednesday-night-stand-up-comedy-the-best-english-comedy-show/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-08-06T02:00:00+02:00">Wed, Aug 5 2026 · 20:00 (UTC-04:00)</time></div>
   <p class="atlas-promise">Looking for the best stand-up comedy show in Montreal? Every Wednesday night, Estrella, 1165 St Laurent, brings you an unforgettable evening</p>
   
-  <div class="field-row" style="margin-top:10px">Estrella Restaurant, 1165 Boulevard Saint-Laurent, Montreal — <a href="https://www.openstreetmap.org/search?query=Estrella Restaurant, 1165 Boulevard Saint-Laurent, Montreal" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Estrella+Restaurant%2C+1165+Boulevard+Saint-Laurent%2C+Montreal" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Estrella Restaurant, 1165 Boulevard Saint-Laurent, Montreal — <a href="https://www.openstreetmap.org/?mlat=45.509157&amp;mlon=-73.561709#map=17/45.509157/-73.561709" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=45.509157,-73.561709" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">mtlcomedyclub.com</div>
   
   <div class="field-row"><span>Price: 10.00 CAD</span></div>
@@ -179,7 +179,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Estrella Restaurant</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 6012, &quot;slug&quot;: &quot;wednesday-night-stand-up-comedy-the-best-english-comedy-show&quot;, &quot;title&quot;: &quot;Wednesday Night Stand-Up Comedy  \u2013 The Best English Comedy Show&quot;, &quot;venue_id&quot;: 540, &quot;venue_name&quot;: &quot;Estrella Restaurant&quot;, &quot;venue_latitude&quot;: 45.509157, &quot;venue_longitude&quot;: -73.561709, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.ca/e/wednesday-night-stand-up-comedy-the-best-english-comedy-show-tickets-1234225464589&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=45.509157%2C-73.561709" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:45.509157,-73.561709">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

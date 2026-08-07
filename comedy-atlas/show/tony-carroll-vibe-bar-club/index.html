@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/show/tony-carroll-vibe-bar-club/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EventSeries", "name": "Tony Carroll @ Vibe Bar & Club", "organizer": {"@type": "Organization", "name": "The Stand Comedy Club"}, "url": "https://comedyatlas.app/comedy-atlas/show/tony-carroll-vibe-bar-club/"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "item": {"@context": "https://schema.org", "@type": "Event", "description": "Hot Water's Green Room Podcast comedian Tony Carroll comes to Morley!", "endDate": "2026-08-09T21:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "Leeds", "streetAddress": "Commercial Street"}, "name": "Vibe Bar & Club"}, "name": "Tony Carroll @ Vibe Bar & Club", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventbrite.co.uk/e/tony-carroll-vibe-bar-club-tickets-1992807129770"}, "startDate": "2026-08-08T20:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/tony-carroll-vibe-bar-club/"}, "position": 1}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "item": {"@context": "https://schema.org", "@type": "Event", "description": "Hot Water's Green Room Podcast comedian Tony Carroll comes to Morley!", "endDate": "2026-08-09T21:30:00+01:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "GB", "addressLocality": "Leeds", "streetAddress": "Commercial Street"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.747072, "longitude": -1.601398}, "name": "Vibe Bar & Club"}, "name": "Tony Carroll @ Vibe Bar & Club", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.eventbrite.co.uk/e/tony-carroll-vibe-bar-club-tickets-1992807129770"}, "startDate": "2026-08-08T20:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/tony-carroll-vibe-bar-club/"}, "position": 1}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -222,7 +222,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/tony-carroll-vibe-bar-club/">View &amp; tickets →</a>
     </div>
   </div>
-</div><h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this show — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+</div><h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Vibe Bar &amp; Club</div>
+  <div id="show-venue-map" data-events='[{&quot;id&quot;: 1134, &quot;slug&quot;: &quot;tony-carroll-vibe-bar-club&quot;, &quot;title&quot;: &quot;Tony Carroll @ Vibe Bar &amp; Club&quot;, &quot;venue_id&quot;: 498, &quot;venue_name&quot;: &quot;Vibe Bar &amp; Club&quot;, &quot;venue_latitude&quot;: 53.747072, &quot;venue_longitude&quot;: -1.601398, &quot;canonical_event_url&quot;: &quot;https://www.eventbrite.co.uk/e/tony-carroll-vibe-bar-club-tickets-1992807129770&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=53.747072%2C-1.601398" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:53.747072,-1.601398">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('show-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
 </main>
 
 <footer>

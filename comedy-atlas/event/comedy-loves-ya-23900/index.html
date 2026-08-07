@@ -17,7 +17,7 @@
 <meta property="og:description" content="Comedy Loves Ya brings the best undiscovered and established talent to the stage for this open mic!">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/comedy-loves-ya-23900/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Comedy Loves Ya brings the best undiscovered and established talent to the stage for this open mic!", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York"}, "name": "EastVille Comedy Club"}, "name": "Comedy Loves Ya", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 15.0, "priceCurrency": "USD", "url": "https://www.eastvillecomedy.com/events/comedy-loves-ya-2026-08-12180000", "validFrom": "2026-08-01T16:30:43.072531+02:00"}, "organizer": {"@type": "Organization", "name": "Eastville Comedy Club"}, "startDate": "2026-08-12T18:00:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/comedy-loves-ya-23900/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "description": "Comedy Loves Ya brings the best undiscovered and established talent to the stage for this open mic!", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "New York"}, "geo": {"@type": "GeoCoordinates", "latitude": 40.68586, "longitude": -73.981654}, "name": "EastVille Comedy Club"}, "name": "Comedy Loves Ya", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "price": 15.0, "priceCurrency": "USD", "url": "https://www.eastvillecomedy.com/events/comedy-loves-ya-2026-08-12180000", "validFrom": "2026-08-01T16:30:43.072531+02:00"}, "organizer": {"@type": "Organization", "name": "Eastville Comedy Club"}, "startDate": "2026-08-12T18:00:00-04:00", "url": "https://comedyatlas.app/comedy-atlas/event/comedy-loves-ya-23900/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-08-13T00:00:00+02:00">Wed, Aug 12 2026 · 18:00 (UTC-04:00)</time></div>
   <p class="atlas-promise">Comedy Loves Ya brings the best undiscovered and established talent to the stage for this open mic!</p>
   
-  <div class="field-row" style="margin-top:10px">EastVille Comedy Club, New York — <a href="https://www.openstreetmap.org/search?query=EastVille Comedy Club, New York" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=EastVille+Comedy+Club%2C+New+York" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">EastVille Comedy Club, New York — <a href="https://www.openstreetmap.org/?mlat=40.685860&amp;mlon=-73.981654#map=17/40.685860/-73.981654" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=40.685860,-73.981654" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Eastville Comedy Club</div>
   
   <div class="field-row"><span>Price: 15.00 USD</span></div>
@@ -185,7 +185,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">EastVille Comedy Club</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 23900, &quot;slug&quot;: &quot;comedy-loves-ya-23900&quot;, &quot;title&quot;: &quot;Comedy Loves Ya&quot;, &quot;venue_id&quot;: 753, &quot;venue_name&quot;: &quot;EastVille Comedy Club&quot;, &quot;venue_latitude&quot;: 40.68586, &quot;venue_longitude&quot;: -73.981654, &quot;canonical_event_url&quot;: &quot;https://www.eastvillecomedy.com/events/comedy-loves-ya-2026-08-12180000&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=40.685860%2C-73.981654" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:40.685860,-73.981654">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   <div class="save-box">

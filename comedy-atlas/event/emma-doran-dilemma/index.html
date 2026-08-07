@@ -17,7 +17,7 @@
 <meta property="og:description" content="Emma Doran: Dilemma — see it on COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/emma-doran-dilemma/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "IE", "addressLocality": "Galway"}, "name": "Town Hall Theatre"}, "name": "Emma Doran: Dilemma", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://galwaycomedyfestival.ie/eventdetails?slug=dilemma-emma-doran-1780417993681", "validFrom": "2026-07-20T16:51:02.531051+02:00"}, "organizer": {"@type": "Organization", "name": "Galway Comedy Festival", "url": "https://comedyatlas.app/comedy-atlas/org/galway-comedy-festival/"}, "performer": [{"@type": "Person", "name": "Emma Doran", "url": "https://comedyatlas.app/comedy-atlas/comic/emma-doran/"}], "startDate": "2026-10-24T20:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/emma-doran-dilemma/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "IE", "addressLocality": "Galway"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.276129, "longitude": -9.054028}, "name": "Town Hall Theatre"}, "name": "Emma Doran: Dilemma", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://galwaycomedyfestival.ie/eventdetails?slug=dilemma-emma-doran-1780417993681", "validFrom": "2026-07-20T16:51:02.531051+02:00"}, "organizer": {"@type": "Organization", "name": "Galway Comedy Festival", "url": "https://comedyatlas.app/comedy-atlas/org/galway-comedy-festival/"}, "performer": [{"@type": "Person", "name": "Emma Doran", "url": "https://comedyatlas.app/comedy-atlas/comic/emma-doran/"}], "startDate": "2026-10-24T20:00:00+01:00", "url": "https://comedyatlas.app/comedy-atlas/event/emma-doran-dilemma/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-10-24T21:00:00+02:00">Sat, Oct 24 2026 · 20:00 (UTC+01:00)</time></div>
   <p class="atlas-promise">No description provided yet by the organizer.</p>
   
-  <div class="field-row" style="margin-top:10px">Town Hall Theatre, Galway — <a href="https://www.openstreetmap.org/search?query=Town Hall Theatre, Galway" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Town+Hall+Theatre%2C+Galway" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Town Hall Theatre, Galway — <a href="https://www.openstreetmap.org/?mlat=53.276129&amp;mlon=-9.054028#map=17/53.276129/-9.054028" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=53.276129,-9.054028" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Galway Comedy Festival</div>
   
   
@@ -185,7 +185,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Town Hall Theatre</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 7029, &quot;slug&quot;: &quot;emma-doran-dilemma&quot;, &quot;title&quot;: &quot;Emma Doran: Dilemma&quot;, &quot;venue_id&quot;: 546, &quot;venue_name&quot;: &quot;Town Hall Theatre&quot;, &quot;venue_latitude&quot;: 53.276129, &quot;venue_longitude&quot;: -9.054028, &quot;canonical_event_url&quot;: &quot;https://galwaycomedyfestival.ie/eventdetails?slug=dilemma-emma-doran-1780417993681&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=53.276129%2C-9.054028" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:53.276129,-9.054028">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   <h2 class="section-heading">Performing</h2><div class="chip-row"><a class="chip" href="/comedy-atlas/comic/emma-doran/">Emma Doran</a></div>
   
   <div class="save-box">
