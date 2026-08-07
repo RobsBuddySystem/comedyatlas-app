@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bilal-rashid@comedyatlas.app
+DTSTAMP:20260808T133000Z
+DTSTART:20260808T133000Z
+DTEND:20260808T153000Z
+SUMMARY:BILAL RASHID
+LOCATION:Greek Gyros Grill\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/bilal-rashid/
+URL:https://comedyatlas.app/comedy-atlas/event/bilal-rashid/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mark-normand@comedyatlas.app
+DTSTAMP:20260925T000000Z
+DTSTART:20260925T000000Z
+DTEND:20260925T020000Z
+SUMMARY:Mark Normand
+LOCATION:Acme Comedy Company\, 708 North First Street\, Minneapolis
+DESCRIPTION:⚠️SPECIAL EVENT⚠️\n\nAcme Comedy Company is an 18+ ven
+ ue for all shows.Seating:Seats in the club are assigned when the tickets ar
+ e claimed at the Box Office. As a bonus for our Dinner & Show guests\; thei
+ r seats are assigned first. Seating after that is on a first claimed\, firs
+ t assigned basis from the front of the club to the back. You can pick up yo
+ ur tickets as early as 2 hours before the show starts (seats are assigned t
+ hen).\nMore info: https://comedyatlas.app/comedy-atlas/event/mark-normand/
+URL:https://comedyatlas.app/comedy-atlas/event/mark-normand/
+END:VEVENT
+END:VCALENDAR

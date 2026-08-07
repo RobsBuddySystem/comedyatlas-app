@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:art-of-astrophysics@comedyatlas.app
+DTSTAMP:20260818T121500Z
+DTSTART:20260818T121500Z
+DTEND:20260818T141500Z
+SUMMARY:ART OF ASTROPHYSICS
+LOCATION:Diggers Leith – Upstairs room\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/art-of-astrophysics/
+URL:https://comedyatlas.app/comedy-atlas/event/art-of-astrophysics/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cat-onine-tales-24601@comedyatlas.app
+DTSTAMP:20260811T203500Z
+DTSTART:20260811T203500Z
+DTEND:20260811T212500Z
+SUMMARY:CAT O’NINE TALES
+LOCATION:Brewdog Lothian Road\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/cat-onine-tales-24601/
+URL:https://comedyatlas.app/comedy-atlas/event/cat-onine-tales-24601/
+END:VEVENT
+END:VCALENDAR

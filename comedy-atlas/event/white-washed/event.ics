@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:white-washed@comedyatlas.app
+DTSTAMP:20260817T171500Z
+DTSTART:20260817T171500Z
+DTEND:20260817T191500Z
+SUMMARY:White-Washed
+LOCATION:The Carriers Quarters – Back room\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/white-washed/
+URL:https://comedyatlas.app/comedy-atlas/event/white-washed/
+END:VEVENT
+END:VCALENDAR

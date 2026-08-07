@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:obie-the-fuck-it-list@comedyatlas.app
+DTSTAMP:20260809T154000Z
+DTSTART:20260809T154000Z
+DTEND:20260809T174000Z
+SUMMARY:OBIE: THE FUCK IT LIST.
+LOCATION:Supercube Cowgate – Room 6\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/obie-the-fuck-it-list/
+URL:https://comedyatlas.app/comedy-atlas/event/obie-the-fuck-it-list/
+END:VEVENT
+END:VCALENDAR

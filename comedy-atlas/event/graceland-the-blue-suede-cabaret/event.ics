@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:graceland-the-blue-suede-cabaret@comedyatlas.app
+DTSTAMP:20260828T170000Z
+DTSTART:20260828T170000Z
+DTEND:20260828T190000Z
+SUMMARY:GRACELAND: THE BLUE SUEDE CABARET
+LOCATION:Pizza Geeks Easter Road – Back room\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/graceland-the-blue-suede-cabaret/
+URL:https://comedyatlas.app/comedy-atlas/event/graceland-the-blue-suede-cab
+ aret/
+END:VEVENT
+END:VCALENDAR

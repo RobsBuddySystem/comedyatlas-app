@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-alternative-black-cabaret-showcase@comedyatlas.app
+DTSTAMP:20260808T123000Z
+DTSTART:20260808T123000Z
+DTEND:20260808T143000Z
+SUMMARY:THE ALTERNATIVE BLACK CABARET SHOWCASE
+LOCATION:Bannermans\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/the-alternative-black-cabaret-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/the-alternative-black-cabare
+ t-showcase/
+END:VEVENT
+END:VCALENDAR

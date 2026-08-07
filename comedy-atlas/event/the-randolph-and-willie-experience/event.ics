@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-randolph-and-willie-experience@comedyatlas.app
+DTSTAMP:20260821T173500Z
+DTSTART:20260821T173500Z
+DTEND:20260821T193500Z
+SUMMARY:THE RANDOLPH AND WILLIE EXPERIENCE
+LOCATION:Strathmore Bar\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/the-randolph-and-willie-experience/
+URL:https://comedyatlas.app/comedy-atlas/event/the-randolph-and-willie-expe
+ rience/
+END:VEVENT
+END:VCALENDAR

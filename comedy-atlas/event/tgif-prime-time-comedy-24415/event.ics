@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tgif-prime-time-comedy-24415@comedyatlas.app
+DTSTAMP:20260822T000000Z
+DTSTART:20260822T000000Z
+DTEND:20260822T020000Z
+SUMMARY:TGIF Prime Time Comedy
+LOCATION:EastVille Comedy Club\, New York
+DESCRIPTION:Prime-Time Comedy in Brooklyn!FEATURING SPECIAL GUEST COMEDIANS
+ ...Lineup Below\nMore info: https://comedyatlas.app/comedy-atlas/event/tgif
+ -prime-time-comedy-24415/
+URL:https://comedyatlas.app/comedy-atlas/event/tgif-prime-time-comedy-24415
+ /
+END:VEVENT
+END:VCALENDAR

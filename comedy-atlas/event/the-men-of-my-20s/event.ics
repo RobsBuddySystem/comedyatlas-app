@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-men-of-my-20s@comedyatlas.app
+DTSTAMP:20260824T134500Z
+DTSTART:20260824T134500Z
+DTEND:20260824T154500Z
+SUMMARY:THE MEN OF MY 20S
+LOCATION:Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/the-men-of-my-20s/
+URL:https://comedyatlas.app/comedy-atlas/event/the-men-of-my-20s/
+END:VEVENT
+END:VCALENDAR

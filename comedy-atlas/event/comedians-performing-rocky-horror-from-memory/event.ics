@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedians-performing-rocky-horror-from-memory@comedyatlas.app
+DTSTAMP:20260830T223500Z
+DTSTART:20260830T223500Z
+DTEND:20260830T233500Z
+SUMMARY:COMEDIANS PERFORMING ROCKY HORROR FROM MEMORY
+LOCATION:Voodoo Rooms – carte blanche!\, Edinburgh
+DESCRIPTION:Genre: Comedy\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/comedians-performing-rocky-horror-from-memory/
+URL:https://comedyatlas.app/comedy-atlas/event/comedians-performing-rocky-h
+ orror-from-memory/
+END:VEVENT
+END:VCALENDAR
