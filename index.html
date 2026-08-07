@@ -164,8 +164,21 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 @keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.atlas-hero-figure{opacity:1;transform:none;animation:none}}
 @media(max-width:640px){
-  .atlas-hero{flex-direction:column-reverse;text-align:center;gap:12px}
-  .atlas-hero-figure{width:clamp(96px,32vw,140px)}
+  /* I1 (Wave 1 5.1, 2026-08-04): flex-direction:column-reverse alone left
+     align-items:center (the base .atlas-hero rule, never overridden here)
+     in force. In a column-direction flex container, align-items governs
+     the CROSS axis (width) -- "center" sizes each item to its own
+     preferred/max-content width instead of stretching it to the
+     container, so .atlas-hero-copy rendered at its unwrapped content
+     width (296px, driven by the "COMEDY ATLAS." wordmark's 30px clamp
+     floor) even inside a 192px viewport (400% zoom on a 768px layout) --
+     document.documentElement.scrollWidth 260+ > clientWidth 192,
+     reproduced live with Playwright, see
+     tests/test_chrome_touch_targets.py. align-items:stretch makes the
+     item fill the container's actual width so its own text wraps inside
+     it, same as every other block on the page. */
+  .atlas-hero{flex-direction:column-reverse;align-items:stretch;text-align:center;gap:12px}
+  .atlas-hero-figure{width:clamp(96px,32vw,140px);align-self:center}
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
 }
@@ -678,8 +691,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       + '<div class="atlas-globe-topbar">'
       +   '<div class="atlas-globe-brand"><div class="atlas-globe-wordmark">COMEDY ATLAS</div>'
       +   '<div class="atlas-globe-tagline">The world of stand-up comedy.</div></div>'
-      +   '<div class="atlas-globe-search"><input type="text" '
-      +     'placeholder="Search a city…" aria-label="Search a city"></div>'
+      +   '<div class="atlas-globe-search"><input type="search" autocomplete="off" '
+      +     'placeholder="Search comics, shows, venues, festivals…" '
+      +     'aria-label="Search Comedy Atlas" role="combobox" aria-autocomplete="list" '
+      +     'aria-expanded="false" aria-controls="atlas-map-search-results">'
+      +     '<div id="atlas-map-search-results" class="atlas-map-search-results" '
+      +       'role="listbox" aria-label="Comedy Atlas search results" hidden></div></div>'
       + '</div>'
       + '<div class="atlas-globe-panel-col" data-role="panel"></div>'
       + '</div>';
@@ -689,6 +706,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var canvasEl = shell.querySelector(".atlas-map-canvas");
     var panelEl = shell.querySelector('[data-role="panel"]');
     var inputEl = shell.querySelector(".atlas-globe-search input");
+    var searchResultsEl = shell.querySelector("#atlas-map-search-results");
 
     var script = document.createElement("script");
     script.src = "/comedy-atlas/vendor/maplibre-gl/maplibre-gl.js";
@@ -732,28 +750,134 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           panelEl.appendChild(box);
         }
 
-        /* Search: resolve a typed city name against the SAME cities.geojson
-           the world view already loaded, then selectCity(slug). No second
-           search index, no fuzzy guessing at a city that isn't in the data. */
-        var cityIndex = [];
-        fetch("../data/map/cities.geojson").then(function (r) { return r.json(); })
-          .then(function (gj) {
-            cityIndex = (gj.features || []).map(function (f) {
-              return { slug: f.properties.slug, name: f.properties.name,
-                       norm: String(f.properties.name || "").toLowerCase() };
-            });
-          }).catch(function () { /* search degrades; map still works */ });
+        /* One search surface, one canonical inventory. The old implementation
+           loaded cities.geojson and could only fly to a city; meanwhile
+           atlas-visuals.js had a complete multi-entity search that this input
+           never called. Reuse that tested search API against search_index.json
+           so the field Robert actually types into can find comics, show
+           series, dated shows, venues, festivals, organizers and cities. */
+        var searchApi = window.AtlasVisuals && window.AtlasVisuals.search;
+        var searchIndexRecords = null;
+        var searchLoadStarted = false;
+        var flatSearchRecords = [];
 
-        function runSearch() {
-          var q = (inputEl.value || "").trim().toLowerCase();
-          if (!q) return;
-          var hit = cityIndex.filter(function (c) { return c.norm === q; })[0]
-                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) === 0; })[0]
-                 || cityIndex.filter(function (c) { return c.norm.indexOf(q) !== -1; })[0];
-          if (hit) handle.selectCity(hit.slug);
+        function setSearchOpen(open) {
+          searchResultsEl.hidden = !open;
+          inputEl.setAttribute("aria-expanded", open ? "true" : "false");
         }
+
+        function addSearchStatus(text, role) {
+          var row = document.createElement("div");
+          row.className = "atlas-map-search-status";
+          row.setAttribute("role", role || "status");
+          row.textContent = text;
+          searchResultsEl.appendChild(row);
+        }
+
+        function citySlugFromRecord(record) {
+          var match = String(record.url || "").match(/\/city\/([^/]+)\/?$/);
+          return match ? decodeURIComponent(match[1]) : null;
+        }
+
+        function selectSearchRecord(record) {
+          if (!record) return;
+          var citySlug = record.type === "city" ? citySlugFromRecord(record) : null;
+          if (citySlug) {
+            handle.selectCity(citySlug);
+          } else if (record.url) {
+            window.location.href = record.url;
+          }
+          inputEl.value = "";
+          setSearchOpen(false);
+        }
+
+        function renderGlobalSearch() {
+          var query = (inputEl.value || "").trim();
+          searchResultsEl.innerHTML = "";
+          flatSearchRecords = [];
+          if (!query) { setSearchOpen(false); return; }
+          if (!searchApi) {
+            addSearchStatus("Search is updating. Reload once, then try again.", "alert");
+            setSearchOpen(true);
+            return;
+          }
+          if (searchIndexRecords === null) {
+            addSearchStatus("Loading the Comedy Atlas index…", "status");
+            setSearchOpen(true);
+            return;
+          }
+
+          var result = searchApi.searchRecords(searchIndexRecords, query);
+          if (!result.total) {
+            addSearchStatus('No results for "' + query + '".', "status");
+            setSearchOpen(true);
+            return;
+          }
+
+          result.groups.forEach(function (group) {
+            var heading = document.createElement("div");
+            heading.className = "atlas-map-search-group";
+            heading.textContent = group.label + " (" + group.count + ")";
+            searchResultsEl.appendChild(heading);
+            group.items.slice(0, 6).forEach(function (record) {
+              var option = document.createElement("a");
+              option.className = "atlas-map-search-option";
+              option.setAttribute("role", "option");
+              option.href = record.url || "#";
+              var name = document.createElement("strong");
+              name.textContent = record.name || "Untitled";
+              option.appendChild(name);
+              var meta = [record.city, record.country, record.status].filter(Boolean);
+              if (meta.length) {
+                var detail = document.createElement("span");
+                detail.textContent = meta.join(" · ");
+                option.appendChild(detail);
+              }
+              option.addEventListener("click", function (ev) {
+                ev.preventDefault();
+                selectSearchRecord(record);
+              });
+              searchResultsEl.appendChild(option);
+              flatSearchRecords.push({ record: record, element: option });
+            });
+          });
+          setSearchOpen(true);
+        }
+
+        function loadGlobalSearchOnce() {
+          if (searchLoadStarted || !searchApi) return;
+          searchLoadStarted = true;
+          searchApi.loadSearchIndexSafely(
+            window.fetch.bind(window), "../data/comedy-atlas/search_index.json"
+          ).then(function (result) {
+            searchIndexRecords = result.records;
+            if (result.failed) {
+              searchResultsEl.innerHTML = "";
+              addSearchStatus("Search is temporarily unavailable.", "alert");
+              setSearchOpen(true);
+              return;
+            }
+            renderGlobalSearch();
+          });
+        }
+
+        inputEl.addEventListener("input", function () {
+          loadGlobalSearchOnce();
+          renderGlobalSearch();
+        });
+        inputEl.addEventListener("focus", function () {
+          if ((inputEl.value || "").trim()) renderGlobalSearch();
+        });
         inputEl.addEventListener("keydown", function (ev) {
-          if (ev.key === "Enter") { ev.preventDefault(); runSearch(); }
+          if (ev.key === "Enter" && flatSearchRecords.length) {
+            ev.preventDefault();
+            selectSearchRecord(flatSearchRecords[0].record);
+          } else if (ev.key === "ArrowDown" && flatSearchRecords.length) {
+            ev.preventDefault();
+            flatSearchRecords[0].element.focus();
+          } else if (ev.key === "Escape") {
+            setSearchOpen(false);
+          }
         });
 
         document.addEventListener("keydown", function (ev) {

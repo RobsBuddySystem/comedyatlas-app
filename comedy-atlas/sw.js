@@ -12,9 +12,10 @@
  *   - data/*.json (event listings)   -> network-first (freshness matters;
  *     shows/times change). Falls back to cache when offline, and updates
  *     the cache on every successful network hit.
- *   - everything else same-origin GET (html/css/js/png/manifest) -> cache-
- *     first, versioned. A cache miss falls through to network and seeds
- *     the cache for next time.
+ *   - mutable app files (HTML/JS/CSS) -> network-first, cached fallback.
+ *     This prevents a returning visitor from executing an old bundle merely
+ *     because a release forgot to rotate the cache version.
+ *   - immutable media/fonts -> cache-first, versioned.
  *   - navigation requests (HTML page loads) that fail BOTH network and
  *     cache fall back to offline.html.
  *
@@ -23,7 +24,7 @@
  */
 "use strict";
 
-var CACHE_VERSION = "atlas-1dc2bd77d51c";
+var CACHE_VERSION = "atlas-9ce59e46806d";
 var STATIC_CACHE = "atlas-static-" + CACHE_VERSION;
 var DATA_CACHE = "atlas-data-" + CACHE_VERSION;
 
@@ -78,7 +79,11 @@ function isDataRequest(url) {
 }
 
 function networkFirst(request) {
-  return caches.open(DATA_CACHE).then(function (cache) {
+  return networkFirstInCache(request, DATA_CACHE);
+}
+
+function networkFirstInCache(request, cacheName) {
+  return caches.open(cacheName).then(function (cache) {
     return fetch(request).then(function (response) {
       if (response && response.ok) {
         cache.put(request, response.clone());
@@ -91,6 +96,11 @@ function networkFirst(request) {
       });
     });
   });
+}
+
+function isMutableAppRequest(request, url) {
+  if (request.mode === "navigate") return true;
+  return /\.(?:html|js|css)$/.test(url.pathname);
 }
 
 function cacheFirst(request) {
@@ -119,9 +129,9 @@ self.addEventListener("fetch", function (event) {
     return;
   }
 
-  if (request.mode === "navigate") {
+  if (isMutableAppRequest(request, url)) {
     event.respondWith(
-      cacheFirst(request).catch(function () {
+      networkFirstInCache(request, STATIC_CACHE).catch(function () {
         return caches.match("./offline.html");
       })
     );
