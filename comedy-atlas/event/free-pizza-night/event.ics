@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:free-pizza-night@comedyatlas.app
+DTSTAMP:20260808T223000Z
+DTSTART:20260808T223000Z
+DTEND:20260809T003000Z
+SUMMARY:Free Pizza Night!
+LOCATION:The Tiny Cupboard\, 10 Cooper St.\, New York
+DESCRIPTION:If you get a ticket to a comedy show we'll have free pizza at t
+ he game bar all night\, first come first serve (but must show proof of come
+ dy ticket to claim pizza!).\nMore info: https://comedyatlas.app/comedy-atla
+ s/event/free-pizza-night/
+URL:https://comedyatlas.app/comedy-atlas/event/free-pizza-night/
+END:VEVENT
+END:VCALENDAR

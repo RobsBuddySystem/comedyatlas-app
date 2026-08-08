@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crimes-against-nature@comedyatlas.app
+DTSTAMP:20260924T010000Z
+DTSTART:20260924T010000Z
+DTEND:20260924T023000Z
+SUMMARY:Crimes Against Nature
+LOCATION:The Comedy Corner Underground\, 400 East Hennepin Avenue\, Minneap
+ olis
+DESCRIPTION:The Comedy Corner Underground presents the CRIMES AGAINST NATUR
+ E from the Image Comics release party. A live comic book reading featuring 
+ stand-up comedy from Phoebe Bottoms\, Pearl Rose\, and Ben Katzener. An eve
+ ning of comics\, comedy\, and celebration! 20 dollars. Each ticket comes wi
+ th a signed copy of the first issue of Crimes Against Nature.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/crimes-against-nature/
+URL:https://comedyatlas.app/comedy-atlas/event/crimes-against-nature/
+END:VEVENT
+END:VCALENDAR

@@ -17,7 +17,7 @@
 <meta property="og:description" content="This Thursdays at ROBINS - Comedy Brew! English Stand-Up Comedy Open Mic — see it on COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/this-thursdays-at-robins-comedy-brew-english-stand-up-comedy-open-mic-57/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "endDate": "2026-07-23T22:00:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "CH", "addressLocality": "Zurich", "streetAddress": "Z\u00e4hringerstrasse 33, Z\u00fcrich"}, "name": "In Your Face Comedy"}, "name": "This Thursdays at ROBINS - Comedy Brew! English Stand-Up Comedy Open Mic", "organizer": {"@type": "Organization", "name": "IN YOUR FACE Comedy Zurich", "url": "https://comedyatlas.app/comedy-atlas/org/in-your-face-comedy-zurich/"}, "startDate": "2026-07-23T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/this-thursdays-at-robins-comedy-brew-english-stand-up-comedy-open-mic-57/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "endDate": "2026-07-23T22:00:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "inLanguage": "en", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "CH", "addressLocality": "Zurich", "streetAddress": "Z\u00e4hringerstrasse 33, Z\u00fcrich"}, "geo": {"@type": "GeoCoordinates", "latitude": 47.375748, "longitude": 8.544501}, "name": "In Your Face Comedy"}, "name": "This Thursdays at ROBINS - Comedy Brew! English Stand-Up Comedy Open Mic", "organizer": {"@type": "Organization", "name": "IN YOUR FACE Comedy Zurich", "url": "https://comedyatlas.app/comedy-atlas/org/in-your-face-comedy-zurich/"}, "startDate": "2026-07-23T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/this-thursdays-at-robins-comedy-brew-english-stand-up-comedy-open-mic-57/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-07-23T19:30:00+02:00">Thu, Jul 23 2026 · 19:30 (UTC+02:00)</time></div>
   <p class="atlas-promise">No description provided yet by the organizer.</p>
   
-  <div class="field-row" style="margin-top:10px">In Your Face Comedy, Zähringerstrasse 33, Zürich, Zurich — <a href="https://www.openstreetmap.org/search?query=In Your Face Comedy, Zähringerstrasse 33, Zürich, Zurich" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=In+Your+Face+Comedy%2C+Z%C3%A4hringerstrasse+33%2C+Z%C3%BCrich%2C+Zurich" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">In Your Face Comedy, Zähringerstrasse 33, Zürich, Zurich — <a href="https://www.openstreetmap.org/?mlat=47.375748&amp;mlon=8.544501#map=17/47.375748/8.544501" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=47.375748,8.544501" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">IN YOUR FACE Comedy Zurich</div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/this-thursdays-at-robins-comedy-brew-english-stand-up-comedy-open-mic/">This Thursdays at ROBINS - Comedy Brew! English Stand-Up Comedy Open Mic →</a></div>
   
@@ -179,7 +179,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">In Your Face Comedy</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 57, &quot;slug&quot;: &quot;this-thursdays-at-robins-comedy-brew-english-stand-up-comedy-open-mic-57&quot;, &quot;title&quot;: &quot;This Thursdays at ROBINS - Comedy Brew! English Stand-Up Comedy Open Mic&quot;, &quot;venue_id&quot;: 506, &quot;venue_name&quot;: &quot;In Your Face Comedy&quot;, &quot;venue_latitude&quot;: 47.375748, &quot;venue_longitude&quot;: 8.544501, &quot;canonical_event_url&quot;: &quot;https://www.meetup.com/in-your-face-english_stand-up-comedy-in-zurich/events/315194451/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=47.375748%2C8.544501" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:47.375748,8.544501">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

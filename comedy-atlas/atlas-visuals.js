@@ -87,10 +87,10 @@
   var SEARCH_INDEX_URL = "../data/comedy-atlas/search_index.json";
 
   var TYPE_LABELS = {
-    city: "Cities", event: "Shows", venue: "Venues", festival: "Festivals",
-    show: "Series", comic: "Comics", organizer: "Organizers"
+    city: "Cities", region: "Regions", event: "Shows", venue: "Venues",
+    festival: "Festivals", show: "Series", comic: "Comics", organizer: "Organizers"
   };
-  var TYPE_ORDER = ["city", "event", "venue", "festival", "show", "comic", "organizer"];
+  var TYPE_ORDER = ["city", "region", "event", "venue", "festival", "show", "comic", "organizer"];
   var LEADING_ARTICLES = ["the", "a", "an"];
 
   // Every record in search_index.json IS a comedy entity (that's the whole
@@ -184,16 +184,122 @@
     return out;
   }
 
-  // Scans every contiguous run of query tokens (longest known city first)
-  // for a match against the real city index. Returns the matched city's
-  // normalised name (or null -- never a guess) plus the remaining tokens.
+  // Region counterpart of recordCitiesNormalized (Atlas Wave A1,
+  // 2026-08-08 -- scripts/generate_search_index.py's fetch_regions/
+  // region-on-every-fetcher work). A `region`-type record's own `name`
+  // IS the location (same relationship "city"-type has to its own
+  // `name`); every other type carries it as a scalar `region` (event/
+  // venue/show/organizer/city -- one region by construction) OR a
+  // `regions` array (comic/festival, same "can genuinely span more than
+  // one real place" reasoning recordCitiesNormalized's own comment gives
+  // for `cities`). A record with none of these returns [] -- never a
+  // guess, exactly recordCitiesNormalized's own contract.
+  function recordRegionsNormalized(record) {
+    if (!record) return [];
+    if (record.type === "region") {
+      var regionName = normalizeText(record.name);
+      return regionName ? [regionName] : [];
+    }
+    var out = [];
+    var seen = {};
+    if (Array.isArray(record.regions)) {
+      record.regions.forEach(function (r) {
+        var n = normalizeText(r);
+        if (n && !seen[n]) { seen[n] = true; out.push(n); }
+      });
+    }
+    if (record.region) {
+      var n2 = normalizeText(record.region);
+      if (n2 && !seen[n2]) { seen[n2] = true; out.push(n2); }
+    }
+    return out;
+  }
+
+  // A record's full location set -- city AND region together -- so a
+  // single LOCATION filter (which can resolve to either kind, see
+  // buildLocationIndex below) is checked against both in one place.
+  function recordLocationsNormalized(record) {
+    return recordCitiesNormalized(record).concat(recordRegionsNormalized(record));
+  }
+
+  // Region counterpart of buildCityIndex: every distinct real region a
+  // `region`-type record's own `name` OR any record's `region`/`regions`
+  // field contains -- PLUS one entry per region_aliases row (e.g. "New
+  // York State" disambiguating the region from the city "New York" --
+  // scripts/enrich/populate_iso_3166_2_regions.py's REGION_ALIASES),
+  // each mapped to the region's own CANONICAL normalised name (not the
+  // alias's own text) so a query for the alias still filters records via
+  // recordRegionsNormalized's canonical values, exactly like an alias
+  // match already works for cities via recordHaystackTokens (that path
+  // is topic-word matching; this one is location-filter matching, the
+  // same alias data serving both).
+  // Entries carry BOTH `matchText` (the literal alias/name string a query
+  // must equal -- e.g. "new york state") and `normalized` (the CANONICAL
+  // value returned as `location` once matched -- e.g. "new york", the
+  // region's own DB name, which is what recordRegionsNormalized() puts on
+  // every record actually linked to that region). The two differ exactly
+  // for an alias entry; extractLocationFilter (below) already compares
+  // against `entry.matchText || entry.normalized`, so a plain city/region
+  // entry (matchText === normalized, or matchText omitted) behaves exactly
+  // as before.
+  function buildRegionIndex(records) {
+    var seen = {};
+    var out = [];
+    function addEntry(normalized, tokens) {
+      if (!normalized || !tokens.length) return;
+      var matchText = tokens.join(" ");
+      var key = normalized + "|" + matchText;
+      if (seen[key]) return;
+      seen[key] = true;
+      out.push({ normalized: normalized, tokens: tokens, matchText: matchText });
+    }
+    (records || []).forEach(function (r) {
+      if (!r) return;
+      if (r.type === "region") {
+        var n = normalizeText(r.name);
+        if (n) {
+          addEntry(n, n.split(" "));
+          if (Array.isArray(r.aliases)) {
+            r.aliases.forEach(function (a) { addEntry(n, tokenize(a)); });
+          }
+        }
+      }
+      recordRegionsNormalized(r).forEach(function (n2) { addEntry(n2, n2.split(" ")); });
+    });
+    out.sort(function (a, b) { return b.tokens.length - a.tokens.length; });
+    return out;
+  }
+
+  // City + region entries together, longest-token-count first -- this is
+  // what actually disambiguates "New York State" (region alias, 3
+  // tokens) from the city "New York" (2 tokens) when both are real
+  // strings in the loaded index: extractLocationFilter (unchanged below)
+  // always tries the longest known string first, so the 3-token alias
+  // wins over the 2-token city whenever the query contains the extra
+  // word, and falls through to the city otherwise.
+  function buildLocationIndex(records) {
+    return buildCityIndex(records).concat(buildRegionIndex(records))
+      .sort(function (a, b) { return b.tokens.length - a.tokens.length; });
+  }
+
+  // Scans every contiguous run of query tokens (longest known city/region
+  // first) for a match against the supplied location index. Compares
+  // against `entry.matchText` when present (an alias's own literal text,
+  // e.g. "new york state" -- buildRegionIndex) or `entry.normalized`
+  // otherwise (buildCityIndex's entries, unchanged: normalized IS the
+  // literal text there, so this is a no-op for every pre-existing city
+  // entry). Returns the matched entry's CANONICAL normalised value (or
+  // null -- never a guess) plus the remaining tokens -- for an alias
+  // match that canonical value is the region's real DB name, not the
+  // alias string itself, so it lines up with recordRegionsNormalized().
   function extractLocationFilter(tokens, cityIndex) {
     for (var i = 0; i < cityIndex.length; i++) {
       var entry = cityIndex[i];
       var len = entry.tokens.length;
       if (len > tokens.length) continue;
+      var matchText = entry.matchText || entry.normalized;
       for (var start = 0; start + len <= tokens.length; start++) {
-        if (tokens.slice(start, start + len).join(" ") === entry.normalized) {
+        if (tokens.slice(start, start + len).join(" ") === matchText) {
           return {
             location: entry.normalized,
             rest: tokens.slice(0, start).concat(tokens.slice(start + len))
@@ -209,11 +315,12 @@
   }
 
   // Parses a raw query string against the records currently loaded into
-  // this search: tokenise -> pull out a real known-city LOCATION filter ->
-  // whatever's left, minus domain-generic words, are the topic terms.
+  // this search: tokenise -> pull out a real known city-OR-region
+  // LOCATION filter (buildLocationIndex, Wave A1) -> whatever's left,
+  // minus domain-generic words, are the topic terms.
   function parseSearchQuery(query, records) {
     var tokens = tokenize(query);
-    var extracted = extractLocationFilter(tokens, buildCityIndex(records));
+    var extracted = extractLocationFilter(tokens, buildLocationIndex(records));
     return {
       tokens: tokens,
       location: extracted.location,
@@ -226,6 +333,9 @@
     if (record && Array.isArray(record.aliases)) parts = parts.concat(record.aliases);
     if (record && record.city) parts.push(record.city);
     if (record && Array.isArray(record.cities)) parts = parts.concat(record.cities);
+    if (record && record.region) parts.push(record.region);
+    if (record && Array.isArray(record.regions)) parts = parts.concat(record.regions);
+    if (record && record.region_code) parts.push(record.region_code);
     if (record && record.country) parts.push(record.country);
     if (record && Array.isArray(record.countries)) parts = parts.concat(record.countries);
     if (record && record.status) parts.push(record.status);
@@ -245,7 +355,7 @@
   }
 
   function recordMatchesQuery(record, parsed) {
-    if (parsed.location && recordCitiesNormalized(record).indexOf(parsed.location) === -1) return false;
+    if (parsed.location && recordLocationsNormalized(record).indexOf(parsed.location) === -1) return false;
     return matchesTopics(record, parsed.topicTokens);
   }
 
@@ -962,6 +1072,10 @@
     normalizeText: normalizeText,
     tokenize: tokenize,
     buildCityIndex: buildCityIndex,
+    recordRegionsNormalized: recordRegionsNormalized,
+    recordLocationsNormalized: recordLocationsNormalized,
+    buildRegionIndex: buildRegionIndex,
+    buildLocationIndex: buildLocationIndex,
     extractLocationFilter: extractLocationFilter,
     parseSearchQuery: parseSearchQuery,
     recordMatchesQuery: recordMatchesQuery,

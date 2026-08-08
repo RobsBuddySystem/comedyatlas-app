@@ -18,7 +18,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 268
+      "unconfirmed": 267
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -31,7 +31,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 200,
+      "en": 199,
       "unconfirmed": 1
     },
     "latitude": 52.52,
@@ -59,7 +59,7 @@
     "id": 16,
     "language_counts": {
       "en": 187,
-      "unconfirmed": 15
+      "unconfirmed": 14
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -72,7 +72,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 235,
+      "en": 234,
       "unconfirmed": 167
     },
     "latitude": 41.3851,
@@ -86,7 +86,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 158,
+      "en": 156,
       "unconfirmed": 2
     },
     "latitude": 40.4168,
@@ -113,7 +113,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 32,
+      "en": 31,
       "unconfirmed": 2
     },
     "latitude": 38.7223,
@@ -179,7 +179,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 261,
+      "en": 242,
       "unconfirmed": 2
     },
     "latitude": 55.9533,
@@ -401,8 +401,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1042,
-      "unconfirmed": 89
+      "en": 1036,
+      "unconfirmed": 87
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -415,26 +415,13 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 16,
-      "unconfirmed": 47
+      "en": 20,
+      "unconfirmed": 37
     },
     "latitude": 40.7128,
     "longitude": -74.006,
     "name": "New York",
     "timezone": "America/New_York"
-  },
-  {
-    "country_id": 17,
-    "country_iso2": "GB",
-    "country_name": "UK",
-    "id": 81,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 53.8008,
-    "longitude": -1.5491,
-    "name": "Leeds",
-    "timezone": "Europe/London"
   },
   {
     "country_id": 9,
@@ -482,8 +469,8 @@
     "country_name": "United States",
     "id": 98,
     "language_counts": {
-      "en": 19,
-      "unconfirmed": 53
+      "en": 21,
+      "unconfirmed": 51
     },
     "latitude": 44.9778,
     "longitude": -93.265,
@@ -563,7 +550,7 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 211
+      "unconfirmed": 212
     },
     "latitude": null,
     "longitude": null,

@@ -2,13 +2,13 @@
   "files": [
     {
       "filename": "countries.json",
-      "row_count": 58,
-      "sha256": "1f8187c2db8620fd971e273a493769c2f6d0fc58e702ebdbe4835e7775b2aae5"
+      "row_count": 250,
+      "sha256": "a9c2979a62d032164a70d0c4736a34086bf0114dfca325db79be367c639d0e10"
     },
     {
       "filename": "cities.json",
-      "row_count": 62,
-      "sha256": "4d2891b106e5c07a2cdd75cc77f39ba62bf4758d184025875a64ee8c9b2ac1ff"
+      "row_count": 61,
+      "sha256": "73ca1081e90f2f57648faa7a74c75f4c9ac6a5bd9d8b3a2ddcb38146e4e24b6b"
     },
     {
       "filename": "organizations.json",
@@ -17,13 +17,13 @@
     },
     {
       "filename": "show_series.json",
-      "row_count": 712,
-      "sha256": "dedd239fe04129d21b0624e59cbcf706ecc1d7712aba0bf224916ec60efb41b7"
+      "row_count": 2679,
+      "sha256": "c419a3ee1c67d80adff0d7bcc93c08d07dbb01343f781755e5e671e04d3a1d5c"
     },
     {
       "filename": "upcoming_events.json",
-      "row_count": 6113,
-      "sha256": "31cda8aa98a69328f63fb338b0a5f4e5d22fbe6d03634b64b4f08af407d95203"
+      "row_count": 6073,
+      "sha256": "b9d26a2631ce1be0d5a371b5dfc47c463caffe6a51874046f19ec17bc97bd1dd"
     },
     {
       "filename": "public_booking_methods.json",
@@ -33,7 +33,7 @@
     {
       "filename": "festivals.json",
       "row_count": 78,
-      "sha256": "f2ef03ec6d4e8e19912d30ff80f5c5d04f64b75c7048a7eb6a9728a408f33839"
+      "sha256": "3c7f5f96d94564551fe595f3853536f96a1b774d2821250bc44bd915ee377c9b"
     },
     {
       "filename": "tours.json",
@@ -42,10 +42,10 @@
     },
     {
       "filename": "opportunities.json",
-      "row_count": 191,
-      "sha256": "371dba1815507048f17e0ee75ef26f1f3dde32456244d80b99f9febb306873e1"
+      "row_count": 183,
+      "sha256": "814b41355a6721e94eb277616e805299d1bded65ccf576aa9558a3273cf3f620"
     }
   ],
-  "generated_at": "2026-08-08T18:00:59.147395+00:00",
+  "generated_at": "2026-08-08T21:08:37.370351+00:00",
   "source_exports_dir": "/Users/chuck/Documents/Claude/Projects/comedy-network-db/exports"
 }

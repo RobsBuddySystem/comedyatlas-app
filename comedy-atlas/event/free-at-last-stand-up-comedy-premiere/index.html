@@ -17,7 +17,7 @@
 <meta property="og:description" content="FREE AT LAST! • Stand-up Comedy Premiere — see it on COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/free-at-last-stand-up-comedy-premiere/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "endDate": "2026-07-24T21:00:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "AT", "addressLocality": "Vienna", "streetAddress": "Lenaugasse 1A, Wien, Jo"}, "name": "Kabarett Niedermair"}, "name": "FREE AT LAST! \u2022 Stand-up Comedy Premiere", "organizer": {"@type": "Organization", "name": "Comedy For Expats", "url": "https://comedyatlas.app/comedy-atlas/org/comedy-for-expats/"}, "startDate": "2026-07-24T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/free-at-last-stand-up-comedy-premiere/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "endDate": "2026-07-24T21:00:00+02:00", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "AT", "addressLocality": "Vienna", "streetAddress": "Lenaugasse 1A, Wien, Jo"}, "geo": {"@type": "GeoCoordinates", "latitude": 48.209511, "longitude": 16.354494}, "name": "Kabarett Niedermair"}, "name": "FREE AT LAST! \u2022 Stand-up Comedy Premiere", "organizer": {"@type": "Organization", "name": "Comedy For Expats", "url": "https://comedyatlas.app/comedy-atlas/org/comedy-for-expats/"}, "startDate": "2026-07-24T19:30:00+02:00", "url": "https://comedyatlas.app/comedy-atlas/event/free-at-last-stand-up-comedy-premiere/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -163,7 +163,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-07-24T19:30:00+02:00">Fri, Jul 24 2026 · 19:30 (UTC+02:00)</time></div>
   <p class="atlas-promise">No description provided yet by the organizer.</p>
   
-  <div class="field-row" style="margin-top:10px">Kabarett Niedermair, Lenaugasse 1A, Wien, Jo, Vienna — <a href="https://www.openstreetmap.org/search?query=Kabarett Niedermair, Lenaugasse 1A, Wien, Jo, Vienna" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kabarett+Niedermair%2C+Lenaugasse+1A%2C+Wien%2C+Jo%2C+Vienna" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Kabarett Niedermair, Lenaugasse 1A, Wien, Jo, Vienna — <a href="https://www.openstreetmap.org/?mlat=48.209511&amp;mlon=16.354494#map=17/48.209511/16.354494" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=48.209511,16.354494" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Comedy For Expats</div>
   <div class="field-row">Part of: <a href="/comedy-atlas/show/free-at-last-stand-up-comedy-premiere/">FREE AT LAST! • Stand-up Comedy Premiere →</a></div>
   
@@ -179,7 +179,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Kabarett Niedermair</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 51, &quot;slug&quot;: &quot;free-at-last-stand-up-comedy-premiere&quot;, &quot;title&quot;: &quot;FREE AT LAST! \u2022 Stand-up Comedy Premiere&quot;, &quot;venue_id&quot;: 505, &quot;venue_name&quot;: &quot;Kabarett Niedermair&quot;, &quot;venue_latitude&quot;: 48.209511, &quot;venue_longitude&quot;: 16.354494, &quot;canonical_event_url&quot;: &quot;https://www.meetup.com/viennacomedy/events/315426818/&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=48.209511%2C16.354494" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:48.209511,16.354494">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   
