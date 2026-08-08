@@ -267,10 +267,35 @@ noscript .result-meta{margin-top:2px}
     }
   }
 
+  // REGION IN THE HAYSTACK (2026-08-08). Measured live the same day:
+  // /comedy-atlas/search/?q=Minnesota returned "Showing 1-1 of 1 result" --
+  // the bare "Minnesota" REGION label -- while 106 OTHER records in the very
+  // same search_index.json carry region:"Minnesota". Scotland: 1,057
+  // records, Ontario: 319, New York: 121. All invisible, because the only
+  // geographic field this haystack has ever contained is `city`.
+  //
+  // The region work (Atlas Wave A1) DID ship: generate_search_index.py puts
+  // a region on every fetcher, and atlas-visuals.js -- the GLOBE box --
+  // grew regionsNormalized() to match on it. This file never did. So the
+  // fix was verified through the globe helper and reported as "Minnesota ->
+  // 107", while the page a visitor actually lands on after pressing Enter
+  // kept returning one dead label. Same shape as `city` above, scalar
+  // `region` (event/venue/show/organizer/city -- one region by
+  // construction) or a `regions` array (comic/festival, which can genuinely
+  // span more than one real place), mirroring atlas-visuals.js's contract
+  // exactly rather than inventing a second one.
+  //
+  // `country` is deliberately NOT added: it is a 2-letter code, so folding
+  // it in would make a query like "us" or "in" match thousands of unrelated
+  // records. region_code IS added -- it is unambiguous ("US-MN") and only
+  // ever appears on region records.
   function buildHaystack(rec) {
     var parts = [rec.name || ""];
     if (rec.aliases) { parts = parts.concat(rec.aliases); }
     if (rec.city) { parts.push(rec.city); }
+    if (rec.region) { parts.push(rec.region); }
+    if (Array.isArray(rec.regions)) { parts = parts.concat(rec.regions); }
+    if (rec.region_code) { parts.push(rec.region_code); }
     return foldAccents(parts.join(" ␟ ").toLowerCase());
   }
 
