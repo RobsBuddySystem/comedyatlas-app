@@ -1838,5 +1838,20 @@
     "region_name": null,
     "region_type": null,
     "timezone": null
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 188,
+    "language_counts": {},
+    "latitude": null,
+    "longitude": null,
+    "name": "Saint Paul",
+    "region_code": "US-MN",
+    "region_id": 3128,
+    "region_name": "Minnesota",
+    "region_type": "State",
+    "timezone": "America/Chicago"
   }
 ]

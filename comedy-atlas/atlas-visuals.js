@@ -349,7 +349,7 @@
   function matchesTopics(record, topicTokens) {
     if (!topicTokens.length) return true;
     var haystack = recordHaystackTokens(record);
-    return topicTokens.some(function (qt) {
+    return topicTokens.every(function (qt) {
       return haystack.some(function (rt) { return rt.indexOf(qt) === 0; });
     });
   }
