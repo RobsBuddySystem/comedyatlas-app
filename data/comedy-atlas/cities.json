@@ -35,7 +35,7 @@
     "country_name": "Belgium",
     "id": 3,
     "language_counts": {
-      "en": 4
+      "en": 6
     },
     "latitude": 50.8503,
     "longitude": 4.3517,
@@ -437,7 +437,7 @@
     "country_name": "Germany",
     "id": 31,
     "language_counts": {
-      "en": 3
+      "en": 4
     },
     "latitude": 48.1351,
     "longitude": 11.582,
@@ -471,7 +471,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 239,
+      "en": 166,
       "unconfirmed": 2
     },
     "latitude": 55.9533,
@@ -569,6 +569,23 @@
     "timezone": "Europe/Stockholm"
   },
   {
+    "country_id": 30,
+    "country_iso2": "NO",
+    "country_name": "Norway",
+    "id": 43,
+    "language_counts": {
+      "en": 2
+    },
+    "latitude": 59.9139,
+    "longitude": 10.7522,
+    "name": "Oslo",
+    "region_code": "NO-03",
+    "region_id": 2548,
+    "region_name": "Oslo",
+    "region_type": "County",
+    "timezone": "Europe/Oslo"
+  },
+  {
     "country_id": 31,
     "country_iso2": "FI",
     "country_name": "Finland",
@@ -601,6 +618,23 @@
     "region_name": "Midtjylland",
     "region_type": "Region",
     "timezone": "Europe/Copenhagen"
+  },
+  {
+    "country_id": 32,
+    "country_iso2": "GR",
+    "country_name": "Greece",
+    "id": 46,
+    "language_counts": {
+      "en": 6
+    },
+    "latitude": 37.9838,
+    "longitude": 23.7275,
+    "name": "Athens",
+    "region_code": "GR-I",
+    "region_id": 2012,
+    "region_name": "Attik\u00ed",
+    "region_type": "Administrative region",
+    "timezone": "Europe/Athens"
   },
   {
     "country_id": 33,
@@ -739,6 +773,23 @@
     "timezone": "Atlantic/Reykjavik"
   },
   {
+    "country_id": 44,
+    "country_iso2": "CY",
+    "country_name": "Cyprus",
+    "id": 59,
+    "language_counts": {
+      "en": 1
+    },
+    "latitude": 35.1856,
+    "longitude": 33.3823,
+    "name": "Nicosia",
+    "region_code": "CY-01",
+    "region_id": 1867,
+    "region_name": "Lefkosia",
+    "region_type": "District",
+    "timezone": "Asia/Nicosia"
+  },
+  {
     "country_id": 51,
     "country_iso2": "MK",
     "country_name": "North Macedonia",
@@ -754,6 +805,23 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/Skopje"
+  },
+  {
+    "country_id": 52,
+    "country_iso2": "AL",
+    "country_name": "Albania",
+    "id": 67,
+    "language_counts": {
+      "en": 1
+    },
+    "latitude": 41.3275,
+    "longitude": 19.8187,
+    "name": "Tirana",
+    "region_code": "AL-11",
+    "region_id": 1652,
+    "region_name": "Tiran\u00eb",
+    "region_type": "County",
+    "timezone": "Europe/Tirane"
   },
   {
     "country_id": 17,
@@ -1753,5 +1821,22 @@
     "region_name": "Rhode Island",
     "region_type": "State",
     "timezone": "America/New_York"
+  },
+  {
+    "country_id": 11,
+    "country_iso2": "NL",
+    "country_name": "Netherlands",
+    "id": 186,
+    "language_counts": {
+      "en": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Rotterdam",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
   }
 ]

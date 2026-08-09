@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
-<title>COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking</title>
+<title>Comedy Shows, Comics &amp; Venues Worldwide | COMEDY ATLAS</title>
 <script>
 /* ATLAS VISUALS v1 feature flag (ATLAS-VISUALS-V1, 2026-07-27). Everything
    this flag gates lives in atlas-layers.js / atlas-visuals-data.js /
@@ -106,15 +106,15 @@ window.ATLAS_MAP_PROVIDER = "maplibre";
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
-<meta name="description" content="COMEDY ATLAS: comics find shows, bookers find comics, free. Browse live comedy by city and festival, worldwide.">
+<meta name="description" content="Find stand-up comedy shows, comedians, comedy clubs, venues and festivals by city worldwide. Browse current dates and ticket links on COMEDY ATLAS.">
 <link rel="canonical" href="https://comedyatlas.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="COMEDY ATLAS">
-<meta property="og:title" content="COMEDY ATLAS — The Worldwide Hub for Stand-Up Comedy Booking">
-<meta property="og:description" content="Comics find shows. Bookers find comics. Free.">
+<meta property="og:title" content="Comedy Shows, Comics &amp; Venues Worldwide | COMEDY ATLAS">
+<meta property="og:description" content="Find stand-up comedy shows, comedians, comedy clubs, venues and festivals by city worldwide.">
 <meta property="og:url" content="https://comedyatlas.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COMEDY ATLAS","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://comedyatlas.app/#organization","name":"COMEDY ATLAS","alternateName":"Comedy Atlas","description":"A worldwide directory of stand-up comedy shows, comedians, venues and festivals.","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/","@id":"https://comedyatlas.app/#website","alternateName":"Comedy Atlas","publisher":{"@id":"https://comedyatlas.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <style>
 /* ---------------------------------------------------------------------
    COMEDY ATLAS — HUB landing page. Self-contained static page (no build
@@ -323,8 +323,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="atlas-hero-copy">
     <div class="atlas-wordmark">COMEDY ATLAS<span class="dot">.</span></div>
     <p class="atlas-tagline">Comics find shows. Bookers find comics. Free.</p>
-    <h1 class="atlas-mission">The worldwide hub for stand-up comedy booking — browse live shows and free
-      festival lineups by city, book a spot, or fill one. No fees, no gatekeeping.</h1>
+    <h1 class="atlas-mission">Find stand-up comedy shows, comedians, comedy clubs and festivals worldwide.</h1>
     <!-- GLOBAL SEARCH (work order §5 "Search requirement"). A plain GET <form>
          so it works with JavaScript disabled: the browser navigates to
          /comedy-atlas/search/?q=... on its own. Autocomplete is layered on top
@@ -366,6 +365,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <span id="freshness-text">Checking data freshness…</span>
 </div>
 <div class="stats-row" id="stats-row"></div>
+
+<!-- Crawlable market navigation. The globe and the client-rendered city grid
+     remain useful discovery tools for people, but neither is a substitute for
+     ordinary HTML links from the homepage to the durable market pages. These
+     are established, page-backed markets; no counts or ranking claims are
+     hardcoded here. -->
+<section class="atlas-section" id="popular-comedy-markets" aria-labelledby="popular-comedy-markets-heading">
+  <h2 id="popular-comedy-markets-heading">Comedy shows by city</h2>
+  <ul class="card-grid atlas-home-citygrid" role="list">
+    <li><a class="place-card" href="/comedy-atlas/city/new-york/"><span class="place-name">Comedy shows in New York</span><span class="place-meta">Shows, comedy clubs and venues</span></a></li>
+    <li><a class="place-card" href="/comedy-atlas/city/london/"><span class="place-name">Comedy shows in London</span><span class="place-meta">Shows, comedy clubs and venues</span></a></li>
+    <li><a class="place-card" href="/comedy-atlas/city/edinburgh/"><span class="place-name">Comedy shows in Edinburgh</span><span class="place-meta">Shows, festivals and venues</span></a></li>
+    <li><a class="place-card" href="/comedy-atlas/city/paris/"><span class="place-name">Comedy shows in Paris</span><span class="place-meta">English and international comedy</span></a></li>
+    <li><a class="place-card" href="/comedy-atlas/city/minneapolis/"><span class="place-name">Comedy shows in Minneapolis</span><span class="place-meta">Shows, comedy clubs and venues</span></a></li>
+    <li><a class="place-card" href="/comedy-atlas/city/berlin/"><span class="place-name">Comedy shows in Berlin</span><span class="place-meta">English and international comedy</span></a></li>
+  </ul>
+  <p style="margin-top:14px"><a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse every comedy city</a></p>
+</section>
 
 <main id="main-content" aria-live="polite" tabindex="-1">
   <div class="state-block" id="loading-state">
