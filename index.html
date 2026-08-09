@@ -869,10 +869,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           if ((inputEl.value || "").trim()) renderGlobalSearch();
         });
         inputEl.addEventListener("keydown", function (ev) {
-          if (ev.key === "Enter" && flatSearchRecords.length) {
-            ev.preventDefault();
-            selectSearchRecord(flatSearchRecords[0].record);
-          } else if (ev.key === "ArrowDown" && flatSearchRecords.length) {
+          // Enter belongs to the surrounding GET form: it must always open the
+          // complete search result set promised by the hint above. Suggestions
+          // remain available by click or ArrowDown, but must never hijack form
+          // submission (the first suggestion can be a non-navigable region).
+          if (ev.key === "ArrowDown" && flatSearchRecords.length) {
             ev.preventDefault();
             flatSearchRecords[0].element.focus();
           } else if (ev.key === "Escape") {
