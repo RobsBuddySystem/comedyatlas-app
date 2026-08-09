@@ -419,12 +419,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
   <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
        default identity-first view; Next on stage is a date-first view of
-       only the 115 comics with a real upcoming date. Hidden with
+       only the 113 comics with a real upcoming date. Hidden with
        the rest of the toolbar until JS can act on it -- with JS off the
        A-Z view (which needs no script at all) is the whole page. -->
   <div class="view-row" role="group" aria-label="Choose a view">
     <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
-    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(115)</span></button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(113)</span></button>
   </div>
   <details id="comics-facets">
     <summary>Filters</summary>
@@ -433,20 +433,20 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
       <button type="button" class="facet-chip is-active" data-city="" aria-pressed="true">All cities <span class="facet-n">(1401)</span></button>
     <button type="button" class="facet-chip" id="city-edinburgh" data-city="Edinburgh" aria-pressed="false">Edinburgh <span class="facet-n">(107)</span></button>
     <button type="button" class="facet-chip" id="city-cologne" data-city="Cologne" aria-pressed="false">Cologne <span class="facet-n">(45)</span></button>
-    <button type="button" class="facet-chip" id="city-london" data-city="London" aria-pressed="false">London <span class="facet-n">(16)</span></button>
+    <button type="button" class="facet-chip" id="city-london" data-city="London" aria-pressed="false">London <span class="facet-n">(15)</span></button>
     <button type="button" class="facet-chip" id="city-barcelona" data-city="Barcelona" aria-pressed="false">Barcelona <span class="facet-n">(8)</span></button>
     <button type="button" class="facet-chip" id="city-galway" data-city="Galway" aria-pressed="false">Galway <span class="facet-n">(4)</span></button>
-    <button type="button" class="facet-chip" id="city-amsterdam" data-city="Amsterdam" aria-pressed="false">Amsterdam <span class="facet-n">(3)</span></button>
     <button type="button" class="facet-chip" id="city-berlin" data-city="Berlin" aria-pressed="false">Berlin <span class="facet-n">(3)</span></button>
+    <button type="button" class="facet-chip" id="city-amsterdam" data-city="Amsterdam" aria-pressed="false">Amsterdam <span class="facet-n">(2)</span></button>
     <button type="button" class="facet-chip" id="city-lisbon" data-city="Lisbon" aria-pressed="false">Lisbon <span class="facet-n">(1)</span></button>
     <button type="button" class="facet-chip" id="city-paris" data-city="Paris" aria-pressed="false">Paris <span class="facet-n">(1)</span></button>
     <button type="button" class="facet-chip" id="city-rome" data-city="Rome" aria-pressed="false">Rome <span class="facet-n">(1)</span></button>
-    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(1212)</span></button>
+    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(1214)</span></button>
     </div>
     <div class="facet-row" role="group" aria-label="Filter by activity">
       <span class="facet-label">Activity</span>
-      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(115)</span></button>
-      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(99)</span></button>
+      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(113)</span></button>
+      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(98)</span></button>
       <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(1)</span></button>
     </div>
   </details>
@@ -2822,12 +2822,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/daniel-yazbek/" class="comic-card" data-city="Amsterdam" data-name="daniel yazbek" data-upcoming="1">
+<a href="/comedy-atlas/comic/daniel-yazbek/" class="comic-card" data-city="" data-name="daniel yazbek" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20Yazbek%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Daniel Yazbek</div>
-    <div class="comic-city">Next in Amsterdam</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/daniela-delle-foglie/" class="comic-card" data-city="" data-name="daniela delle foglie" data-upcoming="0">
@@ -5955,12 +5955,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/kate-lois-elliott/" class="comic-card" data-city="London" data-name="kate-lois elliott" data-upcoming="1" data-festival="1">
+<a href="/comedy-atlas/comic/kate-lois-elliott/" class="comic-card" data-city="" data-name="kate-lois elliott" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Kate-Lois%20Elliott%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Kate-Lois Elliott</div>
-    <div class="comic-city">Next in London</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/katerina-vrana/" class="comic-card" data-city="" data-name="katerina vrana" data-upcoming="0">
@@ -5979,12 +5979,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card" data-city="Edinburgh" data-name="katie-rose petley" data-upcoming="2" data-festival="1">
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="comic-card" data-city="Edinburgh" data-name="katie-rose petley" data-upcoming="1" data-festival="1">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Katie-Rose Petley</div>
-    <div class="comic-city">Next in London</div>
-    <div class="comic-count">2 upcoming shows</div>
+    <div class="comic-city">Next in Edinburgh</div>
+    <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/keara-murphy/" class="comic-card" data-city="" data-name="keara murphy" data-upcoming="0">
@@ -11777,32 +11777,8 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </div>
 <div id="next-view" hidden>
 <section class="next-group" id="next-on-stage">
-  <h2 class="letter-heading">Next on stage <span class="letter-count">(115)</span></h2>
-  <div class="comics-grid"><a href="/comedy-atlas/comic/kate-lois-elliott/" class="next-card" data-city="London" data-name="kate-lois elliott" data-upcoming="1" data-festival="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Kate-Lois%20Elliott%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Kate-Lois Elliott</div>
-    <div class="comic-city">London</div>
-    <div class="comic-count">Sun, Aug 9 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/daniel-yazbek/" class="next-card" data-city="Amsterdam" data-name="daniel yazbek" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20Yazbek%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Daniel Yazbek</div>
-    <div class="comic-city">Amsterdam</div>
-    <div class="comic-count">Sun, Aug 9 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/katie-rose-petley/" class="next-card" data-city="London" data-name="katie-rose petley" data-upcoming="1" data-festival="1">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Katie-Rose Petley</div>
-    <div class="comic-city">London</div>
-    <div class="comic-count">Sun, Aug 9 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/scott-manley-hadley/" class="next-card" data-city="Edinburgh" data-name="scott manley hadley" data-upcoming="1" data-festival="1">
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(113)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/scott-manley-hadley/" class="next-card" data-city="Edinburgh" data-name="scott manley hadley" data-upcoming="1" data-festival="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Scott%20Manley%20Hadley%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Scott Manley Hadley</div>
@@ -12047,6 +12023,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Jacob Lovick</div>
     <div class="comic-city">London</div>
+    <div class="comic-count">Wed, Aug 19 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/katie-rose-petley/" class="next-card" data-city="Edinburgh" data-name="katie-rose petley" data-upcoming="1" data-festival="1">
+  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Katie-Rose Petley</div>
+    <div class="comic-city">Edinburgh</div>
     <div class="comic-count">Wed, Aug 19 2026</div>
   </div>
 </a>
@@ -12724,7 +12708,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // coalesced into a single animation frame.
 (function () {
   var TOTAL = 1401;
-  var NEXT_TOTAL = 115;
+  var NEXT_TOTAL = 113;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');
