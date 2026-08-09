@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-comedy-7pm-leicester-square-24841@comedyatlas.app
+DTSTAMP:20261218T190000Z
+DTSTART:20261218T190000Z
+DTEND:20261218T203000Z
+SUMMARY:Friday Night Comedy\, 7PM\, Leicester Square
+LOCATION:JK Comedy Club Leicester Square\, Coventry Street\, London
+DESCRIPTION:Friday night stand-up comedy show in Leicester Square\, Central
+  London\nMore info: https://comedyatlas.app/comedy-atlas/event/friday-night
+ -comedy-7pm-leicester-square-24841/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-comedy-7pm-leic
+ ester-square-24841/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sunday-night-comedy-24812@comedyatlas.app
+DTSTAMP:20260823T233000Z
+DTSTART:20260823T233000Z
+DTEND:20260824T013000Z
+SUMMARY:Sunday Night Comedy
+LOCATION:New York
+DESCRIPTION:Eastville Comedy Club is Brooklyn's oldest comedy club\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/sunday-night-comedy-24812/
+URL:https://comedyatlas.app/comedy-atlas/event/sunday-night-comedy-24812/
+END:VEVENT
+END:VCALENDAR

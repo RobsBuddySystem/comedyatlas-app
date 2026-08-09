@@ -442,15 +442,37 @@ noscript .result-meta{margin-top:2px}
     return rec.photo || avatarDataUri(rec.name, rec.url || rec.name || "");
   }
 
+  // AND-OF-TOKENS MATCHING (2026-08-09). Before this fix, a query was tested
+  // as ONE whole-phrase substring against HAYSTACKS[i] (buildHaystack()'s
+  // single " ␟ "-joined string per record). That only ever matches when the
+  // query's exact spacing/order happens to occur verbatim inside one field,
+  // so a query spanning two different fields -- e.g. "Saint Paul Minnesota"
+  // (city="Saint Paul" + region="Minnesota", joined as "...saint paul ␟
+  // minnesota...") -- returned zero results even though every word is
+  // present, same bug class atlas-visuals.js's globe search already fixed
+  // once this session (commit 59e834c, some -> every over its OWN per-token
+  // array). This file's haystack is a single string, not an array, so the
+  // fix here is: split the query into whitespace-separated tokens and
+  // require EVERY token to be found via indexOf (still a substring test per
+  // token, not prefix-anchored, so a single-word query -- the one-token
+  // case -- produces IDENTICAL results to the old whole-phrase check).
+  function matchesAllTokens(haystack, tokens) {
+    for (var t = 0; t < tokens.length; t++) {
+      if (haystack.indexOf(tokens[t]) === -1) { return false; }
+    }
+    return true;
+  }
+
   function runSearch() {
     if (!ALL_RECORDS) { return; }
     markTabSelected();
     var q = foldAccents(state.q.trim().toLowerCase());
+    var qTokens = q ? q.split(/\s+/).filter(Boolean) : [];
     var matches = [];
     for (var i = 0; i < ALL_RECORDS.length; i++) {
       var rec = ALL_RECORDS[i];
       if (state.type && rec.type !== state.type) { continue; }
-      if (q && HAYSTACKS[i].indexOf(q) === -1) { continue; }
+      if (qTokens.length && !matchesAllTokens(HAYSTACKS[i], qTokens)) { continue; }
       matches.push(rec);
     }
     // Rank: exact-name match, then name-starts-with, then everything else
