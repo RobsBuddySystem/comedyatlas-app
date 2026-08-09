@@ -869,11 +869,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           if ((inputEl.value || "").trim()) renderGlobalSearch();
         });
         inputEl.addEventListener("keydown", function (ev) {
-          // Enter belongs to the surrounding GET form: it must always open the
-          // complete search result set promised by the hint above. Suggestions
-          // remain available by click or ArrowDown, but must never hijack form
-          // submission (the first suggestion can be a non-navigable region).
-          if (ev.key === "ArrowDown" && flatSearchRecords.length) {
+          // Enter must always open the complete result set promised by the hint
+          // above. Navigate explicitly: relying on the browser's implicit form
+          // submit proved unreliable once the autocomplete list was open.
+          if (ev.key === "Enter") {
+            ev.preventDefault();
+            var target = new URL(inputEl.form.action, window.location.href);
+            target.searchParams.set("q", inputEl.value || "");
+            window.location.assign(target.toString());
+          } else if (ev.key === "ArrowDown" && flatSearchRecords.length) {
             ev.preventDefault();
             flatSearchRecords[0].element.focus();
           } else if (ev.key === "Escape") {
