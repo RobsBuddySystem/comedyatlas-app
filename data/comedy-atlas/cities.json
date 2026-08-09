@@ -10,6 +10,10 @@
     "latitude": 50.8503,
     "longitude": 4.3517,
     "name": "Brussels",
+    "region_code": "BE-BRU",
+    "region_id": 1763,
+    "region_name": "Bruxelles-Capitale, R\u00e9gion de",
+    "region_type": "Region",
     "timezone": "Europe/Brussels"
   },
   {
@@ -23,6 +27,10 @@
     "latitude": 43.6532,
     "longitude": -79.3832,
     "name": "Toronto",
+    "region_code": "CA-ON",
+    "region_id": 1802,
+    "region_name": "Ontario",
+    "region_type": "Province",
     "timezone": "America/Toronto"
   },
   {
@@ -37,6 +45,10 @@
     "latitude": 52.52,
     "longitude": 13.405,
     "name": "Berlin",
+    "region_code": "DE-BE",
+    "region_id": 1888,
+    "region_name": "Berlin",
+    "region_type": "Land",
     "timezone": "Europe/Berlin"
   },
   {
@@ -50,6 +62,10 @@
     "latitude": 53.3498,
     "longitude": -6.2603,
     "name": "Dublin",
+    "region_code": "IE-D",
+    "region_id": 2062,
+    "region_name": "Dublin",
+    "region_type": "County",
     "timezone": "Europe/Dublin"
   },
   {
@@ -64,6 +80,10 @@
     "latitude": 52.3676,
     "longitude": 4.9041,
     "name": "Amsterdam",
+    "region_code": "NL-NH",
+    "region_id": 2542,
+    "region_name": "Noord-Holland",
+    "region_type": "Province",
     "timezone": "Europe/Amsterdam"
   },
   {
@@ -78,6 +98,10 @@
     "latitude": 41.3851,
     "longitude": 2.1734,
     "name": "Barcelona",
+    "region_code": "ES-CT",
+    "region_id": 1931,
+    "region_name": "Catalunya [Catalu\u00f1a]",
+    "region_type": "Autonomous community",
     "timezone": "Europe/Madrid"
   },
   {
@@ -92,6 +116,10 @@
     "latitude": 40.4168,
     "longitude": -3.7038,
     "name": "Madrid",
+    "region_code": "ES-MD",
+    "region_id": 1936,
+    "region_name": "Madrid, Comunidad de",
+    "region_type": "Autonomous community",
     "timezone": "Europe/Madrid"
   },
   {
@@ -105,6 +133,10 @@
     "latitude": 48.8566,
     "longitude": 2.3522,
     "name": "Paris",
+    "region_code": "FR-IDF",
+    "region_id": 1975,
+    "region_name": "\u00cele-de-France",
+    "region_type": "Metropolitan region",
     "timezone": "Europe/Paris"
   },
   {
@@ -119,6 +151,10 @@
     "latitude": 38.7223,
     "longitude": -9.1393,
     "name": "Lisbon",
+    "region_code": "PT-11",
+    "region_id": 2587,
+    "region_name": "Lisboa",
+    "region_type": "District",
     "timezone": "Europe/Lisbon"
   },
   {
@@ -132,6 +168,10 @@
     "latitude": 47.3769,
     "longitude": 8.5417,
     "name": "Zurich",
+    "region_code": "CH-ZH",
+    "region_id": 1832,
+    "region_name": "Z\u00fcrich",
+    "region_type": "Canton",
     "timezone": "Europe/Zurich"
   },
   {
@@ -145,6 +185,10 @@
     "latitude": 56.9496,
     "longitude": 24.1052,
     "name": "Riga",
+    "region_code": "LV-RIX",
+    "region_id": 2269,
+    "region_name": "R\u012bga",
+    "region_type": "State city",
     "timezone": "Europe/Riga"
   },
   {
@@ -158,6 +202,10 @@
     "latitude": 48.1351,
     "longitude": 11.582,
     "name": "Munich",
+    "region_code": "DE-BY",
+    "region_id": 1890,
+    "region_name": "Bayern",
+    "region_type": "Land",
     "timezone": "Europe/Berlin"
   },
   {
@@ -171,6 +219,10 @@
     "latitude": 53.5511,
     "longitude": 9.9937,
     "name": "Hamburg",
+    "region_code": "DE-HH",
+    "region_id": 1893,
+    "region_name": "Hamburg",
+    "region_type": "Land",
     "timezone": "Europe/Berlin"
   },
   {
@@ -179,12 +231,16 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 238,
+      "en": 239,
       "unconfirmed": 2
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
     "name": "Edinburgh",
+    "region_code": "GB-SCT",
+    "region_id": 1989,
+    "region_name": "Scotland",
+    "region_type": "Country",
     "timezone": "Europe/London"
   },
   {
@@ -198,6 +254,10 @@
     "latitude": 41.1579,
     "longitude": -8.6291,
     "name": "Porto",
+    "region_code": "PT-13",
+    "region_id": 2589,
+    "region_name": "Porto",
+    "region_type": "District",
     "timezone": "Europe/Lisbon"
   },
   {
@@ -211,6 +271,10 @@
     "latitude": 45.4642,
     "longitude": 9.19,
     "name": "Milan",
+    "region_code": "IT-25",
+    "region_id": 2130,
+    "region_name": "Lombardia",
+    "region_type": "Region",
     "timezone": "Europe/Rome"
   },
   {
@@ -224,6 +288,10 @@
     "latitude": 41.9028,
     "longitude": 12.4964,
     "name": "Rome",
+    "region_code": "IT-62",
+    "region_id": 2139,
+    "region_name": "Lazio",
+    "region_type": "Region",
     "timezone": "Europe/Rome"
   },
   {
@@ -237,6 +305,10 @@
     "latitude": 48.2082,
     "longitude": 16.3738,
     "name": "Vienna",
+    "region_code": "AT-9",
+    "region_id": 1673,
+    "region_name": "Wien",
+    "region_type": "State",
     "timezone": "Europe/Vienna"
   },
   {
@@ -250,6 +322,10 @@
     "latitude": 59.3293,
     "longitude": 18.0686,
     "name": "Stockholm",
+    "region_code": "SE-AB",
+    "region_id": 2671,
+    "region_name": "Stockholms l\u00e4n [SE-01]",
+    "region_type": "County",
     "timezone": "Europe/Stockholm"
   },
   {
@@ -263,6 +339,10 @@
     "latitude": 60.1699,
     "longitude": 24.9384,
     "name": "Helsinki",
+    "region_code": "FI-18",
+    "region_id": 1959,
+    "region_name": "Uusimaa",
+    "region_type": "Region",
     "timezone": "Europe/Helsinki"
   },
   {
@@ -276,6 +356,10 @@
     "latitude": 56.1629,
     "longitude": 10.2039,
     "name": "Aarhus",
+    "region_code": "DK-82",
+    "region_id": 1904,
+    "region_name": "Midtjylland",
+    "region_type": "Region",
     "timezone": "Europe/Copenhagen"
   },
   {
@@ -289,6 +373,10 @@
     "latitude": 47.4979,
     "longitude": 19.0402,
     "name": "Budapest",
+    "region_code": "HU-BU",
+    "region_id": 2041,
+    "region_name": "Budapest",
+    "region_type": "Capital city",
     "timezone": "Europe/Budapest"
   },
   {
@@ -302,6 +390,10 @@
     "latitude": 45.815,
     "longitude": 15.9819,
     "name": "Zagreb",
+    "region_code": "HR-21",
+    "region_id": 2037,
+    "region_name": "Grad Zagreb",
+    "region_type": "City",
     "timezone": "Europe/Zagreb"
   },
   {
@@ -315,6 +407,10 @@
     "latitude": 48.1486,
     "longitude": 17.1077,
     "name": "Bratislava",
+    "region_code": "SK-BL",
+    "region_id": 2910,
+    "region_name": "Bratislavsk\u00fd kraj",
+    "region_type": "Region",
     "timezone": "Europe/Bratislava"
   },
   {
@@ -328,6 +424,10 @@
     "latitude": 42.6977,
     "longitude": 23.3219,
     "name": "Sofia",
+    "region_code": "BG-22",
+    "region_id": 1787,
+    "region_name": "Sofia (stolitsa)",
+    "region_type": "District",
     "timezone": "Europe/Sofia"
   },
   {
@@ -341,6 +441,10 @@
     "latitude": 46.0569,
     "longitude": 14.5058,
     "name": "Ljubljana",
+    "region_code": "SI-061",
+    "region_id": 2757,
+    "region_name": "Ljubljana",
+    "region_type": "Urban municipality",
     "timezone": "Europe/Ljubljana"
   },
   {
@@ -354,6 +458,10 @@
     "latitude": 59.437,
     "longitude": 24.7536,
     "name": "Tallinn",
+    "region_code": "EE-37",
+    "region_id": 1908,
+    "region_name": "Harjumaa",
+    "region_type": "County",
     "timezone": "Europe/Tallinn"
   },
   {
@@ -367,6 +475,10 @@
     "latitude": 54.6872,
     "longitude": 25.2797,
     "name": "Vilnius",
+    "region_code": "LT-VL",
+    "region_id": 2215,
+    "region_name": "Vilniaus apskritis",
+    "region_type": "County",
     "timezone": "Europe/Vilnius"
   },
   {
@@ -380,6 +492,10 @@
     "latitude": 64.1466,
     "longitude": -21.9426,
     "name": "Reykjavik",
+    "region_code": "IS-1",
+    "region_id": 2120,
+    "region_name": "H\u00f6fu\u00f0borgarsv\u00e6\u00f0i",
+    "region_type": "Region",
     "timezone": "Atlantic/Reykjavik"
   },
   {
@@ -393,6 +509,10 @@
     "latitude": 41.9981,
     "longitude": 21.4254,
     "name": "Skopje",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
     "timezone": "Europe/Skopje"
   },
   {
@@ -407,6 +527,10 @@
     "latitude": 51.5074,
     "longitude": -0.1278,
     "name": "London",
+    "region_code": "GB-ENG",
+    "region_id": 1987,
+    "region_name": "England",
+    "region_type": "Country",
     "timezone": "Europe/London"
   },
   {
@@ -415,12 +539,16 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 14,
-      "unconfirmed": 30
+      "en": 11,
+      "unconfirmed": 27
     },
     "latitude": 40.7128,
     "longitude": -74.006,
     "name": "New York",
+    "region_code": "US-NY",
+    "region_id": 3140,
+    "region_name": "New York",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -434,6 +562,10 @@
     "latitude": 53.2707,
     "longitude": -9.0568,
     "name": "Galway",
+    "region_code": "IE-G",
+    "region_id": 2064,
+    "region_name": "Galway",
+    "region_type": "County",
     "timezone": "Europe/Dublin"
   },
   {
@@ -443,11 +575,15 @@
     "id": 92,
     "language_counts": {
       "en": 4,
-      "unconfirmed": 466
+      "unconfirmed": 462
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
     "name": "Portland",
+    "region_code": "US-OR",
+    "region_id": 3143,
+    "region_name": "Oregon",
+    "region_type": "State",
     "timezone": "America/Los_Angeles"
   },
   {
@@ -456,11 +592,15 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 135
+      "unconfirmed": 132
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
     "name": "Philadelphia",
+    "region_code": "US-PA",
+    "region_id": 3144,
+    "region_name": "Pennsylvania",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -475,6 +615,10 @@
     "latitude": 44.9778,
     "longitude": -93.265,
     "name": "Minneapolis",
+    "region_code": "US-MN",
+    "region_id": 3128,
+    "region_name": "Minnesota",
+    "region_type": "State",
     "timezone": "America/Chicago"
   },
   {
@@ -484,11 +628,15 @@
     "id": 108,
     "language_counts": {
       "en": 168,
-      "unconfirmed": 400
+      "unconfirmed": 399
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
     "name": "Montreal",
+    "region_code": "CA-QC",
+    "region_id": 1804,
+    "region_name": "Quebec",
+    "region_type": "Province",
     "timezone": "America/Toronto"
   },
   {
@@ -502,6 +650,10 @@
     "latitude": 45.4215,
     "longitude": -75.6972,
     "name": "Ottawa",
+    "region_code": "CA-ON",
+    "region_id": 1802,
+    "region_name": "Ontario",
+    "region_type": "Province",
     "timezone": "America/Toronto"
   },
   {
@@ -515,6 +667,10 @@
     "latitude": 50.9375,
     "longitude": 6.9603,
     "name": "Cologne",
+    "region_code": "DE-NW",
+    "region_id": 1896,
+    "region_name": "Nordrhein-Westfalen",
+    "region_type": "Land",
     "timezone": "Europe/Berlin"
   },
   {
@@ -523,11 +679,15 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 123
+      "unconfirmed": 122
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
     "name": "Oklahoma City",
+    "region_code": "US-OK",
+    "region_id": 3142,
+    "region_name": "Oklahoma",
+    "region_type": "State",
     "timezone": "America/Chicago"
   },
   {
@@ -541,6 +701,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Tulsa",
+    "region_code": "US-OK",
+    "region_id": 3142,
+    "region_name": "Oklahoma",
+    "region_type": "State",
     "timezone": "America/Chicago"
   },
   {
@@ -555,6 +719,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Washington",
+    "region_code": "US-DC",
+    "region_id": 3111,
+    "region_name": "District of Columbia",
+    "region_type": "District",
     "timezone": "America/New_York"
   },
   {
@@ -568,6 +736,10 @@
     "latitude": 40.587178,
     "longitude": -105.077011,
     "name": "Fort Collins",
+    "region_code": "US-CO",
+    "region_id": 3109,
+    "region_name": "Colorado",
+    "region_type": "State",
     "timezone": "America/Denver"
   },
   {
@@ -581,6 +753,10 @@
     "latitude": 39.0997,
     "longitude": -94.5786,
     "name": "Kansas City",
+    "region_code": "US-MO",
+    "region_id": 3129,
+    "region_name": "Missouri",
+    "region_type": "State",
     "timezone": "America/Chicago"
   },
   {
@@ -594,6 +770,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Bloomington",
+    "region_code": "US-IN",
+    "region_id": 3120,
+    "region_name": "Indiana",
+    "region_type": "State",
     "timezone": "America/Indiana/Indianapolis"
   },
   {
@@ -607,6 +787,10 @@
     "latitude": 33.425512,
     "longitude": -111.940016,
     "name": "Tempe",
+    "region_code": "US-AZ",
+    "region_id": 3107,
+    "region_name": "Arizona",
+    "region_type": "State",
     "timezone": "America/Phoenix"
   },
   {
@@ -616,11 +800,15 @@
     "id": 128,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 165
+      "unconfirmed": 164
     },
     "latitude": null,
     "longitude": null,
     "name": "Raleigh",
+    "region_code": "US-NC",
+    "region_id": 3133,
+    "region_name": "North Carolina",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -629,11 +817,15 @@
     "country_name": "United States",
     "id": 129,
     "language_counts": {
-      "unconfirmed": 19
+      "unconfirmed": 17
     },
     "latitude": 39.7684,
     "longitude": -86.1581,
     "name": "Indianapolis",
+    "region_code": "US-IN",
+    "region_id": 3120,
+    "region_name": "Indiana",
+    "region_type": "State",
     "timezone": "America/Indiana/Indianapolis"
   },
   {
@@ -642,11 +834,15 @@
     "country_name": "United States",
     "id": 130,
     "language_counts": {
-      "unconfirmed": 16
+      "unconfirmed": 15
     },
     "latitude": 34.075596,
     "longitude": -84.294596,
     "name": "Alpharetta",
+    "region_code": "US-GA",
+    "region_id": 3114,
+    "region_name": "Georgia",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -660,6 +856,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Louisville",
+    "region_code": "US-KY",
+    "region_id": 3122,
+    "region_name": "Kentucky",
+    "region_type": "State",
     "timezone": "America/Kentucky/Louisville"
   },
   {
@@ -668,11 +868,15 @@
     "country_name": "United States",
     "id": 132,
     "language_counts": {
-      "unconfirmed": 143
+      "unconfirmed": 142
     },
     "latitude": null,
     "longitude": null,
     "name": "Chandler",
+    "region_code": "US-AZ",
+    "region_id": 3107,
+    "region_name": "Arizona",
+    "region_type": "State",
     "timezone": "America/Phoenix"
   },
   {
@@ -681,11 +885,15 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 154
+      "unconfirmed": 152
     },
     "latitude": null,
     "longitude": null,
     "name": "Naples",
+    "region_code": "US-FL",
+    "region_id": 3113,
+    "region_name": "Florida",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -699,6 +907,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Appleton",
+    "region_code": "US-WI",
+    "region_id": 3157,
+    "region_name": "Wisconsin",
+    "region_type": "State",
     "timezone": "America/Chicago"
   },
   {
@@ -712,6 +924,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Spokane",
+    "region_code": "US-WA",
+    "region_id": 3156,
+    "region_name": "Washington",
+    "region_type": "State",
     "timezone": "America/Los_Angeles"
   },
   {
@@ -725,6 +941,10 @@
     "latitude": 41.07999,
     "longitude": -85.138602,
     "name": "Fort Wayne",
+    "region_code": "US-IN",
+    "region_id": 3120,
+    "region_name": "Indiana",
+    "region_type": "State",
     "timezone": "America/Indiana/Indianapolis"
   },
   {
@@ -733,11 +953,15 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 208
+      "unconfirmed": 204
     },
     "latitude": null,
     "longitude": null,
     "name": "Tacoma",
+    "region_code": "US-WA",
+    "region_id": 3156,
+    "region_name": "Washington",
+    "region_type": "State",
     "timezone": "America/Los_Angeles"
   },
   {
@@ -751,6 +975,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Burlington",
+    "region_code": "US-VT",
+    "region_id": 3155,
+    "region_name": "Vermont",
+    "region_type": "State",
     "timezone": "America/New_York"
   },
   {
@@ -764,6 +992,10 @@
     "latitude": 40.75962,
     "longitude": -111.886797,
     "name": "Salt Lake City",
+    "region_code": "US-UT",
+    "region_id": 3152,
+    "region_name": "Utah",
+    "region_type": "State",
     "timezone": "America/Denver"
   },
   {
@@ -777,6 +1009,10 @@
     "latitude": 40.606134,
     "longitude": -111.939521,
     "name": "West Jordan",
+    "region_code": "US-UT",
+    "region_id": 3152,
+    "region_name": "Utah",
+    "region_type": "State",
     "timezone": "America/Denver"
   },
   {
@@ -790,6 +1026,10 @@
     "latitude": null,
     "longitude": null,
     "name": "Ogden",
+    "region_code": "US-UT",
+    "region_id": 3152,
+    "region_name": "Utah",
+    "region_type": "State",
     "timezone": "America/Denver"
   },
   {
@@ -803,6 +1043,10 @@
     "latitude": 41.8137,
     "longitude": -71.3703,
     "name": "East Providence",
+    "region_code": "US-RI",
+    "region_id": 3146,
+    "region_name": "Rhode Island",
+    "region_type": "State",
     "timezone": "America/New_York"
   }
 ]
