@@ -107,8 +107,25 @@
     "live", "open", "mic", "mics"
   ];
 
+  // QUOTE FOLDING (2026-08-10, same defect + fix as search/index.html's
+  // foldQuotes -- see that file's comment for the live measurement). Left/
+  // right/low-9 single quotes fold to a plain apostrophe and left/right
+  // double quotes fold to a plain double quote, BEFORE the apostrophe-strip
+  // below -- otherwise straight ' and right ’ collapse to nothing
+  // (already true here) while left ‘ / low-9 ‛ fell through to
+  // the generic non-alnum collapse and became a SPACE instead, splitting a
+  // name spelled with one of those into two tokens ("o neill") where the
+  // straight/right-curly spellings normalize to one ("oneill") -- the exact
+  // "globe and results page disagree" split this fix closes. Called from
+  // stripAccents so every caller of it (and thus normalizeText) gets it for
+  // free, same single-entry-point discipline as the diacritics fold beneath
+  // it.
+  function foldQuotes(s) {
+    return s.replace(/[‘’‛]/g, "'").replace(/[“”]/g, '"');
+  }
+
   function stripAccents(s) {
-    var str = String(s == null ? "" : s);
+    var str = foldQuotes(String(s == null ? "" : s));
     // Combining-diacritical-marks range after NFD decomposition -- broadly
     // supported (String#normalize is ES2015), no new dependency.
     return str.normalize ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : str;

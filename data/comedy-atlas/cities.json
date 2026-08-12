@@ -35,7 +35,7 @@
     "country_name": "Belgium",
     "id": 3,
     "language_counts": {
-      "en": 6
+      "en": 5
     },
     "latitude": 50.8503,
     "longitude": 4.3517,
@@ -52,7 +52,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 259
+      "unconfirmed": 258
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -114,7 +114,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 195
+      "en": 191
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -238,7 +238,7 @@
     "country_name": "Netherlands",
     "id": 16,
     "language_counts": {
-      "en": 190,
+      "en": 189,
       "unconfirmed": 14
     },
     "latitude": 52.3676,
@@ -286,8 +286,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 231,
-      "unconfirmed": 165
+      "en": 228,
+      "unconfirmed": 163
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -304,8 +304,8 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 154,
-      "unconfirmed": 2
+      "en": 152,
+      "unconfirmed": 1
     },
     "latitude": 40.4168,
     "longitude": -3.7038,
@@ -367,7 +367,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 67,
+      "en": 66,
       "unconfirmed": 7
     },
     "latitude": 48.8566,
@@ -385,7 +385,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 30,
+      "en": 29,
       "unconfirmed": 2
     },
     "latitude": 38.7223,
@@ -437,7 +437,7 @@
     "country_name": "Germany",
     "id": 31,
     "language_counts": {
-      "en": 4
+      "en": 3
     },
     "latitude": 48.1351,
     "longitude": 11.582,
@@ -471,7 +471,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 142,
+      "en": 130,
       "unconfirmed": 1
     },
     "latitude": 55.9533,
@@ -829,8 +829,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1052,
-      "unconfirmed": 76
+      "en": 1040,
+      "unconfirmed": 70
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -847,8 +847,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 15,
-      "unconfirmed": 32
+      "en": 9,
+      "unconfirmed": 29
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -1063,7 +1063,7 @@
     "id": 92,
     "language_counts": {
       "en": 4,
-      "unconfirmed": 456
+      "unconfirmed": 455
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1125,7 +1125,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 130
+      "unconfirmed": 129
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -1295,7 +1295,7 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 166,
+      "en": 162,
       "unconfirmed": 398
     },
     "latitude": 45.5019,
@@ -1450,7 +1450,7 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 121
+      "unconfirmed": 120
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
@@ -1571,7 +1571,7 @@
     "id": 128,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 161
+      "unconfirmed": 160
     },
     "latitude": null,
     "longitude": null,
@@ -1622,7 +1622,7 @@
     "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 118
+      "unconfirmed": 117
     },
     "latitude": null,
     "longitude": null,
@@ -1690,7 +1690,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 124
+      "unconfirmed": 123
     },
     "latitude": null,
     "longitude": null,
@@ -1724,7 +1724,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 204
+      "unconfirmed": 202
     },
     "latitude": null,
     "longitude": null,

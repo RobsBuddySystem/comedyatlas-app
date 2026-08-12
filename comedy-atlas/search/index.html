@@ -259,11 +259,28 @@ noscript .result-meta{margin-top:2px}
   // name, not just one of them. Applied identically to indexed haystacks
   // (once, at load time) and every keystroke's query, so the substring
   // comparison in runSearch() never has to know accents exist.
+  // QUOTE FOLDING (2026-08-10). Verified live: search_index.json has 8
+  // records with a plain U+0027 apostrophe (O'Neill) and 3 with the
+  // typographic U+2019 (O\u2019Neill) -- the 3 are unreachable by anyone typing
+  // on an ordinary keyboard, which cannot produce U+2019 at all.
+  // /comedy-atlas/search/?q=Kill+Tony+Pat+O'Neill -> 0 results,
+  // ?q=Kill+Tony+Pat+O\u2019Neill -> 3 results, same underlying records.
+  // foldAccents's NFD-strip-combining-marks technique does nothing for
+  // quote characters (they have no combining-mark decomposition), so this
+  // is a separate, explicit fold: left/right single quotes and the
+  // low-9 single quote all collapse to a plain apostrophe, left/right
+  // double quotes collapse to a plain double quote. Called from
+  // foldAccents itself so both the haystack and the query always go
+  // through it together (buildHaystack/runSearch's existing contract).
+  function foldQuotes(s) {
+    return s.replace(/[\u2018\u2019\u201b]/g, "'").replace(/[\u201c\u201d]/g, '"');
+  }
+
   function foldAccents(s) {
     try {
-      return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return foldQuotes(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     } catch (e) {
-      return s; // pre-NFD browser: degrades to the old exact-accent match
+      return foldQuotes(s); // pre-NFD browser: degrades to the old exact-accent match
     }
   }
 
