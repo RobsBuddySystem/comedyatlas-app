@@ -392,7 +392,21 @@
         rows.forEach(function (ev) {
           if (ev.status === "cancelled" || !ev.starts_at) return;
           var start = new Date(ev.starts_at);
-          if (isNaN(start) || start < now) return;
+          // Boundary must match public_upcoming_events' own definition
+          // (migration 0141_ongoing_runs_stay_upcoming, 2026-08-12): a
+          // multi-day run (Edinburgh-Fringe-style residency, one row
+          // spanning the whole run) stays upcoming until it ENDS, not
+          // until it starts -- COALESCE(ends_at, starts_at) >= now() on
+          // the server. Re-deriving "upcoming" here with starts_at alone
+          // reintroduces exactly the bug 0141 fixed server-side: the API
+          // now legitimately returns ongoing runs whose starts_at is in
+          // the past, sorted starts_at ASC, so they sort FIRST and this
+          // filter threw every one of them back out -- during festival
+          // season that can empty the whole limit=200 page before a
+          // single truly-future show is reached ("Couldn't load the show
+          // list" / blank picker for every visitor, not a fixture issue).
+          var boundary = ev.ends_at ? new Date(ev.ends_at) : start;
+          if (isNaN(start) || isNaN(boundary) || boundary < now) return;
           var key = ev.show_series_id || ("ev-" + ev.id);
           if (!bySeries[key] || new Date(bySeries[key].starts_at) > start) bySeries[key] = ev;
         });
