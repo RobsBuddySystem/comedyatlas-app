@@ -133,8 +133,12 @@
 
   function renderResults(panel, events) {
     if (!events.length) {
-      renderFallback(panel, "No shows within 25km tonight — try a wider range or " +
-        "pick a city below.");
+      // 2026-08-12: GET /shows/near's own default window widened from
+      // "tonight only" to the next two weeks (apps/atlas_api/main.py::
+      // shows_near) -- this copy is updated to match so an empty result
+      // doesn't claim a narrower search than the one that actually ran.
+      renderFallback(panel, "No shows within 25km in the next two weeks — " +
+        "try a wider range or pick a city below.");
       return;
     }
     var html = "";
@@ -150,6 +154,11 @@
     // matching every other default-visitor surface (city.html, the
     // homepage strip). Nothing is hidden from the underlying data; a
     // future "all languages" control here would just drop this param.
+    // 2026-08-12: confirmed harmless post-fix -- the backend now matches
+    // language=NULL ("not confirmed") rows alongside language='en'
+    // (apps/atlas_api/main.py::shows_near), so this hardcoded param no
+    // longer excludes the "not confirmed" rows it used to before that fix;
+    // left unchanged.
     var url = API_BASE + "/shows/near?lat=" + encodeURIComponent(lat) +
       "&lon=" + encodeURIComponent(lon) + "&radius_km=25&language=en";
     fetch(url).then(function (r) {
