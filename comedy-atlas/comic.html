@@ -131,6 +131,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </span>
     <a href="booker.html" id="switch-portal-link">Switch to booker portal</a>
     <span style="margin:0 8px;color:var(--muted)">·</span>
+    <a href="notification-settings.html">Notification settings</a>
+    <span style="margin:0 8px;color:var(--muted)">·</span>
     <a href="#" id="atlas-signout">Sign out</a>
   </div>
   <div id="atlas-2fa-banner-slot"></div>
@@ -226,6 +228,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         <span style="font-size:13px;color:var(--muted)">Let strangers see that you have open dates (never the exact dates unless a date itself is public)</span>
         <label class="pub-check"><input type="checkbox" data-pubfield="availability"> Show on my public page</label>
       </div>
+      <!-- 2026-08-12 audit: this per-date opt-in (person_availability.
+      notify_opportunities, migration 0050) was collected DEFAULT ON on
+      every date a comic ever published, with no checkbox anywhere to see
+      or change it -- consent with no control surface. It drives
+      ingest/matching.py's booker-posts-a-spot -> notify-available-comics
+      engine: publishing a date here, with this box checked, means we'll
+      email you (event_type new_matching_opportunity) if a booker later
+      posts an open spot on that same date in that city. Unchecking it
+      here only affects dates you publish from now on -- see Notification
+      settings to turn the whole category off everywhere, including dates
+      already published. -->
+      <p class="privacy" style="margin-bottom:6px">Publishing a date opts
+      that date in to email alerts when a booker posts a matching open
+      spot in the same city — checked by default below, per date. Turn it
+      off per date here, or turn "new matching opportunity" emails off
+      entirely (and manage booking-offer alerts, quiet hours, muting,
+      etc.) from <a href="notification-settings.html">Notification
+      settings</a>.</p>
       <div id="avail-list"></div>
       <div class="row" style="margin-top:12px">
         <div>
@@ -239,6 +259,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       </div>
       <label for="avail-note">Note (optional)</label>
       <input id="avail-note" type="text">
+      <label class="pub-check" style="margin-top:8px"><input type="checkbox" id="avail-notify-opportunities" checked> Email me if a booker posts a matching open spot for this date</label>
       <button id="add-availability">Add date</button>
       <div class="msg" id="avail-msg"></div>
     </div>
@@ -303,8 +324,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var list = document.getElementById("avail-list");
     if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No dates published yet.</p>'; return; }
     list.innerHTML = rows.map(function (r) {
+      // notify_opportunities (migration 0050) drives ingest/matching.py --
+      // shown here so "email me about matching spots" isn't a silent
+      // default-on flag with no visible state (2026-08-12 audit fix).
+      var notifyBit = r.notify_opportunities
+        ? '<span title="You\'ll be emailed about matching open spots for this date">🔔 opportunity alerts on</span>'
+        : '<span title="You will not be emailed about matching open spots for this date">🔕 opportunity alerts off</span>';
       return '<div class="avail-item"><span>' + A.escapeHtml(r.available_date) + '</span>' +
-        '<span style="color:var(--muted)">' + A.escapeHtml(r.visibility) + '</span></div>';
+        '<span style="color:var(--muted);font-size:11px">' + notifyBit + ' · ' +
+        A.escapeHtml(r.visibility) + '</span></div>';
     }).join("");
   }
 
@@ -856,6 +884,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         available_date: d,
         city_id: resolveCity(cityVal),
         note: document.getElementById("avail-note").value || null,
+        notify_opportunities: document.getElementById("avail-notify-opportunities").checked,
       }],
     }).then(function () {
       msg.textContent = "Added."; msg.className = "msg ok";
