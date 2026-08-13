@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:harvard-square-presents-comedy-studio@comedyatlas.app
+DTSTAMP:20260821T220000Z
+DTSTART:20260821T220000Z
+DTEND:20260822T000000Z
+SUMMARY:Harvard Square Presents - Comedy Studio
+LOCATION:New York
+DESCRIPTION:Eastville Comedy Club is Brooklyn's oldest comedy club\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/harvard-square-presents-come
+ dy-studio/
+URL:https://comedyatlas.app/comedy-atlas/event/harvard-square-presents-come
+ dy-studio/
+END:VEVENT
+END:VCALENDAR

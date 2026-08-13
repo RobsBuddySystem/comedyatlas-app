@@ -107,14 +107,14 @@ window.ATLAS_MAP_PROVIDER = "maplibre";
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atlas">
 <meta name="description" content="Find stand-up comedy shows, comedians, comedy clubs, venues and festivals by city worldwide. Browse current dates and ticket links on COMEDY ATLAS.">
-<link rel="canonical" href="https://comedyatlas.app/">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="COMEDY ATLAS">
 <meta property="og:title" content="Comedy Shows, Comics &amp; Venues Worldwide | COMEDY ATLAS">
 <meta property="og:description" content="Find stand-up comedy shows, comedians, comedy clubs, venues and festivals by city worldwide.">
-<meta property="og:url" content="https://comedyatlas.app/">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://comedyatlas.app/#organization","name":"COMEDY ATLAS","alternateName":"Comedy Atlas","description":"A worldwide directory of stand-up comedy shows, comedians, venues and festivals.","url":"https://comedyatlas.app","logo":"https://comedyatlas.app/comedy-atlas/icons/icon-512.png","sameAs":["https://instagram.com/comedyatlasapp"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/","@id":"https://comedyatlas.app/#website","alternateName":"Comedy Atlas","publisher":{"@id":"https://comedyatlas.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"COMEDY ATLAS","url":"https://comedyatlas.app/comedy-atlas/","@id":"https://comedyatlas.app/#website","alternateName":"Comedy Atlas","publisher":{"@id":"https://comedyatlas.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://comedyatlas.app/comedy-atlas/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <style>
 /* ---------------------------------------------------------------------
    COMEDY ATLAS — HUB landing page. Self-contained static page (no build
@@ -227,6 +227,25 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .place-card .place-meta{color:var(--muted);font-size:13px;margin-top:6px}
 .place-card .place-count{color:var(--gold);font-weight:700}
 .place-card .place-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
+
+/* Atlas hub directory block (2026-08-13 internal-linking fix). Only ever
+   rendered at /comedy-atlas/ -- see the ATLAS-HUB-ONLY markers below and
+   build_root_homepage.py, which strips this whole block before deriving
+   the real "/" homepage from this same source file, so this styling has
+   no visible effect there even though it ships in the same <style> block
+   (harmless, unused CSS on that page -- simpler and safer than a second
+   split stylesheet). */
+.hub-directory-intro{color:var(--muted);font-size:14px;max-width:720px;line-height:1.6;margin-bottom:18px}
+.hub-directory-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.hub-directory-link{border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;color:var(--text);background:var(--card);transition:border-color .15s}
+.hub-directory-link:hover{border-color:var(--purple)}
+.hub-subheading{font-size:15px;font-weight:700;margin:22px 0 8px}
+.hub-week-links{color:var(--muted);font-size:14px;margin-bottom:8px}
+.hub-week-links a{color:var(--gold)}
+.hub-city-list{column-width:220px;column-gap:20px;list-style:none;font-size:13.5px;line-height:2.1}
+.hub-city-list li{break-inside:avoid}
+.hub-city-list a{color:var(--muted)}
+.hub-city-list a:hover{color:var(--text);text-decoration:underline}
 
 /* ATLAS_HOME_ENABLED city grid (2026-07-28). Reuses .card-grid/.place-card
    exactly -- only difference is list semantics (<ul role="list"><li>) for
@@ -384,6 +403,157 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <p style="margin-top:14px"><a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse every comedy city</a></p>
 </section>
 
+<!-- ATLAS-HUB-ONLY:START (2026-08-13 internal-linking fix, GSC: "/comedy-atlas/"
+     was "Duplicate, Google chose different canonical than user" / "No referring
+     sitemaps detected" because this page was a near-byte-identical shell of the
+     real homepage with no content of its own, and its own canonical previously
+     deferred to "/" (P1-4). Fix: real, distinct hub content below (self-
+     canonical again -- see render_atlas_static_pages.py), a full worldwide city
+     directory, and links into every other top-level Atlas index. This block is
+     STRIPPED by build_root_homepage.py before deriving the real "/" homepage
+     from this same source file -- see that script's own docstring -- so the
+     homepage and this hub stop being duplicate content. Do not remove these
+     markers without updating build_root_homepage.py's strip step. -->
+<section class="atlas-section" id="atlas-hub-directory" aria-labelledby="atlas-hub-directory-heading">
+  <h2 id="atlas-hub-directory-heading">The COMEDY ATLAS hub</h2>
+  <p class="hub-directory-intro">This is the front door to everything COMEDY ATLAS
+  tracks, not a second homepage: every comedy market with a page of its own,
+  every festival record, the comic and venue directories, and the live
+  worldwide calendar. Start here for the whole map — the search above is for
+  when you already know what you're looking for.</p>
+  <div class="hub-directory-links">
+    <a class="hub-directory-link" href="/comedy-atlas/festival/">Festivals directory →</a>
+    <a class="hub-directory-link" href="/comedy-atlas/comics/">Comics directory →</a>
+    <a class="hub-directory-link" href="/comedy-atlas/venues/">Venues directory →</a>
+    <a class="hub-directory-link" href="/shows.html">Live calendar →</a>
+    <a class="hub-directory-link" href="/comedy-atlas/cities/">Cities ranked by activity →</a>
+  </div>
+  <h3 class="hub-subheading">This week on Atlas</h3>
+  <p class="hub-week-links">
+    <a href="/comedy-atlas/changelog/">What's new this week, city by city →</a>
+    &nbsp;·&nbsp;
+    <a href="/comedy-atlas/blog/">Atlas News →</a>
+  </p>
+  <h3 class="hub-subheading">Every comedy city on Atlas (114)</h3>
+  <ul class="hub-city-list">
+<li><a href="/comedy-atlas/city/aarhus/">Aarhus, Denmark</a></li>
+<li><a href="/comedy-atlas/city/adelaide/">Adelaide, Australia</a></li>
+<li><a href="/comedy-atlas/city/alpharetta/">Alpharetta, United States</a></li>
+<li><a href="/comedy-atlas/city/amsterdam/">Amsterdam, Netherlands</a></li>
+<li><a href="/comedy-atlas/city/appleton/">Appleton, United States</a></li>
+<li><a href="/comedy-atlas/city/athens/">Athens, Greece</a></li>
+<li><a href="/comedy-atlas/city/atlanta/">Atlanta, United States</a></li>
+<li><a href="/comedy-atlas/city/austin/">Austin, United States</a></li>
+<li><a href="/comedy-atlas/city/bangalore/">Bangalore, India</a></li>
+<li><a href="/comedy-atlas/city/bangkok/">Bangkok, Thailand</a></li>
+<li><a href="/comedy-atlas/city/barcelona/">Barcelona, Spain</a></li>
+<li><a href="/comedy-atlas/city/berlin/">Berlin, Germany</a></li>
+<li><a href="/comedy-atlas/city/birmingham/">Birmingham, UK</a></li>
+<li><a href="/comedy-atlas/city/bloomington/">Bloomington, United States</a></li>
+<li><a href="/comedy-atlas/city/boston/">Boston, United States</a></li>
+<li><a href="/comedy-atlas/city/bratislava/">Bratislava, Slovakia</a></li>
+<li><a href="/comedy-atlas/city/brighton/">Brighton, UK</a></li>
+<li><a href="/comedy-atlas/city/bristol/">Bristol, UK</a></li>
+<li><a href="/comedy-atlas/city/brussels/">Brussels, Belgium</a></li>
+<li><a href="/comedy-atlas/city/budapest/">Budapest, Hungary</a></li>
+<li><a href="/comedy-atlas/city/burlington/">Burlington, United States</a></li>
+<li><a href="/comedy-atlas/city/calgary/">Calgary, Canada</a></li>
+<li><a href="/comedy-atlas/city/canberra/">Canberra, Australia</a></li>
+<li><a href="/comedy-atlas/city/cape-town/">Cape Town, South Africa</a></li>
+<li><a href="/comedy-atlas/city/cardiff/">Cardiff, UK</a></li>
+<li><a href="/comedy-atlas/city/chandler/">Chandler, United States</a></li>
+<li><a href="/comedy-atlas/city/chicago/">Chicago, United States</a></li>
+<li><a href="/comedy-atlas/city/cologne/">Cologne, Germany</a></li>
+<li><a href="/comedy-atlas/city/copenhagen/">Copenhagen, Denmark</a></li>
+<li><a href="/comedy-atlas/city/cork/">Cork, Ireland</a></li>
+<li><a href="/comedy-atlas/city/dallas/">Dallas, United States</a></li>
+<li><a href="/comedy-atlas/city/delhi/">Delhi, India</a></li>
+<li><a href="/comedy-atlas/city/denver/">Denver, United States</a></li>
+<li><a href="/comedy-atlas/city/detroit/">Detroit, United States</a></li>
+<li><a href="/comedy-atlas/city/dubai/">Dubai, UAE</a></li>
+<li><a href="/comedy-atlas/city/dublin/">Dublin, Ireland</a></li>
+<li><a href="/comedy-atlas/city/east-providence/">East Providence, United States</a></li>
+<li><a href="/comedy-atlas/city/edinburgh/">Edinburgh, UK</a></li>
+<li><a href="/comedy-atlas/city/edmonton/">Edmonton, Canada</a></li>
+<li><a href="/comedy-atlas/city/fort-collins/">Fort Collins, United States</a></li>
+<li><a href="/comedy-atlas/city/fort-wayne/">Fort Wayne, United States</a></li>
+<li><a href="/comedy-atlas/city/galway/">Galway, Ireland</a></li>
+<li><a href="/comedy-atlas/city/glasgow/">Glasgow, UK</a></li>
+<li><a href="/comedy-atlas/city/halifax/">Halifax, Canada</a></li>
+<li><a href="/comedy-atlas/city/hamburg/">Hamburg, Germany</a></li>
+<li><a href="/comedy-atlas/city/helsinki/">Helsinki, Finland</a></li>
+<li><a href="/comedy-atlas/city/hong-kong/">Hong Kong, China</a></li>
+<li><a href="/comedy-atlas/city/houston/">Houston, United States</a></li>
+<li><a href="/comedy-atlas/city/indianapolis/">Indianapolis, United States</a></li>
+<li><a href="/comedy-atlas/city/kansas-city/">Kansas City, United States</a></li>
+<li><a href="/comedy-atlas/city/kolkata/">Kolkata, India</a></li>
+<li><a href="/comedy-atlas/city/leeds/">Leeds, UK</a></li>
+<li><a href="/comedy-atlas/city/lisbon/">Lisbon, Portugal</a></li>
+<li><a href="/comedy-atlas/city/liverpool/">Liverpool, UK</a></li>
+<li><a href="/comedy-atlas/city/ljubljana/">Ljubljana, Slovenia</a></li>
+<li><a href="/comedy-atlas/city/london/">London, UK</a></li>
+<li><a href="/comedy-atlas/city/los-angeles/">Los Angeles, United States</a></li>
+<li><a href="/comedy-atlas/city/louisville/">Louisville, United States</a></li>
+<li><a href="/comedy-atlas/city/madrid/">Madrid, Spain</a></li>
+<li><a href="/comedy-atlas/city/manchester/">Manchester, UK</a></li>
+<li><a href="/comedy-atlas/city/melbourne/">Melbourne, Australia</a></li>
+<li><a href="/comedy-atlas/city/miami/">Miami, United States</a></li>
+<li><a href="/comedy-atlas/city/milan/">Milan, Italy</a></li>
+<li><a href="/comedy-atlas/city/minneapolis/">Minneapolis, United States</a></li>
+<li><a href="/comedy-atlas/city/montreal/">Montreal, Canada</a></li>
+<li><a href="/comedy-atlas/city/mumbai/">Mumbai, India</a></li>
+<li><a href="/comedy-atlas/city/munich/">Munich, Germany</a></li>
+<li><a href="/comedy-atlas/city/naples/">Naples, United States</a></li>
+<li><a href="/comedy-atlas/city/nashville/">Nashville, United States</a></li>
+<li><a href="/comedy-atlas/city/new-orleans/">New Orleans, United States</a></li>
+<li><a href="/comedy-atlas/city/new-york/">New York, United States</a></li>
+<li><a href="/comedy-atlas/city/nicosia/">Nicosia, Cyprus</a></li>
+<li><a href="/comedy-atlas/city/ogden/">Ogden, United States</a></li>
+<li><a href="/comedy-atlas/city/oklahoma-city/">Oklahoma City, United States</a></li>
+<li><a href="/comedy-atlas/city/oslo/">Oslo, Norway</a></li>
+<li><a href="/comedy-atlas/city/ottawa/">Ottawa, Canada</a></li>
+<li><a href="/comedy-atlas/city/paris/">Paris, France</a></li>
+<li><a href="/comedy-atlas/city/perth/">Perth, Australia</a></li>
+<li><a href="/comedy-atlas/city/philadelphia/">Philadelphia, United States</a></li>
+<li><a href="/comedy-atlas/city/phoenix/">Phoenix, United States</a></li>
+<li><a href="/comedy-atlas/city/pittsburgh/">Pittsburgh, United States</a></li>
+<li><a href="/comedy-atlas/city/portland/">Portland, United States</a></li>
+<li><a href="/comedy-atlas/city/porto/">Porto, Portugal</a></li>
+<li><a href="/comedy-atlas/city/prague/">Prague, Czechia</a></li>
+<li><a href="/comedy-atlas/city/raleigh/">Raleigh, United States</a></li>
+<li><a href="/comedy-atlas/city/reykjavik/">Reykjavik, Iceland</a></li>
+<li><a href="/comedy-atlas/city/riga/">Riga, Latvia</a></li>
+<li><a href="/comedy-atlas/city/rome/">Rome, Italy</a></li>
+<li><a href="/comedy-atlas/city/rotterdam/">Rotterdam, Netherlands</a></li>
+<li><a href="/comedy-atlas/city/saint-paul/">Saint Paul, United States</a></li>
+<li><a href="/comedy-atlas/city/salt-lake-city/">Salt Lake City, United States</a></li>
+<li><a href="/comedy-atlas/city/san-diego/">San Diego, United States</a></li>
+<li><a href="/comedy-atlas/city/seattle/">Seattle, United States</a></li>
+<li><a href="/comedy-atlas/city/singapore/">Singapore, Singapore</a></li>
+<li><a href="/comedy-atlas/city/skopje/">Skopje, North Macedonia</a></li>
+<li><a href="/comedy-atlas/city/sofia/">Sofia, Bulgaria</a></li>
+<li><a href="/comedy-atlas/city/spokane/">Spokane, United States</a></li>
+<li><a href="/comedy-atlas/city/stockholm/">Stockholm, Sweden</a></li>
+<li><a href="/comedy-atlas/city/sydney/">Sydney, Australia</a></li>
+<li><a href="/comedy-atlas/city/tacoma/">Tacoma, United States</a></li>
+<li><a href="/comedy-atlas/city/tallinn/">Tallinn, Estonia</a></li>
+<li><a href="/comedy-atlas/city/tempe/">Tempe, United States</a></li>
+<li><a href="/comedy-atlas/city/tirana/">Tirana, Albania</a></li>
+<li><a href="/comedy-atlas/city/tokyo/">Tokyo, Japan</a></li>
+<li><a href="/comedy-atlas/city/toronto/">Toronto, Canada</a></li>
+<li><a href="/comedy-atlas/city/tulsa/">Tulsa, United States</a></li>
+<li><a href="/comedy-atlas/city/vancouver/">Vancouver, Canada</a></li>
+<li><a href="/comedy-atlas/city/vienna/">Vienna, Austria</a></li>
+<li><a href="/comedy-atlas/city/vilnius/">Vilnius, Lithuania</a></li>
+<li><a href="/comedy-atlas/city/washington/">Washington, United States</a></li>
+<li><a href="/comedy-atlas/city/west-jordan/">West Jordan, United States</a></li>
+<li><a href="/comedy-atlas/city/winnipeg/">Winnipeg, Canada</a></li>
+<li><a href="/comedy-atlas/city/zagreb/">Zagreb, Croatia</a></li>
+<li><a href="/comedy-atlas/city/zurich/">Zurich, Switzerland</a></li>
+  </ul>
+</section>
+<!-- ATLAS-HUB-ONLY:END -->
+
 <main id="main-content" aria-live="polite" tabindex="-1">
   <div class="state-block" id="loading-state">
     <div class="spinner" aria-hidden="true"></div>
@@ -435,7 +605,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <!-- 2026-08-13 internal-linking fix: the root homepage build strips the
+       ATLAS-HUB-ONLY block above, which otherwise would have been the only
+       static link from "/" to "/comedy-atlas/" on the atlas origin -- the
+       top nav's own logo already points home (seo_common.atlas_home_href),
+       and none of ATLAS_APP_NAV's other items are the bare hub path. This
+       footer is NOT part of that stripped block, so it renders on BOTH "/"
+       and "/comedy-atlas/" (a harmless self-link on the hub's own page,
+       same as most sites' persistent footer nav), keeping the hub itself
+       reachable in one click from home rather than sitemap-only. -->
+  <div class="footer-links"><a href="/comedy-atlas/">Atlas directory</a> &middot; <a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
   <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>

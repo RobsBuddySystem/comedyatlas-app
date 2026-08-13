@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brotaku@comedyatlas.app
+DTSTAMP:20260821T000000Z
+DTSTART:20260821T000000Z
+DTEND:20260821T020000Z
+SUMMARY:Brotaku
+LOCATION:New York
+DESCRIPTION:Video game tournament featuring New York's funniest comedians c
+ ommentating and roasting participants as they compete for cash & prizes!\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/brotaku/
+URL:https://comedyatlas.app/comedy-atlas/event/brotaku/
+END:VEVENT
+END:VCALENDAR

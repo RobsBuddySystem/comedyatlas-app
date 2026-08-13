@@ -228,6 +228,25 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .place-card .place-count{color:var(--gold);font-weight:700}
 .place-card .place-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
 
+/* Atlas hub directory block (2026-08-13 internal-linking fix). Only ever
+   rendered at /comedy-atlas/ -- see the ATLAS-HUB-ONLY markers below and
+   build_root_homepage.py, which strips this whole block before deriving
+   the real "/" homepage from this same source file, so this styling has
+   no visible effect there even though it ships in the same <style> block
+   (harmless, unused CSS on that page -- simpler and safer than a second
+   split stylesheet). */
+.hub-directory-intro{color:var(--muted);font-size:14px;max-width:720px;line-height:1.6;margin-bottom:18px}
+.hub-directory-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.hub-directory-link{border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;color:var(--text);background:var(--card);transition:border-color .15s}
+.hub-directory-link:hover{border-color:var(--purple)}
+.hub-subheading{font-size:15px;font-weight:700;margin:22px 0 8px}
+.hub-week-links{color:var(--muted);font-size:14px;margin-bottom:8px}
+.hub-week-links a{color:var(--gold)}
+.hub-city-list{column-width:220px;column-gap:20px;list-style:none;font-size:13.5px;line-height:2.1}
+.hub-city-list li{break-inside:avoid}
+.hub-city-list a{color:var(--muted)}
+.hub-city-list a:hover{color:var(--text);text-decoration:underline}
+
 /* ATLAS_HOME_ENABLED city grid (2026-07-28). Reuses .card-grid/.place-card
    exactly -- only difference is list semantics (<ul role="list"><li>) for
    real screen-reader/keyboard list navigation instead of a bare div grid.
@@ -384,6 +403,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <p style="margin-top:14px"><a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse every comedy city</a></p>
 </section>
 
+
 <main id="main-content" aria-live="polite" tabindex="-1">
   <div class="state-block" id="loading-state">
     <div class="spinner" aria-hidden="true"></div>
@@ -435,7 +455,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
-  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <!-- 2026-08-13 internal-linking fix: the root homepage build strips the
+       ATLAS-HUB-ONLY block above, which otherwise would have been the only
+       static link from "/" to "/comedy-atlas/" on the atlas origin -- the
+       top nav's own logo already points home (seo_common.atlas_home_href),
+       and none of ATLAS_APP_NAV's other items are the bare hub path. This
+       footer is NOT part of that stripped block, so it renders on BOTH "/"
+       and "/comedy-atlas/" (a harmless self-link on the hub's own page,
+       same as most sites' persistent footer nav), keeping the hub itself
+       reachable in one click from home rather than sitemap-only. -->
+  <div class="footer-links"><a href="/comedy-atlas/">Atlas directory</a> &middot; <a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
   <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>

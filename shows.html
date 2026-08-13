@@ -81,6 +81,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .ev-ok{display:inline-block;font-size:8.5px;font-weight:800;padding:1px 6px;border-radius:6px;margin-top:4px;margin-left:4px;background:rgba(63,185,80,.16);color:var(--green)}
 .cell-empty{font-size:10px;color:var(--dim);margin-top:auto;font-style:italic}
 @media(max-width:640px){.hero{padding:34px 16px 4px}.month{min-width:150px;font-size:18px}}
+/* Browse-shows directory (2026-08-13 internal-linking fix): this calendar
+   is entirely client-rendered from JSON at load time, so a crawler that
+   doesn't execute JS -- and, per live GSC evidence, Google's own indexer of
+   this exact page -- saw zero <a href> to any show or event page. This
+   block is plain, static, crawlable HTML: a link into the real show-series
+   directory (/comedy-atlas/show/, 700+ permanent show pages, A-Z + city
+   facets already) plus every city with its own Atlas page, chunked by
+   city rather than inventing a new pagination scheme. */
+.browse-shows{max-width:1240px;margin:8px auto 0;padding:22px 16px 0}
+.browse-shows h2{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.browse-shows-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.browse-shows-link{border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;color:var(--text);background:var(--card);transition:border-color .15s}
+.browse-shows-link:hover{border-color:var(--purple)}
+.browse-shows-cities{column-width:220px;column-gap:20px;list-style:none;font-size:13.5px;line-height:2.1;padding-bottom:20px}
+.browse-shows-cities li{break-inside:avoid}
+.browse-shows-cities a{color:var(--muted)}
+.browse-shows-cities a:hover{color:var(--text);text-decoration:underline}
 footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--muted);font-size:13px}
 footer a{color:var(--muted)}footer a:hover{color:var(--text)}
 .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
@@ -149,6 +166,132 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
     <div class="cal" id="cal"></div>
   </div>
 </div>
+
+<section class="browse-shows" aria-labelledby="browse-shows-heading">
+  <h2 id="browse-shows-heading">Browse every show</h2>
+  <div class="browse-shows-links">
+    <a class="browse-shows-link" href="/comedy-atlas/show/">Full show directory, A&ndash;Z &rarr;</a>
+    <a class="browse-shows-link" href="/comedy-atlas/festival/">Festivals directory &rarr;</a>
+    <a class="browse-shows-link" href="/comedy-atlas/cities/">Cities ranked by activity &rarr;</a>
+  </div>
+  <h3 style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:10px">Or jump straight to a city (114)</h3>
+  <ul class="browse-shows-cities">
+<li><a href="/comedy-atlas/city/aarhus/">Aarhus, Denmark</a></li>
+<li><a href="/comedy-atlas/city/adelaide/">Adelaide, Australia</a></li>
+<li><a href="/comedy-atlas/city/alpharetta/">Alpharetta, United States</a></li>
+<li><a href="/comedy-atlas/city/amsterdam/">Amsterdam, Netherlands</a></li>
+<li><a href="/comedy-atlas/city/appleton/">Appleton, United States</a></li>
+<li><a href="/comedy-atlas/city/athens/">Athens, Greece</a></li>
+<li><a href="/comedy-atlas/city/atlanta/">Atlanta, United States</a></li>
+<li><a href="/comedy-atlas/city/austin/">Austin, United States</a></li>
+<li><a href="/comedy-atlas/city/bangalore/">Bangalore, India</a></li>
+<li><a href="/comedy-atlas/city/bangkok/">Bangkok, Thailand</a></li>
+<li><a href="/comedy-atlas/city/barcelona/">Barcelona, Spain</a></li>
+<li><a href="/comedy-atlas/city/berlin/">Berlin, Germany</a></li>
+<li><a href="/comedy-atlas/city/birmingham/">Birmingham, UK</a></li>
+<li><a href="/comedy-atlas/city/bloomington/">Bloomington, United States</a></li>
+<li><a href="/comedy-atlas/city/boston/">Boston, United States</a></li>
+<li><a href="/comedy-atlas/city/bratislava/">Bratislava, Slovakia</a></li>
+<li><a href="/comedy-atlas/city/brighton/">Brighton, UK</a></li>
+<li><a href="/comedy-atlas/city/bristol/">Bristol, UK</a></li>
+<li><a href="/comedy-atlas/city/brussels/">Brussels, Belgium</a></li>
+<li><a href="/comedy-atlas/city/budapest/">Budapest, Hungary</a></li>
+<li><a href="/comedy-atlas/city/burlington/">Burlington, United States</a></li>
+<li><a href="/comedy-atlas/city/calgary/">Calgary, Canada</a></li>
+<li><a href="/comedy-atlas/city/canberra/">Canberra, Australia</a></li>
+<li><a href="/comedy-atlas/city/cape-town/">Cape Town, South Africa</a></li>
+<li><a href="/comedy-atlas/city/cardiff/">Cardiff, UK</a></li>
+<li><a href="/comedy-atlas/city/chandler/">Chandler, United States</a></li>
+<li><a href="/comedy-atlas/city/chicago/">Chicago, United States</a></li>
+<li><a href="/comedy-atlas/city/cologne/">Cologne, Germany</a></li>
+<li><a href="/comedy-atlas/city/copenhagen/">Copenhagen, Denmark</a></li>
+<li><a href="/comedy-atlas/city/cork/">Cork, Ireland</a></li>
+<li><a href="/comedy-atlas/city/dallas/">Dallas, United States</a></li>
+<li><a href="/comedy-atlas/city/delhi/">Delhi, India</a></li>
+<li><a href="/comedy-atlas/city/denver/">Denver, United States</a></li>
+<li><a href="/comedy-atlas/city/detroit/">Detroit, United States</a></li>
+<li><a href="/comedy-atlas/city/dubai/">Dubai, UAE</a></li>
+<li><a href="/comedy-atlas/city/dublin/">Dublin, Ireland</a></li>
+<li><a href="/comedy-atlas/city/east-providence/">East Providence, United States</a></li>
+<li><a href="/comedy-atlas/city/edinburgh/">Edinburgh, UK</a></li>
+<li><a href="/comedy-atlas/city/edmonton/">Edmonton, Canada</a></li>
+<li><a href="/comedy-atlas/city/fort-collins/">Fort Collins, United States</a></li>
+<li><a href="/comedy-atlas/city/fort-wayne/">Fort Wayne, United States</a></li>
+<li><a href="/comedy-atlas/city/galway/">Galway, Ireland</a></li>
+<li><a href="/comedy-atlas/city/glasgow/">Glasgow, UK</a></li>
+<li><a href="/comedy-atlas/city/halifax/">Halifax, Canada</a></li>
+<li><a href="/comedy-atlas/city/hamburg/">Hamburg, Germany</a></li>
+<li><a href="/comedy-atlas/city/helsinki/">Helsinki, Finland</a></li>
+<li><a href="/comedy-atlas/city/hong-kong/">Hong Kong, China</a></li>
+<li><a href="/comedy-atlas/city/houston/">Houston, United States</a></li>
+<li><a href="/comedy-atlas/city/indianapolis/">Indianapolis, United States</a></li>
+<li><a href="/comedy-atlas/city/kansas-city/">Kansas City, United States</a></li>
+<li><a href="/comedy-atlas/city/kolkata/">Kolkata, India</a></li>
+<li><a href="/comedy-atlas/city/leeds/">Leeds, UK</a></li>
+<li><a href="/comedy-atlas/city/lisbon/">Lisbon, Portugal</a></li>
+<li><a href="/comedy-atlas/city/liverpool/">Liverpool, UK</a></li>
+<li><a href="/comedy-atlas/city/ljubljana/">Ljubljana, Slovenia</a></li>
+<li><a href="/comedy-atlas/city/london/">London, UK</a></li>
+<li><a href="/comedy-atlas/city/los-angeles/">Los Angeles, United States</a></li>
+<li><a href="/comedy-atlas/city/louisville/">Louisville, United States</a></li>
+<li><a href="/comedy-atlas/city/madrid/">Madrid, Spain</a></li>
+<li><a href="/comedy-atlas/city/manchester/">Manchester, UK</a></li>
+<li><a href="/comedy-atlas/city/melbourne/">Melbourne, Australia</a></li>
+<li><a href="/comedy-atlas/city/miami/">Miami, United States</a></li>
+<li><a href="/comedy-atlas/city/milan/">Milan, Italy</a></li>
+<li><a href="/comedy-atlas/city/minneapolis/">Minneapolis, United States</a></li>
+<li><a href="/comedy-atlas/city/montreal/">Montreal, Canada</a></li>
+<li><a href="/comedy-atlas/city/mumbai/">Mumbai, India</a></li>
+<li><a href="/comedy-atlas/city/munich/">Munich, Germany</a></li>
+<li><a href="/comedy-atlas/city/naples/">Naples, United States</a></li>
+<li><a href="/comedy-atlas/city/nashville/">Nashville, United States</a></li>
+<li><a href="/comedy-atlas/city/new-orleans/">New Orleans, United States</a></li>
+<li><a href="/comedy-atlas/city/new-york/">New York, United States</a></li>
+<li><a href="/comedy-atlas/city/nicosia/">Nicosia, Cyprus</a></li>
+<li><a href="/comedy-atlas/city/ogden/">Ogden, United States</a></li>
+<li><a href="/comedy-atlas/city/oklahoma-city/">Oklahoma City, United States</a></li>
+<li><a href="/comedy-atlas/city/oslo/">Oslo, Norway</a></li>
+<li><a href="/comedy-atlas/city/ottawa/">Ottawa, Canada</a></li>
+<li><a href="/comedy-atlas/city/paris/">Paris, France</a></li>
+<li><a href="/comedy-atlas/city/perth/">Perth, Australia</a></li>
+<li><a href="/comedy-atlas/city/philadelphia/">Philadelphia, United States</a></li>
+<li><a href="/comedy-atlas/city/phoenix/">Phoenix, United States</a></li>
+<li><a href="/comedy-atlas/city/pittsburgh/">Pittsburgh, United States</a></li>
+<li><a href="/comedy-atlas/city/portland/">Portland, United States</a></li>
+<li><a href="/comedy-atlas/city/porto/">Porto, Portugal</a></li>
+<li><a href="/comedy-atlas/city/prague/">Prague, Czechia</a></li>
+<li><a href="/comedy-atlas/city/raleigh/">Raleigh, United States</a></li>
+<li><a href="/comedy-atlas/city/reykjavik/">Reykjavik, Iceland</a></li>
+<li><a href="/comedy-atlas/city/riga/">Riga, Latvia</a></li>
+<li><a href="/comedy-atlas/city/rome/">Rome, Italy</a></li>
+<li><a href="/comedy-atlas/city/rotterdam/">Rotterdam, Netherlands</a></li>
+<li><a href="/comedy-atlas/city/saint-paul/">Saint Paul, United States</a></li>
+<li><a href="/comedy-atlas/city/salt-lake-city/">Salt Lake City, United States</a></li>
+<li><a href="/comedy-atlas/city/san-diego/">San Diego, United States</a></li>
+<li><a href="/comedy-atlas/city/seattle/">Seattle, United States</a></li>
+<li><a href="/comedy-atlas/city/singapore/">Singapore, Singapore</a></li>
+<li><a href="/comedy-atlas/city/skopje/">Skopje, North Macedonia</a></li>
+<li><a href="/comedy-atlas/city/sofia/">Sofia, Bulgaria</a></li>
+<li><a href="/comedy-atlas/city/spokane/">Spokane, United States</a></li>
+<li><a href="/comedy-atlas/city/stockholm/">Stockholm, Sweden</a></li>
+<li><a href="/comedy-atlas/city/sydney/">Sydney, Australia</a></li>
+<li><a href="/comedy-atlas/city/tacoma/">Tacoma, United States</a></li>
+<li><a href="/comedy-atlas/city/tallinn/">Tallinn, Estonia</a></li>
+<li><a href="/comedy-atlas/city/tempe/">Tempe, United States</a></li>
+<li><a href="/comedy-atlas/city/tirana/">Tirana, Albania</a></li>
+<li><a href="/comedy-atlas/city/tokyo/">Tokyo, Japan</a></li>
+<li><a href="/comedy-atlas/city/toronto/">Toronto, Canada</a></li>
+<li><a href="/comedy-atlas/city/tulsa/">Tulsa, United States</a></li>
+<li><a href="/comedy-atlas/city/vancouver/">Vancouver, Canada</a></li>
+<li><a href="/comedy-atlas/city/vienna/">Vienna, Austria</a></li>
+<li><a href="/comedy-atlas/city/vilnius/">Vilnius, Lithuania</a></li>
+<li><a href="/comedy-atlas/city/washington/">Washington, United States</a></li>
+<li><a href="/comedy-atlas/city/west-jordan/">West Jordan, United States</a></li>
+<li><a href="/comedy-atlas/city/winnipeg/">Winnipeg, Canada</a></li>
+<li><a href="/comedy-atlas/city/zagreb/">Zagreb, Croatia</a></li>
+<li><a href="/comedy-atlas/city/zurich/">Zurich, Switzerland</a></li>
+  </ul>
+</section>
 
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
