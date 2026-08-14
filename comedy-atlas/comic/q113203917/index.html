@@ -18,7 +18,7 @@
 <meta property="og:description" content="Q113203917 on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/comic/q113203917/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Q113203917", "url": "https://comedyatlas.app/comedy-atlas/comic/q113203917/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ania_Magliano_at_the_2025_Edinburgh_Festival_Fringe-02_%28cropped%29.jpg", "name": "Q113203917", "url": "https://comedyatlas.app/comedy-atlas/comic/q113203917/"}</script>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -177,7 +177,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
   <div class="comic-header-row">
-    <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Q113203917%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EQ1%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Q113203917" class="comic-avatar-placeholder" style="border-radius:12px;margin-bottom:14px;width:160px;height:160px">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Ania_Magliano_at_the_2025_Edinburgh_Festival_Fringe-02_%28cropped%29.jpg" alt="Q113203917" style="border-radius:12px;margin-bottom:14px;max-height:360px;object-fit:cover" onerror="this.remove()">
     <div class="comic-header-text">
       <h1 class="atlas-wordmark">Q113203917<span class="dot">.</span></h1>
   
@@ -232,11 +232,32 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </div>
 </div>
 
-<div class="card book-box" id="book-box" data-person-id="7537">
-  <a class="book-btn book-cta" href="/comedy-atlas/book/?id=7537&amp;name=Q113203917"
-     data-comic-id="7537">Book Q113203917 for your event →</a>
-  <div class="book-note">Sent straight to the booking desk. No account needed.</div>
-</div>
+<form class="card book-box" id="book-box" data-person-id="7537">
+  <details open>
+    <summary>Book Q113203917 for your event →</summary>
+    <div class="book-fields">
+      <label for="book-name">Your name
+        <input id="book-name" name="name" type="text" required autocomplete="name">
+      </label>
+      <label for="book-email">Your email
+        <input id="book-email" name="email" type="email" required autocomplete="email">
+      </label>
+      <label for="book-date">Event date (optional)
+        <input id="book-date" name="event_date" type="date">
+      </label>
+      <label for="book-city">City (optional)
+        <input id="book-city" name="city" type="text" autocomplete="address-level2">
+      </label>
+      <label for="book-message">Message
+        <textarea id="book-message" name="message" required
+                  placeholder="Tell us about your event — date, venue, budget, anything that helps."></textarea>
+      </label>
+      <button type="submit" id="book-submit-btn" class="book-btn">Send enquiry</button>
+      <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
+      <noscript><div class="book-status">Enable JavaScript to send a booking enquiry.</div></noscript>
+    </div>
+  </details>
+</form>
 <h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="empty-state">No past runs on record yet.</div>
 
 </main>

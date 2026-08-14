@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book a comedian — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/book/">
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="Send a booking enquiry for a comedian listed on COMEDY ATLAS. Goes straight to the booking desk.">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0e1a;color:#f5f0e6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:#9d5ff5}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;position:fixed;background:#9d5ff5;color:#fff;padding:10px 14px;border-radius:8px;z-index:99}
+.wrap{max-width:640px;margin:0 auto;padding:28px 18px 64px}
+.crumb{font-size:.85rem;opacity:.75;margin-bottom:18px}
+h1{font-size:1.6rem;line-height:1.25;margin-bottom:6px}
+.sub{opacity:.8;margin-bottom:22px}
+.for-comic{background:rgba(157,95,245,.12);border:1px solid rgba(157,95,245,.45);border-radius:12px;padding:14px 16px;margin-bottom:22px}
+.for-comic .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+.for-comic .who{font-size:1.15rem;font-weight:700;margin-top:2px}
+label{display:block;margin-bottom:16px;font-size:.9rem}
+input,textarea{width:100%;margin-top:6px;padding:11px 12px;font:inherit;color:#f5f0e6;background:#131a2c;border:1px solid #2b3550;border-radius:9px}
+input:focus,textarea:focus{outline:2px solid #9d5ff5;outline-offset:1px}
+textarea{min-height:130px;resize:vertical}
+button{width:100%;padding:14px;font:inherit;font-weight:700;color:#fff;background:#9d5ff5;border:0;border-radius:10px;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}
+.status{margin-top:14px;min-height:1.4em;font-size:.92rem}
+.ok{color:#6ee7a8}.err{color:#ff8a8a}
+.foot{margin-top:30px;font-size:.83rem;opacity:.65}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <div class="crumb"><a href="/comedy-atlas/">COMEDY ATLAS</a> → Booking enquiry</div>
+  <main id="main">
+    <h1>Send a booking enquiry</h1>
+    <p class="sub">Goes straight to the booking desk. No account needed.</p>
+
+    <!-- Prefilled from the comic page's button so the enquirer never retypes
+         the name and the enquiry is always attributed to the right person.
+         Shown, not editable: an editable "which comic" field invites typos
+         that would misroute the enquiry. -->
+    <div class="for-comic" id="for-comic" hidden>
+      <div class="label">Booking enquiry for</div>
+      <div class="who" id="comic-name"></div>
+    </div>
+
+    <form id="book-form">
+      <label for="b-name">Your name
+        <input id="b-name" type="text" required autocomplete="name">
+      </label>
+      <label for="b-email">Your email
+        <input id="b-email" type="email" required autocomplete="email">
+      </label>
+      <label for="b-date">Event date <span style="opacity:.6">(optional)</span>
+        <input id="b-date" type="date">
+      </label>
+      <label for="b-city">City <span style="opacity:.6">(optional)</span>
+        <input id="b-city" type="text" autocomplete="address-level2">
+      </label>
+      <label for="b-message">Message
+        <textarea id="b-message" required
+          placeholder="Tell us about your event — date, venue, budget, anything that helps."></textarea>
+      </label>
+      <button type="submit" id="b-submit">Send enquiry</button>
+      <div class="status" id="b-status" role="status" aria-live="polite"></div>
+      <noscript><div class="status err">This form needs JavaScript. Email <a href="mailto:booking@pariscomedy.com">booking@pariscomedy.com</a> instead.</div></noscript>
+    </form>
+
+    <p class="foot">We only use your details to answer this enquiry.</p>
+  </main>
+</div>
+<script>
+(function(){
+  // The comic is passed by the button on their page as ?id=&name=.
+  // Read defensively: a hand-typed or truncated URL must still give a
+  // working general enquiry form rather than a broken page.
+  var params = new URLSearchParams(window.location.search);
+  var comicId = parseInt(params.get('id'), 10);
+  var comicName = (params.get('name') || '').trim();
+
+  if (comicName) {
+    // textContent, never innerHTML -- the name arrives from the query
+    // string and must never be able to inject markup.
+    document.getElementById('comic-name').textContent = comicName;
+    document.getElementById('for-comic').hidden = false;
+    document.title = 'Book ' + comicName + ' — COMEDY ATLAS';
+  }
+
+  var form = document.getElementById('book-form');
+  var btn = document.getElementById('b-submit');
+  var status = document.getElementById('b-status');
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    status.className = 'status';
+    status.textContent = 'Sending…';
+    btn.disabled = true;
+
+    var payload = {
+      enquirer_name: document.getElementById('b-name').value.trim(),
+      enquirer_email: document.getElementById('b-email').value.trim(),
+      message: document.getElementById('b-message').value.trim(),
+      comic_person_id: isNaN(comicId) ? null : comicId,
+      event_date: document.getElementById('b-date').value || null,
+      city: document.getElementById('b-city').value.trim() || null
+    };
+
+    fetch('https://api.comedyatlas.app/booking/enquiry', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(resp){
+      if (resp.ok) {
+        form.reset();
+        document.getElementById('for-comic').hidden = !comicName;
+        status.className = 'status ok';
+        status.textContent = 'Sent. The booking desk will be in touch.';
+        return;
+      }
+      // 429 is the rate limiter, not a failure of the enquiry itself --
+      // say so, so the sender knows to retry rather than assume rejection.
+      status.className = 'status err';
+      status.textContent = resp.status === 429
+        ? 'Too many enquiries just now — please try again in a few minutes.'
+        : 'Could not send that. Email booking@pariscomedy.com instead.';
+    }).catch(function(){
+      status.className = 'status err';
+      status.textContent = 'Could not reach the booking desk. Email booking@pariscomedy.com instead.';
+    }).then(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

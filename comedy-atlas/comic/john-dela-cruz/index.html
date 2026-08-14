@@ -232,11 +232,32 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </div>
 </div>
 
-<div class="card book-box" id="book-box" data-person-id="8710">
-  <a class="book-btn book-cta" href="/comedy-atlas/book/?id=8710&amp;name=John%20Dela%20Cruz"
-     data-comic-id="8710">Book John Dela Cruz for your event →</a>
-  <div class="book-note">Sent straight to the booking desk. No account needed.</div>
-</div>
+<form class="card book-box" id="book-box" data-person-id="8710">
+  <details open>
+    <summary>Book John Dela Cruz for your event →</summary>
+    <div class="book-fields">
+      <label for="book-name">Your name
+        <input id="book-name" name="name" type="text" required autocomplete="name">
+      </label>
+      <label for="book-email">Your email
+        <input id="book-email" name="email" type="email" required autocomplete="email">
+      </label>
+      <label for="book-date">Event date (optional)
+        <input id="book-date" name="event_date" type="date">
+      </label>
+      <label for="book-city">City (optional)
+        <input id="book-city" name="city" type="text" autocomplete="address-level2">
+      </label>
+      <label for="book-message">Message
+        <textarea id="book-message" name="message" required
+                  placeholder="Tell us about your event — date, venue, budget, anything that helps."></textarea>
+      </label>
+      <button type="submit" id="book-submit-btn" class="book-btn">Send enquiry</button>
+      <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
+      <noscript><div class="book-status">Enable JavaScript to send a booking enquiry.</div></noscript>
+    </div>
+  </details>
+</form>
 <h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="empty-state">No past runs on record yet.</div>
 
 </main>
