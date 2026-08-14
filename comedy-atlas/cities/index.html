@@ -259,6 +259,19 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   color: var(--gold);
   font-weight: 700;
 }
+.stub-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.stub-list .stub-guide {
+  font-size: 11px;
+  padding: 5px 8px;
+  color: var(--muted);
+}
+.stub-list .stub-guide:hover {
+  color: var(--purple);
+}
 </style>
 </head>
 <body>
@@ -283,7 +296,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <p style="color: var(--muted); margin-top: 12px;">Browse stand-up comedy shows and open mics worldwide.</p>
   <div class="stats">
     <div><strong>114</strong> cities</div>
-    <div><strong>2276</strong> shows</div>
+    <div><strong>2274</strong> shows</div>
   </div>
 </header>
 <main id="main-content" tabindex="-1">
@@ -291,7 +304,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <div class="city-card-wrap">
 <a href="/comedy-atlas/city.html?city=Edinburgh" class="city-card">
   <div class="city-name">Edinburgh, Scotland, UK</div>
-  <div class="city-count">370 shows</div>
+  <div class="city-count">368 shows</div>
   <div class="city-next-show">Thu, Aug 6 · 00:25</div>
 </a>
 <a href="/comedy-atlas/city/edinburgh/" class="city-card-guide">About comedy in Edinburgh, Scotland, UK</a>
@@ -500,7 +513,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <a href="/comedy-atlas/city.html?city=Paris" class="city-card">
   <div class="city-name">Paris, Île-de-France, France</div>
   <div class="city-count">21 shows</div>
-  <div class="city-next-show">Fri, Aug 14 · 19:00</div>
+  <div class="city-next-show">Sat, Aug 15 · 19:30</div>
 </a>
 <a href="/comedy-atlas/city/paris/" class="city-card-guide">About comedy in Paris, Île-de-France, France</a>
 </div>
@@ -564,37 +577,37 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <div class="stub-section">
 <p class="stub-note">Also tracking — cities where we've spotted shows or venues but don't yet have full programme coverage:</p>
 <div class="stub-list">
-<a href="/comedy-atlas/city.html?city=Galway">Galway, Ireland · <span class="stub-count">7</span></a>
-<a href="/comedy-atlas/city.html?city=Madrid">Madrid, Madrid, Comunidad de, Spain · <span class="stub-count">7</span></a>
-<a href="/comedy-atlas/city.html?city=Lisbon">Lisbon, Lisboa, Portugal · <span class="stub-count">5</span></a>
-<a href="/comedy-atlas/city.html?city=Tempe">Tempe, Arizona, United States · <span class="stub-count">5</span></a>
-<a href="/comedy-atlas/city.html?city=Brussels">Brussels, Bruxelles-Capitale, Région de, Belgium · <span class="stub-count">3</span></a>
-<a href="/comedy-atlas/city.html?city=Porto">Porto, Portugal · <span class="stub-count">3</span></a>
-<a href="/comedy-atlas/city.html?city=Aarhus">Aarhus, Midtjylland, Denmark · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Athens">Athens, Attikí, Greece · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Budapest">Budapest, Hungary · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Dublin">Dublin, Ireland · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=East%20Providence">East Providence, Rhode Island, United States · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Helsinki">Helsinki, Uusimaa, Finland · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Milan">Milan, Lombardia, Italy · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Munich">Munich, Bayern, Germany · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Oslo">Oslo, Norway · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Riga">Riga, Rīga, Latvia · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Stockholm">Stockholm, Stockholms län [SE-01], Sweden · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Tallinn">Tallinn, Harjumaa, Estonia · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Vilnius">Vilnius, Vilniaus apskritis, Lithuania · <span class="stub-count">2</span></a>
-<a href="/comedy-atlas/city.html?city=Bratislava">Bratislava, Bratislavský kraj, Slovakia · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Hamburg">Hamburg, Germany · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Ljubljana">Ljubljana, Slovenia · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Nicosia">Nicosia, Lefkosia, Cyprus · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Reykjavik">Reykjavik, Höfuðborgarsvæði, Iceland · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Rotterdam">Rotterdam, Netherlands · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Skopje">Skopje, North Macedonia · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Sofia">Sofia, Sofia (stolitsa), Bulgaria · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Tirana">Tirana, Tiranë, Albania · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Vienna">Vienna, Wien, Austria · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Zagreb">Zagreb, Grad Zagreb, Croatia · <span class="stub-count">1</span></a>
-<a href="/comedy-atlas/city.html?city=Zurich">Zurich, Zürich, Switzerland · <span class="stub-count">1</span></a>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Galway">Galway, Ireland · <span class="stub-count">7</span></a><a href="/comedy-atlas/city/galway/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Madrid">Madrid, Madrid, Comunidad de, Spain · <span class="stub-count">7</span></a><a href="/comedy-atlas/city/madrid/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Lisbon">Lisbon, Lisboa, Portugal · <span class="stub-count">5</span></a><a href="/comedy-atlas/city/lisbon/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Tempe">Tempe, Arizona, United States · <span class="stub-count">5</span></a><a href="/comedy-atlas/city/tempe/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Brussels">Brussels, Bruxelles-Capitale, Région de, Belgium · <span class="stub-count">3</span></a><a href="/comedy-atlas/city/brussels/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Porto">Porto, Portugal · <span class="stub-count">3</span></a><a href="/comedy-atlas/city/porto/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Aarhus">Aarhus, Midtjylland, Denmark · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/aarhus/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Athens">Athens, Attikí, Greece · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/athens/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Budapest">Budapest, Hungary · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/budapest/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Dublin">Dublin, Ireland · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/dublin/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=East%20Providence">East Providence, Rhode Island, United States · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/east-providence/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Helsinki">Helsinki, Uusimaa, Finland · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/helsinki/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Milan">Milan, Lombardia, Italy · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/milan/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Munich">Munich, Bayern, Germany · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/munich/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Oslo">Oslo, Norway · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/oslo/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Riga">Riga, Rīga, Latvia · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/riga/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Stockholm">Stockholm, Stockholms län [SE-01], Sweden · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/stockholm/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Tallinn">Tallinn, Harjumaa, Estonia · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/tallinn/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Vilnius">Vilnius, Vilniaus apskritis, Lithuania · <span class="stub-count">2</span></a><a href="/comedy-atlas/city/vilnius/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Bratislava">Bratislava, Bratislavský kraj, Slovakia · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/bratislava/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Hamburg">Hamburg, Germany · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/hamburg/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Ljubljana">Ljubljana, Slovenia · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/ljubljana/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Nicosia">Nicosia, Lefkosia, Cyprus · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/nicosia/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Reykjavik">Reykjavik, Höfuðborgarsvæði, Iceland · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/reykjavik/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Rotterdam">Rotterdam, Netherlands · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/rotterdam/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Skopje">Skopje, North Macedonia · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/skopje/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Sofia">Sofia, Sofia (stolitsa), Bulgaria · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/sofia/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Tirana">Tirana, Tiranë, Albania · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/tirana/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Vienna">Vienna, Wien, Austria · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/vienna/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Zagreb">Zagreb, Grad Zagreb, Croatia · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/zagreb/" class="stub-guide">page →</a></span>
+<span class="stub-item"><a href="/comedy-atlas/city.html?city=Zurich">Zurich, Zürich, Switzerland · <span class="stub-count">1</span></a><a href="/comedy-atlas/city/zurich/" class="stub-guide">page →</a></span>
 <a href="/comedy-atlas/city/adelaide/">Adelaide, South Australia, Australia · <span class="stub-count">3 venues</span></a>
 <a href="/comedy-atlas/city/atlanta/">Atlanta, Georgia, United States · <span class="stub-count">7 venues</span></a>
 <a href="/comedy-atlas/city/austin/">Austin, Texas, United States · <span class="stub-count">9 venues</span></a>
