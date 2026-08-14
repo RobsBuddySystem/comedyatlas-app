@@ -421,7 +421,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <p style="color: var(--muted); margin-top: 12px;">Every comedian with a page on
   COMEDY ATLAS — real shows only, sourced from public listings. Follow your
   favorites to hear about new dates.</p>
-  <div class="stats"><div><strong>1401</strong> comedians</div></div>
+  <div class="stats"><div><strong>1402</strong> comedians</div></div>
 </header>
 <div id="comics-toolbar" hidden>
   <div class="search-row">
@@ -430,21 +430,21 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
   <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
        default identity-first view; Next on stage is a date-first view of
-       only the 182 comics with a real upcoming date. Hidden with
+       only the 180 comics with a real upcoming date. Hidden with
        the rest of the toolbar until JS can act on it -- with JS off the
        A-Z view (which needs no script at all) is the whole page. -->
   <div class="view-row" role="group" aria-label="Choose a view">
     <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
-    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(182)</span></button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(180)</span></button>
   </div>
   <details id="comics-facets">
     <summary>Filters</summary>
     <div class="facet-row" role="group" aria-label="Filter by city">
       <span class="facet-label">City</span>
-      <button type="button" class="facet-chip is-active" data-city="" aria-pressed="true">All cities <span class="facet-n">(1401)</span></button>
+      <button type="button" class="facet-chip is-active" data-city="" aria-pressed="true">All cities <span class="facet-n">(1402)</span></button>
     <button type="button" class="facet-chip" id="city-edinburgh" data-city="Edinburgh" aria-pressed="false">Edinburgh <span class="facet-n">(109)</span></button>
     <button type="button" class="facet-chip" id="city-cologne" data-city="Cologne" aria-pressed="false">Cologne <span class="facet-n">(45)</span></button>
-    <button type="button" class="facet-chip" id="city-london" data-city="London" aria-pressed="false">London <span class="facet-n">(13)</span></button>
+    <button type="button" class="facet-chip" id="city-london" data-city="London" aria-pressed="false">London <span class="facet-n">(12)</span></button>
     <button type="button" class="facet-chip" id="city-barcelona" data-city="Barcelona" aria-pressed="false">Barcelona <span class="facet-n">(8)</span></button>
     <button type="button" class="facet-chip" id="city-galway" data-city="Galway" aria-pressed="false">Galway <span class="facet-n">(4)</span></button>
     <button type="button" class="facet-chip" id="city-berlin" data-city="Berlin" aria-pressed="false">Berlin <span class="facet-n">(3)</span></button>
@@ -452,17 +452,17 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <button type="button" class="facet-chip" id="city-lisbon" data-city="Lisbon" aria-pressed="false">Lisbon <span class="facet-n">(1)</span></button>
     <button type="button" class="facet-chip" id="city-paris" data-city="Paris" aria-pressed="false">Paris <span class="facet-n">(1)</span></button>
     <button type="button" class="facet-chip" id="city-rome" data-city="Rome" aria-pressed="false">Rome <span class="facet-n">(1)</span></button>
-    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(1214)</span></button>
+    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(1216)</span></button>
     </div>
     <div class="facet-row" role="group" aria-label="Filter by activity">
       <span class="facet-label">Activity</span>
-      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(182)</span></button>
-      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(164)</span></button>
-      <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(1)</span></button>
+      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(180)</span></button>
+      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(162)</span></button>
+      <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(2)</span></button>
     </div>
   </details>
 </div>
-<p id="comics-visible-count" role="status" aria-live="polite">Showing 1401 of 1401 comedians</p>
+<p id="comics-visible-count" role="status" aria-live="polite">Showing 1402 of 1402 comedians</p>
 <div id="az-view">
 <nav class="az-jump" aria-label="Jump to a letter">
   <a href="#letter-a">A</a>
@@ -4090,12 +4090,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/gagan-gopal/" class="comic-card" data-city="Edinburgh" data-name="gagan gopal" data-upcoming="1" data-festival="1">
+<a href="/comedy-atlas/comic/gagan-gopal/" class="comic-card" data-city="Edinburgh" data-name="gagan gopal" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Gagan%20Gopal%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Gagan Gopal</div>
-    <div class="comic-city">Next in Edinburgh</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/galit-hoogi/" class="comic-card" data-city="" data-name="galit hoogi" data-upcoming="0">
@@ -4986,7 +4986,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-j" data-letter="J">
-  <h2 class="letter-heading">J <span class="letter-count">(111)</span></h2>
+  <h2 class="letter-heading">J <span class="letter-count">(112)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/jaakko-saariluoma/" class="comic-card" data-city="" data-name="jaakko saariluoma" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jaakko%20Saariluoma%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -5015,6 +5015,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jack%20Dee%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Jack Dee</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jack-walter/" class="comic-card" data-city="" data-name="jack walter" data-upcoming="0" data-claimed="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jack%20Walter%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Jack Walter</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -11049,12 +11057,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/trevor-bickles/" class="comic-card" data-city="London" data-name="trevor bickles" data-upcoming="1" data-festival="1">
+<a href="/comedy-atlas/comic/trevor-bickles/" class="comic-card" data-city="" data-name="trevor bickles" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Trevor%20Bickles%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Trevor Bickles</div>
-    <div class="comic-city">Next in London</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/trevor-noah/" class="comic-card" data-city="" data-name="trevor noah" data-upcoming="0">
@@ -11788,7 +11796,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </div>
 <div id="next-view" hidden>
 <section class="next-group" id="next-on-stage">
-  <h2 class="letter-heading">Next on stage <span class="letter-count">(182)</span></h2>
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(180)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/struan-logan/" class="next-card" data-city="Edinburgh" data-name="struan logan" data-upcoming="1" data-festival="1">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -12405,14 +12413,6 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Sun, Aug 9 2026</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/gagan-gopal/" class="next-card" data-city="Edinburgh" data-name="gagan gopal" data-upcoming="1" data-festival="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Gagan%20Gopal%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Gagan Gopal</div>
-    <div class="comic-city">Edinburgh</div>
-    <div class="comic-count">Sun, Aug 9 2026</div>
-  </div>
-</a>
 <a href="/comedy-atlas/comic/sam-see/" class="next-card" data-city="Edinburgh" data-name="sam see" data-upcoming="1" data-festival="1">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -12427,14 +12427,6 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-name">Alice India</div>
     <div class="comic-city">Edinburgh</div>
     <div class="comic-count">Tue, Aug 11 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/trevor-bickles/" class="next-card" data-city="London" data-name="trevor bickles" data-upcoming="1" data-festival="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Trevor%20Bickles%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Trevor Bickles</div>
-    <div class="comic-city">London</div>
-    <div class="comic-count">Thu, Aug 13 2026</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/kim-hope/" class="next-card" data-city="Edinburgh" data-name="kim hope" data-upcoming="1" data-festival="1">
@@ -13270,8 +13262,8 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // getAttribute() and no layout thrash on unchanged cards. Input is also
 // coalesced into a single animation frame.
 (function () {
-  var TOTAL = 1401;
-  var NEXT_TOTAL = 182;
+  var TOTAL = 1402;
+  var NEXT_TOTAL = 180;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');
