@@ -74,7 +74,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
 .atlas-wordmark .dot{color:var(--gold)}
 .atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.comic-header-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.comic-header-row img{flex-shrink:0}
+.comic-header-text{flex:1;min-width:200px}
 .atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+.bio-source-note{font-size:0.85em;opacity:0.75;margin-top:6px}
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
@@ -171,11 +175,16 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 </nav>
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
-  <h1 class="atlas-wordmark">Hugh Paddick<span class="dot">.</span></h1>
+  <div class="comic-header-row">
+    <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Hugh%20Paddick%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EHP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Hugh Paddick" class="comic-avatar-placeholder" style="border-radius:12px;margin-bottom:14px;width:160px;height:160px">
+    <div class="comic-header-text">
+      <h1 class="atlas-wordmark">Hugh Paddick<span class="dot">.</span></h1>
   <div class="trust-badges"><span class="trust-badge legacy-badge">Legacy — no longer performing</span></div>
   <div class="atlas-subtitle">Comic</div>
+    </div>
+  </div>
   <p class="atlas-promise">Hugh William Paddick was an English actor. He starred in the 1960s BBC radio show Round the Horne, performing in sketches such as &quot;Charles and Fiona&quot; and &quot;Julian and Sandy&quot;. He and Kenneth Williams were largely responsible for introducing the underground language Polari to the British public.</p>
-  <p class="bio-source-note" style="font-size:0.85em;opacity:0.75;margin-top:-8px">From Wikipedia, the free encyclopedia, available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener" target="_blank">CC BY-SA 4.0</a> license. <a href="https://en.wikipedia.org/wiki/Hugh_Paddick" rel="nofollow noopener" target="_blank">Read on Wikipedia →</a></p>
+  <p class="bio-source-note">From Wikipedia, the free encyclopedia, available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow noopener" target="_blank">CC BY-SA 4.0</a> license. <a href="https://en.wikipedia.org/wiki/Hugh_Paddick" rel="nofollow noopener" target="_blank">Read on Wikipedia →</a></p>
   <div class="field-row" style="margin-top:10px"></div>
 </header>
 <main id="main-content" tabindex="-1">
@@ -194,11 +203,13 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="follow-status" id="follow-status"></div>
 </div>
-<div class="card"><strong>Is this your page?</strong> <a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a><div class="field-row" style="margin-top:6px">Add your bio, links, and upcoming shows — no cost, ever.</div></div><div class="card claim-box" id="claim-box"
+<div class="card claim-box" id="claim-box"
      data-claim-kind="comic" data-claim-id="1616">
   <div id="claim-unclaimed">
-    <details>
-      <summary style="cursor:pointer"><strong>Is this your page?</strong> Claim it →</summary>
+    <strong>Is this your page?</strong>
+    <div class="field-row" style="margin-top:6px"><a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a> &mdash; create a free account to add your bio, links, and upcoming shows. No cost, ever.</div>
+    <details style="margin-top:8px">
+      <summary style="cursor:pointer">Prefer not to create an account? Verify by email instead →</summary>
       <div class="field-row" style="margin-top:6px">
         Enter the email associated with this comic
         and we'll send a one-click confirmation link. No cost, ever.
@@ -219,7 +230,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <div class="field-row" id="claim-unpublish-status" style="margin-top:6px"></div>
   </div>
 </div>
-<img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Hugh%20Paddick%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EHP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Hugh Paddick" class="comic-avatar-placeholder" style="border-radius:12px;margin-bottom:14px;width:160px;height:160px">
+
 
 <h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="empty-state">No past runs on record yet.</div>
 
@@ -329,6 +340,19 @@ window.atlasToast = window.atlasToast || function(msg){
       if(!data || !data.claimed) return;
       document.getElementById('claim-unclaimed').style.display = 'none';
       document.getElementById('claim-claimed').style.display = '';
+      // The "Remove this page (owner only)" button is DESTRUCTIVE and must
+      // only ever be shown to the person who owns the page. Until 2026-08-13
+      // it was revealed on `data.claimed` alone -- "is this claimed by
+      // ANYBODY?" -- so every visitor to every claimed comic page was
+      // offered a permanent-deletion button on somebody else's profile.
+      // Never exploitable (the unpublish route is
+      // Depends(auth.require_person_id) and re-checks is_owner(); an
+      // unauthenticated POST returns 401), but alarming and an invitation to
+      // try it. `viewer_is_owner` is answered by the status endpoint from
+      // the SESSION, so this is a display decision made on a server fact,
+      // not a client-side guess.
+      var unpub = document.getElementById('claim-unpublish-btn');
+      if(unpub && !data.viewer_is_owner){ unpub.remove(); }
     })
     .catch(function(){});
 

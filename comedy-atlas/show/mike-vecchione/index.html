@@ -74,7 +74,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
 .atlas-wordmark .dot{color:var(--gold)}
 .atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.comic-header-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.comic-header-row img{flex-shrink:0}
+.comic-header-text{flex:1;min-width:200px}
 .atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+.bio-source-note{font-size:0.85em;opacity:0.75;margin-top:6px}
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
@@ -197,8 +201,10 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <div class="card claim-box" id="claim-box"
      data-claim-kind="show" data-claim-id="5281">
   <div id="claim-unclaimed">
-    <details>
-      <summary style="cursor:pointer"><strong>Is this your page?</strong> Claim it →</summary>
+    <strong>Is this your page?</strong>
+    
+    <details style="margin-top:8px">
+      <summary style="cursor:pointer">Claim it →</summary>
       <div class="field-row" style="margin-top:6px">
         Enter the email associated with this show
         and we'll send a one-click confirmation link. No cost, ever.
@@ -387,6 +393,19 @@ window.atlasToast = window.atlasToast || function(msg){
       if(!data || !data.claimed) return;
       document.getElementById('claim-unclaimed').style.display = 'none';
       document.getElementById('claim-claimed').style.display = '';
+      // The "Remove this page (owner only)" button is DESTRUCTIVE and must
+      // only ever be shown to the person who owns the page. Until 2026-08-13
+      // it was revealed on `data.claimed` alone -- "is this claimed by
+      // ANYBODY?" -- so every visitor to every claimed comic page was
+      // offered a permanent-deletion button on somebody else's profile.
+      // Never exploitable (the unpublish route is
+      // Depends(auth.require_person_id) and re-checks is_owner(); an
+      // unauthenticated POST returns 401), but alarming and an invitation to
+      // try it. `viewer_is_owner` is answered by the status endpoint from
+      // the SESSION, so this is a display decision made on a server fact,
+      // not a client-side guess.
+      var unpub = document.getElementById('claim-unpublish-btn');
+      if(unpub && !data.viewer_is_owner){ unpub.remove(); }
     })
     .catch(function(){});
 

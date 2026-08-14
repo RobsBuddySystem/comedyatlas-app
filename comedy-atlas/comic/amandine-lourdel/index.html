@@ -75,7 +75,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
 .atlas-wordmark .dot{color:var(--gold)}
 .atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.comic-header-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.comic-header-row img{flex-shrink:0}
+.comic-header-text{flex:1;min-width:200px}
 .atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+.bio-source-note{font-size:0.85em;opacity:0.75;margin-top:6px}
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
@@ -172,9 +176,14 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 </nav>
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
-  <h1 class="atlas-wordmark">Amandine Lourdel<span class="dot">.</span></h1>
+  <div class="comic-header-row">
+    <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Amandine%20Lourdel%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Amandine Lourdel" class="comic-avatar-placeholder" style="border-radius:12px;margin-bottom:14px;width:160px;height:160px">
+    <div class="comic-header-text">
+      <h1 class="atlas-wordmark">Amandine Lourdel<span class="dot">.</span></h1>
   
   <div class="atlas-subtitle">Comic</div>
+    </div>
+  </div>
   <p class="atlas-promise">Amandine Lourdel on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.</p>
   
   <div class="field-row" style="margin-top:10px"><span><a href="https://www.imdb.com/name/nm8196677/" rel="nofollow noopener">IMDb</a></span></div>
@@ -195,11 +204,13 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="follow-status" id="follow-status"></div>
 </div>
-<div class="card"><strong>Is this your page?</strong> <a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a><div class="field-row" style="margin-top:6px">Add your bio, links, and upcoming shows — no cost, ever.</div></div><div class="card claim-box" id="claim-box"
+<div class="card claim-box" id="claim-box"
      data-claim-kind="comic" data-claim-id="8242">
   <div id="claim-unclaimed">
-    <details>
-      <summary style="cursor:pointer"><strong>Is this your page?</strong> Claim it →</summary>
+    <strong>Is this your page?</strong>
+    <div class="field-row" style="margin-top:6px"><a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a> &mdash; create a free account to add your bio, links, and upcoming shows. No cost, ever.</div>
+    <details style="margin-top:8px">
+      <summary style="cursor:pointer">Prefer not to create an account? Verify by email instead →</summary>
       <div class="field-row" style="margin-top:6px">
         Enter the email associated with this comic
         and we'll send a one-click confirmation link. No cost, ever.
@@ -220,33 +231,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <div class="field-row" id="claim-unpublish-status" style="margin-top:6px"></div>
   </div>
 </div>
-<img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Amandine%20Lourdel%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Amandine Lourdel" class="comic-avatar-placeholder" style="border-radius:12px;margin-bottom:14px;width:160px;height:160px">
-<form class="card book-box" id="book-box" data-person-id="8242">
-  <details open>
-    <summary>Book Amandine Lourdel for your event →</summary>
-    <div class="book-fields">
-      <label for="book-name">Your name
-        <input id="book-name" name="name" type="text" required autocomplete="name">
-      </label>
-      <label for="book-email">Your email
-        <input id="book-email" name="email" type="email" required autocomplete="email">
-      </label>
-      <label for="book-date">Event date (optional)
-        <input id="book-date" name="event_date" type="date">
-      </label>
-      <label for="book-city">City (optional)
-        <input id="book-city" name="city" type="text" autocomplete="address-level2">
-      </label>
-      <label for="book-message">Message
-        <textarea id="book-message" name="message" required
-                  placeholder="Tell us about your event — date, venue, budget, anything that helps."></textarea>
-      </label>
-      <button type="submit" id="book-submit-btn" class="book-btn">Send enquiry</button>
-      <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
-      <noscript><div class="book-status">Enable JavaScript to send a booking enquiry.</div></noscript>
-    </div>
-  </details>
-</form>
+
+<div class="card book-box" id="book-box" data-person-id="8242">
+  <a class="book-btn book-cta" href="/comedy-atlas/book/?id=8242&amp;name=Amandine%20Lourdel"
+     data-comic-id="8242">Book Amandine Lourdel for your event →</a>
+  <div class="book-note">Sent straight to the booking desk. No account needed.</div>
+</div>
 <h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="empty-state">No past runs on record yet.</div>
 
 </main>
@@ -355,6 +345,19 @@ window.atlasToast = window.atlasToast || function(msg){
       if(!data || !data.claimed) return;
       document.getElementById('claim-unclaimed').style.display = 'none';
       document.getElementById('claim-claimed').style.display = '';
+      // The "Remove this page (owner only)" button is DESTRUCTIVE and must
+      // only ever be shown to the person who owns the page. Until 2026-08-13
+      // it was revealed on `data.claimed` alone -- "is this claimed by
+      // ANYBODY?" -- so every visitor to every claimed comic page was
+      // offered a permanent-deletion button on somebody else's profile.
+      // Never exploitable (the unpublish route is
+      // Depends(auth.require_person_id) and re-checks is_owner(); an
+      // unauthenticated POST returns 401), but alarming and an invitation to
+      // try it. `viewer_is_owner` is answered by the status endpoint from
+      // the SESSION, so this is a display decision made on a server fact,
+      // not a client-side guess.
+      var unpub = document.getElementById('claim-unpublish-btn');
+      if(unpub && !data.viewer_is_owner){ unpub.remove(); }
     })
     .catch(function(){});
 

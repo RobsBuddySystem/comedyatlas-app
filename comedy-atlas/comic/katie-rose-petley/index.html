@@ -74,7 +74,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
 .atlas-wordmark .dot{color:var(--gold)}
 .atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.comic-header-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.comic-header-row img{flex-shrink:0}
+.comic-header-text{flex:1;min-width:200px}
 .atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+.bio-source-note{font-size:0.85em;opacity:0.75;margin-top:6px}
 main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 .field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
@@ -171,11 +175,16 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 </nav>
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
-  <h1 class="atlas-wordmark">Katie-Rose Petley<span class="dot">.</span></h1>
+  <div class="comic-header-row">
+    <img src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="Katie-Rose Petley" style="border-radius:12px;margin-bottom:14px;max-height:360px;object-fit:cover" onerror="this.remove()">
+    <div class="comic-header-text">
+      <h1 class="atlas-wordmark">Katie-Rose Petley<span class="dot">.</span></h1>
   
   <div class="atlas-subtitle">Comic</div>
+    </div>
+  </div>
   <p class="atlas-promise">Canadian comedian Katie-Rose Petley makes her Edinburgh debut with Dirty Bitch, a fearless dive into growing up in the church, progressive parenting, and sex pre-911. Katie-Rose is known for her fresh, filthy, and unfiltered storytelling. With materi</p>
-  <p class="bio-source-note" style="font-size:0.85em;opacity:0.75;margin-top:-8px">This bio is adapted from a show's own promotional description, not written by or about Katie-Rose Petley personally. <a href="https://freefestival.co.uk/show.aspx?ShowID=9749" rel="nofollow noopener" target="_blank">View the original show description →</a></p>
+  <p class="bio-source-note">This bio is adapted from a show's own promotional description, not written by or about Katie-Rose Petley personally. <a href="https://freefestival.co.uk/show.aspx?ShowID=9749" rel="nofollow noopener" target="_blank">View the original show description →</a></p>
   <div class="field-row" style="margin-top:10px"></div>
 </header>
 <main id="main-content" tabindex="-1">
@@ -194,11 +203,13 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="follow-status" id="follow-status"></div>
 </div>
-<div class="card"><strong>Is this your page?</strong> <a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a><div class="field-row" style="margin-top:6px">Add your bio, links, and upcoming shows — no cost, ever.</div></div><div class="card claim-box" id="claim-box"
+<div class="card claim-box" id="claim-box"
      data-claim-kind="comic" data-claim-id="112">
   <div id="claim-unclaimed">
-    <details>
-      <summary style="cursor:pointer"><strong>Is this your page?</strong> Claim it →</summary>
+    <strong>Is this your page?</strong>
+    <div class="field-row" style="margin-top:6px"><a href="/comedy-atlas/login.html?role=comic">Claim it for free →</a> &mdash; create a free account to add your bio, links, and upcoming shows. No cost, ever.</div>
+    <details style="margin-top:8px">
+      <summary style="cursor:pointer">Prefer not to create an account? Verify by email instead →</summary>
       <div class="field-row" style="margin-top:6px">
         Enter the email associated with this comic
         and we'll send a one-click confirmation link. No cost, ever.
@@ -219,33 +230,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <div class="field-row" id="claim-unpublish-status" style="margin-top:6px"></div>
   </div>
 </div>
-<img src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="Katie-Rose Petley" style="border-radius:12px;margin-bottom:14px;max-height:360px;object-fit:cover" onerror="this.remove()">
-<form class="card book-box" id="book-box" data-person-id="112">
-  <details open>
-    <summary>Book Katie-Rose Petley for your event →</summary>
-    <div class="book-fields">
-      <label for="book-name">Your name
-        <input id="book-name" name="name" type="text" required autocomplete="name">
-      </label>
-      <label for="book-email">Your email
-        <input id="book-email" name="email" type="email" required autocomplete="email">
-      </label>
-      <label for="book-date">Event date (optional)
-        <input id="book-date" name="event_date" type="date">
-      </label>
-      <label for="book-city">City (optional)
-        <input id="book-city" name="city" type="text" autocomplete="address-level2">
-      </label>
-      <label for="book-message">Message
-        <textarea id="book-message" name="message" required
-                  placeholder="Tell us about your event — date, venue, budget, anything that helps."></textarea>
-      </label>
-      <button type="submit" id="book-submit-btn" class="book-btn">Send enquiry</button>
-      <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
-      <noscript><div class="book-status">Enable JavaScript to send a booking enquiry.</div></noscript>
-    </div>
-  </details>
-</form>
+
+<div class="card book-box" id="book-box" data-person-id="112">
+  <a class="book-btn book-cta" href="/comedy-atlas/book/?id=112&amp;name=Katie-Rose%20Petley"
+     data-comic-id="112">Book Katie-Rose Petley for your event →</a>
+  <div class="book-note">Sent straight to the booking desk. No account needed.</div>
+</div>
 <h2 class="section-heading">Upcoming shows</h2><div class="event-card">
   <div class="event-card-inner">
     <img class="event-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9749_main.jpg" alt="Katie-Rose Petley: Dirty Bitch" loading="lazy" onerror="this.remove()">
@@ -367,6 +357,19 @@ window.atlasToast = window.atlasToast || function(msg){
       if(!data || !data.claimed) return;
       document.getElementById('claim-unclaimed').style.display = 'none';
       document.getElementById('claim-claimed').style.display = '';
+      // The "Remove this page (owner only)" button is DESTRUCTIVE and must
+      // only ever be shown to the person who owns the page. Until 2026-08-13
+      // it was revealed on `data.claimed` alone -- "is this claimed by
+      // ANYBODY?" -- so every visitor to every claimed comic page was
+      // offered a permanent-deletion button on somebody else's profile.
+      // Never exploitable (the unpublish route is
+      // Depends(auth.require_person_id) and re-checks is_owner(); an
+      // unauthenticated POST returns 401), but alarming and an invitation to
+      // try it. `viewer_is_owner` is answered by the status endpoint from
+      // the SESSION, so this is a display decision made on a server fact,
+      // not a client-side guess.
+      var unpub = document.getElementById('claim-unpublish-btn');
+      if(unpub && !data.viewer_is_owner){ unpub.remove(); }
     })
     .catch(function(){});
 
