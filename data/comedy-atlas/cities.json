@@ -114,7 +114,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 181
+      "en": 180
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -239,7 +239,7 @@
     "id": 16,
     "language_counts": {
       "en": 174,
-      "unconfirmed": 12
+      "unconfirmed": 10
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -286,8 +286,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 224,
-      "unconfirmed": 162
+      "en": 223,
+      "unconfirmed": 167
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -304,7 +304,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 70,
+      "en": 68,
       "unconfirmed": 1
     },
     "latitude": 40.4168,
@@ -385,7 +385,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 29,
+      "en": 28,
       "unconfirmed": 2
     },
     "latitude": 38.7223,
@@ -471,8 +471,8 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "en": 388,
-      "unconfirmed": 423
+      "en": 386,
+      "unconfirmed": 455
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -829,8 +829,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 1011,
-      "unconfirmed": 56
+      "en": 1005,
+      "unconfirmed": 55
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -847,8 +847,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 6,
-      "unconfirmed": 43
+      "en": 19,
+      "unconfirmed": 38
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -1063,7 +1063,7 @@
     "id": 92,
     "language_counts": {
       "en": 4,
-      "unconfirmed": 449
+      "unconfirmed": 445
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1125,7 +1125,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 132
+      "unconfirmed": 131
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -1467,10 +1467,10 @@
     "country_name": "United States",
     "id": 122,
     "language_counts": {
-      "unconfirmed": 79
+      "unconfirmed": 77
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 36.156312,
+    "longitude": -95.992752,
     "name": "Tulsa",
     "region_code": "US-OK",
     "region_id": 3142,
@@ -1485,10 +1485,10 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 212
+      "unconfirmed": 209
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 38.895098,
+    "longitude": -77.036385,
     "name": "Washington",
     "region_code": "US-DC",
     "region_id": 3111,
@@ -1519,7 +1519,7 @@
     "country_name": "United States",
     "id": 125,
     "language_counts": {
-      "unconfirmed": 76
+      "unconfirmed": 75
     },
     "latitude": 39.0997,
     "longitude": -94.5786,
@@ -1536,10 +1536,10 @@
     "country_name": "United States",
     "id": 126,
     "language_counts": {
-      "unconfirmed": 40
+      "unconfirmed": 39
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 39.16704,
+    "longitude": -86.534288,
     "name": "Bloomington",
     "region_code": "US-IN",
     "region_id": 3120,
@@ -1571,10 +1571,10 @@
     "id": 128,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 166
+      "unconfirmed": 164
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.780398,
+    "longitude": -78.639099,
     "name": "Raleigh",
     "region_code": "US-NC",
     "region_id": 3133,
@@ -1622,10 +1622,10 @@
     "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 115
+      "unconfirmed": 113
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 38.254238,
+    "longitude": -85.759407,
     "name": "Louisville",
     "region_code": "US-KY",
     "region_id": 3122,
@@ -1641,8 +1641,8 @@
     "language_counts": {
       "unconfirmed": 156
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 33.306203,
+    "longitude": -111.841185,
     "name": "Chandler",
     "region_code": "US-AZ",
     "region_id": 3107,
@@ -1656,10 +1656,10 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 159
+      "unconfirmed": 157
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 26.142198,
+    "longitude": -81.794294,
     "name": "Naples",
     "region_code": "US-FL",
     "region_id": 3113,
@@ -1675,8 +1675,8 @@
     "language_counts": {
       "unconfirmed": 72
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 44.261397,
+    "longitude": -88.406974,
     "name": "Appleton",
     "region_code": "US-WI",
     "region_id": 3157,
@@ -1692,8 +1692,8 @@
     "language_counts": {
       "unconfirmed": 122
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 47.657193,
+    "longitude": -117.42351,
     "name": "Spokane",
     "region_code": "US-WA",
     "region_id": 3156,
@@ -1707,7 +1707,7 @@
     "country_name": "United States",
     "id": 136,
     "language_counts": {
-      "unconfirmed": 87
+      "unconfirmed": 85
     },
     "latitude": 41.07999,
     "longitude": -85.138602,
@@ -1724,10 +1724,10 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 199
+      "unconfirmed": 198
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 47.245501,
+    "longitude": -122.438329,
     "name": "Tacoma",
     "region_code": "US-WA",
     "region_id": 3156,
@@ -1741,10 +1741,10 @@
     "country_name": "United States",
     "id": 138,
     "language_counts": {
-      "unconfirmed": 90
+      "unconfirmed": 88
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 44.47616,
+    "longitude": -73.212906,
     "name": "Burlington",
     "region_code": "US-VT",
     "region_id": 3155,
@@ -1794,8 +1794,8 @@
     "language_counts": {
       "unconfirmed": 17
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 41.223005,
+    "longitude": -111.973843,
     "name": "Ogden",
     "region_code": "US-UT",
     "region_id": 3152,
@@ -1828,8 +1828,8 @@
     "language_counts": {
       "en": 1
     },
-    "latitude": null,
-    "longitude": null,
+    "latitude": 51.924442,
+    "longitude": 4.47775,
     "name": "Rotterdam",
     "region_code": null,
     "region_id": null,
@@ -1843,8 +1843,8 @@
     "country_name": "United States",
     "id": 188,
     "language_counts": {},
-    "latitude": null,
-    "longitude": null,
+    "latitude": 44.949749,
+    "longitude": -93.093103,
     "name": "Saint Paul",
     "region_code": "US-MN",
     "region_id": 3128,

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:you-can-write-a-book@comedyatlas.app
+DTSTAMP:20260817T172000Z
+DTSTART:20260817T172000Z
+DTEND:20260817T181000Z
+SUMMARY:You Can Write a Book!
+LOCATION:Edinburgh
+DESCRIPTION:Have you ever thought you might like to write a book? You can d
+ o it. It's easy. Actually that's a lie. It isn't easy. But that doesn't mea
+ n that it's impossible. You just need a little help. Mark Stringer is a com
+ edian and published author. But he hasn't just written a book\, he's read a
+  lot of books about how to write books. In this show\, Mark talks about the
+  tips and tricks he's found that really work. He also talks about the advic
+ e that's curiously missing that he had to find out for himself.\nMore info:
+  https://comedyatlas.app/comedy-atlas/event/you-can-write-a-book/
+URL:https://comedyatlas.app/comedy-atlas/event/you-can-write-a-book/
+END:VEVENT
+END:VCALENDAR

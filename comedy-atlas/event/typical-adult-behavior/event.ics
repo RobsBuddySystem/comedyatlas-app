@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:typical-adult-behavior@comedyatlas.app
+DTSTAMP:20260820T180000Z
+DTSTART:20260820T180000Z
+DTEND:20260820T194500Z
+SUMMARY:Typical Adult Behavior
+LOCATION:Barcelona
+DESCRIPTION:A fast-paced\, unscripted night of fun and funny comedy.\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/typical-adult-behavior/
+URL:https://comedyatlas.app/comedy-atlas/event/typical-adult-behavior/
+END:VEVENT
+END:VCALENDAR
