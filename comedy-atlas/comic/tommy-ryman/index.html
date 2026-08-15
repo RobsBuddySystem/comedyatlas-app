@@ -234,10 +234,11 @@ After getting his start in the Minnesota comedy scene, Paste magazine named him 
   </div>
 </div>
 
-<form class="card book-box" id="book-box" data-person-id="4712">
+<form class="card book-box" id="book-box" data-person-id="4712" data-authorized="false">
   <details open>
-    <summary>Book Tommy Ryman for your event →</summary>
+    <summary>Looking to book Tommy Ryman? Send a talent request →</summary>
     <div class="book-fields">
+      <p class="book-disclosure">COMEDY ATLAS is an independent directory. We are not Tommy Ryman's representative and availability is not guaranteed; we forward serious enquiries where possible.</p>
       <label for="book-name">Your name
         <input id="book-name" name="name" type="text" required autocomplete="name">
       </label>
@@ -444,6 +445,7 @@ window.atlasToast = window.atlasToast || function(msg){
   var btn = document.getElementById('book-submit-btn');
   var status = document.getElementById('book-status');
   var personId = Number(form.dataset.personId);
+  var authorized = form.dataset.authorized === 'true';
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault();

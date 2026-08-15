@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hop-on-hop-off-edinburgh-art-bus@comedyatlas.app
+DTSTAMP:20260817T120000Z
+DTSTART:20260817T120000Z
+DTEND:20260817T123000Z
+SUMMARY:Hop-On-Hop-Off Edinburgh Art Bus
+LOCATION:Edinburgh
+DESCRIPTION:A performance art-work and pop-up exhibition: we take passenger
+ s in the backseats of our "bus"* on a guided tour around The Meadows art-se
+ eing. Showcasing local artists' work installed in public space from an inti
+ mate\, surreal\, participatory viewpoint. Buckle up and enjoy the ride! *No
+ t suitable for groups larger than 3\, unless willing to split up.\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/hop-on-hop-off-edinburgh-art-
+ bus/
+URL:https://comedyatlas.app/comedy-atlas/event/hop-on-hop-off-edinburgh-art
+ -bus/
+END:VEVENT
+END:VCALENDAR

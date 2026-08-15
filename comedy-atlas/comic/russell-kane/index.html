@@ -232,10 +232,11 @@ and hosted the BBC Radio 4 series Evil Genius in 2018 as well as a television sh
   </div>
 </div>
 
-<form class="card book-box" id="book-box" data-person-id="3167">
+<form class="card book-box" id="book-box" data-person-id="3167" data-authorized="false">
   <details open>
-    <summary>Book Russell Kane for your event →</summary>
+    <summary>Looking to book Russell Kane? Send a talent request →</summary>
     <div class="book-fields">
+      <p class="book-disclosure">COMEDY ATLAS is an independent directory. We are not Russell Kane's representative and availability is not guaranteed; we forward serious enquiries where possible.</p>
       <label for="book-name">Your name
         <input id="book-name" name="name" type="text" required autocomplete="name">
       </label>
@@ -442,6 +443,7 @@ window.atlasToast = window.atlasToast || function(msg){
   var btn = document.getElementById('book-submit-btn');
   var status = document.getElementById('book-status');
   var personId = Number(form.dataset.personId);
+  var authorized = form.dataset.authorized === 'true';
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault();

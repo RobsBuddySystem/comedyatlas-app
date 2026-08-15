@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-o-shea-something-about-dogs@comedyatlas.app
+DTSTAMP:20260817T172500Z
+DTSTART:20260817T172500Z
+DTEND:20260817T182500Z
+SUMMARY:Phil O'Shea: Something About Dogs
+LOCATION:Edinburgh
+DESCRIPTION:An absurd comedy show from Phil O'Shea. 'Utter delicious nonsen
+ se' (Fest).\nMore info: https://comedyatlas.app/comedy-atlas/event/phil-o-s
+ hea-something-about-dogs/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-o-shea-something-about-
+ dogs/
+END:VEVENT
+END:VCALENDAR

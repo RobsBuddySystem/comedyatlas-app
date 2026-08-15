@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:outlaugh-edinburgh@comedyatlas.app
+DTSTAMP:20260824T205000Z
+DTSTART:20260824T205000Z
+DTEND:20260824T220500Z
+SUMMARY:Outlaugh: Edinburgh
+LOCATION:Edinburgh
+DESCRIPTION:Outlaugh is a cut-throat comedy and social strategy competition
+  show using the rules of the reality show Survivor. Over the course of six 
+ shows\, twelve comedians will face off in comedic challenges for immunity\,
+  while the losers have to vote each other out at tribal council. Every show
+  will feature unique comedy challenges and live eliminations\, with a chanc
+ e for audience members to help their favourite contestants with hidden adva
+ ntages. Twelve comedians. Six shows. One (similar to / legally distinct fro
+ m) Survivor.\nMore info: https://comedyatlas.app/comedy-atlas/event/outlaug
+ h-edinburgh/
+URL:https://comedyatlas.app/comedy-atlas/event/outlaugh-edinburgh/
+END:VEVENT
+END:VCALENDAR

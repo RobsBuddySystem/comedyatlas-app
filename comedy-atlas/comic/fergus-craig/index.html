@@ -234,10 +234,11 @@ Craig is one half of the double act Colin &amp; Fergus, with actor and writer Co
   </div>
 </div>
 
-<form class="card book-box" id="book-box" data-person-id="4043">
+<form class="card book-box" id="book-box" data-person-id="4043" data-authorized="false">
   <details open>
-    <summary>Book Fergus Craig for your event →</summary>
+    <summary>Looking to book Fergus Craig? Send a talent request →</summary>
     <div class="book-fields">
+      <p class="book-disclosure">COMEDY ATLAS is an independent directory. We are not Fergus Craig's representative and availability is not guaranteed; we forward serious enquiries where possible.</p>
       <label for="book-name">Your name
         <input id="book-name" name="name" type="text" required autocomplete="name">
       </label>
@@ -444,6 +445,7 @@ window.atlasToast = window.atlasToast || function(msg){
   var btn = document.getElementById('book-submit-btn');
   var status = document.getElementById('book-status');
   var personId = Number(form.dataset.personId);
+  var authorized = form.dataset.authorized === 'true';
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault();

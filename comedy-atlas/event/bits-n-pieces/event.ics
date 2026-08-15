@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bits-n-pieces@comedyatlas.app
+DTSTAMP:20260823T130000Z
+DTSTART:20260823T130000Z
+DTEND:20260823T140000Z
+SUMMARY:Bits 'n' Pieces
+LOCATION:Edinburgh
+DESCRIPTION:Craicatoa Comedy presents Bits 'n' Pieces\, a show that deliver
+ s a different hilarious headliner every time! Join your host Billy Bremner\
+ , this isn't his first Fringe but he can't remember when he last had one\, 
+ he'll baldly go\, well\, everywhere really. And\, each show\, he'll introdu
+ ce one of the best up-and-coming or hidden gems around in Scottish comedy. 
+ Grab a ticket or two and come along... 'Go on\, go on\, go on\, go on!' (Mr
+ s. Doyle).\nMore info: https://comedyatlas.app/comedy-atlas/event/bits-n-pi
+ eces/
+URL:https://comedyatlas.app/comedy-atlas/event/bits-n-pieces/
+END:VEVENT
+END:VCALENDAR

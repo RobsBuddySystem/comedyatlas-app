@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:silly-goose@comedyatlas.app
+DTSTAMP:20260824T204500Z
+DTSTART:20260824T204500Z
+DTEND:20260824T213500Z
+SUMMARY:Silly Goose!
+LOCATION:Edinburgh
+DESCRIPTION:We're all a bit silly from time to time aren't we? Well\, we're
+  on the hunt for the Silliest Goose in town! Join us and three comics as we
+  discuss your silliest stories\, whether it's saucy scandals\, funny first 
+ dates or office outrages. There are prizes to be won for the Silliest Goose
+ . So come down and tell your story! Or don't... and just watch as the best 
+ in the business make you honk with laughter over other's misfortune!\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/silly-goose/
+URL:https://comedyatlas.app/comedy-atlas/event/silly-goose/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:humour-mill-compilation-show@comedyatlas.app
+DTSTAMP:20260820T184000Z
+DTSTART:20260820T184000Z
+DTEND:20260820T194000Z
+SUMMARY:Humour Mill Compilation Show
+LOCATION:Edinburgh
+DESCRIPTION:The Humour Mill was founded by Kathleen Hughes as a hub for the
+  Scottish comedy community to write\, network and exchange skills. Now is y
+ our chance to see what the mill has produced\, as we raise money for Breast
+  Cancer Now. Featuring a line-up of Humour Mill volunteers and regulars (wh
+ o also happen to be four of Scotland's rising stars in stand-up)\, all host
+ ed by the amazing Chris Thorburn. A celebration of Kathleen Hughes and The 
+ Humour Mill\, turning the grain of ideas in the flour of comedy and bringin
+ g the comedy community together.\nMore info: https://comedyatlas.app/comedy
+ -atlas/event/humour-mill-compilation-show/
+URL:https://comedyatlas.app/comedy-atlas/event/humour-mill-compilation-show
+ /
+END:VEVENT
+END:VCALENDAR

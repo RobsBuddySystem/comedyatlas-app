@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-rap-battle@comedyatlas.app
+DTSTAMP:20260829T014500Z
+DTSTART:20260829T014500Z
+DTEND:20260829T034500Z
+SUMMARY:Comedy Rap Battle
+LOCATION:New York
+DESCRIPTION:Comedy Rap Battle presented by Reggie Kush!\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/comedy-rap-battle/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-rap-battle/
+END:VEVENT
+END:VCALENDAR

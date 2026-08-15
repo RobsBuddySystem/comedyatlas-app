@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fred-macaulay-good-evening@comedyatlas.app
+DTSTAMP:20260817T183000Z
+DTSTART:20260817T183000Z
+DTEND:20260817T193000Z
+SUMMARY:Fred MacAulay: Good Evening!
+LOCATION:Edinburgh
+DESCRIPTION:In 2025\, Fred was forced to cancel his Fringe run after suffer
+ ing a freak accident and an unrelated prostate cancer diagnosis. Is there h
+ umour in either of these? Now in the fourth decade of his comedy career\, F
+ red MacAulay still loves being on stage doing what he does best... quite si
+ mply it's stand-up. 'One of the best stand-up comedians Britain has ever pr
+ oduced' (Richard Osman). 'Fred MacAulay is an elite comedian' (Kevin Bridge
+ s).\nMore info: https://comedyatlas.app/comedy-atlas/event/fred-macaulay-go
+ od-evening/
+URL:https://comedyatlas.app/comedy-atlas/event/fred-macaulay-good-evening/
+END:VEVENT
+END:VCALENDAR

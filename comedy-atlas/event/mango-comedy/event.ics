@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mango-comedy@comedyatlas.app
+DTSTAMP:20260818T184000Z
+DTSTART:20260818T184000Z
+DTEND:20260818T194000Z
+SUMMARY:MANGO Comedy
+LOCATION:Edinburgh
+DESCRIPTION:MANGO is a delicious showcase of women\, trans and non-binary c
+ omedians\, serving up a comedy feast you won't want to miss. For this speci
+ al Fringe edition of the four-time Chortle Award-winning night (Open Comedy
+ \, Leith)\, we've handpicked some of our absolute favourites from across th
+ e Scottish comedy scene. Expect razor-sharp stand-up\, big laughs\, unforge
+ ttable performances and an eclectic mix of comic voices. This juicy platter
+  of talent promises laughter\, surprises and plenty of reasons to come back
+  for seconds. Proceeds will go to Breast Cancer Now in support of Kathleen 
+ Hughes.\nMore info: https://comedyatlas.app/comedy-atlas/event/mango-comedy
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/mango-comedy/
+END:VEVENT
+END:VCALENDAR

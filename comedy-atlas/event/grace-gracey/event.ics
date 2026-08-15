@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:grace-gracey@comedyatlas.app
+DTSTAMP:20260824T175000Z
+DTSTART:20260824T175000Z
+DTEND:20260824T185000Z
+SUMMARY:Grace & Gracey
+LOCATION:Edinburgh
+DESCRIPTION:Chris Grace is an internationally renowned improviser\, working
+  with the likes of Shamilton and Baby Wants Candy. Jon Gracey did one impro
+ v course 15 years ago. But they have similar names\, so they decided to put
+  on this show.\nMore info: https://comedyatlas.app/comedy-atlas/event/grace
+ -gracey/
+URL:https://comedyatlas.app/comedy-atlas/event/grace-gracey/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:naughty-boy@comedyatlas.app
+DTSTAMP:20260820T195000Z
+DTSTART:20260820T195000Z
+DTEND:20260820T205000Z
+SUMMARY:Naughty Boy
+LOCATION:Just the Tonic at The Caves\, 253 Cowgate\, Edinburgh
+DESCRIPTION:He's making a list. He's checking it twice. He's gonna find out
+  that he's been naughty\, not nice. Can Santa rediscover the meaning of Chr
+ istmas before it's too late? Find out in the holiday clown show\, Naughty B
+ oy.\nMore info: https://comedyatlas.app/comedy-atlas/event/naughty-boy/
+URL:https://comedyatlas.app/comedy-atlas/event/naughty-boy/
+END:VEVENT
+END:VCALENDAR

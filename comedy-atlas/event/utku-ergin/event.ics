@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:utku-ergin@comedyatlas.app
+DTSTAMP:20260815T194000Z
+DTSTART:20260815T194000Z
+DTEND:20260815T204000Z
+SUMMARY:Utku Ergin
+LOCATION:Edinburgh
+DESCRIPTION:Utku Ergin\, seyircisinin üzerinde test ederek sekillendirdigi
+  yeni stand-up gösterisi ile karsinizda!\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/utku-ergin/
+URL:https://comedyatlas.app/comedy-atlas/event/utku-ergin/
+END:VEVENT
+END:VCALENDAR

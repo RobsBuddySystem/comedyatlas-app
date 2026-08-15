@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-very-important-panel-show@comedyatlas.app
+DTSTAMP:20260819T184000Z
+DTSTART:20260819T184000Z
+DTEND:20260819T194000Z
+SUMMARY:A Very Important Panel Show
+LOCATION:Edinburgh
+DESCRIPTION:The Very Important Panel Show is led by a panel of some of the 
+ best comedians around competing to be the ultimate winner. They'll have to 
+ conquer general knowledge\, live tasks\, and play ruthlessly to not only be
+ at their opponents\, but win over the audience. Can they do it? Hosted by K
+ ate Hammer and Assistant-Hosted by Heather Kondak-Ross\, this is a special 
+ show acting as a fundraiser for Breast Cancer Now and Kathleen Hughes.\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/a-very-important-panel-s
+ how/
+URL:https://comedyatlas.app/comedy-atlas/event/a-very-important-panel-show/
+END:VEVENT
+END:VCALENDAR

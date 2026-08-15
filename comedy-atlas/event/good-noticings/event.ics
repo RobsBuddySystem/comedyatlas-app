@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:good-noticings@comedyatlas.app
+DTSTAMP:20260824T193000Z
+DTSTART:20260824T193000Z
+DTEND:20260824T203000Z
+SUMMARY:Good Noticings
+LOCATION:Edinburgh
+DESCRIPTION:A brand-new live panel show by the hosts of Good Noticings: Cla
+ ire Parker and Ashley Hamilton. Claire and Ashley will interview\, bond and
+  clash with special guests – and the audience will vote on a talk show wi
+ nner.\nMore info: https://comedyatlas.app/comedy-atlas/event/good-noticings
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/good-noticings/
+END:VEVENT
+END:VCALENDAR

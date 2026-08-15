@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:italian-rhapsody@comedyatlas.app
+DTSTAMP:20260823T215500Z
+DTSTART:20260823T215500Z
+DTEND:20260823T225000Z
+SUMMARY:Italian Rhapsody
+LOCATION:Edinburgh
+DESCRIPTION:The Italian wild card of comedy blends stand-up and live music 
+ in a subversive\, high-energy hour packed with unexpected turns and surreal
+  observations on failed relationships\, life abroad and pigeons. Performing
+  in English and Italian\, he has appeared on Comedy Central Italy and publi
+ c broadcast RAI\, and tours regularly across Europe and the UK. 'His person
+ al peak of power' (Corriere della Sera).\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/italian-rhapsody/
+URL:https://comedyatlas.app/comedy-atlas/event/italian-rhapsody/
+END:VEVENT
+END:VCALENDAR

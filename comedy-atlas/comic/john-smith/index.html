@@ -231,10 +231,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </div>
 </div>
 
-<form class="card book-box" id="book-box" data-person-id="48">
+<form class="card book-box" id="book-box" data-person-id="48" data-authorized="false">
   <details open>
-    <summary>Book John Smith for your event →</summary>
+    <summary>Looking to book John Smith? Send a talent request →</summary>
     <div class="book-fields">
+      <p class="book-disclosure">COMEDY ATLAS is an independent directory. We are not John Smith's representative and availability is not guaranteed; we forward serious enquiries where possible.</p>
       <label for="book-name">Your name
         <input id="book-name" name="name" type="text" required autocomplete="name">
       </label>
@@ -263,7 +264,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <div class="event-card-body">
       <div class="event-top">
         <div class="event-title">JOHN SMITH: WHAT COULD POSSIBLY GO WRONG? (PRETTY MUCH EVERYTHING)</div>
-        <div class="event-time">2026-08-09 16:45:00+02:00</div>
+        <div class="event-time">In progress — runs until Sun, Aug 30 2026</div>
       </div>
       <div class="event-meta"><span>3 Old Monks</span><span class="sep">·</span><span>Edinburgh</span><span class="sep">·</span><span>0.00 GBP</span></div>
       
@@ -454,6 +455,7 @@ window.atlasToast = window.atlasToast || function(msg){
   var btn = document.getElementById('book-submit-btn');
   var status = document.getElementById('book-status');
   var personId = Number(form.dataset.personId);
+  var authorized = form.dataset.authorized === 'true';
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault();

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:i-am-a-snail@comedyatlas.app
+DTSTAMP:20260817T090500Z
+DTSTART:20260817T090500Z
+DTEND:20260817T095000Z
+SUMMARY:I Am A Snail
+LOCATION:Just the Tonic at The Caves\, 253 Cowgate\, Edinburgh
+DESCRIPTION:I am a snail\, I am from Eastern Europe and this is my song... 
+ proclaims Snail at the opening of a bold new alt-comedy fever dream by Wash
+ ington DC-based clown\, Nora Dell. Officially\, a heart-warming business wo
+ rkshop. Unofficially\, this show takes the question: would you still love m
+ e if I were a snail? to its furthest illogical extreme. Included in the pri
+ ce of your ticket: a serious song and dance\, a hostage negotiation\, answe
+ rs to your questions\, and... puppets (just kidding\, unless...).\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/i-am-a-snail/
+URL:https://comedyatlas.app/comedy-atlas/event/i-am-a-snail/
+END:VEVENT
+END:VCALENDAR

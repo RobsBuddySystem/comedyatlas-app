@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-smith-work-in-progress@comedyatlas.app
+DTSTAMP:20260817T130000Z
+DTSTART:20260817T130000Z
+DTEND:20260817T140000Z
+SUMMARY:Jim Smith: Work in Progress
+LOCATION:Edinburgh
+DESCRIPTION:The Perthshire farmer returns to the big smoke with some homegr
+ own fresh pickings ready for sampling. As always\, suitable for both countr
+ y bumpkins and city slickers.\nMore info: https://comedyatlas.app/comedy-at
+ las/event/jim-smith-work-in-progress/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-smith-work-in-progress/
+END:VEVENT
+END:VCALENDAR

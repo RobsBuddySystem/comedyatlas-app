@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:airplane-baby@comedyatlas.app
+DTSTAMP:20260823T200000Z
+DTSTART:20260823T200000Z
+DTEND:20260823T211500Z
+SUMMARY:Airplane Baby
+LOCATION:Edinburgh
+DESCRIPTION:New Yorker turned Berlin comedian Max Elias\, with a lot to say
+  about both places\, offers up wild observations\, out-of-pocket comparison
+ s and gleefully warped conclusions – it’s all good for a laugh at Airpl
+ ane Baby. Identity\, social commentary\, a whole lot of dark thoughts the a
+ verage baby definitely doesn't have\, and barbed musings abound throughout 
+ this hour-long comic barrage. Get ready to be "educated" through a series o
+ f culture shocks\, mismatched expectations and seemingly random facts. You'
+ ll come in wondering what an airplane baby is supposed to be and leave a co
+ uple kilos lighter from laughter.\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/airplane-baby/
+URL:https://comedyatlas.app/comedy-atlas/event/airplane-baby/
+END:VEVENT
+END:VCALENDAR

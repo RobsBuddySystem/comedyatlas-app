@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:oops-we-lost-a-nuke@comedyatlas.app
+DTSTAMP:20260820T125500Z
+DTSTART:20260820T125500Z
+DTEND:20260820T135500Z
+SUMMARY:Oops! We Lost a Nuke
+LOCATION:Edinburgh
+DESCRIPTION:Oops! We Lost a Nuke is a comedic play set in the 1950s\, featu
+ ring four characters performed – sometimes simultaneously – by two acto
+ rs. When an unassuming pacifist abuses his position within the US governmen
+ t in order to hide a nuclear warhead\, it becomes clear that his affair wit
+ h his secretary and his wife's affair with her doctor are the least of thei
+ r worries. As the government closes in\, secrets come to light.\nMore info:
+  https://comedyatlas.app/comedy-atlas/event/oops-we-lost-a-nuke/
+URL:https://comedyatlas.app/comedy-atlas/event/oops-we-lost-a-nuke/
+END:VEVENT
+END:VCALENDAR
