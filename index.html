@@ -72,6 +72,39 @@ window.ATLAS_GLOBE_ENABLED = true;
   } catch (e) { /* malformed query string -- keep the default above */ }
 })();
 
+/* GLOBE-FIRST HERO (2026-08-16, FABLE_REVIEW_GLOBE_FIRST_HERO_2026-08-14.md:
+   "Make the interactive worldwide Comedy Atlas globe -- not only the circular
+   logo artwork -- the homepage's first visual and discovery surface").
+   Default ON. ?ghero=0 disables for the session (the rollback the contract
+   requires); ?ghero=1 re-enables. Session-scoped exactly like the globe
+   flag above, and it composes with it: the hero mount only happens when
+   BOTH ATLAS_GLOBE_ENABLED and ATLAS_GLOBE_HERO are true -- ?globe=0
+   remains the master kill switch for the whole globe experience. */
+window.ATLAS_GLOBE_HERO = true;
+(function () {
+  /* html.atlas-ghero is stamped INSIDE this same head script (below),
+     before first paint, so the hero figure's width is decided once --
+     the same pre-paint discipline login.html's data-auth-tab fix uses. */
+  try {
+    var qp = new URLSearchParams(window.location.search).get("ghero");
+    if (qp === "1") {
+      window.ATLAS_GLOBE_HERO = true;
+      try { sessionStorage.setItem("atlasGlobeHero", "1"); } catch (e) {}
+    } else if (qp === "0") {
+      window.ATLAS_GLOBE_HERO = false;
+      try { sessionStorage.setItem("atlasGlobeHero", "0"); } catch (e) {}
+    } else {
+      var st = null;
+      try { st = sessionStorage.getItem("atlasGlobeHero"); } catch (e) {}
+      if (st === "1") { window.ATLAS_GLOBE_HERO = true; }
+      else if (st === "0") { window.ATLAS_GLOBE_HERO = false; }
+    }
+  } catch (e) { /* malformed query string -- keep the default above */ }
+  if (window.ATLAS_GLOBE_HERO) {
+    document.documentElement.classList.add("atlas-ghero");
+  }
+})();
+
 /* MAP PROVIDER (2026-08-01). "maplibre" is the real map: NASA Blue Marble
    WMTS raster at world zoom, OpenFreeMap vector streets at city zoom, and
    real Comedy Atlas venue markers. "current" is the original three.js globe,
@@ -160,6 +193,22 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .atlas-mission{color:var(--muted);font-size:16px;margin-top:8px;max-width:560px}
 .atlas-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .atlas-hero-figure{flex:0 0 auto;width:clamp(120px,18vw,200px);opacity:0;transform:translateY(10px) scale(.97);animation:atlas-hero-in .6s ease-out .1s forwards}
+/* GLOBE-FIRST HERO (2026-08-16): when the hero hosts the interactive
+   globe (html.atlas-ghero, set pre-paint by the flag consumer below so
+   there is never a size flip after first paint), the figure widens into
+   a real stage. aspect-ratio reserves the full box before any module
+   loads -- the mount can never shift layout. */
+html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
+.atlas-hero-globe-stage{position:relative;width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden}
+.atlas-hero-globe-stage .atlas-hero-globe-fallback img{width:100%;height:100%;object-fit:contain;display:block}
+.atlas-hero-globe-stage .atlas-globe-shell,.atlas-hero-globe-stage .atlas-map-root{position:absolute;inset:0}
+.atlas-hero-globe-counts{font-size:12px;color:var(--atlas-muted,#8899aa);margin:8px 2px 0;min-height:1.2em}
+@media(max-width:760px){html.atlas-ghero .atlas-hero-figure{width:clamp(260px,88vw,380px)}}
+/* Desktop hero already provides wordmark + universal search in the left
+   column -- the globe shell's own topbar would duplicate both an inch
+   away. Hidden >=761px only: on mobile the globe is the first visual and
+   its topbar search IS the in-fold search. */
+@media(min-width:761px){html.atlas-ghero .atlas-hero-globe-stage .atlas-globe-topbar{display:none}}
 .atlas-hero-figure img{width:100%;height:auto;display:block}
 @keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.atlas-hero-figure{opacity:1;transform:none;animation:none}}
@@ -365,12 +414,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse cities</a>
     </div>
   </div>
-  <div class="atlas-hero-figure">
-    <picture>
-      <source srcset="/comedy-atlas/assets/brand/atlas-character-hero-600.webp" type="image/webp">
-      <img src="/comedy-atlas/assets/brand/atlas-character-hero-600.png" width="600" height="600"
-        alt="Cartoon Atlas straining under the weight of the globe while gripping a stand-up mic, the COMEDY ATLAS badge logo">
-    </picture>
+  <div class="atlas-hero-figure" id="atlas-hero-globe-box">
+    <!-- GLOBE-FIRST HERO (2026-08-16): this box is the reserved,
+         fixed-aspect stage for the interactive globe. Until the globe
+         modules mount (or with JS disabled, or ?ghero=0 / ?globe=0), it
+         shows the Atlas character art -- the same brand globe, so the
+         fallback IS the design, not a blank. The box's aspect ratio is
+         reserved in CSS, so mounting the globe causes zero layout shift
+         (contract: CLS < 0.10, "stable reserved hero height"). Real
+         crawlable links stay in .atlas-cta-row + the cities/festival
+         sections below -- canvas markers are never the only path. -->
+    <div id="atlas-hero-globe" class="atlas-hero-globe-stage">
+      <picture class="atlas-hero-globe-fallback">
+        <source srcset="/comedy-atlas/assets/brand/atlas-character-hero-600.webp" type="image/webp">
+        <img src="/comedy-atlas/assets/brand/atlas-character-hero-600.png" width="600" height="600"
+          alt="Cartoon Atlas straining under the weight of the globe while gripping a stand-up mic, the COMEDY ATLAS badge logo">
+      </picture>
+    </div>
+    <p class="atlas-hero-globe-counts" id="atlas-hero-globe-counts" aria-live="off"></p>
   </div>
 </header>
 
@@ -712,10 +773,46 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   //     by threading `assetBase` through experience.js's mount() option
   //     into createEarth(); see earth.js's own header comment.
   // dataUrl gets the same one-level-shallower treatment for the same reason.
+  // Hero counts line -- computed from the same files the globe and search
+  // actually ship (contract: "no separately hard-coded marketing counts").
+  // globe-cities.json = cities with live shows (the globe's own gate);
+  // cities.json = every covered city page (search's wider venue-backed
+  // gate). The one-line explanation of why the two differ is the honesty
+  // the truth gate asks for.
+  function heroGlobeCounts() {
+    var el = document.getElementById("atlas-hero-globe-counts");
+    if (!el) return;
+    Promise.all([
+      fetch("/data/comedy-atlas/globe-cities.json").then(function (r) { return r.ok ? r.json() : null; }),
+      fetch("/data/comedy-atlas/cities.json").then(function (r) { return r.ok ? r.json() : null; })
+    ]).then(function (pair) {
+      var g = pair[0], c = pair[1];
+      var live = Array.isArray(g) ? g.length : (g && g.cities || []).length;
+      var shows = (Array.isArray(g) ? g : (g && g.cities || [])).reduce(
+        function (n, x) { return n + (x.upcomingShowCount || 0); }, 0);
+      var covered = Array.isArray(c) ? c.length : (c && c.cities || []).length;
+      if (!live) return;
+      el.textContent = shows + " live shows in " + live + " cities on the globe" +
+        (covered > live ? " \u00b7 " + covered + " cities covered in search" : "");
+    }).catch(function () { /* counts are decoration; the globe is the point */ });
+  }
+
   function mountAtlasGlobeIfEnabled() {
     if (!window.ATLAS_GLOBE_ENABLED) return;
-    var root = document.getElementById("atlas-globe-root");
+    // GLOBE-FIRST HERO (2026-08-16): one globe instance, hero-first. When
+    // the hero flag is on, the mount root is the hero's reserved stage and
+    // section 5 keeps only its browse CTAs (mounting twice would double
+    // the payload and split keyboard focus). ?ghero=0 restores the old
+    // section-5 placement exactly.
+    var root = window.ATLAS_GLOBE_HERO
+      ? document.getElementById("atlas-hero-globe")
+      : document.getElementById("atlas-globe-root");
     if (!root) return;
+    if (window.ATLAS_GLOBE_HERO) {
+      var fb = root.querySelector(".atlas-hero-globe-fallback");
+      if (fb) { fb.setAttribute("aria-hidden", "true"); }
+      heroGlobeCounts();
+    }
     // PROVIDER SWITCH (2026-08-01). "maplibre" is the real map (NASA Blue
     // Marble WMTS at world zoom, OpenFreeMap streets at city zoom, real
     // venue markers). "current" is the original three.js globe, kept ONLY
