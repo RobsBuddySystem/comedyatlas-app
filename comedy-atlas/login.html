@@ -53,8 +53,23 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .footer-links a:hover{color:var(--text)}
 .footer-links .sep{margin:0 8px;opacity:.5}
 </style>
+<script>
+/* CLS guard (2026-08-15, lab cls=0.169): ?role=comic|booker deep-links land on
+   the REGISTER card, but the login card used to paint first and get swapped by
+   later JS -- a pure layout shift. Decide from the URL before first paint. */
+var _authTab = new URLSearchParams(location.search).get("role") ? "register" : "login";
+document.documentElement.setAttribute("data-auth-tab", _authTab);
+/* Copy consistency (first_user gate): a register deep link must not sit
+   under a "Sign in" tab title. */
+if (_authTab === "register") { document.title = "Create account — COMEDY ATLAS"; }
+</script>
+<style>
+html[data-auth-tab="register"] #login-card{display:none}
+html[data-auth-tab="register"] #register-card{display:block!important}
+</style>
 </head>
 <body>
+<main>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <nav>
   <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
@@ -407,5 +422,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   });
 })();
 </script>
+</main>
 </body>
 </html>

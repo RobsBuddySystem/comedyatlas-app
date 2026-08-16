@@ -71,7 +71,7 @@
     var city = (mount.getAttribute("data-city") || "").trim();
     var cityInputHtml = city
       ? '<input type="hidden" class="atlas-sub-city" value="' + city.replace(/"/g, "&quot;") + '">'
-      : '<input type="text" class="atlas-sub-city" placeholder="Your city (e.g. Paris)">';
+      : '<input type="text" class="atlas-sub-city" aria-label="Your city" placeholder="Your city (e.g. Paris)">';
     var heading = city
       ? "Get the weekly what's-on for " + city
       : "Get the weekly what's-on for your city";
@@ -81,7 +81,7 @@
       "<p>One email a week: new stand-up shows as they're added. Free, one-click unsubscribe any time.</p>" +
       '<div class="atlas-sub-row">' +
       cityInputHtml +
-      '<input type="email" class="atlas-sub-email" placeholder="you@example.com">' +
+      '<input type="email" class="atlas-sub-email" aria-label="Email address" placeholder="you@example.com">' +
       '<button type="button" class="atlas-sub-send">Subscribe</button>' +
       "</div>" +
       '<div class="atlas-sub-consent">Double opt-in: we\'ll email you a confirmation link before sending anything. We never share your email.</div>' +

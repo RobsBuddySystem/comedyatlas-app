@@ -60,6 +60,11 @@ h1{font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.5px;margin:24
 .tab[aria-selected="true"]{color:var(--text);border-color:var(--gold);background:rgba(201,168,76,.12)}
 .tab .tab-n{color:var(--muted);font-weight:500;margin-left:4px}
 #status-line{font-size:13px;color:var(--muted);margin-bottom:10px;min-height:1.2em}
+  /* CLS guard (2026-08-15, lab cls=0.233): tabs + results render only after
+     the index fetch resolves; reserving their space keeps the first paint
+     stable instead of shoving everything below them down a beat later. */
+  #tabs{min-height:46px}
+  ul#results{min-height:320px}
 #status-line[role="alert"]{color:var(--red)}
 ul#results{list-style:none}
 /* Thumbnail-first result row (coordinator usability audit, 2026-08-04:
@@ -122,6 +127,7 @@ noscript .result-meta{margin-top:2px}
            autocomplete="off" aria-describedby="status-line" aria-controls="results">
   </div>
   <div class="tabs" id="tabs" role="tablist" aria-label="Filter by type"></div>
+  <div id="near-notice" class="empty-state" style="padding:12px;text-align:left" hidden></div>
   <div id="status-line" aria-live="polite"></div>
   <ul id="results" role="listbox" aria-label="Search results"></ul>
   <div id="empty" class="empty-state" hidden>
@@ -193,6 +199,7 @@ noscript .result-meta{margin-top:2px}
   var statusEl = document.getElementById("status-line");
   var emptyEl = document.getElementById("empty");
   var emptyQEl = document.getElementById("empty-q");
+  var nearNoticeEl = document.getElementById("near-notice");
   var errorEl = document.getElementById("error");
   var retryBtn = document.getElementById("retry-btn");
   var paginationEl = document.getElementById("pagination");
@@ -306,13 +313,48 @@ noscript .result-meta{margin-top:2px}
   // it in would make a query like "us" or "in" match thousands of unrelated
   // records. region_code IS added -- it is unambiguous ("US-MN") and only
   // ever appears on region records.
+  // COUNTRY NAMES IN THE HAYSTACK (2026-08-15): records carry only ISO2
+  // ("FR"), so "Lyon, France" found nothing even though the index is full
+  // of French records. Tiny client-side map (every ISO2 actually present
+  // in the index) rather than fattening 14k records server-side.
+  var COUNTRY_NAMES = {AD:"Andorra",AE:"United Arab Emirates",AL:"Albania",
+    AM:"Armenia",AT:"Austria",AU:"Australia",AZ:"Azerbaijan",
+    BA:"Bosnia and Herzegovina",BE:"Belgium",BG:"Bulgaria",CA:"Canada",
+    CH:"Switzerland",CN:"China",CY:"Cyprus",CZ:"Czechia",DE:"Germany",
+    DK:"Denmark",EE:"Estonia",ES:"Spain",FI:"Finland",FR:"France",
+    GB:"United Kingdom",GE:"Georgia",GR:"Greece",HR:"Croatia",HU:"Hungary",
+    IE:"Ireland",IN:"India",IS:"Iceland",IT:"Italy",JP:"Japan",
+    LI:"Liechtenstein",LT:"Lithuania",LU:"Luxembourg",LV:"Latvia",
+    MD:"Moldova",ME:"Montenegro",MK:"North Macedonia",MT:"Malta",
+    MX:"Mexico",NL:"Netherlands",NO:"Norway",PL:"Poland",PT:"Portugal",
+    RO:"Romania",RS:"Serbia",SE:"Sweden",SG:"Singapore",SI:"Slovenia",
+    SK:"Slovakia",TH:"Thailand",TR:"Turkey",UA:"Ukraine",US:"United States",
+    ZA:"South Africa"};
+
+  function pushCountry(parts, iso) {
+    if (!iso) { return; }
+    parts.push(iso);
+    if (COUNTRY_NAMES[iso]) { parts.push(COUNTRY_NAMES[iso]); }
+    if (iso === "US") { parts.push("USA", "America"); }
+    // deliberately NOT "England": a GB record can be Scottish/Welsh, and
+    // labelling Edinburgh shows as England-matches would be plain wrong.
+    if (iso === "GB") { parts.push("UK", "Britain", "Great Britain"); }
+  }
+
   function buildHaystack(rec) {
     var parts = [rec.name || ""];
     if (rec.aliases) { parts = parts.concat(rec.aliases); }
     if (rec.city) { parts.push(rec.city); }
+    if (Array.isArray(rec.cities)) { parts = parts.concat(rec.cities); }
     if (rec.region) { parts.push(rec.region); }
     if (Array.isArray(rec.regions)) { parts = parts.concat(rec.regions); }
     if (rec.region_code) { parts.push(rec.region_code); }
+    pushCountry(parts, rec.country);
+    if (Array.isArray(rec.countries)) {
+      for (var ci = 0; ci < rec.countries.length; ci++) {
+        pushCountry(parts, rec.countries[ci]);
+      }
+    }
     return foldAccents(parts.join(" ␟ ").toLowerCase());
   }
 
@@ -473,24 +515,329 @@ noscript .result-meta{margin-top:2px}
   // require EVERY token to be found via indexOf (still a substring test per
   // token, not prefix-anchored, so a single-word query -- the one-token
   // case -- produces IDENTICAL results to the old whole-phrase check).
+  // SHORT-TOKEN RULE (2026-08-15): a 1-2 character token ("mn", "fr") is a
+  // region/country code, not free text -- as a bare substring it matched
+  // noise ("mn" inside "Bramnick"). It now hits only a region_code tail
+  // ("us-mn") or a whole delimited field (" us "), which is what a person
+  // typing "Hugo, MN" actually means. 3+ character tokens keep the plain
+  // substring behavior unchanged.
+  function tokenMatches(haystack, token) {
+    // Exactly-2-LETTER tokens are region/country codes; 1-char, 3+ char
+    // and numeric tokens keep plain substring behavior (a single letter is
+    // a prefix a person is still typing; "04" is part of a name, never a
+    // code).
+    if (token.length !== 2 || !/^[a-z]{2}$/.test(token)) {
+      return haystack.indexOf(token) !== -1;
+    }
+    return haystack.indexOf("-" + token) !== -1 ||
+           (" " + haystack + " ").indexOf(" " + token + " ") !== -1;
+  }
+
   function matchesAllTokens(haystack, tokens) {
     for (var t = 0; t < tokens.length; t++) {
-      if (haystack.indexOf(tokens[t]) === -1) { return false; }
+      if (!tokenMatches(haystack, tokens[t])) { return false; }
     }
     return true;
+  }
+
+  // NEAREST-COVERAGE RESCUE (2026-08-15, Robert's directive: "if I put any
+  // city in the search bar it shouldn't be blank... So if I put Hugo, MN it
+  // will present all shows in the region/area. In a logical way. keep it
+  // simple."). Two pieces, both deliberately dumb:
+  //   1. Punctuation is stripped from query tokens ("hugo," -> "hugo") --
+  //      before this, the comma alone guaranteed zero results.
+  //   2. When AND-of-tokens yields nothing, retry with ONLY the tokens
+  //      that match at least one record ("hugo mn" -> "mn", which hits
+  //      every Minnesota record through region/region_code already in the
+  //      haystack) and say so honestly in a banner. Cities surface first,
+  //      busiest first -- the logical entry point for "what's near Hugo".
+  //      No geocoding, no distance math, no guessing: we only ever show
+  //      records the surviving tokens genuinely match, and the banner
+  //      never pretends the dropped tokens were found.
+  function collectMatches(qTokens, typeFilter) {
+    var out = [];
+    for (var i = 0; i < ALL_RECORDS.length; i++) {
+      var rec = ALL_RECORDS[i];
+      if (typeFilter && rec.type !== typeFilter) { continue; }
+      if (qTokens.length && !matchesAllTokens(HAYSTACKS[i], qTokens)) { continue; }
+      out.push(rec);
+    }
+    return out;
+  }
+
+  function tokenHasAnyMatch(token) {
+    for (var i = 0; i < HAYSTACKS.length; i++) {
+      if (HAYSTACKS[i].indexOf(token) !== -1) { return true; }
+    }
+    return false;
+  }
+
+  function upcomingCount(rec) {
+    var m = /^(\d+) upcoming show/.exec(rec.status || "");
+    return m ? parseInt(m[1], 10) : 0;
+  }
+
+  // WORLDWIDE NEAREST-COVERAGE (2026-08-15, Robert: "not just for Hugo
+  // but world wide... the closest show comes up for any city. use logic,
+  // do research, verify you keep it simple with what we already have").
+  // What we already have: globe-cities.json ships every covered city
+  // WITH lat/lon. The one missing piece was "where is the city the
+  // visitor typed" -- answered by nearby_gazetteer.json (GeoNames
+  // cities5000 distilled to [folded_name, lat, lon, cc, admin1,
+  // pop_rank]), lazy-loaded ONLY when a query finds nothing, so normal
+  // searches pay zero cost. Then plain haversine to the covered cities.
+  // No API, no key, no guessing: an unresolvable name still falls back
+  // to the token rescue below, and gibberish stays honestly empty.
+  var GAZETTEER = null, COVERED = null, gazLoading = null, searchSeq = 0;
+
+  function loadNearData() {
+    if (gazLoading) { return gazLoading; }
+    gazLoading = Promise.all([
+      fetch("/data/comedy-atlas/nearby_gazetteer.json").then(function (r) { return r.ok ? r.json() : null; }),
+      fetch("/data/comedy-atlas/globe-cities.json").then(function (r) { return r.ok ? r.json() : null; })
+    ]).then(function (pair) {
+      GAZETTEER = pair[0];
+      var g = pair[1];
+      COVERED = Array.isArray(g) ? g : (g && g.cities) || [];
+      return true;
+    }).catch(function () { return false; });
+    return gazLoading;
+  }
+
+  function haversineKm(lat1, lon1, lat2, lon2) {
+    var R = 6371, dLat = (lat2 - lat1) * Math.PI / 180, dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+  }
+
+  // Admin-area names for the countries whose people write "City, State":
+  // GeoNames admin1 is a bare code ("MN", "ENG", "08"), but a person
+  // types "Minnesota" / "England" / "Quebec". US states + CA provinces +
+  // AU states + GB nations covers the English-query world; everywhere
+  // else the country name (COUNTRY_NAMES above) already disambiguates.
+  var ADMIN_NAMES = {
+    "US-AL":"Alabama","US-AK":"Alaska","US-AZ":"Arizona","US-AR":"Arkansas",
+    "US-CA":"California","US-CO":"Colorado","US-CT":"Connecticut","US-DE":"Delaware",
+    "US-FL":"Florida","US-GA":"Georgia","US-HI":"Hawaii","US-ID":"Idaho",
+    "US-IL":"Illinois","US-IN":"Indiana","US-IA":"Iowa","US-KS":"Kansas",
+    "US-KY":"Kentucky","US-LA":"Louisiana","US-ME":"Maine","US-MD":"Maryland",
+    "US-MA":"Massachusetts","US-MI":"Michigan","US-MN":"Minnesota","US-MS":"Mississippi",
+    "US-MO":"Missouri","US-MT":"Montana","US-NE":"Nebraska","US-NV":"Nevada",
+    "US-NH":"New Hampshire","US-NJ":"New Jersey","US-NM":"New Mexico","US-NY":"New York",
+    "US-NC":"North Carolina","US-ND":"North Dakota","US-OH":"Ohio","US-OK":"Oklahoma",
+    "US-OR":"Oregon","US-PA":"Pennsylvania","US-RI":"Rhode Island","US-SC":"South Carolina",
+    "US-SD":"South Dakota","US-TN":"Tennessee","US-TX":"Texas","US-UT":"Utah",
+    "US-VT":"Vermont","US-VA":"Virginia","US-WA":"Washington","US-WV":"West Virginia",
+    "US-WI":"Wisconsin","US-WY":"Wyoming","US-DC":"Washington DC",
+    "CA-01":"Alberta","CA-02":"British Columbia","CA-03":"Manitoba",
+    "CA-04":"New Brunswick","CA-05":"Newfoundland","CA-07":"Nova Scotia",
+    "CA-08":"Ontario","CA-09":"Prince Edward Island","CA-10":"Quebec",
+    "CA-11":"Saskatchewan","CA-12":"Yukon","CA-13":"Northwest Territories","CA-14":"Nunavut",
+    "AU-01":"Australian Capital Territory","AU-02":"New South Wales",
+    "AU-03":"Northern Territory","AU-04":"Queensland","AU-05":"South Australia",
+    "AU-06":"Tasmania","AU-07":"Victoria","AU-08":"Western Australia",
+    "GB-ENG":"England","GB-SCT":"Scotland","GB-WLS":"Wales","GB-NIR":"Northern Ireland"
+  };
+
+  // Resolve the typed tokens to ONE gazetteer city: find the longest
+  // token run that equals a city name; leftover tokens must all match the
+  // candidate's meta string (country code + admin code + admin NAME +
+  // country name/aliases), with the same short-token whole-word rule the
+  // main search uses; population rank breaks ties, so a bare "paris" is
+  // Paris, France -- never Paris, Texas (but "paris texas" IS Texas).
+  function candidateMeta(c) {
+    var parts = [c[3], String(c[4])];
+    var an = ADMIN_NAMES[c[3] + "-" + c[4]];
+    if (an) { parts.push(an); }
+    pushCountry(parts, c[3]);
+    return foldAccents(parts.join(" ").toLowerCase());
+  }
+
+  function resolveTypedCity(qTokens) {
+    if (!GAZETTEER || !GAZETTEER.cities) { return null; }
+    var cities = GAZETTEER.cities;
+    var byName = resolveTypedCity._idx;
+    if (!byName) {
+      byName = resolveTypedCity._idx = {};
+      for (var i = 0; i < cities.length; i++) {
+        (byName[cities[i][0]] = byName[cities[i][0]] || []).push(cities[i]);
+      }
+    }
+    for (var len = Math.min(qTokens.length, 4); len >= 1; len--) {
+      for (var s = 0; s + len <= qTokens.length; s++) {
+        var name = qTokens.slice(s, s + len).join(" ");
+        var cands = byName[name];
+        if (!cands) { continue; }
+        var rest = qTokens.slice(0, s).concat(qTokens.slice(s + len));
+        var filtered = cands.filter(function (c) {
+          var meta = candidateMeta(c);
+          return rest.every(function (t) { return tokenMatches(meta, t); });
+        });
+        if (rest.length && !filtered.length) { continue; }
+        var pool = filtered.length ? filtered : cands;
+        pool.sort(function (a, b) { return b[5] - a[5]; });
+        return { name: name, lat: pool[0][1], lon: pool[0][2],
+                 cc: pool[0][3], admin1: pool[0][4] };
+      }
+    }
+    return null;
+  }
+
+  function nearestCoverageRescue(qTokens, rawQ, seq) {
+    loadNearData().then(function (ok) {
+      if (!ok || seq !== searchSeq) { return false; }
+      var typed = resolveTypedCity(qTokens);
+      if (!typed || !COVERED || !COVERED.length) { return false; }
+      var ranked = COVERED
+        .filter(function (c) { return c.latitude != null && c.longitude != null; })
+        .map(function (c) {
+          return { c: c, km: haversineKm(typed.lat, typed.lon, c.latitude, c.longitude) };
+        })
+        .sort(function (a, b) {
+          return (a.km - b.km) || ((b.c.upcomingShowCount || 0) - (a.c.upcomingShowCount || 0));
+        })
+        .slice(0, 3);
+      if (!ranked.length) { return false; }
+      var cityNames = {};
+      ranked.forEach(function (r) { cityNames[foldAccents((r.c.name || "").toLowerCase())] = true; });
+      var results = [];
+      // The nearest cities' own records first (distance order)...
+      ranked.forEach(function (r) {
+        for (var i = 0; i < ALL_RECORDS.length; i++) {
+          var rec = ALL_RECORDS[i];
+          if (rec.type === "city" &&
+              foldAccents((rec.name || "").toLowerCase()) === foldAccents((r.c.name || "").toLowerCase())) {
+            results.push(rec); break;
+          }
+        }
+      });
+      // ...then everything happening in them (events soonest-first).
+      var rest = [];
+      for (var j = 0; j < ALL_RECORDS.length; j++) {
+        var rr = ALL_RECORDS[j];
+        if (rr.type === "city") { continue; }
+        if (state.type && rr.type !== state.type) { continue; }
+        if (rr.city && cityNames[foldAccents(String(rr.city).toLowerCase())]) { rest.push(rr); }
+      }
+      rest.sort(function (a, b) {
+        var da = a.date || "9999", db2 = b.date || "9999";
+        if (da !== db2) { return da < db2 ? -1 : 1; }
+        return (a.name || "").localeCompare(b.name || "");
+      });
+      results = results.concat(rest);
+      if (!results.length) { return false; }
+      var parts = ranked.map(function (r) {
+        return r.c.name + " (" + r.km + " km" +
+          ((r.c.upcomingShowCount || 0) ? ", " + r.c.upcomingShowCount + " shows" : "") + ")";
+      });
+      nearNoticeEl.textContent = "We don’t list " +
+        rawQ.trim() + " yet — closest comedy coverage: " + parts.join(" · ") + ".";
+      nearNoticeEl.hidden = false;
+      currentResults = results;
+      state.page = 1;
+      renderResults();
+      return true;
+    }).then(function (handled) {
+      // If the gazetteer path declined, fall back to the token rescue by
+      // re-rendering whatever runSearch already left on screen -- nothing
+      // to do; runSearch showed rescue-or-empty synchronously.
+      void handled;
+    });
   }
 
   function runSearch() {
     if (!ALL_RECORDS) { return; }
     markTabSelected();
-    var q = foldAccents(state.q.trim().toLowerCase());
+    nearNoticeEl.hidden = true;
+    var seq = ++searchSeq;
+    var q = foldAccents(state.q.trim().toLowerCase()).replace(/[.,;:!?()'"]/g, " ");
     var qTokens = q ? q.split(/\s+/).filter(Boolean) : [];
-    var matches = [];
-    for (var i = 0; i < ALL_RECORDS.length; i++) {
-      var rec = ALL_RECORDS[i];
-      if (state.type && rec.type !== state.type) { continue; }
-      if (qTokens.length && !matchesAllTokens(HAYSTACKS[i], qTokens)) { continue; }
-      matches.push(rec);
+    var matches = collectMatches(qTokens, state.type);
+
+    // Kick the async worldwide nearest-coverage lookup on ANY zero-result
+    // query (single-token city names included); the synchronous token
+    // rescue below still paints an immediate answer meanwhile.
+    if (matches.length === 0 && qTokens.length >= 1) {
+      nearestCoverageRescue(qTokens, state.q, seq);
+    }
+
+    if (matches.length === 0 && qTokens.length > 1) {
+      // First try: drop the tokens that match nothing anywhere ("hugo").
+      var kept = qTokens.filter(tokenHasAnyMatch);
+      var rescued = [];
+      var label = "";
+      if (kept.length && kept.length < qTokens.length) {
+        rescued = collectMatches(kept, state.type);
+        label = kept.join(" ");
+      }
+      // Second try ("Lyon, France": every token matches SOMEWHERE, just
+      // never together): fall back to the single token whose matches
+      // carry the most place records -- the person told us WHERE, so the
+      // where-token wins over a name-token.
+      if (!rescued.length && kept.length) {
+        var best = null;
+        for (var k = 0; k < kept.length; k++) {
+          var cand = collectMatches([kept[k]], state.type);
+          if (!cand.length) { continue; }
+          var places = 0;
+          for (var p = 0; p < cand.length; p++) {
+            if (cand[p].type === "city" || cand[p].type === "region") { places++; }
+          }
+          if (!best || places > best.places ||
+              (places === best.places && cand.length > best.cand.length)) {
+            best = { token: kept[k], cand: cand, places: places };
+          }
+        }
+        if (best) { rescued = best.cand; label = best.token; }
+      }
+      // REGION EXPANSION: matching a region record means "show me that
+      // region's coverage", not one lonely link -- "Hugo, MN" hits only
+      // the Minnesota region record (region codes live nowhere else), so
+      // pull in everything whose own region field says Minnesota.
+      if (rescued.length) {
+        var regionNames = {};
+        var hasRegions = false;
+        for (var rn = 0; rn < rescued.length; rn++) {
+          if (rescued[rn].type === "region") {
+            regionNames[foldAccents((rescued[rn].name || "").toLowerCase())] = true;
+            hasRegions = true;
+          }
+        }
+        if (hasRegions) {
+          var seen = {};
+          for (var s = 0; s < rescued.length; s++) { seen[rescued[s].url || rescued[s].name] = true; }
+          for (var x = 0; x < ALL_RECORDS.length; x++) {
+            var rr = ALL_RECORDS[x];
+            if (state.type && rr.type !== state.type) { continue; }
+            var rregs = [rr.region].concat(Array.isArray(rr.regions) ? rr.regions : []);
+            var hit = false;
+            for (var g = 0; g < rregs.length; g++) {
+              if (rregs[g] && regionNames[foldAccents(String(rregs[g]).toLowerCase())]) { hit = true; break; }
+            }
+            if (hit && !seen[rr.url || rr.name]) {
+              rescued.push(rr);
+              seen[rr.url || rr.name] = true;
+            }
+          }
+        }
+        rescued.sort(function (a, b) {
+          var ca = a.type === "city" ? 0 : 1, cb = b.type === "city" ? 0 : 1;
+          if (ca !== cb) { return ca - cb; }
+          var ua = upcomingCount(b) - upcomingCount(a);
+          if (ua !== 0) { return ua; }
+          return (a.name || "").localeCompare(b.name || "");
+        });
+        nearNoticeEl.textContent = 'No exact match for “' + state.q.trim() +
+          '” — showing the closest coverage we have for “' + label + '”.';
+        nearNoticeEl.hidden = false;
+        currentResults = rescued;
+        var maxP = Math.max(1, Math.ceil(rescued.length / PAGE_SIZE));
+        if (state.page > maxP) { state.page = maxP; }
+        renderResults();
+        return;
+      }
     }
     // Rank: exact-name match, then name-starts-with, then everything else
     // (alias/city hits) -- each tier alphabetical by name so ordering is
