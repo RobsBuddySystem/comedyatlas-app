@@ -154,6 +154,46 @@ const IDLE_ROTATE_DEG_PER_SEC = 2;
 const IDLE_RESUME_DELAY_MS = 4000;
 
 /**
+ * Zoom at/above which the user is looking at a city, not the world (Bug
+ * A/B fix, 2026-08-16). Deliberately the exact level that used to make the
+ * atlas-city-glow/atlas-city-core layers DISAPPEAR (the old
+ * `maxzoom: NASA_FADE_END + 1`) -- that cap is what caused "when I zoomed in
+ * to Paris you don't see any shows". Reused here for two purposes that both
+ * boil down to "has the user left the world view": (1) gate the idle spin
+ * (Bug B: it must not resume once the user has deliberately zoomed in, even
+ * with nothing selected) and (2) gate manual-zoom venue loading (Bug A).
+ */
+export const MANUAL_ZOOM_CITY_THRESHOLD = NASA_FADE_END + 1;
+
+/** Debounce for the manual-zoom venue-loading watcher (below): a zoom/pan
+ * gesture fires several `moveend` events in quick succession and we want to
+ * fetch the SETTLED city once, not once per intermediate frame. */
+const MANUAL_ZOOM_DEBOUNCE_MS = 250;
+
+/**
+ * Zoom at/above which the idle spin must NOT resume, even with nothing
+ * selected (Bug B correction, 2026-08-16, second pass). Deliberately a
+ * SEPARATE constant from MANUAL_ZOOM_CITY_THRESHOLD above -- reusing that
+ * one (8) for the spin gate was the mistake in the first pass: Robert's own
+ * repro screenshot showed the globe at roughly zoom 5-6 (country level,
+ * place labels visible), which is well below 8, and the spin was still
+ * dragging him sideways. The two thresholds answer different questions --
+ * 8 is "how far in before a city's venues are worth loading"; this one is
+ * "has the user deliberately left the ambient world view at all" -- and the
+ * honest answer to the second question is "barely any zoom in counts".
+ *
+ * mount() starts the camera at zoom 1.4, where the whole planet (multiple
+ * continents) is visible at once -- that framing IS the ambient spin, so a
+ * tiny amount of zoom drift or a fractional-zoom render must not look like
+ * navigation. By ~2.5-3 the view has narrowed to roughly a continent/region,
+ * which is a deliberate act a user chose to do, not ambient motion -- so
+ * that is where this threshold sits. It is intentionally far below
+ * MANUAL_ZOOM_CITY_THRESHOLD (8): a user does not need to reach city level,
+ * or even country level, before the spin owes them stillness.
+ */
+export const WORLD_VIEW_ZOOM_THRESHOLD = 2.6;
+
+/**
  * Mount the MapLibre experience.
  *
  * @param {HTMLElement} rootEl
@@ -266,7 +306,12 @@ export function mount(rootEl, opts) {
       id: 'atlas-city-glow',
       type: 'circle',
       source: 'atlas-cities',
-      maxzoom: NASA_FADE_END + 1,
+      // No maxzoom cap (Bug A, 2026-08-16): this used to vanish above
+      // NASA_FADE_END + 1, so a user who zoomed into Paris saw bare
+      // OpenFreeMap streets with no Comedy Atlas content at all -- the
+      // reported bug. The NASA raster fade (a separate layer/paint
+      // property, see installNasaLayer) is unchanged; only this marker's
+      // own visibility cap is removed.
       paint: {
         'circle-radius': [
           'interpolate', ['linear'], ['coalesce', ['get', 'brightness'], 0],
@@ -291,7 +336,7 @@ export function mount(rootEl, opts) {
       id: 'atlas-city-core',
       type: 'circle',
       source: 'atlas-cities',
-      maxzoom: NASA_FADE_END + 1,
+      // Same removal, same reason -- see atlas-city-glow above.
       paint: {
         'circle-radius': 2.5,
         'circle-color': '#fff8e7',
@@ -324,6 +369,40 @@ export function mount(rootEl, opts) {
   let destroyed = false;
   let venueMarkers = [];
 
+  /**
+   * "The user navigated here by hand" (Bug A, 2026-08-16) -- deliberately a
+   * SEPARATE piece of state from `selectionLocked` above. `selectionLocked`
+   * is the hard, user-committed selection made by clicking an
+   * atlas-city-glow marker or via the search module: it drives fitBounds,
+   * the detail panel, and (via clearSelection) the recenter control, and
+   * every existing selection-lock invariant keys off it. A manual pinch/
+   * scroll zoom into a city is a real navigation too, but a SOFTER one --
+   * the user never committed to a city, they just looked at one -- so it
+   * gets its own state that clears independently the moment they zoom back
+   * out or pan to a different city, and that a hard selectCity()/
+   * clearSelection() always supersedes and resets. Holds the currently
+   * shown city's slug, or null when nothing is manually loaded.
+   */
+  let handNavigatedCitySlug = null;
+  let manualZoomTimer = null;
+
+  /**
+   * "The user has deliberately panned away from the ambient world view"
+   * (Bug B correction, 2026-08-16, second pass). A user who drags the globe
+   * to look at, say, Europe, then stops, is in exactly the same position as
+   * one who zoomed in: both navigated on purpose and neither wants the
+   * ambient spin dragging them sideways 4s later. Zoom alone can't catch
+   * this — a pan can move the whole visible world without changing zoom at
+   * all — so this is a THIRD, independent piece of navigation state
+   * alongside selectionLocked (hard click/search selection) and
+   * handNavigatedCitySlug (soft manual-zoom venue loading). Set by a real
+   * `dragend` (MapLibre fires that only from actual pointer drags, never
+   * from this file's own programmatic fitBounds/easeTo calls, so it can
+   * never self-trigger). Cleared only by the explicit escape hatch,
+   * clearSelection() (the recenter control) — see there for why.
+   */
+  let hasPannedAwayFromWorldView = false;
+
   function markInteracting() {
     lastInteractionAt = Date.now();
   }
@@ -331,6 +410,7 @@ export function mount(rootEl, opts) {
   map.on('zoomstart', markInteracting);
   map.on('mousedown', markInteracting);
   map.on('touchstart', markInteracting);
+  map.on('dragend', () => { hasPannedAwayFromWorldView = true; });
 
   function tick(now) {
     if (destroyed) return;
@@ -346,6 +426,16 @@ export function mount(rootEl, opts) {
     if (map.isMoving() || map.isZooming()) return;
     if (typeof matchMedia === 'function'
         && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Bug B (2026-08-16): "the globe keeps spinning". The idle spin used to
+    // resume 4s after ANY interaction as long as no city was selectionLocked
+    // — including a deliberate manual zoom or pan, which is real navigation
+    // even though it never sets selectionLocked. Ambient spin is
+    // homepage-only motion for the WORLD view; once the user is past it (by
+    // zoom OR by pan), it stays off, independent of selection, until they
+    // return to it via the recenter control.
+    if (hasPannedAwayFromWorldView) return;
+    if (typeof map.getZoom === 'function'
+        && map.getZoom() >= WORLD_VIEW_ZOOM_THRESHOLD) return;
     if (dt <= 0) return;
 
     const c = map.getCenter();
@@ -386,8 +476,84 @@ export function mount(rootEl, opts) {
     }
   }
 
+  /**
+   * Manual-zoom venue loading (Bug A, 2026-08-16). Venue markers used to be
+   * created ONLY by renderVenues(), called ONLY from selectCity(), reachable
+   * ONLY via a click on atlas-city-glow or the search module. A user who
+   * pinch- or scroll-zoomed straight into a city triggered neither, so they
+   * saw bare OpenFreeMap streets — nothing Comedy-Atlas about them. This
+   * watches `moveend`, and once the user has zoomed in far enough to be
+   * looking at one city (found the same way the click handler already
+   * finds one — the atlas-city-glow features actually on screen), loads
+   * that city's venues via the SAME fetchImpl/cityDataUrlFor selectCity
+   * uses, but WITHOUT touching selectionLocked — see handNavigatedCitySlug
+   * above for why that separation matters.
+   */
+  function scheduleManualZoomCheck() {
+    if (manualZoomTimer) clearTimeout(manualZoomTimer);
+    manualZoomTimer = setTimeout(() => {
+      manualZoomTimer = null;
+      checkManualZoom();
+    }, MANUAL_ZOOM_DEBOUNCE_MS);
+  }
+
+  function checkManualZoom() {
+    if (destroyed || selectionLocked) return; // a real selection owns the view
+    if (map.getZoom() < MANUAL_ZOOM_CITY_THRESHOLD) {
+      if (handNavigatedCitySlug) {
+        handNavigatedCitySlug = null;
+        clearVenueMarkers();
+      }
+      return;
+    }
+    let features = [];
+    try {
+      features = map.queryRenderedFeatures(undefined, { layers: ['atlas-city-glow'] }) || [];
+    } catch (_e) {
+      features = []; // style/layer not ready yet — treat as "no city in view"
+    }
+    const slug = features[0] && features[0].properties && features[0].properties.slug;
+    if (!slug) {
+      if (handNavigatedCitySlug) {
+        handNavigatedCitySlug = null;
+        clearVenueMarkers();
+      }
+      return;
+    }
+    if (slug === handNavigatedCitySlug) return; // already showing this city
+
+    fetchImpl(cityDataUrlFor(slug))
+      .then((res) => {
+        if (!res || !res.ok) {
+          throw new Error(`map-experience: could not load city data for ${slug}`);
+        }
+        return res.json();
+      })
+      .then((payload) => {
+        if (!payload || destroyed || selectionLocked) return;
+        // A fast pan could have moved the user on to somewhere else while
+        // this fetch was in flight; only render if still zoomed in.
+        if (map.getZoom() < MANUAL_ZOOM_CITY_THRESHOLD) return;
+        handNavigatedCitySlug = slug;
+        renderVenues(payload);
+      })
+      .catch((err) => {
+        // Honest failure, file convention (see selectCity below) — but this
+        // path has no caller awaiting a promise, so it must never become an
+        // unhandled rejection in the render loop. Surfaced via console.error
+        // instead: silent to the user (no crash, no stuck spinner) but
+        // visible to anyone debugging.
+        if (typeof console !== 'undefined' && console.error) console.error(err);
+      });
+  }
+  map.on('moveend', scheduleManualZoomCheck);
+
   async function selectCity(slug) {
     if (!slug) return clearSelection();
+    // A hard selection supersedes any soft manual-zoom/pan state outright.
+    handNavigatedCitySlug = null;
+    hasPannedAwayFromWorldView = false;
+    if (manualZoomTimer) { clearTimeout(manualZoomTimer); manualZoomTimer = null; }
     const res = await fetchImpl(cityDataUrlFor(slug));
     if (!res || !res.ok) {
       // Honest failure: never silently leave the user on a spinning world
@@ -420,6 +586,14 @@ export function mount(rootEl, opts) {
   function clearSelection() {
     selectionLocked = false;
     selectedCity = null;
+    // Same reset as selectCity() above: the recenter control must not leave
+    // stale manual-zoom/pan state behind (e.g. a fetch already in flight
+    // from a manual zoom that this recenter is now overriding, or a pan
+    // flag that would otherwise keep the ambient spin off forever — this
+    // IS the escape hatch back to it).
+    handNavigatedCitySlug = null;
+    hasPannedAwayFromWorldView = false;
+    if (manualZoomTimer) { clearTimeout(manualZoomTimer); manualZoomTimer = null; }
     clearVenueMarkers();
     // Route the resume through the SAME inactivity delay as any other
     // interaction, so rotation never restarts merely because an animation
@@ -437,6 +611,7 @@ export function mount(rootEl, opts) {
     destroy() {
       destroyed = true;
       if (rafHandle) cancelAnimationFrame(rafHandle);
+      if (manualZoomTimer) clearTimeout(manualZoomTimer);
       clearVenueMarkers();
       map.remove();
     },
@@ -644,4 +819,6 @@ export const __internal = {
   nasaOpacityForZoom,
   VENUE_STATE_COLORS,
   IDLE_RESUME_DELAY_MS,
+  MANUAL_ZOOM_CITY_THRESHOLD,
+  WORLD_VIEW_ZOOM_THRESHOLD,
 };

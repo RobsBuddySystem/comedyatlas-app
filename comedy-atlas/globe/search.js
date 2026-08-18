@@ -33,16 +33,142 @@
  *     sources share. Never invents a match: returns null rather than
  *     guessing when no real city lines up.
  *   mountGlobeSearch(inputEl, options) -> {destroy, isLoading, hasFailed}
- *     Wires the given `<input>` (the existing topbar search box built by
- *     experience.js's SHELL_HTML) to a debounced, grouped, keyboard
- *     accessible results dropdown. `globe-chrome.css` is frozen for this
- *     checkpoint (Opus-validated, not in this agent's touch list), so —
- *     exactly like panel.js's own injectStylesOnce() — this module injects
- *     one small idempotent <style> block into <head>, scoped to its own
- *     class names and reading only existing `--atlas-globe-*` tokens.
+ *     Wires the given `<input>` — the topbar search box built by
+ *     experience.js's SHELL_HTML, OR (2026-08-16, globe-first hero bugfix)
+ *     ANY other real search input, e.g. the homepage hero's own `#atlas-q` —
+ *     to a debounced, grouped, keyboard accessible results dropdown.
+ *     `globe-chrome.css` is frozen for this checkpoint (Opus-validated, not
+ *     in this agent's touch list), so — exactly like panel.js's own
+ *     injectStylesOnce() — this module injects one small idempotent <style>
+ *     block into <head>, scoped to its own class names and reading only
+ *     existing `--atlas-globe-*` tokens. `opts.dropdownEl` (new, backward
+ *     compatible — omitted keeps the original behaviour of creating and
+ *     owning a fresh <div>) lets a caller reuse an existing, already
+ *     correctly-positioned container instead of a second one being created;
+ *     see index.html's `#atlas-q-suggest`, present in that markup since the
+ *     work order's original global-search pass but never actually wired
+ *     until this fix.
+ *   HERO_SEARCH_BREAKPOINT_PX / resolveGlobeSearchOwner(viewportWidth)
+ *     The single source of truth for "which of the two coexisting search
+ *     inputs (globe topbar vs. homepage hero) is the live, globe-driving one
+ *     at a given width" — see resolveGlobeSearchOwner's own header comment.
  */
 
 const DEBOUNCE_MS = 150;
+
+/**
+ * The exact width, in CSS pixels, at which index.html's own
+ * `@media(min-width:761px){html.atlas-ghero .atlas-hero-globe-stage
+ * .atlas-globe-topbar{display:none}}` rule (site/comedy-atlas/index.html,
+ * ~line 212) hides the globe's topbar search. Exported so index.html's
+ * `window.matchMedia` check and this decision can never drift apart —
+ * before this fix the CSS rule and the (nonexistent) JS behaviour already
+ * disagreed once, which is exactly how the hero search stopped driving the
+ * globe at this width in the first place.
+ */
+export const HERO_SEARCH_BREAKPOINT_PX = 761;
+
+/**
+ * Decides which single search input is the live, globe-driving one at a
+ * given viewport width. Pure and deterministic on purpose: the invariant
+ * this whole fix exists to guarantee — "at every viewport width there is
+ * exactly one visible search that can drive the globe" (FABLE contract,
+ * "Search result selection and globe marker selection are two views of the
+ * same record") — must hold for every width, not just be eyeballed in a
+ * browser. `'hero'` below `HERO_SEARCH_BREAKPOINT_PX` never happens: on
+ * mobile the hero-figure globe renders ABOVE the hero-copy search column
+ * (`.atlas-hero{flex-direction:column-reverse}`), so the globe's own topbar
+ * search is the one already in the first fold — see index.html's own
+ * "on mobile the globe is the first visual and its topbar search IS the
+ * in-fold search" comment, ~line 210.
+ *
+ * @param {number} viewportWidth
+ * @returns {'hero'|'topbar'}
+ */
+export function resolveGlobeSearchOwner(viewportWidth) {
+  return Number.isFinite(viewportWidth) && viewportWidth >= HERO_SEARCH_BREAKPOINT_PX
+    ? 'hero'
+    : 'topbar';
+}
+
+/**
+ * Resolves a city result chosen from the hero search into either a live
+ * globe fly-to or an honest navigation fallback — and, critically, NEVER a
+ * silent no-op (2026-08-16 follow-up: "if the globe fails to mount,
+ * selecting a city from the hero search silently does nothing" — the same
+ * bug Robert reported, wearing a different hat: a path that quietly does
+ * nothing is worse than one that fails loudly, because nobody ever finds
+ * out).
+ *
+ * Provider-agnostic and DOM-free on purpose — the caller (index.html's own
+ * "HERO SEARCH -> GLOBE BRIDGE") injects the live handle, the current
+ * provider name, how to derive a city's own page href, and how to
+ * navigate — so this is pure enough to unit test without a fake DOM, and
+ * so it never caches "was the globe ready when I first mounted": every
+ * call re-reads whatever `globeHandle` the caller hands in AT THAT MOMENT,
+ * which is what makes a late-mounting globe still get flown to instead of
+ * navigated away from on a later selection (see the "NOT a race" test).
+ *
+ * Falls back to navigation for every reason the globe might not be able to
+ * take the selection — never mounted (`globeHandle` is null/undefined),
+ * mount failed/threw earlier (same as above — no handle was ever set), or
+ * `selectCity` itself throwing mid-call (caught here) — not just one of
+ * them. Only stays silent when there is genuinely nothing honest left to
+ * do: a matched city with no real page to send anyone to (`cityHrefFor`
+ * returns null/empty, e.g. no slug) is the one case this module will not
+ * invent a link for, matching this codebase's "never guess" discipline
+ * elsewhere (findCityForRecord, data-adapter.js's parseCity).
+ *
+ * @param {{
+ *   id: string,
+ *   city: object|null,
+ *   globeHandle: {selectCity: (idOrSlug: string) => void}|null,
+ *   provider: 'three'|'maplibre'|null,
+ *   cityHrefFor: (city: object|null) => string|null,
+ *   navigate: (href: string) => void,
+ * }} args
+ * @returns {void}
+ */
+export function selectCityWithFallback(args) {
+  const opts = args || {};
+  const city = opts.city || null;
+  const globeHandle = opts.globeHandle || null;
+  const provider = opts.provider;
+  const cityHrefFor = typeof opts.cityHrefFor === 'function' ? opts.cityHrefFor : () => null;
+  const navigate = typeof opts.navigate === 'function' ? opts.navigate : () => {};
+
+  function fallbackToCityPage() {
+    const href = cityHrefFor(city);
+    if (href) navigate(href);
+  }
+
+  if (!globeHandle) {
+    fallbackToCityPage();
+    return;
+  }
+
+  try {
+    // The two globe providers key a city by different fields -- see
+    // mountGlobeSearch's own onSelectCity(id, city) header comment for why.
+    if (provider === 'maplibre') {
+      if (city && city.slug) {
+        globeHandle.selectCity(city.slug);
+      } else {
+        fallbackToCityPage();
+      }
+    } else if (opts.id) {
+      globeHandle.selectCity(opts.id);
+    } else {
+      fallbackToCityPage();
+    }
+  } catch (e) {
+    // A handle that EXISTS but cannot actually take the selection (mount
+    // left it in a half-built state, a provider-internal error, etc.) must
+    // reach the same honest fallback as no handle at all -- never a
+    // swallowed error and never a stuck page.
+    fallbackToCityPage();
+  }
+}
 
 /** Fixed, documented group order + label — mirrors search/index.html's own
  * TYPES list (event/comic/venue/festival/city/organizer), reordered so the
@@ -217,13 +343,16 @@ function injectSearchStylesOnce() {
 }
 
 /**
- * @param {HTMLInputElement} inputEl  The existing topbar search `<input>`.
+ * @param {HTMLInputElement} inputEl  A real search `<input>` — the globe
+ *   topbar's own, or (2026-08-16) any other input this module doesn't own,
+ *   e.g. the homepage hero's `#atlas-q`.
  * @param {{
  *   fetchImpl?: (url: string) => Promise<Response>,
  *   indexUrl?: string,
  *   getCities?: () => object[],
- *   onSelectCity?: (id: string) => void,
+ *   onSelectCity?: (id: string, city: object) => void,
  *   onSelectRecord?: (record: object, city: object|null) => void,
+ *   dropdownEl?: HTMLElement,
  * }} options
  * @returns {{destroy: () => void, isLoading: () => boolean, hasFailed: () => boolean}}
  */
@@ -232,8 +361,22 @@ export function mountGlobeSearch(inputEl, options) {
   const fetchImpl = typeof opts.fetchImpl === 'function' ? opts.fetchImpl : (...args) => fetch(...args);
   const indexUrl = opts.indexUrl || '../data/comedy-atlas/search_index.json';
   const getCities = typeof opts.getCities === 'function' ? opts.getCities : () => [];
+  // 2nd arg (the matched GlobeCity, when the search_index.json record
+  // resolved to one) is additive — every existing caller that only reads
+  // the first (`id`) argument keeps working unchanged. Added so a caller
+  // driving more than one globe provider (see index.html's maplibre vs.
+  // three.js providers, which key a city by different fields — slug vs.
+  // id) can pick the field ITS provider actually needs without this module
+  // having to know which provider is live.
   const onSelectCity = typeof opts.onSelectCity === 'function' ? opts.onSelectCity : () => {};
   const onSelectRecord = typeof opts.onSelectRecord === 'function' ? opts.onSelectRecord : () => {};
+  // Reuse an existing, already-positioned dropdown element when the caller
+  // hands one in (index.html's `#atlas-q-suggest`, present in that markup
+  // since the original global-search pass but never wired to anything real
+  // until this fix) instead of always creating a second one. `ownsDropdown`
+  // gates destroy() below: this module must never delete DOM it did not
+  // create.
+  const ownsDropdown = !opts.dropdownEl;
 
   injectSearchStylesOnce();
 
@@ -250,13 +393,18 @@ export function mountGlobeSearch(inputEl, options) {
     if (position === 'static' || !position) container.style.position = 'relative';
   }
 
-  const dropdown = document.createElement('div');
-  dropdown.className = 'atlas-globe-search-dropdown';
-  dropdown.id = 'atlas-globe-search-results-' + Math.random().toString(36).slice(2);
+  const dropdown = opts.dropdownEl || document.createElement('div');
+  // classList.add rather than overwriting className outright: a reused
+  // dropdownEl (e.g. index.html's `#atlas-q-suggest`) may already carry its
+  // own page-specific class (`atlas-suggest`) that other CSS on that page
+  // still targets; this module only ever ADDS the class its own injected
+  // styles are scoped to.
+  dropdown.classList.add('atlas-globe-search-dropdown');
+  if (!dropdown.id) dropdown.id = 'atlas-globe-search-results-' + Math.random().toString(36).slice(2);
   dropdown.setAttribute('role', 'listbox');
-  dropdown.setAttribute('aria-label', 'Search results');
+  if (!dropdown.hasAttribute('aria-label')) dropdown.setAttribute('aria-label', 'Search results');
   dropdown.hidden = true;
-  container.appendChild(dropdown);
+  if (ownsDropdown) container.appendChild(dropdown);
 
   inputEl.setAttribute('role', 'combobox');
   inputEl.setAttribute('aria-expanded', 'false');
@@ -298,7 +446,7 @@ export function mountGlobeSearch(inputEl, options) {
   function selectRecord(record) {
     const city = findCityForRecord(record, getCities());
     if (record.type === 'city') {
-      if (city) onSelectCity(city.id);
+      if (city) onSelectCity(city.id, city);
     } else {
       onSelectRecord(record, city);
     }
@@ -477,7 +625,17 @@ export function mountGlobeSearch(inputEl, options) {
       inputEl.removeEventListener('keydown', onKeydown);
       inputEl.removeEventListener('blur', onBlur);
       inputEl.removeEventListener('focus', startLoadingIndex);
-      dropdown.remove();
+      // Only remove/clear DOM this instance actually created — a reused
+      // dropdownEl belongs to the caller (index.html keeps `#atlas-q-suggest`
+      // around as the plain-fallback form's own markup even after this
+      // module stops driving it, e.g. when the viewport crosses
+      // HERO_SEARCH_BREAKPOINT_PX and ownership hands back to the topbar).
+      if (ownsDropdown) {
+        dropdown.remove();
+      } else {
+        dropdown.hidden = true;
+        dropdown.innerHTML = '';
+      }
     },
     isLoading() {
       return records === null;

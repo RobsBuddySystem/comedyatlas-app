@@ -205,10 +205,29 @@ html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
 .atlas-hero-globe-stage .atlas-globe-shell,.atlas-hero-globe-stage .atlas-map-root{position:absolute;inset:0}
 .atlas-hero-globe-counts{font-size:12px;color:var(--atlas-muted,#8899aa);margin:8px 2px 0;min-height:1.2em}
 @media(max-width:760px){html.atlas-ghero .atlas-hero-figure{width:clamp(260px,88vw,380px)}}
-/* Desktop hero already provides wordmark + universal search in the left
-   column -- the globe shell's own topbar would duplicate both an inch
-   away. Hidden >=761px only: on mobile the globe is the first visual and
-   its topbar search IS the in-fold search. */
+/* BUGFIX (2026-08-16): this rule shipped in 749889f ("globe-first hero")
+   with a comment claiming the hero column's own search "an inch away"
+   already covered this -- it did not. `.atlas-search` (below, ~line 397)
+   was and remains a plain GET <form> that only ever NAVIGATES to
+   /comedy-atlas/search/; nothing wired it to the globe. Hiding the ONLY
+   input that actually drove the globe (`#atlas-q` inside .atlas-globe-topbar,
+   wired by globe/search.js's mountGlobeSearch / this file's own
+   mountAtlasMapLibre) left every viewport >=761px -- including an iPad in
+   EITHER orientation (768px portrait, 1024px landscape) -- with a globe
+   that had no search at all. Robert found this live on his iPad.
+   FIXED by wiring `#atlas-q` itself (the hero-copy column's input) to the
+   SAME search machinery below >=HERO_SEARCH_BREAKPOINT_PX -- see
+   "HERO SEARCH -> GLOBE BRIDGE" further down this file and
+   globe/search.js's `resolveGlobeSearchOwner`. This rule now stays exactly
+   as it was (topbar hidden >=761px) because the claim in the original
+   comment is finally TRUE: the hero column's search genuinely replaces the
+   topbar's function at that width, rather than merely sitting near it. Below
+   761px the topbar remains visible and is still the one live, globe-driving
+   search -- on mobile the hero-figure globe renders ABOVE the hero-copy
+   search column (`.atlas-hero{flex-direction:column-reverse}`), so the
+   topbar is what's actually in the first fold; see
+   resolveGlobeSearchOwner's own header comment for why the split is drawn
+   at exactly this width, matched 1:1 with HERO_SEARCH_BREAKPOINT_PX. */
 @media(min-width:761px){html.atlas-ghero .atlas-hero-globe-stage .atlas-globe-topbar{display:none}}
 .atlas-hero-figure img{width:100%;height:auto;display:block}
 @keyframes atlas-hero-in{to{opacity:1;transform:translateY(0) scale(1)}}
@@ -924,6 +943,159 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   //     by threading `assetBase` through experience.js's mount() option
   //     into createEarth(); see earth.js's own header comment.
   // dataUrl gets the same one-level-shallower treatment for the same reason.
+  /* HERO SEARCH -> GLOBE BRIDGE (2026-08-16 bugfix). Root cause: the CSS
+     rule above (`@media(min-width:761px){...atlas-globe-topbar{display:none}}`,
+     ~line 212) hides `.atlas-globe-topbar` -- and with it the ONLY input
+     that actually drove the globe (wired by globe/search.js's
+     mountGlobeSearch for the three.js provider, and by mountAtlasMapLibre's
+     own inline search below for the default maplibre provider) -- at every
+     width >=761px, with nothing standing in for it. The hero-copy column's
+     own `#atlas-q` (~line 397) is and remains a plain GET <form>: it only
+     ever NAVIGATES to /comedy-atlas/search/ and never touched the globe.
+     Robert found the result live on his iPad (768px portrait / 1024px
+     landscape -- >=761px in EITHER orientation, so the topbar was hidden
+     no matter how he held it).
+     FIXED here by wiring `#atlas-q` itself to the SAME search machinery
+     the topbar uses -- ONE search index (search_index.json), ONE code path
+     (globe/search.js's mountGlobeSearch, reused, not reimplemented) --
+     active only >= globe/search.js's own HERO_SEARCH_BREAKPOINT_PX (761,
+     matched 1:1 to the CSS rule above by both reading the same exported
+     constant rather than two independently hand-typed numbers). Below that
+     width the globe's own topbar remains visible and is already wired
+     independently (by experience.js / mountAtlasMapLibre below), so this
+     bridge stays UNMOUNTED there -- "never two live search widgets at once"
+     -- and `#atlas-q` is left as the plain no-JS/Enter-submits fallback,
+     exactly as the work order's original global-search comment requires. */
+  var heroSearchHandle = null;
+  var heroCities = null;         // GlobeCity[] once loaded, else null
+  var heroCitiesLoading = null;  // in-flight promise; de-dupes concurrent loads
+  var heroGlobeHandle = null;    // whichever provider's live handle is current
+  var heroGlobeProvider = null;  // "three" | "maplibre"
+
+  // Called by mountAtlasThreeGlobe/mountAtlasMapLibre once their own async
+  // mount resolves. The bridge can wire `#atlas-q` and start accepting
+  // keystrokes before this fires (typing while the globe itself is still
+  // loading must not error); onSelectCity below simply no-ops until a
+  // handle is set, and record navigation never depended on one.
+  function setHeroGlobeHandle(handle, provider) {
+    heroGlobeHandle = handle;
+    heroGlobeProvider = provider;
+  }
+
+  // The two globe providers key a city by different fields -- three.js's
+  // experience.js.selectCity(id) takes globe-cities.json's own `id`;
+  // maplibre's map-experience.js.selectCity(slug) parses a slug out of a
+  // `/city/<slug>/` URL (see mountAtlasMapLibre's citySlugFromRecord,
+  // below) -- so this bridge cannot hand either provider the same
+  // primitive. `city` (the matched GlobeCity, from search.js's own
+  // findCityForRecord -- the SAME match that already returns `.slug`,
+  // see data-adapter.js's parseCity) carries both.
+  //
+  // BUGFIX (2026-08-16 follow-up, Robert): this used to just no-op when
+  // `heroGlobeHandle` was still null -- never mounted yet, mount threw, or
+  // the visitor is on an old iPad / has WebGL blocked / hit a data-load
+  // failure. Typing "Paris", picking Paris, and the page just sitting
+  // there is the same bug Robert reported, wearing a different hat: a path
+  // that quietly does nothing is worse than one that fails loudly, because
+  // nobody ever finds out. Delegates to globe/search.js's
+  // selectCityWithFallback, which falls back to navigating to the city's
+  // own real, crawlable page for EVERY reason the globe can't take the
+  // selection (not just "never mounted") -- see that function's own header
+  // comment for the full contract, including why it is safe to call again
+  // after the globe mounts late (no cached "was it ready" state -- it
+  // always reads `heroGlobeHandle`/`heroGlobeProvider` fresh).
+  function selectCityOnLiveGlobe(searchMod, id, city) {
+    searchMod.selectCityWithFallback({
+      id: id,
+      city: city,
+      globeHandle: heroGlobeHandle,
+      provider: heroGlobeProvider,
+      cityHrefFor: function (c) { return (c && c.slug) ? "city/" + c.slug + "/" : null; },
+      navigate: function (href) { window.location.href = href; },
+    });
+  }
+
+  // globe-cities.json -- the SAME file mountAtlasThreeGlobe already fetches
+  // -- rather than a third, bridge-specific city list. A small, independent
+  // fetch (this file is far smaller than search_index.json) rather than
+  // reaching into either provider's internal payload, so the bridge works
+  // identically regardless of which provider ends up live.
+  function loadHeroCitiesOnce() {
+    if (heroCities) return Promise.resolve(heroCities);
+    if (heroCitiesLoading) return heroCitiesLoading;
+    heroCitiesLoading = import("./globe/data-adapter.js").then(function (mod) {
+      return mod.loadGlobeCities({
+        url: "../data/comedy-atlas/globe-cities.json",
+        fetchImpl: function (url) { return fetch(url); },
+      });
+    }).then(function (payload) {
+      heroCities = (payload && payload.cities) || [];
+      return heroCities;
+    }).catch(function () {
+      heroCities = [];
+      return heroCities;
+    });
+    return heroCitiesLoading;
+  }
+
+  function initHeroSearchBridge() {
+    if (!window.ATLAS_GLOBE_ENABLED || !window.ATLAS_GLOBE_HERO) return;
+    var inputEl = document.getElementById("atlas-q");
+    if (!inputEl) return;
+    import("./globe/search.js").then(function (searchMod) {
+      var dropdownEl = document.getElementById("atlas-q-suggest");
+
+      function mountIt() {
+        if (heroSearchHandle) return;
+        heroSearchHandle = searchMod.mountGlobeSearch(inputEl, {
+          indexUrl: "../data/comedy-atlas/search_index.json",
+          dropdownEl: dropdownEl || undefined,
+          getCities: function () { return heroCities || []; },
+          onSelectCity: function (id, city) { selectCityOnLiveGlobe(searchMod, id, city); },
+          // Entity pages (comic/show/venue/festival/organizer) always
+          // navigate to their own page -- discoverability is not
+          // bookability (FABLE contract) -- the direct link must never be
+          // hidden behind a globe fly-to. Never sends the raw query text
+          // anywhere; only the already-built record's own url is used.
+          onSelectRecord: function (record) {
+            if (record && record.url) window.location.href = record.url;
+          },
+        });
+        loadHeroCitiesOnce();
+      }
+
+      function unmountIt() {
+        if (!heroSearchHandle) return;
+        heroSearchHandle.destroy();
+        heroSearchHandle = null;
+      }
+
+      // Re-evaluated on every matchMedia change (a browser window resize
+      // across the breakpoint, not just a device rotation -- Robert's iPad
+      // never actually crosses it in either orientation, but a desktop
+      // window resize can) so the "exactly one live search" invariant holds
+      // continuously, not just at first paint.
+      function sync() {
+        var width = window.innerWidth || document.documentElement.clientWidth || 0;
+        if (searchMod.resolveGlobeSearchOwner(width) === "hero") mountIt();
+        else unmountIt();
+      }
+
+      sync();
+      if (window.matchMedia) {
+        var mql = window.matchMedia("(min-width: " + searchMod.HERO_SEARCH_BREAKPOINT_PX + "px)");
+        var onChange = function () { sync(); };
+        if (mql.addEventListener) mql.addEventListener("change", onChange);
+        else if (mql.addListener) mql.addListener(onChange); // Safari <14
+      }
+    }).catch(function (e) {
+      // Same discipline as mountAtlasThreeGlobe's own .catch() just below:
+      // the hero search bridge failing to load must never break the rest
+      // of the page -- the plain GET form still works with zero JS.
+      if (window.console && console.warn) console.warn("Hero search bridge failed to mount:", e);
+    });
+  }
+
   // Hero counts line -- computed from the same files the globe and search
   // actually ship (contract: "no separately hard-coded marketing counts").
   // globe-cities.json = cities with live shows (the globe's own gate);
@@ -963,6 +1135,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var fb = root.querySelector(".atlas-hero-globe-fallback");
       if (fb) { fb.setAttribute("aria-hidden", "true"); }
       heroGlobeCounts();
+      initHeroSearchBridge();
     }
     // PROVIDER SWITCH (2026-08-01). "maplibre" is the real map (NASA Blue
     // Marble WMTS at world zoom, OpenFreeMap streets at city zoom, real
@@ -1025,6 +1198,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           onCitySelected: function (payload) { renderCityPanel(payload); },
           onVenueSelected: function (venue) { renderVenuePanel(payload_venue(venue)); }
         });
+        // Hands this provider's handle to the hero search bridge above, so
+        // a city chosen from `#atlas-q` (>=761px) can fly THIS map -- see
+        // "HERO SEARCH -> GLOBE BRIDGE"'s own header comment for why the
+        // two providers need different id shapes (slug here, not id).
+        setHeroGlobeHandle(handle, "maplibre");
 
         function payload_venue(v) { return v; }
 
@@ -1238,6 +1416,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           return "city/" + slug + "/";
         }
       });
+      // Hands this provider's handle to the hero search bridge above, so a
+      // city chosen from `#atlas-q` (>=761px) can fly THIS globe too when
+      // ?map=current is forcing the three.js rollback.
+      setHeroGlobeHandle(handle, "three");
       /* Read-only diagnostics handle. Exists so an automated browser check can
          assert the CAMERA actually stopped when a city is selected, rather than
          inferring it from a screenshot — the 2026-07-31 "globe keeps spinning"

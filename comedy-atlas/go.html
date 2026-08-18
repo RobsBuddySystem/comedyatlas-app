@@ -83,12 +83,70 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     return allowlist.indexOf(host) !== -1;
   }
 
+  // Build the URL the browser is actually sent to. PURE -- no DOM, no
+  // fetch, no globals -- so tests/test_go_html_partner_redirects_js.py can
+  // extract this exact source and run it under node.
+  //
+  // TWO affiliate mechanisms, applied in this order:
+  //   1. PARTNER_PARAMS  -- append the partner's query param to the
+  //      MERCHANT's own url (a direct arrangement, e.g. Eventbrite `aff`).
+  //   2. PARTNER_REDIRECTS -- wrap the whole thing in an affiliate
+  //      NETWORK's redirect (AWIN cread.php, Impact, Partnerize). The
+  //      browser MUST land on the network's domain first or no attribution
+  //      cookie is ever set and the sale pays nothing, however correct the
+  //      link looks. The merchant url is percent-encoded into the
+  //      template's {url} placeholder, so a destination carrying its own
+  //      query string is not truncated at the network's first `&`.
+  //
+  // Params go on the INSIDE (they travel encoded within the network's
+  // destination parameter); the wrap is always outermost and last.
+  //
+  // SECURITY: this function never decides whether a destination is
+  // allowed. The caller validates the merchant host against
+  // ALLOWED_TICKET_HOSTS BEFORE calling, so a wrap can only ever be
+  // applied to an already-approved destination and this page cannot be
+  // turned into an open redirect wearing a network domain as cover.
+  function buildFinalUrl(rawUrl, partnerParams, partnerRedirects) {
+    var u = new URL(rawUrl);
+    var host = u.hostname.toLowerCase().replace(/^www\./, '');
+
+    var globalParams = (partnerParams || {})['*'] || {};
+    var hostParams = (partnerParams || {})[host] || {};
+    Object.keys(globalParams).concat(Object.keys(hostParams)).forEach(function (k) {
+      var v = (hostParams[k] !== undefined) ? hostParams[k] : globalParams[k];
+      if (!u.searchParams.has(k)) u.searchParams.set(k, v);
+    });
+
+    var finalUrl = u.toString();
+
+    var template = (partnerRedirects || {})[host];
+    if (template && template.indexOf('{url}') !== -1) {
+      // Idempotency: if we are already ON the network's domain this link
+      // has been wrapped before. Wrapping again yields a dead link, not a
+      // half-paying one, and go.html re-runs on every click.
+      var networkHost = '';
+      try {
+        networkHost = new URL(template.split('{url}')[0]).hostname
+          .toLowerCase().replace(/^www\./, '');
+      } catch (_) {
+        return finalUrl;  // malformed template -- never break the link
+      }
+      if (host !== networkHost) {
+        finalUrl = template.replace('{url}', encodeURIComponent(finalUrl));
+      }
+    }
+
+    return finalUrl;
+  }
+
   var allowlist = [];
   var partnerParams = {};
+  var partnerRedirects = {};
   try {
     var cfg = await fetch('partner-config.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
     allowlist = cfg.ALLOWED_TICKET_HOSTS || [];
     partnerParams = cfg.PARTNER_PARAMS || {};
+    partnerRedirects = cfg.PARTNER_REDIRECTS || {};
   } catch (_) {
     // No config reachable -- fail closed (empty allowlist refuses every host).
   }
@@ -130,16 +188,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     return;
   }
 
-  // Global partner params (empty until a partnership lands), plus any
-  // event/host-specific override under partnerParams[hostname].
-  var globalParams = partnerParams['*'] || {};
-  var hostParams = partnerParams[host] || {};
-  Object.keys(globalParams).concat(Object.keys(hostParams)).forEach(function (k) {
-    var v = (hostParams[k] !== undefined) ? hostParams[k] : globalParams[k];
-    if (!u.searchParams.has(k)) u.searchParams.set(k, v);
-  });
-
-  var finalUrl = u.toString();
+  // Host is validated above; only now is the money layer applied.
+  var finalUrl = buildFinalUrl(u.toString(), partnerParams, partnerRedirects);
 
   showName.textContent = 'Taking you to: ' + (event.title || 'the ticket page');
   manualLink.href = finalUrl;

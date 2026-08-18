@@ -876,8 +876,19 @@ export function mount(rootEl, options) {
         indexUrl: opts.searchIndexUrl || DEFAULT_SEARCH_INDEX_URL,
         getCities: () => currentPayload.cities,
         onSelectCity: (id) => selectCity(id),
-        onSelectRecord: (_record, city) => {
-          if (city) selectCity(city.id);
+        // BUGFIX (2026-08-16, globe-first hero): this used to fly to the
+        // record's city (if mapped) and otherwise do nothing at all -- a
+        // comic/show/venue/festival/organizer result had no way to reach
+        // its own page from here. "Discoverability is not bookability"
+        // (FABLE_REVIEW_GLOBE_FIRST_HERO_2026-08-14.md): every non-city
+        // result must open ITS OWN page. Mirrors index.html's maplibre
+        // provider, whose own topbar search (`selectSearchRecord`) has
+        // navigated via `record.url` for every non-city type since it was
+        // built -- one decision, now consistent across both globe providers.
+        onSelectRecord: (record) => {
+          if (record && record.url && typeof window !== 'undefined') {
+            window.location.href = record.url;
+          }
         },
       });
     }
