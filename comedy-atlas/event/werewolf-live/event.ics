@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:werewolf-live@comedyatlas.app
+DTSTAMP:20261014T190000Z
+DTSTART:20261014T190000Z
+DTEND:20261014T210000Z
+SUMMARY:Werewolf Live
+LOCATION:Badger Badger\, 543 Norwood Road\, London
+DESCRIPTION:Good Ship Comedy & Choose SE27 are bringing world-class comedy 
+ back to West Norwood this October. Join us for a week-long carnival of laug
+ hter\nMore info: https://comedyatlas.app/comedy-atlas/event/werewolf-live/
+URL:https://comedyatlas.app/comedy-atlas/event/werewolf-live/
+END:VEVENT
+END:VCALENDAR

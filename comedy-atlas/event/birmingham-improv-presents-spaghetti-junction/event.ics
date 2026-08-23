@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:birmingham-improv-presents-spaghetti-junction@comedyatlas.app
+DTSTAMP:20261007T183000Z
+DTSTART:20261007T183000Z
+DTEND:20261007T203000Z
+SUMMARY:Birmingham Improv presents Spaghetti Junction
+LOCATION:1000 Trades\, 16 Frederick Street\, Birmingham
+DESCRIPTION:Spaghetti Junction sees a never-before-assembled cast of improv
+ isers perform never-before-seen scenes based on never-before-prompted promp
+ ts\nMore info: https://comedyatlas.app/comedy-atlas/event/birmingham-improv
+ -presents-spaghetti-junction/
+URL:https://comedyatlas.app/comedy-atlas/event/birmingham-improv-presents-s
+ paghetti-junction/
+END:VEVENT
+END:VCALENDAR

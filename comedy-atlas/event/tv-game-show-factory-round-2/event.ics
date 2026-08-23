@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tv-game-show-factory-round-2@comedyatlas.app
+DTSTAMP:20260916T183000Z
+DTSTART:20260916T183000Z
+DTEND:20260916T203000Z
+SUMMARY:TV Game Show Factory - Round 2
+LOCATION:Glasgow
+DESCRIPTION:Join us at TV Game Show Factory for a fun\, live experience mak
+ ing and playing your fave game show moments\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/tv-game-show-factory-round-2/
+URL:https://comedyatlas.app/comedy-atlas/event/tv-game-show-factory-round-2
+ /
+END:VEVENT
+END:VCALENDAR

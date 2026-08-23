@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:closed-for-private-event-30531@comedyatlas.app
+DTSTAMP:20270225T000000Z
+DTSTART:20270225T000000Z
+DTEND:20270225T020000Z
+SUMMARY:Closed for Private Event
+LOCATION:Louisville
+DESCRIPTION:Closed for private event. Check out the website for all of the 
+ amazing shows we have coming up!\nMore info: https://comedyatlas.app/comedy
+ -atlas/event/closed-for-private-event-30531/
+URL:https://comedyatlas.app/comedy-atlas/event/closed-for-private-event-305
+ 31/
+END:VEVENT
+END:VCALENDAR

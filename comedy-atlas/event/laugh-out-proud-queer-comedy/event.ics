@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-out-proud-queer-comedy@comedyatlas.app
+DTSTAMP:20260829T183000Z
+DTSTART:20260829T183000Z
+DTEND:20260829T203000Z
+SUMMARY:Laugh Out Proud - Queer Comedy
+LOCATION:Area Manchester\, 50 Sackville Street\, Manchester
+DESCRIPTION:LAUGH OUT PROUD IS BACK for Manchester Village Pride on Saturda
+ y 29th August.\nMore info: https://comedyatlas.app/comedy-atlas/event/laugh
+ -out-proud-queer-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-out-proud-queer-comedy
+ /
+END:VEVENT
+END:VCALENDAR

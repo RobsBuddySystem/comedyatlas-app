@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:golden-mic-comedy@comedyatlas.app
+DTSTAMP:20261008T180000Z
+DTSTART:20261008T180000Z
+DTEND:20261008T200000Z
+SUMMARY:Golden Mic Comedy
+LOCATION:Big Belly Bar And Comedy Club Southbank\, 30 Stamford Street\, Lon
+ don
+DESCRIPTION:Giving you that real raw stand up experience\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/golden-mic-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/golden-mic-comedy/
+END:VEVENT
+END:VCALENDAR

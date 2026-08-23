@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-night-30759@comedyatlas.app
+DTSTAMP:20261028T230000Z
+DTSTART:20261028T230000Z
+DTEND:20261029T010000Z
+SUMMARY:Open Mic Night
+LOCATION:Louisville
+DESCRIPTION:Feature  The best and worst Louisville has to offer.\n\nTicket
+ s:  Free!\n\nShows starting at 9:30pm or later are 21+\, and shows startin
+ g earlier are 18+ with a valid ID.\n\nShow/Doors Times\n\n7:00 PM Show/6:00
+  PM Doors\nMore info: https://comedyatlas.app/comedy-atlas/event/open-mic-n
+ ight-30759/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-night-30759/
+END:VEVENT
+END:VCALENDAR

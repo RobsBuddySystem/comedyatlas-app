@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-late-night-comedy-30858@comedyatlas.app
+DTSTAMP:20260906T020000Z
+DTSTART:20260906T020000Z
+DTEND:20260906T040000Z
+SUMMARY:Saturday Late Night Comedy
+LOCATION:New York
+DESCRIPTION:Prime Time Comedy!FEATURING SPECIAL GUEST COMEDIANS...(Lineup c
+ oming soon)\nMore info: https://comedyatlas.app/comedy-atlas/event/saturday
+ -late-night-comedy-30858/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-late-night-comedy-3
+ 0858/
+END:VEVENT
+END:VCALENDAR

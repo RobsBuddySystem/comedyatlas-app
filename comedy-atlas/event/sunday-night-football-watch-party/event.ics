@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sunday-night-football-watch-party@comedyatlas.app
+DTSTAMP:20261123T012000Z
+DTSTART:20261123T012000Z
+DTEND:20261123T032000Z
+SUMMARY:Sunday Night Football Watch Party
+LOCATION:Tacoma
+DESCRIPTION:Come catch the Sunday Night Football game with the best vibe in
+  the city!\nMore info: https://comedyatlas.app/comedy-atlas/event/sunday-ni
+ ght-football-watch-party/
+URL:https://comedyatlas.app/comedy-atlas/event/sunday-night-football-watch-
+ party/
+END:VEVENT
+END:VCALENDAR

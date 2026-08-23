@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-night-30833@comedyatlas.app
+DTSTAMP:20261126T010000Z
+DTSTART:20261126T010000Z
+DTEND:20261126T030000Z
+SUMMARY:Open Mic Night
+LOCATION:Appleton
+DESCRIPTION:Featuring:  The best and worst Appleton has to offer.\n\nTicke
+ ts:  Free!\n\nThese shows are 18+. Valid ID is required.\n\nShow/Doors Tim
+ es\n\n7:00 PM Show/6:00 PM Doors\nMore info: https://comedyatlas.app/comedy
+ -atlas/event/open-mic-night-30833/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-night-30833/
+END:VEVENT
+END:VCALENDAR

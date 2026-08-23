@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bring-the-laughter-london@comedyatlas.app
+DTSTAMP:20270128T180000Z
+DTSTART:20270128T180000Z
+DTEND:20270128T200000Z
+SUMMARY:Bring The Laughter London
+LOCATION:The Top Secret Comedy Club\, 170a Drury Lane\, London\, London
+DESCRIPTION:If you ve joined us before\, you already know the vibe... and i
+ f not\, this is the perfect one to start with.\nMore info: https://comedyat
+ las.app/comedy-atlas/event/bring-the-laughter-london/
+URL:https://comedyatlas.app/comedy-atlas/event/bring-the-laughter-london/
+END:VEVENT
+END:VCALENDAR

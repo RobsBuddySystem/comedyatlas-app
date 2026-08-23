@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wednesday-comedy-show-comedy-freaks-29672@comedyatlas.app
+DTSTAMP:20261125T190000Z
+DTSTART:20261125T190000Z
+DTEND:20261125T210000Z
+SUMMARY:Wednesday Comedy Show - Comedy Freaks
+LOCATION:Comedy Freaks\, 26 Caledonian Rd\, London
+DESCRIPTION:Stand-up comedy that actually delivers. Stacked lineups\, drink
+  deals\, and a different lineup every week.\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/wednesday-comedy-show-comedy-freaks-29672/
+URL:https://comedyatlas.app/comedy-atlas/event/wednesday-comedy-show-comedy
+ -freaks-29672/
+END:VEVENT
+END:VCALENDAR

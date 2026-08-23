@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:desi-central-comedy-show-manchester@comedyatlas.app
+DTSTAMP:20260913T180000Z
+DTSTART:20260913T180000Z
+DTEND:20260913T200000Z
+SUMMARY:Desi Central Comedy Show Manchester
+LOCATION:Frog and Bucket Comedy Club\, 102 Oldham Street\, Manchester
+DESCRIPTION:Round up your friends & family and join us for an uplifting nig
+ ht of laughter with this infamous tour\nMore info: https://comedyatlas.app/
+ comedy-atlas/event/desi-central-comedy-show-manchester/
+URL:https://comedyatlas.app/comedy-atlas/event/desi-central-comedy-show-man
+ chester/
+END:VEVENT
+END:VCALENDAR

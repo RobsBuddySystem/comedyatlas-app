@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:modi@comedyatlas.app
+DTSTAMP:20270131T210000Z
+DTSTART:20270131T210000Z
+DTEND:20270131T230000Z
+SUMMARY:Modi
+LOCATION:Louisville
+DESCRIPTION:This show is ages 10+\n\nSeats only guaranteed until showtime. 
+ Ticket price is more expensive at the door (if any remain).\n\nPremium seat
+ ing is in the front couple of rows. GA is first come\, first serve.\n\nTher
+ e are no refunds on any ticket purchases.\n\n2-item minimum in showroom . T
+ his can be food\, alcohol\, or non-alcoholic beverages.\n\nShow/Doors Times
+ \n\n4:00 PM Show/3:00 PM Doors\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/modi/
+URL:https://comedyatlas.app/comedy-atlas/event/modi/
+END:VEVENT
+END:VCALENDAR

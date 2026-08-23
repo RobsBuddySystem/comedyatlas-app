@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:good-ship-comedy-feat-sean-mcloughlin@comedyatlas.app
+DTSTAMP:20261112T200000Z
+DTSTART:20261112T200000Z
+DTEND:20261112T220000Z
+SUMMARY:Good Ship Comedy feat. Sean McLoughlin
+LOCATION:Swimmer At The Grafton\, 13 Eburne Road\, London
+DESCRIPTION:Good Ship Comedy is your friendly neighbourhood comedy club fea
+ turing some of the finest comics from the UK and international festival cir
+ cuit.\nMore info: https://comedyatlas.app/comedy-atlas/event/good-ship-come
+ dy-feat-sean-mcloughlin/
+URL:https://comedyatlas.app/comedy-atlas/event/good-ship-comedy-feat-sean-m
+ cloughlin/
+END:VEVENT
+END:VCALENDAR

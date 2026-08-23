@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vauxhall-comedy@comedyatlas.app
+DTSTAMP:20260904T184500Z
+DTSTART:20260904T184500Z
+DTEND:20260904T204500Z
+SUMMARY:Vauxhall Comedy
+LOCATION:The Garden Vauxhall\, 6 South Lambeth Place\, London
+DESCRIPTION:South London's Top Comedy Club\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/vauxhall-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/vauxhall-comedy/
+END:VEVENT
+END:VCALENDAR

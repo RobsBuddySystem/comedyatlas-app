@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hot-comedy-29408@comedyatlas.app
+DTSTAMP:20260825T190000Z
+DTSTART:20260825T190000Z
+DTEND:20260825T210000Z
+SUMMARY:Hot Comedy
+LOCATION:Hot Toddy's\, 48-50 Camden High Street\, NW1 0LT\, London
+DESCRIPTION:The HOTTEST comedy show in town is lighting up Hot Toddy - Camd
+ en's home of unforgettable live entertainment. Expect a night of explosive 
+ stand-up.\nMore info: https://comedyatlas.app/comedy-atlas/event/hot-comedy
+ -29408/
+URL:https://comedyatlas.app/comedy-atlas/event/hot-comedy-29408/
+END:VEVENT
+END:VCALENDAR

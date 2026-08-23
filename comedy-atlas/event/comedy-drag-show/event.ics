@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-drag-show@comedyatlas.app
+DTSTAMP:20261030T193000Z
+DTSTART:20261030T193000Z
+DTEND:20261030T213000Z
+SUMMARY:Comedy Drag Show
+LOCATION:Arta\, 62 Albion Street\, Glasgow
+DESCRIPTION:Get ready for a night of glamour\, glitter\, and pure entertain
+ ment\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-drag-sho
+ w/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-drag-show/
+END:VEVENT
+END:VCALENDAR

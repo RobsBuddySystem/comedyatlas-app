@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-drag-bingo@comedyatlas.app
+DTSTAMP:20260829T130000Z
+DTSTART:20260829T130000Z
+DTEND:20260829T150000Z
+SUMMARY:Comedy Drag Bingo
+LOCATION:Arta\, 62 Albion Street\, Glasgow
+DESCRIPTION:Get ready for a crazy afternoon of Bingo with wild twists\, cra
+ zy prizes\, and tons of fun hosted by our very own Drag Queen Barbra La Bus
+ h\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-drag-bingo/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-drag-bingo/
+END:VEVENT
+END:VCALENDAR

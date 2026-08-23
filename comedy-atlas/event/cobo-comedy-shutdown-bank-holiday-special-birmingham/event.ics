@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-bank-holiday-special-birmingham@comedyatlas.app
+DTSTAMP:20260830T180000Z
+DTSTART:20260830T180000Z
+DTEND:20260830T200000Z
+SUMMARY:COBO Comedy Shutdown Bank Holiday Special - Birmingham
+LOCATION:The Glee Club Birmingham\, 70 Hurst Street\, Birmingham
+DESCRIPTION:COBO: Comedy Shutdown is back for a huge Bank Holiday Special\,
+  bringing you an unforgettable night of live comedy and non-stop laughter.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown
+ -bank-holiday-special-birmingham/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-bank-ho
+ liday-special-birmingham/
+END:VEVENT
+END:VCALENDAR

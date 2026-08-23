@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sikisa-serving-justice@comedyatlas.app
+DTSTAMP:20261012T190000Z
+DTSTART:20261012T190000Z
+DTEND:20261012T210000Z
+SUMMARY:Sikisa - Serving Justice
+LOCATION:The Great North Wood\, 3 Knights Hill\, London
+DESCRIPTION:From October 10th to October 17th the 3rd ChooseSE27 Comedy Fes
+ tival returns to West Norwood.\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/sikisa-serving-justice/
+URL:https://comedyatlas.app/comedy-atlas/event/sikisa-serving-justice/
+END:VEVENT
+END:VCALENDAR

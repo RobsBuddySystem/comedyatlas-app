@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:good-things-comedy-club-30104@comedyatlas.app
+DTSTAMP:20260917T183000Z
+DTSTART:20260917T183000Z
+DTEND:20260917T203000Z
+SUMMARY:Good Things Comedy Club
+LOCATION:1000 Trades\, 16 Frederick Street\, Birmingham
+DESCRIPTION:A fun and inclusive comedy night\, packed with the best up-and-
+ coming acts from around the comedy circuit.\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/good-things-comedy-club-30104/
+URL:https://comedyatlas.app/comedy-atlas/event/good-things-comedy-club-3010
+ 4/
+END:VEVENT
+END:VCALENDAR

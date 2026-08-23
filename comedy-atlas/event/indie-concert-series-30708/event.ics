@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:indie-concert-series-30708@comedyatlas.app
+DTSTAMP:20260823T220000Z
+DTSTART:20260823T220000Z
+DTEND:20260824T000000Z
+SUMMARY:Indie Concert Series
+LOCATION:New York
+DESCRIPTION:Performances by a slate of local indie artists every SundayCome
+  support Brooklyn's indie/local music scene and jam out to tunes across gen
+ res. Grab a drink and hang out: Who knows what gems you might discover!\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/indie-concert-series-30
+ 708/
+URL:https://comedyatlas.app/comedy-atlas/event/indie-concert-series-30708/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:monday-night-football-watch-party@comedyatlas.app
+DTSTAMP:20261020T001500Z
+DTSTART:20261020T001500Z
+DTEND:20261020T021500Z
+SUMMARY:Monday Night Football Watch Party
+LOCATION:Tacoma
+DESCRIPTION:Monday Night Football Watch Party!\nMore info: https://comedyat
+ las.app/comedy-atlas/event/monday-night-football-watch-party/
+URL:https://comedyatlas.app/comedy-atlas/event/monday-night-football-watch-
+ party/
+END:VEVENT
+END:VCALENDAR

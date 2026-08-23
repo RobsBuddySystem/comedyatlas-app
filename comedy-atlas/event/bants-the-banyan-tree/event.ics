@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bants-the-banyan-tree@comedyatlas.app
+DTSTAMP:20260911T190000Z
+DTSTART:20260911T190000Z
+DTEND:20260911T210000Z
+SUMMARY:BANTS [handle removed] Banyan Tree
+LOCATION:The Banyan Tree\, Unit 3 MOHO Building\, Ellesmere st\, Manchester
+DESCRIPTION:A special show of comedy at The Banyan Tree with Club 9 Comedy.
+  FREE entry as always and some of the best comedians around\, JOIN US\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/bants-the-banyan-tree/
+URL:https://comedyatlas.app/comedy-atlas/event/bants-the-banyan-tree/
+END:VEVENT
+END:VCALENDAR
