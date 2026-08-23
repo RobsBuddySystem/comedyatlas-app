@@ -1,12 +1,5 @@
 [
   {
-    "event_id": 478,
-    "id": 1,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 590,
     "id": 3,
     "is_paid": null,
@@ -35,13 +28,6 @@
     "spot_role": null
   },
   {
-    "event_id": 706,
-    "id": 14,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 710,
     "id": 15,
     "is_paid": null,
@@ -49,50 +35,8 @@
     "spot_role": null
   },
   {
-    "event_id": 788,
-    "id": 16,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 490,
     "id": 20,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 505,
-    "id": 25,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 553,
-    "id": 31,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 536,
-    "id": 35,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 756,
-    "id": 38,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 760,
-    "id": 39,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -126,20 +70,6 @@
     "spot_role": null
   },
   {
-    "event_id": 759,
-    "id": 62,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 617,
-    "id": 65,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 626,
     "id": 68,
     "is_paid": null,
@@ -149,34 +79,6 @@
   {
     "event_id": 768,
     "id": 69,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 631,
-    "id": 70,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 679,
-    "id": 84,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 718,
-    "id": 87,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 735,
-    "id": 90,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -203,27 +105,6 @@
     "spot_role": null
   },
   {
-    "event_id": 902,
-    "id": 109,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 903,
-    "id": 110,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 914,
-    "id": 112,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 952,
     "id": 119,
     "is_paid": null,
@@ -233,20 +114,6 @@
   {
     "event_id": 983,
     "id": 129,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 1006,
-    "id": 135,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 1018,
-    "id": 137,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -343,43 +210,8 @@
     "spot_role": null
   },
   {
-    "event_id": 5753,
-    "id": 287,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 5754,
-    "id": 288,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 5758,
-    "id": 289,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 5780,
     "id": 294,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 5788,
-    "id": 297,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 5798,
-    "id": 299,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -394,13 +226,6 @@
   {
     "event_id": 5814,
     "id": 302,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 5829,
-    "id": 306,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -429,13 +254,6 @@
   {
     "event_id": 9211,
     "id": 494,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 10364,
-    "id": 505,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
