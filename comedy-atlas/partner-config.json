@@ -70,10 +70,14 @@
     "www-vermontcomedyclub-com.seatengine.com"
   ],
   "PARTNER_PARAMS": {
-    "_comment": "'*' applies to every outbound host; a bare hostname key applies only to that host and is merged over '*'. Empty today by design (no affiliate deal exists yet, D1) -- populate then no page regeneration is needed since go.html reads this file at click time.",
+    "_comment": "'*' applies to every outbound host; a bare hostname key applies only to that host and is merged over '*'. Populated from approved affiliate_programs rows (Skiddle, partner_id 15788, approved 2026-08-19) -- go.html reads this file at click time, so no page regeneration is needed when a deal changes. Every host with a non-empty block here MUST have disclosure text in PARTNER_DISCLOSURES; tests enforce it.",
     "*": {},
     "skiddle.com": {
       "sktag": "15788"
     }
+  },
+  "PARTNER_DISCLOSURES": {
+    "_comment": "Disclosure shown by go.html when, and only when, the money layer actually acts on that destination (a non-empty PARTNER_PARAMS block or a PARTNER_REDIRECTS wrap). Text is copied from affiliate_programs.disclosure_text for each approved programme -- that column is the source of truth and is CHECK-constrained to exist for any approved row. '*' is the fallback for an earning host with no host-specific text.",
+    "skiddle.com": "COMEDY ATLAS may earn a commission on tickets purchased through this Skiddle link, at no extra cost to you."
   }
 }
