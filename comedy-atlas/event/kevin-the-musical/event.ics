@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-the-musical@comedyatlas.app
+DTSTAMP:20260824T122000Z
+DTSTART:20260824T122000Z
+DTEND:20260824T142000Z
+SUMMARY:Kevin! [The Musical]
+LOCATION:Edinburgh
+DESCRIPTION:Described as High School Musical on crack! Kevin! [The Musical]
+  is an up-and-coming dark comedy show written by Will Sharland. It follows
+  an exchange student from England\, named Kevin\, who comes to America inte
+ nding to find out what the USA is really like in 2026. Kevin\, however\, fi
+ nds himself trapped inside the world of a cheesy high school musical\, whic
+ h only becomes more absurd and nightmarish during his time across the pond.
+  Kevin is unsure who to trust as everyone seems crazy\, though it might be 
+ Kevin himself\, or something else\, that is actually going insane...\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/kevin-the-musical/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-the-musical/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yerrrlywood@comedyatlas.app
+DTSTAMP:20260827T233000Z
+DTSTART:20260827T233000Z
+DTEND:20260828T013000Z
+SUMMARY:Yerrrlywood
+LOCATION:New York
+DESCRIPTION:Yerrrlywood is a hit show at the Comedy Store which features th
+ e best comedians from the east coast. We combine half of the lineup from th
+ e east coast and half from the west coast.\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/yerrrlywood/
+URL:https://comedyatlas.app/comedy-atlas/event/yerrrlywood/
+END:VEVENT
+END:VCALENDAR
