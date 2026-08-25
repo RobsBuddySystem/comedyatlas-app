@@ -15,6 +15,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .msg p{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.6}
 .spinner{width:32px;height:32px;border:3px solid #1e2a3a;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
 @keyframes spin{to{transform:rotate(360deg)}}
+.disclosure{font-size:13px;color:#9aa7b4;margin:-12px 0 20px;line-height:1.5;border-top:1px solid #1e2a3a;padding-top:12px}
 .fallback{font-size:13px;color:#556;margin-top:16px}
 .fallback a{color:var(--gold)}
 </style>
@@ -24,6 +25,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="spinner"></div>
   <h1>Taking you to the box office…</h1>
   <p id="show-name">Loading ticket link…</p>
+  <p id="affiliate-disclosure" class="disclosure" hidden></p>
   <div class="fallback">If nothing happens, <a id="manual-link" href="/comedy-atlas/">go back to COMEDY ATLAS</a>.</div>
 </div>
 <script>
@@ -139,14 +141,58 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     return finalUrl;
   }
 
+  // The disclosure that must accompany a link we are paid for. PURE -- no
+  // DOM, no fetch, no globals -- so tests/test_go_html_affiliate_disclosure_js.py
+  // can extract this exact source and run it under node.
+  //
+  // The rule, and the reason it is a function rather than a line of copy:
+  // the disclosure has to be true in BOTH directions. Most ticket links on
+  // COMEDY ATLAS are a club's own box office and earn us nothing -- putting
+  // a commission notice on those would be a lie, and there are thousands of
+  // them. So this returns text only when the money layer actually acted on
+  // THIS destination: a non-empty param block (host-specific or the global
+  // '*'), or a network redirect wrap. Anything else returns ''.
+  //
+  // When we do earn and no text is configured, it falls back to a generic
+  // always-true sentence rather than to silence: silence is the exact gap
+  // this exists to close (live-verified 2026-08-24 -- 744 tagged Skiddle
+  // links, disclosure nowhere on the site).
+  function disclosureFor(host, partnerParams, partnerRedirects, partnerDisclosures) {
+    var h = String(host || '').toLowerCase().replace(/^www\./, '');
+    if (!h || h === '*' || h === '_comment') return '';
+
+    var params = partnerParams || {};
+    var globalParams = params['*'] || {};
+    var hostParams = params[h] || {};
+    var earns =
+      (globalParams && typeof globalParams === 'object' && Object.keys(globalParams).length > 0) ||
+      (hostParams && typeof hostParams === 'object' && Object.keys(hostParams).length > 0) ||
+      Boolean((partnerRedirects || {})[h]);
+    if (!earns) return '';
+
+    var texts = partnerDisclosures || {};
+    return texts[h] || texts['*'] ||
+      'This is an affiliate link: COMEDY ATLAS may earn a commission on ' +
+      'tickets purchased through it, at no extra cost to you.';
+  }
+
+  // The Atlas API, which owns affiliate_clicks. Note this is NOT
+  // atlas-track.js's API_BASE (api.pariscomedy.com): that is the first-party
+  // pageview beacon, a different system with a different database. Aggregate
+  // pageview analytics and the affiliate revenue ledger are deliberately kept
+  // apart -- see docs/adr/025-affiliate-network-redirects.md.
+  var ATLAS_API_BASE = 'https://api.comedyatlas.app';
+
   var allowlist = [];
   var partnerParams = {};
   var partnerRedirects = {};
+  var partnerDisclosures = {};
   try {
     var cfg = await fetch('partner-config.json', { cache: 'no-store' }).then(function (r) { return r.json(); });
     allowlist = cfg.ALLOWED_TICKET_HOSTS || [];
     partnerParams = cfg.PARTNER_PARAMS || {};
     partnerRedirects = cfg.PARTNER_REDIRECTS || {};
+    partnerDisclosures = cfg.PARTNER_DISCLOSURES || {};
   } catch (_) {
     // No config reachable -- fail closed (empty allowlist refuses every host).
   }
@@ -195,9 +241,50 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   manualLink.href = finalUrl;
   manualLink.textContent = 'click here to go directly';
 
+  // Disclose BEFORE the hop, and hold the redirect long enough for the
+  // sentence to be readable. A disclosure that flashes past in 300ms is a
+  // disclosure in the source and nowhere else; the pause is the whole point
+  // of showing it here. Links we earn nothing on are unaffected -- they get
+  // no text and keep the original 300ms.
+  // Record the click in the revenue ledger. This is the ONLY thing that ever
+  // puts a row in affiliate_clicks: log_click() lives in Postgres-land and
+  // this page is static, so POST /affiliate/click is the bridge between them.
+  //
+  // Fire-and-forget by design. keepalive lets the request outlive the
+  // navigation that is about to happen, and every failure path is swallowed --
+  // a ledger that is down, undeployed, or blocked must never cost a visitor
+  // their ticket link. The redirect timing below does not wait on this.
+  //
+  // The body carries only the event id and the destination host. The server
+  // re-derives the programme, the match against the event's own stored URL,
+  // and was_tracked from its own data -- see routes_affiliate.py for why it
+  // cannot trust any of this.
+  try {
+    if (eventId) {
+      fetch(ATLAS_API_BASE + '/affiliate/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ event_id: Number(eventId), dest: host }),
+        keepalive: true,
+        mode: 'cors',
+      }).catch(function () { /* ledger unavailable -- never block the click */ });
+    }
+  } catch (_) { /* no fetch, or a blocked request -- same, ignore */ }
+
+  var disclosureText = disclosureFor(host, partnerParams, partnerRedirects, partnerDisclosures);
+  var redirectDelayMs = 300;
+  if (disclosureText) {
+    var discEl = document.getElementById('affiliate-disclosure');
+    if (discEl) {
+      discEl.textContent = disclosureText;
+      discEl.hidden = false;
+    }
+    redirectDelayMs = 1800;
+  }
+
   setTimeout(function () {
     window.location.href = finalUrl;
-  }, 300);
+  }, redirectDelayMs);
 })();
 </script>
 <script src="atlas-track.js" defer></script>

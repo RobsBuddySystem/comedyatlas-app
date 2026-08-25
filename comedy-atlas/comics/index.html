@@ -434,12 +434,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
   <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
        default identity-first view; Next on stage is a date-first view of
-       only the 150 comics with a real upcoming date. Hidden with
+       only the 149 comics with a real upcoming date. Hidden with
        the rest of the toolbar until JS can act on it -- with JS off the
        A-Z view (which needs no script at all) is the whole page. -->
   <div class="view-row" role="group" aria-label="Choose a view">
     <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
-    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(150)</span></button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(149)</span></button>
   </div>
   <details id="comics-facets">
     <summary>Filters</summary>
@@ -460,8 +460,8 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     </div>
     <div class="facet-row" role="group" aria-label="Filter by activity">
       <span class="facet-label">Activity</span>
-      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(150)</span></button>
-      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(133)</span></button>
+      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(149)</span></button>
+      <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(132)</span></button>
       <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(2)</span></button>
     </div>
   </details>
@@ -17010,12 +17010,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/sam-see/" class="comic-card" data-city="Edinburgh" data-name="sam see" data-upcoming="1" data-festival="1">
+<a href="/comedy-atlas/comic/sam-see/" class="comic-card" data-city="Edinburgh" data-name="sam see" data-upcoming="0">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam See</div>
-    <div class="comic-city">Next in Edinburgh</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/sam-simmons/" class="comic-card" data-city="" data-name="sam simmons" data-upcoming="0">
@@ -20288,7 +20288,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </div>
 <div id="next-view" hidden>
 <section class="next-group" id="next-on-stage">
-  <h2 class="letter-heading">Next on stage <span class="letter-count">(150)</span></h2>
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(149)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/struan-logan/" class="next-card" data-city="Edinburgh" data-name="struan logan" data-upcoming="1" data-festival="1">
   <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9786_main.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -20799,14 +20799,6 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-name">John Smith</div>
     <div class="comic-city">Edinburgh</div>
     <div class="comic-count">Sun, Aug 9 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/sam-see/" class="next-card" data-city="Edinburgh" data-name="sam see" data-upcoming="1" data-festival="1">
-  <img class="comic-thumb" src="https://grubbygibbon.com/edinburgh/images/show_9826_main.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Sam See</div>
-    <div class="comic-city">Edinburgh</div>
-    <div class="comic-count">Mon, Aug 10 2026</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/tom-lawrinson/" class="next-card" data-city="Edinburgh" data-name="tom lawrinson" data-upcoming="1" data-festival="1">
@@ -21515,7 +21507,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // coalesced into a single animation frame.
 (function () {
   var TOTAL = 2463;
-  var NEXT_TOTAL = 150;
+  var NEXT_TOTAL = 149;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');
