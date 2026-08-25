@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:murder-she-hoped@comedyatlas.app
+DTSTAMP:20260825T122000Z
+DTSTART:20260825T122000Z
+DTEND:20260825T125000Z
+SUMMARY:Murder She Hoped
+LOCATION:Edinburgh
+DESCRIPTION:Ilana Rubin's show Murder She Hoped is like a crime procedural 
+ if Dick Wolf were obsessed with receipts and data points. Largely against h
+ er will\, she notices every detail\, connects the dots and chases the truth
+  no matter the cost. She turns the chaos and injurious misadventures into a
+ n investigation you won't see coming. Watch the red strings come together.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/murder-she-hoped/
+URL:https://comedyatlas.app/comedy-atlas/event/murder-she-hoped/
+END:VEVENT
+END:VCALENDAR
