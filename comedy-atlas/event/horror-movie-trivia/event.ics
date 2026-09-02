@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:horror-movie-trivia@comedyatlas.app
+DTSTAMP:20261023T000000Z
+DTSTART:20261023T000000Z
+DTEND:20261023T020000Z
+SUMMARY:Horror Movie Trivia
+LOCATION:Tulsa
+DESCRIPTION:Tickets: FREE! Make sure to RSVP to save your team a spot!\n\nT
+ rivia is 13+\n\nShow/Doors Times\n\n7:00 PM Show/6:00 PM Doors\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/horror-movie-trivia/
+URL:https://comedyatlas.app/comedy-atlas/event/horror-movie-trivia/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-liu-headlines@comedyatlas.app
+DTSTAMP:20260913T230000Z
+DTSTART:20260913T230000Z
+DTEND:20260914T010000Z
+SUMMARY:Peter Liu Headlines!
+LOCATION:New York
+DESCRIPTION:Peter Liu is a New York based comedian who has opened for Ronny
+  Chieng and has been featured on the New York and Boston comedy festivals\,
+  SFsketchfest\, and Amazon Prime. His social media channels have amassed ov
+ er 100k followers. He performs regularly at New York Comedy Club and headli
+ nes clubs and colleges (Harvard\, MIT\, Brown\, USC etc) across the countr
+ y.\nMore info: https://comedyatlas.app/comedy-atlas/event/peter-liu-headlin
+ es/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-liu-headlines/
+END:VEVENT
+END:VCALENDAR

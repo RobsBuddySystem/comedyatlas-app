@@ -75,8 +75,49 @@
       googleTag.async = true;
       googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
       document.head.appendChild(googleTag);
+
+      fireTicketClickIfOnGoPage();
     } catch (_) {
       // Google Analytics is optional; keep the first-party tracker reliable.
+    }
+  }
+
+  // ---- ticket_click GA4 event (2026-08-25 SEO audit) ---------------------
+  // Verified live before this was added: zero gtag('event', ...) calls
+  // existed anywhere in this codebase -- the exact cause GA4's own report
+  // named ("zero key events in the organic Search Console-linked report").
+  // go.html is the one page every ticket link on the site routes through
+  // (see its own header comment), so it is the one real place to measure
+  // "how many people actually tried to buy a ticket" -- as opposed to
+  // affiliate_clicks (apps/atlas_api/routes_affiliate.py), which only
+  // records a click for the ~11% of links that carry an approved affiliate
+  // tag. This event fires for EVERY ticket click, tagged or not.
+  //
+  // Lives HERE, not in go.html's own inline script, deliberately: go.html
+  // loads this file via <script defer>, which runs AFTER go.html's own
+  // inline script has already scheduled its redirect -- calling gtag()
+  // from go.html directly would race against gtag.js not having loaded yet
+  // on a fast redirect. loadGA() already owns the one place gtag becomes
+  // real and already owns the consent gate, so hooking the event here
+  // means it can only ever fire after both are true, with no ordering bug
+  // to get wrong twice.
+  //
+  // NO PII: event_id (a public integer already visible in the URL) and
+  // destination_host (a domain name, e.g. "skiddle.com") are the only
+  // parameters. No name, email, IP, or any value a visitor typed.
+  function fireTicketClickIfOnGoPage() {
+    if (!/\/go\.html$/.test(location.pathname)) return;
+    var params = new URLSearchParams(location.search);
+    var eventId = params.get('e');
+    var dest = (params.get('dest') || '').toLowerCase().replace(/^www\./, '');
+    if (!eventId || !dest) return;
+    try {
+      window.gtag('event', 'ticket_click', {
+        event_id: Number(eventId) || eventId,
+        destination_host: dest,
+      });
+    } catch (_) {
+      // Never let analytics instrumentation affect the redirect.
     }
   }
 
