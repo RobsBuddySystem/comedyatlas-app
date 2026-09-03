@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:show-up-go-up-fri-31277@comedyatlas.app
+DTSTAMP:20260904T150000Z
+DTSTART:20260904T150000Z
+DTEND:20260904T170000Z
+SUMMARY:Show Up Go Up (Fri.)
+LOCATION:Barcelona
+DESCRIPTION:Show Up Go Up is Barcelona’s most relaxed open mic — where 
+ anyone who shows...\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ show-up-go-up-fri-31277/
+URL:https://comedyatlas.app/comedy-atlas/event/show-up-go-up-fri-31277/
+END:VEVENT
+END:VCALENDAR

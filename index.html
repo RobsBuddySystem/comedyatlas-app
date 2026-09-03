@@ -489,9 +489,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <h2 id="atlas-newsdesk-heading">Latest from the news desk</h2>
 <p class="stub-note">The latest researched stories from our comedy-history desk.</p>
 <ul class="card-grid" role="list">
-<li><a class="place-card" href="/comedy-atlas/changelog/why-is-it-called-stand-up-comedy-the-vaudeville-roots-of-a-term-nobody-coined-on-purpose/"><span class="place-name">Why Is It Called &quot;Stand-Up Comedy&quot;? The Vaudeville Roots of a Term Nobody Coined on Purpose</span><span class="place-meta">The phrase used for the oldest joke-telling format in show business turns out to be decades younger than the craft itself — and, if new research holds up, may not even be American.</span><span class="place-meta">Aug 13, 2026</span></a></li>
-<li><a class="place-card" href="/comedy-atlas/changelog/why-every-comedy-club-has-a-brick-wall/"><span class="place-name">Why Every Comedy Club Has a Brick Wall</span><span class="place-meta">The exposed-brick backdrop behind every open mic and Netflix special started as a cheap renovation at one or two clubs — and America&#x27;s most legendary comedy club never had one at all.</span><span class="place-meta">Aug 13, 2026</span></a></li>
-<li><a class="place-card" href="/comedy-atlas/changelog/the-real-reason-comedy-clubs-have-a-two-drink-minimum/"><span class="place-name">The Real Reason Comedy Clubs Have a Two-Drink Minimum</span><span class="place-meta">It was never really about getting the room drunk — the two-drink minimum pays the club&#x27;s rent, and a separate, darker policy is the real reason comics went unpaid for so long.</span><span class="place-meta">Aug 13, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/richard-pryor-live-sunset-strip-confessional/"><span class="place-name">Richard Pryor&#x27;s Live on the Sunset Strip: Turning Trauma Into the Confessional Comedy Special</span><span class="place-meta">Fourteen months after nearly killing himself freebasing cocaine, Richard Pryor put the whole incident on stage as a stand-up bit — and made personal catastrophe, rather than observation, the material a comedy special could be built on.</span><span class="place-meta">Aug 20, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/open-mic-night-folk-club-farm-system/"><span class="place-name">Open Mic Night: How a Folk-Club Invention Became Stand-Up&#x27;s Farm System</span><span class="place-meta">The open stage started as a way for coffeehouses to fill a slow night with amateur singers. Comedy clubs borrowed the format wholesale — and it became the only reliable way a beginner gets in front of a room.</span><span class="place-meta">Aug 20, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/lenny-bruce-obscenity-trials-free-speech/"><span class="place-name">Lenny Bruce&#x27;s Obscenity Trials: The Case That Decided What Comedians Are Allowed to Say</span><span class="place-meta">A comic who kept getting arrested mid-set in the early 1960s ended up defining, by trial and error, how far American stand-up could go — and paid for the answer with his career and, arguably, his life.</span><span class="place-meta">Aug 20, 2026</span></a></li>
 </ul>
 <p style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/history/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse the full History archive →</a>&nbsp;·&nbsp;<a href="/comedy-atlas/blog/" style="color:var(--gold);font-weight:700;text-decoration:underline">All Atlas News →</a></p>
 </section>
@@ -873,7 +873,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   function loadHeroCitiesOnce() {
     if (heroCities) return Promise.resolve(heroCities);
     if (heroCitiesLoading) return heroCitiesLoading;
-    heroCitiesLoading = import("./globe/data-adapter.js").then(function (mod) {
+    heroCitiesLoading = import("/comedy-atlas/globe/data-adapter.js").then(function (mod) {
       return mod.loadGlobeCities({
         url: "../data/comedy-atlas/globe-cities.json",
         fetchImpl: function (url) { return fetch(url); },
@@ -892,7 +892,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (!window.ATLAS_GLOBE_ENABLED || !window.ATLAS_GLOBE_HERO) return;
     var inputEl = document.getElementById("atlas-q");
     if (!inputEl) return;
-    import("./globe/search.js").then(function (searchMod) {
+    import("/comedy-atlas/globe/search.js").then(function (searchMod) {
       var dropdownEl = document.getElementById("atlas-q-suggest");
 
       function mountIt() {

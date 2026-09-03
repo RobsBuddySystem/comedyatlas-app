@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:garcia-gang-by-santiago-garcia-31256@comedyatlas.app
+DTSTAMP:20261016T013000Z
+DTSTART:20261016T013000Z
+DTEND:20261016T030000Z
+SUMMARY:Garcia Gang by Santiago Garcia
+LOCATION:Minneapolis
+DESCRIPTION:A monthly showcase where local and traveling comics are handpic
+ ked by local comedian Santiago Garcia. The show has been a lasting success 
+ and is sure to make your sides split and leave you laughing on your way out
+ !\nMore info: https://comedyatlas.app/comedy-atlas/event/garcia-gang-by-san
+ tiago-garcia-31256/
+URL:https://comedyatlas.app/comedy-atlas/event/garcia-gang-by-santiago-garc
+ ia-31256/
+END:VEVENT
+END:VCALENDAR
