@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-farahvar-31320@comedyatlas.app
+DTSTAMP:20261114T020000Z
+DTSTART:20261114T020000Z
+DTEND:20261114T040000Z
+SUMMARY:Paul Farahvar
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-fara
+ hvar-31320/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-farahvar-31320/
+END:VEVENT
+END:VCALENDAR

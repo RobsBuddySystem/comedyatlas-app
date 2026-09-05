@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cy-amundson-31319@comedyatlas.app
+DTSTAMP:20261107T020000Z
+DTSTART:20261107T020000Z
+DTEND:20261107T040000Z
+SUMMARY:Cy Amundson
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cy-amunds
+ on-31319/
+URL:https://comedyatlas.app/comedy-atlas/event/cy-amundson-31319/
+END:VEVENT
+END:VCALENDAR
