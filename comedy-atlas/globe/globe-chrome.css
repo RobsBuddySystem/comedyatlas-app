@@ -776,7 +776,28 @@
   box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 2px 6px rgba(0,0,0,.5);
   cursor:pointer;padding:0;
   display:flex;align-items:center;justify-content:center;
-  position:relative;
+  /* MUST be absolute, not relative (fixed 2026-09-05).
+
+     MapLibre positions every marker with `.maplibregl-marker{position:absolute}`
+     and then drives it purely through an inline
+     `transform: translate(-50%,-50%) translate(Xpx,Ypx)`.
+
+     This rule carried `position:relative`. Both selectors are a single class
+     (specificity 0-1-0) and globe-chrome.css loads AFTER maplibre-gl.css, so
+     `relative` won -- and every venue marker dropped out of absolute
+     positioning back into normal document flow. In flow each 16px marker
+     stacks under the previous one, so marker N rendered N*16px BELOW its true
+     projected position while its transform stayed correct. Marker 0 was always
+     right, which is why this read as "markers drift away from their venues
+     when the globe moves" rather than as a static offset.
+
+     Measured live before the fix (Barcelona, 12 markers): rendered y =
+     208/227/243/259 where the projection said 208/211/211/211.
+
+     `absolute` still establishes the containing block that
+     `.atlas-map-venue-badge` (position:absolute; top:-7px; right:-9px)
+     depends on, so the badge is unaffected. */
+  position:absolute;
 }
 .atlas-map-venue:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:3px}
 

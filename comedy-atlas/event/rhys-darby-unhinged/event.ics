@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rhys-darby-unhinged@comedyatlas.app
+DTSTAMP:20261024T193000Z
+DTSTART:20261024T193000Z
+DTEND:20261024T213000Z
+SUMMARY:Rhys Darby: Unhinged
+LOCATION:Pálás Venue One\, Galway
+DESCRIPTION:With support from Steve Wrigley\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/rhys-darby-unhinged/
+URL:https://comedyatlas.app/comedy-atlas/event/rhys-darby-unhinged/
+END:VEVENT
+END:VCALENDAR

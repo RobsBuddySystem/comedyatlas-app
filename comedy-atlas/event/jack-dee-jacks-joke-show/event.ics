@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-dee-jacks-joke-show@comedyatlas.app
+DTSTAMP:20261023T190000Z
+DTSTART:20261023T190000Z
+DTEND:20261023T210000Z
+SUMMARY:Jack Dee: Jack’s Joke Show
+LOCATION:Black Box Theatre\, Galway
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-dee-
+ jacks-joke-show/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-dee-jacks-joke-show/
+END:VEVENT
+END:VCALENDAR
