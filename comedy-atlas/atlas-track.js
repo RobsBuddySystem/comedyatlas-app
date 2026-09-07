@@ -129,10 +129,63 @@
   // <button> elements (native keyboard/tab reachable) of equal size and
   // weight -- no dark pattern, no listener captures Tab or blocks
   // interaction with the rest of the page (no focus trap).
+  //
+  // RESERVED SPACE (2026-09-06, "banner covers the hero CTA" bug): being
+  // out-of-flow means the banner ALSO never reserves the screen space it
+  // occupies, so on a short mobile viewport it happily paints on top of
+  // whatever real content already renders there. Measured live at 390x844:
+  // the banner covered y 683-844 and the homepage's primary CTA
+  // ("Shows near me") sat at y 762-811 -- 100% inside it, with no way to
+  // reach the button until a choice was made (the search page's zero-results
+  // message showed the same partial-cover symptom lower down). This file
+  // now (a) stamps `atlas-consent-open` on <html> and mirrors the banner's
+  // live height into `body.style.paddingBottom` for the whole time it is
+  // open -- a ResizeObserver keeps that number correct if the banner
+  // reflows (rotation, a longer future copy edit) -- so any content that
+  // would otherwise end flush with the old page bottom gets real scroll
+  // room clear of the banner; and (b) index.html's own stylesheet uses the
+  // same `atlas-consent-open` class, mobile-width-scoped, to temporarily
+  // collapse the decorative hero globe/character art -- the one large
+  // spacer actually pushing the CTA down into the banner's territory on a
+  // narrow screen. Both effects are reversed the instant a choice is made
+  // (removeBanner undoes them below); the banner's own two controls are
+  // untouched -- same size, same click count, still the last thing removed.
   var BANNER_ID = 'atlas-consent-banner';
+  var HTML_OPEN_CLASS = 'atlas-consent-open';
+
+  function reserveBannerSpace(el) {
+    try {
+      document.documentElement.classList.add(HTML_OPEN_CLASS);
+      var apply = function () {
+        if (document.body) document.body.style.paddingBottom = el.offsetHeight + 'px';
+      };
+      apply();
+      if (typeof window.ResizeObserver === 'function') {
+        el.__atlasConsentRO = new window.ResizeObserver(apply);
+        el.__atlasConsentRO.observe(el);
+      } else {
+        el.__atlasConsentResize = apply;
+        window.addEventListener('resize', apply);
+      }
+    } catch (_) {
+      // Best-effort layout aid; never block the banner itself over this.
+    }
+  }
+
+  function releaseBannerSpace(el) {
+    try {
+      document.documentElement.classList.remove(HTML_OPEN_CLASS);
+      if (document.body) document.body.style.paddingBottom = '';
+      if (el && el.__atlasConsentRO) el.__atlasConsentRO.disconnect();
+      if (el && el.__atlasConsentResize) window.removeEventListener('resize', el.__atlasConsentResize);
+    } catch (_) {
+      // Same best-effort contract as reserveBannerSpace.
+    }
+  }
 
   function removeBanner() {
     var el = document.getElementById(BANNER_ID);
+    if (el) releaseBannerSpace(el);
     if (el && el.parentNode) el.parentNode.removeChild(el);
   }
 
@@ -194,6 +247,7 @@
       '<button type="button" class="atlas-consent-accept">Accept</button>' +
       '</div>';
     document.body.appendChild(el);
+    reserveBannerSpace(el);
     el.querySelector('.atlas-consent-accept').addEventListener('click', function () {
       writeConsent('granted');
       loadGA();

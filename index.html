@@ -251,6 +251,30 @@ html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
 }
+/* CONSENT-BANNER-COVERS-CTA FIX (2026-09-06). Measured live at 390x844:
+   the fixed analytics banner (atlas-track.js, bottom 683-844px) sat
+   directly on top of the "Shows near me" primary CTA (762-811px) --
+   100% of the button was under it, with no way to reach it before
+   answering the banner. Root cause is column-reverse's own doing above:
+   on mobile the hero-figure (the character-art/globe box, up to
+   clamp(260px,88vw,380px) square in "globe-first hero" mode, see the
+   html.atlas-ghero rules earlier in this sheet) stacks ABOVE the copy,
+   and it alone is large enough to push the CTA row down into the
+   banner's territory on a short viewport.
+   atlas-track.js stamps `atlas-consent-open` on <html> for exactly as
+   long as the banner is open (see its own "RESERVED SPACE" comment) --
+   this rule spends that same signal to collapse the decorative figure,
+   which recovers ~250-400px, comfortably clearing the CTA with room to
+   spare, and costs nothing once a choice is made: the class is removed
+   in the same tick removeBanner() runs, so the art reappears immediately.
+   Scoped to this hero's own mobile breakpoint (max-width:640px) only --
+   tablet/desktop never had an overlap (banner and CTA don't share the
+   same rows there) and this rule cannot touch them. display:none (not
+   visibility/opacity) so the flex gap collapses too instead of leaving a
+   blank gap-sized gutter where the art used to be. */
+@media(max-width:640px){
+  html.atlas-consent-open .atlas-hero-figure{display:none}
+}
 .cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
 .cta-btn.primary{background:var(--gold-btn);color:#100c00;border:none}
 .cta-btn.primary:hover{opacity:.9}
@@ -489,9 +513,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <h2 id="atlas-newsdesk-heading">Latest from the news desk</h2>
 <p class="stub-note">The latest researched stories from our comedy-history desk.</p>
 <ul class="card-grid" role="list">
-<li><a class="place-card" href="/comedy-atlas/history/richard-pryor-live-sunset-strip-confessional/"><span class="place-name">Richard Pryor&#x27;s Live on the Sunset Strip: Turning Trauma Into the Confessional Comedy Special</span><span class="place-meta">Fourteen months after nearly killing himself freebasing cocaine, Richard Pryor put the whole incident on stage as a stand-up bit — and made personal catastrophe, rather than observation, the material a comedy special could be built on.</span><span class="place-meta">Aug 20, 2026</span></a></li>
-<li><a class="place-card" href="/comedy-atlas/history/open-mic-night-folk-club-farm-system/"><span class="place-name">Open Mic Night: How a Folk-Club Invention Became Stand-Up&#x27;s Farm System</span><span class="place-meta">The open stage started as a way for coffeehouses to fill a slow night with amateur singers. Comedy clubs borrowed the format wholesale — and it became the only reliable way a beginner gets in front of a room.</span><span class="place-meta">Aug 20, 2026</span></a></li>
-<li><a class="place-card" href="/comedy-atlas/history/lenny-bruce-obscenity-trials-free-speech/"><span class="place-name">Lenny Bruce&#x27;s Obscenity Trials: The Case That Decided What Comedians Are Allowed to Say</span><span class="place-meta">A comic who kept getting arrested mid-set in the early 1960s ended up defining, by trial and error, how far American stand-up could go — and paid for the answer with his career and, arguably, his life.</span><span class="place-meta">Aug 20, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/keith-johnstone-impro-and-the-other-improv-tradition/"><span class="place-name">The Other Improv Tradition Was Invented by a Man Who Hated School</span><span class="place-meta">While Chicago was building improv out of Viola Spolin&#x27;s theatre games, a Devon-born teacher at the Royal Court was building a rival system by systematically reversing everything his own teachers had told him — and then turned it into a competitive sport.</span><span class="place-meta">Sep 6, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/just-for-laughs-1982-and-the-festival-as-marketplace/"><span class="place-name">The Festival Where the Audience Is the Least Important People in the Room</span><span class="place-meta">Just for Laughs began in 1982 as a two-day French-language event in Montreal and became the largest comedy festival in the world — a trade fair with a paying public attached. In 2024 the business went bankrupt.</span><span class="place-meta">Sep 6, 2026</span></a></li>
+<li><a class="place-card" href="/comedy-atlas/history/def-comedy-jam-1992-and-the-club-that-became-a-catalogue/"><span class="place-name">Two Clubs, One Cable Slot, and a Decade of Stand-Up Careers</span><span class="place-meta">Def Comedy Jam ran on HBO from 1992 to 1997 and was built from two existing rooms — one in Harlem, one in Los Angeles. It is the clearest case in comedy of television not discovering a scene but distributing one.</span><span class="place-meta">Sep 6, 2026</span></a></li>
 </ul>
 <p style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)"><a href="/comedy-atlas/history/" style="color:var(--gold);font-weight:700;text-decoration:underline">Browse the full History archive →</a>&nbsp;·&nbsp;<a href="/comedy-atlas/blog/" style="color:var(--gold);font-weight:700;text-decoration:underline">All Atlas News →</a></p>
 </section>
