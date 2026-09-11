@@ -186,6 +186,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 
   <div id="app" style="display:none">
+    <style>section[data-tab]{display:none}section[data-tab].active{display:block}</style>
+    <div class="tabs2" id="booker-tabs">
+      <div class="tab2 active" data-t="home">Home</div>
+      <div class="tab2" data-t="shows">My shows</div>
+      <div class="tab2" data-t="lineups">Lineups</div>
+      <div class="tab2" data-t="venues">Find venues</div>
+      <div class="tab2" data-t="marketing">Marketing</div>
+    </div>
+
+    <section data-tab="home">
     <div class="card" id="no-shows-banner" style="display:none;border:1px solid var(--gold)">
       <h2>👋 You don't have a show on ATLAS yet</h2>
       <p class="privacy" style="margin-bottom:10px">Create it in 30 seconds —
@@ -228,7 +238,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="do-create-show">Create &amp; own this show</button>
       <div class="msg" id="new-show-msg"></div>
     </div>
+    </section>
 
+    <section data-tab="shows">
     <div class="card">
       <h2>📅 My venue calendar</h2>
       <p class="privacy" style="margin-bottom:10px">Auto-populated from
@@ -325,7 +337,76 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       shows in your city? See
       <a href="partners.html">Partner with COMEDY ATLAS</a>.</p>
     </div>
+    </section>
 
+    <section data-tab="venues">
+    <div class="card">
+      <h2>🏟️ Venues in my area — the deal-sheet</h2>
+      <p class="privacy" style="margin-bottom:10px">Every verified or
+      potential venue ATLAS knows about in a city — deal terms, bar
+      policy, who programs it, and house nights — so you don't have to
+      call cold to find out.</p>
+      <div class="row">
+        <div>
+          <label for="vs-city">City</label>
+          <select id="vs-city"><option value="">Loading cities…</option></select>
+        </div>
+        <div>
+          <label for="vs-radius">Radius</label>
+          <select id="vs-radius">
+            <option value="10">10 km</option>
+            <option value="25" selected>25 km</option>
+            <option value="50">50 km</option>
+            <option value="100">100 km</option>
+          </select>
+        </div>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;margin:10px 0 5px;cursor:pointer">
+        <input type="checkbox" id="vs-include-potential" checked style="width:auto">
+        include potential (unverified) venues
+      </label>
+      <button id="vs-load" type="button">Load</button>
+      <div class="msg" id="vs-msg"></div>
+      <div id="vs-list" style="margin-top:10px"></div>
+      <div class="card" style="margin-top:16px">
+        <h3>Not listed? Suggest a venue</h3>
+        <div class="row">
+          <div>
+            <label for="vs-sug-name">Venue name</label>
+            <input type="text" id="vs-sug-name">
+          </div>
+          <div>
+            <label for="vs-sug-city">City</label>
+            <input type="text" id="vs-sug-city">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="vs-sug-address">Address (optional)</label>
+            <input type="text" id="vs-sug-address">
+          </div>
+          <div>
+            <label for="vs-sug-website">Website (optional)</label>
+            <input type="text" id="vs-sug-website">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="vs-sug-email">Public email (optional)</label>
+            <input type="text" id="vs-sug-email">
+          </div>
+          <div>
+            <label for="vs-sug-why">Why (optional)</label>
+            <input type="text" id="vs-sug-why">
+          </div>
+        </div>
+        <button id="vs-sug-submit" type="button">Suggest a venue</button>
+        <div class="msg" id="vs-sug-msg"></div>
+      </div>
+    </div>
+    </section>
+
+    <section data-tab="lineups">
     <div class="card">
       <h2>🎬 Lineup builder</h2>
       <p class="privacy" style="margin-bottom:10px">Pick one of your shows,
@@ -463,7 +544,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button class="secondary" id="avp-refresh" type="button">Refresh my pages &amp; results</button>
       <div id="avp-list" style="margin-top:10px"></div>
     </div>
+    </section>
 
+    <section data-tab="marketing">
     <div class="card">
       <h2>🎟️ Connect Eventbrite</h2>
       <p class="privacy" style="margin-bottom:10px">Your token is
@@ -544,7 +627,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="camp-create-send">Create &amp; send campaign</button>
       <div class="msg" id="camp-msg"></div>
     </div>
+    </section>
 
+    <section data-tab="shows">
     <div class="card">
       <h2>Post an open spot</h2>
       <label for="opp-show">Your show</label>
@@ -569,7 +654,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="post-opp">Post spot</button>
       <div class="msg" id="opp-msg"></div>
     </div>
+    </section>
 
+    <section data-tab="lineups">
     <div class="card">
       <h2>Message a comic</h2>
       <div class="tabs2">
@@ -602,9 +689,32 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="send-invite">Send invite</button>
       <div class="msg" id="invite-msg"></div>
     </div>
+    </section>
 
     <div class="card" id="twofa-section"></div>
   </div>
+
+  <script>
+  (function () {
+    "use strict";
+    var TABS = ["home", "shows", "lineups", "venues", "marketing"];
+    var bar = document.querySelectorAll("#booker-tabs .tab2");
+    function activeTab() {
+      var h = (location.hash || "#home").slice(1);
+      return TABS.indexOf(h) === -1 ? "home" : h;
+    }
+    function render() {
+      var t = activeTab();
+      document.querySelectorAll("section[data-tab]").forEach(function (s) {
+        s.classList.toggle("active", s.getAttribute("data-tab") === t);
+      });
+      bar.forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-t") === t); });
+    }
+    bar.forEach(function (b) { b.addEventListener("click", function () { location.hash = "#" + b.getAttribute("data-t"); }); });
+    window.addEventListener("hashchange", render);
+    render();
+  })();
+  </script>
 
   <!-- Comic CRM card (migration 0065; ingest/booker_crm.py). Opened by
   clicking "CRM card" wherever a comic already appears (search results,
@@ -745,6 +855,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     loadCities();
     loadMyShows();
     loadAnalytics();
+    loadVsCities();
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
   }).catch(function () {
     document.getElementById("signed-out").style.display = "block";
@@ -804,6 +915,395 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       document.getElementById("an-msg").className = "msg error";
     });
   }
+
+  // ------------------------------------------------------------------
+  // Venues in my area -- the deal-sheet (Neil Sinclair pilot feedback #8,
+  // 2026-09-11: "Lille venues -> booker venue deal-sheet"). Backend:
+  // GET /booker/venues/cities -> {cities:[{city_id,city_name,country,
+  // venue_count}]} and GET /booker/venues?city=<name>&include_potential=1
+  // -> {city:{id,name,country}, venues:[...], generated_at} -- see
+  // apps/atlas_api/routes_booker_venues.py and
+  // ingest/booker_venue_sheet.py. Note the cities-list rows use
+  // city_id/city_name (no dedicated "id"/"name" keys there), while the
+  // nested `city` object inside the venues response uses id/name -- two
+  // different shapes from two different queries, confirmed by reading
+  // the backend rather than assumed.
+  //
+  // formatDeal() below is deliberately self-contained (no reference to
+  // anything outside its own body) so it can be lifted out of this file
+  // and executed standalone by tests/test_booker_venue_sheet_page.py.
+  function formatDeal(deal) {
+    if (!deal || !deal.deal_type || deal.source === "unknown") {
+      return "Deal terms unknown — ask the venue";
+    }
+    var parts = [];
+    var type = deal.deal_type;
+    if (type === "door_split" || type === "percentage") {
+      var pct = deal.percentage_rate != null ? (deal.percentage_rate + "%") : "a share";
+      var basis = deal.percentage_basis ? (" of " + String(deal.percentage_basis).replace(/_/g, " ")) : "";
+      parts.push("Door split " + pct + " to act" + basis);
+    } else if (type === "guarantee") {
+      parts.push("Flat guarantee");
+    } else if (type === "hat") {
+      var method = deal.hat_split_method ? (" (" + String(deal.hat_split_method).replace(/_/g, " ") + ")") : "";
+      parts.push("Hat/bucket split" + method);
+    } else {
+      parts.push(String(type).replace(/_/g, " "));
+    }
+    if (deal.guarantee_amount_cents != null) {
+      var amt = Math.round(deal.guarantee_amount_cents / 100);
+      var cur = deal.currency || "EUR";
+      var symbol = cur === "EUR" ? "€" : (cur === "GBP" ? "£" : (cur === "USD" ? "$" : (cur + " ")));
+      parts.push("min guarantee " + symbol + amt);
+    }
+    if (deal.payment_method) parts.push("paid by " + String(deal.payment_method).replace(/_/g, " "));
+    if (deal.payment_timing) parts.push(String(deal.payment_timing).replace(/_/g, " "));
+    var text = parts.join(", ");
+    if (deal.source === "spot_terms" && deal.sample_size) {
+      text += " (from " + deal.sample_size + " past spot" + (deal.sample_size === 1 ? "" : "s") + ")";
+    } else if (deal.source === "series_default") {
+      text += " (series default)";
+    } else if (deal.source === "declared") {
+      text += " (declared by a booker" +
+        (deal.declared_at ? (" on " + String(deal.declared_at).slice(0, 10)) : "") + ")";
+    }
+    if (deal.notes) text += " — " + deal.notes;
+    return text;
+  }
+
+  function vsBarText(bar) {
+    var policy = bar && bar.bar_policy;
+    if (policy === "venue_keeps") return "venue keeps the bar";
+    if (policy === "share") return "bar take shared with act";
+    if (policy === "none") return "no bar";
+    return "unknown";
+  }
+
+  function vsProgrammersText(programmers) {
+    if (!programmers || !programmers.length) return "nobody listed";
+    return programmers.map(function (p) {
+      var series = p.series_names && p.series_names.length ? (" (" + p.series_names.join(", ") + ")") : "";
+      return p.name + series;
+    }).join(", ");
+  }
+
+  function vsHouseNightsText(nights) {
+    if (!nights || !nights.length) return "none recorded";
+    return nights.map(function (n) { return n.day + " ×" + n.count; }).join(", ");
+  }
+
+  function renderVenueCard(v) {
+    var badge = v.verification.status === "verified"
+      ? '<span style="color:var(--green);font-weight:700">VERIFIED' +
+        (v.verification.verified_at ? (" · " + A.escapeHtml(String(v.verification.verified_at).slice(0, 10))) : "") +
+        '</span>'
+      : '<span style="color:var(--gold);font-weight:700">POTENTIAL · not yet verified</span>';
+    var address = v.address_line ? A.escapeHtml(v.address_line) : "address unknown";
+    var capacity = v.capacity != null ? (v.capacity + " seats") : "capacity unknown";
+    var stage = v.stage_notes ? A.escapeHtml(v.stage_notes) : "stage setup: not recorded";
+    var access = v.accessibility_notes ? A.escapeHtml(v.accessibility_notes) : "accessibility: not recorded";
+    var deal = A.escapeHtml(formatDeal(v.deal));
+    var bar = A.escapeHtml(vsBarText(v.bar));
+    var programmedBy = A.escapeHtml(vsProgrammersText(v.programmers));
+    var houseNights = A.escapeHtml(vsHouseNightsText(v.house_nights));
+    var lastSeen = (v.verification.last_comedy_event_at)
+      ? (A.escapeHtml(String(v.verification.last_comedy_event_at).slice(0, 10)) +
+         " (" + (v.verification.events_seen || 0) + " event(s) seen)")
+      : "no comedy events recorded yet";
+    var contactBits = [];
+    if (v.contact && v.contact.public_email) {
+      contactBits.push('<a href="mailto:' + A.escapeHtml(v.contact.public_email) + '">' +
+        A.escapeHtml(v.contact.public_email) + '</a>');
+    }
+    if (v.contact && v.contact.website_url) {
+      contactBits.push('<a href="' + A.escapeHtml(v.contact.website_url) + '" target="_blank" rel="noopener">website</a>');
+    }
+    var contact = contactBits.length ? contactBits.join(" · ") : "no contact on file";
+    var distance = v.distance_km != null
+      ? '<div style="color:var(--muted);margin-top:2px">' + v.distance_km + " km away</div>"
+      : "";
+    var vid = v.id;
+    var dealType = v.deal && v.deal.deal_type ? String(v.deal.deal_type) : "";
+    var barPolicy = v.bar && v.bar.bar_policy ? String(v.bar.bar_policy) : "";
+
+    return '<div class="result-item" id="vs-card-' + vid + '" style="padding:14px 0" data-venue-id="' + vid + '">' +
+      '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">' +
+      '<span class="name">' + A.escapeHtml(v.name) + '</span>' + badge +
+      '</div>' +
+      '<div style="color:var(--muted);margin-top:4px">' + address + '</div>' +
+      distance +
+      '<div style="margin-top:8px">' + capacity + ' · ' + stage + '</div>' +
+      '<div style="margin-top:4px">' + access + '</div>' +
+      '<div style="margin-top:8px"><b>Deal:</b> ' + deal + '</div>' +
+      '<div><b>Bar:</b> ' + bar + '</div>' +
+      '<div><b>Programmed by:</b> ' + programmedBy + '</div>' +
+      '<div><b>House nights:</b> ' + houseNights + '</div>' +
+      '<div><b>Last comedy event seen:</b> ' + lastSeen + '</div>' +
+      '<div style="margin-top:6px"><b>Contact:</b> ' + contact + '</div>' +
+      '<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">' +
+      '<button type="button" class="vs-claim-btn" data-venue-id="' + vid + '">Claim this venue</button>' +
+      '<button type="button" class="vs-terms-toggle" data-venue-id="' + vid + '">Declare terms</button>' +
+      '</div>' +
+      '<div class="msg" id="vs-claim-msg-' + vid + '"></div>' +
+      '<div id="vs-terms-form-' + vid + '" hidden style="margin-top:8px;padding:10px;border:1px solid var(--border,#3a3a3a);border-radius:6px">' +
+      '<div class="row">' +
+      '<div><label>Deal type</label><select id="vs-terms-deal-type-' + vid + '">' +
+      '<option value="">— not set —</option>' +
+      '<option value="door_split"' + (dealType === "door_split" ? " selected" : "") + '>Door split</option>' +
+      '<option value="fifty_fifty"' + (dealType === "fifty_fifty" ? " selected" : "") + '>50/50</option>' +
+      '<option value="min_guarantee"' + (dealType === "min_guarantee" ? " selected" : "") + '>Minimum guarantee</option>' +
+      '<option value="flat_fee"' + (dealType === "flat_fee" ? " selected" : "") + '>Flat fee</option>' +
+      '<option value="hat"' + (dealType === "hat" ? " selected" : "") + '>Hat/bucket</option>' +
+      '<option value="room_hire"' + (dealType === "room_hire" ? " selected" : "") + '>Room hire</option>' +
+      '<option value="free"' + (dealType === "free" ? " selected" : "") + '>Free</option>' +
+      '</select></div>' +
+      '<div><label>Guarantee (€)</label><input type="number" step="1" id="vs-terms-guarantee-' + vid + '"></div>' +
+      '</div>' +
+      '<div class="row">' +
+      '<div><label>Percentage rate (%)</label><input type="number" step="0.1" id="vs-terms-pct-' + vid + '"></div>' +
+      '<div><label>Percentage basis</label><select id="vs-terms-basis-' + vid + '">' +
+      '<option value="">— not set —</option>' +
+      '<option value="gross_door">Gross door</option>' +
+      '<option value="net_door">Net door</option>' +
+      '</select></div>' +
+      '</div>' +
+      '<div class="row">' +
+      '<div><label>Bar policy</label><select id="vs-terms-bar-' + vid + '">' +
+      '<option value="">— not set —</option>' +
+      '<option value="venue_keeps"' + (barPolicy === "venue_keeps" ? " selected" : "") + '>Venue keeps the bar</option>' +
+      '<option value="share"' + (barPolicy === "share" ? " selected" : "") + '>Shared with act</option>' +
+      '<option value="none"' + (barPolicy === "none" ? " selected" : "") + '>No bar</option>' +
+      '</select></div>' +
+      '<div><label>Capacity</label><input type="number" step="1" id="vs-terms-capacity-' + vid + '"></div>' +
+      '</div>' +
+      '<div class="row">' +
+      '<div><label>Stage notes</label><input type="text" id="vs-terms-stage-' + vid + '"></div>' +
+      '<div><label>Note</label><input type="text" id="vs-terms-note-' + vid + '"></div>' +
+      '</div>' +
+      '<button type="button" class="vs-terms-submit" data-venue-id="' + vid + '">Save terms</button>' +
+      '<div class="msg" id="vs-terms-msg-' + vid + '"></div>' +
+      '</div>' +
+      '</div>';
+  }
+
+  function vsVenuesById() {
+    if (!window._vsVenuesById) window._vsVenuesById = {};
+    return window._vsVenuesById;
+  }
+
+  function vsReplaceCard(venueId, venueData) {
+    vsVenuesById()[venueId] = venueData;
+    var el = document.getElementById("vs-card-" + venueId);
+    if (!el) return;
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = renderVenueCard(venueData);
+    el.replaceWith(wrapper.firstElementChild);
+  }
+
+  function renderVenueSheet(data) {
+    var list = document.getElementById("vs-list");
+    var msg = document.getElementById("vs-msg");
+    var venues = data.venues || [];
+    window._vsVenuesById = {};
+    venues.forEach(function (v) { window._vsVenuesById[v.id] = v; });
+    if (!venues.length) {
+      list.innerHTML = "";
+      var cityName = (data.city && data.city.name) || (data.centre && data.centre.label) || "this city";
+      msg.textContent = "No venues on ATLAS yet for " + cityName +
+        ". Know one? Tell us: contact@comedyatlas.app";
+      msg.className = "msg";
+      return;
+    }
+    var extra = "";
+    if (data.excluded_unlocated) {
+      extra = " " + data.excluded_unlocated + " venue" + (data.excluded_unlocated === 1 ? "" : "s") +
+        " in this city have no map pin yet.";
+    }
+    msg.textContent = venues.length + " venue(s)." + extra;
+    msg.className = "msg ok";
+    list.innerHTML = venues.map(renderVenueCard).join("");
+  }
+
+  function vsClaimVenue(venueId) {
+    var msg = document.getElementById("vs-claim-msg-" + venueId);
+    var email = window.prompt("Email to claim this venue with:");
+    if (!email) return;
+    msg.textContent = "Sending claim request…";
+    msg.className = "msg";
+    A.post("/claim/venue/" + venueId + "/request", {email: email})
+      .then(function () {
+        return A.get("/claim/venue/" + venueId + "/status");
+      })
+      .then(function (status) {
+        msg.textContent = status.claimed
+          ? "This venue is now claimed."
+          : "Claim request sent — if that email matches, it's confirmed automatically; otherwise it's queued for human review.";
+        msg.className = "msg ok";
+      })
+      .catch(function (e) {
+        msg.textContent = (e.body && e.body.detail) || "Couldn't send the claim request right now.";
+        msg.className = "msg error";
+      });
+  }
+
+  function vsToggleTermsForm(venueId) {
+    var form = document.getElementById("vs-terms-form-" + venueId);
+    if (form) form.hidden = !form.hidden;
+  }
+
+  function vsNumOrNull(id) {
+    var el = document.getElementById(id);
+    if (!el || el.value === "") return null;
+    var n = Number(el.value);
+    return isNaN(n) ? null : n;
+  }
+
+  function vsStrOrNull(id) {
+    var el = document.getElementById(id);
+    if (!el || el.value === "") return null;
+    return el.value;
+  }
+
+  function vsSubmitTerms(venueId) {
+    var msg = document.getElementById("vs-terms-msg-" + venueId);
+    var guaranteeEuros = vsNumOrNull("vs-terms-guarantee-" + venueId);
+    var body = {
+      deal_type: vsStrOrNull("vs-terms-deal-type-" + venueId),
+      guarantee_amount_cents: guaranteeEuros != null ? Math.round(guaranteeEuros * 100) : null,
+      guarantee_currency: guaranteeEuros != null ? "EUR" : null,
+      percentage_rate: vsNumOrNull("vs-terms-pct-" + venueId),
+      percentage_basis: vsStrOrNull("vs-terms-basis-" + venueId),
+      bar_policy: vsStrOrNull("vs-terms-bar-" + venueId),
+      capacity: vsNumOrNull("vs-terms-capacity-" + venueId),
+      stage_notes: vsStrOrNull("vs-terms-stage-" + venueId),
+      note: vsStrOrNull("vs-terms-note-" + venueId)
+    };
+    msg.textContent = "Saving…";
+    msg.className = "msg";
+    A.post("/booker/venues/" + venueId + "/terms", body)
+      .then(function (resp) {
+        vsReplaceCard(venueId, resp.venue);
+        var newMsg = document.getElementById("vs-claim-msg-" + venueId);
+        if (newMsg) { newMsg.textContent = "Terms saved."; newMsg.className = "msg ok"; }
+      })
+      .catch(function (e) {
+        msg.textContent = (e.body && e.body.detail) || "Couldn't save those terms right now.";
+        msg.className = "msg error";
+      });
+  }
+
+  document.getElementById("vs-list").addEventListener("click", function (ev) {
+    var btn = ev.target.closest("button[data-venue-id]");
+    if (!btn) return;
+    var venueId = btn.getAttribute("data-venue-id");
+    if (btn.classList.contains("vs-claim-btn")) vsClaimVenue(venueId);
+    else if (btn.classList.contains("vs-terms-toggle")) vsToggleTermsForm(venueId);
+    else if (btn.classList.contains("vs-terms-submit")) vsSubmitTerms(venueId);
+  });
+
+  document.getElementById("vs-sug-submit").addEventListener("click", function () {
+    var msg = document.getElementById("vs-sug-msg");
+    var name = document.getElementById("vs-sug-name").value.trim();
+    var city = document.getElementById("vs-sug-city").value.trim();
+    if (!name || !city) {
+      msg.textContent = "Venue name and city are required.";
+      msg.className = "msg error";
+      return;
+    }
+    var body = {
+      name: name,
+      city: city,
+      address_line: vsStrOrNull("vs-sug-address"),
+      website_url: vsStrOrNull("vs-sug-website"),
+      public_email: vsStrOrNull("vs-sug-email"),
+      why: vsStrOrNull("vs-sug-why")
+    };
+    msg.textContent = "Sending…";
+    msg.className = "msg";
+    A.post("/booker/venues/suggest", body)
+      .then(function (resp) {
+        msg.textContent = "Thanks — we've logged it (feedback #" + resp.feedback_id + ").";
+        msg.className = "msg ok";
+      })
+      .catch(function (e) {
+        msg.textContent = (e.body && e.body.detail) || "Couldn't send that suggestion right now.";
+        msg.className = "msg error";
+      });
+  });
+
+  function loadVsVenuesByCity(cityName, includePotential) {
+    return A.get("/booker/venues?city=" + encodeURIComponent(cityName) + "&include_potential=" + includePotential);
+  }
+
+  function loadVsVenues(cityName) {
+    var msg = document.getElementById("vs-msg");
+    var list = document.getElementById("vs-list");
+    if (!cityName) {
+      msg.textContent = "Pick a city first.";
+      msg.className = "msg error";
+      return;
+    }
+    msg.textContent = "Loading…";
+    msg.className = "msg";
+    list.innerHTML = "";
+    var includePotential = document.getElementById("vs-include-potential").checked ? 1 : 0;
+    var radiusKm = document.getElementById("vs-radius").value;
+    var sel = document.getElementById("vs-city");
+    var opt = sel.options[sel.selectedIndex];
+    var cityId = opt && opt.getAttribute("data-city-id");
+
+    var request = cityId
+      ? A.get("/booker/venues?near=" + encodeURIComponent(cityId) + "&radius_km=" + encodeURIComponent(radiusKm) +
+               "&include_potential=" + includePotential)
+      : loadVsVenuesByCity(cityName, includePotential);
+
+    request.then(function (data) {
+        try { localStorage.setItem("atlas_vs_city", cityName); } catch (e) {}
+        renderVenueSheet(data);
+      }).catch(function (e) {
+        // The centre has no coordinates (404 "unknown centre") -- fall back
+        // to the plain city listing rather than dead-ending the booker.
+        if (cityId && e.status === 404) {
+          loadVsVenuesByCity(cityName, includePotential).then(function (data) {
+            try { localStorage.setItem("atlas_vs_city", cityName); } catch (e2) {}
+            renderVenueSheet(data);
+          }).catch(function (e2) {
+            msg.textContent = (e2.body && e2.body.detail) || "Couldn't load venues right now.";
+            msg.className = "msg error";
+          });
+          return;
+        }
+        msg.textContent = (e.body && e.body.detail) || "Couldn't load venues right now.";
+        msg.className = "msg error";
+      });
+  }
+
+  function loadVsCities() {
+    var sel = document.getElementById("vs-city");
+    return A.get("/booker/venues/cities").then(function (data) {
+      var cities = data.cities || [];
+      if (!cities.length) {
+        sel.innerHTML = '<option value="">No cities yet</option>';
+        return;
+      }
+      sel.innerHTML = cities.map(function (c) {
+        return '<option value="' + A.escapeHtml(c.city_name) + '" data-city-id="' +
+          A.escapeHtml(String(c.city_id)) + '">' +
+          A.escapeHtml(c.city_name) + ' (' + c.venue_count + ')</option>';
+      }).join("");
+      var remembered = null;
+      try { remembered = localStorage.getItem("atlas_vs_city"); } catch (e) {}
+      if (remembered && cities.some(function (c) { return c.city_name === remembered; })) {
+        sel.value = remembered;
+      }
+    }).catch(function () {
+      sel.innerHTML = '<option value="">Couldn\'t load cities</option>';
+    });
+  }
+
+  document.getElementById("vs-load").addEventListener("click", function () {
+    loadVsVenues(document.getElementById("vs-city").value);
+  });
 
   // ------------------------------------------------------------------
   // Create a show (not scraped yet)

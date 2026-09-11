@@ -216,21 +216,38 @@ html[data-auth-tab="register"] #register-card{display:block!important}
             hosts: ["atlas-api.pariscomedy.com", "pariscomedy.com"]};
   })(location.hostname);
   var PORTAL = ATLAS.portal;
-  function destination() {
+  // A path-only next ("/comedy-atlas/x.html") lands on the portal's api
+  // origin (cookie-same-origin); an absolute next must be one of our hosts.
+  // Returns null when there is no (valid) explicit ?next= -- callers then
+  // fall back to a role-based destination.
+  function nextOverride() {
     var n = params.get("next");
-    if (n) {
-      try {
-        // A path-only next ("/comedy-atlas/x.html") lands on the portal's api
-        // origin (cookie-same-origin); an absolute next must be one of our hosts.
-        var base = (n.charAt(0) === "/") ? PORTAL : location.href;
-        var u = new URL(n, base);
-        if (ATLAS.hosts.indexOf(u.hostname) !== -1) {
-          return u.href;
-        }
-      } catch (e) { /* fall through */ }
+    if (!n) { return null; }
+    try {
+      var base = (n.charAt(0) === "/") ? PORTAL : location.href;
+      var u = new URL(n, base);
+      if (ATLAS.hosts.indexOf(u.hostname) !== -1) {
+        return u.href;
+      }
+    } catch (e) { /* fall through */ }
+    return null;
+  }
+  // Atlas feedback #10 (2026-09-04): the single place that turns a claimed
+  // role into a portal URL, shared by the register-success handler (which
+  // knows the role the user just chose) and the plain-login handler (which
+  // asks /auth/me for it). `urlRole` is the ?role= the page was opened
+  // with, if any -- only used to break the "both" tie the same way the
+  // register dropdown itself was pre-selected.
+  function destinationForRole(role, urlRole) {
+    if (role === "fan") { return PORTAL + "itinerary.html"; }
+    if (role === "booker") { return PORTAL + "booker.html"; }
+    if (role === "both") {
+      return PORTAL + (urlRole === "booker" ? "booker.html" : "comic.html");
     }
-    if (wantRole === "fan") { return PORTAL + "itinerary.html"; }
-    return PORTAL + (wantRole === "booker" ? "booker.html" : "comic.html");
+    return PORTAL + "comic.html"; // "comic", unknown, or null: existing default
+  }
+  function destination() {
+    return nextOverride() || destinationForRole(wantRole, wantRole);
   }
   var next = destination();
 
@@ -325,6 +342,22 @@ html[data-auth-tab="register"] #register-card{display:block!important}
     location.href = next;
   }
 
+  // Atlas feedback #10 (2026-09-04): a plain "Sign in" (no ?role, no
+  // ?next) used to always land on comic.html, mislabeling every booker who
+  // logs back in. When there IS an explicit hint, that hint still wins
+  // unchanged (`redirect()`, same as before this fix). Otherwise ask
+  // /auth/me for the role claimed at registration and route off that; if
+  // the call fails for any reason, fall back to the pre-existing behavior
+  // rather than block sign-in on it.
+  function redirectAfterLogin() {
+    if (wantRole || nextOverride()) { redirect(); return; }
+    A.me().then(function (me) {
+      location.href = destinationForRole(me && me.role, null);
+    }).catch(function () {
+      redirect();
+    });
+  }
+
   document.getElementById("li-submit").addEventListener("click", function () {
     var msg = document.getElementById("li-msg");
     msg.textContent = ""; msg.className = "msg";
@@ -338,7 +371,7 @@ html[data-auth-tab="register"] #register-card{display:block!important}
         return;
       }
       msg.textContent = "Signed in."; msg.className = "msg ok";
-      redirect();
+      redirectAfterLogin();
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Sign-in failed.";
       msg.className = "msg error";
@@ -379,7 +412,7 @@ html[data-auth-tab="register"] #register-card{display:block!important}
       code: document.getElementById("li-2fa-code").value.trim(),
     }).then(function () {
       msg.textContent = "Signed in."; msg.className = "msg ok";
-      redirect();
+      redirectAfterLogin();
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Invalid code.";
       msg.className = "msg error";
@@ -389,14 +422,23 @@ html[data-auth-tab="register"] #register-card{display:block!important}
   document.getElementById("reg-submit").addEventListener("click", function () {
     var msg = document.getElementById("reg-msg");
     msg.textContent = ""; msg.className = "msg";
+    var chosenRole = document.getElementById("reg-role").value;
     A.post("/auth/register", {
       stage_name: document.getElementById("reg-stage-name").value,
       email: document.getElementById("reg-email").value,
       password: document.getElementById("reg-password").value,
-      role: document.getElementById("reg-role").value,
-    }).then(function () {
+      role: chosenRole,
+    }).then(function (resp) {
       msg.textContent = "Account created."; msg.className = "msg ok";
-      redirect();
+      // Atlas feedback #10 (2026-09-04): a booker who registered was always
+      // dropped on comic.html. An explicit ?next= still wins unchanged;
+      // otherwise route off the role /auth/register actually recorded
+      // (resp.role), falling back to the dropdown value if that is ever
+      // missing.
+      var override = nextOverride();
+      if (override) { location.href = override; return; }
+      location.href = destinationForRole(
+        (resp && resp.role) || chosenRole, wantRole);
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Registration failed.";
       msg.className = "msg error";
