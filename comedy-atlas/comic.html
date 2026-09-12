@@ -262,6 +262,23 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <label class="pub-check" style="margin-top:8px"><input type="checkbox" id="avail-notify-opportunities" checked> Email me if a booker posts a matching open spot for this date</label>
       <button id="add-availability">Add date</button>
       <div class="msg" id="avail-msg"></div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+      <p class="privacy" style="margin-bottom:6px">Free for a whole run of
+      dates? Add a range instead of one date at a time — same city/note/email
+      setting applies to every day in the range.</p>
+      <div class="row">
+        <div>
+          <label for="avail-range-start">Start date</label>
+          <input id="avail-range-start" type="date">
+        </div>
+        <div>
+          <label for="avail-range-end">End date</label>
+          <input id="avail-range-end" type="date">
+        </div>
+      </div>
+      <button id="add-availability-range" class="secondary" type="button">Add date range</button>
+      <div class="msg" id="avail-range-msg"></div>
     </div>
 
     <div class="card">
@@ -891,6 +908,68 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       A.get("/comic/" + meId + "/availability").then(renderAvailability);
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add date.";
+      msg.className = "msg error";
+    });
+  });
+
+  // expandDateRange(start, end) -- pure, self-contained (no DOM, no
+  // outer-scope reads) so tests/test_comic_availability_range_page.py can
+  // extract and execute it standalone under node. Inclusive on both ends,
+  // "YYYY-MM-DD" in, "YYYY-MM-DD" out; a reversed range (end before start)
+  // yields []; capped at 62 days so a fat-fingered year-long range can't
+  // fire 300+ PUT requests in a loop.
+  function expandDateRange(start, end) {
+    var MAX_DAYS = 62;
+    var s = new Date(start + "T00:00:00Z");
+    var e = new Date(end + "T00:00:00Z");
+    if (isNaN(s.getTime()) || isNaN(e.getTime()) || e < s) return [];
+    var out = [];
+    var cur = s;
+    while (cur <= e && out.length < MAX_DAYS) {
+      out.push(cur.toISOString().slice(0, 10));
+      cur = new Date(cur.getTime() + 24 * 60 * 60 * 1000);
+    }
+    return out;
+  }
+
+  document.getElementById("add-availability-range").addEventListener("click", function () {
+    var msg = document.getElementById("avail-range-msg");
+    var start = document.getElementById("avail-range-start").value;
+    var end = document.getElementById("avail-range-end").value;
+    if (!start || !end) { msg.textContent = "Pick both dates."; msg.className = "msg error"; return; }
+    var dates = expandDateRange(start, end);
+    if (!dates.length) {
+      msg.textContent = "End date must be on or after the start date.";
+      msg.className = "msg error";
+      return;
+    }
+    var cityVal = document.getElementById("avail-city").value;
+    var cityId = resolveCity(cityVal);
+    var note = document.getElementById("avail-note").value || null;
+    var notify = document.getElementById("avail-notify-opportunities").checked;
+    // Loops the SAME PUT /comic/{id}/availability the single-date entry
+    // above uses, one call per day (the endpoint's own body shape is a
+    // list of {available_date, city_id, note, notify_opportunities} --
+    // matching main.py:1879-1904 -- so this could be a single call with
+    // every date, but one-per-day keeps a single bad date from failing
+    // the whole range and reuses renderAvailability's existing refresh).
+    msg.textContent = "Adding " + dates.length + " date(s)…"; msg.className = "msg";
+    var chain = Promise.resolve();
+    dates.forEach(function (d) {
+      chain = chain.then(function () {
+        return A.put("/comic/" + meId + "/availability", {
+          dates: [{
+            available_date: d, city_id: cityId, note: note,
+            notify_opportunities: notify,
+          }],
+        });
+      });
+    });
+    chain.then(function () {
+      msg.textContent = "Added " + dates.length + " date(s)."; msg.className = "msg ok";
+      A.get("/comic/" + meId + "/availability").then(renderAvailability);
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add range.";
       msg.className = "msg error";
     });
   });

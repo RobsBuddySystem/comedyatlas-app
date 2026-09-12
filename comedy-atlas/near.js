@@ -91,11 +91,103 @@
       '<p>Finding shows near you…</p></div>');
   }
 
-  function renderFallback(panel, message) {
-    renderPanelState(panel, '<div class="state-block"><p>' + message + '</p>' +
-      '<p style="margin-top:10px"><a class="near-fallback-link" href="#" onclick="' +
+  function fallbackLinkHtml() {
+    return '<p style="margin-top:10px"><a class="near-fallback-link" href="#" onclick="' +
       'document.querySelector(\'.card-grid\') && document.querySelector(\'.card-grid\').scrollIntoView({behavior:\'smooth\'});return false;">' +
-      'Browse by city instead →</a></p></div>');
+      'Browse by city instead →</a></p>';
+  }
+
+  function renderPlainFallback(panel, message) {
+    renderPanelState(panel, '<div class="state-block"><p>' + message + '</p>' + fallbackLinkHtml() + '</div>');
+  }
+
+  // Pure, self-contained (no outer-closure references) so it can be
+  // extracted and run standalone under node -- see
+  // tests/test_near_js_fallback.py. Case-insensitive match on cities.json's
+  // {name, latitude, longitude} shape (exports/cities.json, served at
+  // /data/comedy-atlas/cities.json).
+  function cityCentre(cities, name) {
+    if (!cities || !name) return null;
+    var target = String(name).toLowerCase();
+    for (var i = 0; i < cities.length; i++) {
+      var c = cities[i];
+      if (c && typeof c.name === "string" && c.name.toLowerCase() === target &&
+          c.latitude !== null && c.latitude !== undefined &&
+          c.longitude !== null && c.longitude !== undefined) {
+        return { lat: c.latitude, lng: c.longitude };
+      }
+    }
+    return null;
+  }
+
+  // Renders a city's shows through the SAME per-event card renderer
+  // (eventCard) the geolocation-success path uses, with the IP-fallback
+  // banner above the cards and the manual "Browse by city" picker still
+  // below -- 2026-09-11 (Robert: iOS "Don't Allow" -> Safari never
+  // re-prompts -> old fallback was a dead end even though we already knew
+  // roughly where the visitor is, from IP).
+  function renderCityFallback(panel, cityLabel, events) {
+    var banner = '<p>Location is off on your phone, so here is ' +
+      escapeHtml(cityLabel) + ' — tap to change city.</p>';
+    if (!events || !events.length) {
+      renderPanelState(panel, '<div class="state-block">' + banner +
+        '<p>No shows within 25km in the next two weeks.</p></div>' + fallbackLinkHtml());
+      return;
+    }
+    var html = banner;
+    events.forEach(function (ev) { html += eventCard(ev); });
+    renderPanelState(panel, html + fallbackLinkHtml());
+  }
+
+  // The IP-based upgrade: GET /geo/nearest-city (coarse, server-side geo-IP
+  // -- same endpoint atlas-geo.js already uses, no device coordinates
+  // involved), look its city up in cities.json for coordinates, then reuse
+  // /shows/near exactly as the geolocation-success path does. Any failure
+  // at any step (no city returned, city not in cities.json, /shows/near
+  // errors) falls straight through to today's plain manual-picker fallback
+  // -- never a broken or blank panel.
+  function geoCityFallback(panel, plainMessage) {
+    fetch(API_BASE + "/geo/nearest-city").then(function (r) {
+      if (!r.ok) throw new Error("bad status " + r.status);
+      return r.json();
+    }).then(function (data) {
+      var city = data && data.city;
+      if (!city) throw new Error("no nearest city");
+      return fetch("/data/comedy-atlas/cities.json").then(function (r2) {
+        if (!r2.ok) throw new Error("cities.json fetch failed");
+        return r2.json();
+      }).then(function (cities) {
+        var centre = cityCentre(cities, city);
+        if (!centre) throw new Error("city has no coordinates");
+        return fetch(API_BASE + "/shows/near?lat=" + encodeURIComponent(centre.lat) +
+          "&lon=" + encodeURIComponent(centre.lng) + "&radius_km=25&language=en")
+          .then(function (r3) {
+            if (!r3.ok) throw new Error("bad status " + r3.status);
+            return r3.json();
+          }).then(function (events) {
+            renderCityFallback(panel, city, events);
+          });
+      });
+    }).catch(function () {
+      renderPlainFallback(panel, plainMessage);
+    });
+  }
+
+  // kind: "denied" | "timeout" | "unavailable" | undefined. "denied" and
+  // "timeout" get the IP-city upgrade above -- the browser told us the
+  // device location is unusable, but IP still narrows the search. There is
+  // no device signal at all to have been denied/timed-out for
+  // "unavailable" (no Geolocation API support), so it renders the plain
+  // fallback directly; the fetch-error catch in fetchNear() below passes no
+  // kind at all (an API outage, not a location fallback) and behaves
+  // exactly as before.
+  function renderFallback(panel, message, kind) {
+    if (kind) console.warn("near: fallback=" + kind);
+    if (kind === "denied" || kind === "timeout") {
+      geoCityFallback(panel, message);
+      return;
+    }
+    renderPlainFallback(panel, message);
   }
 
   // 2026-07-18 (same standing rule enforced in atlas-common.js's card
@@ -183,7 +275,7 @@
   // firing after the watchdog already rendered the fallback.
   function onFindClick(panel) {
     if (!("geolocation" in navigator)) {
-      renderFallback(panel, "Your browser doesn’t support location — pick a city below instead.");
+      renderFallback(panel, "Your browser doesn’t support location — pick a city below instead.", "unavailable");
       return;
     }
     renderLoading(panel);
@@ -192,7 +284,7 @@
       if (settled) return;
       settled = true;
       renderFallback(panel, "Couldn’t get your location — check that Location Services is on, " +
-        "or pick a city below instead.");
+        "or pick a city below instead.", "timeout");
     }, 9000);
     navigator.geolocation.getCurrentPosition(
       function (pos) {
@@ -205,7 +297,7 @@
         if (settled) return;
         settled = true;
         clearTimeout(watchdog);
-        renderFallback(panel, "Location access was denied — no problem, pick a city below instead.");
+        renderFallback(panel, "Location access was denied — no problem, pick a city below instead.", "denied");
       },
       { timeout: 8000, maximumAge: 300000, enableHighAccuracy: false }
     );

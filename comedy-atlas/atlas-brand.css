@@ -1,0 +1,18 @@
+/* COMEDY ATLAS brand tokens -- the ONE sheet branch sites (pariscomedy.com)
+   consume. Values are pinned equal to site/comedy-atlas/index.html :root by
+   tests/test_atlas_brand_css.py; change them there first. */
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
+  --red:#e34b64;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}
+}
+.atlas-wordmark{display:inline-flex;gap:.4em;align-items:baseline;font-weight:700;letter-spacing:.02em;text-decoration:none}
+.atlas-wordmark .atlas-name{color:var(--gold)}
+.atlas-wordmark .sep{color:var(--muted)}
+.atlas-wordmark .branch{color:var(--text)}
+.atlas-footer-line{color:var(--muted);font-size:.9em;margin-top:1em}

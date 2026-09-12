@@ -242,6 +242,33 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     <section data-tab="shows">
     <div class="card">
+      <h2>Post an open spot</h2>
+      <p class="privacy" style="margin-bottom:10px">Need comics for a date?
+      Post it — comics who said they're free that day and city get told.</p>
+      <label for="opp-show">Your show</label>
+      <select id="opp-show"><option value="">Loading your shows…</option></select>
+      <div class="row">
+        <div>
+          <label for="opp-date">Date</label>
+          <input id="opp-date" type="date">
+        </div>
+        <div>
+          <label for="opp-role">Spot role</label>
+          <select id="opp-role">
+            <option value="open_mic">open_mic</option>
+            <option value="guest">guest</option>
+            <option value="bucket">bucket</option>
+            <option value="support">support</option>
+            <option value="feature">feature</option>
+            <option value="headline">headline</option>
+          </select>
+        </div>
+      </div>
+      <button id="post-opp">Post spot</button>
+      <div class="msg" id="opp-msg"></div>
+    </div>
+
+    <div class="card">
       <h2>📅 My venue calendar</h2>
       <p class="privacy" style="margin-bottom:10px">Auto-populated from
       everything the scraper already found for your shows — pick one of
@@ -629,34 +656,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
     </section>
 
-    <section data-tab="shows">
-    <div class="card">
-      <h2>Post an open spot</h2>
-      <label for="opp-show">Your show</label>
-      <select id="opp-show"><option value="">Loading your shows…</option></select>
-      <div class="row">
-        <div>
-          <label for="opp-date">Date</label>
-          <input id="opp-date" type="date">
-        </div>
-        <div>
-          <label for="opp-role">Spot role</label>
-          <select id="opp-role">
-            <option value="open_mic">open_mic</option>
-            <option value="guest">guest</option>
-            <option value="bucket">bucket</option>
-            <option value="support">support</option>
-            <option value="feature">feature</option>
-            <option value="headline">headline</option>
-          </select>
-        </div>
-      </div>
-      <button id="post-opp">Post spot</button>
-      <div class="msg" id="opp-msg"></div>
-    </div>
-    </section>
-
     <section data-tab="lineups">
+    <div class="card">
+      <h2>Comics free for my dates</h2>
+      <p class="privacy" style="margin-bottom:10px">For each open spot
+      you've posted, see who's told ATLAS they're free that day in that
+      city — without waiting on the automatic email match.</p>
+      <label for="cfd-show">Your show</label>
+      <select id="cfd-show"><option value="">Loading your shows…</option></select>
+      <button id="cfd-load" type="button">Load my open spots</button>
+      <div class="msg" id="cfd-msg"></div>
+      <div id="cfd-list" style="margin-top:10px"></div>
+    </div>
+
     <div class="card">
       <h2>Message a comic</h2>
       <div class="tabs2">
@@ -1421,7 +1433,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // render logic, populated from /booker/my-shows once here, instead of
   // each reinventing its own option-building code.
   var SHOW_SELECT_IDS = ["cal-show", "tray-show", "invites-show", "wa-show",
-    "opp-show", "inv-show", "occ-show"];
+    "opp-show", "inv-show", "occ-show", "cfd-show"];
 
   function showOptionsHtml(rows) {
     return rows.map(function (s) {
@@ -2532,6 +2544,83 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).catch(function (e) {
       msg.textContent = inviteErrorMessage(e, "Failed to send invite.");
       msg.className = "msg error";
+    });
+  });
+
+  // "Comics free for my dates" (Task 9, 2026-09-11 plan): per show, list
+  // its OPEN broadcast spots (GET /booker/shows/{id}/opportunities), then
+  // for each one call the read-only matches route
+  // (GET /booker/shows/{id}/opportunities/{opp_id}/matches) and render
+  // one row per matching comic with an Invite button that reuses the
+  // exact same POST /booker/shows/{id}/invite payload shape as "Message a
+  // comic" above (known-comic path: comic_person_id + booker_name/
+  // booker_contact/message).
+  document.getElementById("cfd-load").addEventListener("click", function () {
+    var msg = document.getElementById("cfd-msg");
+    var list = document.getElementById("cfd-list");
+    var showId = document.getElementById("cfd-show").value;
+    if (!showId) { msg.textContent = "Pick a show."; msg.className = "msg error"; return; }
+    msg.textContent = "Loading…"; msg.className = "msg"; list.innerHTML = "";
+    A.get("/booker/shows/" + showId + "/opportunities").then(function (r) {
+      var opps = r.opportunities || [];
+      if (!opps.length) {
+        msg.textContent = "No open spots posted for this show yet.";
+        msg.className = "msg";
+        return;
+      }
+      msg.textContent = ""; msg.className = "msg";
+      var work = opps.map(function (opp) {
+        return A.get("/booker/shows/" + showId + "/opportunities/" + opp.id + "/matches")
+          .then(function (mr) { return { opp: opp, matches: mr.matches || [] }; })
+          .catch(function () { return { opp: opp, matches: [] }; });
+      });
+      Promise.all(work).then(function (results) {
+        list.innerHTML = results.map(function (res) {
+          var opp = res.opp;
+          var rows = res.matches.length
+            ? res.matches.map(function (m) {
+                var applied = m.already_applied
+                  ? ' <span style="color:var(--muted)">(already applied)</span>' : "";
+                return '<div class="card" style="margin-top:8px">' +
+                  '<b>' + A.escapeHtml(m.stage_name || "Comic #" + m.person_id) + '</b>' +
+                  (m.city ? ' — ' + A.escapeHtml(m.city) : "") +
+                  applied +
+                  (m.note ? '<div class="privacy">' + A.escapeHtml(m.note) + '</div>' : "") +
+                  '<div style="margin-top:6px">' +
+                  '<button class="secondary cfd-invite" type="button" ' +
+                  'data-show="' + showId + '" data-comic="' + m.person_id + '">Invite</button>' +
+                  '<span class="msg" style="margin-left:8px"></span>' +
+                  '</div></div>';
+              }).join("")
+            : '<p class="privacy">Nobody has said they\'re free for this date/city yet.</p>';
+          return '<div style="margin-top:14px"><h3>' +
+            A.escapeHtml(opp.spot_role) + ' — ' + A.escapeHtml(String(opp.opportunity_date)) +
+            '</h3>' + rows + '</div>';
+        }).join("");
+      });
+    }).catch(function (e) {
+      msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load.";
+      msg.className = "msg error";
+    });
+  });
+
+  document.getElementById("cfd-list").addEventListener("click", function (ev) {
+    var btn = ev.target.closest(".cfd-invite");
+    if (!btn) return;
+    var out = btn.nextElementSibling;
+    var payload = {
+      comic_person_id: parseInt(btn.dataset.comic, 10),
+      booker_name: document.getElementById("inv-booker-name").value || "",
+      booker_contact: document.getElementById("inv-booker-contact").value || "",
+      message: "Are you free for this spot?",
+    };
+    btn.disabled = true;
+    A.post("/booker/shows/" + btn.dataset.show + "/invite", payload).then(function (r) {
+      out.textContent = "Invite sent (offer #" + r.offer_id + ")."; out.className = "msg ok";
+    }).catch(function (e) {
+      btn.disabled = false;
+      out.textContent = inviteErrorMessage(e, "Failed to send invite.");
+      out.className = "msg error";
     });
   });
 })();
