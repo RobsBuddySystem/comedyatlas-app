@@ -376,7 +376,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="row">
         <div>
           <label for="vs-city">City</label>
-          <select id="vs-city"><option value="">Loading cities…</option></select>
+          <input id="vs-city" type="text" list="vs-cities-list" autocomplete="off"
+            placeholder="Start typing a city, e.g. Lille">
+          <datalist id="vs-cities-list"></datalist>
         </div>
         <div>
           <label for="vs-radius">Radius</label>
@@ -1260,9 +1262,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     list.innerHTML = "";
     var includePotential = document.getElementById("vs-include-potential").checked ? 1 : 0;
     var radiusKm = document.getElementById("vs-radius").value;
-    var sel = document.getElementById("vs-city");
-    var opt = sel.options[sel.selectedIndex];
-    var cityId = opt && opt.getAttribute("data-city-id");
+    var matchedCity = vsCities.filter(function (c) { return c.city_name === cityName; })[0];
+    var cityId = matchedCity && matchedCity.city_id;
 
     var request = cityId
       ? A.get("/booker/venues?near=" + encodeURIComponent(cityId) + "&radius_km=" + encodeURIComponent(radiusKm) +
@@ -1290,31 +1291,110 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       });
   }
 
+  // vs-city is a free-text input + <datalist> (was a <select> until 2026-09-12
+  // -- 127 cities in one dropdown was unusable; Robert: "when there is a city
+  // search field it has to be a search text box, not a drop down menu").
+  // vsCities holds the full {city_id, city_name, country, venue_count} rows
+  // so matching/lookup work without touching the DOM.
+  var vsCities = [];
+
+  function vsNormalizeCityName(s) {
+    return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+  }
+
+  // Strips a trailing " (12)" venue-count suffix and/or a trailing ", Country"
+  // so a full datalist label ("Lille, France (12)") resolves back to the
+  // plain city name the API expects, the same as if the booker had just
+  // typed "Lille" or "lille, france" by hand.
+  function vsStripCountrySuffix(s) {
+    s = (s || "").trim();
+    var prev;
+    do {
+      prev = s;
+      s = s.replace(/\s*\([^)]*\)\s*$/, "").trim();
+    } while (s !== prev);
+    s = s.replace(/,\s*[^,]+$/, "").trim();
+    return s;
+  }
+
+  // Case- and accent-insensitive match ("liege" -> "Liège"). Returns the
+  // matching city row only when exactly one known city fits the typed text
+  // -- never falls back to a partial/ambiguous match.
+  function vsFindCityMatch(typed) {
+    var raw = (typed || "").trim();
+    if (!raw) return null;
+    var norm = vsNormalizeCityName(raw);
+    var stripped = vsNormalizeCityName(vsStripCountrySuffix(raw));
+    var matches = vsCities.filter(function (c) {
+      var cn = vsNormalizeCityName(c.city_name);
+      return cn === norm || cn === stripped;
+    });
+    return matches.length === 1 ? matches[0] : null;
+  }
+
+  // Resolves the current #vs-city text against vsCities and loads that
+  // city's venues on an exact unique match. When showError is set (Enter /
+  // change / the Load button) and the typed text matches no known city, shows
+  // a short inline message instead of ever falling back to a giant list.
+  function vsResolveAndLoad(showError) {
+    var input = document.getElementById("vs-city");
+    var typed = input.value;
+    var match = vsFindCityMatch(typed);
+    if (match) {
+      var msg = document.getElementById("vs-msg");
+      msg.textContent = "";
+      msg.className = "msg";
+      loadVsVenues(match.city_name);
+      return true;
+    }
+    if (showError && typed.trim()) {
+      var errMsg = document.getElementById("vs-msg");
+      errMsg.textContent = "No city called \"" + typed.trim() + "\" yet — check the spelling.";
+      errMsg.className = "msg error";
+    }
+    return false;
+  }
+
   function loadVsCities() {
-    var sel = document.getElementById("vs-city");
+    var input = document.getElementById("vs-city");
+    var dl = document.getElementById("vs-cities-list");
     return A.get("/booker/venues/cities").then(function (data) {
-      var cities = data.cities || [];
-      if (!cities.length) {
-        sel.innerHTML = '<option value="">No cities yet</option>';
+      vsCities = data.cities || [];
+      if (!vsCities.length) {
+        dl.innerHTML = "";
+        input.placeholder = "No cities yet";
         return;
       }
-      sel.innerHTML = cities.map(function (c) {
-        return '<option value="' + A.escapeHtml(c.city_name) + '" data-city-id="' +
-          A.escapeHtml(String(c.city_id)) + '">' +
-          A.escapeHtml(c.city_name) + ' (' + c.venue_count + ')</option>';
+      dl.innerHTML = vsCities.map(function (c) {
+        var label = c.city_name + (c.country ? ", " + c.country : "") + " (" + c.venue_count + ")";
+        return '<option value="' + A.escapeHtml(label) + '"></option>';
       }).join("");
       var remembered = null;
       try { remembered = localStorage.getItem("atlas_vs_city"); } catch (e) {}
-      if (remembered && cities.some(function (c) { return c.city_name === remembered; })) {
-        sel.value = remembered;
+      if (remembered && vsCities.some(function (c) { return c.city_name === remembered; })) {
+        input.value = remembered;
       }
     }).catch(function () {
-      sel.innerHTML = '<option value="">Couldn\'t load cities</option>';
+      input.placeholder = "Couldn't load cities";
     });
   }
 
+  (function () {
+    var vsCityInput = document.getElementById("vs-city");
+    vsCityInput.addEventListener("input", function () { vsResolveAndLoad(false); });
+    vsCityInput.addEventListener("change", function () { vsResolveAndLoad(true); });
+    vsCityInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); vsResolveAndLoad(true); }
+    });
+  })();
+
   document.getElementById("vs-load").addEventListener("click", function () {
-    loadVsVenues(document.getElementById("vs-city").value);
+    var typed = document.getElementById("vs-city").value;
+    if (!typed.trim()) {
+      loadVsVenues("");
+      return;
+    }
+    vsResolveAndLoad(true);
   });
 
   // ------------------------------------------------------------------
