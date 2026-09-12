@@ -172,7 +172,13 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
   <h1 class="atlas-wordmark">Samantha Pressdee: Covered<span class="dot">.</span></h1>
