@@ -118,7 +118,13 @@ noscript .result-meta{margin-top:2px}
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <main id="main-content" tabindex="-1">
   <h1>Search COMEDY ATLAS</h1>
   <div class="search-box">
@@ -573,8 +579,35 @@ noscript .result-meta{margin-top:2px}
   }
 
   function upcomingCount(rec) {
-    var m = /^(\d+) upcoming show/.exec(rec.status || "");
-    return m ? parseInt(m[1], 10) : 0;
+    if (typeof rec.upcoming_count === "number" && isFinite(rec.upcoming_count)) {
+      return rec.upcoming_count;
+    }
+    var m = /^(\d+)\s+upcoming/i.exec(rec.status || "");
+    if (m) { return parseInt(m[1], 10); }
+    return rec.date ? 1 : 0;
+  }
+
+  // WORD-PREFIX MATCH (site-wide search work order, 2026-09-12): true when
+  // `q` is the start of the WHOLE name (old behavior, kept -- covers a
+  // multi-word query typed against a multi-word name, e.g. "sarah don"
+  // against "Sarah Donnelly") OR the start of any later word inside it
+  // (e.g. "don" against "Sarah Donnelly" -- her SURNAME), so a query that
+  // matches a later word ranks with every other "found by prefix" result
+  // instead of being lumped in with pure mid-word/alias/city substring
+  // hits. Deliberately never mid-word: "lon" must not tier-1 "Coulon" or
+  // "Villalón" (the type-ahead box filters those out entirely -- see
+  // globe/search.js's matchesStartOfAnyWord docstring for the sibling
+  // implementation this mirrors) -- on this full results page they can
+  // still appear (collectMatches already found them via a real field
+  // substring), just ranked below every prefix match, per `rank()` below.
+  function matchesStartOfAnyWord(name, q) {
+    if (!q) { return false; }
+    if (name.indexOf(q) === 0) { return true; }
+    var words = name.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].indexOf(q) === 0) { return true; }
+    }
+    return false;
   }
 
   // WORLDWIDE NEAREST-COVERAGE (2026-08-15, Robert: "not just for Hugo
@@ -839,15 +872,21 @@ noscript .result-meta{margin-top:2px}
         return;
       }
     }
-    // Rank: exact-name match, then name-starts-with, then everything else
-    // (alias/city hits) -- each tier alphabetical by name so ordering is
-    // stable and never invented.
+    // Rank (site-wide search work order, 2026-09-12): exact-name match,
+    // then a match at the start of any word (matchesStartOfAnyWord --
+    // subsumes the old "name-starts-with" tier, since the first word IS
+    // the start of the name), then everything else that matched (mid-word
+    // substring / alias-only / city-only hits) -- each tier then broken by
+    // upcomingCount (more real upcoming shows first), and alphabetical
+    // only as the final, deterministic tiebreak.
     if (q) {
       matches.sort(function (a, b) {
         var an = foldAccents((a.name || "").toLowerCase()), bn = foldAccents((b.name || "").toLowerCase());
-        var rank = function (n) { return n === q ? 0 : (n.indexOf(q) === 0 ? 1 : 2); };
+        var rank = function (n) { return n === q ? 0 : (matchesStartOfAnyWord(n, q) ? 1 : 2); };
         var ra = rank(an), rb = rank(bn);
         if (ra !== rb) { return ra - rb; }
+        var ua = upcomingCount(b) - upcomingCount(a);
+        if (ua !== 0) { return ua; }
         return an.localeCompare(bn);
       });
     }

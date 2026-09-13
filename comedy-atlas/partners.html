@@ -73,7 +73,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <div class="container" id="main-content" tabindex="-1">
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
   <div class="badge">PARTNER WITH US</div>
@@ -88,17 +94,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <!-- PARTNER_STATS_START -->
   <div class="card">
     <div class="stat-row">
-      <div class="stat"><div class="n">5308</div><div class="l">upcoming shows tracked</div></div>
+      <div class="stat"><div class="n">6473</div><div class="l">upcoming shows tracked</div></div>
       <div class="stat"><div class="n">71</div><div class="l">cities</div></div>
-      <div class="stat"><div class="n">605</div><div class="l">venues mapped</div></div>
+      <div class="stat"><div class="n">592</div><div class="l">venues mapped</div></div>
       <div class="stat"><div class="n">4230</div><div class="l">comics with a public profile</div></div>
     </div>
     <p style="margin-top:10px;font-size:12px;color:var(--muted)">
-      1936 venues in the catalog total (605 geocoded so far).
+      1885 venues in the catalog total (592 geocoded so far).
       "Comics with a public profile" is what a visitor can browse today; the catalog tracks
       12080 names in total, and we quote the
       smaller, checkable figure on purpose.
-      Ticket referrals tracked since July 2026. Figures as of 12 Sep 2026, generated
+      Ticket referrals tracked since July 2026. Figures as of 25 Aug 2026, generated
       automatically from live listings data -- never invented.
     </p>
   </div>

@@ -171,13 +171,19 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <header class="atlas-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
   <h1 class="atlas-wordmark">Comedy shows in Oslo, Norway<span class="dot">.</span></h1>
   <div class="atlas-subtitle">2 upcoming shows · Oslo, Norway</div>
   <p class="atlas-promise">Current event-feed coverage: 2 upcoming stand-up shows at 1 venue in Oslo: <a href="/comedy-atlas/venue/gamle-logen-banqueting-oslo/">Gamle Logen - Banqueting Oslo</a>. The venue directory separately contains 1 Oslo venue page. Neither count represents every comedy venue in Oslo.</p>
-  
+  <p class="atlas-today-cta" style="margin-top:8px"><a href="/comedy-atlas/calendar/2026-09-13/?city=Oslo" class="back-link">See what's on in Oslo today (2 shows) →</a></p>
 </header>
 <main id="main-content" tabindex="-1">
 <h2 class="section-heading">Upcoming shows</h2>

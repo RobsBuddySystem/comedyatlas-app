@@ -218,12 +218,57 @@ function haystackFor(record) {
   return parts.filter(Boolean).join(' ␟ ').toLowerCase();
 }
 
+/**
+ * True when `q` is the start of any whitespace/punctuation-delimited word in
+ * `name` (both already lowercased by the caller) -- e.g. q="don" matches
+ * "sarah donnelly" (the word "donnelly"), not just a name that itself
+ * begins with "don". A name-starts-with hit (rank 1 below) is always ALSO a
+ * word-start hit (the first word), so this single check replaces the old
+ * "name.indexOf(q) === 0" special case without narrowing it.
+ */
+function matchesStartOfAnyWord(name, q) {
+  if (!q) return false;
+  const words = name.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+  return words.some((w) => w.indexOf(q) === 0);
+}
+
+/**
+ * Real-number "popularity" a record can be ranked by, ONLY ever derived
+ * from evidence the record itself already carries -- never a guess:
+ *   1. `upcoming_count` (scripts/generate_search_index.py, 2026-09-12) --
+ *      the exact integer its own `status` text is built from, when present
+ *      (show/organizer/city/festival).
+ *   2. Falls back to parsing the leading number out of `status` (e.g. "3
+ *      upcoming shows") for any older/other record shape that carries one.
+ *   3. Otherwise, a record with a real upcoming `date` ranks above one
+ *      without (comics/venues/events carry `date` but no status-derived
+ *      count) -- the one signal every type in this index can carry.
+ * Never invents a count where none of the three is present (returns 0).
+ */
+function upcomingSignal(record) {
+  if (!record) return 0;
+  if (typeof record.upcoming_count === 'number' && Number.isFinite(record.upcoming_count)) {
+    return record.upcoming_count;
+  }
+  const m = /^(\d+)\s+upcoming/i.exec(record.status || '');
+  if (m) return parseInt(m[1], 10);
+  return record.date ? 1 : 0;
+}
+
+/**
+ * Ranking tiers (work order, 2026-09-12 site-wide search): exact name match,
+ * then a match at the start of any word in the name, then everything else
+ * that matched (alias/city substring hits) -- each tier then broken by
+ * upcomingSignal (more real upcoming shows first) and finally alphabetical,
+ * both applied by groupAndFilterRecords' own .sort() comparator below so
+ * this function stays a pure tier number.
+ */
 function rankWithinGroup(query) {
   const q = query.toLowerCase();
   return (record) => {
     const name = (record && record.name ? record.name : '').toLowerCase();
     if (name === q) return 0;
-    if (name.indexOf(q) === 0) return 1;
+    if (matchesStartOfAnyWord(name, q)) return 1;
     return 2;
   };
 }
@@ -254,7 +299,15 @@ export function groupAndFilterRecords(records, query, opts) {
   if (!q) return { groups: [], total: 0 };
 
   const qLower = q.toLowerCase();
-  const matches = list.filter((r) => haystackFor(r).indexOf(qLower) !== -1);
+  // TYPE-AHEAD IS STRICTER THAN THE FULL SEARCH PAGE (coordinator directive,
+  // 2026-09-12, learned from the sibling pariscomedy build): a mid-word
+  // substring ("lon" inside "Coulon"/"Villalón") is not merely ranked lower
+  // here, it must never appear in the dropdown at all -- typing "Lon" must
+  // suggest London, never Julie Coulon. site/comedy-atlas/search/index.html
+  // (the full results page) is deliberately more permissive: it still
+  // surfaces a mid-word hit, just ranked below every word-prefix match (see
+  // that page's own matchesStartOfAnyWord + rank() comment).
+  const matches = list.filter((r) => matchesStartOfAnyWord(haystackFor(r), qLower));
 
   const rank = rankWithinGroup(q);
   const groups = [];
@@ -267,6 +320,9 @@ export function groupAndFilterRecords(records, query, opts) {
         const ra = rank(a);
         const rb = rank(b);
         if (ra !== rb) return ra - rb;
+        const ua = upcomingSignal(a);
+        const ub = upcomingSignal(b);
+        if (ua !== ub) return ub - ua;
         return (a.name || '').localeCompare(b.name || '');
       });
     if (forType.length === 0) return;
@@ -646,4 +702,7 @@ export function mountGlobeSearch(inputEl, options) {
   };
 }
 
-export const __internal = { GROUP_ORDER, haystackFor, normalizeForMatch };
+export const __internal = {
+  GROUP_ORDER, haystackFor, normalizeForMatch,
+  matchesStartOfAnyWord, upcomingSignal,
+};

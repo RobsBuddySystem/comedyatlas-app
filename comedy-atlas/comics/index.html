@@ -418,14 +418,20 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <header class="comics-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
   <h1 class="atlas-wordmark">Comedians<span class="dot">.</span></h1>
   <p style="color: var(--muted); margin-top: 12px;">Every comedian with a page on
   COMEDY ATLAS — real shows only, sourced from public listings. Follow your
   favorites to hear about new dates.</p>
-  <div class="stats"><div><strong>2688</strong> comedians</div></div>
+  <div class="stats"><div><strong>2720</strong> comedians</div></div>
 </header>
 <div id="comics-toolbar" hidden>
   <div class="search-row">
@@ -434,38 +440,37 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
   <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
        default identity-first view; Next on stage is a date-first view of
-       only the 59 comics with a real upcoming date. Hidden with
+       only the 58 comics with a real upcoming date. Hidden with
        the rest of the toolbar until JS can act on it -- with JS off the
        A-Z view (which needs no script at all) is the whole page. -->
   <div class="view-row" role="group" aria-label="Choose a view">
     <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
-    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(59)</span></button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(58)</span></button>
   </div>
   <details id="comics-facets">
     <summary>Filters</summary>
     <div class="facet-row" role="group" aria-label="Filter by city">
       <span class="facet-label">City</span>
-      <button type="button" class="facet-chip is-active" data-city="" aria-pressed="true">All cities <span class="facet-n">(2688)</span></button>
+      <button type="button" class="facet-chip is-active" data-city="" aria-pressed="true">All cities <span class="facet-n">(2720)</span></button>
     <button type="button" class="facet-chip" id="city-edinburgh" data-city="Edinburgh" aria-pressed="false">Edinburgh <span class="facet-n">(107)</span></button>
     <button type="button" class="facet-chip" id="city-cologne" data-city="Cologne" aria-pressed="false">Cologne <span class="facet-n">(45)</span></button>
-    <button type="button" class="facet-chip" id="city-paris" data-city="Paris" aria-pressed="false">Paris <span class="facet-n">(16)</span></button>
+    <button type="button" class="facet-chip" id="city-paris" data-city="Paris" aria-pressed="false">Paris <span class="facet-n">(40)</span></button>
     <button type="button" class="facet-chip" id="city-barcelona" data-city="Barcelona" aria-pressed="false">Barcelona <span class="facet-n">(5)</span></button>
     <button type="button" class="facet-chip" id="city-galway" data-city="Galway" aria-pressed="false">Galway <span class="facet-n">(4)</span></button>
     <button type="button" class="facet-chip" id="city-berlin" data-city="Berlin" aria-pressed="false">Berlin <span class="facet-n">(3)</span></button>
     <button type="button" class="facet-chip" id="city-amsterdam" data-city="Amsterdam" aria-pressed="false">Amsterdam <span class="facet-n">(2)</span></button>
-    <button type="button" class="facet-chip" id="city-lisbon" data-city="Lisbon" aria-pressed="false">Lisbon <span class="facet-n">(1)</span></button>
     <button type="button" class="facet-chip" id="city-rome" data-city="Rome" aria-pressed="false">Rome <span class="facet-n">(1)</span></button>
-    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(2504)</span></button>
+    <button type="button" class="facet-chip" data-city="__none__" aria-pressed="false">No city on record <span class="facet-n">(2513)</span></button>
     </div>
     <div class="facet-row" role="group" aria-label="Filter by activity">
       <span class="facet-label">Activity</span>
-      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(59)</span></button>
+      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(58)</span></button>
       <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(49)</span></button>
       <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(3)</span></button>
     </div>
   </details>
 </div>
-<p id="comics-visible-count" role="status" aria-live="polite">Showing 2688 of 2688 comedians</p>
+<p id="comics-visible-count" role="status" aria-live="polite">Showing 2720 of 2720 comedians</p>
 <div id="az-view">
 <nav class="az-jump" aria-label="Jump to a letter">
   <a href="#letter-a">A</a>
@@ -498,7 +503,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </nav>
 <main id="main-content" tabindex="-1">
 <section class="letter-group" id="letter-a" data-letter="A">
-  <h2 class="letter-heading">A <span class="letter-count">(279)</span></h2>
+  <h2 class="letter-heading">A <span class="letter-count">(283)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/aamer-rahman/" class="comic-card" data-city="" data-name="aamer rahman" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Aamer%20Rahman%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -564,7 +569,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/abhi-pamnani/" class="comic-card" data-city="" data-name="abhi pamnani" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Abhi%20Pamnani%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//O63LDY7J11236AWI" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Abhi Pamnani</div>
     
@@ -708,7 +713,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/adam-riley/" class="comic-card" data-city="" data-name="adam riley" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Adam%20Riley%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/cgkm/2RI9JW9D7882VG3Q" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Adam Riley</div>
     
@@ -787,6 +792,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/adrien-montowski/" class="comic-card" data-city="Paris" data-name="adrien montowski" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-adrianmontowski_1754050881.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Adrien Montowski</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/adrienne-iapalucci/" class="comic-card" data-city="" data-name="adrienne iapalucci" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Adrienne%20Iapalucci%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAI%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -815,6 +828,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Ahmed_Mamow_Parkteatret_%28231834%29-2.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ahmed Mamow</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ahmed-sparrow/" class="comic-card" data-city="Paris" data-name="ahmed sparrow" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/ahmed_1745933895.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ahmed Sparrow</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -1115,6 +1136,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/alex-di-mambro/" class="comic-card" data-city="Paris" data-name="alex di mambro" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/alex-dimambro-portrait-paname-art-cafe_1735046611.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Alex Di Mambro</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/alex-edelman/" class="comic-card" data-city="" data-name="alex edelman" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Alex_Edelman_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -1140,7 +1169,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/alex-falcone/" class="comic-card" data-city="" data-name="alex falcone" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alex%20Falcone%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Alex-Falcone/812CJV-M8I93A" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alex Falcone</div>
     
@@ -1316,7 +1345,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/ali-al-sayed/" class="comic-card" data-city="" data-name="ali al sayed" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ali%20Al%20Sayed%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/fyvr/ZM0MRSOBWWAMFZGC" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ali Al Sayed</div>
     
@@ -1540,7 +1569,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/alysa-browne/" class="comic-card" data-city="" data-name="alysa browne" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Alysa%20Browne%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/pjnr/W6VMIHMID9AR64YS" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alysa Browne</div>
     
@@ -1820,7 +1849,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/andrea-menchaca/" class="comic-card" data-city="" data-name="andrea menchaca" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andrea%20menchaca%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/qbpc/F0MQFM5BL0J2APSV" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Andrea menchaca</div>
     
@@ -2028,7 +2057,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/andy-hendrickson/" class="comic-card" data-city="" data-name="andy hendrickson" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Andy%20Hendrickson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//LOFVQC-LMKO9F" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Andy Hendrickson</div>
     
@@ -2212,7 +2241,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/annette-mullaney/" class="comic-card" data-city="" data-name="annette mullaney" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Annette%20Mullaney%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/bp6x/VJB3WDL0FN7E5JSD" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Annette Mullaney</div>
     
@@ -2404,7 +2433,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/arie-david/" class="comic-card" data-city="" data-name="arie david" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Arie%20David%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//ZYN8XQ-WFAS24" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Arie David</div>
     
@@ -2723,6 +2752,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/az/" class="comic-card" data-city="" data-name="az" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-az_1753888774.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Az</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/aziz-ansari/" class="comic-card" data-city="" data-name="aziz ansari" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Aziz_Ansari_2012_Shankbone.JPG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -2733,7 +2770,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-b" data-letter="B">
-  <h2 class="letter-heading">B <span class="letter-count">(120)</span></h2>
+  <h2 class="letter-heading">B <span class="letter-count">(121)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/b-j-novak/" class="comic-card" data-city="" data-name="b. j. novak" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/31/BJNovak-byPhilipRomano.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -3287,7 +3324,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/bo-ballew/" class="comic-card" data-city="" data-name="bo ballew" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bo%20ballew%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//UNDUV607LTC3N4YR" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Bo ballew</div>
     
@@ -3378,6 +3415,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Bonnie_McFarlane.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Bonnie McFarlane</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/booder/" class="comic-card" data-city="Paris" data-name="booder" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-booder_1753952044.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Booder</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -3479,7 +3524,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/brendon-lemon/" class="comic-card" data-city="" data-name="brendon lemon" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Brendon%20Lemon%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/nq2z/C1J5ZZ120ACQ87E4" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Brendon Lemon</div>
     
@@ -3696,7 +3741,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-c" data-letter="C">
-  <h2 class="letter-heading">C <span class="letter-count">(142)</span></h2>
+  <h2 class="letter-heading">C <span class="letter-count">(143)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/caitlin-durante/" class="comic-card" data-city="" data-name="caitlin durante" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Caitlin%20Durante%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -3778,7 +3823,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/candace-bryan/" class="comic-card" data-city="" data-name="candace bryan" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Candace%20Bryan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/8wzj/35AYTFL5HMCA9SRL" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Candace Bryan</div>
     
@@ -3906,7 +3951,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/casey-li-brander/" class="comic-card" data-city="" data-name="casey li brander" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Casey%20Li%20Brander%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//YKD1B8-5L065Z" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Casey Li Brander</div>
     
@@ -3970,7 +4015,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/celine-kuklowsky/" class="comic-card" data-city="" data-name="celine kuklowsky" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Celine%20Kuklowsky%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/nkye/CU2JG13UJI2Z9NB3" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Celine Kuklowsky</div>
     
@@ -4090,15 +4135,23 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/charlotte-imbert/" class="comic-card" data-city="" data-name="charlotte imbert" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Charlotte%20Imbert%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECI%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Charlotte-Imbert/JJGCUJ-4QQD3N" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Charlotte Imbert</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/charly-nyobe/" class="comic-card" data-city="Paris" data-name="charly nyobe" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-charlynyobe_1753888825.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Charly Nyobe</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/chase-shanahan/" class="comic-card" data-city="" data-name="chase shanahan" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Chase%20Shanahan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//86BOVI-MX7V6I" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Chase Shanahan</div>
     
@@ -4170,7 +4223,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/chin-wang/" class="comic-card" data-city="" data-name="chin wang" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Chin%20Wang%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/7vu6/J2S6QNKNAE9XNITT" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Chin Wang</div>
     
@@ -4330,7 +4383,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/chris-pattwell/" class="comic-card" data-city="" data-name="chris pattwell" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Chris%20Pattwell%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/tu8b/F0V1VS3TGWLB31JQ" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Chris Pattwell</div>
     
@@ -4714,7 +4767,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/courtney-bee/" class="comic-card" data-city="" data-name="courtney bee" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Courtney%20Bee%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//B1G1SVILEP6YTELK" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Courtney Bee</div>
     
@@ -4818,7 +4871,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/cecile-moroni/" class="comic-card" data-city="" data-name="cécile moroni" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22C%C3%A9cile%20Moroni%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/4axf/1VASQQNTK1JIFSEF" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Cécile Moroni</div>
     
@@ -4835,7 +4888,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-d" data-letter="D">
-  <h2 class="letter-heading">D <span class="letter-count">(193)</span></h2>
+  <h2 class="letter-heading">D <span class="letter-count">(195)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/d-c-young-fly/" class="comic-card" data-city="" data-name="d.c. young fly" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22D.C.%20Young%20Fly%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -5125,7 +5178,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/daniel-mckeon/" class="comic-card" data-city="" data-name="daniel mckeon" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20McKeon%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/hgy6/MVZ8FKKVGH04OOVN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Daniel McKeon</div>
     
@@ -5141,7 +5194,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/daniel-moquin/" class="comic-card" data-city="" data-name="daniel moquin" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Daniel%20Moquin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/qjg6/48R4ITKYV4Q1LXCD" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Daniel Moquin</div>
     
@@ -5317,7 +5370,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/darius-davies/" class="comic-card" data-city="" data-name="darius davies" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22darius%20davies%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/4pg9/RTCBK849IPQU35Q2" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">darius davies</div>
     
@@ -5477,7 +5530,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/dave-mishevitz/" class="comic-card" data-city="" data-name="dave mishevitz" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Dave%20Mishevitz%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/atcp/7MERMST8RVJ4QEEY" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dave Mishevitz</div>
     
@@ -5544,6 +5597,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22David%20Alnwick%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">David Alnwick</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/david-azencot/" class="comic-card" data-city="" data-name="david azencot" data-upcoming="0">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22David%20Azencot%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">David Azencot</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/david-azria/" class="comic-card" data-city="Paris" data-name="david azria" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-azria_1754318321.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">David Azria</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -5877,7 +5946,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/deo-katunga/" class="comic-card" data-city="" data-name="deo katunga" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Deo%20Katunga%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Deo-Katunga/GYJ857DP0QNXUM82" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Deo Katunga</div>
     
@@ -6229,7 +6298,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/dr-anthony-drew/" class="comic-card" data-city="" data-name="dr. anthony drew" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Dr.%20Anthony%20Drew%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/x3hd/YUNABN9H21F4SDNA" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dr. Anthony Drew</div>
     
@@ -6333,7 +6402,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/dylan-clarke/" class="comic-card" data-city="" data-name="dylan clarke" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Dylan%20Clarke%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Dylan-Clarke/304KLWURPBVZJER5" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dylan Clarke</div>
     
@@ -6357,7 +6426,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/dylan-rhymer/" class="comic-card" data-city="" data-name="dylan rhymer" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Dylan%20Rhymer%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Dylan-Rhymer/B73SR84UX6OTQC3M" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dylan Rhymer</div>
     
@@ -6373,7 +6442,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/dyan-forest/" class="comic-card" data-city="" data-name="d’yan forest" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22D%E2%80%99yan%20Forest%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/7pku/56QCT6WXDM7Z0ICJ" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">D’yan Forest</div>
     
@@ -6382,7 +6451,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-e" data-letter="E">
-  <h2 class="letter-heading">E <span class="letter-count">(78)</span></h2>
+  <h2 class="letter-heading">E <span class="letter-count">(79)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/ebel-cobra/" class="comic-card" data-city="" data-name="ebel cobra" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ebel%20Cobra%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -6800,7 +6869,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/emmanuel-o/" class="comic-card" data-city="" data-name="emmanuel o" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Emmanuel%20O%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Emmanuel-Omoniyi/5ZSE01B40YY3UAJO" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Emmanuel O</div>
     
@@ -6819,6 +6888,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/2/28/Emo_Philips_Opening_for_Weird_Al_Yankovic_at_the_Apollo_Theater_%2840964853051%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Emo Philips</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/emy/" class="comic-card" data-city="Paris" data-name="emy" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-emy_1754321506.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Emy</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -7275,7 +7352,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/fran-ayala-rock/" class="comic-card" data-city="" data-name="fran ayala-rock" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Fran%20Ayala-Rock%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/qw99/RPP72MPY7CHJIIY8" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Fran Ayala-Rock</div>
     
@@ -7475,7 +7552,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/freddy-jan/" class="comic-card" data-city="" data-name="freddy jan" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Freddy%20Jan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFJ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/h1gw/JNKAW3VHY3MRGZJP" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Freddy Jan</div>
     
@@ -7548,7 +7625,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-g" data-letter="G">
-  <h2 class="letter-heading">G <span class="letter-count">(79)</span></h2>
+  <h2 class="letter-heading">G <span class="letter-count">(81)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/gabe-liedman/" class="comic-card" data-city="" data-name="gabe liedman" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Not_It_%288682517980%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -7782,7 +7859,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/george-dimarelos/" class="comic-card" data-city="" data-name="george dimarelos" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Dimarelos%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//DF85LTSDHDP01TO3" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">George Dimarelos</div>
     
@@ -7798,19 +7875,19 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/george-rennie/" class="comic-card" data-city="" data-name="george rennie" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Rennie%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/George-Rennie/GI38W2-KUUPWF" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">George Rennie</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/george-zacharopoulos/" class="comic-card" data-city="Lisbon" data-name="george zacharopoulos" data-upcoming="1">
+<a href="/comedy-atlas/comic/george-zacharopoulos/" class="comic-card" data-city="" data-name="george zacharopoulos" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Zacharopoulos%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">George Zacharopoulos</div>
-    <div class="comic-city">Next in Lisbon</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/geppi-cucciari/" class="comic-card" data-city="" data-name="geppi cucciari" data-upcoming="0">
@@ -7849,6 +7926,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Ghemon_al_Nike_Stadium.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ghemon</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ghislain-blique/" class="comic-card" data-city="Paris" data-name="ghislain blique" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-ghislainblique_1754059757.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ghislain Blique</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -8117,6 +8202,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/guillaume-fosko/" class="comic-card" data-city="Paris" data-name="guillaume fosko" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-fosko_1753951668.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Guillaume Fosko</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/guillermo-guiz/" class="comic-card" data-city="" data-name="guillermo guiz" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/6/65/Guillermo_Guiz_KCC_2020.png" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -8183,7 +8276,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-h" data-letter="H">
-  <h2 class="letter-heading">H <span class="letter-count">(70)</span></h2>
+  <h2 class="letter-heading">H <span class="letter-count">(71)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/hadar-galron/" class="comic-card" data-city="" data-name="hadar galron" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/%D7%94%D7%93%D7%A8_%D7%92%D7%9C%D7%A8%D7%95%D7%9F_-_%D7%A9%D7%A8%D7%99%D7%A7%D7%94.png" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -8209,7 +8302,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/hajar-j-woodland/" class="comic-card" data-city="" data-name="hajar j. woodland" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Hajar%20J.%20Woodland%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EHJ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//LK57OMA6S2Z8RUVG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Hajar J. Woodland</div>
     
@@ -8577,7 +8670,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/henning-nilsen/" class="comic-card" data-city="" data-name="henning nilsen" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Henning%20Nilsen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EHN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Henning-Nilsen/UAXF19SNEMU26VE7" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Henning Nilsen</div>
     
@@ -8697,7 +8790,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/holly-hudson/" class="comic-card" data-city="" data-name="holly hudson" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Holly%20Hudson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EHH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/w8g4/U7WMMGEAXTDBIAYN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Holly Hudson</div>
     
@@ -8736,6 +8829,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/hugo-tout-seul/" class="comic-card" data-city="Paris" data-name="hugo tout seul" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-hugotoutseul_1754052544.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Hugo Tout seul</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/humza-arshad/" class="comic-card" data-city="" data-name="humza arshad" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Humza_Arshad_2011.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -8746,7 +8847,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-i" data-letter="I">
-  <h2 class="letter-heading">I <span class="letter-count">(45)</span></h2>
+  <h2 class="letter-heading">I <span class="letter-count">(48)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/iain-morris/" class="comic-card" data-city="" data-name="iain morris" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Screen_Shot_of_Iain_Morris.png" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -8923,6 +9024,30 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/ilyes-djadel/" class="comic-card" data-city="" data-name="ilyes djadel" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-ilyesdjadel_1753967232.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ilyes Djadel</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ilyes-mela/" class="comic-card" data-city="Paris" data-name="ilyes mela" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-ilyesmela_1753891075.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ilyes Mela</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/imen-lahmar/" class="comic-card" data-city="Paris" data-name="imen lahmar" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-imenlahmar_1753884920.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Imen Lahmar</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/imran-yusuf/" class="comic-card" data-city="" data-name="imran yusuf" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Imran%20Yusuf%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EIY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -9004,7 +9129,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/irene-woo/" class="comic-card" data-city="" data-name="irene woo" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Irene%20Woo%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EIW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//VP23DV-7YYRDM" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Irene Woo</div>
     
@@ -9076,7 +9201,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/ivan-semashev/" class="comic-card" data-city="" data-name="ivan semashev" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ivan%20Semashev%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EIS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/jqwb/XS4CS06B1UP3RH1P" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ivan Semashev</div>
     
@@ -9151,7 +9276,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/jack-finnegan/" class="comic-card" data-city="" data-name="jack finnegan" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jack%20Finnegan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Jack-Finnegan/B3JEV4-IIBPA9" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jack Finnegan</div>
     
@@ -9687,7 +9812,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/jeanne-whitney/" class="comic-card" data-city="" data-name="jeanne whitney" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jeanne%20Whitney%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/58qt/DBCD8ORZLMQ9BT2T" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeanne Whitney</div>
     
@@ -9983,7 +10108,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/jess-fuchs/" class="comic-card" data-city="" data-name="jess fuchs" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jess%20Fuchs%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Jess-Fuchs/QMHP1P0R66X3QF4O" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jess Fuchs</div>
     
@@ -10055,7 +10180,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/jim-barnes/" class="comic-card" data-city="" data-name="jim barnes" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jim%20Barnes%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//94Z1PYCA6M5NUXQW" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jim Barnes</div>
     
@@ -10471,7 +10596,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/joey-nickel/" class="comic-card" data-city="" data-name="joey nickel" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Joey%20Nickel%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//KZ5ZQ3-LLRLVC" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Joey Nickel</div>
     
@@ -10567,7 +10692,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/john-hedrick/" class="comic-card" data-city="" data-name="john hedrick" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22John%20Hedrick%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//B1RAR7SB6X0QFSRS" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">John Hedrick</div>
     
@@ -10943,7 +11068,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/josh-goldstein/" class="comic-card" data-city="" data-name="josh goldstein" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Goldstein%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Josh-Goldstein/6S8AN40YL0YRP0I3" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Josh Goldstein</div>
     
@@ -11127,7 +11252,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/julia-kastner/" class="comic-card" data-city="" data-name="julia kastner" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Julia%20Kastner%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/mb7m/U1S87T9GMKITD85E" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Julia Kastner</div>
     
@@ -11306,7 +11431,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/kareem-green/" class="comic-card" data-city="" data-name="kareem green" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Kareem%20Green%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Kareem-Green/VFCJDD-MUSOQS" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Kareem Green</div>
     
@@ -12042,7 +12167,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/kyra-carleton/" class="comic-card" data-city="" data-name="kyra carleton" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Kyra%20Carleton%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EKC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/v5by/RHSDL3K50J62QCFN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Kyra Carleton</div>
     
@@ -12059,7 +12184,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-l" data-letter="L">
-  <h2 class="letter-heading">L <span class="letter-count">(118)</span></h2>
+  <h2 class="letter-heading">L <span class="letter-count">(119)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/lahna-turner/" class="comic-card" data-city="" data-name="lahna turner" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Lahna%20Turner%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELT%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -12253,7 +12378,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/leah-fennell/" class="comic-card" data-city="" data-name="leah fennell" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Leah%20Fennell%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//UCUSXY-YY8VKI" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Leah Fennell</div>
     
@@ -12301,7 +12426,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/lee-h-tillman/" class="comic-card" data-city="" data-name="lee h tillman" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Lee%20H%20Tillman%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/3j5u/SH4EC2GWLC6OK61U" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Lee H Tillman</div>
     
@@ -12549,7 +12674,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/linda-findel/" class="comic-card" data-city="" data-name="linda findel" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Linda%20Findel%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/z1a2/UG3S29NPV7BA01RW" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Linda Findel</div>
     
@@ -12780,6 +12905,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/lotfi-abdelli/" class="comic-card" data-city="" data-name="lotfi abdelli" data-upcoming="0">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Lotfi_Abdelli%2C_Cines_del_Sur_2007.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Lotfi Abdelli</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/lotta-backlund/" class="comic-card" data-city="" data-name="lotta backlund" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Lotta_backlund.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -13006,7 +13139,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-m" data-letter="M">
-  <h2 class="letter-heading">M <span class="letter-count">(233)</span></h2>
+  <h2 class="letter-heading">M <span class="letter-count">(236)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/m-fauzi-saleh/" class="comic-card" data-city="" data-name="m. fauzi saleh" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22M.%20Fauzi%20Saleh%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -13016,7 +13149,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/maddie-hw/" class="comic-card" data-city="" data-name="maddie hw" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Maddie%20HW%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/4jxx/F10C9Z6JERT450QH" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Maddie HW</div>
     
@@ -13072,7 +13205,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/maeva-dolle/" class="comic-card" data-city="" data-name="maeva dolle" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Maeva%20Dolle%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/zw9y/KZNB9DIS49XZXKBF" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Maeva Dolle</div>
     
@@ -13099,6 +13232,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mahesh%20Kumar%20M.%20C.%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Mahesh Kumar M. C.</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/mahe/" class="comic-card" data-city="Paris" data-name="mahé" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-mahe_1754322660.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Mahé</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -13195,6 +13336,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Marc_Maron_by_Gage_Skidmore.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Marc Maron</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/marc-rouge/" class="comic-card" data-city="Paris" data-name="marc rougé" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-marc_1753890892.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Marc Rougé</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -13307,6 +13456,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Marina%20Zd%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Marina Zd</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/marine-leonardi/" class="comic-card" data-city="" data-name="marine leonardi" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-marineleonardi_1753967642.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Marine Leonardi</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -14104,7 +14261,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/melanie-owen/" class="comic-card" data-city="" data-name="melanie owen" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Melanie%20Owen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/7y1s/KL7B3OLZWQT2HO0V" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Melanie Owen</div>
     
@@ -14208,7 +14365,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/michael-frankland/" class="comic-card" data-city="" data-name="michael frankland" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Michael%20Frankland%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/st7u/TBHNWMUH2RHSKL5J" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Michael Frankland</div>
     
@@ -14496,7 +14653,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/mike-lane/" class="comic-card" data-city="" data-name="mike lane" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mike%20Lane%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EML%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//W4IBX1QW52AJS26J" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mike Lane</div>
     
@@ -14632,7 +14789,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/mina-liccione/" class="comic-card" data-city="" data-name="mina liccione" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mina%20Liccione%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EML%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/bx4b/IACVOXHS93SGS0FS" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Mina Liccione</div>
     
@@ -14848,7 +15005,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/murahd-shawki/" class="comic-card" data-city="" data-name="murahd shawki" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Murahd%20Shawki%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/acvf/2ZW2T95RW3702W47" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Murahd Shawki</div>
     
@@ -14873,7 +15030,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-n" data-letter="N">
-  <h2 class="letter-heading">N <span class="letter-count">(82)</span></h2>
+  <h2 class="letter-heading">N <span class="letter-count">(87)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/nabil-abdul-rashid/" class="comic-card" data-city="" data-name="nabil abdul rashid" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nabil%20Abdul%20Rashid%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -14914,6 +15071,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/nadege/" class="comic-card" data-city="Paris" data-name="nadège" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-nadege_1753966324.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nadège</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/nanni-mascena/" class="comic-card" data-city="Barcelona" data-name="nanni mascena" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nanni%20Mascena%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -14947,7 +15112,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/nat-towsen/" class="comic-card" data-city="" data-name="nat towsen" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nat%20Towsen%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENT%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/dmwt/4UEODP9IRKZM901J" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nat Towsen</div>
     
@@ -15003,7 +15168,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/nate-nagvajara/" class="comic-card" data-city="" data-name="nate nagvajara" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nate%20Nagvajara%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//WGWZM7H0258CXUAN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nate Nagvajara</div>
     
@@ -15210,6 +15375,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/nick-mukoko/" class="comic-card" data-city="" data-name="nick mukoko" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-nickmukoko_1753888899.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nick Mukoko</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/nick-mullen/" class="comic-card" data-city="" data-name="nick mullen" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/6/68/Nick_Mullen_at_Moontower_Comedy_Festival%2C_Austin_Texas.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -15259,7 +15432,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/nico-leyer/" class="comic-card" data-city="" data-name="nico leyer" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nico%20Leyer%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/gn98/JOFDM3VU93ZAA4JM" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nico Leyer</div>
     
@@ -15362,6 +15535,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/nina-azoulai/" class="comic-card" data-city="Paris" data-name="nina azoulai" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-nina_1753891766.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nina Azoulai</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/nish-kumar/" class="comic-card" data-city="" data-name="nish kumar" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Nish_Kumar_-_2016_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -15387,7 +15568,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/noah-miller/" class="comic-card" data-city="" data-name="noah miller" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Noah%20Miller%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//01667G-T60PX0" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Noah Miller</div>
     
@@ -15411,7 +15592,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/noelle-hoffman/" class="comic-card" data-city="" data-name="noelle hoffman" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Noelle%20Hoffman%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//0DB32A-24MQHN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Noelle Hoffman</div>
     
@@ -15430,6 +15611,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Noha911%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Noha911</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/noman-hosni/" class="comic-card" data-city="Paris" data-name="noman hosni" data-upcoming="0">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Noman_Hosni_ok.jpg/400px-Noman_Hosni_ok.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Noman Hosni</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -15462,6 +15651,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Norah%20Yang%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENY%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Norah Yang</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/nordine-ganso/" class="comic-card" data-city="" data-name="nordine ganso" data-upcoming="0">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Nordine_Ganso_en_2025.png" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nordine Ganso</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -15532,7 +15729,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-o" data-letter="O">
-  <h2 class="letter-heading">O <span class="letter-count">(34)</span></h2>
+  <h2 class="letter-heading">O <span class="letter-count">(35)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/obie/" class="comic-card" data-city="" data-name="obie" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Obie%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EOB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -15673,6 +15870,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Omar_Ramzi.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Omar &#x27;The White Sudani&#x27; Ramzi</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/omar-dhobb/" class="comic-card" data-city="Paris" data-name="omar dhobb" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-omardhobb-1_1754058000.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Omar Dhobb</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -17029,7 +17234,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-r" data-letter="R">
-  <h2 class="letter-heading">R <span class="letter-count">(159)</span></h2>
+  <h2 class="letter-heading">R <span class="letter-count">(162)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/rachel-bloom/" class="comic-card" data-city="" data-name="rachel bloom" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Rachel_Bloom_at_37th_College_Television_Awards-adj_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -17135,7 +17340,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/ralph-anthony/" class="comic-card" data-city="" data-name="ralph anthony" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ralph%20Anthony%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/undefined/WX4H751JIYO9SV2Y" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ralph Anthony</div>
     
@@ -17151,7 +17356,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/ram-arangi/" class="comic-card" data-city="" data-name="ram arangi" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ram%20Arangi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/nyqg/GJ1UWPK8OOIMBODC" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ram Arangi</div>
     
@@ -17310,6 +17515,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/redouane-bougheraba/" class="comic-card" data-city="" data-name="redouane bougheraba" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-redouane_1753969463.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Redouane Bougheraba</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/reginald-d-hunter/" class="comic-card" data-city="" data-name="reginald d. hunter" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Reginald_D_Hunter_July_2006.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -17418,6 +17631,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Revital%20Vitelzon%20Jacobs%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERV%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Revital Vitelzon Jacobs</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/rey-mendes/" class="comic-card" data-city="Paris" data-name="rey mendes" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignete-reymendes_1754320913.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rey Mendes</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -17559,7 +17780,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/rick-kiesewetter/" class="comic-card" data-city="" data-name="rick kiesewetter" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Rick%20Kiesewetter%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/mt26/DIAI73WXDVIGFWWD" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rick Kiesewetter</div>
     
@@ -17942,6 +18163,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/romain-raulin/" class="comic-card" data-city="Paris" data-name="romain raulin" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-romainraulin_1754062399.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Romain Raulin</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/roman-frayssinet/" class="comic-card" data-city="" data-name="roman frayssinet" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Roman_Frayssinet_2021.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -18304,7 +18533,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-s" data-letter="S">
-  <h2 class="letter-heading">S <span class="letter-count">(210)</span></h2>
+  <h2 class="letter-heading">S <span class="letter-count">(213)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/saaniya/" class="comic-card" data-city="" data-name="saaniya" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saaniya%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -18333,6 +18562,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sabrina%20Wu%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Sabrina Wu</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sacko-camara/" class="comic-card" data-city="Paris" data-name="sacko camara" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-sackocamara_1754064626.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sacko Camara</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -18458,7 +18695,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/sam-adamson/" class="comic-card" data-city="" data-name="sam adamson" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sam%20Adamson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/bxb8/M0DDYR1P2FUP3Q4F" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam Adamson</div>
     
@@ -18490,7 +18727,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/sam-joseph/" class="comic-card" data-city="" data-name="sam joseph" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sam%20Joseph%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESJ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/fcq4/I1WJCQJ6YOVD79UV" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam Joseph</div>
     
@@ -18498,7 +18735,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/sam-lichtenstein/" class="comic-card" data-city="" data-name="sam lichtenstein" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sam%20Lichtenstein%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/dnqw/O0MC7HTX6VTLVJ59" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sam Lichtenstein</div>
     
@@ -18866,7 +19103,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/selam-amare/" class="comic-card" data-city="" data-name="selam amare" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Selam%20Amare%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/ta17/5BISPQX017N65TYJ" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Selam Amare</div>
     
@@ -19314,7 +19551,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/sloan-kooshan/" class="comic-card" data-city="" data-name="sloan kooshan" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sloan%20Kooshan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESK%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//BGM1MB7T2IX1IMDZ" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sloan Kooshan</div>
     
@@ -19409,6 +19646,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/sophie-loustalot/" class="comic-card" data-city="Paris" data-name="sophie loustalot" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-sophieloustalot_1753890961.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sophie Loustalot</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/sorabh-pant/" class="comic-card" data-city="" data-name="sorabh pant" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Sorabh_Pant_performing.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -19421,6 +19666,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Soran_Ismail_in_Jan_2013.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Soran Ismail</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/soun-dembele/" class="comic-card" data-city="Paris" data-name="soun dembele" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-soun_1754055169.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Soun Dembele</div>
     
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
@@ -19746,7 +19999,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/steven-farmer/" class="comic-card" data-city="" data-name="steven farmer" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Steven%20Farmer%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESF%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/h1xc/KKXCX7NUZG9H6G3F" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Steven Farmer</div>
     
@@ -19770,7 +20023,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/steven-skilling/" class="comic-card" data-city="" data-name="steven skilling" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Steven%20Skilling%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/xe69/Z8WLLC32332MAPBZ" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Steven Skilling</div>
     
@@ -19987,7 +20240,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </a></div>
 </section>
 <section class="letter-group" id="letter-t" data-letter="T">
-  <h2 class="letter-heading">T <span class="letter-count">(131)</span></h2>
+  <h2 class="letter-heading">T <span class="letter-count">(132)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/t-j-miller/" class="comic-card" data-city="" data-name="t. j. miller" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/57/T._J._Miller_by_Gage_Skidmore.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -20085,7 +20338,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/tareek/" class="comic-card" data-city="" data-name="tareek" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tareek%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-tareek_1753967472.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tareek</div>
     
@@ -20149,7 +20402,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/terry-marynich/" class="comic-card" data-city="" data-name="terry marynich" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Terry%20Marynich%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//44JBANH9EOTVA1OA" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Terry Marynich</div>
     
@@ -20268,12 +20521,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/thomas-henry/" class="comic-card" data-city="Rome" data-name="thomas henry" data-upcoming="16">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Thomas%20Henry%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+<a href="/comedy-atlas/comic/thomas-henry/" class="comic-card" data-city="Rome" data-name="thomas henry" data-upcoming="15">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/jbhv/R0HSAYB0R114P364" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Thomas Henry</div>
     <div class="comic-city">Next in Rome</div>
-    <div class="comic-count">16 upcoming shows</div>
+    <div class="comic-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/thomas-n-gijol/" class="comic-card" data-city="" data-name="thomas n&#x27;gijol" data-upcoming="0">
@@ -20572,6 +20825,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/tom-baldetti/" class="comic-card" data-city="Paris" data-name="tom baldetti" data-upcoming="0">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-tombaldetti_1753968053.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Tom Baldetti</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/tom-cashman/" class="comic-card" data-city="" data-name="tom cashman" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Tom_Cashman_at_the_2024_Edinburgh_Festival_Fringe.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -20845,7 +21106,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/tori-morancay/" class="comic-card" data-city="" data-name="tori morancay" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Tori%20Morancay%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/pv9u/E9R0VVMRP0XNOAWD" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Tori Morancay</div>
     
@@ -20997,7 +21258,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/ty-colgate/" class="comic-card" data-city="" data-name="ty colgate" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ty%20Colgate%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//1RFSBQVM1BZVPM1U" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ty Colgate</div>
     
@@ -21660,7 +21921,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/yassine-hitch/" class="comic-card" data-city="" data-name="yassine hitch" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Yassine%20Hitch%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EYH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-yassinehitch_1754052310.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Yassine Hitch</div>
     
@@ -21895,7 +22156,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/zach-mama/" class="comic-card" data-city="" data-name="zach mama" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Zach%20Mama%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EZM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots/Zach-Mama/4J9ISTYO79RUACJN" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Zach Mama</div>
     
@@ -22007,7 +22268,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
 </a>
 <a href="/comedy-atlas/comic/zoelle-rose/" class="comic-card" data-city="" data-name="zoelle rose" data-upcoming="0">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Zoelle%20Rose%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EZR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/headshots//1S1XBXJ6YI50RDC6" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Zoelle Rose</div>
     
@@ -22087,21 +22348,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </div>
 <div id="next-view" hidden>
 <section class="next-group" id="next-on-stage">
-  <h2 class="letter-heading">Next on stage <span class="letter-count">(59)</span></h2>
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(58)</span></h2>
   <div class="comics-grid"><a href="/comedy-atlas/comic/thomas-henry/" class="next-card" data-city="Rome" data-name="thomas henry" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Thomas%20Henry%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <img class="comic-thumb" src="https://storage.googleapis.com/showtime-uploads-317/global/acts/jbhv/R0HSAYB0R114P364" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Thomas Henry</div>
     <div class="comic-city">Rome</div>
-    <div class="comic-count">Sat, Sep 12 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/george-zacharopoulos/" class="next-card" data-city="Lisbon" data-name="george zacharopoulos" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Zacharopoulos%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">George Zacharopoulos</div>
-    <div class="comic-city">Lisbon</div>
-    <div class="comic-count">Sat, Sep 12 2026</div>
+    <div class="comic-count">Sun, Sep 13 2026</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/relapse/" class="next-card" data-city="Amsterdam" data-name="relapse" data-upcoming="1">
@@ -22585,8 +22838,8 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // getAttribute() and no layout thrash on unchanged cards. Input is also
 // coalesced into a single animation frame.
 (function () {
-  var TOTAL = 2688;
-  var NEXT_TOTAL = 59;
+  var TOTAL = 2720;
+  var NEXT_TOTAL = 58;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');

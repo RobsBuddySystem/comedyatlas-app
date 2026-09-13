@@ -118,7 +118,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <div class="container" id="main-content" tabindex="-1">
   <a class="back-link" href="comic.html">← Back to my comic portal</a>
   <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>

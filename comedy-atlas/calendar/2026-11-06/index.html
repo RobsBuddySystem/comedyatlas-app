@@ -163,6 +163,26 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .cal-city-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .cal-filter-note{font-size:13px;color:var(--purple-light);margin:0 0 14px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;display:none}
 .cal-filter-note.cal-filter-active{display:block}
+.cal-filterbar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:14px 0 18px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+.cal-filterbar label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.cal-city-combo{position:relative;min-width:180px;flex:1 1 200px}
+.cal-city-combo input,.cal-time-filter select,.cal-date-jump input{width:100%;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;box-sizing:border-box}
+#cal-city-listbox{position:absolute;left:0;right:0;top:100%;margin-top:4px;max-height:240px;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:8px;list-style:none;padding:4px;z-index:20}
+#cal-city-listbox li{padding:8px 10px;border-radius:6px;cursor:pointer;font-size:14px;min-height:32px}
+#cal-city-listbox li[aria-selected="true"],#cal-city-listbox li:hover{background:var(--purple-light);color:#fff}
+.cal-city-clear{min-height:44px;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;cursor:pointer}
+.cal-time-filter,.cal-date-jump{flex:1 1 160px;min-width:150px}
+.cal-nomatch{font-size:14px;color:var(--muted);margin:16px 0;padding:14px;border:1px dashed var(--border);border-radius:10px}
+.cal-nomatch button{background:none;border:none;color:var(--purple-light);text-decoration:underline;cursor:pointer;font:inherit;padding:0;min-height:44px}
+.cal-index-day-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cal-index-day-link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}
+.cal-index-day-link:hover{border-color:var(--purple-light)}
+.cal-index-day-date{font-weight:700}
+.cal-index-day-count{color:var(--muted);font-size:13px}
+@media(max-width:480px){
+  .cal-filterbar{flex-direction:column;align-items:stretch}
+  .cal-city-combo,.cal-time-filter,.cal-date-jump{min-width:0}
+}
 </style>
 </head>
 <body>
@@ -180,15 +200,45 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <header class="atlas-header">
   <a href="/" class="back-link">&larr; COMEDY ATLAS</a>
   <h1 class="atlas-wordmark">Friday 6 November 2026<span class="dot">.</span></h1>
   <p class="atlas-promise">Every stand-up comedy show COMEDY ATLAS knows about on this day, one page, one link — no scrolling inside a tiny box.</p>
 </header>
 <main id="main-content" tabindex="-1">
-<div class="cal-datenav"><a href="/comedy-atlas/calendar/2026-11-05/" aria-label="Previous day">&larr; Previous day</a><span class="cal-count" id="cal-heading-count">66 shows across 27 cities</span><a href="/comedy-atlas/calendar/2026-11-07/" aria-label="Next day">Next day &rarr;</a></div>
-<p class="cal-filter-note" id="cal-filter-note"></p><section data-cal-city="Amsterdam"><h2 class="cal-city-heading">Amsterdam — 1 show</h2><div class="event-card">
+<div class="cal-datenav"><a id="cal-prev-link" href="/comedy-atlas/calendar/2026-11-05/" aria-label="Previous day">&larr; Previous day</a><span class="cal-count" id="cal-heading-count">66 shows across 27 cities</span><a id="cal-next-link" href="/comedy-atlas/calendar/2026-11-07/" aria-label="Next day">Next day &rarr;</a></div>
+<div class="cal-filterbar" id="cal-filterbar" data-cal-day="2026-11-06" hidden>
+  <div class="cal-city-combo">
+    <label id="cal-city-label" for="cal-city-input">Filter by city</label>
+    <input id="cal-city-input" type="text" role="combobox" aria-expanded="false"
+           aria-controls="cal-city-listbox" aria-autocomplete="list"
+           aria-labelledby="cal-city-label" autocomplete="off" placeholder="Any city">
+    <button type="button" id="cal-city-clear" class="cal-city-clear" hidden>All cities</button>
+    <ul id="cal-city-listbox" role="listbox" aria-label="Matching cities" hidden></ul>
+  </div>
+  <div class="cal-time-filter">
+    <label for="cal-time-select">Time of day</label>
+    <select id="cal-time-select">
+      <option value="any">Any time</option>
+      <option value="afternoon">Afternoon (before 17:00)</option>
+      <option value="evening">Evening (17:00–20:59)</option>
+      <option value="late">Late (21:00+)</option>
+    </select>
+  </div>
+  <div class="cal-date-jump">
+    <label for="cal-date-input">Jump to date</label>
+    <input type="date" id="cal-date-input" value="2026-11-06">
+  </div>
+</div>
+<p class="cal-nomatch" id="cal-nomatch" hidden>No shows match your filters — <button type="button" id="cal-clear-filters">Clear filters</button></p>
+<p class="cal-filter-note" id="cal-filter-note"></p><section data-cal-city="Amsterdam"><h2 class="cal-city-heading">Amsterdam — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -201,8 +251,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/clink-comedy-all-stars-standup-comedy-in-english-3003/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Appleton"><h2 class="cal-city-heading">Appleton — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Appleton"><h2 class="cal-city-heading">Appleton — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -215,8 +265,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/ron-taylor-22612/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Barcelona"><h2 class="cal-city-heading">Barcelona — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Barcelona"><h2 class="cal-city-heading">Barcelona — 2 shows</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -229,8 +279,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/the-spotlight-fri-sat-4257/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="22"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -243,8 +293,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-live-4280/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Berlin"><h2 class="cal-city-heading">Berlin — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Berlin"><h2 class="cal-city-heading">Berlin — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -257,8 +307,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/english-comedy-berlin-with-pizza-and-shots-4320/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -271,8 +321,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/the-epic-comedy-club-showcase-stand-up-comedy-in-berlin-english-speaking-4736/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Birmingham"><h2 class="cal-city-heading">Birmingham — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Birmingham"><h2 class="cal-city-heading">Birmingham — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -285,8 +335,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/muhsin-yesilada-son-of-adem-wip-birmingham/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Bloomington"><h2 class="cal-city-heading">Bloomington — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Bloomington"><h2 class="cal-city-heading">Bloomington — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -299,8 +349,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/eric-andre-subtle-20430/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Burlington"><h2 class="cal-city-heading">Burlington — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Burlington"><h2 class="cal-city-heading">Burlington — 1 show</h2><div class="cal-event-row" data-start-hour="18"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -313,8 +363,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/reggie-watts-23337/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Chandler"><h2 class="cal-city-heading">Chandler — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Chandler"><h2 class="cal-city-heading">Chandler — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -327,8 +377,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/natalie-cuomo-22274/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -341,8 +391,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/the-rotisserie/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Cologne"><h2 class="cal-city-heading">Cologne — 9 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Cologne"><h2 class="cal-city-heading">Cologne — 9 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -355,8 +405,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/gaston-stabiszewski-comedia-mix-show-cologne-comedy-festival-2026/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -369,8 +419,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/nightwash-talent-award-semi-final-2-3/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -383,8 +433,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/fatih-cevikkollu-sertac-mutlu-5i-bir-yerde-turkisches-stand-up/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -397,8 +447,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/torsten-schlosser-achim-knorr-laura-brummer-vincent-tophoven-tim-perkovic-wohl-bekloppt-geworden-die-comedy-mix-show/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -411,8 +461,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/sandra-sprunken-mutprobe/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -425,8 +475,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/nightwash-live-im-e-werk/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -439,8 +489,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/rene-steinberg-rebellion-und-trallafitti-kolnpremiere/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -453,8 +503,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/bueno-y-sano-el-profesor-briceno/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="23"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -467,8 +517,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/xoxo-ccf-special/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Dublin"><h2 class="cal-city-heading">Dublin — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Dublin"><h2 class="cal-city-heading">Dublin — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -481,8 +531,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-live-dublin-s-best-stand-up-comedy-4924/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Fort Wayne"><h2 class="cal-city-heading">Fort Wayne — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Fort Wayne"><h2 class="cal-city-heading">Fort Wayne — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -495,8 +545,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/corey-b-24998/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="London"><h2 class="cal-city-heading">London — 16 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="London"><h2 class="cal-city-heading">London — 16 shows</h2><div class="cal-event-row" data-start-hour="18"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -509,8 +559,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-at-big-belly-comedy-club-southbank-7pm-29616/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -523,8 +573,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-7pm-leicester-square-24835/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -537,8 +587,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-comedy-show-comedy-freaks-29974/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -551,8 +601,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-at-backyard-comedy-club-29975/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -565,8 +615,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/vauxhall-comedy-29976/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -579,8 +629,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/fri-8-00pm-includes-free-drink-29617/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -593,8 +643,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-8pm-piccadilly-circus-29977/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -607,8 +657,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/good-ship-comedy-feat-ed-gamble/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -621,8 +671,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-9pm-leicester-square-3832/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -635,8 +685,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-dark-comedy-9pm-leicester-square-3856/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -649,8 +699,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-british-comedy-9pm-leicester-square-3880/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -663,8 +713,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-late-night-comedy-9pm-leicester-square-3904/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -677,8 +727,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-central-london-comedy-9pm-leicester-square-3928/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -691,8 +741,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-international-comedy-9pm-leicester-square-3952/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -705,8 +755,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-at-big-belly-comedy-club-southbank-9-30pm-29618/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="22"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -719,8 +769,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/fri-10-00pm-includes-free-drink-29619/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Louisville"><h2 class="cal-city-heading">Louisville — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Louisville"><h2 class="cal-city-heading">Louisville — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -733,8 +783,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/michael-blackson/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Madrid"><h2 class="cal-city-heading">Madrid — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Madrid"><h2 class="cal-city-heading">Madrid — 1 show</h2><div class="cal-event-row" data-start-hour="22"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -747,8 +797,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/stand-up-comedy-in-english-in-madrid-the-friday-showcase-5204/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Minneapolis"><h2 class="cal-city-heading">Minneapolis — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Minneapolis"><h2 class="cal-city-heading">Minneapolis — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -761,8 +811,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/kyle-kinane-24484/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -775,8 +825,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/cy-amundson-31319/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Montreal"><h2 class="cal-city-heading">Montreal — 3 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Montreal"><h2 class="cal-city-heading">Montreal — 3 shows</h2><div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -789,8 +839,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/comedy-legends-the-1-friday-night-english-stand-up-comedy-show-6852/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="21"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -803,8 +853,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-night-comedy-montreal-stand-up-at-comedyville-9-pm-7147/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="22"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -817,8 +867,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/madmix-late-night-stand-up-comedy-fridays-on-st-laurent-downtown-mtl-24067/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Naples"><h2 class="cal-city-heading">Naples — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Naples"><h2 class="cal-city-heading">Naples — 1 show</h2><div class="cal-event-row" data-start-hour="18"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -831,8 +881,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/omgitswicks-friends-live-in-naples-florida-22436/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Oklahoma City"><h2 class="cal-city-heading">Oklahoma City — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Oklahoma City"><h2 class="cal-city-heading">Oklahoma City — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -845,8 +895,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/christopher-titus-19691/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Philadelphia"><h2 class="cal-city-heading">Philadelphia — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Philadelphia"><h2 class="cal-city-heading">Philadelphia — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -859,8 +909,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/helium-presents-ian-fidance-21451/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -873,8 +923,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/helium-presents-at-the-filter-club-carsen-white-aka-nurse-stankk/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Portland"><h2 class="cal-city-heading">Portland — 6 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Portland"><h2 class="cal-city-heading">Portland — 6 shows</h2><div class="cal-event-row" data-start-hour="16"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -887,8 +937,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/special-event-tim-meadows-21695/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="16"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -901,8 +951,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/special-event-francis-ellis-21921/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="16"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -915,8 +965,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/upstairs-at-helium-steve-furey/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="16"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -929,8 +979,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/in-the-other-room-nico-carney-21922/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -943,8 +993,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/special-event-matthew-broussard-21259/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -957,8 +1007,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/the-neon-room-at-helium-ray-lau-21260/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Raleigh"><h2 class="cal-city-heading">Raleigh — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Raleigh"><h2 class="cal-city-heading">Raleigh — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -971,8 +1021,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/special-event-joe-list-20985/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -985,8 +1035,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/room-861-at-goodnights-blair-socci-20986/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Salt Lake City"><h2 class="cal-city-heading">Salt Lake City — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Salt Lake City"><h2 class="cal-city-heading">Salt Lake City — 1 show</h2><div class="cal-event-row" data-start-hour="18"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -999,8 +1049,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/dan-soder-23447/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Spokane"><h2 class="cal-city-heading">Spokane — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Spokane"><h2 class="cal-city-heading">Spokane — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1013,8 +1063,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/shayne-smith-22781/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Tacoma"><h2 class="cal-city-heading">Tacoma — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Tacoma"><h2 class="cal-city-heading">Tacoma — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1027,8 +1077,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/maz-jobrani-23149/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1041,8 +1091,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/susan-rice-23150/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Toronto"><h2 class="cal-city-heading">Toronto — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Toronto"><h2 class="cal-city-heading">Toronto — 2 shows</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1055,8 +1105,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/friday-keys-toronto-stand-up-comedy-club-comedy-show-legends-only-2026-6741/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="20"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1069,8 +1119,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/all-indian-comedy-show-torontos-funniest-monthly-stand-up-desi-event-10286/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Tulsa"><h2 class="cal-city-heading">Tulsa — 1 show</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Tulsa"><h2 class="cal-city-heading">Tulsa — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1083,8 +1133,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/jeffrey-keller-19839/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
-<section data-cal-city="Washington"><h2 class="cal-city-heading">Washington — 2 shows</h2><div class="event-card">
+</div></div></section>
+<section data-cal-city="Washington"><h2 class="cal-city-heading">Washington — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1097,8 +1147,8 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/justo/">View &amp; tickets →</a>
     </div>
   </div>
-</div>
-<div class="event-card">
+</div></div>
+<div class="cal-event-row" data-start-hour="19"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -1111,7 +1161,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <a class="ticket-link" href="/comedy-atlas/event/leah-rudick-20062/">View &amp; tickets →</a>
     </div>
   </div>
-</div></section>
+</div></div></section>
 </main>
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
@@ -1121,39 +1171,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
-<script>
-(function () {
-  "use strict";
-  // Progressive filter-by-query-param (2026-08-04, I3): the server-rendered
-  // page above already lists EVERY real event for this day, grouped by
-  // city -- the honest, complete, no-JS default. If a visitor arrived here
-  // from city.html's mini-calendar with a ?city= filter preserved (directive
-  // §5.2: "preserve active filters"), this hides the non-matching city
-  // sections and says so out loud, rather than silently showing a filtered
-  // view with no indication anything was hidden.
-  var params = new URLSearchParams(window.location.search);
-  var city = params.get("city");
-  if (!city) return;
-  var sections = document.querySelectorAll("[data-cal-city]");
-  var shown = 0;
-  sections.forEach(function (el) {
-    var match = el.getAttribute("data-cal-city") === city;
-    el.style.display = match ? "" : "none";
-    if (match) shown += 1;
-  });
-  var note = document.getElementById("cal-filter-note");
-  if (note) {
-    note.textContent = shown
-      ? "Showing " + city + " only. "
-      : "No " + city + " shows this day. ";
-    var clear = document.createElement("a");
-    clear.href = window.location.pathname;
-    clear.textContent = "Show every city";
-    note.appendChild(clear);
-    note.classList.add("cal-filter-active");
-  }
-})();
-</script>
-<!-- generated_at: 2026-09-12T12:02:06.880672+00:00 -->
+<script src="/comedy-atlas/atlas-calendar-filter.js" defer></script>
+<!-- generated_at: 2026-09-13T06:25:33.143136+00:00 -->
 </body>
 </html>

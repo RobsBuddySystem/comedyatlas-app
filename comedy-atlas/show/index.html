@@ -344,7 +344,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 <header class="shows-header">
   <a href="/" class="back-link">← COMEDY ATLAS</a>
   <h1 class="atlas-wordmark">Shows<span class="dot">.</span></h1>
@@ -352,7 +358,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   and club night with a page on COMEDY ATLAS — real dates only, sourced from
   public listings.</p>
   <div class="stats"><div><strong>2679</strong> shows</div>
-  <div><strong>1241</strong> with an upcoming date listed</div></div>
+  <div><strong>1216</strong> with an upcoming date listed</div></div>
 </header>
 <div id="shows-toolbar" hidden>
   <div class="search-row">
@@ -628,13 +634,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/aaron-branch-5142/" class="show-card" data-city="Chandler" data-name="aaron branch" data-upcoming="1">
+<a href="/comedy-atlas/show/aaron-branch-5142/" class="show-card" data-city="Chandler" data-name="aaron branch" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22AARON%20BRANCH%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">AARON BRANCH</div>
     <div class="show-city">Chandler</div>
-    <div class="show-meta">Mic Drop Comedy Chandler · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/aaron-branch-5353/" class="show-card" data-city="Spokane" data-name="aaron branch" data-upcoming="1">
@@ -709,13 +715,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/abbas-wahab/" class="show-card" data-city="Washington" data-name="abbas wahab" data-upcoming="1">
+<a href="/comedy-atlas/show/abbas-wahab/" class="show-card" data-city="Washington" data-name="abbas wahab" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Abbas%20Wahab%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Abbas Wahab</div>
     <div class="show-city">Washington</div>
-    <div class="show-meta">The Comedy Loft of DC · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/abbie-murphy-garage-girl-work-in-progress/" class="show-card" data-city="London" data-name="abbie murphy: garage girl (work in progress)" data-upcoming="0">
@@ -1132,13 +1138,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/all-middle-eastern-comedy-show-torontos-funniest-stand-up-event/" class="show-card" data-city="Toronto" data-name="all middle eastern comedy show – toronto’s funniest stand-up event" data-upcoming="16">
+<a href="/comedy-atlas/show/all-middle-eastern-comedy-show-torontos-funniest-stand-up-event/" class="show-card" data-city="Toronto" data-name="all middle eastern comedy show – toronto’s funniest stand-up event" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22ALL%20MIDDLE%20EASTERN%20COMEDY%20SHOW%20%E2%80%93%20TORONTO%E2%80%99S%20FUNNIEST%20STAND-UP%20EVENT%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">ALL MIDDLE EASTERN COMEDY SHOW – TORONTO’S FUNNIEST STAND-UP EVENT</div>
     <div class="show-city">Toronto</div>
-    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/all-stars-all-black-comedy-show-torontos-funniest-stand-up-event/" class="show-card" data-city="Toronto" data-name="all stars - all black comedy show – toronto’s funniest stand-up event" data-upcoming="17">
@@ -1735,13 +1741,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/ashley-gavin-5318/" class="show-card" data-city="Spokane" data-name="ashley gavin" data-upcoming="1">
+<a href="/comedy-atlas/show/ashley-gavin-5318/" class="show-card" data-city="Spokane" data-name="ashley gavin" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ashley%20Gavin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Ashley Gavin</div>
     <div class="show-city">Spokane</div>
-    <div class="show-meta">Spokane Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/ashley-gavin/" class="show-card" data-city="Tempe" data-name="ashley gavin" data-upcoming="0">
@@ -1825,13 +1831,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/atomic-comedy-lgbtq-friends/" class="show-card" data-city="Barcelona" data-name="atomic comedy: lgbtq+ &amp; friends" data-upcoming="4">
+<a href="/comedy-atlas/show/atomic-comedy-lgbtq-friends/" class="show-card" data-city="Barcelona" data-name="atomic comedy: lgbtq+ &amp; friends" data-upcoming="3">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22AtoMIC%20Comedy%3A%20LGBTQ%2B%20%26amp%3B%20Friends%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EAC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">AtoMIC Comedy: LGBTQ+ &amp; Friends</div>
     <div class="show-city">Barcelona</div>
-    <div class="show-meta">The Comedy Clubhouse: Canvis Nous · Sat, Sep 12 2026</div>
-    <div class="show-count">4 upcoming shows</div>
+    <div class="show-meta">The Comedy Clubhouse: Canvis Nous · Sat, Oct 10 2026</div>
+    <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/auditory-awakenings-with-mr-tingles-in-the-house-of-asmr/" class="show-card" data-city="Edinburgh" data-name="auditory awakenings with mr tingles in the house of asmr" data-upcoming="0">
@@ -2305,13 +2311,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">7 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/big-pond-improv-festival-save-the-dates/" class="show-card" data-city="Burlington" data-name="big pond improv festival (save the dates)!" data-upcoming="2">
+<a href="/comedy-atlas/show/big-pond-improv-festival-save-the-dates/" class="show-card" data-city="Burlington" data-name="big pond improv festival (save the dates)!" data-upcoming="1">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Big%20Pond%20Improv%20Festival%20%28Save%20the%20Dates%29%21%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Big Pond Improv Festival (Save the Dates)!</div>
     <div class="show-city">Burlington</div>
-    <div class="show-meta">Vermont Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">2 upcoming shows</div>
+    <div class="show-meta">Vermont Comedy Club · Sun, Sep 13 2026</div>
+    <div class="show-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/bighead-and-friend/" class="show-card" data-city="Edinburgh" data-name="bighead and friend" data-upcoming="0">
@@ -2938,13 +2944,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/caroline-rhea-5548/" class="show-card" data-city="Salt Lake City" data-name="caroline rhea" data-upcoming="1">
+<a href="/comedy-atlas/show/caroline-rhea-5548/" class="show-card" data-city="Salt Lake City" data-name="caroline rhea" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Caroline%20Rhea%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Caroline Rhea</div>
     <div class="show-city">Salt Lake City</div>
-    <div class="show-meta">Wiseguys - Downtown SLC · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/caroline-rhea/" class="show-card" data-city="Tacoma" data-name="caroline rhea" data-upcoming="2">
@@ -3217,13 +3223,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/chandler-ghost-walk/" class="show-card" data-city="Chandler" data-name="chandler ghost walk" data-upcoming="18">
+<a href="/comedy-atlas/show/chandler-ghost-walk/" class="show-card" data-city="Chandler" data-name="chandler ghost walk" data-upcoming="17">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22CHANDLER%20GHOST%20WALK%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">CHANDLER GHOST WALK</div>
     <div class="show-city">Chandler</div>
-    <div class="show-meta">Mic Drop Comedy Chandler · Sat, Sep 12 2026</div>
-    <div class="show-count">18 upcoming shows</div>
+    <div class="show-meta">Mic Drop Comedy Chandler · Sat, Sep 19 2026</div>
+    <div class="show-count">17 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/chandler-history-walk/" class="show-card" data-city="Chandler" data-name="chandler history walk" data-upcoming="2">
@@ -4297,13 +4303,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/comedian-shayne-smith-mike-abrusci-live-in-naples-florida/" class="show-card" data-city="Naples" data-name="comedian shayne smith &amp; mike abrusci live in naples, florida!" data-upcoming="2">
+<a href="/comedy-atlas/show/comedian-shayne-smith-mike-abrusci-live-in-naples-florida/" class="show-card" data-city="Naples" data-name="comedian shayne smith &amp; mike abrusci live in naples, florida!" data-upcoming="1">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Comedian%20Shayne%20Smith%20%26amp%3B%20Mike%20Abrusci%20Live%20in%20Naples%2C%20Florida%21%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Comedian Shayne Smith &amp; Mike Abrusci Live in Naples, Florida!</div>
     <div class="show-city">Naples</div>
-    <div class="show-meta">Off The Hook Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">2 upcoming shows</div>
+    <div class="show-meta">Off The Hook Comedy Club · Sun, Sep 13 2026</div>
+    <div class="show-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/comedian-splou-live-in-naples-florida/" class="show-card" data-city="Naples" data-name="comedian splou live in naples, florida!" data-upcoming="1">
@@ -4423,13 +4429,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/comedic-cody-smith-5448/" class="show-card" data-city="Tacoma" data-name="comedic cody smith" data-upcoming="1">
+<a href="/comedy-atlas/show/comedic-cody-smith-5448/" class="show-card" data-city="Tacoma" data-name="comedic cody smith" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Comedic%20Cody%20Smith%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Comedic Cody Smith</div>
     <div class="show-city">Tacoma</div>
-    <div class="show-meta">Tacoma Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/comedic-cody-smith/" class="show-card" data-city="Oklahoma City" data-name="comedic cody smith" data-upcoming="0">
@@ -4450,13 +4456,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/comedy-all-stars-in-gatineau-saturdays-at-9pm/" class="show-card" data-city="Montreal" data-name="comedy all stars in gatineau | saturdays at 9pm" data-upcoming="33">
+<a href="/comedy-atlas/show/comedy-all-stars-in-gatineau-saturdays-at-9pm/" class="show-card" data-city="Montreal" data-name="comedy all stars in gatineau | saturdays at 9pm" data-upcoming="32">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22COMEDY%20ALL%20STARS%20IN%20GATINEAU%20%7C%20SATURDAYS%20AT%209PM%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">COMEDY ALL STARS IN GATINEAU | SATURDAYS AT 9PM</div>
     <div class="show-city">Montreal</div>
-    <div class="show-meta">Portage Orchard · Sat, Sep 12 2026</div>
-    <div class="show-count">33 upcoming shows</div>
+    <div class="show-meta">Portage Orchard · Sat, Sep 19 2026</div>
+    <div class="show-count">32 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/comedy-all-stars-early-show-7pm-saturday-october-3rd/" class="show-card" data-city="Montreal" data-name="comedy all stars! ( early show / 7pm )| saturday, october 3rd" data-upcoming="1">
@@ -4747,13 +4753,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/conor-janda-s-bloomington-debut/" class="show-card" data-city="Bloomington" data-name="conor janda&#x27;s bloomington debut!" data-upcoming="1">
+<a href="/comedy-atlas/show/conor-janda-s-bloomington-debut/" class="show-card" data-city="Bloomington" data-name="conor janda&#x27;s bloomington debut!" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Conor%20Janda%27s%20Bloomington%20Debut%21%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ECJ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Conor Janda&#x27;s Bloomington Debut!</div>
     <div class="show-city">Bloomington</div>
-    <div class="show-meta">The Comedy Attic · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/cool-wip-club/" class="show-card" data-city="Edinburgh" data-name="cool wip club" data-upcoming="0">
@@ -5002,13 +5008,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </section>
 <section class="letter-group" id="letter-d" data-letter="D">
   <h2 class="letter-heading">D <span class="letter-count">(146)</span></h2>
-  <div class="shows-grid"><a href="/comedy-atlas/show/d-lai/" class="show-card" data-city="Oklahoma City" data-name="d&#x27;lai" data-upcoming="1">
+  <div class="shows-grid"><a href="/comedy-atlas/show/d-lai/" class="show-card" data-city="Oklahoma City" data-name="d&#x27;lai" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22D%27Lai%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">D&#x27;Lai</div>
     <div class="show-city">Oklahoma City</div>
-    <div class="show-meta">Bricktown Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/d-j-demers/" class="show-card" data-city="Fort Wayne" data-name="d.j. demers" data-upcoming="0">
@@ -5047,13 +5053,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/damon-wayans/" class="show-card" data-city="Washington" data-name="damon wayans" data-upcoming="2">
+<a href="/comedy-atlas/show/damon-wayans/" class="show-card" data-city="Washington" data-name="damon wayans" data-upcoming="1">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Damon%20Wayans%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Damon Wayans</div>
     <div class="show-city">Washington</div>
-    <div class="show-meta">The Comedy Loft of DC · Sat, Sep 12 2026</div>
-    <div class="show-count">2 upcoming shows</div>
+    <div class="show-meta">The Comedy Loft of DC · Sun, Sep 13 2026</div>
+    <div class="show-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/damon-wayans-jr/" class="show-card" data-city="Tacoma" data-name="damon wayans jr." data-upcoming="3">
@@ -5353,22 +5359,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/darkest-thoughts-comedy-improvised-english-stand-up-game-show-in-berlin/" class="show-card" data-city="Berlin" data-name="darkest thoughts comedy: improvised english stand-up game-show in berlin" data-upcoming="10">
+<a href="/comedy-atlas/show/darkest-thoughts-comedy-improvised-english-stand-up-game-show-in-berlin/" class="show-card" data-city="Berlin" data-name="darkest thoughts comedy: improvised english stand-up game-show in berlin" data-upcoming="9">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Darkest%20Thoughts%20Comedy%3A%20Improvised%20English%20Stand-Up%20Game-Show%20in%20Berlin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDT%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Darkest Thoughts Comedy: Improvised English Stand-Up Game-Show in Berlin</div>
     <div class="show-city">Berlin</div>
-    <div class="show-meta">Monbijou Theater · Sat, Sep 12 2026</div>
-    <div class="show-count">10 upcoming shows</div>
+    <div class="show-meta">Monbijou Theater · Sat, Sep 19 2026</div>
+    <div class="show-count">9 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/darren-brand/" class="show-card" data-city="Washington" data-name="darren brand" data-upcoming="1">
+<a href="/comedy-atlas/show/darren-brand/" class="show-card" data-city="Washington" data-name="darren brand" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Darren%20Brand%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Darren Brand</div>
     <div class="show-city">Washington</div>
-    <div class="show-meta">The Comedy Loft of DC · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/darren-fleet/" class="show-card" data-city="Washington" data-name="darren fleet" data-upcoming="0">
@@ -5488,13 +5494,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/dave-smith/" class="show-card" data-city="Louisville" data-name="dave smith" data-upcoming="1">
+<a href="/comedy-atlas/show/dave-smith/" class="show-card" data-city="Louisville" data-name="dave smith" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Dave%20Smith%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Dave Smith</div>
     <div class="show-city">Louisville</div>
-    <div class="show-meta">Louisville Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/david-alnwick-magician-not-creepy/" class="show-card" data-city="Edinburgh" data-name="david alnwick: magician. not creepy." data-upcoming="0">
@@ -6409,13 +6415,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/edgy-no-filter-comedy-show-canceled-offensive-show-toronto-stand-up/" class="show-card" data-city="Toronto" data-name="edgy no filter comedy show  (canceled offensive show) – toronto stand up" data-upcoming="16">
+<a href="/comedy-atlas/show/edgy-no-filter-comedy-show-canceled-offensive-show-toronto-stand-up/" class="show-card" data-city="Toronto" data-name="edgy no filter comedy show  (canceled offensive show) – toronto stand up" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22EDGY%20NO%20FILTER%20COMEDY%20SHOW%20%20%28CANCELED%20OFFENSIVE%20SHOW%29%20%E2%80%93%20TORONTO%20STAND%20UP%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">EDGY NO FILTER COMEDY SHOW  (CANCELED OFFENSIVE SHOW) – TORONTO STAND UP</div>
     <div class="show-city">Toronto</div>
-    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/edinbra-fringe-comedy/" class="show-card" data-city="Edinburgh" data-name="edinbra fringe comedy" data-upcoming="0">
@@ -6607,13 +6613,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/english-comedy-berlin-with-pizza-and-shots/" class="show-card" data-city="Berlin" data-name="english comedy berlin with pizza and shots" data-upcoming="27">
+<a href="/comedy-atlas/show/english-comedy-berlin-with-pizza-and-shots/" class="show-card" data-city="Berlin" data-name="english comedy berlin with pizza and shots" data-upcoming="26">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22English%20Comedy%20Berlin%20with%20Pizza%20and%20Shots%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">English Comedy Berlin with Pizza and Shots</div>
     <div class="show-city">Berlin</div>
-    <div class="show-meta">Comedy Club Kookaburra · Sat, Sep 12 2026</div>
-    <div class="show-count">27 upcoming shows</div>
+    <div class="show-meta">Comedy Club Kookaburra · Fri, Sep 18 2026</div>
+    <div class="show-count">26 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/english-comedy-brussels/" class="show-card" data-city="Brussels" data-name="english comedy brussels" data-upcoming="0">
@@ -6652,13 +6658,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/english-comedy-copenhagen-thomas-henry-hyper-anglais/" class="show-card" data-city="Rome" data-name="english comedy copenhagen - thomas henry: hyper anglais" data-upcoming="1">
+<a href="/comedy-atlas/show/english-comedy-copenhagen-thomas-henry-hyper-anglais/" class="show-card" data-city="Rome" data-name="english comedy copenhagen - thomas henry: hyper anglais" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22ENGLISH%20COMEDY%20COPENHAGEN%20-%20Thomas%20Henry%3A%20Hyper%20Anglais%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EEC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">ENGLISH COMEDY COPENHAGEN - Thomas Henry: Hyper Anglais</div>
     <div class="show-city">Rome</div>
-    <div class="show-meta">Kompasset Ølbar · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/english-comedy-lille-thomas-henry-hyper-anglais/" class="show-card" data-city="Rome" data-name="english comedy lille - thomas henry: hyper anglais" data-upcoming="1">
@@ -8170,13 +8176,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/george-zacharopoulos-immigrateful/" class="show-card" data-city="Lisbon" data-name="george zacharopoulos: immigrateful" data-upcoming="1">
+<a href="/comedy-atlas/show/george-zacharopoulos-immigrateful/" class="show-card" data-city="Lisbon" data-name="george zacharopoulos: immigrateful" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22George%20Zacharopoulos%3A%20Immigrateful%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EGZ%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">George Zacharopoulos: Immigrateful</div>
     <div class="show-city">Lisbon</div>
-    <div class="show-meta">Xafarix · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/gerd-buurmann-julia-hingst-reni-martin-zingsheim-klinke-fur-gitte-viktoria-burkert-lieder-lacher-lebenskrisen/" class="show-card" data-city="Cologne" data-name="gerd buurmann, julia hingst, reni, martin zingsheim, klinke für gitte, viktoria burkert: lieder, lacher, lebenskrisen" data-upcoming="1">
@@ -9121,13 +9127,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/in-the-other-room-adam-cayton-holland/" class="show-card" data-city="Portland" data-name="in the other room: adam cayton-holland" data-upcoming="1">
+<a href="/comedy-atlas/show/in-the-other-room-adam-cayton-holland/" class="show-card" data-city="Portland" data-name="in the other room: adam cayton-holland" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22In%20The%20Other%20Room%3A%20Adam%20Cayton-Holland%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EIT%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">In The Other Room: Adam Cayton-Holland</div>
     <div class="show-city">Portland</div>
-    <div class="show-meta">Helium Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/in-the-other-room-alistair-ogden/" class="show-card" data-city="Portland" data-name="in the other room: alistair ogden" data-upcoming="1">
@@ -10411,13 +10417,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/joe-machi/" class="show-card" data-city="Fort Wayne" data-name="joe machi" data-upcoming="1">
+<a href="/comedy-atlas/show/joe-machi/" class="show-card" data-city="Fort Wayne" data-name="joe machi" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Joe%20Machi%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Joe Machi</div>
     <div class="show-city">Fort Wayne</div>
-    <div class="show-meta">Summit City Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/joe-nunnink/" class="show-card" data-city="Kansas City" data-name="joe nunnink" data-upcoming="0">
@@ -10672,13 +10678,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/jordan-makin/" class="show-card" data-city="Ogden" data-name="jordan makin" data-upcoming="1">
+<a href="/comedy-atlas/show/jordan-makin/" class="show-card" data-city="Ogden" data-name="jordan makin" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Jordan%20Makin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Jordan Makin</div>
     <div class="show-city">Ogden</div>
-    <div class="show-meta">Wiseguys - Historic Ogden · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/jordan-prince-live/" class="show-card" data-city="Cologne" data-name="jordan prince live" data-upcoming="1">
@@ -13147,13 +13153,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/mike-epps/" class="show-card" data-city="Tacoma" data-name="mike epps" data-upcoming="1">
+<a href="/comedy-atlas/show/mike-epps/" class="show-card" data-city="Tacoma" data-name="mike epps" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mike%20Epps%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EME%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Mike Epps</div>
     <div class="show-city">Tacoma</div>
-    <div class="show-meta">Tacoma Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/mike-goodwin-5450/" class="show-card" data-city="Tacoma" data-name="mike goodwin" data-upcoming="1">
@@ -13165,13 +13171,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/mike-goodwin/" class="show-card" data-city="Spokane" data-name="mike goodwin" data-upcoming="1">
+<a href="/comedy-atlas/show/mike-goodwin/" class="show-card" data-city="Spokane" data-name="mike goodwin" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Mike%20Goodwin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Mike Goodwin</div>
     <div class="show-city">Spokane</div>
-    <div class="show-meta">Spokane Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/mike-vecchione-5324/" class="show-card" data-city="Spokane" data-name="mike vecchione" data-upcoming="1">
@@ -14449,13 +14455,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">2 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/open-writing-workshop/" class="show-card" data-city="Barcelona" data-name="open writing workshop" data-upcoming="33">
+<a href="/comedy-atlas/show/open-writing-workshop/" class="show-card" data-city="Barcelona" data-name="open writing workshop" data-upcoming="32">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Open%20Writing%20Workshop%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EOW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Open Writing Workshop</div>
     <div class="show-city">Barcelona</div>
-    <div class="show-meta">The Clubhouse: Laietana &amp; Nikki&#x27;s · Sat, Sep 12 2026</div>
-    <div class="show-count">33 upcoming shows</div>
+    <div class="show-meta">The Clubhouse: Laietana &amp; Nikki&#x27;s · Sat, Sep 19 2026</div>
+    <div class="show-count">32 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/osan-yaran-bastian-bielendorfer-simon-stablein-johann-konig-jerry-vsan-bjorn-von-morgenstern-filiz-tasdan-ana-lucia-elli-lizz-1live-oberhausen-comedy-nacht-xxl-2026/" class="show-card" data-city="Cologne" data-name="osan yaran, bastian bielendorfer, simon stäblein, johann könig, jerry vsan, björn von morgenstern, filiz tasdan, ana lucía, elli lizz: 1live oberhausen comedy-nacht xxl 2026" data-upcoming="1">
@@ -14803,13 +14809,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/phil-hanley/" class="show-card" data-city="Kansas City" data-name="phil hanley" data-upcoming="1">
+<a href="/comedy-atlas/show/phil-hanley/" class="show-card" data-city="Kansas City" data-name="phil hanley" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Phil%20Hanley%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EPH%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Phil Hanley</div>
     <div class="show-city">Kansas City</div>
-    <div class="show-meta">The Comedy Club of Kansas City · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/philipp-leinenbach-unqualifiziert-aber-sexy/" class="show-card" data-city="Cologne" data-name="philipp leinenbach: unqualifiziert, aber sexy" data-upcoming="0">
@@ -16078,13 +16084,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/room-861-at-goodnights-sabrina-wu/" class="show-card" data-city="Raleigh" data-name="room 861 at goodnights: sabrina wu" data-upcoming="2">
+<a href="/comedy-atlas/show/room-861-at-goodnights-sabrina-wu/" class="show-card" data-city="Raleigh" data-name="room 861 at goodnights: sabrina wu" data-upcoming="1">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Room%20861%20at%20Goodnights%3A%20Sabrina%20Wu%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ER8%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Room 861 at Goodnights: Sabrina Wu</div>
     <div class="show-city">Raleigh</div>
-    <div class="show-meta">Goodnights Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">2 upcoming shows</div>
+    <div class="show-meta">Goodnights Comedy Club · Sun, Sep 13 2026</div>
+    <div class="show-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/room-861-at-goodnights-sophie-buddle/" class="show-card" data-city="Raleigh" data-name="room 861 at goodnights: sophie buddle" data-upcoming="2">
@@ -16177,13 +16183,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/ryan-erwin/" class="show-card" data-city="West Jordan" data-name="ryan erwin" data-upcoming="1">
+<a href="/comedy-atlas/show/ryan-erwin/" class="show-card" data-city="West Jordan" data-name="ryan erwin" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ryan%20Erwin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Ryan Erwin</div>
     <div class="show-city">West Jordan</div>
-    <div class="show-meta">Wiseguys - Jordan Landing · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/ryan-goodcase/" class="show-card" data-city="Washington" data-name="ryan goodcase" data-upcoming="2">
@@ -16267,13 +16273,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/ryan-sickler/" class="show-card" data-city="Tacoma" data-name="ryan sickler" data-upcoming="1">
+<a href="/comedy-atlas/show/ryan-sickler/" class="show-card" data-city="Tacoma" data-name="ryan sickler" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ryan%20Sickler%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Ryan Sickler</div>
     <div class="show-city">Tacoma</div>
-    <div class="show-meta">Tacoma Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a></div>
 </section>
@@ -16522,22 +16528,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-british-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon british comedy, 4pm, soho" data-upcoming="13">
+<a href="/comedy-atlas/show/saturday-afternoon-british-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon british comedy, 4pm, soho" data-upcoming="12">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20British%20Comedy%2C%204PM%2C%20Soho%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon British Comedy, 4PM, Soho</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 12 2026</div>
-    <div class="show-count">13 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 19 2026</div>
+    <div class="show-count">12 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-british-stand-up-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon british stand-up comedy, 5pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-afternoon-british-stand-up-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon british stand-up comedy, 5pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20British%20Stand-up%20Comedy%2C%205PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon British Stand-up Comedy, 5PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-afternoon-central-london-comedy-4pm-soho-4043/" class="show-card" data-city="London" data-name="saturday afternoon central london comedy, 4pm, soho" data-upcoming="3">
@@ -16549,22 +16555,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-central-london-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon central london comedy, 4pm, soho" data-upcoming="13">
+<a href="/comedy-atlas/show/saturday-afternoon-central-london-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon central london comedy, 4pm, soho" data-upcoming="12">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Central%20London%20Comedy%2C%204PM%2C%20Soho%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Central London Comedy, 4PM, Soho</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 12 2026</div>
-    <div class="show-count">13 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 19 2026</div>
+    <div class="show-count">12 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-central-london-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon central london comedy, 5pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-afternoon-central-london-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon central london comedy, 5pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Central%20London%20Comedy%2C%205PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Central London Comedy, 5PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-afternoon-comedy-4pm-soho-4041/" class="show-card" data-city="London" data-name="saturday afternoon comedy, 4pm, soho" data-upcoming="3">
@@ -16576,22 +16582,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon comedy, 4pm, soho" data-upcoming="13">
+<a href="/comedy-atlas/show/saturday-afternoon-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon comedy, 4pm, soho" data-upcoming="12">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Comedy%2C%204PM%2C%20Soho%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Comedy, 4PM, Soho</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 12 2026</div>
-    <div class="show-count">13 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 19 2026</div>
+    <div class="show-count">12 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon comedy, 5pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-afternoon-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon comedy, 5pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Comedy%2C%205PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Comedy, 5PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-afternoon-dark-comedy-4pm-soho-4042/" class="show-card" data-city="London" data-name="saturday afternoon dark comedy, 4pm, soho" data-upcoming="3">
@@ -16603,22 +16609,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-dark-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon dark comedy, 4pm, soho" data-upcoming="13">
+<a href="/comedy-atlas/show/saturday-afternoon-dark-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon dark comedy, 4pm, soho" data-upcoming="12">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Dark%20Comedy%2C%204PM%2C%20Soho%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Dark Comedy, 4PM, Soho</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 12 2026</div>
-    <div class="show-count">13 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 19 2026</div>
+    <div class="show-count">12 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-dark-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon dark comedy, 5pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-afternoon-dark-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon dark comedy, 5pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20Dark%20Comedy%2C%205PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon Dark Comedy, 5PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-afternoon-international-comedy-4pm-soho-4045/" class="show-card" data-city="London" data-name="saturday afternoon international comedy, 4pm, soho" data-upcoming="3">
@@ -16630,22 +16636,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-international-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon international comedy, 4pm, soho" data-upcoming="13">
+<a href="/comedy-atlas/show/saturday-afternoon-international-comedy-4pm-soho/" class="show-card" data-city="London" data-name="saturday afternoon international comedy, 4pm, soho" data-upcoming="12">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20International%20Comedy%2C%204PM%2C%20Soho%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon International Comedy, 4PM, Soho</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 12 2026</div>
-    <div class="show-count">13 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Soho · Sat, Sep 19 2026</div>
+    <div class="show-count">12 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-afternoon-international-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon international comedy, 5pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-afternoon-international-comedy-5pm-leicester-square/" class="show-card" data-city="London" data-name="saturday afternoon international comedy, 5pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Afternoon%20International%20Comedy%2C%205PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Afternoon International Comedy, 5PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-comedy-club-london-covent-garden-5738/" class="show-card" data-city="London" data-name="saturday comedy club london | covent garden" data-upcoming="2">
@@ -16675,13 +16681,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-british-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night british comedy, 7pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-british-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night british comedy, 7pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20British%20Comedy%2C%207PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night British Comedy, 7PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-night-british-comedy-9pm-leicester-square-4034/" class="show-card" data-city="London" data-name="saturday night british comedy, 9pm, leicester square" data-upcoming="7">
@@ -16693,76 +16699,76 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">7 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-british-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night british comedy, 9pm, leicester square" data-upcoming="9">
+<a href="/comedy-atlas/show/saturday-night-british-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night british comedy, 9pm, leicester square" data-upcoming="8">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20British%20Comedy%2C%209PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night British Comedy, 9PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">9 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">8 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-central-london-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night central london comedy, 7pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-central-london-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night central london comedy, 7pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Central%20London%20Comedy%2C%207PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Central London Comedy, 7PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-central-london-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night central london comedy, 9pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-central-london-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night central london comedy, 9pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Central%20London%20Comedy%2C%209PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Central London Comedy, 9PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-comedy-after-dark-montreal-10-15-pm-comedyville/" class="show-card" data-city="Montreal" data-name="saturday night comedy after dark montreal (10:15 pm) | comedyville" data-upcoming="33">
+<a href="/comedy-atlas/show/saturday-night-comedy-after-dark-montreal-10-15-pm-comedyville/" class="show-card" data-city="Montreal" data-name="saturday night comedy after dark montreal (10:15 pm) | comedyville" data-upcoming="32">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Comedy%20After%20Dark%20Montreal%20%2810%3A15%20PM%29%20%7C%20Comedyville%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Comedy After Dark Montreal (10:15 PM) | Comedyville</div>
     <div class="show-city">Montreal</div>
-    <div class="show-meta">Estrella Restaurant · Sat, Sep 12 2026</div>
-    <div class="show-count">33 upcoming shows</div>
+    <div class="show-meta">Estrella Restaurant · Sat, Sep 19 2026</div>
+    <div class="show-count">32 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night comedy, 7pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night comedy, 7pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Comedy%2C%207PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Comedy, 7PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night comedy, 9pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night comedy, 9pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Comedy%2C%209PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Comedy, 9PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-dark-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night dark comedy, 7pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-dark-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night dark comedy, 7pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Dark%20Comedy%2C%207PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Dark Comedy, 7PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-dark-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night dark comedy, 9pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-dark-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night dark comedy, 9pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20Dark%20Comedy%2C%209PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night Dark Comedy, 9PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-night-english-stand-up-comedy-show-by-mtlcomedyclub-com/" class="show-card" data-city="Montreal" data-name="saturday night english stand-up comedy show by mtlcomedyclub.com" data-upcoming="0">
@@ -16774,22 +16780,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-international-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night international comedy, 7pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-international-comedy-7pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night international comedy, 7pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20International%20Comedy%2C%207PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night International Comedy, 7PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturday-night-international-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night international comedy, 9pm, leicester square" data-upcoming="16">
+<a href="/comedy-atlas/show/saturday-night-international-comedy-9pm-leicester-square/" class="show-card" data-city="London" data-name="saturday night international comedy, 9pm, leicester square" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Saturday%20Night%20International%20Comedy%2C%209PM%2C%20Leicester%20Square%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Saturday Night International Comedy, 9PM, Leicester Square</div>
     <div class="show-city">London</div>
-    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">JK Comedy Club Leicester Square · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saturday-night-late-montreals-wildest-late-night-stand-up-comedy-show/" class="show-card" data-city="Montreal" data-name="saturday night late  – montreal’s wildest late-night stand-up comedy show" data-upcoming="0">
@@ -16828,13 +16834,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/saturdays-all-star-legends-at-keys-toronto-stand-up-comedy-club-show/" class="show-card" data-city="Toronto" data-name="saturdays all star legends - at keys toronto stand up comedy club show" data-upcoming="16">
+<a href="/comedy-atlas/show/saturdays-all-star-legends-at-keys-toronto-stand-up-comedy-club-show/" class="show-card" data-city="Toronto" data-name="saturdays all star legends - at keys toronto stand up comedy club show" data-upcoming="15">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22SATURDAYS%20ALL%20STAR%20LEGENDS%20-%20AT%20KEYS%20TORONTO%20STAND%20UP%20COMEDY%20CLUB%20SHOW%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">SATURDAYS ALL STAR LEGENDS - AT KEYS TORONTO STAND UP COMEDY CLUB SHOW</div>
     <div class="show-city">Toronto</div>
-    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 12 2026</div>
-    <div class="show-count">16 upcoming shows</div>
+    <div class="show-meta">Key&#x27;s Stand up Comedy Club Toronto Improv Bar and Grill · Sat, Sep 19 2026</div>
+    <div class="show-count">15 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/saya-meads/" class="show-card" data-city="Chandler" data-name="saya meads" data-upcoming="1">
@@ -16963,13 +16969,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/sean-patton/" class="show-card" data-city="Tacoma" data-name="sean patton" data-upcoming="1">
+<a href="/comedy-atlas/show/sean-patton/" class="show-card" data-city="Tacoma" data-name="sean patton" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sean%20Patton%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Sean Patton</div>
     <div class="show-city">Tacoma</div>
-    <div class="show-meta">Tacoma Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/second-breakfast-improv/" class="show-card" data-city="Edinburgh" data-name="second breakfast improv" data-upcoming="0">
@@ -17179,13 +17185,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/show-up-go-up/" class="show-card" data-city="Barcelona" data-name="show up go up" data-upcoming="15">
+<a href="/comedy-atlas/show/show-up-go-up/" class="show-card" data-city="Barcelona" data-name="show up go up" data-upcoming="14">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Show%20Up%20Go%20Up%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESU%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Show Up Go Up</div>
     <div class="show-city">Barcelona</div>
-    <div class="show-meta">The Clubhouse: Laietana &amp; Nikki&#x27;s · Sat, Sep 12 2026</div>
-    <div class="show-count">15 upcoming shows</div>
+    <div class="show-meta">The Clubhouse: Laietana &amp; Nikki&#x27;s · Sat, Sep 19 2026</div>
+    <div class="show-count">14 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/shuler-king/" class="show-card" data-city="Louisville" data-name="shuler king" data-upcoming="1">
@@ -18286,13 +18292,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/special-event-kelsey-cook/" class="show-card" data-city="Portland" data-name="special event: kelsey cook" data-upcoming="6">
+<a href="/comedy-atlas/show/special-event-kelsey-cook/" class="show-card" data-city="Portland" data-name="special event: kelsey cook" data-upcoming="5">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Special%20Event%3A%20Kelsey%20Cook%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Special Event: Kelsey Cook</div>
     <div class="show-city">Portland</div>
-    <div class="show-meta">Helium Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">6 upcoming shows</div>
+    <div class="show-meta">Helium Comedy Club · Thu, Sep 17 2026</div>
+    <div class="show-count">5 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/special-event-kevin-nealon/" class="show-card" data-city="Raleigh" data-name="special event: kevin nealon" data-upcoming="3">
@@ -18853,13 +18859,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/special-event-sommore/" class="show-card" data-city="Raleigh" data-name="special event: sommore" data-upcoming="2">
+<a href="/comedy-atlas/show/special-event-sommore/" class="show-card" data-city="Raleigh" data-name="special event: sommore" data-upcoming="1">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Special%20Event%3A%20Sommore%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Special Event: Sommore</div>
     <div class="show-city">Raleigh</div>
-    <div class="show-meta">Goodnights Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">2 upcoming shows</div>
+    <div class="show-meta">Goodnights Comedy Club · Sun, Sep 13 2026</div>
+    <div class="show-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/special-event-steve-furey/" class="show-card" data-city="Portland" data-name="special event: steve furey" data-upcoming="1">
@@ -18907,13 +18913,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/special-event-steve-o/" class="show-card" data-city="Portland" data-name="special event: steve-o" data-upcoming="1">
+<a href="/comedy-atlas/show/special-event-steve-o/" class="show-card" data-city="Portland" data-name="special event: steve-o" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Special%20Event%3A%20Steve-O%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Special Event: Steve-O</div>
     <div class="show-city">Portland</div>
-    <div class="show-meta">Helium Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/special-event-susan-rice/" class="show-card" data-city="Portland" data-name="special event: susan rice" data-upcoming="1">
@@ -19861,13 +19867,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/stand-up-comedy-in-english-in-madrid-the-saturday-showcase/" class="show-card" data-city="Madrid" data-name="stand-up comedy in english in madrid: the saturday showcase" data-upcoming="22">
+<a href="/comedy-atlas/show/stand-up-comedy-in-english-in-madrid-the-saturday-showcase/" class="show-card" data-city="Madrid" data-name="stand-up comedy in english in madrid: the saturday showcase" data-upcoming="21">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Stand-up%20Comedy%20in%20English%20in%20Madrid%3A%20The%20Saturday%20Showcase%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESU%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Stand-up Comedy in English in Madrid: The Saturday Showcase</div>
     <div class="show-city">Madrid</div>
-    <div class="show-meta">Madrid Comedy Lab · Sat, Sep 12 2026</div>
-    <div class="show-count">22 upcoming shows</div>
+    <div class="show-meta">Madrid Comedy Lab · Sat, Sep 19 2026</div>
+    <div class="show-count">21 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/stand-up-comedy-in-english-in-madrid-the-sunday-showcase/" class="show-card" data-city="Madrid" data-name="stand-up comedy in english in madrid: the sunday showcase" data-upcoming="0">
@@ -20374,13 +20380,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/susan-rice/" class="show-card" data-city="Fort Wayne" data-name="susan rice" data-upcoming="1">
+<a href="/comedy-atlas/show/susan-rice/" class="show-card" data-city="Fort Wayne" data-name="susan rice" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Susan%20Rice%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%235b21b6%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESR%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Susan Rice</div>
     <div class="show-city">Fort Wayne</div>
-    <div class="show-meta">Summit City Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/sven-garrecht-kann-man-machen/" class="show-card" data-city="Cologne" data-name="sven garrecht: kann man machen!" data-upcoming="1">
@@ -21457,13 +21463,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/the-late-show-at-10pm-montreals-best-late-night-comedy-mtlcomedyclub/" class="show-card" data-city="Montreal" data-name="the late show at 10pm – montreal’s best late-night comedy | mtlcomedyclub." data-upcoming="33">
+<a href="/comedy-atlas/show/the-late-show-at-10pm-montreals-best-late-night-comedy-mtlcomedyclub/" class="show-card" data-city="Montreal" data-name="the late show at 10pm – montreal’s best late-night comedy | mtlcomedyclub." data-upcoming="32">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22The%20Late%20Show%20at%2010PM%20%E2%80%93%20Montreal%E2%80%99s%20Best%20Late-Night%20Comedy%20%7C%20MTLCOMEDYCLUB.%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">The Late Show at 10PM – Montreal’s Best Late-Night Comedy | MTLCOMEDYCLUB.</div>
     <div class="show-city">Montreal</div>
-    <div class="show-meta">Hôtel Zéro1 · Sat, Sep 12 2026</div>
-    <div class="show-count">33 upcoming shows</div>
+    <div class="show-meta">Hôtel Zéro1 · Sat, Sep 19 2026</div>
+    <div class="show-count">32 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/the-limerence/" class="show-card" data-city="Edinburgh" data-name="the limerence" data-upcoming="0">
@@ -21844,13 +21850,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/the-neon-room-at-helium-shawn-gardini/" class="show-card" data-city="Portland" data-name="the neon room at helium: shawn gardini" data-upcoming="1">
+<a href="/comedy-atlas/show/the-neon-room-at-helium-shawn-gardini/" class="show-card" data-city="Portland" data-name="the neon room at helium: shawn gardini" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22The%20Neon%20Room%20at%20Helium%3A%20Shawn%20Gardini%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">The Neon Room at Helium: Shawn Gardini</div>
     <div class="show-city">Portland</div>
-    <div class="show-meta">Helium Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/the-neon-room-at-helium-sophie-buddle/" class="show-card" data-city="Portland" data-name="the neon room at helium: sophie buddle" data-upcoming="0">
@@ -22087,13 +22093,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">7 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/the-spotlight-fri-sat/" class="show-card" data-city="Barcelona" data-name="the spotlight  • fri &amp; sat" data-upcoming="29">
+<a href="/comedy-atlas/show/the-spotlight-fri-sat/" class="show-card" data-city="Barcelona" data-name="the spotlight  • fri &amp; sat" data-upcoming="28">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22The%20Spotlight%20%20%E2%80%A2%20Fri%20%26amp%3B%20Sat%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">The Spotlight  • Fri &amp; Sat</div>
     <div class="show-city">Barcelona</div>
-    <div class="show-meta">The Comedy Clubhouse · Sat, Sep 12 2026</div>
-    <div class="show-count">29 upcoming shows</div>
+    <div class="show-meta">The Comedy Clubhouse · Fri, Sep 18 2026</div>
+    <div class="show-count">28 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/the-stone-cold-jackal-holiday-show/" class="show-card" data-city="Tempe" data-name="the stone cold &amp; jackal holiday show" data-upcoming="0">
@@ -22519,13 +22525,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">2 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/timmy-no-brakes-5277/" class="show-card" data-city="Appleton" data-name="timmy no brakes" data-upcoming="1">
+<a href="/comedy-atlas/show/timmy-no-brakes-5277/" class="show-card" data-city="Appleton" data-name="timmy no brakes" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Timmy%20No%20Brakes%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ETN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Timmy No Brakes</div>
     <div class="show-city">Appleton</div>
-    <div class="show-meta">Skyline Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/timmy-no-brakes-5543/" class="show-card" data-city="Salt Lake City" data-name="timmy no brakes" data-upcoming="0">
@@ -23242,13 +23248,13 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="show-count">3 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/show/upstairs-at-helium-matt-braunger/" class="show-card" data-city="Portland" data-name="upstairs at helium: matt braunger" data-upcoming="1">
+<a href="/comedy-atlas/show/upstairs-at-helium-matt-braunger/" class="show-card" data-city="Portland" data-name="upstairs at helium: matt braunger" data-upcoming="0">
   <img class="show-thumb show-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Upstairs%20at%20Helium%3A%20Matt%20Braunger%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EUA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="show-card-body">
     <div class="show-name">Upstairs at Helium: Matt Braunger</div>
     <div class="show-city">Portland</div>
-    <div class="show-meta">Helium Comedy Club · Sat, Sep 12 2026</div>
-    <div class="show-count">1 upcoming show</div>
+    
+    <div class="show-count show-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/show/upstairs-at-helium-mike-feeney/" class="show-card" data-city="Portland" data-name="upstairs at helium: mike feeney" data-upcoming="3">

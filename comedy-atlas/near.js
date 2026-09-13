@@ -39,7 +39,28 @@
     ".near-event-title{font-size:16px;font-weight:700;line-height:1.3}" +
     ".near-event-dist{font-size:13px;color:var(--gold,#c9a84c);font-weight:700;white-space:nowrap}" +
     ".near-event-meta{font-size:13px;color:var(--muted,#8899aa);margin-top:4px}" +
-    ".near-fallback-link{color:var(--purple-light,#9d5ff5);font-weight:700}";
+    ".near-fallback-link{color:var(--purple-light,#9d5ff5);font-weight:700}" +
+    // 2026-09-13 (Robert: "it doesnt even ask ... shouldnt that pop up?"):
+    // once a browser/OS has stored a location denial for this site, no page
+    // can make the permission prompt reappear -- this panel replaces
+    // silence with exact, per-platform instructions + a real retry. Shares
+    // its class names with atlas-location-help.js's generated markup.
+    ".atlas-location-help{max-width:420px;margin:0 auto 14px;padding:14px 16px;" +
+    "border:1px solid var(--border,#1e2a3a);border-radius:12px;" +
+    "background:var(--card,#111827);text-align:left;font-size:13.5px;line-height:1.5}" +
+    ".atlas-location-help-lede{margin:0 0 8px;font-weight:700;color:var(--fg,#e8ecf1)}" +
+    ".atlas-location-help-platform{margin:10px 0 4px;font-weight:700;font-size:12.5px;" +
+    "color:var(--gold,#c9a84c);text-transform:uppercase;letter-spacing:.02em}" +
+    ".atlas-location-help ul{margin:0 0 4px;padding-left:20px;color:var(--muted,#8899aa)}" +
+    ".atlas-location-help li{margin-bottom:4px}" +
+    ".atlas-location-help-other{margin-top:6px}" +
+    ".atlas-location-help-other summary{cursor:pointer;color:var(--purple-light,#9d5ff5);" +
+    "font-weight:700;font-size:12.5px}" +
+    ".atlas-location-help-retry{margin-top:10px;padding:9px 16px;border-radius:999px;" +
+    "border:1px solid var(--purple,#7c3aed);background:transparent;" +
+    "color:var(--purple-light,#9d5ff5);font-weight:700;font-size:13px;cursor:pointer;" +
+    "min-height:40px}" +
+    ".near-ip-fallback{margin-top:4px}";
 
   function injectCss() {
     var style = document.createElement("style");
@@ -173,18 +194,73 @@
     });
   }
 
+  // Cached promise for the shared "how to enable location" helper module
+  // (atlas-location-help.js). near.js is a plain classic script (not a
+  // module), so it cannot use a static `import` -- but dynamic `import()`
+  // works from any script, module or not. Loaded lazily (only once a
+  // visitor actually hits a denied/timeout state) and cached so a second
+  // dead end (or a "Try again" retry) doesn't re-fetch it.
+  var locationHelpModulePromise = null;
+  function loadLocationHelp() {
+    if (!locationHelpModulePromise) {
+      locationHelpModulePromise = import("./atlas-location-help.js");
+    }
+    return locationHelpModulePromise;
+  }
+
+  // 2026-09-13 (Robert: "it doesnt even ask ... shouldnt that pop up?"):
+  // once a browser/OS has stored a denial for this site (or iOS Location
+  // Services is off for Safari entirely), no page can make the permission
+  // prompt reappear -- only the visitor can flip it back in their own
+  // settings. Renders the shared how-to panel (exact steps for the
+  // detected platform + a real "Try again" retry) directly in the panel,
+  // and kicks off the existing IP-city fallback in parallel into its own
+  // sub-container underneath -- neither has to wait on the other, and a
+  // slow/failed helper-module load never blocks the IP results from
+  // showing up (see the .catch below).
+  function renderBlockedLocation(panel, plainMessage) {
+    // The plain message renders immediately and synchronously (never a
+    // blank/silent panel while the helper module or the IP lookup are still
+    // in flight) -- the how-to panel and the IP-city results both enhance
+    // this same screen once each resolves, they never replace it.
+    renderPanelState(panel,
+      '<div class="state-block" style="padding:24px 20px 4px"><p>' +
+      escapeHtml(plainMessage) + '</p></div>' +
+      '<div class="atlas-location-help" id="near-location-help"></div>' +
+      '<div class="near-ip-fallback" id="near-ip-fallback"><div class="state-block">' +
+      '<div class="spinner" aria-hidden="true"></div><p>Finding shows near your area…</p></div></div>');
+
+    loadLocationHelp().then(function (mod) {
+      var helpEl = document.getElementById("near-location-help");
+      if (!helpEl) return; // a later click already replaced the panel
+      helpEl.outerHTML = mod.renderLocationHelpHtml({ ua: navigator.userAgent });
+      var retryBtn = panel.querySelector(mod.RETRY_SELECTOR);
+      if (retryBtn) {
+        retryBtn.addEventListener("click", function () { onFindClick(panel); });
+      }
+    }).catch(function () {
+      var helpEl = document.getElementById("near-location-help");
+      if (helpEl) helpEl.textContent = plainMessage;
+    });
+
+    var ipSlot = document.getElementById("near-ip-fallback");
+    geoCityFallback(ipSlot, plainMessage);
+  }
+
   // kind: "denied" | "timeout" | "unavailable" | undefined. "denied" and
-  // "timeout" get the IP-city upgrade above -- the browser told us the
-  // device location is unusable, but IP still narrows the search. There is
-  // no device signal at all to have been denied/timed-out for
-  // "unavailable" (no Geolocation API support), so it renders the plain
-  // fallback directly; the fetch-error catch in fetchNear() below passes no
-  // kind at all (an API outage, not a location fallback) and behaves
-  // exactly as before.
+  // "timeout" mean the browser told us the device location is unusable
+  // right now -- these get BOTH the how-to-fix-it panel above AND the
+  // IP-city upgrade (still narrows the search while the visitor fixes their
+  // setting). There is no device signal at all to have been denied/timed-
+  // out for "unavailable" (no Geolocation API support at all -- a settings
+  // change can't fix a browser that has no Geolocation API), so it renders
+  // the plain fallback directly; the fetch-error catch in fetchNear() below
+  // passes no kind at all (an API outage, not a location fallback) and
+  // behaves exactly as before.
   function renderFallback(panel, message, kind) {
     if (kind) console.warn("near: fallback=" + kind);
     if (kind === "denied" || kind === "timeout") {
-      geoCityFallback(panel, message);
+      renderBlockedLocation(panel, message);
       return;
     }
     renderPlainFallback(panel, message);

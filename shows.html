@@ -56,6 +56,47 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .filterbar .near-btn:hover{border-color:var(--purple)}
 .filterbar .near-btn.active{background:var(--grad);border-color:transparent;color:#fff}
 .near-note{width:100%;text-align:center;font-size:12px;color:var(--muted);margin-top:-8px}
+/* 2026-09-13 (Robert, iPad Safari screenshot): shares atlas-location-help.js's
+   markup/classes with near.js's hero panel and the globe's Near Me pill --
+   one definition of "how to enable location", not three. */
+.near-note .atlas-location-help{max-width:420px;margin:8px auto 0;padding:12px 14px;
+  border:1px solid var(--border);border-radius:10px;background:var(--card);
+  text-align:left;font-size:12.5px;line-height:1.5}
+.near-note .atlas-location-help-lede{margin:0 0 8px;font-weight:700;color:var(--text)}
+.near-note .atlas-location-help-platform{margin:10px 0 4px;font-weight:700;font-size:11.5px;
+  color:var(--gold);text-transform:uppercase;letter-spacing:.02em}
+.near-note .atlas-location-help ul{margin:0 0 4px;padding-left:18px;color:var(--muted)}
+.near-note .atlas-location-help li{margin-bottom:4px}
+.near-note .atlas-location-help-other summary{cursor:pointer;color:var(--purple-light);
+  font-weight:700;font-size:11.5px}
+.near-note .atlas-location-help-retry{margin-top:10px;padding:8px 14px;border-radius:999px;
+  border:1px solid var(--purple);background:transparent;color:var(--purple-light);
+  font-weight:700;font-size:12.5px;cursor:pointer;min-height:38px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* City type-ahead search box (2026-09-13, Robert: "why doesnt the Comedy
+   Calendar still have no search bars for the cities, or times"). Enhances
+   #cityFilter -- never replaces it: #cityFilter stays the single source of
+   truth matchesFilters()/render() already read, this combo only ever sets
+   its .value and dispatches a real 'change' so the existing onchange
+   handler fires UNCHANGED. Starts hidden -- shown only once
+   initCityCombo() below confirms it can actually drive the select (i.e.
+   JS ran), so a no-JS visitor keeps today's plain <select>, never a dead
+   text box that looks interactive but isn't. */
+.city-combo{position:relative;min-width:160px;flex:0 1 220px}
+.city-combo input{width:100%;height:38px;padding:0 30px 0 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:600;box-sizing:border-box}
+.city-combo input::placeholder{color:var(--muted);font-weight:500}
+.city-combo-clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:16px;cursor:pointer;width:26px;height:26px;border-radius:50%}
+.city-combo-clear:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.city-combo ul{position:absolute;left:0;right:0;top:calc(100% + 4px);max-height:220px;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:10px;list-style:none;padding:4px;z-index:30}
+.city-combo li{padding:7px 10px;border-radius:7px;cursor:pointer;font-size:13px;min-height:30px;display:flex;align-items:center}
+.city-combo li[aria-selected="true"],.city-combo li:hover{background:var(--purple-light);color:#fff}
+/* Time-of-day chips (mirrors #todFilter's own values -- Any/Afternoon/
+   Evening/Late -- never a second definition of the buckets). */
+.time-chips{display:flex;gap:6px;flex-wrap:wrap}
+.time-chips .chip{height:38px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+.time-chips .chip:hover{border-color:var(--border2)}
+.time-chips .chip.active{background:var(--grad);border-color:transparent;color:#fff}
+@media(max-width:480px){.city-combo{flex:1 1 100%}.time-chips{width:100%;justify-content:center}}
 .calscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
 .cal{min-width:900px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 .dow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-align:center;padding:6px 0 10px}
@@ -118,7 +159,13 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 
 <div class="hero" id="main-content" tabindex="-1">
   <h1>Comedy <span class="g">Calendar</span></h1>
@@ -148,6 +195,12 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
       <option value="5">Fridays</option>
       <option value="6">Saturdays</option>
     </select>
+    <div class="time-chips" id="todChips" hidden>
+      <button type="button" class="chip active" data-tod="">Any</button>
+      <button type="button" class="chip" data-tod="afternoon">Afternoon</button>
+      <button type="button" class="chip" data-tod="evening">Evening</button>
+      <button type="button" class="chip" data-tod="late">Late</button>
+    </div>
     <select id="todFilter" aria-label="Filter by time of day">
       <option value="">Any time</option>
       <option value="morning">Morning (4am–12pm)</option>
@@ -155,6 +208,14 @@ footer a{color:var(--muted)}footer a:hover{color:var(--text)}
       <option value="evening">Evening (5–9pm)</option>
       <option value="late">Late night (9pm–4am)</option>
     </select>
+    <div class="city-combo" id="cityCombo" hidden>
+      <label class="visually-hidden" for="cityFilterInput">Search cities</label>
+      <input id="cityFilterInput" type="text" role="combobox" aria-expanded="false"
+             aria-controls="cityFilterListbox" aria-autocomplete="list"
+             autocomplete="off" placeholder="Any city…">
+      <button type="button" id="cityFilterClear" class="city-combo-clear" hidden aria-label="Clear city">&times;</button>
+      <ul id="cityFilterListbox" role="listbox" aria-label="Matching cities" hidden></ul>
+    </div>
     <select id="cityFilter" aria-label="Filter by city">
       <option value="">All cities</option>
     </select>
@@ -396,6 +457,7 @@ async function loadShows(){
     });
   } catch (e) { console.warn('[atlas] fetchEvents failed', e); SHOWS = []; }
   populateCityFilter();
+  applyCityFromUrl();
   render(); scrollToToday();
   A.fetchManifest().then(function (m) {
     A.setFreshness(document.getElementById('freshness-dot'), document.getElementById('freshness-text'), m);
@@ -404,14 +466,187 @@ async function loadShows(){
 
 // City dropdown lists exactly the cities present in the loaded shows data
 // (not the full 117-row cities.json -- an empty-of-shows city in that list
-// would be a dead filter option), alphabetical.
+// would be a dead filter option), alphabetical. CITY_OPTIONS is the SAME
+// list, kept as a module-scope array so the type-ahead combo below has a
+// suggestion source without re-deriving it a second way.
+let CITY_OPTIONS = [];
 function populateCityFilter(){
   const sel = document.getElementById('cityFilter');
   const current = sel.value;
   const cities = Array.from(new Set(SHOWS.map(s => s.city).filter(Boolean))).sort();
+  CITY_OPTIONS = cities;
   sel.innerHTML = '<option value="">All cities</option>' +
     cities.map(c => `<option value="${A.escapeHtml(c)}">${A.escapeHtml(c)}</option>`).join('');
   if (cities.indexOf(current) !== -1) sel.value = current;
+}
+
+// --------------------------------------------------------------------------
+// City type-ahead search box (2026-09-13, Robert: "why doesnt the Comedy
+// Calendar still have no search bars for the cities, or times"). Enhances
+// #cityFilter -- NEVER replaces the filtering logic that already reads its
+// .value (matchesFilters()/populateCityFilter() above are untouched): this
+// combo only ever sets #cityFilter.value and dispatches a real 'change'
+// event, so the existing `document.getElementById('cityFilter').onchange`
+// handler (further below) fires exactly as it always has.
+// --------------------------------------------------------------------------
+
+// Accent-stripped, lowercased, word-start match -- same algorithm as
+// site/comedy-atlas/atlas-calendar-filter.js's cityMatches/normalizeForMatch
+// (kept as a small local copy rather than a cross-page <script> dependency:
+// this is a hand-authored single-file root page, same convention as its
+// existing atlas-common.js-free helpers like dateKeySv/parisHourOf above).
+function normalizeForMatch(s){
+  let str = String(s || '').toLowerCase();
+  if (typeof str.normalize === 'function') str = str.normalize('NFKD').replace(/[̀-ͯ]/g, '');
+  return str;
+}
+function cityMatches(query, cityName){
+  const q = normalizeForMatch(query).trim();
+  if (!q) return true;
+  const words = normalizeForMatch(cityName).split(/[^a-z0-9]+/).filter(Boolean);
+  return words.some(w => w.indexOf(q) === 0);
+}
+
+let cityComboActiveIndex = -1;
+let cityComboSuggestions = [];
+
+function cityComboRenderSuggestions(){
+  const input = document.getElementById('cityFilterInput');
+  const listbox = document.getElementById('cityFilterListbox');
+  const query = input.value;
+  const matches = CITY_OPTIONS.filter(c => cityMatches(query, c)).slice(0, 12);
+  cityComboSuggestions = matches;
+  cityComboActiveIndex = -1;
+  listbox.innerHTML = matches.map((name, i) =>
+    `<li role="option" id="city-opt-${i}" data-city="${A.escapeHtml(name)}">${A.escapeHtml(name)}</li>`
+  ).join('');
+  listbox.hidden = matches.length === 0;
+  input.setAttribute('aria-expanded', matches.length > 0 ? 'true' : 'false');
+}
+
+function cityComboClose(){
+  const input = document.getElementById('cityFilterInput');
+  const listbox = document.getElementById('cityFilterListbox');
+  listbox.hidden = true; listbox.innerHTML = '';
+  cityComboSuggestions = []; cityComboActiveIndex = -1;
+  input.setAttribute('aria-expanded', 'false');
+}
+
+function cityComboSelect(name){
+  const input = document.getElementById('cityFilterInput');
+  const sel = document.getElementById('cityFilter');
+  const clearBtn = document.getElementById('cityFilterClear');
+  input.value = name || '';
+  sel.value = (name && CITY_OPTIONS.indexOf(name) !== -1) ? name : '';
+  clearBtn.hidden = !sel.value;
+  cityComboClose();
+  sel.dispatchEvent(new Event('change', { bubbles: true }));
+}
+
+function initCityCombo(){
+  const combo = document.getElementById('cityCombo');
+  const sel = document.getElementById('cityFilter');
+  const input = document.getElementById('cityFilterInput');
+  const listbox = document.getElementById('cityFilterListbox');
+  const clearBtn = document.getElementById('cityFilterClear');
+  if (!combo || !sel || !input) return;
+
+  // Enhance: hide the plain <select>, show the combo. Only reached when
+  // this script actually ran -- a no-JS visitor never sees this happen and
+  // keeps the plain, fully-functional <select>.
+  sel.hidden = true;
+  combo.hidden = false;
+
+  input.addEventListener('input', cityComboRenderSuggestions);
+  input.addEventListener('focus', cityComboRenderSuggestions);
+  input.addEventListener('keydown', (evt) => {
+    if (evt.key === 'ArrowDown' || evt.key === 'ArrowUp'){
+      if (!cityComboSuggestions.length) return;
+      evt.preventDefault();
+      const delta = evt.key === 'ArrowDown' ? 1 : -1;
+      cityComboActiveIndex = (cityComboActiveIndex + delta + cityComboSuggestions.length) % cityComboSuggestions.length;
+      const opts = listbox.querySelectorAll('li');
+      opts.forEach((li, i) => li.setAttribute('aria-selected', i === cityComboActiveIndex ? 'true' : 'false'));
+      const active = opts[cityComboActiveIndex];
+      if (active) input.setAttribute('aria-activedescendant', active.id);
+    } else if (evt.key === 'Enter'){
+      if (cityComboActiveIndex >= 0 && cityComboSuggestions[cityComboActiveIndex]){
+        evt.preventDefault();
+        cityComboSelect(cityComboSuggestions[cityComboActiveIndex]);
+      }
+    } else if (evt.key === 'Escape'){
+      cityComboClose();
+    }
+  });
+  input.addEventListener('blur', () => { setTimeout(cityComboClose, 150); });
+  listbox.addEventListener('mousedown', (evt) => {
+    const li = evt.target.closest('li[data-city]');
+    if (!li) return;
+    evt.preventDefault();
+    cityComboSelect(li.getAttribute('data-city'));
+  });
+  if (clearBtn){
+    clearBtn.addEventListener('click', () => cityComboSelect(''));
+  }
+  // Keep the combo's text box in sync whenever #cityFilter's value changes
+  // from ANYWHERE else (the "Near me" button clears it, clearFilters
+  // resets it) -- single source of truth stays the <select>.
+  sel.addEventListener('change', () => {
+    input.value = sel.value;
+    clearBtn.hidden = !sel.value;
+  });
+}
+
+// --------------------------------------------------------------------------
+// Time-of-day chips -- mirrors #todFilter's own values (Any/Afternoon/
+// Evening/Late; "morning" stays a select-only option, see the markup
+// comment) and drives the exact same select + 'change' event, never a
+// second filtering path.
+// --------------------------------------------------------------------------
+function initTodChips(){
+  const chips = document.getElementById('todChips');
+  const sel = document.getElementById('todFilter');
+  if (!chips || !sel) return;
+  sel.hidden = true;
+  chips.hidden = false;
+  chips.querySelectorAll('.chip').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      sel.value = btn.getAttribute('data-tod') || '';
+      chips.querySelectorAll('.chip').forEach(b => b.classList.toggle('active', b === btn));
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+  sel.addEventListener('change', () => {
+    const val = sel.value;
+    chips.querySelectorAll('.chip').forEach(b =>
+      b.classList.toggle('active', (b.getAttribute('data-tod') || '') === val));
+  });
+}
+
+// ?city= on load (preserved the same way city.html's own mini-calendar
+// links already preserve filters elsewhere on the site) -- a visitor
+// arriving from a shared/bookmarked link sees the filter already applied,
+// not a plain unfiltered calendar they have to re-filter by hand.
+function applyCityFromUrl(){
+  const urlCity = new URLSearchParams(window.location.search).get('city');
+  if (!urlCity) return;
+  const sel = document.getElementById('cityFilter');
+  sel.value = urlCity;
+  state.city = urlCity;
+  const input = document.getElementById('cityFilterInput');
+  if (input) input.value = urlCity;
+  const clearBtn = document.getElementById('cityFilterClear');
+  if (clearBtn) clearBtn.hidden = false;
+}
+
+// Preserve AND set ?city= (work order's exact phrasing) -- every real
+// change to the city filter, from either control, updates the address bar
+// without a page reload, so the current view is always a shareable link.
+function syncCityUrl(){
+  const url = new URL(window.location.href);
+  if (state.city) url.searchParams.set('city', state.city);
+  else url.searchParams.delete('city');
+  window.history.replaceState(null, '', url.pathname + url.search);
 }
 
 // Groups by the same identity (show_series_id, or org+title fallback --
@@ -564,8 +799,11 @@ document.getElementById('cityFilter').onchange=(e)=>{
   // which reads as a bug ("I picked London but see nothing"), not a
   // feature. Picking a city always wins and turns near-me off.
   if (state.city) { state.near = null; setNearActive(false); document.getElementById('nearNote').textContent = ''; }
+  syncCityUrl();
   render();
 };
+initCityCombo();
+initTodChips();
 
 function setNearActive(on){
   document.getElementById('nearMeBtn').classList.toggle('active', on);
@@ -582,18 +820,45 @@ function nearestCityWithinRadius(lat, lon){
   return bestDist <= CITY_NEAR_RADIUS_KM ? best : null;
 }
 
+// 2026-09-13 (Robert, iPad Safari screenshot): once a browser/OS has stored
+// a location denial for this site, no page can make the permission prompt
+// reappear -- only the visitor can flip it back in their own settings.
+// Shares the exact same "how to enable location" markup as near.js's hero
+// panel and the globe's Near Me pill (atlas-location-help.js), loaded
+// lazily via dynamic import() since this script is a classic script, not a
+// module. Cached so a repeated denial/retry doesn't re-fetch it.
+let _locationHelpModulePromise = null;
+function _loadLocationHelp() {
+  if (!_locationHelpModulePromise) {
+    _locationHelpModulePromise = import('./comedy-atlas/atlas-location-help.js');
+  }
+  return _locationHelpModulePromise;
+}
+
+function renderNearMeDenied(note) {
+  note.innerHTML = '<p>Location access was denied — no problem, search for your city above ' +
+    'instead.</p><div class="atlas-location-help" id="nearNote-help"></div>';
+  _loadLocationHelp().then((mod) => {
+    const helpEl = document.getElementById('nearNote-help');
+    if (!helpEl) return; // note was replaced by a later click/toggle meanwhile
+    helpEl.outerHTML = mod.renderLocationHelpHtml({ ua: navigator.userAgent });
+    const retryBtn = note.querySelector(mod.RETRY_SELECTOR);
+    if (retryBtn) retryBtn.addEventListener('click', () => document.getElementById('nearMeBtn').onclick());
+  }).catch(() => { /* plain message above already covers this */ });
+}
+
 document.getElementById('nearMeBtn').onclick = () => {
   const note = document.getElementById('nearNote');
   if (state.near) { // toggle off
-    state.near = null; setNearActive(false); note.textContent = '';
+    state.near = null; setNearActive(false); note.innerHTML = '';
     render();
     return;
   }
   if (!('geolocation' in navigator)) {
-    note.textContent = "Your browser doesn't support location — use the city dropdown instead.";
+    note.innerHTML = "<p>Your browser doesn't support location — search for your city above instead.</p>";
     return;
   }
-  note.textContent = 'Finding your location…';
+  note.innerHTML = '<p>Finding your location…</p>';
   navigator.geolocation.getCurrentPosition(
     async (pos) => {
       const lat = pos.coords.latitude, lon = pos.coords.longitude;
@@ -604,14 +869,19 @@ document.getElementById('nearMeBtn').onclick = () => {
       const cityName = nearestCityWithinRadius(lat, lon);
       state.near = { lat: lat, lon: lon, cityName: cityName };
       state.city = ''; document.getElementById('cityFilter').value = '';
+      const cityInputEl = document.getElementById('cityFilterInput');
+      if (cityInputEl) cityInputEl.value = '';
+      const cityClearBtnEl = document.getElementById('cityFilterClear');
+      if (cityClearBtnEl) cityClearBtnEl.hidden = true;
+      syncCityUrl();
       setNearActive(true);
-      note.textContent = cityName
+      note.innerHTML = '<p>' + (cityName
         ? `Showing shows within ${VENUE_NEAR_RADIUS_KM}km, plus other ${cityName} listings.`
-        : "Showing shows with a known location within " + VENUE_NEAR_RADIUS_KM + "km — you're not near a city we track yet.";
+        : "Showing shows with a known location within " + VENUE_NEAR_RADIUS_KM + "km — you're not near a city we track yet.") + '</p>';
       render();
     },
     () => {
-      note.textContent = 'Location access was denied — no problem, use the city dropdown instead.';
+      renderNearMeDenied(note);
     },
     { timeout: 8000, maximumAge: 300000 }
   );
@@ -622,8 +892,18 @@ document.getElementById('clearFilters').onclick=()=>{
   document.getElementById('dowFilter').value='';
   document.getElementById('todFilter').value='';
   document.getElementById('cityFilter').value='';
+  // Reset the enhanced controls too (2026-09-13) -- clearing must not leave
+  // the type-ahead text box or an "active" time chip showing a stale
+  // selection the underlying selects no longer hold.
+  const cityInput = document.getElementById('cityFilterInput');
+  if (cityInput) cityInput.value = '';
+  const cityClearBtn = document.getElementById('cityFilterClear');
+  if (cityClearBtn) cityClearBtn.hidden = true;
+  document.querySelectorAll('#todChips .chip').forEach(b =>
+    b.classList.toggle('active', (b.getAttribute('data-tod') || '') === ''));
   setNearActive(false);
   document.getElementById('nearNote').textContent = '';
+  syncCityUrl();
   render();
 };
 loadShows();

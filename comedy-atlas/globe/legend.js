@@ -46,6 +46,8 @@
  *     that never resolves (Fable finding #7, MED).
  */
 
+import { renderLocationHelpHtml, RETRY_SELECTOR } from "../atlas-location-help.js";
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 /** Minimal inline icon set — no external assets, no icon font, no CDN. */
@@ -426,7 +428,32 @@ export function renderNearMe(rootEl, opts) {
   dismissBtn.addEventListener("click", () => setStatus(null));
   status.appendChild(dismissBtn);
 
+  // 2026-09-13 (Robert: "it doesnt even ask ... shouldnt that pop up?"): the
+  // "denied" state used to be a dead end here too -- true wherever a
+  // browser/OS has already stored a denial, since no page can re-trigger
+  // that native prompt. This detail slot renders the SAME shared how-to
+  // panel near.js's hero button uses (atlas-location-help.js), populated
+  // lazily only when `denied` is actually reached, with its own "Try
+  // again" wired to `options.onClick` (identical retry to a fresh press
+  // of the Near Me button itself).
+  const detail = document.createElement("div");
+  detail.className = "atlas-globe-nearme-detail";
+  detail.style.display = "none";
+  status.appendChild(detail);
+
   rootEl.appendChild(status);
+
+  function populateDetail() {
+    detail.innerHTML = renderLocationHelpHtml({
+      ua: typeof navigator !== "undefined" ? navigator.userAgent : "",
+    });
+    const retryBtn = detail.querySelector(RETRY_SELECTOR);
+    if (retryBtn) {
+      retryBtn.addEventListener("click", (ev) => {
+        if (typeof options.onClick === "function") options.onClick(ev);
+      });
+    }
+  }
 
   function setStatus(state) {
     const text = state ? NEAR_ME_STATUS_TEXT[state] || "" : "";
@@ -434,9 +461,19 @@ export function renderNearMe(rootEl, opts) {
     if (state && text) {
       status.setAttribute("data-state", state);
       searchBtn.style.display = STATES_WITH_SEARCH_ESCAPE.has(state) ? "" : "none";
+      if (state === "denied") {
+        if (!detail.hasAttribute("data-populated")) {
+          populateDetail();
+          detail.setAttribute("data-populated", "true");
+        }
+        detail.style.display = "";
+      } else {
+        detail.style.display = "none";
+      }
     } else {
       status.removeAttribute("data-state");
       searchBtn.style.display = "none";
+      detail.style.display = "none";
     }
   }
 

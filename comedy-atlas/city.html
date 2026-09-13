@@ -250,7 +250,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 
 <header class="atlas-header">
   <a href="index.html" class="back-link">← All cities and festivals</a>
@@ -409,6 +415,50 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var params = new URLSearchParams(window.location.search);
   var cityParam = params.get("city") || "Paris";
   var orgParam = params.get("org") || "";
+
+  // CASE-INSENSITIVE CITY MATCH (search fix, 2026-09-12): the internal nav
+  // always links here with the data's own proper-cased city name
+  // ("?city=Paris"), but a visitor typing the URL by hand, or arriving from
+  // an external/lowercased link ("?city=paris"), got an empty venue
+  // datalist and "No upcoming shows" -- the ONLY comparison against real
+  // event data (data.filter(ev => ev.city_name === cityParam) below) was a
+  // strict ===, so "paris" never matched "Paris". Folded, accent-
+  // insensitive too (cheap: this is the only place city_name is compared,
+  // never a display value) so "?city=lyon" still finds "Lyon" and
+  // "?city=montreal" still finds "Montréal". The DISPLAYED name (title,
+  // wordmark, meta description, "N shows in <city>" line) stays the data's
+  // own proper name, never the raw query-string casing -- see
+  // reconcileCityParamCasing() below, called the moment real event data
+  // resolves a canonical match.
+  // Combining diacritical marks block (U+0300-U+036F) -- built from code
+  // points rather than a literal regex range so this source file never
+  // carries an actual combining-mark byte sequence that a naive text scan
+  // (or a copy/paste) could mangle silently.
+  var COMBINING_MARKS_RE = new RegExp(
+    "[" + String.fromCharCode(0x0300) + "-" + String.fromCharCode(0x036f) + "]", "g"
+  );
+  function foldCityName(s) {
+    return String(s == null ? "" : s)
+      .normalize("NFD").replace(COMBINING_MARKS_RE, "")
+      .toLowerCase().trim();
+  }
+  var cityParamFolded = foldCityName(cityParam);
+
+  // Re-renders every place cityParam's TEXT already got painted before the
+  // real data resolved (title/meta/wordmark/current-name below all run
+  // synchronously, well before A.fetchEvents() -- an async fetch -- can
+  // possibly answer). Safe to call more than once; each call is a full,
+  // idempotent re-render from whatever cityParam is now.
+  function reconcileCityParamCasing(canonicalName) {
+    if (!canonicalName || canonicalName === cityParam) return;
+    cityParam = canonicalName;
+    document.title = "COMEDY ATLAS — " + cityParam + " | Paris Comedy";
+    document.getElementById("doc-desc").setAttribute(
+      "content", "COMEDY ATLAS: find English-language stand-up comedy in " + cityParam + ". Official ticket links, always."
+    );
+    document.getElementById("city-wordmark").innerHTML = A.escapeHtml(cityParam) + '<span class="dot">.</span>';
+    document.getElementById("city-current-name").textContent = cityParam;
+  }
 
   document.title = "COMEDY ATLAS — " + cityParam + " | Paris Comedy";
   document.getElementById("doc-desc").setAttribute(
@@ -1077,7 +1127,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   });
 
   A.fetchEvents().then(function (data) {
-    var cityEvents = data.filter(function (ev) { return ev.city_name === cityParam; });
+    var cityEvents = data.filter(function (ev) { return foldCityName(ev.city_name) === cityParamFolded; });
+    // Canonicalize display casing/accents to the DATA's own proper name the
+    // moment a real match resolves ("?city=paris" must still say "Paris"
+    // everywhere on the page, never echo the raw query string) -- never
+    // guessed, always the exact city_name a real matched event carries.
+    if (cityEvents.length) reconcileCityParamCasing(cityEvents[0].city_name);
 
     if (!cityEvents.length) {
       cityPromise.textContent = "No upcoming shows found for " + cityParam + " yet.";

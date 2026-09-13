@@ -193,6 +193,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .atlas-tagline{color:var(--gold-light);font-size:18px;font-weight:700;margin-top:10px}
 .atlas-mission{color:var(--muted);font-size:16px;margin-top:8px;max-width:560px}
 .atlas-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.atlas-cta-hint{color:var(--muted);font-size:12.5px;margin-top:8px}
 .atlas-hero-figure{flex:0 0 auto;width:clamp(120px,18vw,200px);opacity:0;transform:translateY(10px) scale(.97);animation:atlas-hero-in .6s ease-out .1s forwards}
 /* GLOBE-FIRST HERO (2026-08-16): when the hero hosts the interactive
    globe (html.atlas-ghero, set pre-paint by the flag consumer below so
@@ -250,30 +251,6 @@ html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
   .atlas-hero-figure{width:clamp(96px,32vw,140px);align-self:center}
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
-}
-/* CONSENT-BANNER-COVERS-CTA FIX (2026-09-06). Measured live at 390x844:
-   the fixed analytics banner (atlas-track.js, bottom 683-844px) sat
-   directly on top of the "Shows near me" primary CTA (762-811px) --
-   100% of the button was under it, with no way to reach it before
-   answering the banner. Root cause is column-reverse's own doing above:
-   on mobile the hero-figure (the character-art/globe box, up to
-   clamp(260px,88vw,380px) square in "globe-first hero" mode, see the
-   html.atlas-ghero rules earlier in this sheet) stacks ABOVE the copy,
-   and it alone is large enough to push the CTA row down into the
-   banner's territory on a short viewport.
-   atlas-track.js stamps `atlas-consent-open` on <html> for exactly as
-   long as the banner is open (see its own "RESERVED SPACE" comment) --
-   this rule spends that same signal to collapse the decorative figure,
-   which recovers ~250-400px, comfortably clearing the CTA with room to
-   spare, and costs nothing once a choice is made: the class is removed
-   in the same tick removeBanner() runs, so the art reappears immediately.
-   Scoped to this hero's own mobile breakpoint (max-width:640px) only --
-   tablet/desktop never had an overlap (banner and CTA don't share the
-   same rows there) and this rule cannot touch them. display:none (not
-   visibility/opacity) so the flex gap collapses too instead of leaving a
-   blank gap-sized gutter where the art used to be. */
-@media(max-width:640px){
-  html.atlas-consent-open .atlas-hero-figure{display:none}
 }
 .cta-btn{border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
 .cta-btn.primary{background:var(--gold-btn);color:#100c00;border:none}
@@ -429,7 +406,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
 
 <header class="atlas-hero">
   <div class="atlas-hero-copy">
@@ -457,6 +440,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <a href="/shows.html" class="cta-btn secondary">All shows</a>
       <a href="/comedy-atlas/cities/" class="cta-btn secondary">Browse cities</a>
     </div>
+    <!-- 2026-09-13 (Robert: "shouldnt that pop up?"): a small hint that the
+         click itself is what triggers the browser's own location prompt --
+         near.js never asks on page load (browsers penalise that and most
+         visitors refuse it), only on this tap. -->
+    <p class="atlas-cta-hint">We’ll ask your browser for your location.</p>
   </div>
   <div class="atlas-hero-figure" id="atlas-hero-globe-box">
     <!-- GLOBE-FIRST HERO (2026-08-16): this box is the reserved,
