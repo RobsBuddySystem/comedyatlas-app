@@ -38,7 +38,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="/comedy-atlas/blog/">News</a>
     <a href="/comedy-atlas/login.html">Log in</a>
   </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
 </nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
   <main id="main-content" tabindex="-1">
     <h1>This comedy guide has moved</h1>
     <p><a href="/comedy-atlas/city/manchester/">Continue to the current city comedy page.</a></p>
