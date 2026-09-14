@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-crawl@comedyatlas.app
+DTSTAMP:20261025T143000Z
+DTSTART:20261025T143000Z
+DTEND:20261025T163000Z
+SUMMARY:Comedy Club Crawl
+LOCATION:Mary Mullen's Bar\, Galway
+DESCRIPTION:Comedy Club Crawl. Meet at first venue Mary Mullen's Bar.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/comedy-club-crawl/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-crawl/
+END:VEVENT
+END:VCALENDAR
