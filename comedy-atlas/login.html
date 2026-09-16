@@ -257,6 +257,28 @@ html[data-auth-tab="register"] #register-card{display:block!important}
   }
   var next = destination();
 
+  // Bug fix (2026-09-14, confirmed live: person_id 12447 registered as
+  // "comic" via Google despite picking "Booker / show runner" in the
+  // dropdown, then couldn't reach the booker portal to add his own show).
+  // handleGoogleCredential used to send only `wantRole || "comic"` --
+  // wantRole is ?role= from the URL, NOT the visible #reg-role dropdown
+  // the reg-submit (email/password) handler already reads correctly
+  // below. The Google button sits above all three tabs and is visible
+  // (and the most prominent action) regardless of which tab is active,
+  // so a user who never touches ?role= and just picks a role in the
+  // dropdown before clicking "Sign in with Google" was silently ignored.
+  // This helper reads the dropdown first -- it is present in the DOM (and
+  // holds the right value) even while its card is hidden by another
+  // active tab, and it is pre-filled FROM wantRole on page load (see
+  // `document.getElementById("reg-role").value = wantRole;` above) so the
+  // existing ?role= deep-link case still resolves identically. Only when
+  // the element or its value is unexpectedly missing does this fall back
+  // to wantRole, then "comic" -- the exact pre-fix default.
+  function chosenRegisterRole() {
+    var roleEl = document.getElementById("reg-role");
+    return (roleEl && roleEl.value) || wantRole || "comic";
+  }
+
   // GSI callback: google.accounts.id posts here with a signed id_token.
   // We forward it as-is to the backend, which verifies it via Google's own
   // tokeninfo endpoint (apps/atlas_api/auth.py::verify_google_id_token) --
@@ -265,7 +287,7 @@ html[data-auth-tab="register"] #register-card{display:block!important}
     var msg = document.getElementById("li-msg");
     A.post("/auth/google", {
       id_token: response.credential,
-      role: wantRole || "comic",
+      role: chosenRegisterRole(),
     }).then(function (r) {
       if (r && r.twofa_required) {
         if (msg) { msg.textContent = ""; msg.className = "msg"; }
