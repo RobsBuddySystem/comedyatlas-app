@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:world-tour-of-galway@comedyatlas.app
+DTSTAMP:20261020T190000Z
+DTSTART:20261020T190000Z
+DTEND:20261020T210000Z
+SUMMARY:World Tour Of Galway
+LOCATION:Róisín Dubh\, Róisín Dubh\, Galway\, Galway
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/world-tou
+ r-of-galway/
+URL:https://comedyatlas.app/comedy-atlas/event/world-tour-of-galway/
+END:VEVENT
+END:VCALENDAR

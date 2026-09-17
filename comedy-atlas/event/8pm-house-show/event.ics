@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:8pm-house-show@comedyatlas.app
+DTSTAMP:20261003T000000Z
+DTSTART:20261003T000000Z
+DTEND:20261003T020000Z
+SUMMARY:8pm House Show
+LOCATION:New York
+DESCRIPTION:Comedy Showcase featuring New York's funniest comedians!\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/8pm-house-show/
+URL:https://comedyatlas.app/comedy-atlas/event/8pm-house-show/
+END:VEVENT
+END:VCALENDAR
