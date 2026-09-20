@@ -352,7 +352,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 85
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -473,7 +473,7 @@
     "id": 33,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 23
+      "unconfirmed": 34
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -826,8 +826,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 754,
-      "unconfirmed": 489
+      "en": 755,
+      "unconfirmed": 608
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -892,7 +892,7 @@
     "country_name": "UK",
     "id": 78,
     "language_counts": {
-      "unconfirmed": 14
+      "unconfirmed": 17
     },
     "latitude": 55.8642,
     "longitude": -4.2518,
@@ -959,7 +959,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 5
+      "unconfirmed": 44
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -976,7 +976,7 @@
     "country_name": "UK",
     "id": 83,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 51.4816,
     "longitude": -3.1791,
@@ -991,8 +991,27 @@
     "country_id": 17,
     "country_iso2": "GB",
     "country_name": "UK",
+    "id": 84,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 54.5973,
+    "longitude": -5.9301,
+    "name": "Belfast",
+    "region_code": "GB-NIR",
+    "region_id": 1988,
+    "region_name": "Northern Ireland",
+    "region_type": "Province",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
     "id": 85,
-    "language_counts": {},
+    "language_counts": {
+      "unconfirmed": 9
+    },
     "latitude": 50.8225,
     "longitude": -0.1372,
     "name": "Brighton",
@@ -1837,11 +1856,45 @@
     "country_name": "UK",
     "id": 145,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 52.6362,
     "longitude": -1.133197,
     "name": "Leicester",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 160,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": 57.148243,
+    "longitude": -2.09281,
+    "name": "Aberdeen",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 172,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Northampton",
     "region_code": null,
     "region_id": null,
     "region_name": null,
