@@ -827,7 +827,7 @@
     "id": 74,
     "language_counts": {
       "en": 754,
-      "unconfirmed": 487
+      "unconfirmed": 489
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -924,7 +924,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 16
+      "unconfirmed": 23
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -941,7 +941,7 @@
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 20
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
@@ -1752,7 +1752,7 @@
     "country_name": "United States",
     "id": 138,
     "language_counts": {
-      "unconfirmed": 89
+      "unconfirmed": 87
     },
     "latitude": 44.47616,
     "longitude": -73.212906,
@@ -1830,6 +1830,23 @@
     "region_name": "Rhode Island",
     "region_type": "State",
     "timezone": "America/New_York"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 145,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 52.6362,
+    "longitude": -1.133197,
+    "name": "Leicester",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
   },
   {
     "country_id": 11,
