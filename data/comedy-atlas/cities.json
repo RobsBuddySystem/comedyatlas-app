@@ -352,7 +352,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 85
+      "unconfirmed": 89
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -473,7 +473,7 @@
     "id": 33,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 34
+      "unconfirmed": 312
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -827,7 +827,7 @@
     "id": 74,
     "language_counts": {
       "en": 755,
-      "unconfirmed": 608
+      "unconfirmed": 618
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -892,7 +892,7 @@
     "country_name": "UK",
     "id": 78,
     "language_counts": {
-      "unconfirmed": 17
+      "unconfirmed": 23
     },
     "latitude": 55.8642,
     "longitude": -4.2518,
@@ -908,7 +908,9 @@
     "country_iso2": "GB",
     "country_name": "UK",
     "id": 79,
-    "language_counts": {},
+    "language_counts": {
+      "unconfirmed": 1
+    },
     "latitude": 51.4545,
     "longitude": -2.5879,
     "name": "Bristol",
@@ -924,7 +926,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 23
+      "unconfirmed": 25
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -941,7 +943,7 @@
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 20
+      "unconfirmed": 23
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
@@ -959,7 +961,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 44
+      "unconfirmed": 57
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -1010,11 +1012,28 @@
     "country_name": "UK",
     "id": 85,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 25
     },
     "latitude": 50.8225,
     "longitude": -0.1372,
     "name": "Brighton",
+    "region_code": "GB-ENG",
+    "region_id": 1987,
+    "region_name": "England",
+    "region_type": "Country",
+    "timezone": "Europe/London"
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 86,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 52.9548,
+    "longitude": -1.1581,
+    "name": "Nottingham",
     "region_code": "GB-ENG",
     "region_id": 1987,
     "region_name": "England",
@@ -1417,7 +1436,9 @@
     "country_iso2": "AU",
     "country_name": "Australia",
     "id": 115,
-    "language_counts": {},
+    "language_counts": {
+      "unconfirmed": 1
+    },
     "latitude": -31.9505,
     "longitude": 115.8605,
     "name": "Perth",
@@ -1861,6 +1882,40 @@
     "latitude": 52.6362,
     "longitude": -1.133197,
     "name": "Leicester",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 147,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 51.381386,
+    "longitude": -2.359696,
+    "name": "Bath",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
+  },
+  {
+    "country_id": 17,
+    "country_iso2": "GB",
+    "country_name": "UK",
+    "id": 159,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 52.628558,
+    "longitude": 1.292395,
+    "name": "Norwich",
     "region_code": null,
     "region_id": null,
     "region_name": null,
