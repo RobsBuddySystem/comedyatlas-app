@@ -48220,5 +48220,23 @@
     "primary_language": null,
     "typical_duration_minutes": null,
     "typical_spot_minutes": null
+  },
+  {
+    "active_status": "active",
+    "age_policy": null,
+    "city_id": 25,
+    "city_name": "Paris",
+    "country_iso2": "FR",
+    "description": null,
+    "format_type": "unknown",
+    "frequency_type": "weekly",
+    "id": 5873,
+    "name": "Velvet Bar Comedy - Le meilleur du stand-up \u00e0 Paris !!",
+    "organization_id": 98,
+    "organization_name": "Velvet Bar Comedy",
+    "other_languages": null,
+    "primary_language": "fr",
+    "typical_duration_minutes": null,
+    "typical_spot_minutes": null
   }
 ]

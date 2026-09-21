@@ -286,7 +286,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 166,
+      "en": 165,
       "unconfirmed": 126
     },
     "latitude": 41.3851,
@@ -473,7 +473,7 @@
     "id": 33,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 321
+      "unconfirmed": 320
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -742,9 +742,7 @@
     "country_iso2": "LT",
     "country_name": "Lithuania",
     "id": 55,
-    "language_counts": {
-      "en": 2
-    },
+    "language_counts": {},
     "latitude": 54.6872,
     "longitude": 25.2797,
     "name": "Vilnius",
@@ -827,7 +825,7 @@
     "id": 74,
     "language_counts": {
       "en": 757,
-      "unconfirmed": 613
+      "unconfirmed": 609
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -844,8 +842,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 12,
-      "unconfirmed": 29
+      "en": 15,
+      "unconfirmed": 32
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -961,7 +959,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 56
+      "unconfirmed": 55
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -1012,7 +1010,7 @@
     "country_name": "UK",
     "id": 85,
     "language_counts": {
-      "unconfirmed": 25
+      "unconfirmed": 24
     },
     "latitude": 50.8225,
     "longitude": -0.1372,
