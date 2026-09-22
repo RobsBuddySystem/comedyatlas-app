@@ -322,7 +322,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
             <input id="occ-date" type="date">
           </div>
           <div>
-            <label for="occ-time">Time</label>
+            <label for="occ-time">Time (local time at the venue)</label>
             <input id="occ-time" type="time" value="19:00">
           </div>
         </div>
@@ -335,7 +335,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
             <input id="occ-rec-start" type="date">
           </div>
           <div>
-            <label for="occ-rec-time">Time</label>
+            <label for="occ-rec-time">Time (local time at the venue)</label>
             <input id="occ-rec-time" type="time" value="19:00">
           </div>
           <div>
@@ -472,6 +472,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         </div>
         <div class="lineup-palette">
           <h3>Available comics &amp; your rosters</h3>
+          <label for="lu-find">Find any comic by name</label>
+          <input id="lu-find" type="search" autocomplete="off"
+                 placeholder="Type 2+ letters, e.g. Ziko — then drag them in">
+          <div class="msg" id="lu-find-msg"></div>
           <div id="lu-candidates"></div>
         </div>
       </div>
@@ -582,6 +586,51 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </section>
 
     <section data-tab="marketing">
+    <div class="card" id="promo-card">
+      <style>
+        #promo-card .promo-grid{display:grid;gap:10px;margin:12px 0}
+        #promo-card .promo-item{border:1px solid var(--border);border-radius:10px;padding:12px}
+        #promo-card .promo-item.locked{opacity:.6}
+        #promo-card .promo-item b{display:block;margin-bottom:2px}
+        #promo-card .pill{display:inline-block;margin:6px 6px 0 0;padding:1px 9px;border-radius:999px;
+          font-size:12px;font-weight:700;background:#F7931A;color:#111}
+        #promo-card .pill.soon{background:transparent;color:var(--muted);border:1px solid var(--border)}
+        #promo-card .pill.open{background:#2e7d32;color:#fff}
+        #promo-card .btc{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+      </style>
+      <h2>🚀 Promote your show</h2>
+      <p class="privacy" style="margin-bottom:10px">Running your show is
+      <b>free forever</b> &mdash; line-ups, invites, confirmations and night-before
+      reminders never cost anything. You only pay when you want us to push your
+      show to people who aren't already yours, and it costs very little.</p>
+      <p class="btc" style="margin:0 0 4px">
+        <svg width="22" height="22" viewBox="0 0 32 32" role="img" aria-label="Bitcoin">
+          <circle cx="16" cy="16" r="16" fill="#F7931A"/>
+          <text x="16" y="23" text-anchor="middle" font-size="20" font-weight="700"
+                fill="#fff" font-family="Arial,sans-serif">&#x20BF;</text>
+        </svg>
+        Bitcoin accepted &mdash; we take Bitcoin before cards.</p>
+      <p style="margin:0">Your credits: <b id="credit-balance">0</b></p>
+      <div class="promo-grid">
+        <div class="promo-item locked" data-entitlement="featured_placement" data-capability="featured_placements" data-capability-state="planned">
+          <b>Featured placement</b>
+          Your show at the top of its city page for a week.
+          <span class="pill soon">Coming soon</span><span class="cap-badge"></span>
+        </div>
+        <div class="promo-item locked" data-entitlement="city_email_blast" data-capability="booker_city_email_blast" data-capability-state="planned">
+          <b>City email blast</b>
+          One email to people in your city who haven't heard of you yet.
+          <span class="pill soon">Coming soon</span><span class="cap-badge"></span>
+        </div>
+        <div class="promo-item locked" data-entitlement="listings_push" data-capability="booker_listings_push" data-capability-state="planned">
+          <b>Listings &amp; press push</b>
+          We submit your show to the Paris listings sites for you.
+          <span class="pill soon">Coming soon</span><span class="cap-badge"></span>
+        </div>
+      </div>
+      <p class="privacy" id="promo-note" style="margin:0"></p>
+    </div>
+    <!-- /promo-card -->
     <div class="card">
       <h2>🎟️ Connect Eventbrite</h2>
       <p class="privacy" style="margin-bottom:10px">Your token is
@@ -800,6 +849,52 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
+<script>
+  /* Entitlements renderer. The SERVER decides what is locked (GET
+     /booker/entitlements); this only paints the answer. FAIL CLOSED: every
+     paid item is `locked` in the raw HTML, and a failed or missing response
+     leaves it that way -- nothing is unlocked by default. */
+  (function () {
+    "use strict";
+    function euro(cents) { return "\u20AC" + (cents / 100).toFixed(2); }
+    function render(payload) {
+      var caps = (payload && payload.capabilities) || {};
+      var bal = document.getElementById("credit-balance");
+      if (bal) { bal.textContent = payload && payload.credit_balance != null ? payload.credit_balance : 0; }
+      document.querySelectorAll("#promo-card [data-entitlement]").forEach(function (el) {
+        var info = caps[el.getAttribute("data-entitlement")];
+        var allowed = !!(info && info.allowed);
+        el.classList.toggle("locked", !allowed);
+        var badge = el.querySelector(".cap-badge");
+        if (!badge) { return; }
+        badge.className = "cap-badge";
+        if (allowed) {
+          badge.classList.add("pill", "open");
+          badge.textContent = info.reason === "comped" ? "Unlocked \u2014 on the house"
+                            : info.reason === "subscription" ? "Unlocked \u2014 your plan"
+                            : "Unlocked \u2014 uses 1 credit";
+        } else {
+          badge.classList.add("pill");
+          var cents = info && info.price_cents != null ? info.price_cents : 100;
+          badge.textContent = euro(cents) + " \u00B7 or pay in \u20BF";
+        }
+      });
+      var note = document.getElementById("promo-note");
+      if (note) {
+        var comped = Object.keys(caps).some(function (k) { return caps[k].reason === "comped"; });
+        note.textContent = comped
+          ? "Your account has every promotion option unlocked, free."
+          : "Paid options are shown so you can see what's coming. Nothing is charged today.";
+      }
+    }
+    window.AtlasEntitlements = { render: render };
+    var A = window.AtlasAuth;
+    if (!A || !A.get) { render(null); return; }
+    try {
+      A.get("/booker/entitlements").then(render, function () { render(null); });
+    } catch (e) { render(null); }
+  })();
+  </script>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 
 <script src="atlas-track.js"></script>
@@ -1701,7 +1796,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         return;
       }
       A.post("/booker/shows/" + showId + "/occurrences", {
-        starts_at: d + "T" + t + ":00Z",
+        starts_at: d + "T" + t + ":00",
       }).then(function () {
         msg.textContent = "✅ Date added.";
         msg.className = "msg ok";
@@ -1744,6 +1839,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var luEventId = null;
   var luDraftId = null;
   var luPicked = null; // person_id currently tapped (mobile tap-to-assign fallback)
+  // "Find any comic by name" results (2026-09-21, Robert: drag comics into a show
+  // like confirmed.show). The palette used to offer only comics with published
+  // availability or already on the booker's roster, so a booker's own regulars
+  // never appeared. Search results are merged in on top of the palette and
+  // survive every save re-render.
+  var luExtra = [];
+  var luLast = null;   // last lineup payload, so a search can repaint the board
+  var luFindTimer = null;
+
+  function mergeCandidates(base, extra) {
+    var seen = {}, out = [];
+    (extra || []).concat(base || []).forEach(function (c) {
+      if (seen[c.person_id]) { return; }
+      seen[c.person_id] = true;
+      out.push(c);
+    });
+    return out;
+  }
 
   function populateLineupShowSelect() {
     var sel = document.getElementById("lu-show");
@@ -1809,7 +1922,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     statusEl.className = "lineup-status" + (sent ? " sent" : "");
 
     document.getElementById("lu-slots").innerHTML = data.slots.map(slotHtml).join("");
-    document.getElementById("lu-candidates").innerHTML = (data.candidates || [])
+    luLast = data;
+    document.getElementById("lu-candidates").innerHTML = mergeCandidates(data.candidates, luExtra)
       .map(function (c) { return candidateCardHtml(c, luPicked === c.person_id); }).join("");
     document.getElementById("lu-confirm").style.display = sent ? "none" : "inline-block";
 
@@ -1877,6 +1991,32 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       msg.className = "msg error";
     });
   }
+
+  document.getElementById("lu-find").addEventListener("input", function () {
+    var box = this, msg = document.getElementById("lu-find-msg");
+    clearTimeout(luFindTimer);
+    var q = box.value.trim();
+    if (q.length < 2) {              // never hit the API for 0-1 letters
+      luExtra = []; msg.textContent = ""; msg.className = "msg";
+      if (luLast) { renderLineupBoard(luLast); }
+      return;
+    }
+    luFindTimer = setTimeout(function () {
+      A.get("/booker/comics/search?q=" + encodeURIComponent(q)).then(function (rows) {
+        if (box.value.trim() !== q) { return; }      // a newer keystroke won
+        luExtra = rows.map(function (r) {
+          return { person_id: r.person_id, stage_name: r.stage_name,
+                   photo_url: r.photo_url, tier: null, sources: ["search"] };
+        });
+        msg.textContent = rows.length ? "" : "No comic found with that name.";
+        msg.className = "msg";
+        if (luLast) { renderLineupBoard(luLast); }
+      }).catch(function (e) {
+        msg.textContent = e.body && e.body.detail ? e.body.detail : "Search failed.";
+        msg.className = "msg error";
+      });
+    }, 300);
+  });
 
   document.getElementById("lu-load").addEventListener("click", function () {
     var msg = document.getElementById("lu-msg");
