@@ -238,7 +238,7 @@
     "country_name": "Netherlands",
     "id": 16,
     "language_counts": {
-      "en": 142,
+      "en": 141,
       "unconfirmed": 15
     },
     "latitude": 52.3676,
@@ -286,7 +286,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 164,
+      "en": 163,
       "unconfirmed": 126
     },
     "latitude": 41.3851,
@@ -420,9 +420,7 @@
     "country_iso2": "LV",
     "country_name": "Latvia",
     "id": 28,
-    "language_counts": {
-      "en": 2
-    },
+    "language_counts": {},
     "latitude": 56.9496,
     "longitude": 24.1052,
     "name": "Riga",
@@ -473,7 +471,7 @@
     "id": 33,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 319
+      "unconfirmed": 318
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -825,7 +823,7 @@
     "id": 74,
     "language_counts": {
       "en": 757,
-      "unconfirmed": 607
+      "unconfirmed": 605
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -843,7 +841,7 @@
     "id": 75,
     "language_counts": {
       "en": 15,
-      "unconfirmed": 32
+      "unconfirmed": 51
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -890,7 +888,7 @@
     "country_name": "UK",
     "id": 78,
     "language_counts": {
-      "unconfirmed": 23
+      "unconfirmed": 22
     },
     "latitude": 55.8642,
     "longitude": -4.2518,
@@ -1499,7 +1497,7 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 102
+      "unconfirmed": 103
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
@@ -1534,7 +1532,7 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 205
+      "unconfirmed": 199
     },
     "latitude": 38.895098,
     "longitude": -77.036385,
@@ -1654,7 +1652,7 @@
     "country_name": "United States",
     "id": 130,
     "language_counts": {
-      "unconfirmed": 72
+      "unconfirmed": 71
     },
     "latitude": 34.075596,
     "longitude": -84.294596,
@@ -1773,7 +1771,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 239
+      "unconfirmed": 237
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1790,7 +1788,7 @@
     "country_name": "United States",
     "id": 138,
     "language_counts": {
-      "unconfirmed": 88
+      "unconfirmed": 86
     },
     "latitude": 44.47616,
     "longitude": -73.212906,
