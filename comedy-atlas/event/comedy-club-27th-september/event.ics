@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-27th-september@comedyatlas.app
+DTSTAMP:20260927T190000Z
+DTSTART:20260927T190000Z
+DTEND:20260927T210000Z
+SUMMARY:Comedy Club 27th September
+LOCATION:Old Toll Bar\, 1 Paisley Road West\, Glasgow
+DESCRIPTION:Comedy club at The Red Door club on the 27th of September.\n\nL
+ iam Farrelly\, as seen on Live at the Apollo\, Scot's squad and Edinburgh u
+ nlocked.\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-club
+ -27th-september/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-27th-september/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:main-y-event-comedy-night@comedyatlas.app
+DTSTAMP:20260930T180000Z
+DTSTART:20260930T180000Z
+DTEND:20260930T200000Z
+SUMMARY:Main(y) Event Comedy Night
+LOCATION:Mainbrace Pub\, 218 Whitefield Drive\, Liverpool
+DESCRIPTION:Some of the North West's best acts descend on Kirkby for a can'
+ t miss night of hilarious stand up comedy\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/main-y-event-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/main-y-event-comedy-night/
+END:VEVENT
+END:VCALENDAR

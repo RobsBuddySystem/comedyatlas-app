@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrick-spicer@comedyatlas.app
+DTSTAMP:20271027T183000Z
+DTSTART:20271027T183000Z
+DTEND:20271027T203000Z
+SUMMARY:Patrick Spicer
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Patrick returns with his second international tour.\nMore info:
+  https://comedyatlas.app/comedy-atlas/event/patrick-spicer/
+URL:https://comedyatlas.app/comedy-atlas/event/patrick-spicer/
+END:VEVENT
+END:VCALENDAR

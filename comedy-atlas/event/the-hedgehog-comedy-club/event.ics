@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-hedgehog-comedy-club@comedyatlas.app
+DTSTAMP:20260926T171500Z
+DTSTART:20260926T171500Z
+DTEND:20260926T191500Z
+SUMMARY:The Hedgehog Comedy Club
+LOCATION:Basement 45\, 8 Frogmore Street\, Bristol
+DESCRIPTION:Small basement. Big rooms full of laughing. Bristol's Saturday 
+ night comedy club Weekly live comedy nights with a fresh line-up weekly\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/the-hedgehog-comedy-clu
+ b/
+URL:https://comedyatlas.app/comedy-atlas/event/the-hedgehog-comedy-club/
+END:VEVENT
+END:VCALENDAR

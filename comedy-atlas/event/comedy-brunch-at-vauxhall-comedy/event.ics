@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-brunch-at-vauxhall-comedy@comedyatlas.app
+DTSTAMP:20261107T153000Z
+DTSTART:20261107T153000Z
+DTEND:20261107T173000Z
+SUMMARY:Comedy Brunch at Vauxhall Comedy
+LOCATION:The Garden Vauxhall\, 6 South Lambeth Place\, London
+DESCRIPTION:South London's Top Comedy Club\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/comedy-brunch-at-vauxhall-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-brunch-at-vauxhall-co
+ medy/
+END:VEVENT
+END:VCALENDAR

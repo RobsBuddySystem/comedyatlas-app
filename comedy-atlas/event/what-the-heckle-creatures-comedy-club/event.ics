@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:what-the-heckle-creatures-comedy-club@comedyatlas.app
+DTSTAMP:20261112T190000Z
+DTSTART:20261112T190000Z
+DTEND:20261112T210000Z
+SUMMARY:What the Heckle || Creatures Comedy Club
+LOCATION:Creatures Comedy Club\, 42-44 Oldham Street\, Manchester
+DESCRIPTION:Comedians get 2 minutes uninterrupted to win you over. After th
+ e bell\, you get 5 minutes to heckle them. Hecklers get your tickets now...
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/what-the-heckle-cre
+ atures-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/what-the-heckle-creatures-co
+ medy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:creature-s-got-talent-creatures-comedy-club@comedyatlas.app
+DTSTAMP:20261008T220000Z
+DTSTART:20261008T220000Z
+DTEND:20261009T000000Z
+SUMMARY:Creature's Got Talent | Creatures Comedy Club
+LOCATION:Creatures Comedy Club\, 42-44 Oldham Street\, Manchester
+DESCRIPTION:Manchester’s only LIVE TALENT SHOW\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/creature-s-got-talent-creatures-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/creature-s-got-talent-creatu
+ res-comedy-club/
+END:VEVENT
+END:VCALENDAR

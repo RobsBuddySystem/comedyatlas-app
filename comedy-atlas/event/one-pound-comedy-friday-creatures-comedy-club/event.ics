@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:one-pound-comedy-friday-creatures-comedy-club@comedyatlas.app
+DTSTAMP:20260925T174500Z
+DTSTART:20260925T174500Z
+DTEND:20260925T194500Z
+SUMMARY:One Pound Comedy: Friday| Creatures Comedy Club
+LOCATION:Creatures Comedy Club\, 42-44 Oldham Street\, Manchester
+DESCRIPTION:Local comedians\, new material\, funny stories and off-the-cuff
+  jokes - all for just £1 at your favourite comedy club.\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/one-pound-comedy-friday-creatures-come
+ dy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/one-pound-comedy-friday-crea
+ tures-comedy-club/
+END:VEVENT
+END:VCALENDAR

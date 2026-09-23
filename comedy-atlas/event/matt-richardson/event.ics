@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-richardson@comedyatlas.app
+DTSTAMP:20271007T183000Z
+DTSTART:20271007T183000Z
+DTEND:20271007T203000Z
+SUMMARY:Matt Richardson
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Multi-award-winning comedian\, presenter\, and viral sensation\
+ , Matt Richardson has always been told\, 'Bit much mate.' A bit too loud\, 
+ a bit too honest\nMore info: https://comedyatlas.app/comedy-atlas/event/mat
+ t-richardson/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-richardson/
+END:VEVENT
+END:VCALENDAR

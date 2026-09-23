@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trapdoor-comedy-at-the-railway@comedyatlas.app
+DTSTAMP:20261012T183000Z
+DTSTART:20261012T183000Z
+DTEND:20261012T203000Z
+SUMMARY:Trapdoor Comedy at The Railway
+LOCATION:The Railway Inn\, 3 lapwing lane\, Manchester
+DESCRIPTION:Another huge line up of laughter on a Monday night in West Dids
+ bury\nMore info: https://comedyatlas.app/comedy-atlas/event/trapdoor-comedy
+ -at-the-railway/
+URL:https://comedyatlas.app/comedy-atlas/event/trapdoor-comedy-at-the-railw
+ ay/
+END:VEVENT
+END:VCALENDAR

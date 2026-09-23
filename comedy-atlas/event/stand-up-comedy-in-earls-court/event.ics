@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-comedy-in-earls-court@comedyatlas.app
+DTSTAMP:20261003T130000Z
+DTSTART:20261003T130000Z
+DTEND:20261003T150000Z
+SUMMARY:Stand up comedy in Earls court
+LOCATION:Brompton Library\, Brompton Library\, London
+DESCRIPTION:Grab your favourite drinks and get ready for a hilarious\, budg
+ et-friendly night out The Earls court Comedy Night brings a stellar lineup.
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-in-
+ earls-court/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-in-earls-cou
+ rt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-muppathon-muppets-drag-show@comedyatlas.app
+DTSTAMP:20261212T190000Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:The Muppathon: Muppets Drag Show
+LOCATION:Fairfield Social Club\, Irk Street\, Manchester
+DESCRIPTION:The unofficial Muppets drag show is back - and this time\, IT F
+ EELS LIKE CHRISTMAS\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ the-muppathon-muppets-drag-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-muppathon-muppets-drag-s
+ how/
+END:VEVENT
+END:VCALENDAR

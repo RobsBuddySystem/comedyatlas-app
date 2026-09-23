@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:micky-overman@comedyatlas.app
+DTSTAMP:20271026T183000Z
+DTSTART:20271026T183000Z
+DTEND:20271026T203000Z
+SUMMARY:Micky Overman
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Micky's back on the road with a brand new show that asks: How d
+ o you make sense of a world that keeps getting worse\, when your own life k
+ eeps getting\nMore info: https://comedyatlas.app/comedy-atlas/event/micky-o
+ verman/
+URL:https://comedyatlas.app/comedy-atlas/event/micky-overman/
+END:VEVENT
+END:VCALENDAR

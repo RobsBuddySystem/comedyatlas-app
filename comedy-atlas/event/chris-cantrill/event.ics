@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-cantrill@comedyatlas.app
+DTSTAMP:20270324T193000Z
+DTSTART:20270324T193000Z
+DTEND:20270324T213000Z
+SUMMARY:Chris Cantrill
+LOCATION:The Wardrobe\, 6 St Peter&#39\;s Square\, Leeds
+DESCRIPTION:2026 Edinburgh Comedy Award winner\, Chris Cantrill (‘SNL UK
+ ’\, ‘Icklewick FM’) returns with a new show about community\, vengean
+ ce and custard.\nMore info: https://comedyatlas.app/comedy-atlas/event/chri
+ s-cantrill/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-cantrill/
+END:VEVENT
+END:VCALENDAR

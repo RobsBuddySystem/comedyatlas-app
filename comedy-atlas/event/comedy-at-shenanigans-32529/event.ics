@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-at-shenanigans-32529@comedyatlas.app
+DTSTAMP:20261028T200000Z
+DTSTART:20261028T200000Z
+DTEND:20261028T220000Z
+SUMMARY:Comedy at Shenanigans
+LOCATION:Shenanigans\, 77 Tithebarn Street\, Liverpool
+DESCRIPTION:Free comedy at Shenanigans Liverpool. Always a brilliant laugh\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-at-shenanigan
+ s-32529/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-at-shenanigans-32529/
+END:VEVENT
+END:VCALENDAR

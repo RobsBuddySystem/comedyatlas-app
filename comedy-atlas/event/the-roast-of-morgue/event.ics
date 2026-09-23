@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-roast-of-morgue@comedyatlas.app
+DTSTAMP:20261122T193000Z
+DTSTART:20261122T193000Z
+DTEND:20261122T213000Z
+SUMMARY:The Roast of Morgue
+LOCATION:The Caroline Of Brunswick\, 11A Ditchling Road\, Brighton
+DESCRIPTION:A comedy roast of the beloved Queen of Filth\, Morgue\, deliver
+ ed by an all stars cast of people who've had the misfortune to have known h
+ er....\nMore info: https://comedyatlas.app/comedy-atlas/event/the-roast-of-
+ morgue/
+URL:https://comedyatlas.app/comedy-atlas/event/the-roast-of-morgue/
+END:VEVENT
+END:VCALENDAR

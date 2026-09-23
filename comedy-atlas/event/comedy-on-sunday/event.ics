@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-on-sunday@comedyatlas.app
+DTSTAMP:20261011T170000Z
+DTSTART:20261011T170000Z
+DTEND:20261011T190000Z
+SUMMARY:Comedy on Sunday
+LOCATION:Caxton Arms\, 36 North Gardens\, Brighton
+DESCRIPTION:Free comedy on Sunday afternoon. Hosted by Vaiga Perkauskaite.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-on-sunday/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-on-sunday/
+END:VEVENT
+END:VCALENDAR

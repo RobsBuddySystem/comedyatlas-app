@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:karen-dunbar@comedyatlas.app
+DTSTAMP:20261107T173000Z
+DTSTART:20261107T173000Z
+DTEND:20261107T193000Z
+SUMMARY:Karen Dunbar
+LOCATION:Inverurie Town Hall\, Market Place\, Aberdeen
+DESCRIPTION:Come along for a night full of laughter on Karen's Scottish Tou
+ r\nMore info: https://comedyatlas.app/comedy-atlas/event/karen-dunbar/
+URL:https://comedyatlas.app/comedy-atlas/event/karen-dunbar/
+END:VEVENT
+END:VCALENDAR

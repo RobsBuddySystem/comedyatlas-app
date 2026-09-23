@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gagged-at-the-cockatoo-club@comedyatlas.app
+DTSTAMP:20261007T180000Z
+DTSTART:20261007T180000Z
+DTEND:20261007T200000Z
+SUMMARY:Gagged at the Cockatoo Club
+LOCATION:The Cockatoo Club\, 20 Richmond Street\, Manchester
+DESCRIPTION:Join a stellar lineup of all-female-and-LGBTQ+ comedians as the
+ y gag you in a midweek comedy extravaganza in the heart of Manchester's gay
+  village.\nMore info: https://comedyatlas.app/comedy-atlas/event/gagged-at-
+ the-cockatoo-club/
+URL:https://comedyatlas.app/comedy-atlas/event/gagged-at-the-cockatoo-club/
+END:VEVENT
+END:VCALENDAR

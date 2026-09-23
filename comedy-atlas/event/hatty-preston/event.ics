@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hatty-preston@comedyatlas.app
+DTSTAMP:20271212T180000Z
+DTSTART:20271212T180000Z
+DTEND:20271212T200000Z
+SUMMARY:Hatty Preston
+LOCATION:Camp And Furnace\, 67 Greenland Street\, Liverpool
+DESCRIPTION:Live Nation Presents Hatty Preston Plus Special Guests\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/hatty-preston/
+URL:https://comedyatlas.app/comedy-atlas/event/hatty-preston/
+END:VEVENT
+END:VCALENDAR

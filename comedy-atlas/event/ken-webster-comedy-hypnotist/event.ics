@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ken-webster-comedy-hypnotist@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Ken Webster comedy hypnotist
+LOCATION:Bmc Club\, 13 Westfield Street\, Edinburgh
+DESCRIPTION:All the way from Blackpool hilarious Ken Webster comedy hypnoti
+ st\nMore info: https://comedyatlas.app/comedy-atlas/event/ken-webster-comed
+ y-hypnotist/
+URL:https://comedyatlas.app/comedy-atlas/event/ken-webster-comedy-hypnotist
+ /
+END:VEVENT
+END:VCALENDAR

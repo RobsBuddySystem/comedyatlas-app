@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:raul-kohli@comedyatlas.app
+DTSTAMP:20261001T180000Z
+DTSTART:20261001T180000Z
+DTEND:20261001T200000Z
+SUMMARY:Raul Kohli
+LOCATION:Breakneck Comedy\, 28 King Street\, Aberdeen
+DESCRIPTION:Come along for a night full of laughter\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/raul-kohli/
+URL:https://comedyatlas.app/comedy-atlas/event/raul-kohli/
+END:VEVENT
+END:VCALENDAR

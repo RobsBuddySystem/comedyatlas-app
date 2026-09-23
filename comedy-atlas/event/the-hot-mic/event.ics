@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-hot-mic@comedyatlas.app
+DTSTAMP:20261022T200000Z
+DTSTART:20261022T200000Z
+DTEND:20261022T220000Z
+SUMMARY:The Hot Mic
+LOCATION:Wings Edinburgh\, 21 Old Fishmarket Close\, Edinburgh
+DESCRIPTION:Scotland's hottest comedy show\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/the-hot-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/the-hot-mic/
+END:VEVENT
+END:VCALENDAR

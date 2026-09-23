@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halloween-comedy-at-gateacre-institute@comedyatlas.app
+DTSTAMP:20261031T193000Z
+DTSTART:20261031T193000Z
+DTEND:20261031T213000Z
+SUMMARY:Halloween Comedy at Gateacre Institute
+LOCATION:Gateacre Institute Club\, 14 Grange Lane\, Gateacre\, Liverpool
+DESCRIPTION:We are bringing a brilliant line up of comedians to Gateacre In
+ stitute- This is Halloween so dress to impress\nMore info: https://comedyat
+ las.app/comedy-atlas/event/halloween-comedy-at-gateacre-institute/
+URL:https://comedyatlas.app/comedy-atlas/event/halloween-comedy-at-gateacre
+ -institute/
+END:VEVENT
+END:VCALENDAR

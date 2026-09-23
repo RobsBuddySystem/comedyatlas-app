@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-at-shenanigans@comedyatlas.app
+DTSTAMP:20260930T190000Z
+DTSTART:20260930T190000Z
+DTEND:20260930T210000Z
+SUMMARY:Comedy at Shenanigans
+LOCATION:Shenanigans\, 77 Tithebarn Street\, Liverpool
+DESCRIPTION:Monthly free comedy night at Shenanigans.. proper good laugh on
+  a Wednesday with guest host Alex\nMurray\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/comedy-at-shenanigans/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-at-shenanigans/
+END:VEVENT
+END:VCALENDAR

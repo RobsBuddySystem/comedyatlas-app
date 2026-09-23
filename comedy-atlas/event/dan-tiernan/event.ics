@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dan-tiernan@comedyatlas.app
+DTSTAMP:20270225T193000Z
+DTSTART:20270225T193000Z
+DTEND:20270225T213000Z
+SUMMARY:Dan Tiernan
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Dan Tiernan is back at it again: and this time he’s got magic
+  rocks in his pocket.\nMore info: https://comedyatlas.app/comedy-atlas/even
+ t/dan-tiernan/
+URL:https://comedyatlas.app/comedy-atlas/event/dan-tiernan/
+END:VEVENT
+END:VCALENDAR

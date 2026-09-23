@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trapdoor-comedy-at-the-old-monkey@comedyatlas.app
+DTSTAMP:20261014T183000Z
+DTSTART:20261014T183000Z
+DTEND:20261014T203000Z
+SUMMARY:Trapdoor Comedy at The Old Monkey
+LOCATION:The Old Monkey\, 90/92 Portland Street\, Manchester
+DESCRIPTION:Glenn Wool makes his triumphant and hilarious return to Trapdoo
+ r\nMore info: https://comedyatlas.app/comedy-atlas/event/trapdoor-comedy-at
+ -the-old-monkey/
+URL:https://comedyatlas.app/comedy-atlas/event/trapdoor-comedy-at-the-old-m
+ onkey/
+END:VEVENT
+END:VCALENDAR
