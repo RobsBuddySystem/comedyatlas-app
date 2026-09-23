@@ -1606,6 +1606,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   }
 
   var myShows = [];
+  // 2026-09-23 P1 fix: populateLineupShowSelect()/populateTicketingShowSelect()
+  // below used to call loadMyShows().then(self) forever whenever myShows was
+  // still empty -- which it always is for a logged-out visitor, since
+  // loadMyShows() swallows its 401 with .catch(function(){}) and resolves
+  // anyway. That produced an unbounded, zero-delay retry loop hammering
+  // /booker/my-shows (measured live: ~524 calls in 10s while logged out).
+  // This flag caps each of those two callers to ONE attempt at
+  // /booker/my-shows; on failure (401/403 or any other error) they stop and
+  // render the empty state instead of recursing. Signed-in users are
+  // unaffected: myShows still populates normally on that one attempt.
+  var myShowsAttempted = false;
 
   // Every "your show" field that used to be a raw show_series_id
   // <input type=number> -- a real booker has no idea what their internal
@@ -1632,6 +1643,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   }
 
   function loadMyShows() {
+    myShowsAttempted = true;
     return A.get("/booker/my-shows").then(function (rows) {
       myShows = rows;
       SHOW_SELECT_IDS.forEach(function (id) { populateShowSelect(id, rows); });
@@ -1865,8 +1877,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) + '</option>';
       }).join("");
       loadLineupEvents();
-    } else {
+    } else if (!myShowsAttempted) {
       loadMyShows().then(populateLineupShowSelect);
+    } else {
+      sel.innerHTML = '<option value="">No claimed shows yet</option>';
     }
   }
   populateLineupShowSelect();
@@ -2514,8 +2528,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       sel.innerHTML = myShows.map(function (s) {
         return '<option value="' + s.show_series_id + '">' + A.escapeHtml(s.name) + '</option>';
       }).join("");
-    } else {
+    } else if (!myShowsAttempted) {
       loadMyShows().then(populateTicketingShowSelect);
+    } else {
+      sel.innerHTML = '<option value="">No claimed shows yet</option>';
     }
   }
   populateTicketingShowSelect();

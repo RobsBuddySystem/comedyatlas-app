@@ -37,6 +37,15 @@
 (function (global) {
   "use strict";
 
+  // 2026-09-23 P1 fix: this file's link builders below used to return
+  // paths relative to the CURRENT page ("city/<slug>/", "city.html?..."),
+  // which resolve correctly when the script runs on /comedy-atlas/* pages
+  // but 404 when the same script runs on the bare root homepage (site/
+  // root/index.html, served at "/"). SITE_BASE makes them absolute-from-
+  // root so both origins get a working link. See atlas-common.js's
+  // identical fix for the event/show card links.
+  var SITE_BASE = "/comedy-atlas/";
+
   // --- The registry -------------------------------------------------------
   // `color` is a CSS custom-property NAME (not a literal colour) — the
   // renderer/CSS own the actual values so a future theme or brand refresh
@@ -273,12 +282,12 @@
   // a real click never lands on a dead page.
   function canonicalCityHref(cityName) {
     if (!cityName) return null;
-    return "city/" + slugify(cityName) + "/";
+    return SITE_BASE + "city/" + slugify(cityName) + "/";
   }
 
   function fallbackCityHref(cityName) {
     if (!cityName) return null;
-    return "city.html?city=" + encodeURIComponent(cityName);
+    return SITE_BASE + "city.html?city=" + encodeURIComponent(cityName);
   }
 
   // A per-venue permalink (/comedy-atlas/venue/<slug>/) does exist

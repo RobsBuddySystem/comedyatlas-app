@@ -76,7 +76,7 @@ ul#results{list-style:none}
    payload never has to carry embedded image bytes for the vast majority
    of rows that have no real photo at all. */
 .result{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;min-height:44px}
-.result[aria-selected="true"],.result:hover{border-color:var(--purple-light)}
+.result.is-selected,.result:hover{border-color:var(--purple-light)}
 .result:focus-within{outline:2px solid var(--purple-light);outline-offset:1px}
 .result a{display:flex;gap:12px;align-items:center;color:inherit;width:100%;min-width:0}
 .result-thumb{width:44px;height:44px;border-radius:9px;object-fit:cover;flex-shrink:0;background:var(--border)}
@@ -915,10 +915,20 @@ noscript .result-meta{margin-top:2px}
     pageItems.forEach(function (rec) {
       var li = document.createElement("li");
       li.className = "result";
-      li.setAttribute("role", "option");
-      li.setAttribute("aria-selected", "false");
+      // 2026-09-23 P2 fix: role="option" used to sit on this <li>, which
+      // then wrapped a real <a href> -- an interactive element nested
+      // inside another interactive-role element (axe-core "nested-
+      // interactive", serious; 20 hits on this page = one per rendered
+      // row). role="option" now lives on the <a> itself, which the
+      // listbox's DOM structure already lets an AT walk straight to
+      // (li stays role="presentation" so it doesn't add an extra layer
+      // to the accessibility tree); there is exactly one interactive
+      // element per row.
+      li.setAttribute("role", "presentation");
       var a = document.createElement("a");
       a.href = rec.url;
+      a.setAttribute("role", "option");
+      a.setAttribute("aria-selected", "false");
       var thumb = document.createElement("img");
       thumb.className = "result-thumb";
       thumb.src = thumbSrc(rec);
@@ -981,10 +991,12 @@ noscript .result-meta{margin-top:2px}
   // -----------------------------------------------------------------------
   function applySelection() {
     var items = resultsEl.querySelectorAll(".result");
-    items.forEach(function (el, i) {
+    items.forEach(function (li, i) {
       var on = i === selectedIndex;
-      el.setAttribute("aria-selected", String(on));
-      if (on) { el.scrollIntoView({ block: "nearest" }); }
+      var a = li.querySelector("a");
+      if (a) { a.setAttribute("aria-selected", String(on)); }
+      li.classList.toggle("is-selected", on);
+      if (on) { li.scrollIntoView({ block: "nearest" }); }
     });
   }
 

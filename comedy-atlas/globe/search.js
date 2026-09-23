@@ -457,8 +457,20 @@ export function mountGlobeSearch(inputEl, options) {
   // styles are scoped to.
   dropdown.classList.add('atlas-globe-search-dropdown');
   if (!dropdown.id) dropdown.id = 'atlas-globe-search-results-' + Math.random().toString(36).slice(2);
-  dropdown.setAttribute('role', 'listbox');
+  // 2026-09-23 P2 fix: role="listbox" used to be set here unconditionally,
+  // at mount, before the dropdown has any role="option" children -- axe-core
+  // flags a listbox with zero options as "aria-required-children" (critical;
+  // 1 hit on the homepage, whose hero search mounts this on load). The role
+  // is now applied only in render()'s real-results branch, where option
+  // children actually exist, and stripped everywhere else (loading/failed/
+  // no-results/closed), all of which render zero role="option" children.
   if (!dropdown.hasAttribute('aria-label')) dropdown.setAttribute('aria-label', 'Search results');
+  // A reused dropdownEl (nav's `#atlas-nav-q-suggest`, the hero's
+  // `#atlas-q-suggest`) may still carry a static role="listbox" baked into
+  // its page's own HTML from before this module took it over -- strip it at
+  // mount too, same reasoning as close()/render() above: it starts with
+  // zero role="option" children.
+  dropdown.removeAttribute('role');
   dropdown.hidden = true;
   if (ownsDropdown) container.appendChild(dropdown);
 
@@ -488,6 +500,7 @@ export function mountGlobeSearch(inputEl, options) {
 
   function close() {
     dropdown.hidden = true;
+    dropdown.removeAttribute('role');
     inputEl.setAttribute('aria-expanded', 'false');
     setActive(-1);
   }
@@ -511,6 +524,7 @@ export function mountGlobeSearch(inputEl, options) {
 
   function render() {
     dropdown.innerHTML = '';
+    dropdown.removeAttribute('role');
     flatItems = [];
 
     const query = inputEl.value;
@@ -551,6 +565,9 @@ export function mountGlobeSearch(inputEl, options) {
       return;
     }
 
+    // Real option children follow -- only now is role="listbox" valid
+    // (aria-required-children needs >=1 role="option" descendant).
+    dropdown.setAttribute('role', 'listbox');
     groups.forEach((group) => {
       const label = document.createElement('div');
       label.className = 'atlas-globe-search-group-label';

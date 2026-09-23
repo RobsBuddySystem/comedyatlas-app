@@ -27,6 +27,16 @@
   var CITIES_URL = "../data/comedy-atlas/cities.json";
   var FESTIVALS_URL = "../data/comedy-atlas/festivals.json";
 
+  // 2026-09-23 P1 fix: this file is now loaded from TWO origins -- the
+  // bare root homepage (site/root/index.html, served at "/") and the Atlas
+  // hub/city pages (served under "/comedy-atlas/"). Every event/show link
+  // this file builds used to be relative ("event/<slug>/"), which resolves
+  // correctly against the page URL on /comedy-atlas/ but resolves to a
+  // bare, unprefixed "/event/<slug>/" (a live 404) on the root homepage.
+  // SITE_BASE makes every such link absolute-from-root so it is correct on
+  // both origins.
+  var SITE_BASE = "/comedy-atlas/";
+
   function escapeHtml(s) {
     if (s === null || s === undefined) return "";
     return String(s)
@@ -680,7 +690,7 @@
         // cityCard/festivalCard already use in index.html); a card with no
         // slug yet renders as a plain, non-clickable block rather than
         // fabricate a link or fall back to a raw ticket exit.
-        var eventHref = ev.slug ? "event/" + encodeURIComponent(ev.slug) + "/" : null;
+        var eventHref = ev.slug ? SITE_BASE + "event/" + encodeURIComponent(ev.slug) + "/" : null;
         var titleText = escapeHtml(ev.title || "Untitled show");
         var cardTag = eventHref ? "a" : "div";
         var cardHrefAttr = eventHref ? ' href="' + escapeHtml(eventHref) + '"' : "";
@@ -872,8 +882,8 @@
       // show is never a click-straight-to-tickets dead end at any level
       // either way.
       var groupHref = primary.show_series_slug
-        ? "show/" + encodeURIComponent(primary.show_series_slug) + "/"
-        : (primary.slug ? "event/" + encodeURIComponent(primary.slug) + "/" : null);
+        ? SITE_BASE + "show/" + encodeURIComponent(primary.show_series_slug) + "/"
+        : (primary.slug ? SITE_BASE + "event/" + encodeURIComponent(primary.slug) + "/" : null);
       var groupTitleHtml = escapeHtml(g.title);
       if (groupHref) {
         groupTitleHtml = '<a class="event-title-link" href="' + escapeHtml(groupHref) + '">' + groupTitleHtml + "</a>";
@@ -925,7 +935,7 @@
       var d = new Date(ev.starts_at);
       var zone = eventZone(ev);
       var label = escapeHtml(fmtDayHeading(d, zone)) + ", " + escapeHtml(fmtTime(d, zone));
-      var href = ev.slug ? "event/" + encodeURIComponent(ev.slug) + "/" : null;
+      var href = ev.slug ? SITE_BASE + "event/" + encodeURIComponent(ev.slug) + "/" : null;
       html += "<li>" + (href
         ? '<a class="event-date-link" href="' + escapeHtml(href) + '">' + label + "</a>"
         : label);
