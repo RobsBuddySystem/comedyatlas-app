@@ -36,6 +36,8 @@ input,select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var
 .tabs{display:flex;gap:8px;margin-bottom:18px}
 .tab{flex:1;text-align:center;padding:8px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:13px;color:var(--muted)}
 .tab.active{border-color:var(--purple);color:var(--text);font-weight:700}
+.lang-opt{flex:1;text-align:center;padding:8px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:13px;color:var(--muted);background:transparent}
+.lang-opt.active{border-color:var(--purple);color:var(--text);font-weight:700}
 .msg{margin-top:14px;font-size:13px}
 .msg.error{color:var(--red)}
 .msg.ok{color:var(--green)}
@@ -166,8 +168,27 @@ html[data-auth-tab="register"] #register-card{display:block!important}
       <option value="booker">Booker / show runner</option>
       <option value="both">Both</option>
     </select>
+    <!-- 2026-09-23 comic-onboarding fix (Robert, 20:59: "an EXPLICIT
+         language choice, not only auto-detect"). Default preselects from
+         ?lang= (a comic page's own claim box links here with &lang=fr for
+         a French comic -- see generate_entity_pages.py's render_claim_box
+         no-account link) or, absent that, English -- but the comic's own
+         click here always wins over anything auto-detected: this value is
+         what actually gets sent to /auth/register and /auth/google. -->
+    <div class="lang-toggle" id="reg-lang-toggle" role="group" aria-label="Language / Langue" style="margin-top:14px;display:flex;gap:8px">
+      <button type="button" class="lang-opt" data-lang="en" id="reg-lang-en" aria-pressed="true">English</button>
+      <button type="button" class="lang-opt" data-lang="fr" id="reg-lang-fr" aria-pressed="false">Français</button>
+    </div>
     <button id="reg-submit">Create account</button>
     <div class="msg" id="reg-msg"></div>
+    <!-- Item B (dedupe): shown only on a 409 existing_page_match response.
+         "is this you? claim it" links straight to that page's claim box;
+         "create anyway" force_new-resubmits the exact same form. -->
+    <div id="reg-dupe-box" style="display:none;margin-top:14px;padding:12px;border:1px solid var(--gold);border-radius:8px">
+      <div id="reg-dupe-msg" style="font-size:13px"></div>
+      <a id="reg-dupe-claim-link" href="#" style="display:inline-block;margin-top:10px;text-align:center;text-decoration:underline">Claim it</a>
+      <button type="button" id="reg-dupe-force-new" class="secondary" style="margin-top:8px">No, create a different page</button>
+    </div>
   </div>
 
   <div class="card" id="fan-card" style="display:none">
@@ -292,6 +313,7 @@ html[data-auth-tab="register"] #register-card{display:block!important}
     A.post("/auth/google", {
       id_token: response.credential,
       role: chosenRegisterRole(),
+      lang: chosenLang,
     }).then(function (r) {
       if (r && r.twofa_required) {
         if (msg) { msg.textContent = ""; msg.className = "msg"; }
@@ -344,6 +366,31 @@ html[data-auth-tab="register"] #register-card{display:block!important}
       });
     });
   }
+  // 2026-09-23 comic-onboarding fix (Robert, 20:59): explicit Français/
+  // English toggle, not only auto-detect. Default = ?lang= from the URL
+  // (a French comic page's claim box "Don't have a page yet?" link adds
+  // &lang=fr -- see generate_entity_pages.py's render_claim_box) else
+  // English; the comic's own click always overrides that default, and
+  // whatever is selected at submit time is what /auth/register and
+  // /auth/google receive -- the server then STORES it on the account
+  // (ingest/comic_welcome.py resolve_comic_lang + notification_
+  // preferences.language) so it carries through to every later email,
+  // not just this one.
+  var chosenLang = (params.get("lang") === "fr") ? "fr" : "en";
+  function paintLangToggle() {
+    document.getElementById("reg-lang-en").classList.toggle("active", chosenLang === "en");
+    document.getElementById("reg-lang-en").setAttribute("aria-pressed", String(chosenLang === "en"));
+    document.getElementById("reg-lang-fr").classList.toggle("active", chosenLang === "fr");
+    document.getElementById("reg-lang-fr").setAttribute("aria-pressed", String(chosenLang === "fr"));
+  }
+  document.getElementById("reg-lang-en").addEventListener("click", function () {
+    chosenLang = "en"; paintLangToggle();
+  });
+  document.getElementById("reg-lang-fr").addEventListener("click", function () {
+    chosenLang = "fr"; paintLangToggle();
+  });
+  paintLangToggle();
+
   wireEnterSubmit(["li-email", "li-password"], "li-submit");
   wireEnterSubmit(["li-forgot-email"], "li-forgot-submit");
   wireEnterSubmit(["li-2fa-code"], "li-2fa-submit");
@@ -451,15 +498,22 @@ html[data-auth-tab="register"] #register-card{display:block!important}
     });
   });
 
-  document.getElementById("reg-submit").addEventListener("click", function () {
+  // Item B (dedupe): submits the register form, optionally forcing a new
+  // page even when a matching unclaimed page exists (the "No, I'm a
+  // different <name>" override from the 409 box below).
+  function submitRegister(forceNew) {
     var msg = document.getElementById("reg-msg");
+    var dupeBox = document.getElementById("reg-dupe-box");
     msg.textContent = ""; msg.className = "msg";
+    dupeBox.style.display = "none";
     var chosenRole = document.getElementById("reg-role").value;
     A.post("/auth/register", {
       stage_name: document.getElementById("reg-stage-name").value,
       email: document.getElementById("reg-email").value,
       password: document.getElementById("reg-password").value,
       role: chosenRole,
+      lang: chosenLang,
+      force_new: !!forceNew,
     }).then(function (resp) {
       msg.textContent = "Account created."; msg.className = "msg ok";
       // Atlas feedback #10 (2026-09-04): a booker who registered was always
@@ -472,9 +526,25 @@ html[data-auth-tab="register"] #register-card{display:block!important}
       location.href = destinationForRole(
         (resp && resp.role) || chosenRole, wantRole);
     }).catch(function (e) {
-      msg.textContent = e.body && e.body.detail ? e.body.detail : "Registration failed.";
+      var detail = e.body && e.body.detail;
+      if (e.status === 409 && detail && detail.status === "existing_page_match") {
+        // "A page for <name> already exists -- is it you? Claim it"
+        msg.textContent = ""; msg.className = "msg";
+        document.getElementById("reg-dupe-msg").textContent = detail.message ||
+          ("A page for " + detail.existing_stage_name + " already exists.");
+        document.getElementById("reg-dupe-claim-link").href = detail.claim_url || "#";
+        dupeBox.style.display = "block";
+        return;
+      }
+      msg.textContent = detail || "Registration failed.";
       msg.className = "msg error";
     });
+  }
+  document.getElementById("reg-submit").addEventListener("click", function () {
+    submitRegister(false);
+  });
+  document.getElementById("reg-dupe-force-new").addEventListener("click", function () {
+    submitRegister(true);
   });
 
   // Fan sign-up/sign-in -- free, password-less (ingest/fan_account.py):

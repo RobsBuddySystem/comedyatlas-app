@@ -205,26 +205,23 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="follow-status" id="follow-status"></div>
 </div>
 <div class="card claim-box" id="claim-box"
-     data-claim-kind="venue" data-claim-id="531">
+     data-claim-kind="venue" data-claim-id="531" data-claim-lang="en">
   <div id="claim-unclaimed">
-    <strong>Is this your page?</strong>
+    <div class="claim-lang-toggle" role="group" aria-label="Language / Langue" style="margin-bottom:8px;display:flex;gap:6px"><button type="button" class="claim-lang-opt" data-claim-lang-opt="en" aria-pressed="true">English</button><button type="button" class="claim-lang-opt" data-claim-lang-opt="fr" aria-pressed="false">Français</button></div>
+    <strong id="claim-heading">Is this your page?</strong>
+    <div class="field-row" id="claim-email-intro" style="margin-top:6px">
+      Enter the email associated with this venue and we'll send a one-click confirmation link. No cost, ever.
+    </div>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <input type="email" id="claim-email" placeholder="you@example.com"
+             aria-label="Email address to verify this claim">
+      <button type="button" id="claim-request-btn">Send confirmation link</button>
+    </div>
+    <div class="field-row" id="claim-request-status" style="margin-top:6px" role="status" aria-live="polite"></div>
     
-    <details style="margin-top:8px">
-      <summary style="cursor:pointer">Claim it →</summary>
-      <div class="field-row" style="margin-top:6px">
-        Enter the email associated with this venue
-        and we'll send a one-click confirmation link. No cost, ever.
-      </div>
-      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-        <input type="email" id="claim-email" placeholder="you@example.com"
-               aria-label="Email address to verify this claim">
-        <button type="button" id="claim-request-btn">Send confirmation link</button>
-      </div>
-      <div class="field-row" id="claim-request-status" style="margin-top:6px"></div>
-    </details>
   </div>
   <div id="claim-claimed" style="display:none">
-    <div class="field-row"><strong>&#10003; Claimed</strong> &mdash; this page is managed by its owner.</div>
+    <div class="field-row"><strong>&#10003; Claimed</strong> &mdash; this page is managed by its subject.</div>
   </div>
 </div>
 
@@ -356,7 +353,89 @@ window.atlasToast = window.atlasToast || function(msg){
   if(!box) return;
   var kind = box.dataset.claimKind;
   var id = box.dataset.claimId;
+  var lang = box.dataset.claimLang === 'fr' ? 'fr' : 'en';
   var apiBase = 'https://api.comedyatlas.app';
+  // 2026-09-23 comic-onboarding fix (Robert, 20:59): "an EXPLICIT language
+  // choice, not only auto-detect" -- the whole claim-box string set (not
+  // just the confirmation message) mirrors render_claim_box's Python-side
+  // _CLAIM_STRINGS/_CLAIM_NOUN_FR, so the visible Français/English toggle
+  // below can re-render every string client-side and `lang` (reassigned
+  // on toggle, not a const) drives both the DOM text and the language
+  // sent on the claim request itself.
+  var NOUN = {comic: 'comic', show: 'show', org: 'organization', venue: 'venue'}[kind] || kind;
+  var NOUN_FR = {comic: 'ce·tte comic', show: 'ce spectacle',
+                 org: 'cette organisation', venue: 'ce lieu'}[kind] || NOUN;
+  var LANG_STRINGS = {
+    en: {
+      heading: 'Is this your page?',
+      emailIntro: 'Enter the email associated with this ' + NOUN + ' and we’ll ' +
+                   'send a one-click confirmation link. No cost, ever.',
+      placeholder: 'you@example.com',
+      aria: 'Email address to verify this claim',
+      sendBtn: 'Send confirmation link',
+      emailRequired: 'Enter an email address.',
+      sent: 'Check your email for a confirmation link.',
+      failed: 'Could not send a link right now — try again later.',
+      noAccountLead: 'Don’t have a page here yet?',
+      noAccountLink: 'Create a free account →',
+    },
+    fr: {
+      heading: 'C’est ta page ?',
+      emailIntro: 'Indique l’email associé à ' + NOUN_FR + ' et on t’envoie ' +
+                   'un lien de confirmation en un clic. Toujours gratuit.',
+      placeholder: 'toi@exemple.com',
+      aria: 'Adresse email pour vérifier cette revendication',
+      sendBtn: 'Envoyer le lien de confirmation',
+      emailRequired: 'Indique une adresse email.',
+      sent: 'Regarde tes emails pour le lien de confirmation.',
+      failed: 'Impossible d’envoyer un lien pour le moment — réessaie plus tard.',
+      noAccountLead: 'Tu n’as pas encore de page ici ?',
+      noAccountLink: 'Créer un compte gratuit →',
+    }
+  };
+  var CLAIM_I18N = LANG_STRINGS[lang];
+
+  function renderLangStrings(){
+    var s = LANG_STRINGS[lang];
+    var headingEl = document.getElementById('claim-heading');
+    if(headingEl){ headingEl.textContent = s.heading; }
+    var introEl = document.getElementById('claim-email-intro');
+    if(introEl){ introEl.textContent = s.emailIntro; }
+    var emailInput = document.getElementById('claim-email');
+    if(emailInput){
+      emailInput.placeholder = s.placeholder;
+      emailInput.setAttribute('aria-label', s.aria);
+    }
+    var sendBtn = document.getElementById('claim-request-btn');
+    if(sendBtn){ sendBtn.textContent = s.sendBtn; }
+    var noAccountLink = document.getElementById('claim-no-account-link');
+    if(noAccountLink){
+      noAccountLink.textContent = s.noAccountLink;
+      // Carry the chosen language through to login.html (item C/D: "carried
+      // through the flow") -- swap the ?lang= query param in place.
+      try {
+        var u = new URL(noAccountLink.href, location.href);
+        u.searchParams.set('lang', lang);
+        noAccountLink.href = u.pathname + u.search;
+      } catch(e) { /* malformed href -- leave it alone */ }
+      if(noAccountLink.previousSibling && noAccountLink.previousSibling.nodeType === 3){
+        noAccountLink.previousSibling.textContent = s.noAccountLead + ' ';
+      }
+    }
+    box.dataset.claimLang = lang;
+    document.querySelectorAll('.claim-lang-opt').forEach(function(btn){
+      var active = btn.dataset.claimLangOpt === lang;
+      btn.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  document.querySelectorAll('.claim-lang-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      lang = btn.dataset.claimLangOpt === 'fr' ? 'fr' : 'en';
+      CLAIM_I18N = LANG_STRINGS[lang];
+      renderLangStrings();
+    });
+  });
 
   fetch(apiBase + '/claim/' + kind + '/' + id + '/status', {credentials: 'include'})
     .then(function(resp){ return resp.ok ? resp.json() : null; })
@@ -385,21 +464,29 @@ window.atlasToast = window.atlasToast || function(msg){
     reqBtn.addEventListener('click', function(){
       var email = document.getElementById('claim-email').value.trim();
       var status = document.getElementById('claim-request-status');
-      if(!email){ status.textContent = 'Enter an email address.'; return; }
+      if(!email){ status.textContent = CLAIM_I18N.emailRequired; return; }
       reqBtn.disabled = true;
       fetch(apiBase + '/claim/' + kind + '/' + id + '/request', {
         method: 'POST', credentials: 'include',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email: email})
+        body: JSON.stringify({email: email, lang: lang})
       }).then(function(resp){
         if(resp.ok){
-          status.textContent = 'Check your email for a confirmation link.';
+          // Clear, unmissable confirmation (2026-09-23: Robert watched a
+          // real comic -- Woody, Velvet Bar -- miss a muted inline status
+          // line entirely). status is role="status" aria-live="polite"
+          // (set in render_claim_box) and gets a visible success class on
+          // top of the plain text, so it reads as a real confirmation, not
+          // just another gray line of copy.
+          status.textContent = CLAIM_I18N.sent;
+          status.classList.add('claim-confirm-success');
+          window.atlasToast && window.atlasToast(CLAIM_I18N.sent);
         } else {
-          status.textContent = 'Could not send a link right now — try again later.';
+          status.textContent = CLAIM_I18N.failed;
           reqBtn.disabled = false;
         }
       }).catch(function(){
-        status.textContent = 'Could not send a link right now — try again later.';
+        status.textContent = CLAIM_I18N.failed;
         reqBtn.disabled = false;
       });
     });
