@@ -52,7 +52,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 171
+      "unconfirmed": 168
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -839,8 +839,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 6,
-      "unconfirmed": 55
+      "en": 11,
+      "unconfirmed": 39
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -1105,7 +1105,7 @@
     "id": 92,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 297
+      "unconfirmed": 295
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1338,7 +1338,7 @@
     "id": 108,
     "language_counts": {
       "en": 122,
-      "unconfirmed": 325
+      "unconfirmed": 323
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1548,7 +1548,7 @@
     "country_name": "United States",
     "id": 124,
     "language_counts": {
-      "unconfirmed": 51
+      "unconfirmed": 50
     },
     "latitude": 40.587178,
     "longitude": -105.077011,
@@ -1685,7 +1685,7 @@
     "country_name": "United States",
     "id": 132,
     "language_counts": {
-      "unconfirmed": 146
+      "unconfirmed": 144
     },
     "latitude": 33.306203,
     "longitude": -111.841185,
@@ -1736,7 +1736,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 120
+      "unconfirmed": 119
     },
     "latitude": 47.657193,
     "longitude": -117.42351,
@@ -1770,7 +1770,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 230
+      "unconfirmed": 227
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1804,7 +1804,7 @@
     "country_name": "United States",
     "id": 139,
     "language_counts": {
-      "unconfirmed": 57
+      "unconfirmed": 55
     },
     "latitude": 40.75962,
     "longitude": -111.886797,
@@ -1821,7 +1821,7 @@
     "country_name": "United States",
     "id": 140,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 8
     },
     "latitude": 40.606134,
     "longitude": -111.939521,
@@ -1838,7 +1838,7 @@
     "country_name": "United States",
     "id": 141,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 9
     },
     "latitude": 41.223005,
     "longitude": -111.973843,
@@ -1854,9 +1854,7 @@
     "country_iso2": "US",
     "country_name": "United States",
     "id": 143,
-    "language_counts": {
-      "unconfirmed": 1
-    },
+    "language_counts": {},
     "latitude": 41.8137,
     "longitude": -71.3703,
     "name": "East Providence",
