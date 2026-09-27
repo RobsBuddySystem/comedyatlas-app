@@ -239,7 +239,7 @@
     "id": 16,
     "language_counts": {
       "en": 136,
-      "unconfirmed": 13
+      "unconfirmed": 10
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -286,8 +286,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 158,
-      "unconfirmed": 117
+      "en": 157,
+      "unconfirmed": 115
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -352,7 +352,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 231
+      "unconfirmed": 229
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -472,7 +472,7 @@
     "id": 33,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 315
+      "unconfirmed": 314
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -557,7 +557,7 @@
     "country_name": "Sweden",
     "id": 40,
     "language_counts": {
-      "en": 4
+      "en": 2
     },
     "latitude": 59.3293,
     "longitude": 18.0686,
@@ -821,8 +821,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 710,
-      "unconfirmed": 615
+      "en": 706,
+      "unconfirmed": 609
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -840,7 +840,7 @@
     "id": 75,
     "language_counts": {
       "en": 11,
-      "unconfirmed": 38
+      "unconfirmed": 42
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -887,7 +887,7 @@
     "country_name": "UK",
     "id": 78,
     "language_counts": {
-      "unconfirmed": 31
+      "unconfirmed": 30
     },
     "latitude": 55.8642,
     "longitude": -4.2518,
@@ -921,7 +921,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 42
+      "unconfirmed": 41
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -938,7 +938,7 @@
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 49
+      "unconfirmed": 48
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
@@ -956,7 +956,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 400
+      "unconfirmed": 398
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -1105,7 +1105,7 @@
     "id": 92,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 295
+      "unconfirmed": 294
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1496,7 +1496,7 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 114
+      "unconfirmed": 113
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
@@ -1870,7 +1870,6 @@
     "country_name": "UK",
     "id": 145,
     "language_counts": {
-      "en": 1,
       "unconfirmed": 6
     },
     "latitude": 52.6362,
@@ -1944,23 +1943,6 @@
     "latitude": 57.148243,
     "longitude": -2.09281,
     "name": "Aberdeen",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": null
-  },
-  {
-    "country_id": 17,
-    "country_iso2": "GB",
-    "country_name": "UK",
-    "id": 167,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 50.725614,
-    "longitude": -3.526921,
-    "name": "Exeter",
     "region_code": null,
     "region_id": null,
     "region_name": null,
