@@ -196,35 +196,7 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
 </header>
 <main id="main-content" tabindex="-1">
   <div class="card"><span class="ticket-link disabled">This show has already happened — shown here as part of COMEDY ATLAS&#x27;s historical archive.</span></div>
-  <h2 class="section-heading">Upcoming comedy in Manchester</h2><div class="event-card">
-  <div class="event-card-inner">
-    
-    <div class="event-card-body">
-      <div class="event-top">
-        <div class="event-title">Sam Serrano: Mars || Creatures Tour Show</div>
-        <div class="event-time">Thu, Oct 1 · 19:00</div>
-      </div>
-      <div class="event-meta"><span>Creatures Comedy Club</span><span class="sep">·</span><span>Manchester</span></div>
-      
-      <a class="ticket-link" href="/comedy-atlas/event/sam-serrano-mars-creatures-tour-show/">View &amp; tickets →</a>
-    </div>
-  </div>
-</div>
-<div class="event-card">
-  <div class="event-card-inner">
-    
-    <div class="event-card-body">
-      <div class="event-top">
-        <div class="event-title">Thursday night Comedy || Creatures Comedy Club</div>
-        <div class="event-time">Thu, Oct 1 · 20:30</div>
-      </div>
-      <div class="event-meta"><span>Creatures Comedy Club</span><span class="sep">·</span><span>Manchester</span></div>
-      
-      <a class="ticket-link" href="/comedy-atlas/event/thursday-night-comedy-creatures-comedy-club/">View &amp; tickets →</a>
-    </div>
-  </div>
-</div>
-<div class="event-card">
+  <h2 class="section-heading">Upcoming comedy in Manchester</h2><div class="event-card" data-atlas-row data-atlas-ends="2026-10-02T17:45:00Z" data-atlas-show="k3ab79e71d1">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -238,7 +210,7 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-02T19:30:00Z" data-atlas-show="kc8c339defd">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -252,7 +224,7 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-03T16:30:00Z" data-atlas-show="ke6adce8b63">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -266,7 +238,7 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-03T17:30:00Z" data-atlas-show="ka1e1a1ec1f">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -277,6 +249,34 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
       <div class="event-meta"><span>Area Manchester</span><span class="sep">·</span><span>Manchester</span></div>
       
       <a class="ticket-link" href="/comedy-atlas/event/manchester-comedy-club-3rd-of-october/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div>
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-03T19:30:00Z" data-atlas-show="kdaa5938fa9">
+  <div class="event-card-inner">
+    
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Saturday Night Showcase|| Creatures Comedy Club</div>
+        <div class="event-time">Sat, Oct 3 · 20:30</div>
+      </div>
+      <div class="event-meta"><span>Creatures Comedy Club</span><span class="sep">·</span><span>Manchester</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/saturday-night-showcase-creatures-comedy-club-36663/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div>
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-04T19:30:00Z" data-atlas-show="k29d44a810a">
+  <div class="event-card-inner">
+    
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Made in Manchester || Creatures Comedy Club</div>
+        <div class="event-time">Sun, Oct 4 · 20:30</div>
+      </div>
+      <div class="event-meta"><span>Creatures Comedy Club</span><span class="sep">·</span><span>Manchester</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/made-in-manchester-creatures-comedy-club-32447/">View &amp; tickets →</a>
     </div>
   </div>
 </div><p class="see-all-link"><a href="/comedy-atlas/city/manchester/">See all upcoming shows in Manchester &rarr;</a></p>
@@ -304,6 +304,26 @@ Smug Roberts, Chris Lumb, Oliver Bowler &amp; Big Lou Jones.</p>
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
+<script>
+(function(){try{
+var now=Date.now();
+function past(el){var t=Date.parse(el.getAttribute('data-atlas-ends'));return !isNaN(t)&&t<now;}
+var rows=document.querySelectorAll('[data-atlas-row][data-atlas-ends]'),gone=0,i,j;
+for(i=0;i<rows.length;i++){if(past(rows[i])){rows[i].hidden=true;rows[i].style.display='none';gone++;}}
+if(gone){var keys={},n=0;
+for(i=0;i<rows.length;i++){if(rows[i].hidden)continue;
+var k=rows[i].getAttribute('data-atlas-show')||('row'+i);if(!keys[k]){keys[k]=1;n++;}}
+var cs=document.querySelectorAll('[data-atlas-count]');
+for(j=0;j<cs.length;j++){var l=cs[j].getAttribute('data-atlas-count');cs[j].textContent=n+' '+l+(n===1?'':'s');}}
+var ctas=document.querySelectorAll('[data-atlas-cta][data-atlas-ends]');
+for(i=0;i<ctas.length;i++){if(!past(ctas[i]))continue;
+ctas[i].innerHTML='<span class="ticket-link disabled">This show has already '+'happened \u2014 shown here as part of COMEDY ATLAS\u2019s historical archive.</span>';
+var lds=document.querySelectorAll('script[type="application/ld+json"]');
+for(j=0;j<lds.length;j++){try{var d=JSON.parse(lds[j].textContent),g=d['@graph']||[d],c=0;
+for(var m=0;m<g.length;m++){if(g[m]&&g[m].offers){delete g[m].offers;c=1;}}
+if(c)lds[j].textContent=JSON.stringify(d);}catch(e){}}}
+}catch(e){}})();
+</script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');

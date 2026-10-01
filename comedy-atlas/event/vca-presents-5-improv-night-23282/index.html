@@ -260,7 +260,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
 </header>
 <main id="main-content" tabindex="-1">
   <div class="card"><span class="ticket-link disabled">This show has already happened — shown here as part of COMEDY ATLAS&#x27;s historical archive.</span></div>
-  <h2 class="section-heading">Upcoming comedy in Burlington</h2><div class="event-card">
+  <h2 class="section-heading">Upcoming comedy in Burlington</h2><div class="event-card" data-atlas-row data-atlas-ends="2026-10-01T23:30:00Z" data-atlas-show="joe-dombrowski-5524">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -274,7 +274,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-02T22:30:00Z" data-atlas-show="joe-dombrowski-5524">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -288,7 +288,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-03T22:30:00Z" data-atlas-show="joe-dombrowski-5524">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -302,7 +302,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-07T22:30:00Z" data-atlas-show="k25f7d555ec">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -316,7 +316,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-08T00:30:00Z" data-atlas-show="k22a48c35d3">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -330,7 +330,7 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
     </div>
   </div>
 </div>
-<div class="event-card">
+<div class="event-card" data-atlas-row data-atlas-ends="2026-10-08T23:00:00Z" data-atlas-show="david-drake">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -385,6 +385,26 @@ To learn about our Covid-19 safety protocols, click here . If you are feeling si
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
+<script>
+(function(){try{
+var now=Date.now();
+function past(el){var t=Date.parse(el.getAttribute('data-atlas-ends'));return !isNaN(t)&&t<now;}
+var rows=document.querySelectorAll('[data-atlas-row][data-atlas-ends]'),gone=0,i,j;
+for(i=0;i<rows.length;i++){if(past(rows[i])){rows[i].hidden=true;rows[i].style.display='none';gone++;}}
+if(gone){var keys={},n=0;
+for(i=0;i<rows.length;i++){if(rows[i].hidden)continue;
+var k=rows[i].getAttribute('data-atlas-show')||('row'+i);if(!keys[k]){keys[k]=1;n++;}}
+var cs=document.querySelectorAll('[data-atlas-count]');
+for(j=0;j<cs.length;j++){var l=cs[j].getAttribute('data-atlas-count');cs[j].textContent=n+' '+l+(n===1?'':'s');}}
+var ctas=document.querySelectorAll('[data-atlas-cta][data-atlas-ends]');
+for(i=0;i<ctas.length;i++){if(!past(ctas[i]))continue;
+ctas[i].innerHTML='<span class="ticket-link disabled">This show has already '+'happened \u2014 shown here as part of COMEDY ATLAS\u2019s historical archive.</span>';
+var lds=document.querySelectorAll('script[type="application/ld+json"]');
+for(j=0;j<lds.length;j++){try{var d=JSON.parse(lds[j].textContent),g=d['@graph']||[d],c=0;
+for(var m=0;m<g.length;m++){if(g[m]&&g[m].offers){delete g[m].offers;c=1;}}
+if(c)lds[j].textContent=JSON.stringify(d);}catch(e){}}}
+}catch(e){}})();
+</script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');
