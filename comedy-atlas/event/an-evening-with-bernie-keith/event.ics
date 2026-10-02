@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-with-bernie-keith@comedyatlas.app
+DTSTAMP:20261107T193000Z
+DTSTART:20261107T193000Z
+DTEND:20261107T213000Z
+SUMMARY:An Evening with Bernie Keith
+LOCATION:The Old Savoy Home Of The Deco Theatre\, Abington Square\, Northam
+ pton
+DESCRIPTION:Radio's Bernie Keith back on stage doing stand-up comedy.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/an-evening-with-bernie-ke
+ ith/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-with-bernie-keith
+ /
+END:VEVENT
+END:VCALENDAR

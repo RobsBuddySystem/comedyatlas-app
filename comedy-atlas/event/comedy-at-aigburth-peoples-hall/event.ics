@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-at-aigburth-peoples-hall@comedyatlas.app
+DTSTAMP:20261016T190000Z
+DTSTART:20261016T190000Z
+DTEND:20261016T210000Z
+SUMMARY:Comedy at Aigburth Peoples Hall
+LOCATION:Aigburth Peoples Hall\, Aigburth Vale\, Liverpool
+DESCRIPTION:A fantastic comedy night coming to the APH on Friday 16th Octob
+ er 2026 featuring professional award winning comics\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/comedy-at-aigburth-peoples-hall/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-at-aigburth-peoples-h
+ all/
+END:VEVENT
+END:VCALENDAR

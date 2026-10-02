@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-out-loud-comedy-club-york@comedyatlas.app
+DTSTAMP:20261003T150000Z
+DTSTART:20261003T150000Z
+DTEND:20261003T170000Z
+SUMMARY:Laugh Out Loud Comedy Club York
+LOCATION:City Screen Picturehouse\, 13 Coney Street\, York
+DESCRIPTION:Treat yourself to a laugh - longest running comedy club in York
+ .\nThree professional comedians make you laugh plus top note host and MC.\n
+ More info: https://comedyatlas.app/comedy-atlas/event/laugh-out-loud-comedy
+ -club-york/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-out-loud-comedy-club-y
+ ork/
+END:VEVENT
+END:VCALENDAR

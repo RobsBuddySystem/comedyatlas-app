@@ -220,13 +220,14 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <label for="claim-show">Show name</label>
       <input id="claim-show" type="text" list="claim-show-list" autocomplete="off"
              placeholder="Start typing the show's name…">
+      <input id="claim-show-id" type="hidden" value="">
       <datalist id="claim-show-list"></datalist>
       <div class="msg" id="claim-show-hint" style="color:var(--muted)"></div>
       <label for="claim-name">Your name</label>
       <input id="claim-name" type="text">
       <label for="claim-contact">Your contact (kept internal)</label>
       <input id="claim-contact" type="text">
-      <button id="do-claim">Claim this show</button>
+      <button id="do-claim" disabled>Claim this show</button>
       <div class="msg" id="claim-msg"></div>
     </div>
 
@@ -1525,12 +1526,63 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // replaces is the exact bug Robert reported: a real booker has no idea
   // what their internal show_series id is.
   // ------------------------------------------------------------------
-  var claimShowCache = {}; // "Name (City)" -> show_series_id
+  var claimShowRows = [];  // last search results (raw rows)
+  var claimShowCache = {}; // "Name (City) @ Venue" -> show_series_id
+  var claimShowSelectedId = null; // the id the Claim button will use
   var claimShowDebounce = null;
+  var claimShowSeq = 0;    // drops answers to superseded searches
 
   function claimShowLabel(s) {
     return s.name + (s.city_name ? " (" + s.city_name + ")" : "") +
       (s.venue_name ? " @ " + s.venue_name : "");
+  }
+
+  // Resolve the typed text to ONE known show, or null. Exact datalist label
+  // wins (case-insensitive); otherwise a bare show name that matches exactly
+  // one known row. Never guesses between two rows.
+  function claimShowResolve(typed) {
+    var t = (typed || "").trim().toLowerCase();
+    if (!t) return null;
+    var hits = claimShowRows.filter(function (s) {
+      return claimShowLabel(s).toLowerCase() === t;
+    });
+    if (!hits.length) {
+      hits = claimShowRows.filter(function (s) { return (s.name || "").trim().toLowerCase() === t; });
+    }
+    return hits.length === 1 ? hits[0] : null;
+  }
+
+  // Single place that keeps the hidden id field, the state and the button in step.
+  function claimShowSetSelected(id) {
+    claimShowSelectedId = id || null;
+    document.getElementById("claim-show-id").value = id ? String(id) : "";
+    document.getElementById("do-claim").disabled = !id;
+  }
+
+  function claimShowSyncSelection() {
+    var typed = document.getElementById("claim-show").value;
+    var row = claimShowResolve(typed);
+    claimShowSetSelected(row ? row.show_series_id : null);
+    return row;
+  }
+
+  function claimShowSearch(q) {
+    var seq = ++claimShowSeq;
+    return A.get("/booker/shows/search?q=" + encodeURIComponent(q)).then(function (rows) {
+      if (seq !== claimShowSeq) return null; // a newer search won
+      claimShowRows = rows;
+      claimShowCache = {};
+      var dl = document.getElementById("claim-show-list");
+      dl.innerHTML = "";
+      rows.forEach(function (s) {
+        var label = claimShowLabel(s);
+        claimShowCache[label] = s.show_series_id;
+        var o = document.createElement("option");
+        o.value = label;
+        dl.appendChild(o);
+      });
+      return rows;
+    });
   }
 
   document.getElementById("claim-show").addEventListener("input", function () {
@@ -1538,38 +1590,34 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var hint = document.getElementById("claim-show-hint");
     clearTimeout(claimShowDebounce);
     var q = input.value.trim();
+    // The text already IS a known suggestion (the browser fires `input` again
+    // when a datalist option is picked): keep the id, do NOT re-search -- the
+    // API matches the NAME only, so searching the full label finds nothing
+    // (2026-10-01: a real booker could never claim a show because of this).
+    var row = claimShowSyncSelection();
+    if (row) {
+      hint.textContent = "Selected: " + claimShowLabel(row);
+      return;
+    }
     if (q.length < 2) {
       hint.textContent = "";
       return;
     }
     claimShowDebounce = setTimeout(function () {
-      A.get("/booker/shows/search?q=" + encodeURIComponent(q)).then(function (rows) {
-        var dl = document.getElementById("claim-show-list");
-        dl.innerHTML = "";
-        claimShowCache = {};
-        rows.forEach(function (s) {
-          var label = claimShowLabel(s);
-          claimShowCache[label] = s.show_series_id;
-          var o = document.createElement("option");
-          o.value = label;
-          dl.appendChild(o);
-        });
-        hint.textContent = rows.length
-          ? rows.length + " match(es) — pick one from the list."
-          : "No matching show found — try a shorter name, or use \"Create a show\" below if it's not listed yet.";
+      claimShowSearch(q).then(function (rows) {
+        if (rows === null) return;
+        var sel = claimShowSyncSelection();
+        hint.textContent = sel
+          ? "Selected: " + claimShowLabel(sel)
+          : rows.length
+            ? rows.length + " match(es) — pick one from the list."
+            : "No matching show found — try a shorter name, or use \"Create a show\" below if it's not listed yet.";
       }).catch(function () { hint.textContent = ""; });
     }, 250);
   });
 
-  document.getElementById("do-claim").addEventListener("click", function () {
+  function claimShowSubmit(showId) {
     var msg = document.getElementById("claim-msg");
-    var typed = document.getElementById("claim-show").value.trim();
-    var showId = claimShowCache[typed];
-    if (!showId) {
-      msg.textContent = "Type the show's name and pick one of the suggested matches.";
-      msg.className = "msg error";
-      return;
-    }
     A.post("/booker/shows/" + showId + "/claim", {
       claimant_name: document.getElementById("claim-name").value,
       claimant_contact: document.getElementById("claim-contact").value,
@@ -1586,7 +1634,26 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to submit claim.";
       msg.className = "msg error";
     });
+  }
+
+  document.getElementById("do-claim").addEventListener("click", function () {
+    var msg = document.getElementById("claim-msg");
+    var typed = document.getElementById("claim-show").value.trim();
+    var notFound = function () {
+      msg.textContent = "Type the show's name and pick one of the suggested matches.";
+      msg.className = "msg error";
+    };
+    if (claimShowSelectedId) { claimShowSubmit(claimShowSelectedId); return; }
+    // Button is normally disabled without a selection; this covers a click
+    // that races the debounce (typed the exact name and clicked at once).
+    if (typed.length < 2) { notFound(); return; }
+    claimShowSearch(typed).then(function (rows) {
+      if (rows === null) return;
+      var row = claimShowSyncSelection();
+      if (row) { claimShowSubmit(row.show_series_id); } else { notFound(); }
+    }).catch(notFound);
   });
+  claimShowSetSelected(null);
 
   // ------------------------------------------------------------------
   // My venue calendar

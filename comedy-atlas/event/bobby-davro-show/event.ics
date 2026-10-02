@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bobby-davro-show@comedyatlas.app
+DTSTAMP:20261107T193000Z
+DTSTART:20261107T193000Z
+DTEND:20261107T213000Z
+SUMMARY:Bobby Davro show
+LOCATION:Blaby And Whetstone Social Club\, 1 Warwick Road\, Whetstone\, Lei
+ cester
+DESCRIPTION:An evening with Bobby Davro.\nAdult only show\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/bobby-davro-show/
+URL:https://comedyatlas.app/comedy-atlas/event/bobby-davro-show/
+END:VEVENT
+END:VCALENDAR

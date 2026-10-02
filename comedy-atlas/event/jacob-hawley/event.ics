@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jacob-hawley@comedyatlas.app
+DTSTAMP:20261125T193000Z
+DTSTART:20261125T193000Z
+DTEND:20261125T213000Z
+SUMMARY:Jacob Hawley
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:The Screen Rot Podcast's Jacob Hawley presents a bold new hour 
+ of blistering stand-up\, questionable opinions\, and stories.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/jacob-hawley/
+URL:https://comedyatlas.app/comedy-atlas/event/jacob-hawley/
+END:VEVENT
+END:VCALENDAR

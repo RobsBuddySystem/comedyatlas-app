@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:olga-koch@comedyatlas.app
+DTSTAMP:20261110T193000Z
+DTSTART:20261110T193000Z
+DTEND:20261110T213000Z
+SUMMARY:Olga Koch
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Olga Koch has one good story. Only it's not really her story. D
+ o you wanna hear it?\nMore info: https://comedyatlas.app/comedy-atlas/event
+ /olga-koch/
+URL:https://comedyatlas.app/comedy-atlas/event/olga-koch/
+END:VEVENT
+END:VCALENDAR

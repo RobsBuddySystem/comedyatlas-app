@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kts-comedy-club-at-st-michael-s-pub@comedyatlas.app
+DTSTAMP:20261113T200000Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:KTS Comedy Club at St Michael's Pub
+LOCATION:St Michael's Pub\, Liverpool Road\, Manchester
+DESCRIPTION:KTS Comedy Club comes to St Michael's Pub for a great night of 
+ stand-up comedy.\nMore info: https://comedyatlas.app/comedy-atlas/event/kts
+ -comedy-club-at-st-michael-s-pub/
+URL:https://comedyatlas.app/comedy-atlas/event/kts-comedy-club-at-st-michae
+ l-s-pub/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cloud-cuckoo-comedy-night@comedyatlas.app
+DTSTAMP:20261018T180000Z
+DTSTART:20261018T180000Z
+DTEND:20261018T200000Z
+SUMMARY:Cloud Cuckoo Comedy night
+LOCATION:Cuckoo (Prestwich)\, 395 Bury New Road\, Manchester
+DESCRIPTION:A monthly comedy showcase featuring hand-picked acts from the N
+ orth West and beyond\nMore info: https://comedyatlas.app/comedy-atlas/event
+ /cloud-cuckoo-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/cloud-cuckoo-comedy-night/
+END:VEVENT
+END:VCALENDAR

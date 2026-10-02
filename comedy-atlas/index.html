@@ -200,12 +200,43 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
    there is never a size flip after first paint), the figure widens into
    a real stage. aspect-ratio reserves the full box before any module
    loads -- the mount can never shift layout. */
-html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
+/* MAP CARD (2026-10-01, Robert: "move the list out of the map"). The globe
+   hero is no longer a 460px square with a panel floating over it: the figure
+   spans the hero row and the stage is a WIDE card (map + a 340px rail beside
+   it; map on top and a sheet below it on a portrait phone). The card's height
+   is reserved here in CSS before any module loads, so mounting causes no
+   layout shift. */
+html.atlas-ghero .atlas-hero{flex-wrap:wrap;padding-top:28px}
+html.atlas-ghero .atlas-hero-copy{flex:1 1 100%}
+html.atlas-ghero .atlas-hero-figure{flex:1 1 100%;width:100%;max-width:100%}
 .atlas-hero-globe-stage{position:relative;width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden}
+html.atlas-ghero .atlas-hero-globe-stage{aspect-ratio:auto;height:var(--atlas-map-card-h,clamp(380px,58vh,540px))}
+html.atlas-ghero .atlas-hero-globe-stage .atlas-hero-globe-fallback{display:flex;justify-content:center;height:100%}
+html.atlas-ghero .atlas-hero-globe-stage .atlas-hero-globe-fallback img{width:auto;max-width:100%;height:100%}
 .atlas-hero-globe-stage .atlas-hero-globe-fallback img{width:100%;height:100%;object-fit:contain;display:block}
 .atlas-hero-globe-stage .atlas-globe-shell,.atlas-hero-globe-stage .atlas-map-root{position:absolute;inset:0}
 .atlas-hero-globe-counts{font-size:12px;color:var(--atlas-muted,#8899aa);margin:8px 2px 0;min-height:1.2em}
-@media(max-width:760px){html.atlas-ghero .atlas-hero-figure{width:clamp(260px,88vw,380px)}}
+/* Portrait phone: map (55svh) + search row above it (62px) + sheet peek
+   (140px), reserved up front. The mounted card is exactly this tall at
+   "peek"; the sheet growing to half/full is the visitor's own action. */
+@media(max-width:760px){
+  html.atlas-ghero .atlas-hero-globe-stage{height:auto;min-height:calc(62px + 55svh + 140px)}
+  html.atlas-ghero .atlas-hero-globe-stage .atlas-map-root{position:relative;inset:auto;height:auto}
+  html.atlas-ghero .atlas-hero-globe-stage .atlas-map-shell{height:auto}
+}
+/* Short landscape phone (844x390): the sticky nav would sit over the card
+   and the cookie bar over its lower third, so the nav scrolls away and the
+   card is sized to fit between them. */
+@media(min-width:761px) and (max-height:520px){
+  html.atlas-ghero{--atlas-map-card-h:max(230px,calc(100svh - 140px))}
+  html.atlas-ghero nav{position:static}
+  html.atlas-ghero .atlas-hero{padding-top:8px;padding-bottom:8px}
+  html.atlas-ghero .atlas-hero-globe-stage{scroll-margin-top:8px}
+}
+/* Scrolling the card into view must land it BELOW the sticky nav. */
+html.atlas-ghero .atlas-hero-globe-stage{scroll-margin-top:96px}
+@media(max-width:760px){html.atlas-ghero .atlas-hero-globe-stage{scroll-margin-top:128px}}
+@media(min-width:761px) and (max-height:520px){html.atlas-ghero .atlas-hero-globe-stage{scroll-margin-top:8px}}
 /* BUGFIX (2026-08-16): this rule shipped in 749889f ("globe-first hero")
    with a comment claiming the hero column's own search "an inch away"
    already covered this -- it did not. `.atlas-search` (below, ~line 397)
@@ -249,6 +280,7 @@ html.atlas-ghero .atlas-hero-figure{width:clamp(300px,34vw,460px)}
      it, same as every other block on the page. */
   .atlas-hero{flex-direction:column-reverse;align-items:stretch;text-align:center;gap:12px}
   .atlas-hero-figure{width:clamp(96px,32vw,140px);align-self:center}
+  html.atlas-ghero .atlas-hero-figure{width:100%;align-self:stretch}
   .atlas-mission{max-width:none}
   .atlas-cta-row{justify-content:center}
 }
@@ -709,6 +741,19 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   <ul class="card-grid atlas-home-citygrid" id="atlas-home-citygrid-list" role="list"></ul>
 </section>
 
+<!-- Public newsletter sign-up (Robert approved 2026-09-26 23:54, "yes
+     build the newsletter signup"). data-capability marks the TRUE state of
+     the sign-up mechanism itself, per Gate 0's registry
+     (scripts/atlas_capability_registry.py) -- distinct from the
+     `newsletter` capability (writing/sending actual issues), which stays
+     planned. Rendered by atlas-newsletter.js into the empty mount div;
+     posts to the shared Atlas API, same origin logic as every other
+     atlas-*.js widget on this page. -->
+<section class="atlas-section" data-capability="newsletter_signup" data-capability-state="live"
+         style="padding:32px 20px">
+  <div id="atlas-newsletter-mount"></div>
+</section>
+
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
   <!-- 2026-08-13 internal-linking fix: the root homepage build strips the
@@ -729,6 +774,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-track.js"></script>
 <script src="atlas-pwa.js"></script>
 <script src="atlas-common.js"></script>
+<script src="atlas-newsletter.js"></script>
 <!-- ATLAS_HOME_ENABLED city grid init -- must load after atlas-common.js
      (needs window.AtlasCommon) but the #atlas-home-citygrid markup itself
      lives earlier in the body, before <footer>; see the big comment there
@@ -1055,7 +1101,12 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var inputEl = document.getElementById("atlas-q");
     if (!inputEl) return;
     import("./globe/search.js").then(function (searchMod) {
-      var dropdownEl = document.getElementById("atlas-q-suggest");
+      // 2026-10-01: with the MapLibre card the hero search's results render
+      // IN the rail beside the map (#atlas-map-hero-results), never as a
+      // dropdown laid over the map; the plain form's own #atlas-q-suggest
+      // remains the fallback (three.js provider / no card).
+      var dropdownEl = document.getElementById("atlas-map-hero-results")
+        || document.getElementById("atlas-q-suggest");
 
       function mountIt() {
         if (heroSearchHandle) return;
@@ -1147,7 +1198,6 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var fb = root.querySelector(".atlas-hero-globe-fallback");
       if (fb) { fb.setAttribute("aria-hidden", "true"); }
       heroGlobeCounts();
-      initHeroSearchBridge();
     }
     // PROVIDER SWITCH (2026-08-01). "maplibre" is the real map (NASA Blue
     // Marble WMTS at world zoom, OpenFreeMap streets at city zoom, real
@@ -1160,6 +1210,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     } else {
       mountAtlasThreeGlobe(root);
     }
+    // After the provider has built its DOM: the MapLibre card owns the
+    // element the hero search renders its results into (see the bridge).
+    if (window.ATLAS_GLOBE_HERO) initHeroSearchBridge();
   }
 
   /* MapLibre provider mount. Loads the vendored maplibre-gl (no CDN), then
@@ -1177,28 +1230,65 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
     var shell = document.createElement("div");
     shell.className = "atlas-globe-root atlas-map-root";
+    /* LAYOUT (2026-10-01): map and details are SIBLINGS, never layered. The
+       search field (phone only; >=761px the hero's own #atlas-q drives the
+       map) sits above the map, and the results, city and venue details all
+       render in the rail/sheet beside or below it. */
     shell.innerHTML =
-      '<div class="atlas-globe-shell">'
-      + '<div class="atlas-map-canvas" style="position:absolute;inset:0"></div>'
+      '<div class="atlas-map-shell">'
       + '<div class="atlas-globe-topbar">'
-      +   '<div class="atlas-globe-brand"><div class="atlas-globe-wordmark">COMEDY ATLAS</div>'
-      +   '<div class="atlas-globe-tagline">The world of stand-up comedy.</div></div>'
+      +   '<div class="atlas-globe-brand"><div class="atlas-globe-wordmark">COMEDY ATLAS</div></div>'
       +   '<div class="atlas-globe-search"><input type="search" autocomplete="off" '
       +     'placeholder="Search comics, shows, venues, festivals…" '
       +     'aria-label="Search Comedy Atlas" role="combobox" aria-autocomplete="list" '
-      +     'aria-expanded="false" aria-controls="atlas-map-search-results">'
-      +     '<div id="atlas-map-search-results" class="atlas-map-search-results" '
-      +       'role="listbox" aria-label="Comedy Atlas search results" hidden></div></div>'
+      +     'aria-expanded="false" aria-controls="atlas-map-search-results"></div>'
       + '</div>'
-      + '<div class="atlas-globe-panel-col" data-role="panel"></div>'
+      + '<div class="atlas-map-body">'
+      +   '<div class="atlas-map-stage"><div class="atlas-map-canvas"></div></div>'
+      +   '<aside class="atlas-map-rail" data-state="peek" aria-label="Map details">'
+      +     '<button type="button" class="atlas-map-rail-grip" aria-expanded="false" '
+      +       'aria-controls="atlas-map-rail-body" aria-label="Resize details panel">'
+      +       '<span class="atlas-map-rail-grip-bar"></span></button>'
+      +     '<div class="atlas-map-rail-body" id="atlas-map-rail-body">'
+      +       '<div id="atlas-map-search-results" class="atlas-map-search-results" '
+      +         'role="listbox" aria-label="Comedy Atlas search results" hidden></div>'
+      +       '<div id="atlas-map-hero-results" class="atlas-map-search-results" hidden></div>'
+      +       '<div class="atlas-globe-panel-col" data-role="panel"></div>'
+      +       '<p class="atlas-map-rail-empty">Tap a city or a pin on the map to see its shows here.</p>'
+      +     '</div>'
+      +   '</aside>'
+      + '</div>'
       + '</div>';
     root.innerHTML = "";
     root.appendChild(shell);
 
     var canvasEl = shell.querySelector(".atlas-map-canvas");
     var panelEl = shell.querySelector('[data-role="panel"]');
+    var railEl = shell.querySelector(".atlas-map-rail");
+    var gripEl = shell.querySelector(".atlas-map-rail-grip");
     var inputEl = shell.querySelector(".atlas-globe-search input");
     var searchResultsEl = shell.querySelector("#atlas-map-search-results");
+
+    // Portrait sheet: peek / half / full. Tap the grip to cycle. (On wider
+    // screens the rail is a fixed column and these states are inert.)
+    function setRailState(state) {
+      railEl.setAttribute("data-state", state);
+      gripEl.setAttribute("aria-expanded", state === "peek" ? "false" : "true");
+    }
+    // The hero search (>=761px) fills #atlas-map-hero-results; mirror its
+    // open/closed state onto the rail so the results replace the details.
+    var heroResultsEl = shell.querySelector("#atlas-map-hero-results");
+    if (window.MutationObserver) {
+      new MutationObserver(function () {
+        var open = !heroResultsEl.hidden;
+        railEl.classList.toggle("is-searching", open);
+        if (open) setRailState("half");
+      }).observe(heroResultsEl, { attributes: true, attributeFilter: ["hidden"] });
+    }
+    gripEl.addEventListener("click", function () {
+      var cur = railEl.getAttribute("data-state");
+      setRailState(cur === "peek" ? "half" : (cur === "half" ? "full" : "peek"));
+    });
 
     var script = document.createElement("script");
     script.src = "vendor/maplibre-gl/maplibre-gl.js";
@@ -1207,16 +1297,21 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         var handle = mod.mount(canvasEl, {
           worldDataUrl: "../data/map/cities.geojson",
           cityDataUrlFor: function (slug) { return "../data/map/cities/" + slug + ".json"; },
-          onCitySelected: function (payload) { renderCityPanel(payload); },
-          onVenueSelected: function (venue) { renderVenuePanel(payload_venue(venue)); }
+          onCitySelected: function (payload) { currentCity = payload; renderCityPanel(payload); },
+          onVenueSelected: function (venue) { renderVenuePanel(venue); },
+          onClusterSelected: function (venues) { renderClusterList(venues); }
         });
+        var currentCity = null;
         // Hands this provider's handle to the hero search bridge above, so
         // a city chosen from `#atlas-q` (>=761px) can fly THIS map -- see
         // "HERO SEARCH -> GLOBE BRIDGE"'s own header comment for why the
         // two providers need different id shapes (slug here, not id).
         setHeroGlobeHandle(handle, "maplibre");
 
-        function payload_venue(v) { return v; }
+        function pickVenue(v) {
+          handle.focusVenue(v);
+          renderVenuePanel(v);
+        }
 
         function renderCityPanel(payload) {
           panelEl.innerHTML = "";
@@ -1236,15 +1331,56 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           var cityHref = slug ? "city/" + slug + "/" : null;
           var summary = mod.__internal.buildCityMapSummary(document, payload, cityHref);
           box.appendChild(summary);
+          // The keyboard / screen-reader route to every pin, and the tap
+          // route to venues hidden inside a cluster.
+          var list = mod.__internal.buildCityVenueList(document, payload, pickVenue);
+          if (list.children.length) {
+            var head = document.createElement("h3");
+            head.className = "atlas-map-rail-section";
+            head.textContent = "Venues";
+            box.appendChild(head);
+            box.appendChild(list);
+          }
           panelEl.appendChild(box);
+          setRailState("half");
+        }
+
+        function backToCity() {
+          if (currentCity) renderCityPanel(currentCity);
+        }
+
+        function addBackButton(box) {
+          if (!currentCity) return;
+          var back = document.createElement("button");
+          back.type = "button";
+          back.className = "atlas-map-back";
+          back.textContent = "\u2190 All venues in " + ((currentCity.city && currentCity.city.name) || "this city");
+          back.addEventListener("click", backToCity);
+          box.appendChild(back);
         }
 
         function renderVenuePanel(venue) {
           panelEl.innerHTML = "";
           var box = document.createElement("div");
           box.className = "atlas-globe-panel";
+          addBackButton(box);
           box.appendChild(mod.__internal.buildVenuePanel(document, venue));
           panelEl.appendChild(box);
+          setRailState("half");
+        }
+
+        function renderClusterList(venues) {
+          panelEl.innerHTML = "";
+          var box = document.createElement("div");
+          box.className = "atlas-globe-panel";
+          addBackButton(box);
+          var h = document.createElement("h2");
+          h.className = "atlas-map-venue-panel-name";
+          h.textContent = venues.length + " venues at this spot";
+          box.appendChild(h);
+          box.appendChild(mod.__internal.buildCityVenueList(document, { venues: venues }, renderVenuePanel));
+          panelEl.appendChild(box);
+          setRailState("half");
         }
 
         /* One search surface, one canonical inventory. The old implementation
@@ -1261,6 +1397,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         function setSearchOpen(open) {
           searchResultsEl.hidden = !open;
           inputEl.setAttribute("aria-expanded", open ? "true" : "false");
+          // Results take over the rail (never a layer over the map).
+          railEl.classList.toggle("is-searching", open);
+          if (open) setRailState("half");
         }
 
         function addSearchStatus(text, role) {
@@ -1386,6 +1525,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           if (ev.key === "Escape" && handle.isSelectionLocked()) {
             handle.clearSelection();
             panelEl.innerHTML = "";
+            currentCity = null;
+            setRailState("peek");
           }
         });
 
@@ -1394,7 +1535,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           isSelectionLocked: function () { return handle.isSelectionLocked(); },
           getSelectedCity: function () { return handle.getSelectedCity(); },
           selectCity: function (slug) { return handle.selectCity(slug); },
-          clearSelection: function () { handle.clearSelection(); panelEl.innerHTML = ""; }
+          clearSelection: function () { handle.clearSelection(); panelEl.innerHTML = ""; currentCity = null; setRailState("peek"); }
         };
       });
     };

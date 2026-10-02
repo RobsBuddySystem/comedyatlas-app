@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:klk-comedy-tour@comedyatlas.app
+DTSTAMP:20261011T020000Z
+DTSTART:20261011T020000Z
+DTEND:20261011T040000Z
+SUMMARY:KLK Comedy Tour
+LOCATION:New York
+DESCRIPTION:Prime Time Comedy!FEATURING SPECIAL GUEST COMEDIANS...(Lineup c
+ oming soon)\nMore info: https://comedyatlas.app/comedy-atlas/event/klk-come
+ dy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/klk-comedy-tour/
+END:VEVENT
+END:VCALENDAR

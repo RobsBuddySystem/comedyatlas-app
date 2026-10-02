@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wendy-wason@comedyatlas.app
+DTSTAMP:20261023T183000Z
+DTSTART:20261023T183000Z
+DTEND:20261023T203000Z
+SUMMARY:Wendy Wason
+LOCATION:Breakneck Comedy\, 28 King Street\, Aberdeen
+DESCRIPTION:Come along and join us for a night full of laughter at Breaknec
+ k Comedy Club\nMore info: https://comedyatlas.app/comedy-atlas/event/wendy-
+ wason/
+URL:https://comedyatlas.app/comedy-atlas/event/wendy-wason/
+END:VEVENT
+END:VCALENDAR

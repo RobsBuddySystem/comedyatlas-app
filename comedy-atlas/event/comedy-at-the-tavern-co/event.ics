@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-at-the-tavern-co@comedyatlas.app
+DTSTAMP:20261015T190000Z
+DTSTART:20261015T190000Z
+DTEND:20261015T210000Z
+SUMMARY:Comedy at The Tavern Co
+LOCATION:Tavern Company\, 619-625 Smithdown Road\, Liverpool
+DESCRIPTION:Live stand up comedy at the Tavern Co\, Smithdown Road with bri
+ lliantly funny professional comedians\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/comedy-at-the-tavern-co/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-at-the-tavern-co/
+END:VEVENT
+END:VCALENDAR

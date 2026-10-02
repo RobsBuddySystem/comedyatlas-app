@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hal-cruttenden-friends@comedyatlas.app
+DTSTAMP:20261202T193000Z
+DTSTART:20261202T193000Z
+DTEND:20261202T213000Z
+SUMMARY:Hal Cruttenden & Friends
+LOCATION:The Wardrobe\, 6 St Peter&#39\;s Square\, Leeds
+DESCRIPTION:Hal Cruttenden presents an evening of laughter alongside a coup
+ le of his comedy chums as he works up material for his next tour\nMore info
+ : https://comedyatlas.app/comedy-atlas/event/hal-cruttenden-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/hal-cruttenden-friends/
+END:VEVENT
+END:VCALENDAR

@@ -792,9 +792,12 @@
    owns size, shape and motion only.
    --------------------------------------------------------------------------- */
 .atlas-map-venue{
-  width:16px;height:16px;border-radius:50%;
-  border:2px solid rgba(255,248,231,.9);
-  box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 2px 6px rgba(0,0,0,.5);
+  /* 2026-10-01: the BUTTON is the 44px tap target and draws nothing itself;
+     the visible pin is the single .atlas-map-venue-pill inside it. Before,
+     a 16px dot plus an offset count badge read as two markers and the dot
+     was far below a finger-sized target. */
+  width:44px;height:44px;border-radius:50%;
+  background:transparent;border:0;box-shadow:none;
   cursor:pointer;padding:0;
   display:flex;align-items:center;justify-content:center;
   /* MUST be absolute, not relative (fixed 2026-09-05).
@@ -825,7 +828,31 @@
 /* A LIVE venue pulses. Everything else is deliberately static: motion is a
    scarce signal and spending it on "upcoming" would make "happening now"
    mean nothing. */
-.atlas-map-venue--live{animation:atlas-venue-pulse 1.8s ease-in-out infinite}
+.atlas-map-venue-pill{
+  box-sizing:border-box;min-width:26px;height:26px;padding:0 7px;border-radius:13px;
+  border:2px solid rgba(255,248,231,.95);
+  box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 2px 6px rgba(0,0,0,.5);
+  display:inline-flex;align-items:center;justify-content:center;
+  font:800 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:#10131a;pointer-events:none;
+}
+.atlas-map-venue--none .atlas-map-venue-pill,
+.atlas-map-venue--live .atlas-map-venue-pill{color:#fff}
+.atlas-map-venue-pill:empty{min-width:16px;width:16px;height:16px;padding:0;border-radius:50%}
+.atlas-map-venue:focus-visible .atlas-map-venue-pill{outline:var(--atlas-globe-focus-ring);outline-offset:3px}
+.atlas-map-venue--live .atlas-map-venue-pill{animation:atlas-venue-pulse 1.8s ease-in-out infinite}
+.atlas-map-cluster{
+  position:absolute;width:44px;height:44px;padding:0;border:0;background:transparent;
+  border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.atlas-map-cluster-bubble{
+  box-sizing:border-box;border-radius:50%;
+  background:#1b2437;color:#fff8e7;border:2px solid #c9a84c;
+  box-shadow:0 0 0 3px rgba(201,168,76,.28), 0 2px 8px rgba(0,0,0,.5);
+  display:inline-flex;align-items:center;justify-content:center;
+  font:800 13px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;pointer-events:none;
+}
+.atlas-map-cluster:focus-visible .atlas-map-cluster-bubble{outline:var(--atlas-globe-focus-ring);outline-offset:3px}
 @keyframes atlas-venue-pulse{
   0%,100%{box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 0 rgba(255,45,111,.55)}
   50%    {box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 10px rgba(255,45,111,0)}
@@ -834,7 +861,7 @@
   /* Honour the preference, but keep the venue DISTINGUISHABLE -- a live
      venue must not become indistinguishable from an upcoming one just
      because motion is off. A permanent ring replaces the pulse. */
-  .atlas-map-venue--live{
+  .atlas-map-venue--live .atlas-map-venue-pill{
     animation:none;
     box-shadow:0 0 0 2px rgba(5,7,11,.55), 0 0 0 7px rgba(255,45,111,.42);
   }
@@ -926,3 +953,124 @@
   border:1px solid var(--atlas-globe-panel-border);
   color:var(--atlas-globe-cream);
 }
+
+
+/* ==========================================================================
+   MAP CARD LAYOUT (2026-10-01). Robert: "move the list out of the map".
+   The details panel and the search results no longer float OVER the map:
+     - desktop and landscape: map on the left, a ~340px rail BESIDE it;
+     - portrait phone: map on top (55svh), the details in a sheet BELOW it
+       (peek / half / full), in normal flow.
+   Nothing here is positioned over `.atlas-map-canvas`.
+   ========================================================================== */
+.atlas-map-root .atlas-map-shell{
+  display:flex;flex-direction:column;
+  position:relative;width:100%;height:100%;
+  min-height:0;max-height:none;overflow:hidden;
+  border-radius:16px;
+  background:var(--atlas-globe-panel-bg);
+  border:1px solid var(--atlas-globe-panel-border);
+}
+.atlas-map-root .atlas-map-body{
+  display:grid;grid-template-columns:minmax(0,1fr) 340px;
+  flex:1 1 auto;min-height:0;
+}
+.atlas-map-root .atlas-map-stage{position:relative;min-width:0;min-height:0;background:#e9e6df}
+.atlas-map-root .atlas-map-canvas{position:absolute;inset:0}
+.atlas-map-root .atlas-map-rail{
+  position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;
+  background:rgba(5,7,11,.97);border-left:1px solid var(--atlas-globe-panel-border);
+}
+.atlas-map-root .atlas-map-rail-grip{display:none}
+.atlas-map-root .atlas-map-rail-body{
+  flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;
+  padding:12px 14px;-webkit-overflow-scrolling:touch;
+}
+.atlas-map-root .atlas-map-rail-empty{margin:0;color:var(--atlas-globe-muted);font-size:13px;line-height:1.5}
+.atlas-map-root .atlas-map-rail-body:has(.atlas-globe-panel-col:not(:empty)) .atlas-map-rail-empty,
+.atlas-map-root .atlas-map-rail.is-searching .atlas-map-rail-empty{display:none}
+/* Panels render IN the rail, in flow. */
+.atlas-map-root .atlas-map-rail .atlas-globe-panel-col{
+  position:static;width:auto;min-width:0;max-width:none;
+  display:flex;flex-direction:column;gap:12px;overflow:visible;pointer-events:auto;
+}
+.atlas-map-root .atlas-map-rail .atlas-globe-panel{
+  background:transparent;border:0;padding:0;backdrop-filter:none;max-height:none;overflow:visible;
+}
+.atlas-map-root .atlas-map-rail.is-searching .atlas-globe-panel-col{display:none}
+/* Search results fill the rail instead of dropping over the map. */
+.atlas-map-root .atlas-map-rail .atlas-map-search-results{
+  position:static;max-height:none;overflow:visible;border:0;border-radius:0;
+  background:transparent;box-shadow:none;padding:0;
+}
+.atlas-map-root .atlas-map-rail .atlas-map-search-results[hidden]{display:none}
+.atlas-map-root .atlas-globe-topbar{
+  position:relative;background:none;padding:10px 12px;gap:8px;flex-wrap:nowrap;
+  border-bottom:1px solid var(--atlas-globe-panel-border);
+}
+.atlas-map-root .atlas-globe-brand{display:none}
+.atlas-map-root .atlas-globe-search{order:0;flex:1 1 auto;max-width:none;margin:0}
+.atlas-map-root .atlas-globe-search input{min-height:44px;font-size:16px}
+
+/* Venue / city content inside the rail */
+.atlas-map-venue-panel-count{margin:0;font-size:13px;font-weight:700;color:var(--atlas-globe-gold)}
+.atlas-map-show-group{display:flex;flex-direction:column;gap:4px}
+.atlas-map-show-all{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 4px;
+  font-size:12.5px;color:var(--atlas-globe-gold);text-decoration:none;
+}
+.atlas-map-show-all:hover{text-decoration:underline}
+.atlas-map-rail-section{
+  margin:14px 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--atlas-globe-gold);
+}
+.atlas-map-venue-list{display:flex;flex-direction:column;gap:6px}
+.atlas-map-venue-row{
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;
+  min-height:44px;padding:8px 10px;border-radius:var(--atlas-globe-radius-sm);
+  background:rgba(255,255,255,.03);border:1px solid var(--atlas-globe-panel-border);
+  color:var(--atlas-globe-cream);font-family:inherit;cursor:pointer;
+}
+.atlas-map-venue-row:hover,.atlas-map-venue-row:focus-visible{border-color:var(--atlas-globe-gold)}
+.atlas-map-venue-row-name{font-size:13px;font-weight:700}
+.atlas-map-venue-row-meta{font-size:11.5px;color:var(--atlas-globe-muted)}
+.atlas-map-back{
+  align-self:flex-start;min-height:44px;padding:0 6px;background:none;border:0;
+  color:var(--atlas-globe-gold);font:600 13px/1 inherit;font-family:inherit;cursor:pointer;
+}
+
+/* Portrait phone: map on top, the rail becomes a sheet UNDER it. */
+@media (max-width:760px){
+  .atlas-map-root .atlas-map-body{display:flex;flex-direction:column}
+  .atlas-map-root .atlas-map-stage{flex:0 0 auto;height:55svh;min-height:260px}
+  .atlas-map-root .atlas-map-rail{
+    border-left:0;border-top:1px solid var(--atlas-globe-panel-border);
+    border-radius:16px 16px 0 0;height:140px;flex:0 0 auto;
+    transition:height .2s ease;
+  }
+  .atlas-map-root .atlas-map-rail[data-state="half"]{height:min(46svh,380px)}
+  .atlas-map-root .atlas-map-rail[data-state="full"]{height:72svh}
+  .atlas-map-root .atlas-map-rail-grip{
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    width:100%;min-height:44px;background:none;border:0;padding:0;cursor:pointer;
+  }
+  .atlas-map-root .atlas-map-rail-grip-bar{width:40px;height:4px;border-radius:999px;background:var(--atlas-globe-muted);opacity:.8}
+  .atlas-map-root .atlas-map-rail-grip:focus-visible{outline:var(--atlas-globe-focus-ring);outline-offset:-3px}
+  .atlas-map-root .atlas-map-rail-body{padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .atlas-map-root .atlas-map-rail{transition:none}
+}
+/* Short landscape phone (e.g. 844x390): rail narrower. */
+@media (min-width:761px) and (max-height:520px){
+  .atlas-map-root .atlas-map-body{grid-template-columns:minmax(0,1fr) 300px}
+}
+
+/* Hero-search results (>=761px) are rendered into the rail too. */
+.atlas-map-root .atlas-map-rail .atlas-globe-search-dropdown{
+  position:static;margin:0;max-height:none;overflow:visible;
+  background:transparent;border:0;border-radius:0;box-shadow:none;
+}
+.atlas-map-root .atlas-map-rail .atlas-globe-search-item{min-height:44px;justify-content:center}
+.atlas-map-root .atlas-map-rail #atlas-map-hero-results[hidden]{display:none}
+.atlas-map-root .atlas-map-rail.is-searching .atlas-map-rail-empty{display:none}

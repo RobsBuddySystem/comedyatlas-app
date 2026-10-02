@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrew-bird@comedyatlas.app
+DTSTAMP:20270303T193000Z
+DTSTART:20270303T193000Z
+DTEND:20270303T213000Z
+SUMMARY:Andrew Bird
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:Back with a brand-new show\, Andrew has just supported Russell 
+ Howard on his recent national tour including four sold ou shows at The Lond
+ on Palladium\nMore info: https://comedyatlas.app/comedy-atlas/event/andrew-
+ bird/
+URL:https://comedyatlas.app/comedy-atlas/event/andrew-bird/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-kay@comedyatlas.app
+DTSTAMP:20261106T193000Z
+DTSTART:20261106T193000Z
+DTEND:20261106T213000Z
+SUMMARY:Phil Kay
+LOCATION:Breakneck Comedy\, 28 King Street\, Aberdeen
+DESCRIPTION:Come along and join us for a night full of laughter at Breaknec
+ k Comedy Club\nMore info: https://comedyatlas.app/comedy-atlas/event/phil-k
+ ay/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-kay/
+END:VEVENT
+END:VCALENDAR

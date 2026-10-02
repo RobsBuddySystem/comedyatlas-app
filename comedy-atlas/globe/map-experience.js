@@ -122,6 +122,112 @@ export function activeShows(shows) {
     || s.status === 'upcoming'));
 }
 
+/** Smallest comfortable touch target (WCAG 2.5.5 / Apple HIG): every venue
+ * and cluster button is at least this many CSS px square, and a tap on the
+ * world-view city dots hits anything drawn within half of it. */
+export const TAP_TARGET_PX = 44;
+
+/** Venue GeoJSON source / clustering (2026-10-01). Nearby venues merge into a
+ * numbered cluster instead of 54 overlapping DOM pins in Paris. */
+export const VENUE_SOURCE_ID = 'atlas-venues';
+export const CLUSTER_RADIUS_PX = 52;
+export const CLUSTER_MAX_ZOOM = 15;
+
+/**
+ * One key per recurring "show" (series). The DB series id when the date has
+ * one, otherwise its normalised title -- mirrors scripts/map_data/build.py's
+ * series_key(), and is computed here from the dates themselves so JSON
+ * generated before 2026-10-01 (no series fields) still groups sensibly.
+ */
+export function seriesKeyFor(show) {
+  if (show && show.showSeriesId !== undefined && show.showSeriesId !== null) {
+    return `sid:${show.showSeriesId}`;
+  }
+  const title = (show && show.title) || '';
+  return `t:${String(title).toLowerCase().split(/\s+/).filter(Boolean).join(' ')}`;
+}
+
+function startMs(show) {
+  const t = show && show.startsAt ? Date.parse(show.startsAt) : NaN;
+  return Number.isFinite(t) ? t : Infinity;
+}
+
+/**
+ * Collapse a venue's current dates into one entry per show (series), each
+ * with its dates and the next one. Sorted by next date. Pure.
+ * @returns {{key:string,id:*,name:string,url:string|null,dates:object[],
+ *   dateCount:number,next:object,nextStartsAt:string|null}[]}
+ */
+export function groupShowsBySeries(shows) {
+  const groups = new Map();
+  for (const s of activeShows(shows)) {
+    const key = seriesKeyFor(s);
+    let g = groups.get(key);
+    if (!g) {
+      g = {
+        key,
+        id: s.showSeriesId === undefined ? null : s.showSeriesId,
+        name: s.showSeriesName || s.title || 'Untitled show',
+        url: s.showSeriesUrl || null,
+        dates: [],
+      };
+      groups.set(key, g);
+    }
+    g.dates.push(s);
+  }
+  const out = [...groups.values()];
+  for (const g of out) {
+    g.dates.sort((a, b) => startMs(a) - startMs(b));
+    g.dateCount = g.dates.length;
+    g.next = g.dates.find((d) => d.status === 'live') || g.dates[0];
+    g.nextStartsAt = g.next.startsAt || null;
+  }
+  out.sort((a, b) => startMs(a.next) - startMs(b.next));
+  return out;
+}
+
+/** {seriesCount, dateCount, nextStartsAt} for one venue. */
+export function venueTotals(venue) {
+  const groups = groupShowsBySeries(venue && venue.shows);
+  return {
+    seriesCount: groups.length,
+    dateCount: groups.reduce((n, g) => n + g.dateCount, 0),
+    nextStartsAt: groups.length ? groups[0].nextStartsAt : null,
+  };
+}
+
+/** "2 shows · 49 dates" -- the one phrase every surface (marker label, aria,
+ * panel header) uses, so they can never disagree. */
+export function formatShowsDates(seriesCount, dateCount) {
+  const s = `${seriesCount} show${seriesCount === 1 ? '' : 's'}`;
+  const d = `${dateCount} date${dateCount === 1 ? '' : 's'}`;
+  return `${s} · ${d}`;
+}
+
+export function venueAriaLabel(venue) {
+  const t = venueTotals(venue);
+  const name = (venue && venue.name) || 'Venue';
+  return t.seriesCount === 0
+    ? `${name} — no upcoming shows`
+    : `${name} — ${formatShowsDates(t.seriesCount, t.dateCount)}`;
+}
+
+/** GeoJSON for the clustered venue source. `epoch` lets the marker sync
+ * ignore features left over from a previous city. */
+export function venuesToFeatureCollection(venues, epoch) {
+  const features = [];
+  (venues || []).forEach((v, idx) => {
+    if (!v || !Number.isFinite(v.longitude) || !Number.isFinite(v.latitude)) return;
+    const t = venueTotals(v);
+    features.push({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [v.longitude, v.latitude] },
+      properties: { idx, epoch, seriesCount: t.seriesCount, dateCount: t.dateCount },
+    });
+  });
+  return { type: 'FeatureCollection', features };
+}
+
 /**
  * Bounds -> MapLibre LngLatBoundsLike, or null when a city has no mapped
  * venue at all. Returning null (rather than a zero-area box or a guessed
@@ -136,16 +242,14 @@ export function boundsToLngLat(bounds) {
   return [[minLng, minLat], [maxLng, maxLat]];
 }
 
-/** Padding that keeps a fitted city clear of the right-hand detail panel
- * (spec §4: "fitBounds with padding for the right panel"). The panel is
- * ~32% wide capped at 380px in globe-chrome.css; this mirrors that. */
+/** Padding for a fitted city. 2026-10-01: the details panel no longer floats
+ * OVER the map -- it lives in a rail beside the map (desktop/landscape) or a
+ * sheet below it (portrait) -- so the camera needs only an even margin; the
+ * old right-hand/bottom reserve existed purely to dodge the overlay. */
 export function fitPaddingFor(viewportWidth) {
-  const panel = Math.min(380, Math.max(260, viewportWidth * 0.32));
-  const isNarrow = viewportWidth < 700;
-  return isNarrow
-    // On mobile the panel is a bottom sheet, not a right column.
-    ? { top: 60, bottom: Math.round(viewportWidth * 0.9), left: 40, right: 40 }
-    : { top: 80, bottom: 80, left: 80, right: Math.round(panel + 48) };
+  const narrow = viewportWidth < 700;
+  const m = narrow ? 36 : 56;
+  return { top: m, bottom: m, left: m, right: m };
 }
 
 /** Idle world-view spin, degrees/sec. Matches the old globe's feel. */
@@ -224,6 +328,18 @@ export function mount(rootEl, opts) {
     center: [-25, 15],
     zoom: 1.4,
     attributionControl: { compact: true },
+  });
+  // The compact attribution control opens itself on load and, on a phone, sat
+  // over ~130px of the map. Collapse it; the (i) button still opens it, so
+  // the required credit is one tap away, never removed.
+  map.on('load', () => {
+    try {
+      const attrib = rootEl.querySelector && rootEl.querySelector('.maplibregl-ctrl-attrib');
+      if (attrib) {
+        attrib.classList.remove('maplibregl-compact-show');
+        attrib.removeAttribute('open');
+      }
+    } catch (_e) { /* cosmetic only */ }
   });
   // Globe projection: the spec's requirement, and what keeps the world view
   // reading as a planet rather than a flat Mercator sheet.
@@ -343,8 +459,17 @@ export function mount(rootEl, opts) {
         'circle-opacity': 0.9,
       },
     });
-    map.on('click', 'atlas-city-glow', (ev) => {
-      const f = ev.features && ev.features[0];
+    // Hit area: anything drawn within half a tap target (22px) of the tap,
+    // not just the 2-26px dot itself -- a fingertip is ~44px.
+    map.on('click', (ev) => {
+      const r = TAP_TARGET_PX / 2;
+      const p = ev.point || { x: 0, y: 0 };
+      let hits = [];
+      try {
+        hits = map.queryRenderedFeatures(
+          [[p.x - r, p.y - r], [p.x + r, p.y + r]], { layers: ['atlas-city-glow'] }) || [];
+      } catch (_e) { hits = []; }
+      const f = hits[0];
       if (f && f.properties && f.properties.slug) selectCity(f.properties.slug);
     });
     map.on('mouseenter', 'atlas-city-glow', () => {
@@ -367,7 +492,6 @@ export function mount(rootEl, opts) {
   let rafHandle = null;
   let lastFrameAt = null;
   let destroyed = false;
-  let venueMarkers = [];
 
   /**
    * "The user navigated here by hand" (Bug A, 2026-08-16) -- deliberately a
@@ -443,37 +567,175 @@ export function mount(rootEl, opts) {
   }
   rafHandle = requestAnimationFrame(tick);
 
+  /* ---------------------------------------------------------------- *
+   * VENUE MARKERS (2026-10-01 rewrite). A MapLibre-native clustered
+   * GeoJSON source decides what is a cluster and what is a single venue;
+   * each result is drawn as ONE accessible <button> (>=44px hit area, a
+   * smaller visual inside) so a venue is never two circles, 54 Paris pins
+   * merge into numbered clusters, and every tap target is finger-sized.
+   * The label on a venue is its number of DISTINCT shows, not dated rows.
+   * ---------------------------------------------------------------- */
+  let currentVenues = [];
+  let dataEpoch = 0;
+  let markerById = new Map();
+  let pendingVenuePayload = null;
+
   function clearVenueMarkers() {
-    for (const m of venueMarkers) m.remove();
-    venueMarkers = [];
+    for (const m of markerById.values()) m.remove();
+    markerById = new Map();
+    currentVenues = [];
+    const src = map.getSource && map.getSource(VENUE_SOURCE_ID);
+    if (src && typeof src.setData === 'function') {
+      try { src.setData({ type: 'FeatureCollection', features: [] }); } catch (_e) { /* map gone */ }
+    }
   }
+
+  function ensureVenueSource() {
+    if (map.getSource(VENUE_SOURCE_ID)) return true;
+    try {
+      map.addSource(VENUE_SOURCE_ID, {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+        cluster: true,
+        clusterRadius: CLUSTER_RADIUS_PX,
+        clusterMaxZoom: CLUSTER_MAX_ZOOM,
+        clusterProperties: { shows: ['+', ['get', 'seriesCount']] },
+      });
+      // MapLibre only tiles a source some layer uses; this layer draws
+      // nothing (the visible pins are the DOM buttons) but keeps it live.
+      map.addLayer({
+        id: 'atlas-venues-anchor', type: 'circle', source: VENUE_SOURCE_ID,
+        paint: { 'circle-radius': 1, 'circle-opacity': 0 },
+      });
+      return true;
+    } catch (_e) {
+      return false; // style not ready yet -- caller retries on 'idle'
+    }
+  }
+
+  function venueButton(venue) {
+    const state = venueState(venue.shows);
+    const totals = venueTotals(venue);
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = `atlas-map-venue atlas-map-venue--${state}`;
+    el.setAttribute('aria-label', venueAriaLabel(venue));
+    const pill = document.createElement('span');
+    pill.className = 'atlas-map-venue-pill';
+    pill.style.background = VENUE_STATE_COLORS[state];
+    pill.textContent = totals.seriesCount > 0 ? String(totals.seriesCount) : '';
+    el.appendChild(pill);
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      if (typeof options.onVenueSelected === 'function') options.onVenueSelected(venue);
+    });
+    return el;
+  }
+
+  function clusterButton(feature) {
+    const props = feature.properties || {};
+    const count = props.point_count || 0;
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'atlas-map-cluster';
+    el.setAttribute('aria-label',
+      `${count} venues, ${props.shows || 0} show${props.shows === 1 ? '' : 's'} — zoom in`);
+    const bubble = document.createElement('span');
+    bubble.className = 'atlas-map-cluster-bubble';
+    bubble.textContent = String(count);
+    // 30px for 2 venues up to 42px for 40+, always inside the 44px button.
+    const size = Math.round(30 + Math.min(12, Math.log2(Math.max(2, count)) * 2.2));
+    bubble.style.width = bubble.style.height = `${size}px`;
+    el.appendChild(bubble);
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      expandCluster(feature);
+    });
+    return el;
+  }
+
+  function lngLatOf(feature) {
+    return feature.geometry && feature.geometry.coordinates;
+  }
+
+  async function expandCluster(feature) {
+    const src = map.getSource(VENUE_SOURCE_ID);
+    const id = feature.properties.cluster_id;
+    const center = lngLatOf(feature);
+    let zoom = NaN;
+    let leaves = [];
+    try {
+      zoom = await src.getClusterExpansionZoom(id);
+      leaves = await src.getClusterLeaves(id, 200, 0);
+    } catch (_e) { /* fall through to a plain zoom-in */ }
+    const venues = leaves
+      .map((l) => currentVenues[l.properties && l.properties.idx])
+      .filter(Boolean);
+    // Venues that share (almost) one point can never be pulled apart by
+    // zooming -- list them instead (the rail), so none is unreachable.
+    const coLocated = venues.length > 1 && venues.every((v) =>
+      Math.abs(v.latitude - venues[0].latitude) < 0.00005
+      && Math.abs(v.longitude - venues[0].longitude) < 0.00005);
+    if (coLocated) {
+      if (typeof options.onClusterSelected === 'function') options.onClusterSelected(venues);
+      return;
+    }
+    const target = Number.isFinite(zoom) ? Math.min(zoom + 0.25, 18) : map.getZoom() + 2;
+    map.easeTo({ center, zoom: Math.max(target, map.getZoom() + 0.75), duration: 500 });
+  }
+
+  /** Reconcile DOM buttons with what the cluster source currently yields. */
+  function syncMarkers() {
+    if (destroyed || !currentVenues.length) return;
+    if (!map.getSource(VENUE_SOURCE_ID)) return;
+    if (typeof map.isSourceLoaded === 'function' && !map.isSourceLoaded(VENUE_SOURCE_ID)) return;
+    let feats = [];
+    try { feats = map.querySourceFeatures(VENUE_SOURCE_ID) || []; } catch (_e) { return; }
+    const wanted = new Map();
+    for (const f of feats) {
+      const p = f.properties || {};
+      if (!p.cluster && p.epoch !== dataEpoch) continue; // leftover from an earlier city
+      const key = p.cluster ? `c${p.cluster_id}` : `v${p.idx}`;
+      if (!wanted.has(key)) wanted.set(key, f);
+    }
+    for (const [key, m] of markerById) {
+      if (!wanted.has(key)) { m.remove(); markerById.delete(key); }
+    }
+    for (const [key, f] of wanted) {
+      if (markerById.has(key)) continue;
+      const p = f.properties;
+      let el;
+      if (p.cluster) el = clusterButton(f);
+      else if (currentVenues[p.idx]) el = venueButton(currentVenues[p.idx]);
+      else continue;
+      const marker = new maplibregl.Marker({ element: el })
+        .setLngLat(lngLatOf(f))
+        .addTo(map);
+      markerById.set(key, marker);
+    }
+  }
+  map.on('render', syncMarkers);
 
   function renderVenues(cityPayload) {
     clearVenueMarkers();
-    for (const venue of cityPayload.venues || []) {
-      const shows = activeShows(venue.shows);
-      const state = venueState(venue.shows);
-      const el = document.createElement('button');
-      el.type = 'button';
-      el.className = `atlas-map-venue atlas-map-venue--${state}`;
-      el.style.background = VENUE_STATE_COLORS[state];
-      el.setAttribute('aria-label',
-        `${venue.name} — ${shows.length} show${shows.length === 1 ? '' : 's'}`);
-      if (shows.length > 1) {
-        const badge = document.createElement('span');
-        badge.className = 'atlas-map-venue-badge';
-        badge.textContent = String(shows.length);
-        el.appendChild(badge);
+    const venues = (cityPayload.venues || []).filter(
+      (v) => v && Number.isFinite(v.latitude) && Number.isFinite(v.longitude));
+    if (!ensureVenueSource()) {
+      // The style is still loading (a very early search). Try again once it settles.
+      pendingVenuePayload = cityPayload;
+      if (typeof map.once === 'function') {
+        map.once('idle', () => {
+          const p = pendingVenuePayload;
+          pendingVenuePayload = null;
+          if (p && !destroyed && selectedCity === p) renderVenues(p);
+        });
       }
-      el.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        if (typeof options.onVenueSelected === 'function') options.onVenueSelected(venue);
-      });
-      const marker = new maplibregl.Marker({ element: el })
-        .setLngLat([venue.longitude, venue.latitude])
-        .addTo(map);
-      venueMarkers.push(marker);
+      return;
     }
+    currentVenues = venues;
+    dataEpoch += 1;
+    map.getSource(VENUE_SOURCE_ID).setData(venuesToFeatureCollection(venues, dataEpoch));
+    syncMarkers();
   }
 
   /**
@@ -607,6 +869,20 @@ export function mount(rootEl, opts) {
     selectCity,
     clearSelection,
     isSelectionLocked: () => selectionLocked,
+    /** Fly to one venue (used by the rail's venue list). */
+    focusVenue(venue) {
+      if (venue && Number.isFinite(venue.longitude) && Number.isFinite(venue.latitude)) {
+        map.easeTo({ center: [venue.longitude, venue.latitude],
+          zoom: Math.max(map.getZoom(), 15), duration: 700 });
+      }
+    },
+    /** Test/diagnostic view of what is drawn: [{key,label,aria,w,h}]. */
+    describeMarkers() {
+      return [...markerById.entries()].map(([key, m]) => {
+        const el = m.getElement ? m.getElement() : m.el;
+        return { key, text: el && el.textContent, aria: el && el.getAttribute && el.getAttribute('aria-label') };
+      });
+    },
     getSelectedCity: () => selectedCity,
     destroy() {
       destroyed = true;
@@ -659,8 +935,8 @@ export function buildVenuePanel(doc, venue) {
     wrap.appendChild(addr);
   }
 
-  const shows = activeShows(venue.shows);
-  if (shows.length === 0) {
+  const groups = groupShowsBySeries(venue.shows);
+  if (groups.length === 0) {
     const none = doc.createElement('p');
     none.className = 'atlas-map-venue-panel-address';
     // Honest: catalogued, but nothing currently listed. Never implied to be
@@ -670,7 +946,20 @@ export function buildVenuePanel(doc, venue) {
     return wrap;
   }
 
-  for (const show of shows) {
+  // 2026-10-01: one headline that matches the marker label ("2 shows"), then
+  // each show ONCE with its next date. Eleven weekly dates of one series used
+  // to read as eleven "shows" (Velvet Bar's "11").
+  const totals = venueTotals(venue);
+  const count = doc.createElement('p');
+  count.className = 'atlas-map-venue-panel-count';
+  count.textContent = formatShowsDates(totals.seriesCount, totals.dateCount);
+  wrap.appendChild(count);
+
+  for (const group of groups) {
+    const show = group.next;
+    const card = doc.createElement('div');
+    card.className = 'atlas-map-show-group';
+
     // A real <a href>, not a JS click handler: it must be openable in a new
     // tab, crawlable, and work if scripting fails.
     const a = doc.createElement('a');
@@ -679,12 +968,12 @@ export function buildVenuePanel(doc, venue) {
 
     const title = doc.createElement('span');
     title.className = 'atlas-map-show-title';
-    title.textContent = show.title || 'Untitled show';
+    title.textContent = group.name || 'Untitled show';
     a.appendChild(title);
 
     const when = doc.createElement('span');
     when.className = 'atlas-map-show-when';
-    when.textContent = formatShowWhen(show);
+    when.textContent = `Next: ${formatShowWhen(show)}`;
     a.appendChild(when);
 
     if (show.status === 'live') {
@@ -701,9 +990,56 @@ export function buildVenuePanel(doc, venue) {
         a.appendChild(est);
       }
     }
-    wrap.appendChild(a);
+    card.appendChild(a);
+
+    if (group.dateCount > 1 && group.url) {
+      const all = doc.createElement('a');
+      all.className = 'atlas-map-show-all';
+      all.href = group.url;
+      all.textContent = `See all dates (${group.dateCount})`;
+      card.appendChild(all);
+    }
+    wrap.appendChild(card);
   }
   return wrap;
+}
+
+/**
+ * The rail's venue list for a city (2026-10-01): one button per mapped venue,
+ * labelled with the same "N shows · M dates" phrase as its map marker. This
+ * is also the keyboard/screen-reader route to every pin. `onPick(venue)` is
+ * called on activation. Venues with shows come first, soonest first.
+ */
+export function buildCityVenueList(doc, payload, onPick) {
+  const venues = (Array.isArray(payload && payload.venues) ? payload.venues : [])
+    .filter((v) => v && Number.isFinite(v.latitude) && Number.isFinite(v.longitude));
+  const rows = venues.map((v) => ({ v, t: venueTotals(v) }));
+  rows.sort((a, b) => {
+    if ((a.t.seriesCount > 0) !== (b.t.seriesCount > 0)) return a.t.seriesCount > 0 ? -1 : 1;
+    const ta = a.t.nextStartsAt ? Date.parse(a.t.nextStartsAt) : Infinity;
+    const tb = b.t.nextStartsAt ? Date.parse(b.t.nextStartsAt) : Infinity;
+    return ta - tb;
+  });
+  const list = doc.createElement('div');
+  list.className = 'atlas-map-venue-list';
+  for (const { v, t } of rows) {
+    const b = doc.createElement('button');
+    b.type = 'button';
+    b.className = 'atlas-map-venue-row';
+    if (b.setAttribute) b.setAttribute('aria-label', venueAriaLabel(v));
+    const name = doc.createElement('span');
+    name.className = 'atlas-map-venue-row-name';
+    name.textContent = v.name || 'Venue';
+    b.appendChild(name);
+    const meta = doc.createElement('span');
+    meta.className = 'atlas-map-venue-row-meta';
+    meta.textContent = t.seriesCount > 0
+      ? formatShowsDates(t.seriesCount, t.dateCount) : 'No upcoming dates';
+    b.appendChild(meta);
+    if (b.addEventListener) b.addEventListener('click', () => { if (onPick) onPick(v); });
+    list.appendChild(b);
+  }
+  return list;
 }
 
 /**
@@ -751,12 +1087,16 @@ export function buildCityMapSummary(doc, payload, cityHref) {
   // catalogue lists a venue whether or not a source feeds its calendar).
   // Count them separately -- "66 shows across 10 venues" would be a lie when
   // 7 of the 10 have no dates; "across 3, plus 7 more listed" is the truth.
+  // 2026-10-01: "shows" are DISTINCT shows (a weekly series is one show) and
+  // dates are the dated occurrences, so the header agrees with every marker.
   const venuesWithShows = venues.filter(
     (v) => activeShows(v && v.shows).length > 0);
   const mappedVenueCount = venuesWithShows.length;
   const showlessVenueCount = venues.length - venuesWithShows.length;
-  const mappedShowCount = venues.reduce(
+  const mappedDateCount = venues.reduce(
     (n, v) => n + activeShows(v && v.shows).length, 0);
+  const mappedShowCount = new Set(venues.flatMap(
+    (v) => activeShows(v && v.shows).map(seriesKeyFor))).size;
 
   // Both honest P0-1/2026-08-02 counts, summed rather than explained by
   // cause — see the function docstring above.
@@ -773,7 +1113,7 @@ export function buildCityMapSummary(doc, payload, cityHref) {
   const primary = doc.createElement('p');
   primary.className = 'atlas-map-summary-primary';
   primary.textContent =
-    `${mappedShowCount} upcoming show${mappedShowCount === 1 ? '' : 's'} `
+    `${formatShowsDates(mappedShowCount, mappedDateCount)} `
     + `across ${mappedVenueCount} mapped venue${mappedVenueCount === 1 ? '' : 's'}.`;
   wrap.appendChild(primary);
 
@@ -816,6 +1156,15 @@ export const __internal = {
   formatShowWhen,
   buildVenuePanel,
   buildCityMapSummary,
+  buildCityVenueList,
+  groupShowsBySeries,
+  seriesKeyFor,
+  venueTotals,
+  venueAriaLabel,
+  formatShowsDates,
+  venuesToFeatureCollection,
+  TAP_TARGET_PX,
+  VENUE_SOURCE_ID,
   nasaOpacityForZoom,
   VENUE_STATE_COLORS,
   IDLE_RESUME_DELAY_MS,

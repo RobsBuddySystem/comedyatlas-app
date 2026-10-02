@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subscribed — COMEDY ATLAS</title>
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/newsletter/confirmed.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e1a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--green:#2b7e37}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:520px;margin:0 auto;padding:60px 20px}
+.logo{font-size:22px;font-weight:800;margin-bottom:28px}
+.logo .dot{color:var(--gold)}
+h1{font-size:22px;margin-bottom:8px}
+p{margin-bottom:12px}
+p.sub{color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:8px}
+.state{font-size:14px;color:var(--green);font-weight:700}
+.links{margin-top:24px;font-size:14px}
+.links a{margin-right:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+  <h1 id="nc-title">You're subscribed</h1>
+  <p class="sub" id="nc-sub">Your newsletter sign-up is confirmed.</p>
+
+  <div class="card">
+    <div class="state" id="nc-state">✓ Confirmed</div>
+    <p class="sub" style="margin-top:14px" id="nc-detail">
+      You'll get what's on, new rooms, and comic spotlights — no spam, and
+      every email has a one-click unsubscribe link.
+    </p>
+  </div>
+
+  <div class="links">
+    <a href="/comedy-atlas/">← Back to the Atlas</a>
+  </div>
+</div>
+
+<script>
+/* Bilingual by browser language only -- this page carries no query-string
+   dependent state (the API already did the real work before redirecting
+   here; a failed/expired/unknown token never reaches this page at all,
+   see apps/atlas_api/routes_newsletter.py::confirm -- it 404s instead of
+   redirecting). */
+(function () {
+  if ((navigator.language || "en").slice(0, 2) !== "fr") return;
+  document.documentElement.lang = "fr";
+  document.title = "Inscription confirmée — COMEDY ATLAS";
+  document.getElementById("nc-title").textContent = "Tu es inscrit·e";
+  document.getElementById("nc-sub").textContent = "Ton inscription à la newsletter est confirmée.";
+  document.getElementById("nc-state").textContent = "✓ Confirmée";
+  document.getElementById("nc-detail").textContent =
+    "Tu recevras l'actualité des salles, les nouvelles adresses et nos coups de cœur — pas de spam, et chaque e-mail a un lien de désinscription en un clic.";
+  document.querySelector(".links a").textContent = "← Retour à l'Atlas";
+})();
+</script>
+<script src="/comedy-atlas/atlas-track.js"></script>
+</body>
+</html>

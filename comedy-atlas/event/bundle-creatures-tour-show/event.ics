@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bundle-creatures-tour-show@comedyatlas.app
+DTSTAMP:20270530T163000Z
+DTSTART:20270530T163000Z
+DTEND:20270530T183000Z
+SUMMARY:BUNDLE || Creatures Tour Show
+LOCATION:Creatures Comedy Club\, 42-44 Oldham Street\, Manchester
+DESCRIPTION:Bundle is a one man show created by Marcus Tisson where he brin
+ gs back nostalgic story telling\, music and banter taking you back in time.
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/bundle-creatures-to
+ ur-show/
+URL:https://comedyatlas.app/comedy-atlas/event/bundle-creatures-tour-show/
+END:VEVENT
+END:VCALENDAR

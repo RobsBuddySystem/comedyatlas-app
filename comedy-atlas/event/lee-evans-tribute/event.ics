@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lee-evans-tribute@comedyatlas.app
+DTSTAMP:20261028T193000Z
+DTSTART:20261028T193000Z
+DTEND:20261028T213000Z
+SUMMARY:Lee Evans Tribute
+LOCATION:The Learney Hall\, 11 beltie road\, Aberdeen
+DESCRIPTION:Come along and join us for a night full of laughter\nMore info:
+  https://comedyatlas.app/comedy-atlas/event/lee-evans-tribute/
+URL:https://comedyatlas.app/comedy-atlas/event/lee-evans-tribute/
+END:VEVENT
+END:VCALENDAR

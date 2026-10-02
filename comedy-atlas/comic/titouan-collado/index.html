@@ -12,7 +12,6 @@
 <title>Titouan Collado — Stand-Up Comedian | COMEDY ATLAS</title>
 <meta name="description" content="Titouan Collado on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.">
 <link rel="canonical" href="https://comedyatlas.app/comedy-atlas/comic/titouan-collado/">
-<meta name="robots" content="noindex,follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Titouan Collado — Stand-Up Comedian | COMEDY ATLAS">
 <meta property="og:description" content="Titouan Collado on COMEDY ATLAS — COMEDY ATLAS&#x27;s worldwide stand-up directory.">
@@ -211,59 +210,72 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="follow-status" id="follow-status"></div>
 </div>
 <div class="card claim-box" id="claim-box"
-     data-claim-kind="comic" data-claim-id="12449" data-claim-lang="en">
+     data-claim-kind="comic" data-claim-id="12449" data-claim-lang="fr">
   <div id="claim-unclaimed">
-    <div class="claim-lang-toggle" role="group" aria-label="Language / Langue" style="margin-bottom:8px;display:flex;gap:6px"><button type="button" class="claim-lang-opt" data-claim-lang-opt="en" aria-pressed="true">English</button><button type="button" class="claim-lang-opt" data-claim-lang-opt="fr" aria-pressed="false">Français</button></div>
-    <strong id="claim-heading">Is this your page?</strong>
+    <div class="claim-lang-toggle" role="group" aria-label="Language / Langue" style="margin-bottom:8px;display:flex;gap:6px"><button type="button" class="claim-lang-opt" data-claim-lang-opt="en" aria-pressed="false">English</button><button type="button" class="claim-lang-opt" data-claim-lang-opt="fr" aria-pressed="true">Français</button></div>
+    <strong id="claim-heading">C&#x27;est ta page ?</strong>
     <div class="field-row" id="claim-email-intro" style="margin-top:6px">
-      Enter the email associated with this comic and we'll send a one-click confirmation link. No cost, ever.
+      Indique l'email associé à ce·tte comic et on t'envoie un lien de confirmation en un clic. Toujours gratuit.
     </div>
     <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-      <input type="email" id="claim-email" placeholder="you@example.com"
-             aria-label="Email address to verify this claim">
-      <button type="button" id="claim-request-btn">Send confirmation link</button>
+      <input type="email" id="claim-email" placeholder="toi@exemple.com"
+             aria-label="Adresse email pour vérifier cette revendication">
+      <button type="button" id="claim-request-btn">Envoyer le lien de confirmation</button>
     </div>
     <div class="field-row" id="claim-request-status" style="margin-top:6px" role="status" aria-live="polite"></div>
-    <div class="field-row" style="margin-top:10px;font-size:13px;color:var(--muted)">Don&#x27;t have a page here yet? <a href="/comedy-atlas/login.html?role=comic&amp;lang=en" id="claim-no-account-link">Create a free account →</a> — for a comic who isn&#x27;t listed yet. Already see your name above? Use the email box instead, so you don&#x27;t end up with two pages.</div>
+    <div class="field-row" style="margin-top:10px;font-size:13px;color:var(--muted)">Tu n&#x27;as pas encore de page ici ? <a href="/comedy-atlas/login.html?role=comic&amp;lang=fr" id="claim-no-account-link">Créer un compte gratuit →</a> — pour un·e comic qui n&#x27;est pas encore listé·e. Tu vois déjà ton nom ci-dessus ? Utilise plutôt la case email, pour ne pas te retrouver avec deux pages.</div>
   </div>
   <div id="claim-claimed" style="display:none">
-    <div class="field-row"><strong>✓ Claimed</strong> — this page is managed by its subject.</div>
+    <div class="field-row"><strong>✓ Revendiquée</strong> — cette page est gérée par la personne concernée.</div>
     <button type="button" id="claim-unpublish-btn" style="margin-top:8px">
-      Remove this page (owner only)
+      Supprimer cette page (propriétaire uniquement)
     </button>
     <div class="field-row" id="claim-unpublish-status" style="margin-top:6px"></div>
   </div>
 </div>
 
 <form class="card book-box" id="book-box" data-person-id="12449" data-authorized="false">
-  <div class="book-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)">For bookers</div>
+  <div class="book-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)">Pour les programmateur·rices</div>
   <details open>
-    <summary>Looking to book Titouan Collado? Send a talent request →</summary>
+    <summary>Tu veux booker Titouan Collado ? Envoie une demande →</summary>
     <div class="book-fields">
-      <p class="book-disclosure">COMEDY ATLAS is an independent directory. We are not Titouan Collado's representative and availability is not guaranteed; we forward serious enquiries where possible.</p>
-      <label for="book-name">Your name
+      <p class="book-disclosure">COMEDY ATLAS est un annuaire indépendant. Titouan Collado n’a pas garanti sa disponibilité ici -- ta demande sera transmise, sans promesse de réponse.</p>
+      <label for="book-name">Ton nom
         <input id="book-name" name="name" type="text" required autocomplete="name">
       </label>
-      <label for="book-email">Your email
+      <label for="book-email">Ton email
         <input id="book-email" name="email" type="email" required autocomplete="email">
       </label>
-      <label for="book-date">Event date (optional)
+      <label for="book-date">Date de l&#x27;événement (optionnel)
         <input id="book-date" name="event_date" type="date">
       </label>
-      <label for="book-city">City (optional)
+      <label for="book-city">Ville (optionnel)
         <input id="book-city" name="city" type="text" autocomplete="address-level2">
       </label>
       <label for="book-message">Message
         <textarea id="book-message" name="message" required
                   placeholder="Message"></textarea>
       </label>
-      <button type="submit" id="book-submit-btn" class="book-btn">Send enquiry</button>
+      <button type="submit" id="book-submit-btn" class="book-btn">Envoyer la demande</button>
       <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
-      <noscript><div class="book-status">Enable JavaScript to send a booking enquiry.</div></noscript>
+      <noscript><div class="book-status">Active JavaScript pour envoyer une demande de booking.</div></noscript>
     </div>
   </details>
 </form>
-<h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="empty-state">No past runs on record yet.</div>
+<h2 class="section-heading">Upcoming shows</h2><div class="empty-state">No upcoming dates listed yet.</div><h2 class="section-heading">Past runs</h2><div class="event-card">
+  <div class="event-card-inner">
+    
+    <div class="event-card-body">
+      <div class="event-top">
+        <div class="event-title">Velvet Bar Comedy - Le meilleur du stand-up à Paris !!</div>
+        <div class="event-time">2026-09-23 20:30:00+02:00</div>
+      </div>
+      <div class="event-meta"><span>Velvet Bar</span><span class="sep">·</span><span>Paris</span></div>
+      
+      <a class="ticket-link" href="/comedy-atlas/event/velvet-bar-comedy-le-meilleur-du-stand-up-a-paris-37354/">View &amp; tickets →</a>
+    </div>
+  </div>
+</div><h2 class="section-heading">Shows</h2><div class="chip-row"><a class="chip" href="/comedy-atlas/show/velvet-bar-comedy-le-meilleur-du-stand-up-a-paris/">Velvet Bar Comedy - Le meilleur du stand-up à Paris !!</a></div><h2 class="section-heading">Venues</h2><div class="chip-row"><a class="chip" href="/comedy-atlas/venue/velvet-bar/">Velvet Bar</a></div><h2 class="section-heading">Cities</h2><div class="chip-row"><a class="chip" href="/comedy-atlas/city/paris/">Paris</a></div>
 
 </main>
 
@@ -275,6 +287,26 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
+<script>
+(function(){try{
+var now=Date.now();
+function past(el){var t=Date.parse(el.getAttribute('data-atlas-ends'));return !isNaN(t)&&t<now;}
+var rows=document.querySelectorAll('[data-atlas-row][data-atlas-ends]'),gone=0,i,j;
+for(i=0;i<rows.length;i++){if(past(rows[i])){rows[i].hidden=true;rows[i].style.display='none';gone++;}}
+if(gone){var keys={},n=0;
+for(i=0;i<rows.length;i++){if(rows[i].hidden)continue;
+var k=rows[i].getAttribute('data-atlas-show')||('row'+i);if(!keys[k]){keys[k]=1;n++;}}
+var cs=document.querySelectorAll('[data-atlas-count]');
+for(j=0;j<cs.length;j++){var l=cs[j].getAttribute('data-atlas-count');cs[j].textContent=n+' '+l+(n===1?'':'s');}}
+var ctas=document.querySelectorAll('[data-atlas-cta][data-atlas-ends]');
+for(i=0;i<ctas.length;i++){if(!past(ctas[i]))continue;
+ctas[i].innerHTML='<span class="ticket-link disabled">This show has already '+'happened \u2014 shown here as part of COMEDY ATLAS\u2019s historical archive.</span>';
+var lds=document.querySelectorAll('script[type="application/ld+json"]');
+for(j=0;j<lds.length;j++){try{var d=JSON.parse(lds[j].textContent),g=d['@graph']||[d],c=0;
+for(var m=0;m<g.length;m++){if(g[m]&&g[m].offers){delete g[m].offers;c=1;}}
+if(c)lds[j].textContent=JSON.stringify(d);}catch(e){}}}
+}catch(e){}})();
+</script>
 <script>
 window.atlasToast = window.atlasToast || function(msg){
   var t = document.createElement('div');

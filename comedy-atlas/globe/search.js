@@ -229,7 +229,21 @@ function haystackFor(record) {
 function matchesStartOfAnyWord(name, q) {
   if (!q) return false;
   const words = name.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-  return words.some((w) => w.indexOf(q) === 0);
+  if (words.some((w) => w.indexOf(q) === 0)) return true;
+  // 2026-10-01: a MULTI-WORD query ("velvet bar") can never be the start of a
+  // single word, so it matched nothing and "Velvet Bar" -> "No results".
+  // Accept it when it occurs starting at a word boundary of the haystack
+  // (still never mid-word: "lon" must not hit "Coulon", nor "bar" "Embarcadero").
+  if (/[^\p{L}\p{N}]/u.test(q)) {
+    let from = 0;
+    for (;;) {
+      const at = name.indexOf(q, from);
+      if (at === -1) return false;
+      if (at === 0 || !/[\p{L}\p{N}]/u.test(name[at - 1])) return true;
+      from = at + 1;
+    }
+  }
+  return false;
 }
 
 /**
@@ -513,6 +527,9 @@ export function mountGlobeSearch(inputEl, options) {
   }
 
   function selectRecord(record) {
+    // 2026-10-01: a keystroke's pending debounced render() must not re-open
+    // the list right after the visitor has picked from it.
+    if (debounceTimer) { window.clearTimeout(debounceTimer); debounceTimer = null; }
     const city = findCityForRecord(record, getCities());
     if (record.type === 'city') {
       if (city) onSelectCity(city.id, city);
