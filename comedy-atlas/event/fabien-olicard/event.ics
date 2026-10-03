@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fabien-olicard@comedyatlas.app
+DTSTAMP:20270319T190000Z
+DTSTART:20270319T190000Z
+DTEND:20270319T210000Z
+SUMMARY:Fabien Olicard
+LOCATION:Liege
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fabien-ol
+ icard/
+URL:https://comedyatlas.app/comedy-atlas/event/fabien-olicard/
+END:VEVENT
+END:VCALENDAR

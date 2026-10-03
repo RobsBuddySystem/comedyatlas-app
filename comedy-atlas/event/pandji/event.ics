@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pandji@comedyatlas.app
+DTSTAMP:20261102T010000Z
+DTSTART:20261102T010000Z
+DTEND:20261102T030000Z
+SUMMARY:Pandji
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pandji/
+URL:https://comedyatlas.app/comedy-atlas/event/pandji/
+END:VEVENT
+END:VCALENDAR

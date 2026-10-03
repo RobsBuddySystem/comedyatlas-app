@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-fidance-52459@comedyatlas.app
+DTSTAMP:20261217T033000Z
+DTSTART:20261217T033000Z
+DTEND:20261217T053000Z
+SUMMARY:Ian Fidance
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-fidan
+ ce-52459/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-fidance-52459/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-lee-52910@comedyatlas.app
+DTSTAMP:20270101T060000Z
+DTSTART:20270101T060000Z
+DTEND:20270101T080000Z
+SUMMARY:Pete Lee
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-lee-
+ 52910/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-lee-52910/
+END:VEVENT
+END:VCALENDAR

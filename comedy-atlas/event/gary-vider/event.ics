@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gary-vider@comedyatlas.app
+DTSTAMP:20261029T230000Z
+DTSTART:20261029T230000Z
+DTEND:20261030T010000Z
+SUMMARY:Gary Vider
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gary-vide
+ r/
+URL:https://comedyatlas.app/comedy-atlas/event/gary-vider/
+END:VEVENT
+END:VCALENDAR

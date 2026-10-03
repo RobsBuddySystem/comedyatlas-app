@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:samuel-sibilski-platzhirsch@comedyatlas.app
+DTSTAMP:20271119T190000Z
+DTSTART:20271119T190000Z
+DTEND:20271119T210000Z
+SUMMARY:Samuel Sibilski: Platzhirsch
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/samuel-si
+ bilski-platzhirsch/
+URL:https://comedyatlas.app/comedy-atlas/event/samuel-sibilski-platzhirsch/
+END:VEVENT
+END:VCALENDAR

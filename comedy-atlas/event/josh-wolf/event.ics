@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-wolf@comedyatlas.app
+DTSTAMP:20261013T183000Z
+DTSTART:20261013T183000Z
+DTEND:20261013T203000Z
+SUMMARY:Josh Wolf
+LOCATION:Boom Chicago\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-wolf
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/josh-wolf/
+END:VEVENT
+END:VCALENDAR

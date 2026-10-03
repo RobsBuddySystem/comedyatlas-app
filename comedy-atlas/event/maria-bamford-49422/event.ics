@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-49422@comedyatlas.app
+DTSTAMP:20261018T030000Z
+DTSTART:20261018T030000Z
+DTEND:20261018T050000Z
+SUMMARY:Maria Bamford
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-49422/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-49422/
+END:VEVENT
+END:VCALENDAR

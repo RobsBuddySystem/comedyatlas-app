@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:don-dc-curry@comedyatlas.app
+DTSTAMP:20261120T010000Z
+DTSTART:20261120T010000Z
+DTEND:20261120T030000Z
+SUMMARY:Don DC Curry
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/don-dc-cu
+ rry/
+URL:https://comedyatlas.app/comedy-atlas/event/don-dc-curry/
+END:VEVENT
+END:VCALENDAR

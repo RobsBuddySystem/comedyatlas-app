@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-nerd-comedy-club-edition-mangas@comedyatlas.app
+DTSTAMP:20261029T183000Z
+DTSTART:20261029T183000Z
+DTEND:20261029T203000Z
+SUMMARY:Le Nerd Comedy Club édition Mangas
+LOCATION:Paris
+DESCRIPTION:Thématiques pop ou plus niches\, le NERD c'est un plateau de s
+ tand up à thème où les humoristes viennent digger un sujet comme de vrai
+ s nerds.\nMore info: https://comedyatlas.app/comedy-atlas/event/le-nerd-com
+ edy-club-edition-mangas/
+URL:https://comedyatlas.app/comedy-atlas/event/le-nerd-comedy-club-edition-
+ mangas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-carolla-show-2@comedyatlas.app
+DTSTAMP:20261108T060000Z
+DTSTART:20261108T060000Z
+DTEND:20261108T080000Z
+SUMMARY:Adam Carolla (Show 2)
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-caro
+ lla-show-2/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-carolla-show-2/
+END:VEVENT
+END:VCALENDAR

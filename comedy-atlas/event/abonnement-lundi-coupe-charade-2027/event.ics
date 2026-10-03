@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abonnement-lundi-coupe-charade-2027@comedyatlas.app
+DTSTAMP:20270518T010000Z
+DTSTART:20270518T010000Z
+DTEND:20270518T030000Z
+SUMMARY:Abonnement Lundi - Coupe Charade 2027
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/abonnemen
+ t-lundi-coupe-charade-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/abonnement-lundi-coupe-chara
+ de-2027/
+END:VEVENT
+END:VCALENDAR

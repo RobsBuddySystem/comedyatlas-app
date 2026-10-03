@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:napoleon-dynamite-live@comedyatlas.app
+DTSTAMP:20261018T023000Z
+DTSTART:20261018T023000Z
+DTEND:20261018T043000Z
+SUMMARY:Napoleon Dynamite Live!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/napoleon-
+ dynamite-live/
+URL:https://comedyatlas.app/comedy-atlas/event/napoleon-dynamite-live/
+END:VEVENT
+END:VCALENDAR

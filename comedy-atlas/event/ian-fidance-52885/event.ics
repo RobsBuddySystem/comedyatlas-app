@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-fidance-52885@comedyatlas.app
+DTSTAMP:20270101T000000Z
+DTSTART:20270101T000000Z
+DTEND:20270101T020000Z
+SUMMARY:Ian Fidance
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-fidan
+ ce-52885/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-fidance-52885/
+END:VEVENT
+END:VCALENDAR

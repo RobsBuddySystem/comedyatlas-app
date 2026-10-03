@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sebastian-marx@comedyatlas.app
+DTSTAMP:20270321T190000Z
+DTSTART:20270321T190000Z
+DTEND:20270321T210000Z
+SUMMARY:Sebastian Marx
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sebastian
+ -marx/
+URL:https://comedyatlas.app/comedy-atlas/event/sebastian-marx/
+END:VEVENT
+END:VCALENDAR

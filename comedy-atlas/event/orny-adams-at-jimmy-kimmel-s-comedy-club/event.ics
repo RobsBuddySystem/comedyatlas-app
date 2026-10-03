@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:orny-adams-at-jimmy-kimmel-s-comedy-club@comedyatlas.app
+DTSTAMP:20261107T033000Z
+DTSTART:20261107T033000Z
+DTEND:20261107T053000Z
+SUMMARY:Orny Adams At Jimmy Kimmel's Comedy Club
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/orny-adam
+ s-at-jimmy-kimmel-s-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/orny-adams-at-jimmy-kimmel-s
+ -comedy-club/
+END:VEVENT
+END:VCALENDAR

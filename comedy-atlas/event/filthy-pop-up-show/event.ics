@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:filthy-pop-up-show@comedyatlas.app
+DTSTAMP:20261212T033000Z
+DTSTART:20261212T033000Z
+DTEND:20261212T053000Z
+SUMMARY:Filthy Pop-Up Show
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/filthy-po
+ p-up-show/
+URL:https://comedyatlas.app/comedy-atlas/event/filthy-pop-up-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-bir-saat-anlatan-kadn-olvido@comedyatlas.app
+DTSTAMP:20261225T160000Z
+DTSTART:20261225T160000Z
+DTEND:20261225T180000Z
+SUMMARY:Stand up Bir Saat Anlatan Kadın Olvido
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stand-up-
+ bir-saat-anlatan-kadn-olvido/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-bir-saat-anlatan-ka
+ dn-olvido/
+END:VEVENT
+END:VCALENDAR

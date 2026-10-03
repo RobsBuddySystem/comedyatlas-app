@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-arcuri-fresh-cut@comedyatlas.app
+DTSTAMP:20261121T030000Z
+DTSTART:20261121T030000Z
+DTEND:20261121T050000Z
+SUMMARY:Jeff Arcuri: Fresh Cut
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-arcu
+ ri-fresh-cut/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-arcuri-fresh-cut/
+END:VEVENT
+END:VCALENDAR

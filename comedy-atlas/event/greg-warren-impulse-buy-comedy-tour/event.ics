@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-warren-impulse-buy-comedy-tour@comedyatlas.app
+DTSTAMP:20261231T230000Z
+DTSTART:20261231T230000Z
+DTEND:20270101T010000Z
+SUMMARY:Greg Warren : Impulse Buy Comedy Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-warr
+ en-impulse-buy-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-warren-impulse-buy-come
+ dy-tour/
+END:VEVENT
+END:VCALENDAR

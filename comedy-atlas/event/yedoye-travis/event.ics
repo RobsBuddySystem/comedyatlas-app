@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yedoye-travis@comedyatlas.app
+DTSTAMP:20261015T233000Z
+DTSTART:20261015T233000Z
+DTEND:20261016T013000Z
+SUMMARY:Yedoye Travis
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yedoye-tr
+ avis/
+URL:https://comedyatlas.app/comedy-atlas/event/yedoye-travis/
+END:VEVENT
+END:VCALENDAR

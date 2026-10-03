@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-53234@comedyatlas.app
+DTSTAMP:20270124T010000Z
+DTSTART:20270124T010000Z
+DTEND:20270124T030000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-53234/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-53234/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rennes-comedy-club-deuxieme-saison@comedyatlas.app
+DTSTAMP:20261006T170000Z
+DTSTART:20261006T170000Z
+DTEND:20261006T190000Z
+SUMMARY:Rennes Comedy Club - Deuxième saison
+LOCATION:Rennes
+DESCRIPTION:C'est parti pour la deuxième saison du Rennes Comedy Club ! ??
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/rennes-comedy-club-
+ deuxieme-saison/
+URL:https://comedyatlas.app/comedy-atlas/event/rennes-comedy-club-deuxieme-
+ saison/
+END:VEVENT
+END:VCALENDAR

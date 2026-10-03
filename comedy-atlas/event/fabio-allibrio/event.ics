@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fabio-allibrio@comedyatlas.app
+DTSTAMP:20271008T180000Z
+DTSTART:20271008T180000Z
+DTEND:20271008T200000Z
+SUMMARY:Fabio Allibrio
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fabio-all
+ ibrio/
+URL:https://comedyatlas.app/comedy-atlas/event/fabio-allibrio/
+END:VEVENT
+END:VCALENDAR

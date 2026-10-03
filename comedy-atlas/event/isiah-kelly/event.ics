@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:isiah-kelly@comedyatlas.app
+DTSTAMP:20270111T000000Z
+DTSTART:20270111T000000Z
+DTEND:20270111T020000Z
+SUMMARY:Isiah Kelly
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/isiah-kel
+ ly/
+URL:https://comedyatlas.app/comedy-atlas/event/isiah-kelly/
+END:VEVENT
+END:VCALENDAR

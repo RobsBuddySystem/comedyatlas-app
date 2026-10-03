@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:earthquake-54243@comedyatlas.app
+DTSTAMP:20270516T023000Z
+DTSTART:20270516T023000Z
+DTEND:20270516T043000Z
+SUMMARY:Earthquake
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/earthquak
+ e-54243/
+URL:https://comedyatlas.app/comedy-atlas/event/earthquake-54243/
+END:VEVENT
+END:VCALENDAR

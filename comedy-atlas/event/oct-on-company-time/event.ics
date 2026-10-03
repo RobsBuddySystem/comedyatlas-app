@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:oct-on-company-time@comedyatlas.app
+DTSTAMP:20261106T010000Z
+DTSTART:20261106T010000Z
+DTEND:20261106T030000Z
+SUMMARY:Oct (On Company Time)
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/oct-on-co
+ mpany-time/
+URL:https://comedyatlas.app/comedy-atlas/event/oct-on-company-time/
+END:VEVENT
+END:VCALENDAR

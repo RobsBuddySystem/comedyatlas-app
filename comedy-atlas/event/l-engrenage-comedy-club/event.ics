@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:l-engrenage-comedy-club@comedyatlas.app
+DTSTAMP:20261006T170000Z
+DTSTART:20261006T170000Z
+DTEND:20261006T190000Z
+SUMMARY:L'Engrenage Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:Le nouveau Comedy Club en plein coeur de Bordeaux.\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/l-engrenage-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/l-engrenage-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:souviens-toi@comedyatlas.app
+DTSTAMP:20261026T183000Z
+DTSTART:20261026T183000Z
+DTEND:20261026T203000Z
+SUMMARY:Souviens toi
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Abandonné par son père à l'âge de 3 mois\, Alexandre trouve
+  en son papi la figure paternelle qu'il n'a jamais eu.\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/souviens-toi/
+URL:https://comedyatlas.app/comedy-atlas/event/souviens-toi/
+END:VEVENT
+END:VCALENDAR

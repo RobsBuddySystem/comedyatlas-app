@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-davies@comedyatlas.app
+DTSTAMP:20270110T193000Z
+DTSTART:20270110T193000Z
+DTEND:20270110T213000Z
+SUMMARY:Greg Davies
+LOCATION:Leicester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-davi
+ es/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-davies/
+END:VEVENT
+END:VCALENDAR

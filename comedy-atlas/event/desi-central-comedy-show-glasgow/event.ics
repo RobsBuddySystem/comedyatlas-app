@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:desi-central-comedy-show-glasgow@comedyatlas.app
+DTSTAMP:20261101T190000Z
+DTSTART:20261101T190000Z
+DTEND:20261101T210000Z
+SUMMARY:Desi Central Comedy Show - Glasgow
+LOCATION:The Glee Club Glasgow\, 11 Renfrew Street\, Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/desi-cent
+ ral-comedy-show-glasgow/
+URL:https://comedyatlas.app/comedy-atlas/event/desi-central-comedy-show-gla
+ sgow/
+END:VEVENT
+END:VCALENDAR

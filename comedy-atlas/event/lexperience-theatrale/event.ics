@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lexperience-theatrale@comedyatlas.app
+DTSTAMP:20261214T190000Z
+DTSTART:20261214T190000Z
+DTEND:20261214T210000Z
+SUMMARY:L’expérience théâtrale
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lexperien
+ ce-theatrale/
+URL:https://comedyatlas.app/comedy-atlas/event/lexperience-theatrale/
+END:VEVENT
+END:VCALENDAR

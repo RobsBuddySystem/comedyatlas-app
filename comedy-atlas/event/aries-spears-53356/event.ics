@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53356@comedyatlas.app
+DTSTAMP:20270131T020000Z
+DTSTART:20270131T020000Z
+DTEND:20270131T040000Z
+SUMMARY:Aries Spears
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53356/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53356/
+END:VEVENT
+END:VCALENDAR

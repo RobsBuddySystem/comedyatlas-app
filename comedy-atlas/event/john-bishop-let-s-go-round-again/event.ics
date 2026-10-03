@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-bishop-let-s-go-round-again@comedyatlas.app
+DTSTAMP:20270516T173000Z
+DTSTART:20270516T173000Z
+DTEND:20270516T193000Z
+SUMMARY:John Bishop - Let's Go Round Again
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-bish
+ op-let-s-go-round-again/
+URL:https://comedyatlas.app/comedy-atlas/event/john-bishop-let-s-go-round-a
+ gain/
+END:VEVENT
+END:VCALENDAR

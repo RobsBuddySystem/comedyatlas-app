@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shellshocked-a-veteran-comedy-night@comedyatlas.app
+DTSTAMP:20261022T080000Z
+DTSTART:20261022T080000Z
+DTEND:20261022T100000Z
+SUMMARY:Shellshocked\, A Veteran Comedy Night
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shellshoc
+ ked-a-veteran-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/shellshocked-a-veteran-comed
+ y-night/
+END:VEVENT
+END:VCALENDAR

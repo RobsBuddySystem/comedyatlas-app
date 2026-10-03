@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chicago-comedy-club-50304@comedyatlas.app
+DTSTAMP:20261106T003000Z
+DTSTART:20261106T003000Z
+DTEND:20261106T023000Z
+SUMMARY:Chicago Comedy Club
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chicago-c
+ omedy-club-50304/
+URL:https://comedyatlas.app/comedy-atlas/event/chicago-comedy-club-50304/
+END:VEVENT
+END:VCALENDAR

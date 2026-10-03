@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bart-de-pauw-44226@comedyatlas.app
+DTSTAMP:20261104T190000Z
+DTSTART:20261104T190000Z
+DTEND:20261104T210000Z
+SUMMARY:Bart De Pauw
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bart-de-p
+ auw-44226/
+URL:https://comedyatlas.app/comedy-atlas/event/bart-de-pauw-44226/
+END:VEVENT
+END:VCALENDAR

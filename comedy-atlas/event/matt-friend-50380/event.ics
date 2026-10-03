@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-friend-50380@comedyatlas.app
+DTSTAMP:20261107T010000Z
+DTSTART:20261107T010000Z
+DTEND:20261107T030000Z
+SUMMARY:Matt Friend
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-frie
+ nd-50380/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-friend-50380/
+END:VEVENT
+END:VCALENDAR

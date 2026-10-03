@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-queer@comedyatlas.app
+DTSTAMP:20261013T173000Z
+DTSTART:20261013T173000Z
+DTEND:20261013T193000Z
+SUMMARY:Comedy Club : Queer !
+LOCATION:Lyon
+DESCRIPTION:Un comedy club spécial Queer les 2èmes mardis du mois\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/comedy-club-queer/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-queer/
+END:VEVENT
+END:VCALENDAR

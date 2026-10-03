@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:panayotis-pascot@comedyatlas.app
+DTSTAMP:20261102T190000Z
+DTSTART:20261102T190000Z
+DTEND:20261102T210000Z
+SUMMARY:Panayotis Pascot
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/panayotis
+ -pascot/
+URL:https://comedyatlas.app/comedy-atlas/event/panayotis-pascot/
+END:VEVENT
+END:VCALENDAR

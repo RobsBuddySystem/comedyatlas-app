@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:scott-bennett@comedyatlas.app
+DTSTAMP:20270305T190000Z
+DTSTART:20270305T190000Z
+DTEND:20270305T210000Z
+SUMMARY:Scott Bennett
+LOCATION:Cyprus Avenue\, Caroline Street\, Cork
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/scott-ben
+ nett/
+URL:https://comedyatlas.app/comedy-atlas/event/scott-bennett/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:whatsherface@comedyatlas.app
+DTSTAMP:20270304T193000Z
+DTSTART:20270304T193000Z
+DTEND:20270304T213000Z
+SUMMARY:Whatsherface
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/whatsherf
+ ace/
+URL:https://comedyatlas.app/comedy-atlas/event/whatsherface/
+END:VEVENT
+END:VCALENDAR

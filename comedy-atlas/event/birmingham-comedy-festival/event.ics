@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:birmingham-comedy-festival@comedyatlas.app
+DTSTAMP:20261011T010000Z
+DTSTART:20261011T010000Z
+DTEND:20261011T030000Z
+SUMMARY:Birmingham Comedy Festival
+LOCATION:Birmingham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/birmingha
+ m-comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/birmingham-comedy-festival/
+END:VEVENT
+END:VCALENDAR

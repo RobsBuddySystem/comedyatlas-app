@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hannah-jones@comedyatlas.app
+DTSTAMP:20261021T023000Z
+DTSTART:20261021T023000Z
+DTEND:20261021T043000Z
+SUMMARY:Hannah Jones
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hannah-jo
+ nes/
+URL:https://comedyatlas.app/comedy-atlas/event/hannah-jones/
+END:VEVENT
+END:VCALENDAR

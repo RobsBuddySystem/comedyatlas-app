@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rosebud-baker-53879@comedyatlas.app
+DTSTAMP:20270320T000000Z
+DTSTART:20270320T000000Z
+DTEND:20270320T020000Z
+SUMMARY:Rosebud Baker
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rosebud-b
+ aker-53879/
+URL:https://comedyatlas.app/comedy-atlas/event/rosebud-baker-53879/
+END:VEVENT
+END:VCALENDAR

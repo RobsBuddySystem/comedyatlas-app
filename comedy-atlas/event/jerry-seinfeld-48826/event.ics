@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-48826@comedyatlas.app
+DTSTAMP:20261010T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T020000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-48826/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-48826/
+END:VEVENT
+END:VCALENDAR

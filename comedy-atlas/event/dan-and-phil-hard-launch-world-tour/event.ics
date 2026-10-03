@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dan-and-phil-hard-launch-world-tour@comedyatlas.app
+DTSTAMP:20261111T063000Z
+DTSTART:20261111T063000Z
+DTEND:20261111T083000Z
+SUMMARY:Dan and Phil - Hard Launch World Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dan-and-p
+ hil-hard-launch-world-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/dan-and-phil-hard-launch-wor
+ ld-tour/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:don-lemon-dl-hughley-dl-dl-anything-goes@comedyatlas.app
+DTSTAMP:20261003T230000Z
+DTSTART:20261003T230000Z
+DTEND:20261004T010000Z
+SUMMARY:Don Lemon & DL Hughley: DL + DL 'Anything Goes'
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/don-lemon
+ -dl-hughley-dl-dl-anything-goes/
+URL:https://comedyatlas.app/comedy-atlas/event/don-lemon-dl-hughley-dl-dl-a
+ nything-goes/
+END:VEVENT
+END:VCALENDAR

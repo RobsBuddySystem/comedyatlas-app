@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-karlsruhe@comedyatlas.app
+DTSTAMP:20261008T180000Z
+DTSTART:20261008T180000Z
+DTEND:20261008T200000Z
+SUMMARY:Chaos Comedy Club | Karlsruhe
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-karlsruhe/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-karlsruhe/
+END:VEVENT
+END:VCALENDAR

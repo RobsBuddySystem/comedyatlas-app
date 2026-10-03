@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tanguy-noyer-dans-ninou@comedyatlas.app
+DTSTAMP:20261011T160000Z
+DTSTART:20261011T160000Z
+DTEND:20261011T180000Z
+SUMMARY:Tanguy Noyer dans Ninou
+LOCATION:Lyon
+DESCRIPTION:Tanguy Noyer dans Ninou\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/tanguy-noyer-dans-ninou/
+URL:https://comedyatlas.app/comedy-atlas/event/tanguy-noyer-dans-ninou/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chantal-ladesou@comedyatlas.app
+DTSTAMP:20261018T140000Z
+DTSTART:20261018T140000Z
+DTEND:20261018T160000Z
+SUMMARY:Chantal Ladesou
+LOCATION:Perpignan
+DESCRIPTION:Présenter le nouveau spectacle de Chantal Ladesou revient à p
+ résenter Chantal Iconique elle même\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/chantal-ladesou/
+URL:https://comedyatlas.app/comedy-atlas/event/chantal-ladesou/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:william-boeva-drift@comedyatlas.app
+DTSTAMP:20270508T180000Z
+DTSTART:20270508T180000Z
+DTEND:20270508T200000Z
+SUMMARY:William Boeva "Drift"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/william-b
+ oeva-drift/
+URL:https://comedyatlas.app/comedy-atlas/event/william-boeva-drift/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eddie-ifft-at-laugh-factory-comedy-club@comedyatlas.app
+DTSTAMP:20261024T013000Z
+DTSTART:20261024T013000Z
+DTEND:20261024T033000Z
+SUMMARY:Eddie Ifft At Laugh Factory Comedy Club
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eddie-iff
+ t-at-laugh-factory-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/eddie-ifft-at-laugh-factory-
+ comedy-club/
+END:VEVENT
+END:VCALENDAR

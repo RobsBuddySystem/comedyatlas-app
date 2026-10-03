@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:des-bishop-australian-tour@comedyatlas.app
+DTSTAMP:20261107T080000Z
+DTSTART:20261107T080000Z
+DTEND:20261107T100000Z
+SUMMARY:Des Bishop - Australian Tour
+LOCATION:Melbourne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/des-bisho
+ p-australian-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/des-bishop-australian-tour/
+END:VEVENT
+END:VCALENDAR

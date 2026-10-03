@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roberto-moldavsky@comedyatlas.app
+DTSTAMP:20261011T230000Z
+DTSTART:20261011T230000Z
+DTEND:20261012T010000Z
+SUMMARY:Roberto Moldavsky
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roberto-m
+ oldavsky/
+URL:https://comedyatlas.app/comedy-atlas/event/roberto-moldavsky/
+END:VEVENT
+END:VCALENDAR

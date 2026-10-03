@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-mf-function@comedyatlas.app
+DTSTAMP:20261114T053000Z
+DTSTART:20261114T053000Z
+DTEND:20261114T073000Z
+SUMMARY:The MF Function
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-mf-fu
+ nction/
+URL:https://comedyatlas.app/comedy-atlas/event/the-mf-function/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fastball-comedy-festival@comedyatlas.app
+DTSTAMP:20261018T000000Z
+DTSTART:20261018T000000Z
+DTEND:20261018T020000Z
+SUMMARY:Fastball Comedy Festival
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fastball-
+ comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/fastball-comedy-festival/
+END:VEVENT
+END:VCALENDAR

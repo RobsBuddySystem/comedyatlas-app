@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-parents-have-entered-the-chat-comedy-jam@comedyatlas.app
+DTSTAMP:20261207T000000Z
+DTSTART:20261207T000000Z
+DTEND:20261207T020000Z
+SUMMARY:"The Parents Have Entered the Chat" Comedy Jam
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-paren
+ ts-have-entered-the-chat-comedy-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/the-parents-have-entered-the
+ -chat-comedy-jam/
+END:VEVENT
+END:VCALENDAR

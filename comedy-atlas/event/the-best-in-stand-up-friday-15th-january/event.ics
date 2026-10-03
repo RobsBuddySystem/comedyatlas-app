@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-best-in-stand-up-friday-15th-january@comedyatlas.app
+DTSTAMP:20270115T193000Z
+DTSTART:20270115T193000Z
+DTEND:20270115T213000Z
+SUMMARY:The Best in Stand Up - Friday 15th January
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-best-
+ in-stand-up-friday-15th-january/
+URL:https://comedyatlas.app/comedy-atlas/event/the-best-in-stand-up-friday-
+ 15th-january/
+END:VEVENT
+END:VCALENDAR

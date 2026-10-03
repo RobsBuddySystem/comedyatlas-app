@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-nique@comedyatlas.app
+DTSTAMP:20261114T000000Z
+DTSTART:20261114T000000Z
+DTEND:20261114T020000Z
+SUMMARY:Mo'nique
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-nique/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-nique/
+END:VEVENT
+END:VCALENDAR

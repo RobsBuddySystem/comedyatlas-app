@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-hanley-51256@comedyatlas.app
+DTSTAMP:20261121T013000Z
+DTSTART:20261121T013000Z
+DTEND:20261121T033000Z
+SUMMARY:Phil Hanley
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phil-hanl
+ ey-51256/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-hanley-51256/
+END:VEVENT
+END:VCALENDAR

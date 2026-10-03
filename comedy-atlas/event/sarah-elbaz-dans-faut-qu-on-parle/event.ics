@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sarah-elbaz-dans-faut-qu-on-parle@comedyatlas.app
+DTSTAMP:20261029T201500Z
+DTSTART:20261029T201500Z
+DTEND:20261029T221500Z
+SUMMARY:Sarah Elbaz dans Faut qu'on parle
+LOCATION:Nice
+DESCRIPTION:Sarah Elbaz livre un stand-up sincère\, drôle et sans détour
+ . Un spectacle où tout peut être dit... et surtout tout peut faire rire.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/sarah-elbaz-dans-fau
+ t-qu-on-parle/
+URL:https://comedyatlas.app/comedy-atlas/event/sarah-elbaz-dans-faut-qu-on-
+ parle/
+END:VEVENT
+END:VCALENDAR

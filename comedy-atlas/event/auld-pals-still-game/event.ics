@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:auld-pals-still-game@comedyatlas.app
+DTSTAMP:20270524T190000Z
+DTSTART:20270524T190000Z
+DTEND:20270524T210000Z
+SUMMARY:Auld Pals - Still Game
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/auld-pals
+ -still-game/
+URL:https://comedyatlas.app/comedy-atlas/event/auld-pals-still-game/
+END:VEVENT
+END:VCALENDAR

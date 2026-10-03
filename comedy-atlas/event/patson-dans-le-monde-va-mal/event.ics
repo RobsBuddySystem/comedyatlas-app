@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patson-dans-le-monde-va-mal@comedyatlas.app
+DTSTAMP:20261009T193000Z
+DTSTART:20261009T193000Z
+DTEND:20261009T213000Z
+SUMMARY:Patson dans Le monde va mal
+LOCATION:Paris
+DESCRIPTION:Le monde va mal… Venez rigoler !\nMore info: https://comedyat
+ las.app/comedy-atlas/event/patson-dans-le-monde-va-mal/
+URL:https://comedyatlas.app/comedy-atlas/event/patson-dans-le-monde-va-mal/
+END:VEVENT
+END:VCALENDAR

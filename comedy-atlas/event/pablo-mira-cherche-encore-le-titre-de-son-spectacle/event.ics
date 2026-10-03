@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pablo-mira-cherche-encore-le-titre-de-son-spectacle@comedyatlas.app
+DTSTAMP:20261107T193000Z
+DTSTART:20261107T193000Z
+DTEND:20261107T213000Z
+SUMMARY:Pablo Mira cherche encore le titre de son spectacle
+LOCATION:Saint Thibault des Vignes
+DESCRIPTION:C'est vrai. Mais au moins il a déjà trouvé son thème.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/pablo-mira-cherche-encore
+ -le-titre-de-son-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/pablo-mira-cherche-encore-le
+ -titre-de-son-spectacle/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-rita-45062@comedyatlas.app
+DTSTAMP:20261212T230000Z
+DTSTART:20261212T230000Z
+DTEND:20261213T010000Z
+SUMMARY:Mike Rita
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-rita
+ -45062/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-rita-45062/
+END:VEVENT
+END:VCALENDAR

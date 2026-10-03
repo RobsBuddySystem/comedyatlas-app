@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tony-roberts-51726@comedyatlas.app
+DTSTAMP:20261130T030000Z
+DTSTART:20261130T030000Z
+DTEND:20261130T050000Z
+SUMMARY:Tony Roberts
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tony-robe
+ rts-51726/
+URL:https://comedyatlas.app/comedy-atlas/event/tony-roberts-51726/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-rowe-46018@comedyatlas.app
+DTSTAMP:20261024T180000Z
+DTSTART:20261024T180000Z
+DTEND:20261024T200000Z
+SUMMARY:Adam Rowe
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-rowe
+ -46018/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-rowe-46018/
+END:VEVENT
+END:VCALENDAR

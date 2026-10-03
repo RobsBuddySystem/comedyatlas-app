@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rhys-darby@comedyatlas.app
+DTSTAMP:20261105T193000Z
+DTSTART:20261105T193000Z
+DTEND:20261105T213000Z
+SUMMARY:Rhys Darby
+LOCATION:Boom Chicago\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rhys-darb
+ y/
+URL:https://comedyatlas.app/comedy-atlas/event/rhys-darby/
+END:VEVENT
+END:VCALENDAR

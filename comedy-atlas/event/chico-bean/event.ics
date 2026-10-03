@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chico-bean@comedyatlas.app
+DTSTAMP:20270129T201500Z
+DTSTART:20270129T201500Z
+DTEND:20270129T221500Z
+SUMMARY:Chico Bean
+LOCATION:Birmingham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chico-bea
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/chico-bean/
+END:VEVENT
+END:VCALENDAR

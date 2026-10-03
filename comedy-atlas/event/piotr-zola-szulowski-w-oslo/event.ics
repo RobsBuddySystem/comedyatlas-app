@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:piotr-zola-szulowski-w-oslo@comedyatlas.app
+DTSTAMP:20261128T160000Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:PIOTR ZOLA SZULOWSKI W OSLO
+LOCATION:Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/piotr-zol
+ a-szulowski-w-oslo/
+URL:https://comedyatlas.app/comedy-atlas/event/piotr-zola-szulowski-w-oslo/
+END:VEVENT
+END:VCALENDAR

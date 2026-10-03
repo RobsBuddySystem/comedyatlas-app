@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players-sunday-27th-december@comedyatlas.app
+DTSTAMP:20261227T193000Z
+DTSTART:20261227T193000Z
+DTEND:20261227T213000Z
+SUMMARY:The Comedy Store Players - Sunday 27th December
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players-sunday-27th-december/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players-sun
+ day-27th-december/
+END:VEVENT
+END:VCALENDAR

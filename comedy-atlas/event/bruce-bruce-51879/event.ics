@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bruce-bruce-51879@comedyatlas.app
+DTSTAMP:20261205T013000Z
+DTSTART:20261205T013000Z
+DTEND:20261205T033000Z
+SUMMARY:Bruce Bruce
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bruce-bru
+ ce-51879/
+URL:https://comedyatlas.app/comedy-atlas/event/bruce-bruce-51879/
+END:VEVENT
+END:VCALENDAR

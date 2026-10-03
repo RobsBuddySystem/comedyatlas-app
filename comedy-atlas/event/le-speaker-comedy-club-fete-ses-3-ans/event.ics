@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-speaker-comedy-club-fete-ses-3-ans@comedyatlas.app
+DTSTAMP:20261107T173000Z
+DTSTART:20261107T173000Z
+DTEND:20261107T193000Z
+SUMMARY:Le Speaker Comedy Club fête ses 3 ans !
+LOCATION:Lyon
+DESCRIPTION:Une soirée stand-up exceptionnelle au Palais de la Mutualité 
+ pour célébrer les 3 ans du Speaker Comedy Club.\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/le-speaker-comedy-club-fete-ses-3-ans/
+URL:https://comedyatlas.app/comedy-atlas/event/le-speaker-comedy-club-fete-
+ ses-3-ans/
+END:VEVENT
+END:VCALENDAR

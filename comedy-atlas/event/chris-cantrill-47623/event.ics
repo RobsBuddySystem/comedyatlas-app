@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-cantrill-47623@comedyatlas.app
+DTSTAMP:20270324T193000Z
+DTSTART:20270324T193000Z
+DTEND:20270324T213000Z
+SUMMARY:Chris Cantrill
+LOCATION:The Wardrobe Leeds\, 6 St. Peters Square\, Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-can
+ trill-47623/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-cantrill-47623/
+END:VEVENT
+END:VCALENDAR

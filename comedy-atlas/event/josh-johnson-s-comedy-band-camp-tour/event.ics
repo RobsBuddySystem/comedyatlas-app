@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-johnson-s-comedy-band-camp-tour@comedyatlas.app
+DTSTAMP:20270109T220000Z
+DTSTART:20270109T220000Z
+DTEND:20270110T000000Z
+SUMMARY:Josh Johnson's Comedy Band Camp Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-john
+ son-s-comedy-band-camp-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-johnson-s-comedy-band-c
+ amp-tour/
+END:VEVENT
+END:VCALENDAR

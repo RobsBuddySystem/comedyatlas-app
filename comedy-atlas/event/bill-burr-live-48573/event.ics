@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bill-burr-live-48573@comedyatlas.app
+DTSTAMP:20261004T030000Z
+DTSTART:20261004T030000Z
+DTEND:20261004T050000Z
+SUMMARY:Bill Burr Live
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bill-burr
+ -live-48573/
+URL:https://comedyatlas.app/comedy-atlas/event/bill-burr-live-48573/
+END:VEVENT
+END:VCALENDAR

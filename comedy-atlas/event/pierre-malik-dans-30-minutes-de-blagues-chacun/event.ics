@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pierre-malik-dans-30-minutes-de-blagues-chacun@comedyatlas.app
+DTSTAMP:20261116T200000Z
+DTSTART:20261116T200000Z
+DTEND:20261116T220000Z
+SUMMARY:Pierre & Malik dans 30 minutes de blagues chacun
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Pierre et Malik au SOLO.\nMore info: https://comedyatlas.app/co
+ medy-atlas/event/pierre-malik-dans-30-minutes-de-blagues-chacun/
+URL:https://comedyatlas.app/comedy-atlas/event/pierre-malik-dans-30-minutes
+ -de-blagues-chacun/
+END:VEVENT
+END:VCALENDAR

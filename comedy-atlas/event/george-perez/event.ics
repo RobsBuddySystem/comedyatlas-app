@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:george-perez@comedyatlas.app
+DTSTAMP:20261107T054500Z
+DTSTART:20261107T054500Z
+DTEND:20261107T074500Z
+SUMMARY:George Perez
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/george-pe
+ rez/
+URL:https://comedyatlas.app/comedy-atlas/event/george-perez/
+END:VEVENT
+END:VCALENDAR

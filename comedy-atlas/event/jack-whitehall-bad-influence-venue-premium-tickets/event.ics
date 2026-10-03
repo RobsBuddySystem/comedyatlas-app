@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-whitehall-bad-influence-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20270206T200000Z
+DTSTART:20270206T200000Z
+DTEND:20270206T220000Z
+SUMMARY:Jack Whitehall - Bad Influence - Venue Premium Tickets
+LOCATION:Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-whit
+ ehall-bad-influence-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-whitehall-bad-influence
+ -venue-premium-tickets/
+END:VEVENT
+END:VCALENDAR

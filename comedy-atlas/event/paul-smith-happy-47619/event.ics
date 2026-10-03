@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-47619@comedyatlas.app
+DTSTAMP:20270324T193000Z
+DTSTART:20270324T193000Z
+DTEND:20270324T213000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-47619/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-47619/
+END:VEVENT
+END:VCALENDAR

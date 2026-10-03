@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stephen-lynch@comedyatlas.app
+DTSTAMP:20270126T180000Z
+DTSTART:20270126T180000Z
+DTEND:20270126T200000Z
+SUMMARY:Stephen Lynch
+LOCATION:Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stephen-l
+ ynch/
+URL:https://comedyatlas.app/comedy-atlas/event/stephen-lynch/
+END:VEVENT
+END:VCALENDAR

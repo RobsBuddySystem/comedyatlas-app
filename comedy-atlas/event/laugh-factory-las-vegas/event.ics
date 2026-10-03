@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-factory-las-vegas@comedyatlas.app
+DTSTAMP:20261110T043000Z
+DTSTART:20261110T043000Z
+DTEND:20261110T063000Z
+SUMMARY:Laugh Factory Las Vegas
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-fac
+ tory-las-vegas/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-factory-las-vegas/
+END:VEVENT
+END:VCALENDAR

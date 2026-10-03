@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:colin-mochrie-brad-sherwood@comedyatlas.app
+DTSTAMP:20270129T003000Z
+DTSTART:20270129T003000Z
+DTEND:20270129T023000Z
+SUMMARY:Colin Mochrie & Brad Sherwood
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/colin-moc
+ hrie-brad-sherwood/
+URL:https://comedyatlas.app/comedy-atlas/event/colin-mochrie-brad-sherwood/
+END:VEVENT
+END:VCALENDAR

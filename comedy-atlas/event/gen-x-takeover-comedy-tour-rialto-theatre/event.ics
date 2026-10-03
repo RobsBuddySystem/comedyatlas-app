@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gen-x-takeover-comedy-tour-rialto-theatre@comedyatlas.app
+DTSTAMP:20270213T030000Z
+DTSTART:20270213T030000Z
+DTEND:20270213T050000Z
+SUMMARY:Gen X Takeover Comedy Tour @ Rialto Theatre
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gen-x-tak
+ eover-comedy-tour-rialto-theatre/
+URL:https://comedyatlas.app/comedy-atlas/event/gen-x-takeover-comedy-tour-r
+ ialto-theatre/
+END:VEVENT
+END:VCALENDAR

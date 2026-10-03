@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tina-youkhana@comedyatlas.app
+DTSTAMP:20261008T220000Z
+DTSTART:20261008T220000Z
+DTEND:20261009T000000Z
+SUMMARY:Tina Youkhana
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tina-youk
+ hana/
+URL:https://comedyatlas.app/comedy-atlas/event/tina-youkhana/
+END:VEVENT
+END:VCALENDAR

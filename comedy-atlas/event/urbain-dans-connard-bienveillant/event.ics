@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:urbain-dans-connard-bienveillant@comedyatlas.app
+DTSTAMP:20261009T193000Z
+DTSTART:20261009T193000Z
+DTEND:20261009T213000Z
+SUMMARY:Urbain dans Connard bienveillant
+LOCATION:Paris
+DESCRIPTION:Après le succès de son premier spectacle\, Urbain parcourt la
+  France avec ses nouvelles blagues.\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/urbain-dans-connard-bienveillant/
+URL:https://comedyatlas.app/comedy-atlas/event/urbain-dans-connard-bienveil
+ lant/
+END:VEVENT
+END:VCALENDAR

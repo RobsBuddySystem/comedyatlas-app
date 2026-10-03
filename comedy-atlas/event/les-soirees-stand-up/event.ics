@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-soirees-stand-up@comedyatlas.app
+DTSTAMP:20261007T183000Z
+DTSTART:20261007T183000Z
+DTEND:20261007T203000Z
+SUMMARY:Les soirées stand-up
+LOCATION:Lyon
+DESCRIPTION:Les soirées stand-up du Repaire\, c'est 15 minutes par humoris
+ te pour qu'ils aient le temps de vous faire découvrir leur univers.\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/les-soirees-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/les-soirees-stand-up/
+END:VEVENT
+END:VCALENDAR

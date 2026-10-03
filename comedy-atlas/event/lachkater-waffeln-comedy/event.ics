@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lachkater-waffeln-comedy@comedyatlas.app
+DTSTAMP:20261107T160000Z
+DTSTART:20261107T160000Z
+DTEND:20261107T180000Z
+SUMMARY:Lachkater Waffeln & Comedy
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lachkater
+ -waffeln-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/lachkater-waffeln-comedy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:demasiado@comedyatlas.app
+DTSTAMP:20261012T191500Z
+DTSTART:20261012T191500Z
+DTEND:20261012T211500Z
+SUMMARY:Demasiado
+LOCATION:La Divine Comédie - Salle 2\, 2 rue Saulnier\, Paris
+DESCRIPTION:Pablo Molinari\, uno de los comediantes argentinos más popular
+ es del momento\, se presenta por primera y única vez con Demasiado\, su qu
+ into especial de comedia.\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/demasiado/
+URL:https://comedyatlas.app/comedy-atlas/event/demasiado/
+END:VEVENT
+END:VCALENDAR

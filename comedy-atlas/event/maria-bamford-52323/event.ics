@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-52323@comedyatlas.app
+DTSTAMP:20261213T023000Z
+DTSTART:20261213T023000Z
+DTEND:20261213T043000Z
+SUMMARY:Maria Bamford
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-52323/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-52323/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucy-darling-of-the-holidays@comedyatlas.app
+DTSTAMP:20261212T013000Z
+DTSTART:20261212T013000Z
+DTEND:20261212T033000Z
+SUMMARY:Lucy Darling Of The Holidays
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucy-darl
+ ing-of-the-holidays/
+URL:https://comedyatlas.app/comedy-atlas/event/lucy-darling-of-the-holidays
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:santi-espinosa@comedyatlas.app
+DTSTAMP:20261128T000000Z
+DTSTART:20261128T000000Z
+DTEND:20261128T020000Z
+SUMMARY:Santi Espinosa
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/santi-esp
+ inosa/
+URL:https://comedyatlas.app/comedy-atlas/event/santi-espinosa/
+END:VEVENT
+END:VCALENDAR

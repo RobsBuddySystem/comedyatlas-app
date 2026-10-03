@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guillaume-sentou-dans-un-mec-cool-55972@comedyatlas.app
+DTSTAMP:20261024T180000Z
+DTSTART:20261024T180000Z
+DTEND:20261024T200000Z
+SUMMARY:Guillaume Sentou dans Un mec cool
+LOCATION:Lyon
+DESCRIPTION:Qu'est-ce qu'un mec cool ?\nMore info: https://comedyatlas.app/
+ comedy-atlas/event/guillaume-sentou-dans-un-mec-cool-55972/
+URL:https://comedyatlas.app/comedy-atlas/event/guillaume-sentou-dans-un-mec
+ -cool-55972/
+END:VEVENT
+END:VCALENDAR

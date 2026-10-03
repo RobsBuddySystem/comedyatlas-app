@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:william-shatner-live-on-stage-with-star-trek-ii-the-wrath-of-khan-50082
+ @comedyatlas.app
+DTSTAMP:20261030T233000Z
+DTSTART:20261030T233000Z
+DTEND:20261031T013000Z
+SUMMARY:William Shatner Live On-stage with Star Trek II: The Wrath of Khan
+LOCATION:Indianapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/william-s
+ hatner-live-on-stage-with-star-trek-ii-the-wrath-of-khan-50082/
+URL:https://comedyatlas.app/comedy-atlas/event/william-shatner-live-on-stag
+ e-with-star-trek-ii-the-wrath-of-khan-50082/
+END:VEVENT
+END:VCALENDAR

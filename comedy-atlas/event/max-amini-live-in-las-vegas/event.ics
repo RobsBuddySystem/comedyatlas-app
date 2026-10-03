@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:max-amini-live-in-las-vegas@comedyatlas.app
+DTSTAMP:20261012T030000Z
+DTSTART:20261012T030000Z
+DTEND:20261012T050000Z
+SUMMARY:Max Amini Live in Las Vegas!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/max-amini
+ -live-in-las-vegas/
+URL:https://comedyatlas.app/comedy-atlas/event/max-amini-live-in-las-vegas/
+END:VEVENT
+END:VCALENDAR

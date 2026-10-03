@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stevie-martin-clout@comedyatlas.app
+DTSTAMP:20261007T174500Z
+DTSTART:20261007T174500Z
+DTEND:20261007T194500Z
+SUMMARY:Stevie Martin - Clout
+LOCATION:Birmingham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stevie-ma
+ rtin-clout/
+URL:https://comedyatlas.app/comedy-atlas/event/stevie-martin-clout/
+END:VEVENT
+END:VCALENDAR

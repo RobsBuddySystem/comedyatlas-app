@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-falcone-53313@comedyatlas.app
+DTSTAMP:20270130T010000Z
+DTSTART:20270130T010000Z
+DTEND:20270130T030000Z
+SUMMARY:Alex Falcone
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-falc
+ one-53313/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-falcone-53313/
+END:VEVENT
+END:VCALENDAR

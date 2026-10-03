@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:max-amini-live-in-ottawa@comedyatlas.app
+DTSTAMP:20261016T000000Z
+DTSTART:20261016T000000Z
+DTEND:20261016T020000Z
+SUMMARY:Max Amini Live In Ottawa!
+LOCATION:Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/max-amini
+ -live-in-ottawa/
+URL:https://comedyatlas.app/comedy-atlas/event/max-amini-live-in-ottawa/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:russell-howard@comedyatlas.app
+DTSTAMP:20261215T000000Z
+DTSTART:20261215T000000Z
+DTEND:20261215T020000Z
+SUMMARY:Russell Howard
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/russell-h
+ oward/
+URL:https://comedyatlas.app/comedy-atlas/event/russell-howard/
+END:VEVENT
+END:VCALENDAR

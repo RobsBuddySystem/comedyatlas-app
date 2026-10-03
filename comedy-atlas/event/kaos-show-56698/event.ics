@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kaos-show-56698@comedyatlas.app
+DTSTAMP:20261109T190000Z
+DTSTART:20261109T190000Z
+DTEND:20261109T210000Z
+SUMMARY:Kaos Show
+LOCATION:Casino de Paris\, 16\, rue de Clichy\, Paris
+DESCRIPTION:Kaos Show vous retrouve pour une soirée de folie au Casino de 
+ Paris !\nMore info: https://comedyatlas.app/comedy-atlas/event/kaos-show-56
+ 698/
+URL:https://comedyatlas.app/comedy-atlas/event/kaos-show-56698/
+END:VEVENT
+END:VCALENDAR

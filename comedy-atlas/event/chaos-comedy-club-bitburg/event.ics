@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-bitburg@comedyatlas.app
+DTSTAMP:20270225T180000Z
+DTSTART:20270225T180000Z
+DTEND:20270225T200000Z
+SUMMARY:Chaos Comedy Club | Bitburg
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-bitburg/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-bitburg/
+END:VEVENT
+END:VCALENDAR

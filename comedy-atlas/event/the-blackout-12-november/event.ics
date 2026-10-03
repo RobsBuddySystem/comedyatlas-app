@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-blackout-12-november@comedyatlas.app
+DTSTAMP:20261112T190000Z
+DTSTART:20261112T190000Z
+DTEND:20261112T210000Z
+SUMMARY:THE BLACKOUT - 12 NOVEMBER
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-black
+ out-12-november/
+URL:https://comedyatlas.app/comedy-atlas/event/the-blackout-12-november/
+END:VEVENT
+END:VCALENDAR

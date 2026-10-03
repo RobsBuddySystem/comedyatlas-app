@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-canvey-island@comedyatlas.app
+DTSTAMP:20261128T200000Z
+DTSTART:20261128T200000Z
+DTEND:20261128T220000Z
+SUMMARY:The Comedy Store - Canvey Island
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-canvey-island/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-canvey-isla
+ nd/
+END:VEVENT
+END:VCALENDAR

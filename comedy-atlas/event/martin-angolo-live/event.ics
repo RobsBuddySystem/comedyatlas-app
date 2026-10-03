@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-angolo-live@comedyatlas.app
+DTSTAMP:20261102T200000Z
+DTSTART:20261102T200000Z
+DTEND:20261102T220000Z
+SUMMARY:Martin Angolo: Live
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-an
+ golo-live/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-angolo-live/
+END:VEVENT
+END:VCALENDAR

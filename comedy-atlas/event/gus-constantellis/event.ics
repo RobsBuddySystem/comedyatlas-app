@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gus-constantellis@comedyatlas.app
+DTSTAMP:20261015T230000Z
+DTSTART:20261015T230000Z
+DTEND:20261016T010000Z
+SUMMARY:Gus Constantellis
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gus-const
+ antellis/
+URL:https://comedyatlas.app/comedy-atlas/event/gus-constantellis/
+END:VEVENT
+END:VCALENDAR

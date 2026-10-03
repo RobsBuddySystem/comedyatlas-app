@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:harriet-kemsley-floozy@comedyatlas.app
+DTSTAMP:20261113T200000Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:Harriet Kemsley: Floozy
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/harriet-k
+ emsley-floozy/
+URL:https://comedyatlas.app/comedy-atlas/event/harriet-kemsley-floozy/
+END:VEVENT
+END:VCALENDAR

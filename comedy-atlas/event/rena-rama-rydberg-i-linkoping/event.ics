@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rena-rama-rydberg-i-linkoping@comedyatlas.app
+DTSTAMP:20270403T170000Z
+DTSTART:20270403T170000Z
+DTEND:20270403T190000Z
+SUMMARY:Rena Rama Rydberg i Linköping
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rena-rama
+ -rydberg-i-linkoping/
+URL:https://comedyatlas.app/comedy-atlas/event/rena-rama-rydberg-i-linkopin
+ g/
+END:VEVENT
+END:VCALENDAR

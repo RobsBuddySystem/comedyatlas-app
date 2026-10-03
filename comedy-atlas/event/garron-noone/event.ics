@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:garron-noone@comedyatlas.app
+DTSTAMP:20261218T190000Z
+DTSTART:20261218T190000Z
+DTEND:20261218T210000Z
+SUMMARY:Garron Noone
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/garron-no
+ one/
+URL:https://comedyatlas.app/comedy-atlas/event/garron-noone/
+END:VEVENT
+END:VCALENDAR

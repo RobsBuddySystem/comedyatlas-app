@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-posehn-48569@comedyatlas.app
+DTSTAMP:20261004T030000Z
+DTSTART:20261004T030000Z
+DTEND:20261004T050000Z
+SUMMARY:Brian Posehn
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-pos
+ ehn-48569/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-posehn-48569/
+END:VEVENT
+END:VCALENDAR

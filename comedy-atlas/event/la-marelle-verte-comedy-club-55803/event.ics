@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-marelle-verte-comedy-club-55803@comedyatlas.app
+DTSTAMP:20261009T170000Z
+DTSTART:20261009T170000Z
+DTEND:20261009T190000Z
+SUMMARY:La Marelle Verte Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:La Marelle Verte : tous les mercredis 20h\, du stand-up face à
+  la Garonne\, en mode after-work. L'humour qui tient chaud\, dans un spot d
+ es plus cools.\nMore info: https://comedyatlas.app/comedy-atlas/event/la-ma
+ relle-verte-comedy-club-55803/
+URL:https://comedyatlas.app/comedy-atlas/event/la-marelle-verte-comedy-club
+ -55803/
+END:VEVENT
+END:VCALENDAR

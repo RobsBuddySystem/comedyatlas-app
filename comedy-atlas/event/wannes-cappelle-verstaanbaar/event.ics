@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wannes-cappelle-verstaanbaar@comedyatlas.app
+DTSTAMP:20271118T190000Z
+DTSTART:20271118T190000Z
+DTEND:20271118T210000Z
+SUMMARY:Wannes Cappelle "Verstaanbaar"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/wannes-ca
+ ppelle-verstaanbaar/
+URL:https://comedyatlas.app/comedy-atlas/event/wannes-cappelle-verstaanbaar
+ /
+END:VEVENT
+END:VCALENDAR

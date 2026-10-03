@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:damitas-histeria@comedyatlas.app
+DTSTAMP:20261005T003000Z
+DTSTART:20261005T003000Z
+DTEND:20261005T023000Z
+SUMMARY:Damitas Histeria
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/damitas-h
+ isteria/
+URL:https://comedyatlas.app/comedy-atlas/event/damitas-histeria/
+END:VEVENT
+END:VCALENDAR

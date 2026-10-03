@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anthony-mrocka@comedyatlas.app
+DTSTAMP:20270114T013000Z
+DTSTART:20270114T013000Z
+DTEND:20270114T033000Z
+SUMMARY:Anthony Mrocka
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anthony-m
+ rocka/
+URL:https://comedyatlas.app/comedy-atlas/event/anthony-mrocka/
+END:VEVENT
+END:VCALENDAR

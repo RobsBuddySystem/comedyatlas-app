@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drew-dunn-50481@comedyatlas.app
+DTSTAMP:20261108T000000Z
+DTSTART:20261108T000000Z
+DTEND:20261108T020000Z
+SUMMARY:Drew Dunn
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/drew-dunn
+ -50481/
+URL:https://comedyatlas.app/comedy-atlas/event/drew-dunn-50481/
+END:VEVENT
+END:VCALENDAR

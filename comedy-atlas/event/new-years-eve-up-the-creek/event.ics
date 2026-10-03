@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-years-eve-up-the-creek@comedyatlas.app
+DTSTAMP:20261231T190000Z
+DTSTART:20261231T190000Z
+DTEND:20261231T210000Z
+SUMMARY:NEW YEARS EVE - UP THE CREEK
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-years
+ -eve-up-the-creek/
+URL:https://comedyatlas.app/comedy-atlas/event/new-years-eve-up-the-creek/
+END:VEVENT
+END:VCALENDAR

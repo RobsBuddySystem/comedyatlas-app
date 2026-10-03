@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-factory@comedyatlas.app
+DTSTAMP:20261004T023000Z
+DTSTART:20261004T023000Z
+DTEND:20261004T043000Z
+SUMMARY:Laugh Factory
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-fac
+ tory/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-factory/
+END:VEVENT
+END:VCALENDAR

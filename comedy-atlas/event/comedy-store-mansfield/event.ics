@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-store-mansfield@comedyatlas.app
+DTSTAMP:20261024T183000Z
+DTSTART:20261024T183000Z
+DTEND:20261024T203000Z
+SUMMARY:Comedy Store - Mansfield
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-st
+ ore-mansfield/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-store-mansfield/
+END:VEVENT
+END:VCALENDAR

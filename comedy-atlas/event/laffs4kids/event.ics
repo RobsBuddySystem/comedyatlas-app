@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laffs4kids@comedyatlas.app
+DTSTAMP:20261213T120000Z
+DTSTART:20261213T120000Z
+DTEND:20261213T140000Z
+SUMMARY:Laffs4Kids
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laffs4kid
+ s/
+URL:https://comedyatlas.app/comedy-atlas/event/laffs4kids/
+END:VEVENT
+END:VCALENDAR

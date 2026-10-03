@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rosebud-baker-paper-bag-princess-tour@comedyatlas.app
+DTSTAMP:20261206T000000Z
+DTSTART:20261206T000000Z
+DTEND:20261206T020000Z
+SUMMARY:Rosebud Baker: Paper Bag Princess Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rosebud-b
+ aker-paper-bag-princess-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/rosebud-baker-paper-bag-prin
+ cess-tour/
+END:VEVENT
+END:VCALENDAR

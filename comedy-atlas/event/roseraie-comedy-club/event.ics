@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roseraie-comedy-club@comedyatlas.app
+DTSTAMP:20261019T180000Z
+DTSTART:20261019T180000Z
+DTEND:20261019T200000Z
+SUMMARY:Roseraie Comedy Club
+LOCATION:Toulouse
+DESCRIPTION:1h30 de pure rigolade à la Comédie de la Roseraie !\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/roseraie-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/roseraie-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:smile-comedy-club-55321@comedyatlas.app
+DTSTAMP:20261022T170000Z
+DTSTART:20261022T170000Z
+DTEND:20261022T190000Z
+SUMMARY:Smile Comedy Club
+LOCATION:Nantes
+DESCRIPTION:À Nantes\, fusionnez rires et délices ! Venez pour les humori
+ stes talentueux\, restez pour les tapas exquis\, le tout autour d'un verre.
+  Qui dit mieux ?\nMore info: https://comedyatlas.app/comedy-atlas/event/smi
+ le-comedy-club-55321/
+URL:https://comedyatlas.app/comedy-atlas/event/smile-comedy-club-55321/
+END:VEVENT
+END:VCALENDAR

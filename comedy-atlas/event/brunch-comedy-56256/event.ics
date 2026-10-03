@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brunch-comedy-56256@comedyatlas.app
+DTSTAMP:20261011T090000Z
+DTSTART:20261011T090000Z
+DTEND:20261011T110000Z
+SUMMARY:Brunch Comedy
+LOCATION:Lyon
+DESCRIPTION:La Relève présente le Brunch Comedy !\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/brunch-comedy-56256/
+URL:https://comedyatlas.app/comedy-atlas/event/brunch-comedy-56256/
+END:VEVENT
+END:VCALENDAR

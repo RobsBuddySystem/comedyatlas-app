@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bistro-comedy-club-55963@comedyatlas.app
+DTSTAMP:20261113T190000Z
+DTSTART:20261113T190000Z
+DTEND:20261113T210000Z
+SUMMARY:Bistro Comedy Club
+LOCATION:Gresy-sur-Aix
+DESCRIPTION:A Gresy-sur-Aix on a trouvé la recette : un micro\, une scène
+ \, des humoristes et c'est parti !\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/bistro-comedy-club-55963/
+URL:https://comedyatlas.app/comedy-atlas/event/bistro-comedy-club-55963/
+END:VEVENT
+END:VCALENDAR

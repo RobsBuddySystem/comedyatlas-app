@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lion-le-roi-est-de-retour@comedyatlas.app
+DTSTAMP:20261205T173000Z
+DTSTART:20261205T173000Z
+DTEND:20261205T193000Z
+SUMMARY:LION - Le Roi est de retour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lion-le-r
+ oi-est-de-retour/
+URL:https://comedyatlas.app/comedy-atlas/event/lion-le-roi-est-de-retour/
+END:VEVENT
+END:VCALENDAR

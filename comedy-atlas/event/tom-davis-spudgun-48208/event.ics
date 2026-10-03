@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-davis-spudgun-48208@comedyatlas.app
+DTSTAMP:20270619T183000Z
+DTSTART:20270619T183000Z
+DTEND:20270619T203000Z
+SUMMARY:Tom Davis: Spudgun
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-davis
+ -spudgun-48208/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-davis-spudgun-48208/
+END:VEVENT
+END:VCALENDAR

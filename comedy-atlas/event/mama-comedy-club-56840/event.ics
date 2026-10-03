@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mama-comedy-club-56840@comedyatlas.app
+DTSTAMP:20261111T203000Z
+DTSTART:20261111T203000Z
+DTEND:20261111T223000Z
+SUMMARY:Mama comedy club
+LOCATION:Paris
+DESCRIPTION:Le Mama Comedy Club\, c'est bien plus qu'un comedy club.\n\nIma
+ ginez\, un lieu cosy\, élégant et ultra stylé\, imaginé pour sublimer v
+ otre soirée.\nMore info: https://comedyatlas.app/comedy-atlas/event/mama-c
+ omedy-club-56840/
+URL:https://comedyatlas.app/comedy-atlas/event/mama-comedy-club-56840/
+END:VEVENT
+END:VCALENDAR

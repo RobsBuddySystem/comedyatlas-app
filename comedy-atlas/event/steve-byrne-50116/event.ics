@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-byrne-50116@comedyatlas.app
+DTSTAMP:20261031T024500Z
+DTSTART:20261031T024500Z
+DTEND:20261031T044500Z
+SUMMARY:Steve Byrne
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-byr
+ ne-50116/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-byrne-50116/
+END:VEVENT
+END:VCALENDAR

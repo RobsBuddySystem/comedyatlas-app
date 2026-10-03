@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ryan-carrick@comedyatlas.app
+DTSTAMP:20261015T193000Z
+DTSTART:20261015T193000Z
+DTEND:20261015T213000Z
+SUMMARY:Ryan Carrick
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ryan-carr
+ ick/
+URL:https://comedyatlas.app/comedy-atlas/event/ryan-carrick/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-dollop-down-under-8@comedyatlas.app
+DTSTAMP:20261109T093000Z
+DTSTART:20261109T093000Z
+DTEND:20261109T113000Z
+SUMMARY:The Dollop - Down Under 8
+LOCATION:Brisbane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-dollo
+ p-down-under-8/
+URL:https://comedyatlas.app/comedy-atlas/event/the-dollop-down-under-8/
+END:VEVENT
+END:VCALENDAR

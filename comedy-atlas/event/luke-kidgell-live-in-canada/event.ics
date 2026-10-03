@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-kidgell-live-in-canada@comedyatlas.app
+DTSTAMP:20261023T000000Z
+DTSTART:20261023T000000Z
+DTEND:20261023T020000Z
+SUMMARY:Luke Kidgell - Live in Canada
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-kidg
+ ell-live-in-canada/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-kidgell-live-in-canada/
+END:VEVENT
+END:VCALENDAR

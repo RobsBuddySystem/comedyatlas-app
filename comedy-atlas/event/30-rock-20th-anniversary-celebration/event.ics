@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:30-rock-20th-anniversary-celebration@comedyatlas.app
+DTSTAMP:20261011T230000Z
+DTSTART:20261011T230000Z
+DTEND:20261012T010000Z
+SUMMARY:30 Rock 20th Anniversary Celebration
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/30-rock-2
+ 0th-anniversary-celebration/
+URL:https://comedyatlas.app/comedy-atlas/event/30-rock-20th-anniversary-cel
+ ebration/
+END:VEVENT
+END:VCALENDAR

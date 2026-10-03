@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mitch-wood-my-impression-of-a-show@comedyatlas.app
+DTSTAMP:20261019T233000Z
+DTSTART:20261019T233000Z
+DTEND:20261020T013000Z
+SUMMARY:Mitch Wood "My Impression of a Show"
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mitch-woo
+ d-my-impression-of-a-show/
+URL:https://comedyatlas.app/comedy-atlas/event/mitch-wood-my-impression-of-
+ a-show/
+END:VEVENT
+END:VCALENDAR

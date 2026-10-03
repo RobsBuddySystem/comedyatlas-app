@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-achkar@comedyatlas.app
+DTSTAMP:20261108T193000Z
+DTSTART:20261108T193000Z
+DTEND:20261108T213000Z
+SUMMARY:John Achkar
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-achk
+ ar/
+URL:https://comedyatlas.app/comedy-atlas/event/john-achkar/
+END:VEVENT
+END:VCALENDAR

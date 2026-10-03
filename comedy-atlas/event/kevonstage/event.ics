@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevonstage@comedyatlas.app
+DTSTAMP:20261120T030000Z
+DTSTART:20261120T030000Z
+DTEND:20261120T050000Z
+SUMMARY:KevOnStage
+LOCATION:Tacoma
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevonstag
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/kevonstage/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-releve-comedy-club-les-gones@comedyatlas.app
+DTSTAMP:20261013T173000Z
+DTSTART:20261013T173000Z
+DTEND:20261013T193000Z
+SUMMARY:La Relève Comedy Club : Les Gones
+LOCATION:Lyon
+DESCRIPTION:La Relève Comedy Club – L'adresse incontournable du stand-up
+  à Lyon !\nMore info: https://comedyatlas.app/comedy-atlas/event/la-releve
+ -comedy-club-les-gones/
+URL:https://comedyatlas.app/comedy-atlas/event/la-releve-comedy-club-les-go
+ nes/
+END:VEVENT
+END:VCALENDAR

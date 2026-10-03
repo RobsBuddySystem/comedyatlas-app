@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-best-in-stand-up-friday-27th-november@comedyatlas.app
+DTSTAMP:20261127T193000Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:The Best in Stand Up - Friday 27th November
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-best-
+ in-stand-up-friday-27th-november/
+URL:https://comedyatlas.app/comedy-atlas/event/the-best-in-stand-up-friday-
+ 27th-november/
+END:VEVENT
+END:VCALENDAR

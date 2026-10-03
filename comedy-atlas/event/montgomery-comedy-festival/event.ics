@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:montgomery-comedy-festival@comedyatlas.app
+DTSTAMP:20261024T010000Z
+DTSTART:20261024T010000Z
+DTEND:20261024T030000Z
+SUMMARY:Montgomery Comedy Festival
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/montgomer
+ y-comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/montgomery-comedy-festival/
+END:VEVENT
+END:VCALENDAR

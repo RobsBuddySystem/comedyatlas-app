@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dudes-live-tour-27@comedyatlas.app
+DTSTAMP:20270412T180000Z
+DTSTART:20270412T180000Z
+DTEND:20270412T200000Z
+SUMMARY:dudes. - Live Tour 27
+LOCATION:Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dudes-liv
+ e-tour-27/
+URL:https://comedyatlas.app/comedy-atlas/event/dudes-live-tour-27/
+END:VEVENT
+END:VCALENDAR

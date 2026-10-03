@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roy-chubby-brown-it-s-only-comedy@comedyatlas.app
+DTSTAMP:20271022T173000Z
+DTSTART:20271022T173000Z
+DTEND:20271022T193000Z
+SUMMARY:Roy Chubby Brown - It's Only Comedy
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roy-chubb
+ y-brown-it-s-only-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/roy-chubby-brown-it-s-only-c
+ omedy/
+END:VEVENT
+END:VCALENDAR

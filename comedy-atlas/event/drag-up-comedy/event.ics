@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drag-up-comedy@comedyatlas.app
+DTSTAMP:20261019T020000Z
+DTSTART:20261019T020000Z
+DTEND:20261019T040000Z
+SUMMARY:Drag-Up Comedy
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/drag-up-c
+ omedy/
+URL:https://comedyatlas.app/comedy-atlas/event/drag-up-comedy/
+END:VEVENT
+END:VCALENDAR

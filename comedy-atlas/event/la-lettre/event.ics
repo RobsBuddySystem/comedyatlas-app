@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-lettre@comedyatlas.app
+DTSTAMP:20270401T180000Z
+DTSTART:20270401T180000Z
+DTEND:20270401T200000Z
+SUMMARY:La Lettre
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/la-lettre
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/la-lettre/
+END:VEVENT
+END:VCALENDAR

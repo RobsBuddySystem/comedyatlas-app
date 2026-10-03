@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:isabelle-guiot-dans-loufoque@comedyatlas.app
+DTSTAMP:20261010T184500Z
+DTSTART:20261010T184500Z
+DTEND:20261010T204500Z
+SUMMARY:Isabelle Guiot dans Loufoque
+LOCATION:Marseille
+DESCRIPTION:Rencontrez Isabelle\, trentenaire marseillaise\, dans son unive
+ rs original et émouvant où les sorties de routes sont monnaie courante.\n
+ More info: https://comedyatlas.app/comedy-atlas/event/isabelle-guiot-dans-l
+ oufoque/
+URL:https://comedyatlas.app/comedy-atlas/event/isabelle-guiot-dans-loufoque
+ /
+END:VEVENT
+END:VCALENDAR

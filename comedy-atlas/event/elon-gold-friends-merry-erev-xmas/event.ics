@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elon-gold-friends-merry-erev-xmas@comedyatlas.app
+DTSTAMP:20261225T030000Z
+DTSTART:20261225T030000Z
+DTEND:20261225T050000Z
+SUMMARY:Elon Gold & Friends: Merry Erev Xmas
+LOCATION:Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elon-gold
+ -friends-merry-erev-xmas/
+URL:https://comedyatlas.app/comedy-atlas/event/elon-gold-friends-merry-erev
+ -xmas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seth-meyers-live@comedyatlas.app
+DTSTAMP:20261024T010000Z
+DTSTART:20261024T010000Z
+DTEND:20261024T030000Z
+SUMMARY:Seth Meyers: Live
+LOCATION:Dallas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/seth-meye
+ rs-live/
+URL:https://comedyatlas.app/comedy-atlas/event/seth-meyers-live/
+END:VEVENT
+END:VCALENDAR

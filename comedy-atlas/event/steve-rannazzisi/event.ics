@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-rannazzisi@comedyatlas.app
+DTSTAMP:20270109T010000Z
+DTSTART:20270109T010000Z
+DTEND:20270109T030000Z
+SUMMARY:Steve Rannazzisi
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-ran
+ nazzisi/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-rannazzisi/
+END:VEVENT
+END:VCALENDAR

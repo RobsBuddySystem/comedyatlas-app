@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-proops-new-year-s-eve-countdown-show@comedyatlas.app
+DTSTAMP:20270101T053000Z
+DTSTART:20270101T053000Z
+DTEND:20270101T073000Z
+SUMMARY:Greg Proops: New Year's Eve Countdown Show
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-proo
+ ps-new-year-s-eve-countdown-show/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-proops-new-year-s-eve-c
+ ountdown-show/
+END:VEVENT
+END:VCALENDAR

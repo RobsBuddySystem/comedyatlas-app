@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:outside-comedy-club@comedyatlas.app
+DTSTAMP:20261004T161500Z
+DTSTART:20261004T161500Z
+DTEND:20261004T181500Z
+SUMMARY:Outside Comedy Club
+LOCATION:L'Exode\, 39 Boulevard de Strasbourg\, 75010 Paris\, Paris
+DESCRIPTION:Au programme : Environ 1h de stand-up et une dizaine d'humorist
+ es aux univers très différents à découvrir\nMore info: https://comedyat
+ las.app/comedy-atlas/event/outside-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/outside-comedy-club/
+END:VEVENT
+END:VCALENDAR

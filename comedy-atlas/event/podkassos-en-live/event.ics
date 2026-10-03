@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:podkassos-en-live@comedyatlas.app
+DTSTAMP:20261011T150000Z
+DTSTART:20261011T150000Z
+DTEND:20261011T170000Z
+SUMMARY:Podkassos en Live
+LOCATION:Bordeaux
+DESCRIPTION:Podkassos c'est le podcast de trois potes humoristes : Pierre T
+ hevenoux\, Franjo\, et Urbain.\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/podkassos-en-live/
+URL:https://comedyatlas.app/comedy-atlas/event/podkassos-en-live/
+END:VEVENT
+END:VCALENDAR

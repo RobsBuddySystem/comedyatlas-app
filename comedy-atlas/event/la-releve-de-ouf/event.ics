@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-releve-de-ouf@comedyatlas.app
+DTSTAMP:20261014T180000Z
+DTSTART:20261014T180000Z
+DTEND:20261014T200000Z
+SUMMARY:La relève de ouf !
+LOCATION:Paris
+DESCRIPTION:Le premier casting d'humoristes à l'échelle de la France !\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/la-releve-de-ouf/
+URL:https://comedyatlas.app/comedy-atlas/event/la-releve-de-ouf/
+END:VEVENT
+END:VCALENDAR

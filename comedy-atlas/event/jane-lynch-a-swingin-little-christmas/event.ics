@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jane-lynch-a-swingin-little-christmas@comedyatlas.app
+DTSTAMP:20261216T033000Z
+DTSTART:20261216T033000Z
+DTEND:20261216T053000Z
+SUMMARY:JANE LYNCH: A SWINGIN LITTLE CHRISTMAS
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jane-lync
+ h-a-swingin-little-christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/jane-lynch-a-swingin-little-
+ christmas/
+END:VEVENT
+END:VCALENDAR

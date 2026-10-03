@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-di-mambro-55774@comedyatlas.app
+DTSTAMP:20261111T200000Z
+DTSTART:20261111T200000Z
+DTEND:20261111T220000Z
+SUMMARY:Alex di Mambro
+LOCATION:Caen
+DESCRIPTION:Alex Di Mambro est fasciné par l'absurdité du monde dans lequ
+ el nous vivons.\nMore info: https://comedyatlas.app/comedy-atlas/event/alex
+ -di-mambro-55774/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-di-mambro-55774/
+END:VEVENT
+END:VCALENDAR

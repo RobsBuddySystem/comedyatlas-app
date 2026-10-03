@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-fidance-53463@comedyatlas.app
+DTSTAMP:20270208T020000Z
+DTSTART:20270208T020000Z
+DTEND:20270208T040000Z
+SUMMARY:Ian Fidance
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-fidan
+ ce-53463/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-fidance-53463/
+END:VEVENT
+END:VCALENDAR

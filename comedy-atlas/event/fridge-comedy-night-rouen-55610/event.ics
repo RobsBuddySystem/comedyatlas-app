@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fridge-comedy-night-rouen-55610@comedyatlas.app
+DTSTAMP:20261010T170000Z
+DTSTART:20261010T170000Z
+DTEND:20261010T190000Z
+SUMMARY:Fridge Comedy Night Rouen
+LOCATION:Rouen
+DESCRIPTION:C'est le plateau phare du Fridge Comedy Club !\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/fridge-comedy-night-rouen-55610/
+URL:https://comedyatlas.app/comedy-atlas/event/fridge-comedy-night-rouen-55
+ 610/
+END:VEVENT
+END:VCALENDAR

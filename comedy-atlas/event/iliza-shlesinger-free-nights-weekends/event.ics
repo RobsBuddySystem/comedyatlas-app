@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:iliza-shlesinger-free-nights-weekends@comedyatlas.app
+DTSTAMP:20270411T000000Z
+DTSTART:20270411T000000Z
+DTEND:20270411T020000Z
+SUMMARY:Iliza Shlesinger: Free Nights & Weekends
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/iliza-shl
+ esinger-free-nights-weekends/
+URL:https://comedyatlas.app/comedy-atlas/event/iliza-shlesinger-free-nights
+ -weekends/
+END:VEVENT
+END:VCALENDAR

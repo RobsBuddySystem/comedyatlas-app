@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-rowe@comedyatlas.app
+DTSTAMP:20261004T180000Z
+DTSTART:20261004T180000Z
+DTEND:20261004T200000Z
+SUMMARY:Adam Rowe
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-rowe
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/adam-rowe/
+END:VEVENT
+END:VCALENDAR

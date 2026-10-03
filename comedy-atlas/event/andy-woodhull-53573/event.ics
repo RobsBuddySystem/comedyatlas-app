@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andy-woodhull-53573@comedyatlas.app
+DTSTAMP:20270219T013000Z
+DTSTART:20270219T013000Z
+DTEND:20270219T033000Z
+SUMMARY:Andy Woodhull
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andy-wood
+ hull-53573/
+URL:https://comedyatlas.app/comedy-atlas/event/andy-woodhull-53573/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:albertville-comedy-la-soiree-de-l-humour@comedyatlas.app
+DTSTAMP:20261113T193000Z
+DTSTART:20261113T193000Z
+DTEND:20261113T213000Z
+SUMMARY:Albertville Comedy : la soirée de l'humour
+LOCATION:Albertville
+DESCRIPTION:Albertville fait sa comédie et invite l'humour chez elle ! 4 h
+ umoristes joueront leurs meilleurs sketches et stand-up !\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/albertville-comedy-la-soiree-de-l-hum
+ our/
+URL:https://comedyatlas.app/comedy-atlas/event/albertville-comedy-la-soiree
+ -de-l-humour/
+END:VEVENT
+END:VCALENDAR

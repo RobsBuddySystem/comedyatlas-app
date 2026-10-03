@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-lycett-do-you-really-lycett@comedyatlas.app
+DTSTAMP:20270513T173000Z
+DTSTART:20270513T173000Z
+DTEND:20270513T193000Z
+SUMMARY:Joe Lycett - Do You Really Lycett?
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-lycet
+ t-do-you-really-lycett/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-lycett-do-you-really-lyc
+ ett/
+END:VEVENT
+END:VCALENDAR

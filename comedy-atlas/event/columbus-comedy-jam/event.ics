@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:columbus-comedy-jam@comedyatlas.app
+DTSTAMP:20261004T000000Z
+DTSTART:20261004T000000Z
+DTEND:20261004T020000Z
+SUMMARY:Columbus Comedy Jam
+LOCATION:Columbus
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/columbus-
+ comedy-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/columbus-comedy-jam/
+END:VEVENT
+END:VCALENDAR

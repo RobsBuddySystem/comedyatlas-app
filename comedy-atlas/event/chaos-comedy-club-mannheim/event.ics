@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-mannheim@comedyatlas.app
+DTSTAMP:20261011T170000Z
+DTSTART:20261011T170000Z
+DTEND:20261011T190000Z
+SUMMARY:Chaos Comedy Club | Mannheim
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-mannheim/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-mannheim/
+END:VEVENT
+END:VCALENDAR

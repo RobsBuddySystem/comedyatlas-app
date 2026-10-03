@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-blackout-8-october@comedyatlas.app
+DTSTAMP:20261008T180000Z
+DTSTART:20261008T180000Z
+DTEND:20261008T200000Z
+SUMMARY:THE BLACKOUT - 8 OCTOBER
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-black
+ out-8-october/
+URL:https://comedyatlas.app/comedy-atlas/event/the-blackout-8-october/
+END:VEVENT
+END:VCALENDAR

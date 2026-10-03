@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-nihill-53850@comedyatlas.app
+DTSTAMP:20270314T030000Z
+DTSTART:20270314T030000Z
+DTEND:20270314T050000Z
+SUMMARY:David Nihill
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-nih
+ ill-53850/
+URL:https://comedyatlas.app/comedy-atlas/event/david-nihill-53850/
+END:VEVENT
+END:VCALENDAR

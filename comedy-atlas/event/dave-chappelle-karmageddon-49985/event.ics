@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-chappelle-karmageddon-49985@comedyatlas.app
+DTSTAMP:20261028T003000Z
+DTSTART:20261028T003000Z
+DTEND:20261028T023000Z
+SUMMARY:Dave Chappelle Karmageddon
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-chap
+ pelle-karmageddon-49985/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-chappelle-karmageddon-4
+ 9985/
+END:VEVENT
+END:VCALENDAR

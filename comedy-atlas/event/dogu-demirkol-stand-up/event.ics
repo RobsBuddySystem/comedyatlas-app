@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dogu-demirkol-stand-up@comedyatlas.app
+DTSTAMP:20261101T190000Z
+DTSTART:20261101T190000Z
+DTEND:20261101T210000Z
+SUMMARY:Dogu Demirkol Stand-Up
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dogu-demi
+ rkol-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/dogu-demirkol-stand-up/
+END:VEVENT
+END:VCALENDAR

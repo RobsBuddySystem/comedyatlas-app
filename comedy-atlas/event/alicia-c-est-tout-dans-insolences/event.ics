@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alicia-c-est-tout-dans-insolences@comedyatlas.app
+DTSTAMP:20261104T180000Z
+DTSTART:20261104T180000Z
+DTEND:20261104T200000Z
+SUMMARY:Alicia C'est Tout dans Insolences
+LOCATION:Toulouse
+DESCRIPTION:Si vous êtes raciste\, misogyne et de droite\, n'y-allez pas !
+  Pour les autres\, Alicia est hilarante\, on rit du début à la fin. A ne 
+ pas manquer !\nMore info: https://comedyatlas.app/comedy-atlas/event/alicia
+ -c-est-tout-dans-insolences/
+URL:https://comedyatlas.app/comedy-atlas/event/alicia-c-est-tout-dans-insol
+ ences/
+END:VEVENT
+END:VCALENDAR

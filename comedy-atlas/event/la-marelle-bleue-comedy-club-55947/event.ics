@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-marelle-bleue-comedy-club-55947@comedyatlas.app
+DTSTAMP:20261031T200000Z
+DTSTART:20261031T200000Z
+DTEND:20261031T220000Z
+SUMMARY:La Marelle Bleue Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:Découvrez La Marelle Bleue : 1h30 de stand-up pour tous\, dans
+  un lieu ludique\, joyeux et unique\, au Pas de Lune.\nMore info: https://c
+ omedyatlas.app/comedy-atlas/event/la-marelle-bleue-comedy-club-55947/
+URL:https://comedyatlas.app/comedy-atlas/event/la-marelle-bleue-comedy-club
+ -55947/
+END:VEVENT
+END:VCALENDAR

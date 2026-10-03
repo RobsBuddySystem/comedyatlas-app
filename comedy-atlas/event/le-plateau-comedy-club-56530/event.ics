@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-plateau-comedy-club-56530@comedyatlas.app
+DTSTAMP:20261107T171500Z
+DTSTART:20261107T171500Z
+DTEND:20261107T191500Z
+SUMMARY:Le Plateau Comedy Club
+LOCATION:Paris
+DESCRIPTION:" Vivez le meilleur du stand-up parisien avec Le Plateau Comedy
+  Club\, le nouveau rendez-vous incontournable du comedy club à Paris !\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/le-plateau-comedy-club-
+ 56530/
+URL:https://comedyatlas.app/comedy-atlas/event/le-plateau-comedy-club-56530
+ /
+END:VEVENT
+END:VCALENDAR

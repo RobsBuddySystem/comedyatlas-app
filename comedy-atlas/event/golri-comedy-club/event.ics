@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:golri-comedy-club@comedyatlas.app
+DTSTAMP:20261021T180000Z
+DTSTART:20261021T180000Z
+DTEND:20261021T200000Z
+SUMMARY:Golri Comedy Club
+LOCATION:Paris
+DESCRIPTION:Le Comedy Club Labo de Ménilmontant\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/golri-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/golri-comedy-club/
+END:VEVENT
+END:VCALENDAR

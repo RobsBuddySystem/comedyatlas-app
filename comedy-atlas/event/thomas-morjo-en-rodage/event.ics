@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-morjo-en-rodage@comedyatlas.app
+DTSTAMP:20261025T170000Z
+DTSTART:20261025T170000Z
+DTEND:20261025T190000Z
+SUMMARY:Thomas Morjo En Rodage
+LOCATION:Bordeaux
+DESCRIPTION:"Hey les amis !\nTrop content de présenter ma toute nouvelle h
+ eure de stand up."\nMore info: https://comedyatlas.app/comedy-atlas/event/t
+ homas-morjo-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-morjo-en-rodage/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-kay-live-matinee-show-46542@comedyatlas.app
+DTSTAMP:20261121T143000Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Peter Kay Live (Matinee Show)
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-kay
+ -live-matinee-show-46542/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-kay-live-matinee-show-
+ 46542/
+END:VEVENT
+END:VCALENDAR

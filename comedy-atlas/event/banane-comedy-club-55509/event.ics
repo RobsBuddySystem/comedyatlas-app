@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:banane-comedy-club-55509@comedyatlas.app
+DTSTAMP:20261112T193000Z
+DTSTART:20261112T193000Z
+DTEND:20261112T213000Z
+SUMMARY:Banane Comedy Club
+LOCATION:Dijon
+DESCRIPTION:Une scène\, un public\, une soirée\, 3 humoristes\, 1h20 de r
+ ires !\nMore info: https://comedyatlas.app/comedy-atlas/event/banane-comedy
+ -club-55509/
+URL:https://comedyatlas.app/comedy-atlas/event/banane-comedy-club-55509/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ale-e-franz-recital@comedyatlas.app
+DTSTAMP:20261221T194500Z
+DTSTART:20261221T194500Z
+DTEND:20261221T214500Z
+SUMMARY:Ale e Franz - RECITAL
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ale-e-fra
+ nz-recital/
+URL:https://comedyatlas.app/comedy-atlas/event/ale-e-franz-recital/
+END:VEVENT
+END:VCALENDAR

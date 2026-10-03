@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-green-brainstorm@comedyatlas.app
+DTSTAMP:20270313T080000Z
+DTSTART:20270313T080000Z
+DTEND:20270313T100000Z
+SUMMARY:Thomas Green - Brainstorm
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thomas-gr
+ een-brainstorm/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-green-brainstorm/
+END:VEVENT
+END:VCALENDAR

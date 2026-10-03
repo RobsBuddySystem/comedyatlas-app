@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dylan-moran@comedyatlas.app
+DTSTAMP:20261203T190000Z
+DTSTART:20261203T190000Z
+DTEND:20261203T210000Z
+SUMMARY:Dylan Moran
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dylan-mor
+ an/
+URL:https://comedyatlas.app/comedy-atlas/event/dylan-moran/
+END:VEVENT
+END:VCALENDAR

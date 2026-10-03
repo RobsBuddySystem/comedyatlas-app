@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:variety-s-10-comics-to-watch@comedyatlas.app
+DTSTAMP:20261113T000000Z
+DTSTART:20261113T000000Z
+DTEND:20261113T020000Z
+SUMMARY:Variety's 10 Comics to Watch
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/variety-s
+ -10-comics-to-watch/
+URL:https://comedyatlas.app/comedy-atlas/event/variety-s-10-comics-to-watch
+ /
+END:VEVENT
+END:VCALENDAR

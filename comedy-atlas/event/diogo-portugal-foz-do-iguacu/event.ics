@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:diogo-portugal-foz-do-iguacu@comedyatlas.app
+DTSTAMP:20261218T230000Z
+DTSTART:20261218T230000Z
+DTEND:20261219T010000Z
+SUMMARY:Diogo Portugal - Foz do Iguaçu
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/diogo-por
+ tugal-foz-do-iguacu/
+URL:https://comedyatlas.app/comedy-atlas/event/diogo-portugal-foz-do-iguacu
+ /
+END:VEVENT
+END:VCALENDAR

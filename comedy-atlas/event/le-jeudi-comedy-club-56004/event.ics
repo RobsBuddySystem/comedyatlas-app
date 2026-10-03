@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-jeudi-comedy-club-56004@comedyatlas.app
+DTSTAMP:20261112T190000Z
+DTSTART:20261112T190000Z
+DTEND:20261112T210000Z
+SUMMARY:Le Jeudi Comedy Club
+LOCATION:Avignon
+DESCRIPTION:Le jeudi Comedy Club ! Le tout premier comedy club d'Avignon ! 
+ Revient pour une saison 2 !\nMore info: https://comedyatlas.app/comedy-atla
+ s/event/le-jeudi-comedy-club-56004/
+URL:https://comedyatlas.app/comedy-atlas/event/le-jeudi-comedy-club-56004/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mario-adrion-53872@comedyatlas.app
+DTSTAMP:20270319T020000Z
+DTSTART:20270319T020000Z
+DTEND:20270319T040000Z
+SUMMARY:Mario Adrion
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mario-adr
+ ion-53872/
+URL:https://comedyatlas.app/comedy-atlas/event/mario-adrion-53872/
+END:VEVENT
+END:VCALENDAR

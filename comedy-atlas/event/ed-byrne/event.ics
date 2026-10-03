@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ed-byrne@comedyatlas.app
+DTSTAMP:20270522T180000Z
+DTSTART:20270522T180000Z
+DTEND:20270522T200000Z
+SUMMARY:Ed Byrne
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ed-byrne/
+URL:https://comedyatlas.app/comedy-atlas/event/ed-byrne/
+END:VEVENT
+END:VCALENDAR

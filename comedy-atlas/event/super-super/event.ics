@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:super-super@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Super super !
+LOCATION:Toulouse
+DESCRIPTION:La nouveauté de la rentrée. Quand la ville rencontre la campa
+ gne qui rencontre la montagne\, ça promet de grands moments !\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/super-super/
+URL:https://comedyatlas.app/comedy-atlas/event/super-super/
+END:VEVENT
+END:VCALENDAR

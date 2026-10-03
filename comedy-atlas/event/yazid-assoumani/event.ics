@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yazid-assoumani@comedyatlas.app
+DTSTAMP:20261031T200000Z
+DTSTART:20261031T200000Z
+DTEND:20261031T220000Z
+SUMMARY:Yazid Assoumani
+LOCATION:Le Mans
+DESCRIPTION:Pourquoi tu n'es pas encore allé voir ce spectacle ? Parce que
+  Yazid n'est pas connu ? Raison de plus\, vous pourrez dire "j'étais là d
+ epuis le début".\nMore info: https://comedyatlas.app/comedy-atlas/event/ya
+ zid-assoumani/
+URL:https://comedyatlas.app/comedy-atlas/event/yazid-assoumani/
+END:VEVENT
+END:VCALENDAR

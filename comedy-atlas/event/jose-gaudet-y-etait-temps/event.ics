@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jose-gaudet-y-etait-temps@comedyatlas.app
+DTSTAMP:20261114T003000Z
+DTSTART:20261114T003000Z
+DTEND:20261114T023000Z
+SUMMARY:José Gaudet - Y'était temps!
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jose-gaud
+ et-y-etait-temps/
+URL:https://comedyatlas.app/comedy-atlas/event/jose-gaudet-y-etait-temps/
+END:VEVENT
+END:VCALENDAR

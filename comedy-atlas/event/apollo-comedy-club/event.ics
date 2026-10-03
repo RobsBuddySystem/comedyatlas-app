@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:apollo-comedy-club@comedyatlas.app
+DTSTAMP:20261114T183000Z
+DTSTART:20261114T183000Z
+DTEND:20261114T203000Z
+SUMMARY:Apollo Comedy Club
+LOCATION:Apollo Comedy - salle Apollo 200\, 18 rue du faubourg du temple\, 
+ Paris
+DESCRIPTION:Un micro. Des talents. Des fous rires. Bienvenue à l'Apollo Co
+ medy Club.\nMore info: https://comedyatlas.app/comedy-atlas/event/apollo-co
+ medy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/apollo-comedy-club/
+END:VEVENT
+END:VCALENDAR

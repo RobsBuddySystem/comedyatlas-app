@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-falcon-49754@comedyatlas.app
+DTSTAMP:20261024T043000Z
+DTSTART:20261024T043000Z
+DTEND:20261024T063000Z
+SUMMARY:Steve Falcon
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-fal
+ con-49754/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-falcon-49754/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tape-face@comedyatlas.app
+DTSTAMP:20261123T010000Z
+DTSTART:20261123T010000Z
+DTEND:20261123T030000Z
+SUMMARY:Tape Face
+LOCATION:Winnipeg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tape-face
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/tape-face/
+END:VEVENT
+END:VCALENDAR

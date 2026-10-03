@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-breton-ga-le-aller-45081@comedyatlas.app
+DTSTAMP:20270110T003000Z
+DTSTART:20270110T003000Z
+DTEND:20270110T023000Z
+SUMMARY:Sam Breton - Ga-lé aller
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-breto
+ n-ga-le-aller-45081/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-breton-ga-le-aller-45081
+ /
+END:VEVENT
+END:VCALENDAR

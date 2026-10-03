@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-with-davide-de-pierro@comedyatlas.app
+DTSTAMP:20261014T010000Z
+DTSTART:20261014T010000Z
+DTEND:20261014T030000Z
+SUMMARY:An Evening with Davide De Pierro
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-with-davide-de-pierro/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-with-davide-de-pi
+ erro/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-out-loud-comedy-club-portsmouth@comedyatlas.app
+DTSTAMP:20261010T190000Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:Laugh Out Loud Comedy Club - Portsmouth
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-out
+ -loud-comedy-club-portsmouth/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-out-loud-comedy-club-p
+ ortsmouth/
+END:VEVENT
+END:VCALENDAR

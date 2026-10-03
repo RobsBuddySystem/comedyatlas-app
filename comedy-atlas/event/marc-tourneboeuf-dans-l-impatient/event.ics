@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marc-tourneboeuf-dans-l-impatient@comedyatlas.app
+DTSTAMP:20261014T183000Z
+DTSTART:20261014T183000Z
+DTEND:20261014T203000Z
+SUMMARY:Marc Tourneboeuf dans L'Impatient
+LOCATION:Antibes
+DESCRIPTION:L'Impatient ou le fol optimisme de ceux qui se mangent des murs
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/marc-tourneboeuf-da
+ ns-l-impatient/
+URL:https://comedyatlas.app/comedy-atlas/event/marc-tourneboeuf-dans-l-impa
+ tient/
+END:VEVENT
+END:VCALENDAR

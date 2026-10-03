@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-2-chez-bertin@comedyatlas.app
+DTSTAMP:20261020T173000Z
+DTSTART:20261020T173000Z
+DTEND:20261020T193000Z
+SUMMARY:Comedy club 2 - Chez Bertin
+LOCATION:Orthez
+DESCRIPTION:Après une première soirée de folie\, on remet ça !\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/comedy-club-2-chez-bertin/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-2-chez-bertin/
+END:VEVENT
+END:VCALENDAR

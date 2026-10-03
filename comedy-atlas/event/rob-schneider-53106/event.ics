@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-schneider-53106@comedyatlas.app
+DTSTAMP:20270116T031500Z
+DTSTART:20270116T031500Z
+DTEND:20270116T051500Z
+SUMMARY:Rob Schneider
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-schne
+ ider-53106/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-schneider-53106/
+END:VEVENT
+END:VCALENDAR

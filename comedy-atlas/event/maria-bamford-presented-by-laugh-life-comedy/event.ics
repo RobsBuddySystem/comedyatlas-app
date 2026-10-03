@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-presented-by-laugh-life-comedy@comedyatlas.app
+DTSTAMP:20261204T020000Z
+DTSTART:20261204T020000Z
+DTEND:20261204T040000Z
+SUMMARY:Maria Bamford presented by Laugh Life Comedy
+LOCATION:The Howlin' Wolf\, 907 South Peters Street\, New Orleans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-presented-by-laugh-life-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-presented-by-l
+ augh-life-comedy/
+END:VEVENT
+END:VCALENDAR

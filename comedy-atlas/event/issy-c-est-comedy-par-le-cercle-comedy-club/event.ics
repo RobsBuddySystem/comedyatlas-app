@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:issy-c-est-comedy-par-le-cercle-comedy-club@comedyatlas.app
+DTSTAMP:20261109T183000Z
+DTSTART:20261109T183000Z
+DTEND:20261109T203000Z
+SUMMARY:Issy c'est Comedy par le Cercle Comedy Club
+LOCATION:Issy les Moulineaux
+DESCRIPTION:Le Cercle Comedy Club vous donne rendez-vous pour un plateau d'
+ humour explosif réunissant plusieurs humoristes aux univers aussi drôles 
+ que surprenant\nMore info: https://comedyatlas.app/comedy-atlas/event/issy-
+ c-est-comedy-par-le-cercle-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/issy-c-est-comedy-par-le-cer
+ cle-comedy-club/
+END:VEVENT
+END:VCALENDAR

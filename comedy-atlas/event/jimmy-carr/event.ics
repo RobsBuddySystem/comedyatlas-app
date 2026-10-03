@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimmy-carr@comedyatlas.app
+DTSTAMP:20270305T183000Z
+DTSTART:20270305T183000Z
+DTEND:20270305T203000Z
+SUMMARY:Jimmy Carr
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimmy-car
+ r/
+URL:https://comedyatlas.app/comedy-atlas/event/jimmy-carr/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-klocek-friends@comedyatlas.app
+DTSTAMP:20261125T033000Z
+DTSTART:20261125T033000Z
+DTEND:20261125T053000Z
+SUMMARY:Joe Klocek & Friends
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-kloce
+ k-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-klocek-friends/
+END:VEVENT
+END:VCALENDAR

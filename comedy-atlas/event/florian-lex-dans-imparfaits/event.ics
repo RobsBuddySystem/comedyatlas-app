@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:florian-lex-dans-imparfaits@comedyatlas.app
+DTSTAMP:20261031T193000Z
+DTSTART:20261031T193000Z
+DTEND:20261031T213000Z
+SUMMARY:Florian Lex dans Imparfaits
+LOCATION:Toulouse
+DESCRIPTION:Un spectacle dans lequel vous allez forcément vous reconnaîtr
+ e.\nMore info: https://comedyatlas.app/comedy-atlas/event/florian-lex-dans-
+ imparfaits/
+URL:https://comedyatlas.app/comedy-atlas/event/florian-lex-dans-imparfaits/
+END:VEVENT
+END:VCALENDAR

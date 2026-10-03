@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-fitzsimmons-49833@comedyatlas.app
+DTSTAMP:20261025T013000Z
+DTSTART:20261025T013000Z
+DTEND:20261025T033000Z
+SUMMARY:Greg Fitzsimmons
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-fitz
+ simmons-49833/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-fitzsimmons-49833/
+END:VEVENT
+END:VCALENDAR

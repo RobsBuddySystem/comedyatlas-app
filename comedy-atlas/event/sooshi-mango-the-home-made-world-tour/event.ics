@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sooshi-mango-the-home-made-world-tour@comedyatlas.app
+DTSTAMP:20261027T190000Z
+DTSTART:20261027T190000Z
+DTEND:20261027T210000Z
+SUMMARY:Sooshi Mango - The Home Made World Tour
+LOCATION:Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sooshi-ma
+ ngo-the-home-made-world-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/sooshi-mango-the-home-made-w
+ orld-tour/
+END:VEVENT
+END:VCALENDAR

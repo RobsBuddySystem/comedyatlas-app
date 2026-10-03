@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:l-impasse-comedy-club-55518@comedyatlas.app
+DTSTAMP:20261029T183000Z
+DTSTART:20261029T183000Z
+DTEND:20261029T203000Z
+SUMMARY:L'Impasse Comedy Club
+LOCATION:Nice
+DESCRIPTION:Votre nouveau rendez-vous humour incontournable chaque jeudi !\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/l-impasse-comedy-clu
+ b-55518/
+URL:https://comedyatlas.app/comedy-atlas/event/l-impasse-comedy-club-55518/
+END:VEVENT
+END:VCALENDAR

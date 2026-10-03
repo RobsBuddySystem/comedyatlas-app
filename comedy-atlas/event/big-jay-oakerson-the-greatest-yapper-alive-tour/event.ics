@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-jay-oakerson-the-greatest-yapper-alive-tour@comedyatlas.app
+DTSTAMP:20270124T000000Z
+DTSTART:20270124T000000Z
+DTEND:20270124T020000Z
+SUMMARY:Big Jay Oakerson: The Greatest Yapper Alive Tour
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-jay-o
+ akerson-the-greatest-yapper-alive-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/big-jay-oakerson-the-greates
+ t-yapper-alive-tour/
+END:VEVENT
+END:VCALENDAR

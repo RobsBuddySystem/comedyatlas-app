@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dovi-neuburger@comedyatlas.app
+DTSTAMP:20261028T003000Z
+DTSTART:20261028T003000Z
+DTEND:20261028T023000Z
+SUMMARY:Dovi Neuburger
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dovi-neub
+ urger/
+URL:https://comedyatlas.app/comedy-atlas/event/dovi-neuburger/
+END:VEVENT
+END:VCALENDAR

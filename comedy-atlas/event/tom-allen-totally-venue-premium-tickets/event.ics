@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-allen-totally-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20271211T180000Z
+DTSTART:20271211T180000Z
+DTEND:20271211T200000Z
+SUMMARY:Tom Allen: Totally - Venue Premium Tickets
+LOCATION:York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-allen
+ -totally-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-allen-totally-venue-prem
+ ium-tickets/
+END:VEVENT
+END:VCALENDAR

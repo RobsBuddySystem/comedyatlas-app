@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:basketmouth-no-hard-feelings@comedyatlas.app
+DTSTAMP:20270214T180000Z
+DTSTART:20270214T180000Z
+DTEND:20270214T200000Z
+SUMMARY:Basketmouth - No Hard Feelings
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/basketmou
+ th-no-hard-feelings/
+URL:https://comedyatlas.app/comedy-atlas/event/basketmouth-no-hard-feelings
+ /
+END:VEVENT
+END:VCALENDAR

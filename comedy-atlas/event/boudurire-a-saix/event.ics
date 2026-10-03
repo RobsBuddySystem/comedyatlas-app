@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boudurire-a-saix@comedyatlas.app
+DTSTAMP:20261030T190000Z
+DTSTART:20261030T190000Z
+DTEND:20261030T210000Z
+SUMMARY:BouDuRire à Saix
+LOCATION:SaÏx
+DESCRIPTION:Plateau d'humour avec 3 humoristes !\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/boudurire-a-saix/
+URL:https://comedyatlas.app/comedy-atlas/event/boudurire-a-saix/
+END:VEVENT
+END:VCALENDAR

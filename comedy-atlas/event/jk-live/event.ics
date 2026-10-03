@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jk-live@comedyatlas.app
+DTSTAMP:20261113T230000Z
+DTSTART:20261113T230000Z
+DTEND:20261114T010000Z
+SUMMARY:JK Live!
+LOCATION:Atlanta
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jk-live/
+URL:https://comedyatlas.app/comedy-atlas/event/jk-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:annick-adelle-annick-friends-tour-2026@comedyatlas.app
+DTSTAMP:20261029T190000Z
+DTSTART:20261029T190000Z
+DTEND:20261029T210000Z
+SUMMARY:Annick Adelle - Annick & Friends Tour 2026
+LOCATION:Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/annick-ad
+ elle-annick-friends-tour-2026/
+URL:https://comedyatlas.app/comedy-atlas/event/annick-adelle-annick-friends
+ -tour-2026/
+END:VEVENT
+END:VCALENDAR

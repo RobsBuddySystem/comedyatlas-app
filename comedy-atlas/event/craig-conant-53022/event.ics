@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:craig-conant-53022@comedyatlas.app
+DTSTAMP:20270110T000000Z
+DTSTART:20270110T000000Z
+DTEND:20270110T020000Z
+SUMMARY:Craig Conant
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/craig-con
+ ant-53022/
+URL:https://comedyatlas.app/comedy-atlas/event/craig-conant-53022/
+END:VEVENT
+END:VCALENDAR

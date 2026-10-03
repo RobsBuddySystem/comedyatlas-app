@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kitty-flanagan-glad-game@comedyatlas.app
+DTSTAMP:20261023T090000Z
+DTSTART:20261023T090000Z
+DTEND:20261023T110000Z
+SUMMARY:Kitty Flanagan: Glad Game
+LOCATION:Sydney
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kitty-fla
+ nagan-glad-game/
+URL:https://comedyatlas.app/comedy-atlas/event/kitty-flanagan-glad-game/
+END:VEVENT
+END:VCALENDAR

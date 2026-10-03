@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-lycett-44723@comedyatlas.app
+DTSTAMP:20270424T190000Z
+DTSTART:20270424T190000Z
+DTEND:20270424T210000Z
+SUMMARY:Joe Lycett
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-lycet
+ t-44723/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-lycett-44723/
+END:VEVENT
+END:VCALENDAR

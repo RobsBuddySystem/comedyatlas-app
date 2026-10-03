@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-carolla-53317@comedyatlas.app
+DTSTAMP:20270130T013000Z
+DTSTART:20270130T013000Z
+DTEND:20270130T033000Z
+SUMMARY:Adam Carolla
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-caro
+ lla-53317/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-carolla-53317/
+END:VEVENT
+END:VCALENDAR

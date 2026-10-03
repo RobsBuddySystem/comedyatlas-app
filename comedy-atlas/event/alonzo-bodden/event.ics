@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alonzo-bodden@comedyatlas.app
+DTSTAMP:20261106T013000Z
+DTSTART:20261106T013000Z
+DTEND:20261106T033000Z
+SUMMARY:Alonzo Bodden
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alonzo-bo
+ dden/
+URL:https://comedyatlas.app/comedy-atlas/event/alonzo-bodden/
+END:VEVENT
+END:VCALENDAR

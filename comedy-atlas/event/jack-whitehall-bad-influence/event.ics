@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-whitehall-bad-influence@comedyatlas.app
+DTSTAMP:20270112T200000Z
+DTSTART:20270112T200000Z
+DTEND:20270112T220000Z
+SUMMARY:Jack Whitehall: Bad Influence
+LOCATION:Edinburgh Playhouse\, 18-22 Greenside Pl\, EH1 3AA\, Edinburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-whit
+ ehall-bad-influence/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-whitehall-bad-influence
+ /
+END:VEVENT
+END:VCALENDAR

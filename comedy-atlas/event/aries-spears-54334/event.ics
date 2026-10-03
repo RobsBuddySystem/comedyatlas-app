@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-54334@comedyatlas.app
+DTSTAMP:20270702T030000Z
+DTSTART:20270702T030000Z
+DTEND:20270702T050000Z
+SUMMARY:Aries Spears
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-54334/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-54334/
+END:VEVENT
+END:VCALENDAR

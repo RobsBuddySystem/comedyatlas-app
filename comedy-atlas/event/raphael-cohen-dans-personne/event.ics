@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:raphael-cohen-dans-personne@comedyatlas.app
+DTSTAMP:20261022T184500Z
+DTSTART:20261022T184500Z
+DTEND:20261022T204500Z
+SUMMARY:Raphaël Cohen dans Personne
+LOCATION:Marseille
+DESCRIPTION:Le spectacle s'appelle Personne mais il espère qu'il réunira 
+ plein de monde(s).\nMore info: https://comedyatlas.app/comedy-atlas/event/r
+ aphael-cohen-dans-personne/
+URL:https://comedyatlas.app/comedy-atlas/event/raphael-cohen-dans-personne/
+END:VEVENT
+END:VCALENDAR

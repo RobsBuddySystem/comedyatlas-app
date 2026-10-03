@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:improvised-shakespeare@comedyatlas.app
+DTSTAMP:20261212T000000Z
+DTSTART:20261212T000000Z
+DTEND:20261212T020000Z
+SUMMARY:Improvised Shakespeare
+LOCATION:Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/improvise
+ d-shakespeare/
+URL:https://comedyatlas.app/comedy-atlas/event/improvised-shakespeare/
+END:VEVENT
+END:VCALENDAR

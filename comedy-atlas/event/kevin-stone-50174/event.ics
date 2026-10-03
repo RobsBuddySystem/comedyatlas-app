@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-stone-50174@comedyatlas.app
+DTSTAMP:20261101T020000Z
+DTSTART:20261101T020000Z
+DTEND:20261101T040000Z
+SUMMARY:Kevin Stone
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-sto
+ ne-50174/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-stone-50174/
+END:VEVENT
+END:VCALENDAR

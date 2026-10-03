@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-juice-53086@comedyatlas.app
+DTSTAMP:20270115T033000Z
+DTSTART:20270115T033000Z
+DTEND:20270115T053000Z
+SUMMARY:Comedy Juice
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ju
+ ice-53086/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-juice-53086/
+END:VEVENT
+END:VCALENDAR

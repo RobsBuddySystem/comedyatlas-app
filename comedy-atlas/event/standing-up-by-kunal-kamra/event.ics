@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standing-up-by-kunal-kamra@comedyatlas.app
+DTSTAMP:20270508T220000Z
+DTSTART:20270508T220000Z
+DTEND:20270509T000000Z
+SUMMARY:Standing Up by Kunal Kamra
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standing-
+ up-by-kunal-kamra/
+URL:https://comedyatlas.app/comedy-atlas/event/standing-up-by-kunal-kamra/
+END:VEVENT
+END:VCALENDAR

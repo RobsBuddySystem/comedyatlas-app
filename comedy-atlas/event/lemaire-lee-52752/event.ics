@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lemaire-lee-52752@comedyatlas.app
+DTSTAMP:20261227T010000Z
+DTSTART:20261227T010000Z
+DTEND:20261227T030000Z
+SUMMARY:LeMaire Lee
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lemaire-l
+ ee-52752/
+URL:https://comedyatlas.app/comedy-atlas/event/lemaire-lee-52752/
+END:VEVENT
+END:VCALENDAR

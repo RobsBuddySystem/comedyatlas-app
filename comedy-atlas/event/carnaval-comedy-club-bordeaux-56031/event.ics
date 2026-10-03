@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carnaval-comedy-club-bordeaux-56031@comedyatlas.app
+DTSTAMP:20261115T170000Z
+DTSTART:20261115T170000Z
+DTEND:20261115T190000Z
+SUMMARY:Carnaval Comedy Club Bordeaux
+LOCATION:Bordeaux
+DESCRIPTION:Le meilleur du stand-up bordelais t'attend au Carnaval Café !\
+ nRendez-vous tous les dimanches pour une soirée pleine de rires !\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/carnaval-comedy-club-bordeau
+ x-56031/
+URL:https://comedyatlas.app/comedy-atlas/event/carnaval-comedy-club-bordeau
+ x-56031/
+END:VEVENT
+END:VCALENDAR

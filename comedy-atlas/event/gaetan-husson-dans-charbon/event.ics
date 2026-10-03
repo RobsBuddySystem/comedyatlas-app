@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gaetan-husson-dans-charbon@comedyatlas.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Gaétan Husson dans Charbon
+LOCATION:Chambéry
+DESCRIPTION:Pensionnaire de la Troupe du Jamel\, il est régulièrement sur
+  les scènes des Comedy Club convoités de la capitale.\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/gaetan-husson-dans-charbon/
+URL:https://comedyatlas.app/comedy-atlas/event/gaetan-husson-dans-charbon/
+END:VEVENT
+END:VCALENDAR

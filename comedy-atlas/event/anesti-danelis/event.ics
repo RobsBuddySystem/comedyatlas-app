@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anesti-danelis@comedyatlas.app
+DTSTAMP:20261101T200000Z
+DTSTART:20261101T200000Z
+DTEND:20261101T220000Z
+SUMMARY:Anesti Danelis
+LOCATION:The Gaffe Comedy Club\, 20 Wine St\, Bristol
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anesti-da
+ nelis/
+URL:https://comedyatlas.app/comedy-atlas/event/anesti-danelis/
+END:VEVENT
+END:VCALENDAR

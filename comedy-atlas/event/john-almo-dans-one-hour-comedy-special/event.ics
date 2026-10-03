@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-almo-dans-one-hour-comedy-special@comedyatlas.app
+DTSTAMP:20261019T170000Z
+DTSTART:20261019T170000Z
+DTEND:20261019T190000Z
+SUMMARY:John Almo dans One hour comedy special
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Originaire d'Alep\, John Almo arrive en France en 2015.\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/john-almo-dans-one-hour-com
+ edy-special/
+URL:https://comedyatlas.app/comedy-atlas/event/john-almo-dans-one-hour-come
+ dy-special/
+END:VEVENT
+END:VCALENDAR

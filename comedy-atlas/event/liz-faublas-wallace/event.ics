@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liz-faublas-wallace@comedyatlas.app
+DTSTAMP:20261210T020000Z
+DTSTART:20261210T020000Z
+DTEND:20261210T040000Z
+SUMMARY:Liz Faublas-Wallace
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liz-faubl
+ as-wallace/
+URL:https://comedyatlas.app/comedy-atlas/event/liz-faublas-wallace/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-best-in-stand-up-friday-11th-december@comedyatlas.app
+DTSTAMP:20261211T193000Z
+DTSTART:20261211T193000Z
+DTEND:20261211T213000Z
+SUMMARY:Christmas Best in Stand Up - Friday 11th December
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -best-in-stand-up-friday-11th-december/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-best-in-stand-up-f
+ riday-11th-december/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-york-comedy-festival-presents-pat-mcgann@comedyatlas.app
+DTSTAMP:20261112T000000Z
+DTSTART:20261112T000000Z
+DTEND:20261112T020000Z
+SUMMARY:New York Comedy Festival Presents: Pat McGann
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-york-
+ comedy-festival-presents-pat-mcgann/
+URL:https://comedyatlas.app/comedy-atlas/event/new-york-comedy-festival-pre
+ sents-pat-mcgann/
+END:VEVENT
+END:VCALENDAR

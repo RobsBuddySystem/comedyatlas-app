@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-51455@comedyatlas.app
+DTSTAMP:20261123T003000Z
+DTSTART:20261123T003000Z
+DTEND:20261123T023000Z
+SUMMARY:Maria Bamford
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-51455/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-51455/
+END:VEVENT
+END:VCALENDAR

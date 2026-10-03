@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-allen-totally@comedyatlas.app
+DTSTAMP:20271113T190000Z
+DTSTART:20271113T190000Z
+DTEND:20271113T210000Z
+SUMMARY:Tom Allen - Totally
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-allen
+ -totally/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-allen-totally/
+END:VEVENT
+END:VCALENDAR

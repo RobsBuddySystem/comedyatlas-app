@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:old-rope-monday-12th-october@comedyatlas.app
+DTSTAMP:20261012T183000Z
+DTSTART:20261012T183000Z
+DTEND:20261012T203000Z
+SUMMARY:Old Rope - Monday 12th October
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/old-rope-
+ monday-12th-october/
+URL:https://comedyatlas.app/comedy-atlas/event/old-rope-monday-12th-october
+ /
+END:VEVENT
+END:VCALENDAR

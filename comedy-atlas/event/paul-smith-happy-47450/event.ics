@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-47450@comedyatlas.app
+DTSTAMP:20270306T183000Z
+DTSTART:20270306T183000Z
+DTEND:20270306T203000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-47450/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-47450/
+END:VEVENT
+END:VCALENDAR

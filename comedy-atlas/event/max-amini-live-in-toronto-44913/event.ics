@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:max-amini-live-in-toronto-44913@comedyatlas.app
+DTSTAMP:20261018T230000Z
+DTSTART:20261018T230000Z
+DTEND:20261019T010000Z
+SUMMARY:Max Amini Live in Toronto!
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/max-amini
+ -live-in-toronto-44913/
+URL:https://comedyatlas.app/comedy-atlas/event/max-amini-live-in-toronto-44
+ 913/
+END:VEVENT
+END:VCALENDAR

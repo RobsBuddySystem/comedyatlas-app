@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hatty-preston-unaproachable@comedyatlas.app
+DTSTAMP:20271204T190000Z
+DTSTART:20271204T190000Z
+DTEND:20271204T210000Z
+SUMMARY:Hatty Preston: Unaproachable
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hatty-pre
+ ston-unaproachable/
+URL:https://comedyatlas.app/comedy-atlas/event/hatty-preston-unaproachable/
+END:VEVENT
+END:VCALENDAR

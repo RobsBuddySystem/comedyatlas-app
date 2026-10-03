@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sinem-kara@comedyatlas.app
+DTSTAMP:20270205T010000Z
+DTSTART:20270205T010000Z
+DTEND:20270205T030000Z
+SUMMARY:Sinem Kara
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sinem-kar
+ a/
+URL:https://comedyatlas.app/comedy-atlas/event/sinem-kara/
+END:VEVENT
+END:VCALENDAR

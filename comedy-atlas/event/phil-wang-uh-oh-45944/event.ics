@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-wang-uh-oh-45944@comedyatlas.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Phil Wang: UH OH
+LOCATION:Bristol
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phil-wang
+ -uh-oh-45944/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-wang-uh-oh-45944/
+END:VEVENT
+END:VCALENDAR

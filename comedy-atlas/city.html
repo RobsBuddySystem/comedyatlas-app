@@ -528,7 +528,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     // 0102 dropped the view-level gate), but the DEFAULT experience stays
     // English-first. "all" is the explicit opt-out; any other value is a
     // specific language code (see buildLangOptions).
-    lang: params.get("lang") || "en",
+    lang: params.get("lang") || "all",
     duration: params.get("duration") || "",
     org: orgParam,
     q: params.get("q") || ""
@@ -546,7 +546,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (state.format) p.set("format", state.format);
     if (state.venue) p.set("venue", state.venue);
     if (state.price) p.set("price", state.price);
-    if (state.lang && state.lang !== "en") p.set("lang", state.lang);
+    if (state.lang && state.lang !== "all") p.set("lang", state.lang);
     if (state.duration) p.set("duration", state.duration);
     if (state.org) p.set("org", state.org);
     if (state.q) p.set("q", state.q);
@@ -733,8 +733,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     });
     var codes = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
     langFilter.innerHTML =
-      '<option value="en">English</option>' +
-      '<option value="all">All languages</option>';
+      '<option value="all">All languages</option>' +
+      '<option value="en">English</option>';
     codes.forEach(function (code) {
       var opt = document.createElement("option");
       opt.value = code;

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jo-koy-live@comedyatlas.app
+DTSTAMP:20261121T020000Z
+DTSTART:20261121T020000Z
+DTEND:20261121T040000Z
+SUMMARY:Jo Koy Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jo-koy-li
+ ve/
+URL:https://comedyatlas.app/comedy-atlas/event/jo-koy-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cornelius-patrick-o-sullivan-pull-hard@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:Cornelius Patrick O'Sullivan: Pull Hard
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cornelius
+ -patrick-o-sullivan-pull-hard/
+URL:https://comedyatlas.app/comedy-atlas/event/cornelius-patrick-o-sullivan
+ -pull-hard/
+END:VEVENT
+END:VCALENDAR

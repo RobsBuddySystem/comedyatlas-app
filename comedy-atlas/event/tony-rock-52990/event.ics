@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tony-rock-52990@comedyatlas.app
+DTSTAMP:20270109T010000Z
+DTSTART:20270109T010000Z
+DTEND:20270109T030000Z
+SUMMARY:Tony Rock
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tony-rock
+ -52990/
+URL:https://comedyatlas.app/comedy-atlas/event/tony-rock-52990/
+END:VEVENT
+END:VCALENDAR

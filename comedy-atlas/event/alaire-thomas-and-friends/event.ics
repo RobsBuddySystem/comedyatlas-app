@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alaire-thomas-and-friends@comedyatlas.app
+DTSTAMP:20261113T003000Z
+DTSTART:20261113T003000Z
+DTEND:20261113T023000Z
+SUMMARY:Alaire Thomas and Friends
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alaire-th
+ omas-and-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/alaire-thomas-and-friends/
+END:VEVENT
+END:VCALENDAR

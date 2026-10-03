@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-anglia-comedy-allstars@comedyatlas.app
+DTSTAMP:20261016T173000Z
+DTSTART:20261016T173000Z
+DTEND:20261016T193000Z
+SUMMARY:The Anglia Comedy Allstars
+LOCATION:Norwich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-angli
+ a-comedy-allstars/
+URL:https://comedyatlas.app/comedy-atlas/event/the-anglia-comedy-allstars/
+END:VEVENT
+END:VCALENDAR

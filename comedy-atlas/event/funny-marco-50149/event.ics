@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:funny-marco-50149@comedyatlas.app
+DTSTAMP:20261031T230000Z
+DTSTART:20261031T230000Z
+DTEND:20261101T010000Z
+SUMMARY:Funny Marco
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/funny-mar
+ co-50149/
+URL:https://comedyatlas.app/comedy-atlas/event/funny-marco-50149/
+END:VEVENT
+END:VCALENDAR

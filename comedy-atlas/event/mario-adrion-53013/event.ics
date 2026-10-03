@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mario-adrion-53013@comedyatlas.app
+DTSTAMP:20270109T051500Z
+DTSTART:20270109T051500Z
+DTEND:20270109T071500Z
+SUMMARY:Mario Adrion
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mario-adr
+ ion-53013/
+URL:https://comedyatlas.app/comedy-atlas/event/mario-adrion-53013/
+END:VEVENT
+END:VCALENDAR

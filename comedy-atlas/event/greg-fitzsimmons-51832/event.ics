@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-fitzsimmons-51832@comedyatlas.app
+DTSTAMP:20261204T040000Z
+DTSTART:20261204T040000Z
+DTEND:20261204T060000Z
+SUMMARY:Greg Fitzsimmons
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-fitz
+ simmons-51832/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-fitzsimmons-51832/
+END:VEVENT
+END:VCALENDAR

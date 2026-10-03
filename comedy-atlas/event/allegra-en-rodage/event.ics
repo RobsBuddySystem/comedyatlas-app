@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:allegra-en-rodage@comedyatlas.app
+DTSTAMP:20261015T190000Z
+DTSTART:20261015T190000Z
+DTEND:20261015T210000Z
+SUMMARY:Allegra en rodage
+LOCATION:Nice
+DESCRIPTION:Allegra\, humoriste niçoise\, présente sa première heure de 
+ stand-up : un spectacle étrange et sincère.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/allegra-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/allegra-en-rodage/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-redd-52302@comedyatlas.app
+DTSTAMP:20261213T010000Z
+DTSTART:20261213T010000Z
+DTEND:20261213T030000Z
+SUMMARY:Chris Redd
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-red
+ d-52302/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-redd-52302/
+END:VEVENT
+END:VCALENDAR

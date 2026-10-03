@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:soren-prevost-dans-tout-est-bon-dans-le-complot@comedyatlas.app
+DTSTAMP:20261022T170000Z
+DTSTART:20261022T170000Z
+DTEND:20261022T190000Z
+SUMMARY:Soren Prévost dans Tout est bon dans le complot
+LOCATION:Le Montorgueil - Scène des Halles\, 50 rue d'Aboukir\, Paris
+DESCRIPTION:Spectacle librement adapté du livre (aujourd'hui introuvable).
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/soren-prevost-dans-
+ tout-est-bon-dans-le-complot/
+URL:https://comedyatlas.app/comedy-atlas/event/soren-prevost-dans-tout-est-
+ bon-dans-le-complot/
+END:VEVENT
+END:VCALENDAR

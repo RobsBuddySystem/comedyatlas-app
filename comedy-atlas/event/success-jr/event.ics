@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:success-jr@comedyatlas.app
+DTSTAMP:20261015T233000Z
+DTSTART:20261015T233000Z
+DTEND:20261016T013000Z
+SUMMARY:Success Jr
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/success-j
+ r/
+URL:https://comedyatlas.app/comedy-atlas/event/success-jr/
+END:VEVENT
+END:VCALENDAR

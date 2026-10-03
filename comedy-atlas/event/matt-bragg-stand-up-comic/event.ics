@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-bragg-stand-up-comic@comedyatlas.app
+DTSTAMP:20270304T200000Z
+DTSTART:20270304T200000Z
+DTEND:20270304T220000Z
+SUMMARY:Matt Bragg: Stand Up Comic
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-brag
+ g-stand-up-comic/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-bragg-stand-up-comic/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bruce-jingles@comedyatlas.app
+DTSTAMP:20270225T040000Z
+DTSTART:20270225T040000Z
+DTEND:20270225T060000Z
+SUMMARY:Bruce Jingles
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bruce-jin
+ gles/
+URL:https://comedyatlas.app/comedy-atlas/event/bruce-jingles/
+END:VEVENT
+END:VCALENDAR

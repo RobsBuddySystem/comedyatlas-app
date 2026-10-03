@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ari-eldjarn-return-of-the-icelandic@comedyatlas.app
+DTSTAMP:20261123T170000Z
+DTSTART:20261123T170000Z
+DTEND:20261123T190000Z
+SUMMARY:Ari Eldjárn - Return Of The Icelandic
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ari-eldja
+ rn-return-of-the-icelandic/
+URL:https://comedyatlas.app/comedy-atlas/event/ari-eldjarn-return-of-the-ic
+ elandic/
+END:VEVENT
+END:VCALENDAR

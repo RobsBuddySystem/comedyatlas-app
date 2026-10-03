@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standoperos-la-ta3mbola@comedyatlas.app
+DTSTAMP:20261021T003000Z
+DTSTART:20261021T003000Z
+DTEND:20261021T023000Z
+SUMMARY:Standoperos: La Tã³Mbola
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standoper
+ os-la-ta3mbola/
+URL:https://comedyatlas.app/comedy-atlas/event/standoperos-la-ta3mbola/
+END:VEVENT
+END:VCALENDAR

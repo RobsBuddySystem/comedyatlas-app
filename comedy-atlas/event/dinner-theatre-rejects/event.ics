@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dinner-theatre-rejects@comedyatlas.app
+DTSTAMP:20261010T233000Z
+DTSTART:20261010T233000Z
+DTEND:20261011T013000Z
+SUMMARY:Dinner Theatre Rejects
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dinner-th
+ eatre-rejects/
+URL:https://comedyatlas.app/comedy-atlas/event/dinner-theatre-rejects/
+END:VEVENT
+END:VCALENDAR

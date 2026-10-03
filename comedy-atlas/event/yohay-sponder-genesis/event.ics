@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yohay-sponder-genesis@comedyatlas.app
+DTSTAMP:20261006T233000Z
+DTSTART:20261006T233000Z
+DTEND:20261007T013000Z
+SUMMARY:Yohay Sponder: Genesis
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yohay-spo
+ nder-genesis/
+URL:https://comedyatlas.app/comedy-atlas/event/yohay-sponder-genesis/
+END:VEVENT
+END:VCALENDAR

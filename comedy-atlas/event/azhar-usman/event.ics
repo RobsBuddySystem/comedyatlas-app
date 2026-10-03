@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:azhar-usman@comedyatlas.app
+DTSTAMP:20261029T063000Z
+DTSTART:20261029T063000Z
+DTEND:20261029T083000Z
+SUMMARY:Azhar Usman
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/azhar-usm
+ an/
+URL:https://comedyatlas.app/comedy-atlas/event/azhar-usman/
+END:VEVENT
+END:VCALENDAR

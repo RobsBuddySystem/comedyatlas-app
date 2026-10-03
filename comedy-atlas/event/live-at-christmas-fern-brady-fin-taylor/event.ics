@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-at-christmas-fern-brady-fin-taylor@comedyatlas.app
+DTSTAMP:20261207T193000Z
+DTSTART:20261207T193000Z
+DTEND:20261207T213000Z
+SUMMARY:Live at Christmas: Fern Brady & Fin Taylor
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/live-at-c
+ hristmas-fern-brady-fin-taylor/
+URL:https://comedyatlas.app/comedy-atlas/event/live-at-christmas-fern-brady
+ -fin-taylor/
+END:VEVENT
+END:VCALENDAR

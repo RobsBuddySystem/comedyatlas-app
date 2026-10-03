@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-bell-house-stand-up-showcase@comedyatlas.app
+DTSTAMP:20261010T014500Z
+DTSTART:20261010T014500Z
+DTEND:20261010T034500Z
+SUMMARY:The Bell House Stand Up Showcase
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-bell-
+ house-stand-up-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/the-bell-house-stand-up-show
+ case/
+END:VEVENT
+END:VCALENDAR

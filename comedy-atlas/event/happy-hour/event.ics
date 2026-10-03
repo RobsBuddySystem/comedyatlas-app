@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:happy-hour@comedyatlas.app
+DTSTAMP:20261023T183000Z
+DTSTART:20261023T183000Z
+DTEND:20261023T203000Z
+SUMMARY:Happy Hour
+LOCATION:Annecy
+DESCRIPTION:Un bar c'est comme les réseaux sociaux\, c'est plein de gens q
+ ui se retrouvent au même endroit mais qui devraient ne jamais se croiser.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/happy-hour/
+URL:https://comedyatlas.app/comedy-atlas/event/happy-hour/
+END:VEVENT
+END:VCALENDAR

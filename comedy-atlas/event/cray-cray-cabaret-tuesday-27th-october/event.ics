@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cray-cray-cabaret-tuesday-27th-october@comedyatlas.app
+DTSTAMP:20261027T193000Z
+DTSTART:20261027T193000Z
+DTEND:20261027T213000Z
+SUMMARY:Cray Cray Cabaret - Tuesday 27th October
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cray-cray
+ -cabaret-tuesday-27th-october/
+URL:https://comedyatlas.app/comedy-atlas/event/cray-cray-cabaret-tuesday-27
+ th-october/
+END:VEVENT
+END:VCALENDAR

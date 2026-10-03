@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bernard-o-shea@comedyatlas.app
+DTSTAMP:20270319T193000Z
+DTSTART:20270319T193000Z
+DTEND:20270319T213000Z
+SUMMARY:Bernard O'Shea
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bernard-o
+ -shea/
+URL:https://comedyatlas.app/comedy-atlas/event/bernard-o-shea/
+END:VEVENT
+END:VCALENDAR

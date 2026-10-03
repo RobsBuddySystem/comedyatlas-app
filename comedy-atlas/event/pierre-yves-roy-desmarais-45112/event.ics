@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pierre-yves-roy-desmarais-45112@comedyatlas.app
+DTSTAMP:20270130T010000Z
+DTSTART:20270130T010000Z
+DTEND:20270130T030000Z
+SUMMARY:Pierre-Yves Roy-Desmarais
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pierre-yv
+ es-roy-desmarais-45112/
+URL:https://comedyatlas.app/comedy-atlas/event/pierre-yves-roy-desmarais-45
+ 112/
+END:VEVENT
+END:VCALENDAR

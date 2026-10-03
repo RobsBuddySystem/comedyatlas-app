@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-boudu-comedy-56862@comedyatlas.app
+DTSTAMP:20261105T200000Z
+DTSTART:20261105T200000Z
+DTEND:20261105T220000Z
+SUMMARY:Le Boudu Comedy
+LOCATION:Toulouse
+DESCRIPTION:Le Boudu Comedy\, lieu incontournable du stand up à Toulouse\,
+  chaque semaine avec deux séances à 19h30 & 21h00 au Flashback Café Toul
+ ouse.\nMore info: https://comedyatlas.app/comedy-atlas/event/le-boudu-comed
+ y-56862/
+URL:https://comedyatlas.app/comedy-atlas/event/le-boudu-comedy-56862/
+END:VEVENT
+END:VCALENDAR

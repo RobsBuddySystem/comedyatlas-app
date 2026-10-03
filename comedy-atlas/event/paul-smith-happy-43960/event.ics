@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-43960@comedyatlas.app
+DTSTAMP:20270210T090000Z
+DTSTART:20270210T090000Z
+DTEND:20270210T110000Z
+SUMMARY:PAUL SMITH - HAPPY
+LOCATION:Darwin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-43960/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-43960/
+END:VEVENT
+END:VCALENDAR

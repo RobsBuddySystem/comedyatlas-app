@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-friend-54038@comedyatlas.app
+DTSTAMP:20270411T000000Z
+DTSTART:20270411T000000Z
+DTEND:20270411T020000Z
+SUMMARY:Matt Friend
+LOCATION:Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-frie
+ nd-54038/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-friend-54038/
+END:VEVENT
+END:VCALENDAR

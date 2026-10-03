@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:felix-junier-dans-c-est-pas-grave@comedyatlas.app
+DTSTAMP:20261031T180000Z
+DTSTART:20261031T180000Z
+DTEND:20261031T200000Z
+SUMMARY:Felix Junier dans C'est pas grave
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Porté par un humour absurde\, Félix propose un spectacle à l
+ a fois décalé et profondément humain.\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/felix-junier-dans-c-est-pas-grave/
+URL:https://comedyatlas.app/comedy-atlas/event/felix-junier-dans-c-est-pas-
+ grave/
+END:VEVENT
+END:VCALENDAR

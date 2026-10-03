@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimeoin-ballyhoo@comedyatlas.app
+DTSTAMP:20271007T190000Z
+DTSTART:20271007T190000Z
+DTEND:20271007T210000Z
+SUMMARY:Jimeoin: "Ballyhoo"
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimeoin-b
+ allyhoo/
+URL:https://comedyatlas.app/comedy-atlas/event/jimeoin-ballyhoo/
+END:VEVENT
+END:VCALENDAR

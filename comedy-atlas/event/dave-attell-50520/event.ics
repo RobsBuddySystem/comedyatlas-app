@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-attell-50520@comedyatlas.app
+DTSTAMP:20261108T020000Z
+DTSTART:20261108T020000Z
+DTEND:20261108T040000Z
+SUMMARY:Dave Attell
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-atte
+ ll-50520/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-attell-50520/
+END:VEVENT
+END:VCALENDAR

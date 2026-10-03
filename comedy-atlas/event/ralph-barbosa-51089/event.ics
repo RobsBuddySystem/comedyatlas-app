@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ralph-barbosa-51089@comedyatlas.app
+DTSTAMP:20261116T033000Z
+DTSTART:20261116T033000Z
+DTEND:20261116T053000Z
+SUMMARY:Ralph Barbosa
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ralph-bar
+ bosa-51089/
+URL:https://comedyatlas.app/comedy-atlas/event/ralph-barbosa-51089/
+END:VEVENT
+END:VCALENDAR

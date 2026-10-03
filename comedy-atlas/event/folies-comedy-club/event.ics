@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:folies-comedy-club@comedyatlas.app
+DTSTAMP:20261004T173000Z
+DTSTART:20261004T173000Z
+DTEND:20261004T193000Z
+SUMMARY:Folies Comedy Club
+LOCATION:Angers
+DESCRIPTION:Un plateau de stand-up réunissant quatre à six artistes\, ave
+ c une programmation surprise chaque semaine.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/folies-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/folies-comedy-club/
+END:VEVENT
+END:VCALENDAR

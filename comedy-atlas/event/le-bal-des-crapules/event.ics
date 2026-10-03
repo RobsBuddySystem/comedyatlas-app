@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-bal-des-crapules@comedyatlas.app
+DTSTAMP:20261016T190000Z
+DTSTART:20261016T190000Z
+DTEND:20261016T210000Z
+SUMMARY:Le bal des crapules
+LOCATION:Nice
+DESCRIPTION:Petit massacre entre amis...\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/le-bal-des-crapules/
+URL:https://comedyatlas.app/comedy-atlas/event/le-bal-des-crapules/
+END:VEVENT
+END:VCALENDAR

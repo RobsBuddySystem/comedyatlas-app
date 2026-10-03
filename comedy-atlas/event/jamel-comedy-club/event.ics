@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jamel-comedy-club@comedyatlas.app
+DTSTAMP:20261108T170000Z
+DTSTART:20261108T170000Z
+DTEND:20261108T190000Z
+SUMMARY:Jamel Comedy Club
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jamel-com
+ edy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/jamel-comedy-club/
+END:VEVENT
+END:VCALENDAR

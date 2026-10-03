@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maxime@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Maxime
+LOCATION:Beziers
+DESCRIPTION:Spectacle de Maxime : Dans... ma ville\nMore info: https://come
+ dyatlas.app/comedy-atlas/event/maxime/
+URL:https://comedyatlas.app/comedy-atlas/event/maxime/
+END:VEVENT
+END:VCALENDAR

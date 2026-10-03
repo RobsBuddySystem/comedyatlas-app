@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:up-top-comedy@comedyatlas.app
+DTSTAMP:20261018T000000Z
+DTSTART:20261018T000000Z
+DTEND:20261018T020000Z
+SUMMARY:Up Top Comedy
+LOCATION:Nashville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/up-top-co
+ medy/
+URL:https://comedyatlas.app/comedy-atlas/event/up-top-comedy/
+END:VEVENT
+END:VCALENDAR

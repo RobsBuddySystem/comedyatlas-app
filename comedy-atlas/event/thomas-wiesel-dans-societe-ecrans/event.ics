@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-wiesel-dans-societe-ecrans@comedyatlas.app
+DTSTAMP:20261112T190000Z
+DTSTART:20261112T190000Z
+DTEND:20261112T210000Z
+SUMMARY:Thomas Wiesel dans Société écrans
+LOCATION:Lyon
+DESCRIPTION:Thomas Wiesel revient avec un nouveau spectacle.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/thomas-wiesel-dans-societe-ecrans/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-wiesel-dans-societe-e
+ crans/
+END:VEVENT
+END:VCALENDAR

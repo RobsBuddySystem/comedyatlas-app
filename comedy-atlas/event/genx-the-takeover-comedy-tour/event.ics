@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:genx-the-takeover-comedy-tour@comedyatlas.app
+DTSTAMP:20270207T010000Z
+DTSTART:20270207T010000Z
+DTEND:20270207T030000Z
+SUMMARY:GenX The Takeover Comedy Tour
+LOCATION:Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/genx-the-
+ takeover-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/genx-the-takeover-comedy-tou
+ r/
+END:VEVENT
+END:VCALENDAR

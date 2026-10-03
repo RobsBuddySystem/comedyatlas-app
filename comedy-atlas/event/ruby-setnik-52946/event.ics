@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ruby-setnik-52946@comedyatlas.app
+DTSTAMP:20270103T031500Z
+DTSTART:20270103T031500Z
+DTEND:20270103T051500Z
+SUMMARY:Ruby Setnik
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ruby-setn
+ ik-52946/
+URL:https://comedyatlas.app/comedy-atlas/event/ruby-setnik-52946/
+END:VEVENT
+END:VCALENDAR

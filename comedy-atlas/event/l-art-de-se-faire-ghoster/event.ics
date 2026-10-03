@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:l-art-de-se-faire-ghoster@comedyatlas.app
+DTSTAMP:20261010T183000Z
+DTSTART:20261010T183000Z
+DTEND:20261010T203000Z
+SUMMARY:L'art de se faire ghoster
+LOCATION:Tourtour
+DESCRIPTION:L'illusion romantique face à l'hashtag aubergine.\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/l-art-de-se-faire-ghoster/
+URL:https://comedyatlas.app/comedy-atlas/event/l-art-de-se-faire-ghoster/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:antoine-peyron-dans-je-vais-vous-cartonner@comedyatlas.app
+DTSTAMP:20261029T193000Z
+DTSTART:20261029T193000Z
+DTEND:20261029T213000Z
+SUMMARY:Antoine Peyron dans Je vais vous cartonner
+LOCATION:Bayonne
+DESCRIPTION:Une chose est sûre : vous allez en prendre plein la gueule !\n
+ More info: https://comedyatlas.app/comedy-atlas/event/antoine-peyron-dans-j
+ e-vais-vous-cartonner/
+URL:https://comedyatlas.app/comedy-atlas/event/antoine-peyron-dans-je-vais-
+ vous-cartonner/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arnout-van-den-bossche-coach@comedyatlas.app
+DTSTAMP:20261117T190000Z
+DTSTART:20261117T190000Z
+DTEND:20261117T210000Z
+SUMMARY:Arnout Van den Bossche "Coach"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arnout-va
+ n-den-bossche-coach/
+URL:https://comedyatlas.app/comedy-atlas/event/arnout-van-den-bossche-coach
+ /
+END:VEVENT
+END:VCALENDAR

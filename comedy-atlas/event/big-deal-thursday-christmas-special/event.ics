@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-deal-thursday-christmas-special@comedyatlas.app
+DTSTAMP:20261217T190000Z
+DTSTART:20261217T190000Z
+DTEND:20261217T210000Z
+SUMMARY:Big Deal Thursday - Christmas Special
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-deal-
+ thursday-christmas-special/
+URL:https://comedyatlas.app/comedy-atlas/event/big-deal-thursday-christmas-
+ special/
+END:VEVENT
+END:VCALENDAR

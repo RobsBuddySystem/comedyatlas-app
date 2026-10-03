@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ask-a-fuckboy@comedyatlas.app
+DTSTAMP:20261031T223000Z
+DTSTART:20261031T223000Z
+DTEND:20261101T003000Z
+SUMMARY:Ask A Fuckboy
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ask-a-fuc
+ kboy/
+URL:https://comedyatlas.app/comedy-atlas/event/ask-a-fuckboy/
+END:VEVENT
+END:VCALENDAR

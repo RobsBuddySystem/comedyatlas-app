@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerrod-carmichael-on-stage-in-san-francisco@comedyatlas.app
+DTSTAMP:20270113T030000Z
+DTSTART:20270113T030000Z
+DTEND:20270113T050000Z
+SUMMARY:Jerrod Carmichael On Stage In SAN FRANCISCO
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerrod-ca
+ rmichael-on-stage-in-san-francisco/
+URL:https://comedyatlas.app/comedy-atlas/event/jerrod-carmichael-on-stage-i
+ n-san-francisco/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jarnal-dans-franchement@comedyatlas.app
+DTSTAMP:20261027T194500Z
+DTSTART:20261027T194500Z
+DTEND:20261027T214500Z
+SUMMARY:Jarnal dans Franchement
+LOCATION:Lyon
+DESCRIPTION:Type sympa qui ne pense pas toujours des trucs sympas.\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/jarnal-dans-franchement/
+URL:https://comedyatlas.app/comedy-atlas/event/jarnal-dans-franchement/
+END:VEVENT
+END:VCALENDAR

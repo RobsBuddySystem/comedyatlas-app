@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:silver-dans-c-est-style@comedyatlas.app
+DTSTAMP:20261028T200000Z
+DTSTART:20261028T200000Z
+DTEND:20261028T220000Z
+SUMMARY:Silver dans C'est stylé
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Découvrez le premier stand-upper chrétien avec un humour frai
+ s et inédit qui réunit rires\, foi et authenticité.\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/silver-dans-c-est-style/
+URL:https://comedyatlas.app/comedy-atlas/event/silver-dans-c-est-style/
+END:VEVENT
+END:VCALENDAR

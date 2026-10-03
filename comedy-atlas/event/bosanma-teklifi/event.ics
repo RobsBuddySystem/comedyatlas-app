@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bosanma-teklifi@comedyatlas.app
+DTSTAMP:20261024T173000Z
+DTSTART:20261024T173000Z
+DTEND:20261024T193000Z
+SUMMARY:Boşanma Teklifi
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bosanma-t
+ eklifi/
+URL:https://comedyatlas.app/comedy-atlas/event/bosanma-teklifi/
+END:VEVENT
+END:VCALENDAR

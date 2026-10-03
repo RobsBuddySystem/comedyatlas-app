@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alain-frei@comedyatlas.app
+DTSTAMP:20270307T180000Z
+DTSTART:20270307T180000Z
+DTEND:20270307T200000Z
+SUMMARY:Alain Frei
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alain-fre
+ i/
+URL:https://comedyatlas.app/comedy-atlas/event/alain-frei/
+END:VEVENT
+END:VCALENDAR

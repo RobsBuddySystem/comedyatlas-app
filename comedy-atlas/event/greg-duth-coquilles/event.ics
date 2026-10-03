@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-duth-coquilles@comedyatlas.app
+DTSTAMP:20270122T193000Z
+DTSTART:20270122T193000Z
+DTEND:20270122T213000Z
+SUMMARY:Greg Duth - Coquilles
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-duth
+ -coquilles/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-duth-coquilles/
+END:VEVENT
+END:VCALENDAR

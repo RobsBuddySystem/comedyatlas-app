@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:weird-al-yankovic-uhf-live-to-screen-with-orchestra-and-live-q-a@comedy
+ atlas.app
+DTSTAMP:20261101T030000Z
+DTSTART:20261101T030000Z
+DTEND:20261101T050000Z
+SUMMARY:"Weird Al" Yankovic: UHF Live-to-Screen with Orchestra and Live Q&A
+LOCATION:Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/weird-al-
+ yankovic-uhf-live-to-screen-with-orchestra-and-live-q-a/
+URL:https://comedyatlas.app/comedy-atlas/event/weird-al-yankovic-uhf-live-t
+ o-screen-with-orchestra-and-live-q-a/
+END:VEVENT
+END:VCALENDAR

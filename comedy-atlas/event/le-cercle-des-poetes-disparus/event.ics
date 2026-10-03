@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-cercle-des-poetes-disparus@comedyatlas.app
+DTSTAMP:20270124T150000Z
+DTSTART:20270124T150000Z
+DTEND:20270124T170000Z
+SUMMARY:Le Cercle des poètes disparus
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/le-cercle
+ -des-poetes-disparus/
+URL:https://comedyatlas.app/comedy-atlas/event/le-cercle-des-poetes-disparu
+ s/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:auld-pals-still-game-vip@comedyatlas.app
+DTSTAMP:20270524T190000Z
+DTSTART:20270524T190000Z
+DTEND:20270524T210000Z
+SUMMARY:Auld Pals - Still Game - VIP
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/auld-pals
+ -still-game-vip/
+URL:https://comedyatlas.app/comedy-atlas/event/auld-pals-still-game-vip/
+END:VEVENT
+END:VCALENDAR

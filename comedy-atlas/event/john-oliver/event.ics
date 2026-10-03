@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-oliver@comedyatlas.app
+DTSTAMP:20261231T230000Z
+DTSTART:20261231T230000Z
+DTEND:20270101T010000Z
+SUMMARY:John Oliver
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-oliv
+ er/
+URL:https://comedyatlas.app/comedy-atlas/event/john-oliver/
+END:VEVENT
+END:VCALENDAR

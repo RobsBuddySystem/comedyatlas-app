@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-estrada-49745@comedyatlas.app
+DTSTAMP:20261024T040000Z
+DTSTART:20261024T040000Z
+DTEND:20261024T060000Z
+SUMMARY:Chris Estrada
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-est
+ rada-49745/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-estrada-49745/
+END:VEVENT
+END:VCALENDAR

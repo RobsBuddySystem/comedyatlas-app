@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-57262@comedyatlas.app
+DTSTAMP:20261024T174500Z
+DTSTART:20261024T174500Z
+DTEND:20261024T194500Z
+SUMMARY:Open Mic
+LOCATION:Lyon
+DESCRIPTION:Bienvenue à l'Open Mic du Speaker\, le premier Comedy Club 100
+ % dédié au stand-up en plein coeur de Lyon !\nMore info: https://comedyat
+ las.app/comedy-atlas/event/open-mic-57262/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-57262/
+END:VEVENT
+END:VCALENDAR

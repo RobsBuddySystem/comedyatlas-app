@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ali-siddiq-live-at-boom-chicago-amsterdam@comedyatlas.app
+DTSTAMP:20261106T171500Z
+DTSTART:20261106T171500Z
+DTEND:20261106T191500Z
+SUMMARY:Ali Siddiq live at Boom Chicago\, Amsterdam
+LOCATION:Boom Chicago\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ali-siddi
+ q-live-at-boom-chicago-amsterdam/
+URL:https://comedyatlas.app/comedy-atlas/event/ali-siddiq-live-at-boom-chic
+ ago-amsterdam/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phoebe-robinson@comedyatlas.app
+DTSTAMP:20261121T030000Z
+DTSTART:20261121T030000Z
+DTEND:20261121T050000Z
+SUMMARY:Phoebe Robinson
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phoebe-ro
+ binson/
+URL:https://comedyatlas.app/comedy-atlas/event/phoebe-robinson/
+END:VEVENT
+END:VCALENDAR

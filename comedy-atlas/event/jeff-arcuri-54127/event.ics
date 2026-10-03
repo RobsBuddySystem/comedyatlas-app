@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-arcuri-54127@comedyatlas.app
+DTSTAMP:20270421T233000Z
+DTSTART:20270421T233000Z
+DTEND:20270422T013000Z
+SUMMARY:Jeff Arcuri
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-arcu
+ ri-54127/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-arcuri-54127/
+END:VEVENT
+END:VCALENDAR

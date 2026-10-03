@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fearprov-halloween-improv-show@comedyatlas.app
+DTSTAMP:20261031T010000Z
+DTSTART:20261031T010000Z
+DTEND:20261031T030000Z
+SUMMARY:FearProv - Halloween Improv Show
+LOCATION:Just The Funny\, 3119 Coral Way\, Miami
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fearprov-
+ halloween-improv-show/
+URL:https://comedyatlas.app/comedy-atlas/event/fearprov-halloween-improv-sh
+ ow/
+END:VEVENT
+END:VCALENDAR

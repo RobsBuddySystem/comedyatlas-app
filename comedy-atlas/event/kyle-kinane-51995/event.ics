@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-kinane-51995@comedyatlas.app
+DTSTAMP:20261206T030000Z
+DTSTART:20261206T030000Z
+DTEND:20261206T050000Z
+SUMMARY:Kyle Kinane
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-kina
+ ne-51995/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-kinane-51995/
+END:VEVENT
+END:VCALENDAR

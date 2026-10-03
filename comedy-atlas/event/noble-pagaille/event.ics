@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:noble-pagaille@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:Noble Pagaille
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/noble-pag
+ aille/
+URL:https://comedyatlas.app/comedy-atlas/event/noble-pagaille/
+END:VEVENT
+END:VCALENDAR

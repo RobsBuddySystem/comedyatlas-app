@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pablo-caillault@comedyatlas.app
+DTSTAMP:20261023T191500Z
+DTSTART:20261023T191500Z
+DTEND:20261023T211500Z
+SUMMARY:Pablo Caillault
+LOCATION:Le Point Virgule\, 7 Rue Sainte Croix de la Bretonnerie\, Paris
+DESCRIPTION:Les lumières s'allument\, début d'un spectacle d'humour parmi
+  tant d'autres dans cet immeeense capitale !\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/pablo-caillault/
+URL:https://comedyatlas.app/comedy-atlas/event/pablo-caillault/
+END:VEVENT
+END:VCALENDAR

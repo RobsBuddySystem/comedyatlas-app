@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-wolf-at-jimmy-kimmel-s-comedy-club-50214@comedyatlas.app
+DTSTAMP:20261102T033000Z
+DTSTART:20261102T033000Z
+DTEND:20261102T053000Z
+SUMMARY:Josh Wolf at Jimmy Kimmel's Comedy Club
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-wolf
+ -at-jimmy-kimmel-s-comedy-club-50214/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-wolf-at-jimmy-kimmel-s-
+ comedy-club-50214/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-best-in-stand-up-thursday-22nd-october@comedyatlas.app
+DTSTAMP:20261022T183000Z
+DTSTART:20261022T183000Z
+DTEND:20261022T203000Z
+SUMMARY:The Best in Stand Up - Thursday 22nd October
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-best-
+ in-stand-up-thursday-22nd-october/
+URL:https://comedyatlas.app/comedy-atlas/event/the-best-in-stand-up-thursda
+ y-22nd-october/
+END:VEVENT
+END:VCALENDAR

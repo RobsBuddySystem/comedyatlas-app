@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yorick-thiede-polygon@comedyatlas.app
+DTSTAMP:20270312T190000Z
+DTSTART:20270312T190000Z
+DTEND:20270312T210000Z
+SUMMARY:Yorick Thiede - Polygon
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yorick-th
+ iede-polygon/
+URL:https://comedyatlas.app/comedy-atlas/event/yorick-thiede-polygon/
+END:VEVENT
+END:VCALENDAR

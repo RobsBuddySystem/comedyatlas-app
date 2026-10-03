@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jason-brokerss@comedyatlas.app
+DTSTAMP:20261217T190000Z
+DTSTART:20261217T190000Z
+DTEND:20261217T210000Z
+SUMMARY:Jason Brokerss
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jason-bro
+ kerss/
+URL:https://comedyatlas.app/comedy-atlas/event/jason-brokerss/
+END:VEVENT
+END:VCALENDAR

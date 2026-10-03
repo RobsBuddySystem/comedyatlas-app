@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-gilligan-the-mo-you-know@comedyatlas.app
+DTSTAMP:20261015T180000Z
+DTSTART:20261015T180000Z
+DTEND:20261015T200000Z
+SUMMARY:Mo Gilligan - The Mo You Know
+LOCATION:Rotterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-gillig
+ an-the-mo-you-know/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-gilligan-the-mo-you-know/
+END:VEVENT
+END:VCALENDAR

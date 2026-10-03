@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dunham-inappropriate-content@comedyatlas.app
+DTSTAMP:20270305T000000Z
+DTSTART:20270305T000000Z
+DTEND:20270305T020000Z
+SUMMARY:Jeff Dunham Inappropriate Content
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-dunh
+ am-inappropriate-content/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dunham-inappropriate-co
+ ntent/
+END:VEVENT
+END:VCALENDAR

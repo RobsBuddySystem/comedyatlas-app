@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-bank-shift-show@comedyatlas.app
+DTSTAMP:20261025T160000Z
+DTSTART:20261025T160000Z
+DTEND:20261025T180000Z
+SUMMARY:The Bank Shift Show
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-bank-
+ shift-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-bank-shift-show/
+END:VEVENT
+END:VCALENDAR

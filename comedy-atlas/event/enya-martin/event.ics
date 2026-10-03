@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:enya-martin@comedyatlas.app
+DTSTAMP:20270306T200000Z
+DTSTART:20270306T200000Z
+DTEND:20270306T220000Z
+SUMMARY:Enya Martin
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/enya-mart
+ in/
+URL:https://comedyatlas.app/comedy-atlas/event/enya-martin/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bob-marley-comedian-52856@comedyatlas.app
+DTSTAMP:20261231T010000Z
+DTSTART:20261231T010000Z
+DTEND:20261231T030000Z
+SUMMARY:Bob Marley Comedian
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bob-marle
+ y-comedian-52856/
+URL:https://comedyatlas.app/comedy-atlas/event/bob-marley-comedian-52856/
+END:VEVENT
+END:VCALENDAR

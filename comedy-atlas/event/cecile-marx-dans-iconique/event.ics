@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cecile-marx-dans-iconique@comedyatlas.app
+DTSTAMP:20261114T200000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T220000Z
+SUMMARY:Cécile Marx dans Iconique
+LOCATION:Montpellier
+DESCRIPTION:Et si nos moments de ridicule devenaient nos meilleures histoir
+ es ?\nMore info: https://comedyatlas.app/comedy-atlas/event/cecile-marx-dan
+ s-iconique/
+URL:https://comedyatlas.app/comedy-atlas/event/cecile-marx-dans-iconique/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francisco-ramos-52943@comedyatlas.app
+DTSTAMP:20270103T030000Z
+DTSTART:20270103T030000Z
+DTEND:20270103T050000Z
+SUMMARY:Francisco Ramos
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/francisco
+ -ramos-52943/
+URL:https://comedyatlas.app/comedy-atlas/event/francisco-ramos-52943/
+END:VEVENT
+END:VCALENDAR

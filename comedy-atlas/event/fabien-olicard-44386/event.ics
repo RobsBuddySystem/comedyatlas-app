@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fabien-olicard-44386@comedyatlas.app
+DTSTAMP:20270320T190000Z
+DTSTART:20270320T190000Z
+DTEND:20270320T210000Z
+SUMMARY:Fabien Olicard
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fabien-ol
+ icard-44386/
+URL:https://comedyatlas.app/comedy-atlas/event/fabien-olicard-44386/
+END:VEVENT
+END:VCALENDAR

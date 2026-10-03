@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:flyover-comedy-festival-2026-presents-yakov-smirnoff@comedyatlas.app
+DTSTAMP:20261114T010000Z
+DTSTART:20261114T010000Z
+DTEND:20261114T030000Z
+SUMMARY:Flyover Comedy Festival 2026 Presents: Yakov Smirnoff
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/flyover-c
+ omedy-festival-2026-presents-yakov-smirnoff/
+URL:https://comedyatlas.app/comedy-atlas/event/flyover-comedy-festival-2026
+ -presents-yakov-smirnoff/
+END:VEVENT
+END:VCALENDAR

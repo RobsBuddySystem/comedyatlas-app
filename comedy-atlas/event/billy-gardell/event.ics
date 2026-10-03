@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:billy-gardell@comedyatlas.app
+DTSTAMP:20261109T050000Z
+DTSTART:20261109T050000Z
+DTEND:20261109T070000Z
+SUMMARY:Billy Gardell
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/billy-gar
+ dell/
+URL:https://comedyatlas.app/comedy-atlas/event/billy-gardell/
+END:VEVENT
+END:VCALENDAR

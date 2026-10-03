@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:montreuil-comedy-club@comedyatlas.app
+DTSTAMP:20261015T181500Z
+DTSTART:20261015T181500Z
+DTEND:20261015T201500Z
+SUMMARY:Montreuil Comedy Club
+LOCATION:Montreuil
+DESCRIPTION:Le Montreuil Comedy Club\, c'est le meilleur Plateau de Stand-u
+ p du Neuf-Trois depuis 2017 !\nMore info: https://comedyatlas.app/comedy-at
+ las/event/montreuil-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/montreuil-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daisy-may-cooper-what-took-you-so-long@comedyatlas.app
+DTSTAMP:20261105T193000Z
+DTSTART:20261105T193000Z
+DTEND:20261105T213000Z
+SUMMARY:Daisy May Cooper - What Took You So Long?
+LOCATION:Cheltenham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daisy-may
+ -cooper-what-took-you-so-long/
+URL:https://comedyatlas.app/comedy-atlas/event/daisy-may-cooper-what-took-y
+ ou-so-long/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:p-tit-dej-comedie-club@comedyatlas.app
+DTSTAMP:20261103T010000Z
+DTSTART:20261103T010000Z
+DTEND:20261103T030000Z
+SUMMARY:P'tit Déj Comédie Club
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/p-tit-dej
+ -comedie-club/
+URL:https://comedyatlas.app/comedy-atlas/event/p-tit-dej-comedie-club/
+END:VEVENT
+END:VCALENDAR

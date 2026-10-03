@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:will-burkart-54289@comedyatlas.app
+DTSTAMP:20270606T020000Z
+DTSTART:20270606T020000Z
+DTEND:20270606T040000Z
+SUMMARY:Will Burkart
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/will-burk
+ art-54289/
+URL:https://comedyatlas.app/comedy-atlas/event/will-burkart-54289/
+END:VEVENT
+END:VCALENDAR

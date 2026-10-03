@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:masood-boomgaard@comedyatlas.app
+DTSTAMP:20261121T003000Z
+DTSTART:20261121T003000Z
+DTEND:20261121T023000Z
+SUMMARY:Masood Boomgaard
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/masood-bo
+ omgaard/
+URL:https://comedyatlas.app/comedy-atlas/event/masood-boomgaard/
+END:VEVENT
+END:VCALENDAR

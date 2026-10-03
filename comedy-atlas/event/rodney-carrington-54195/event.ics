@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rodney-carrington-54195@comedyatlas.app
+DTSTAMP:20270508T000000Z
+DTSTART:20270508T000000Z
+DTEND:20270508T020000Z
+SUMMARY:Rodney Carrington
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rodney-ca
+ rrington-54195/
+URL:https://comedyatlas.app/comedy-atlas/event/rodney-carrington-54195/
+END:VEVENT
+END:VCALENDAR

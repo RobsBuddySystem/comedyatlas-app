@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chill-comedy-club-saison-4@comedyatlas.app
+DTSTAMP:20261007T190000Z
+DTSTART:20261007T190000Z
+DTEND:20261007T210000Z
+SUMMARY:Chill Comedy Club - Saison 4
+LOCATION:Décines Charpieu
+DESCRIPTION:Le Chill Comedy Club revient avec sa saison 4 !\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/chill-comedy-club-saison-4/
+URL:https://comedyatlas.app/comedy-atlas/event/chill-comedy-club-saison-4/
+END:VEVENT
+END:VCALENDAR

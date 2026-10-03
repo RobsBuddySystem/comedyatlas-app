@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:flo-and-joan@comedyatlas.app
+DTSTAMP:20261015T183000Z
+DTSTART:20261015T183000Z
+DTEND:20261015T203000Z
+SUMMARY:Flo and Joan
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/flo-and-j
+ oan/
+URL:https://comedyatlas.app/comedy-atlas/event/flo-and-joan/
+END:VEVENT
+END:VCALENDAR

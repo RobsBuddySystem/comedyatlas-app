@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:press-start-open-mic-56090@comedyatlas.app
+DTSTAMP:20261025T180000Z
+DTSTART:20261025T180000Z
+DTEND:20261025T200000Z
+SUMMARY:Press'Start Open Mic
+LOCATION:Lyon
+DESCRIPTION:Salut les Lyonnais ! On a trouvé le remède parfait au blues d
+ u dimanche soir.\nMore info: https://comedyatlas.app/comedy-atlas/event/pre
+ ss-start-open-mic-56090/
+URL:https://comedyatlas.app/comedy-atlas/event/press-start-open-mic-56090/
+END:VEVENT
+END:VCALENDAR

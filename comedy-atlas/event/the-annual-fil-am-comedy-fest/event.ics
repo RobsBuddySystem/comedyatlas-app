@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-annual-fil-am-comedy-fest@comedyatlas.app
+DTSTAMP:20261015T030000Z
+DTSTART:20261015T030000Z
+DTEND:20261015T050000Z
+SUMMARY:The Annual Fil-Am Comedy Fest
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-annua
+ l-fil-am-comedy-fest/
+URL:https://comedyatlas.app/comedy-atlas/event/the-annual-fil-am-comedy-fes
+ t/
+END:VEVENT
+END:VCALENDAR

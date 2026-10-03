@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gary-gulman-grandiloquent@comedyatlas.app
+DTSTAMP:20261120T000000Z
+DTSTART:20261120T000000Z
+DTEND:20261120T020000Z
+SUMMARY:Gary Gulman: Grandiloquent
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gary-gulm
+ an-grandiloquent/
+URL:https://comedyatlas.app/comedy-atlas/event/gary-gulman-grandiloquent/
+END:VEVENT
+END:VCALENDAR

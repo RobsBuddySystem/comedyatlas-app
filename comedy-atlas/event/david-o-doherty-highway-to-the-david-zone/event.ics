@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-o-doherty-highway-to-the-david-zone@comedyatlas.app
+DTSTAMP:20261114T200000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T220000Z
+SUMMARY:David O'Doherty: Highway to the David Zone
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-o-d
+ oherty-highway-to-the-david-zone/
+URL:https://comedyatlas.app/comedy-atlas/event/david-o-doherty-highway-to-t
+ he-david-zone/
+END:VEVENT
+END:VCALENDAR

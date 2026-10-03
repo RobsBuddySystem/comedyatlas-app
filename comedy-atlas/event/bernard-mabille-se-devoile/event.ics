@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bernard-mabille-se-devoile@comedyatlas.app
+DTSTAMP:20261108T140000Z
+DTSTART:20261108T140000Z
+DTEND:20261108T160000Z
+SUMMARY:Bernard Mabille se dévoile
+LOCATION:Quimper
+DESCRIPTION:Bernard Mabille se dévoile\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/bernard-mabille-se-devoile/
+URL:https://comedyatlas.app/comedy-atlas/event/bernard-mabille-se-devoile/
+END:VEVENT
+END:VCALENDAR

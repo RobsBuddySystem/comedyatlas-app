@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aidan-jones-chopins-nocturne@comedyatlas.app
+DTSTAMP:20270130T193000Z
+DTSTART:20270130T193000Z
+DTEND:20270130T213000Z
+SUMMARY:Aidan Jones: Chopin’s Nocturne
+LOCATION:Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aidan-jon
+ es-chopins-nocturne/
+URL:https://comedyatlas.app/comedy-atlas/event/aidan-jones-chopins-nocturne
+ /
+END:VEVENT
+END:VCALENDAR

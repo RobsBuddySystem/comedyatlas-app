@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:oguz-pasaoglu-stand-up@comedyatlas.app
+DTSTAMP:20261011T173000Z
+DTSTART:20261011T173000Z
+DTEND:20261011T193000Z
+SUMMARY:Oğuz Paşaoglu Stand Up
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/oguz-pasa
+ oglu-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/oguz-pasaoglu-stand-up/
+END:VEVENT
+END:VCALENDAR

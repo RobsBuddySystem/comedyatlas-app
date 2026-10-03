@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-at-christmas-ross-noble-fern-brady@comedyatlas.app
+DTSTAMP:20261211T193000Z
+DTSTART:20261211T193000Z
+DTEND:20261211T213000Z
+SUMMARY:Live at Christmas: Ross Noble & Fern Brady
+LOCATION:Nottingham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/live-at-c
+ hristmas-ross-noble-fern-brady/
+URL:https://comedyatlas.app/comedy-atlas/event/live-at-christmas-ross-noble
+ -fern-brady/
+END:VEVENT
+END:VCALENDAR

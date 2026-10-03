@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucas-zelnick-second-show@comedyatlas.app
+DTSTAMP:20261117T110000Z
+DTSTART:20261117T110000Z
+DTEND:20261117T130000Z
+SUMMARY:Lucas Zelnick (SECOND SHOW)
+LOCATION:Perth
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucas-zel
+ nick-second-show/
+URL:https://comedyatlas.app/comedy-atlas/event/lucas-zelnick-second-show/
+END:VEVENT
+END:VCALENDAR

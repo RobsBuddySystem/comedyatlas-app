@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:j-red-s-hood-ish-holy-comedy-explosion@comedyatlas.app
+DTSTAMP:20261115T040000Z
+DTSTART:20261115T040000Z
+DTEND:20261115T060000Z
+SUMMARY:J-Red's Hood'ish & Holy Comedy Explosion
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/j-red-s-h
+ ood-ish-holy-comedy-explosion/
+URL:https://comedyatlas.app/comedy-atlas/event/j-red-s-hood-ish-holy-comedy
+ -explosion/
+END:VEVENT
+END:VCALENDAR

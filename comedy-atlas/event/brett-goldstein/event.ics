@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brett-goldstein@comedyatlas.app
+DTSTAMP:20261112T030000Z
+DTSTART:20261112T030000Z
+DTEND:20261112T050000Z
+SUMMARY:Brett Goldstein
+LOCATION:Vancouver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brett-gol
+ dstein/
+URL:https://comedyatlas.app/comedy-atlas/event/brett-goldstein/
+END:VEVENT
+END:VCALENDAR

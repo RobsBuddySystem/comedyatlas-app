@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laurent-gerra@comedyatlas.app
+DTSTAMP:20271127T190000Z
+DTSTART:20271127T190000Z
+DTEND:20271127T210000Z
+SUMMARY:Laurent Gerra
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laurent-g
+ erra/
+URL:https://comedyatlas.app/comedy-atlas/event/laurent-gerra/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-proops-live-album-recording@comedyatlas.app
+DTSTAMP:20261231T023000Z
+DTSTART:20261231T023000Z
+DTEND:20261231T043000Z
+SUMMARY:Greg Proops: Live Album Recording
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-proo
+ ps-live-album-recording/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-proops-live-album-recor
+ ding/
+END:VEVENT
+END:VCALENDAR

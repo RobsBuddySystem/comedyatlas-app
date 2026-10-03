@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stephane-rousseau-45101@comedyatlas.app
+DTSTAMP:20270121T010000Z
+DTSTART:20270121T010000Z
+DTEND:20270121T030000Z
+SUMMARY:Stéphane Rousseau
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stephane-
+ rousseau-45101/
+URL:https://comedyatlas.app/comedy-atlas/event/stephane-rousseau-45101/
+END:VEVENT
+END:VCALENDAR

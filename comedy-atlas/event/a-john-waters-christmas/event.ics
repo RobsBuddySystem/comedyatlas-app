@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-john-waters-christmas@comedyatlas.app
+DTSTAMP:20261203T040000Z
+DTSTART:20261203T040000Z
+DTEND:20261203T060000Z
+SUMMARY:A John Waters Christmas
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-john-wa
+ ters-christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/a-john-waters-christmas/
+END:VEVENT
+END:VCALENDAR

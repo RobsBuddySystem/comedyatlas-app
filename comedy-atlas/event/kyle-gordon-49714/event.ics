@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-gordon-49714@comedyatlas.app
+DTSTAMP:20261024T020000Z
+DTSTART:20261024T020000Z
+DTEND:20261024T040000Z
+SUMMARY:Kyle Gordon
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-gord
+ on-49714/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-gordon-49714/
+END:VEVENT
+END:VCALENDAR

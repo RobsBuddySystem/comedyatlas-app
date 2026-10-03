@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michael-condo-dans-cou-d-eclat@comedyatlas.app
+DTSTAMP:20261029T183000Z
+DTSTART:20261029T183000Z
+DTEND:20261029T203000Z
+SUMMARY:Michaël Condo dans Cou d'éclat
+LOCATION:Marseille
+DESCRIPTION:Michael Condo vous embarque dans un spectacle aussi drôle que 
+ sincère\, où il raconte sa vie sans filtre.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/michael-condo-dans-cou-d-eclat/
+URL:https://comedyatlas.app/comedy-atlas/event/michael-condo-dans-cou-d-ecl
+ at/
+END:VEVENT
+END:VCALENDAR

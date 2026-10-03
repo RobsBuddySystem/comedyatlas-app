@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:edouard-deloignon@comedyatlas.app
+DTSTAMP:20270206T190000Z
+DTSTART:20270206T190000Z
+DTEND:20270206T210000Z
+SUMMARY:Edouard Deloignon
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/edouard-d
+ eloignon/
+URL:https://comedyatlas.app/comedy-atlas/event/edouard-deloignon/
+END:VEVENT
+END:VCALENDAR

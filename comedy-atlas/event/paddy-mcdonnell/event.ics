@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paddy-mcdonnell@comedyatlas.app
+DTSTAMP:20261021T180000Z
+DTSTART:20261021T180000Z
+DTEND:20261021T200000Z
+SUMMARY:Paddy McDonnell
+LOCATION:Winthrop Avenue (@ Old Oak)\, Winthrop Lane\, Cork
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paddy-mcd
+ onnell/
+URL:https://comedyatlas.app/comedy-atlas/event/paddy-mcdonnell/
+END:VEVENT
+END:VCALENDAR

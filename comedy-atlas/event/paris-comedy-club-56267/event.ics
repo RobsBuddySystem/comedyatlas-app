@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club-56267@comedyatlas.app
+DTSTAMP:20261113T200000Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Arçonnay
+DESCRIPTION:Le Paris Comedy Club\, c'est le rendez-vous incontournable des 
+ étoiles montantes de l'humour.\nMore info: https://comedyatlas.app/comedy-
+ atlas/event/paris-comedy-club-56267/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-56267/
+END:VEVENT
+END:VCALENDAR

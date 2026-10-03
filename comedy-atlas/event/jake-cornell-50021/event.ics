@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jake-cornell-50021@comedyatlas.app
+DTSTAMP:20261029T013000Z
+DTSTART:20261029T013000Z
+DTEND:20261029T033000Z
+SUMMARY:Jake Cornell
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jake-corn
+ ell-50021/
+URL:https://comedyatlas.app/comedy-atlas/event/jake-cornell-50021/
+END:VEVENT
+END:VCALENDAR

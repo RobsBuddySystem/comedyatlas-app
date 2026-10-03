@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maccio-capatonda@comedyatlas.app
+DTSTAMP:20270112T201500Z
+DTSTART:20270112T201500Z
+DTEND:20270112T221500Z
+SUMMARY:MACCIO CAPATONDA
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maccio-ca
+ patonda/
+URL:https://comedyatlas.app/comedy-atlas/event/maccio-capatonda/
+END:VEVENT
+END:VCALENDAR

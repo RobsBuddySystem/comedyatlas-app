@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sami-landri-presente-le-sami-party@comedyatlas.app
+DTSTAMP:20270423T000000Z
+DTSTART:20270423T000000Z
+DTEND:20270423T020000Z
+SUMMARY:Sami Landri présente Le Sami Party
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sami-land
+ ri-presente-le-sami-party/
+URL:https://comedyatlas.app/comedy-atlas/event/sami-landri-presente-le-sami
+ -party/
+END:VEVENT
+END:VCALENDAR

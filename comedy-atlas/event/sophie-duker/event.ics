@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sophie-duker@comedyatlas.app
+DTSTAMP:20270207T200000Z
+DTSTART:20270207T200000Z
+DTEND:20270207T220000Z
+SUMMARY:Sophie Duker
+LOCATION:Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sophie-du
+ ker/
+URL:https://comedyatlas.app/comedy-atlas/event/sophie-duker/
+END:VEVENT
+END:VCALENDAR

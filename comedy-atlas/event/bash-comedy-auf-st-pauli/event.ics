@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bash-comedy-auf-st-pauli@comedyatlas.app
+DTSTAMP:20261008T170000Z
+DTSTART:20261008T170000Z
+DTEND:20261008T190000Z
+SUMMARY:Bash Comedy auf St. Pauli
+LOCATION:Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bash-come
+ dy-auf-st-pauli/
+URL:https://comedyatlas.app/comedy-atlas/event/bash-comedy-auf-st-pauli/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucy-beaumont-bad-at-quiz-shows-good-with-weirdos@comedyatlas.app
+DTSTAMP:20270328T190000Z
+DTSTART:20270328T190000Z
+DTEND:20270328T210000Z
+SUMMARY:Lucy Beaumont: Bad At Quiz Shows\, Good With Weirdos
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucy-beau
+ mont-bad-at-quiz-shows-good-with-weirdos/
+URL:https://comedyatlas.app/comedy-atlas/event/lucy-beaumont-bad-at-quiz-sh
+ ows-good-with-weirdos/
+END:VEVENT
+END:VCALENDAR

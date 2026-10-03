@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-sh-t-show-hosted-by-jordan-klepper@comedyat
+ las.app
+DTSTAMP:20261115T000000Z
+DTSTART:20261115T000000Z
+DTEND:20261115T020000Z
+SUMMARY:NY Comedy Festival Presents Sh&t Show Hosted by Jordan Klepper
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-sh-t-show-hosted-by-jordan-klepper/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ sh-t-show-hosted-by-jordan-klepper/
+END:VEVENT
+END:VCALENDAR

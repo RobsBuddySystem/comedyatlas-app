@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:conan-o-brien-and-the-vigodas@comedyatlas.app
+DTSTAMP:20261101T020000Z
+DTSTART:20261101T020000Z
+DTEND:20261101T040000Z
+SUMMARY:Conan O'brien And The Vigodas
+LOCATION:Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/conan-o-b
+ rien-and-the-vigodas/
+URL:https://comedyatlas.app/comedy-atlas/event/conan-o-brien-and-the-vigoda
+ s/
+END:VEVENT
+END:VCALENDAR

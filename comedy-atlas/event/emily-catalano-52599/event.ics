@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emily-catalano-52599@comedyatlas.app
+DTSTAMP:20261220T030000Z
+DTSTART:20261220T030000Z
+DTEND:20261220T050000Z
+SUMMARY:Emily Catalano
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emily-cat
+ alano-52599/
+URL:https://comedyatlas.app/comedy-atlas/event/emily-catalano-52599/
+END:VEVENT
+END:VCALENDAR

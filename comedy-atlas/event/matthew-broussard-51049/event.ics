@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matthew-broussard-51049@comedyatlas.app
+DTSTAMP:20261115T210000Z
+DTSTART:20261115T210000Z
+DTEND:20261115T230000Z
+SUMMARY:Matthew Broussard
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matthew-b
+ roussard-51049/
+URL:https://comedyatlas.app/comedy-atlas/event/matthew-broussard-51049/
+END:VEVENT
+END:VCALENDAR

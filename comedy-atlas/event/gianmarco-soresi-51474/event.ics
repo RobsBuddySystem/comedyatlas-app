@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gianmarco-soresi-51474@comedyatlas.app
+DTSTAMP:20261123T020000Z
+DTSTART:20261123T020000Z
+DTEND:20261123T040000Z
+SUMMARY:Gianmarco Soresi
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gianmarco
+ -soresi-51474/
+URL:https://comedyatlas.app/comedy-atlas/event/gianmarco-soresi-51474/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-48989@comedyatlas.app
+DTSTAMP:20261011T021500Z
+DTSTART:20261011T021500Z
+DTEND:20261011T041500Z
+SUMMARY:Nate Jackson
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-48989/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-48989/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-mcsavage-the-occasional-ride-tour@comedyatlas.app
+DTSTAMP:20261126T190000Z
+DTSTART:20261126T190000Z
+DTEND:20261126T210000Z
+SUMMARY:Dave McSavage - The Occasional Ride Tour
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-mcsa
+ vage-the-occasional-ride-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-mcsavage-the-occasional
+ -ride-tour/
+END:VEVENT
+END:VCALENDAR

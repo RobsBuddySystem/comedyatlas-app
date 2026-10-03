@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dikkenek-comedy-club@comedyatlas.app
+DTSTAMP:20261008T190000Z
+DTSTART:20261008T190000Z
+DTEND:20261008T210000Z
+SUMMARY:Dikkenek Comedy Club
+LOCATION:Lyon
+DESCRIPTION:Le Dikkenek Comedy Bar\, niché dans la Croix-Rousse\, est la n
+ ouvelle maison du Stand Up à Lyon. Venez rire entre amis !\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/dikkenek-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/dikkenek-comedy-club/
+END:VEVENT
+END:VCALENDAR

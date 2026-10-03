@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elles-improvisent@comedyatlas.app
+DTSTAMP:20261011T140000Z
+DTSTART:20261011T140000Z
+DTEND:20261011T160000Z
+SUMMARY:Elles improvisent
+LOCATION:Théâtre BO Saint Martin\, 19\, Boulevard Saint Martin\, Paris
+DESCRIPTION:Elles improvisent proposent une expérience théâtrale singuli
+ ère.\nMore info: https://comedyatlas.app/comedy-atlas/event/elles-improvis
+ ent/
+URL:https://comedyatlas.app/comedy-atlas/event/elles-improvisent/
+END:VEVENT
+END:VCALENDAR

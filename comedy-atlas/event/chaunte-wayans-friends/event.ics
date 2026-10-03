@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaunte-wayans-friends@comedyatlas.app
+DTSTAMP:20261022T040000Z
+DTSTART:20261022T040000Z
+DTEND:20261022T060000Z
+SUMMARY:Chaunte Wayans & Friends
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaunte-w
+ ayans-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/chaunte-wayans-friends/
+END:VEVENT
+END:VCALENDAR

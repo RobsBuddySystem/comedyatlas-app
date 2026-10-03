@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-garlin@comedyatlas.app
+DTSTAMP:20261119T000000Z
+DTSTART:20261119T000000Z
+DTEND:20261119T020000Z
+SUMMARY:Jeff Garlin
+LOCATION:Charleston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-garl
+ in/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-garlin/
+END:VEVENT
+END:VCALENDAR

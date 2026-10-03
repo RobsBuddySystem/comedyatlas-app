@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:babor-en-rodage@comedyatlas.app
+DTSTAMP:20261014T193000Z
+DTSTART:20261014T193000Z
+DTEND:20261014T213000Z
+SUMMARY:Babor en rodage
+LOCATION:Paris
+DESCRIPTION:1h de bonheur\, qui n'en a jamais rêvé ?\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/babor-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/babor-en-rodage/
+END:VEVENT
+END:VCALENDAR

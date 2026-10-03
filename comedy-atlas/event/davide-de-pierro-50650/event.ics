@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:davide-de-pierro-50650@comedyatlas.app
+DTSTAMP:20261109T033000Z
+DTSTART:20261109T033000Z
+DTEND:20261109T053000Z
+SUMMARY:Davide De Pierro
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/davide-de
+ -pierro-50650/
+URL:https://comedyatlas.app/comedy-atlas/event/davide-de-pierro-50650/
+END:VEVENT
+END:VCALENDAR

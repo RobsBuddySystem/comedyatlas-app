@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-wang-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20261017T173000Z
+DTSTART:20261017T173000Z
+DTEND:20261017T193000Z
+SUMMARY:Phil Wang - Venue Premium Tickets
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phil-wang
+ -venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-wang-venue-premium-tick
+ ets/
+END:VEVENT
+END:VCALENDAR

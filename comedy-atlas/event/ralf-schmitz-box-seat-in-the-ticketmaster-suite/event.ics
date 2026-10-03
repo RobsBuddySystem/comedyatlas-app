@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ralf-schmitz-box-seat-in-the-ticketmaster-suite@comedyatlas.app
+DTSTAMP:20270212T190000Z
+DTSTART:20270212T190000Z
+DTEND:20270212T210000Z
+SUMMARY:Ralf Schmitz | Box seat in the Ticketmaster Suite
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ralf-schm
+ itz-box-seat-in-the-ticketmaster-suite/
+URL:https://comedyatlas.app/comedy-atlas/event/ralf-schmitz-box-seat-in-the
+ -ticketmaster-suite/
+END:VEVENT
+END:VCALENDAR

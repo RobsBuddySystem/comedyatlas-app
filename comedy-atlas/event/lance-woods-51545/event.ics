@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lance-woods-51545@comedyatlas.app
+DTSTAMP:20261126T033000Z
+DTSTART:20261126T033000Z
+DTEND:20261126T053000Z
+SUMMARY:Lance Woods
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lance-woo
+ ds-51545/
+URL:https://comedyatlas.app/comedy-atlas/event/lance-woods-51545/
+END:VEVENT
+END:VCALENDAR

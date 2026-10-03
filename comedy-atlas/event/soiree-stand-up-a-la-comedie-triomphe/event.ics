@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:soiree-stand-up-a-la-comedie-triomphe@comedyatlas.app
+DTSTAMP:20261022T183000Z
+DTSTART:20261022T183000Z
+DTEND:20261022T203000Z
+SUMMARY:Soirée Stand up à la Comédie Triomphe
+LOCATION:Saint Etienne
+DESCRIPTION:De nos jours tout le monde a quelque chose à dire et c'est hil
+ arant !\nMore info: https://comedyatlas.app/comedy-atlas/event/soiree-stand
+ -up-a-la-comedie-triomphe/
+URL:https://comedyatlas.app/comedy-atlas/event/soiree-stand-up-a-la-comedie
+ -triomphe/
+END:VEVENT
+END:VCALENDAR

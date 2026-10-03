@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-deal-wednesday-the-cambridge-improv-variety-show@comedyatlas.app
+DTSTAMP:20261028T190000Z
+DTSTART:20261028T190000Z
+DTEND:20261028T210000Z
+SUMMARY:Big Deal Wednesday - The Cambridge Improv Variety Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-deal-
+ wednesday-the-cambridge-improv-variety-show/
+URL:https://comedyatlas.app/comedy-atlas/event/big-deal-wednesday-the-cambr
+ idge-improv-variety-show/
+END:VEVENT
+END:VCALENDAR

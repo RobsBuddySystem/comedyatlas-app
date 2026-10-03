@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-with-special-guests@comedyatlas.app
+DTSTAMP:20261114T230000Z
+DTSTART:20261114T230000Z
+DTEND:20261115T010000Z
+SUMMARY:Aries Spears With Special Guests
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-with-special-guests/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-with-special-gu
+ ests/
+END:VEVENT
+END:VCALENDAR

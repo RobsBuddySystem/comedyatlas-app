@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ucpa-comedy-club@comedyatlas.app
+DTSTAMP:20261013T190000Z
+DTSTART:20261013T190000Z
+DTEND:20261013T210000Z
+SUMMARY:UCPA Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:Le stand-up prend de la hauteur à l'UCPA Sport Station Bordeau
+ x !\nMore info: https://comedyatlas.app/comedy-atlas/event/ucpa-comedy-club
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/ucpa-comedy-club/
+END:VEVENT
+END:VCALENDAR

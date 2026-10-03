@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hyena-lounge-comedy-club@comedyatlas.app
+DTSTAMP:20261211T200000Z
+DTSTART:20261211T200000Z
+DTEND:20261211T220000Z
+SUMMARY:Hyena Lounge Comedy Club
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hyena-lou
+ nge-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/hyena-lounge-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gina-brillon-53508@comedyatlas.app
+DTSTAMP:20270213T033000Z
+DTSTART:20270213T033000Z
+DTEND:20270213T053000Z
+SUMMARY:Gina Brillon
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gina-bril
+ lon-53508/
+URL:https://comedyatlas.app/comedy-atlas/event/gina-brillon-53508/
+END:VEVENT
+END:VCALENDAR

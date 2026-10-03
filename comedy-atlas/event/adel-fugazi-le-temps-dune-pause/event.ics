@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adel-fugazi-le-temps-dune-pause@comedyatlas.app
+DTSTAMP:20261125T190000Z
+DTSTART:20261125T190000Z
+DTEND:20261125T210000Z
+SUMMARY:Adel Fugazi - Le temps d’une pause
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adel-fuga
+ zi-le-temps-dune-pause/
+URL:https://comedyatlas.app/comedy-atlas/event/adel-fugazi-le-temps-dune-pa
+ use/
+END:VEVENT
+END:VCALENDAR

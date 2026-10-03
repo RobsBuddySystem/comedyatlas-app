@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dee-mo-and-friends@comedyatlas.app
+DTSTAMP:20261022T000000Z
+DTSTART:20261022T000000Z
+DTEND:20261022T020000Z
+SUMMARY:Dee Mo and Friends
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dee-mo-an
+ d-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/dee-mo-and-friends/
+END:VEVENT
+END:VCALENDAR

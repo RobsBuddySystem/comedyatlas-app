@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eddie-griffin-las-vegas@comedyatlas.app
+DTSTAMP:20261006T033000Z
+DTSTART:20261006T033000Z
+DTEND:20261006T053000Z
+SUMMARY:Eddie Griffin (Las Vegas)
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eddie-gri
+ ffin-las-vegas/
+URL:https://comedyatlas.app/comedy-atlas/event/eddie-griffin-las-vegas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-coup-de-pelle@comedyatlas.app
+DTSTAMP:20261125T191500Z
+DTSTART:20261125T191500Z
+DTEND:20261125T211500Z
+SUMMARY:Le coup de pelle
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/le-coup-d
+ e-pelle/
+URL:https://comedyatlas.app/comedy-atlas/event/le-coup-de-pelle/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-brodkin-unleashed@comedyatlas.app
+DTSTAMP:20261203T200000Z
+DTSTART:20261203T200000Z
+DTEND:20261203T220000Z
+SUMMARY:Simon Brodkin - Unleashed
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simon-bro
+ dkin-unleashed/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-brodkin-unleashed/
+END:VEVENT
+END:VCALENDAR

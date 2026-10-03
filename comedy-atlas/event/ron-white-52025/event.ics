@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-52025@comedyatlas.app
+DTSTAMP:20261206T050000Z
+DTSTART:20261206T050000Z
+DTEND:20261206T070000Z
+SUMMARY:Ron White
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -52025/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-52025/
+END:VEVENT
+END:VCALENDAR

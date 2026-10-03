@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:james-tom-goes-on-a-mini-tour-casual-style@comedyatlas.app
+DTSTAMP:20261028T013000Z
+DTSTART:20261028T013000Z
+DTEND:20261028T033000Z
+SUMMARY:James Tom Goes on a Mini-Tour\, Casual Style
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/james-tom
+ -goes-on-a-mini-tour-casual-style/
+URL:https://comedyatlas.app/comedy-atlas/event/james-tom-goes-on-a-mini-tou
+ r-casual-style/
+END:VEVENT
+END:VCALENDAR

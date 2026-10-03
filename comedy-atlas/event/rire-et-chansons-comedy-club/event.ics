@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rire-et-chansons-comedy-club@comedyatlas.app
+DTSTAMP:20261019T180000Z
+DTSTART:20261019T180000Z
+DTEND:20261019T200000Z
+SUMMARY:Rire et Chansons Comedy Club
+LOCATION:La Scène Montparnasse (Grand Point Virgule) - salle Jardin\, 8 bi
+ s rue de l'arrivée\, Paris
+DESCRIPTION:Une fois par mois\, venez découvrir les nouveaux talents du Ri
+ re sélectionnés par Rire et Chansons.\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/rire-et-chansons-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/rire-et-chansons-comedy-club
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players-sunday-24th-january@comedyatlas.app
+DTSTAMP:20270124T193000Z
+DTSTART:20270124T193000Z
+DTEND:20270124T213000Z
+SUMMARY:The Comedy Store Players - Sunday 24th January
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players-sunday-24th-january/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players-sun
+ day-24th-january/
+END:VEVENT
+END:VCALENDAR

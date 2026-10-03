@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:justin-dans-alors-la@comedyatlas.app
+DTSTAMP:20261007T180000Z
+DTSTART:20261007T180000Z
+DTEND:20261007T200000Z
+SUMMARY:Justin dans Alors là...
+LOCATION:Rennes
+DESCRIPTION:Je me suis dit que j'allais écrire un spectacle intime\, enfin
+  intime\, je reste habillé hein mais un truc personnel quoi.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/justin-dans-alors-la/
+URL:https://comedyatlas.app/comedy-atlas/event/justin-dans-alors-la/
+END:VEVENT
+END:VCALENDAR

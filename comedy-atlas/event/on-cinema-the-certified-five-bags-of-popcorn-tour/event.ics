@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:on-cinema-the-certified-five-bags-of-popcorn-tour@comedyatlas.app
+DTSTAMP:20261214T100000Z
+DTSTART:20261214T100000Z
+DTEND:20261214T120000Z
+SUMMARY:On Cinema: The Certified "Five Bags of Popcorn" Tour
+LOCATION:Brisbane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/on-cinema
+ -the-certified-five-bags-of-popcorn-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/on-cinema-the-certified-five
+ -bags-of-popcorn-tour/
+END:VEVENT
+END:VCALENDAR

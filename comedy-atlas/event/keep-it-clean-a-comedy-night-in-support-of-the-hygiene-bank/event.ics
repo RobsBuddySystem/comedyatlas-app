@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:keep-it-clean-a-comedy-night-in-support-of-the-hygiene-bank@comedyatlas
+ .app
+DTSTAMP:20270316T193000Z
+DTSTART:20270316T193000Z
+DTEND:20270316T213000Z
+SUMMARY:Keep it Clean! A comedy night in support of The Hygiene Bank.
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/keep-it-c
+ lean-a-comedy-night-in-support-of-the-hygiene-bank/
+URL:https://comedyatlas.app/comedy-atlas/event/keep-it-clean-a-comedy-night
+ -in-support-of-the-hygiene-bank/
+END:VEVENT
+END:VCALENDAR

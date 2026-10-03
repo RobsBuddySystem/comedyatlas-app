@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-heffron@comedyatlas.app
+DTSTAMP:20261004T000000Z
+DTSTART:20261004T000000Z
+DTEND:20261004T020000Z
+SUMMARY:John Heffron
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-heff
+ ron/
+URL:https://comedyatlas.app/comedy-atlas/event/john-heffron/
+END:VEVENT
+END:VCALENDAR

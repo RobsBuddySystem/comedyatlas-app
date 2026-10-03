@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-allstars-50115@comedyatlas.app
+DTSTAMP:20261031T023000Z
+DTSTART:20261031T023000Z
+DTEND:20261031T043000Z
+SUMMARY:Comedy Allstars
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-al
+ lstars-50115/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-allstars-50115/
+END:VEVENT
+END:VCALENDAR

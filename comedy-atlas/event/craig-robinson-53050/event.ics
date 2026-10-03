@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:craig-robinson-53050@comedyatlas.app
+DTSTAMP:20270110T053000Z
+DTSTART:20270110T053000Z
+DTEND:20270110T073000Z
+SUMMARY:Craig Robinson
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/craig-rob
+ inson-53050/
+URL:https://comedyatlas.app/comedy-atlas/event/craig-robinson-53050/
+END:VEVENT
+END:VCALENDAR

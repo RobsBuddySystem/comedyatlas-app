@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-53026@comedyatlas.app
+DTSTAMP:20270110T010000Z
+DTSTART:20270110T010000Z
+DTEND:20270110T030000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-53026/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-53026/
+END:VEVENT
+END:VCALENDAR

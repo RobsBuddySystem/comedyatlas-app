@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-ilkley@comedyatlas.app
+DTSTAMP:20261121T200000Z
+DTSTART:20261121T200000Z
+DTEND:20261121T220000Z
+SUMMARY:The Comedy Store - Ilkley
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-ilkley/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-ilkley/
+END:VEVENT
+END:VCALENDAR

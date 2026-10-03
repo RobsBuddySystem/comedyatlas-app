@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pablo-caillault-57803@comedyatlas.app
+DTSTAMP:20261101T183000Z
+DTSTART:20261101T183000Z
+DTEND:20261101T203000Z
+SUMMARY:Pablo Caillault
+LOCATION:Nice
+DESCRIPTION:Pablo Caillault\, c'est le meilleur accident de ta semaine ! La
+ uréat du prix du jury du Festival d'Humour de Paris 2026.\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/pablo-caillault-57803/
+URL:https://comedyatlas.app/comedy-atlas/event/pablo-caillault-57803/
+END:VEVENT
+END:VCALENDAR

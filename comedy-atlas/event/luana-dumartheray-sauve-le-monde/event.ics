@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luana-dumartheray-sauve-le-monde@comedyatlas.app
+DTSTAMP:20261005T170000Z
+DTSTART:20261005T170000Z
+DTEND:20261005T190000Z
+SUMMARY:Luana Dumartheray sauve le Monde
+LOCATION:Lyon
+DESCRIPTION:Luana veut sauver le monde... pour faire plaisir. ça vous fait
+  plaisir ?\nMore info: https://comedyatlas.app/comedy-atlas/event/luana-dum
+ artheray-sauve-le-monde/
+URL:https://comedyatlas.app/comedy-atlas/event/luana-dumartheray-sauve-le-m
+ onde/
+END:VEVENT
+END:VCALENDAR

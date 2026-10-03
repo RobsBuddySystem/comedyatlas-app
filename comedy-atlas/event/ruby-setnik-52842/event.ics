@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ruby-setnik-52842@comedyatlas.app
+DTSTAMP:20261230T033000Z
+DTSTART:20261230T033000Z
+DTEND:20261230T053000Z
+SUMMARY:Ruby Setnik
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ruby-setn
+ ik-52842/
+URL:https://comedyatlas.app/comedy-atlas/event/ruby-setnik-52842/
+END:VEVENT
+END:VCALENDAR

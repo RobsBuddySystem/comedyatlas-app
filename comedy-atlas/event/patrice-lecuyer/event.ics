@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrice-lecuyer@comedyatlas.app
+DTSTAMP:20270205T010000Z
+DTSTART:20270205T010000Z
+DTEND:20270205T030000Z
+SUMMARY:Patrice L’Ecuyer
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/patrice-l
+ ecuyer/
+URL:https://comedyatlas.app/comedy-atlas/event/patrice-lecuyer/
+END:VEVENT
+END:VCALENDAR

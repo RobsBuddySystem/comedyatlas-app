@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fabrice-eboue-solitudes@comedyatlas.app
+DTSTAMP:20270105T190000Z
+DTSTART:20270105T190000Z
+DTEND:20270105T210000Z
+SUMMARY:Fabrice Eboue - SolitudeS
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fabrice-e
+ boue-solitudes/
+URL:https://comedyatlas.app/comedy-atlas/event/fabrice-eboue-solitudes/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ashley-gavin-45181@comedyatlas.app
+DTSTAMP:20270327T230000Z
+DTSTART:20270327T230000Z
+DTEND:20270328T010000Z
+SUMMARY:Ashley Gavin
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ashley-ga
+ vin-45181/
+URL:https://comedyatlas.app/comedy-atlas/event/ashley-gavin-45181/
+END:VEVENT
+END:VCALENDAR

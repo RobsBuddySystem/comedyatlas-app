@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mark-normand-52573@comedyatlas.app
+DTSTAMP:20261219T230000Z
+DTSTART:20261219T230000Z
+DTEND:20261220T010000Z
+SUMMARY:Mark Normand
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mark-norm
+ and-52573/
+URL:https://comedyatlas.app/comedy-atlas/event/mark-normand-52573/
+END:VEVENT
+END:VCALENDAR

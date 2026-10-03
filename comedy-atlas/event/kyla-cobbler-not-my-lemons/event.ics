@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyla-cobbler-not-my-lemons@comedyatlas.app
+DTSTAMP:20270226T183000Z
+DTSTART:20270226T183000Z
+DTEND:20270226T203000Z
+SUMMARY:Kyla Cobbler: Not My Lemons
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyla-cobb
+ ler-not-my-lemons/
+URL:https://comedyatlas.app/comedy-atlas/event/kyla-cobbler-not-my-lemons/
+END:VEVENT
+END:VCALENDAR

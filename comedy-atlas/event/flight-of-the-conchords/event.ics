@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:flight-of-the-conchords@comedyatlas.app
+DTSTAMP:20261121T060000Z
+DTSTART:20261121T060000Z
+DTEND:20261121T080000Z
+SUMMARY:Flight of the Conchords
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/flight-of
+ -the-conchords/
+URL:https://comedyatlas.app/comedy-atlas/event/flight-of-the-conchords/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-avati-good-old-days@comedyatlas.app
+DTSTAMP:20270313T080000Z
+DTSTART:20270313T080000Z
+DTEND:20270313T100000Z
+SUMMARY:Joe Avati 'Good Old Days'
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-avati
+ -good-old-days/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-avati-good-old-days/
+END:VEVENT
+END:VCALENDAR

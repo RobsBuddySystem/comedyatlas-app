@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:charles-mcbee-50262@comedyatlas.app
+DTSTAMP:20261105T000000Z
+DTSTART:20261105T000000Z
+DTEND:20261105T020000Z
+SUMMARY:Charles McBee
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/charles-m
+ cbee-50262/
+URL:https://comedyatlas.app/comedy-atlas/event/charles-mcbee-50262/
+END:VEVENT
+END:VCALENDAR

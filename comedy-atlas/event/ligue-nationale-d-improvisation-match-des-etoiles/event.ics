@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ligue-nationale-d-improvisation-match-des-etoiles@comedyatlas.app
+DTSTAMP:20270503T230000Z
+DTSTART:20270503T230000Z
+DTEND:20270504T010000Z
+SUMMARY:Ligue Nationale d'Improvisation - Match des étoiles
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ligue-nat
+ ionale-d-improvisation-match-des-etoiles/
+URL:https://comedyatlas.app/comedy-atlas/event/ligue-nationale-d-improvisat
+ ion-match-des-etoiles/
+END:VEVENT
+END:VCALENDAR

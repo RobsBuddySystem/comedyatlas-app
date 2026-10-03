@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-green@comedyatlas.app
+DTSTAMP:20270219T060000Z
+DTSTART:20270219T060000Z
+DTEND:20270219T080000Z
+SUMMARY:Thomas Green
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thomas-gr
+ een/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-green/
+END:VEVENT
+END:VCALENDAR

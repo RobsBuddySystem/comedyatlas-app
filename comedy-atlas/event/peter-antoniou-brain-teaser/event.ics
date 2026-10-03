@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-antoniou-brain-teaser@comedyatlas.app
+DTSTAMP:20270202T200000Z
+DTSTART:20270202T200000Z
+DTEND:20270202T220000Z
+SUMMARY:Peter Antoniou - Brain Teaser
+LOCATION:Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-ant
+ oniou-brain-teaser/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-antoniou-brain-teaser/
+END:VEVENT
+END:VCALENDAR

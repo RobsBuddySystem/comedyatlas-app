@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:irma-ruiz-presents-teachers-gone-bad@comedyatlas.app
+DTSTAMP:20261220T210000Z
+DTSTART:20261220T210000Z
+DTEND:20261220T230000Z
+SUMMARY:Irma Ruiz Presents: Teachers Gone Bad
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/irma-ruiz
+ -presents-teachers-gone-bad/
+URL:https://comedyatlas.app/comedy-atlas/event/irma-ruiz-presents-teachers-
+ gone-bad/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:show-du-refuge@comedyatlas.app
+DTSTAMP:20261113T010000Z
+DTSTART:20261113T010000Z
+DTEND:20261113T030000Z
+SUMMARY:Show du Refuge
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/show-du-r
+ efuge/
+URL:https://comedyatlas.app/comedy-atlas/event/show-du-refuge/
+END:VEVENT
+END:VCALENDAR

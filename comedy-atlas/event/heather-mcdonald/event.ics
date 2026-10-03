@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heather-mcdonald@comedyatlas.app
+DTSTAMP:20261004T020000Z
+DTSTART:20261004T020000Z
+DTEND:20261004T040000Z
+SUMMARY:Heather McDonald
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heather-m
+ cdonald/
+URL:https://comedyatlas.app/comedy-atlas/event/heather-mcdonald/
+END:VEVENT
+END:VCALENDAR

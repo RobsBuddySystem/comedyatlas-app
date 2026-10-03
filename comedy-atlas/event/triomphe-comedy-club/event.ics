@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:triomphe-comedy-club@comedyatlas.app
+DTSTAMP:20261008T183000Z
+DTSTART:20261008T183000Z
+DTEND:20261008T203000Z
+SUMMARY:Triomphe Comedy Club
+LOCATION:Saint Etienne
+DESCRIPTION:Nouveau rendez-vous à La Comédie Triomphe pour une heure et d
+ emie de stand-up avec des talents régionaux.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/triomphe-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/triomphe-comedy-club/
+END:VEVENT
+END:VCALENDAR

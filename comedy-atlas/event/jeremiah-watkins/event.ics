@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeremiah-watkins@comedyatlas.app
+DTSTAMP:20270102T030000Z
+DTSTART:20270102T030000Z
+DTEND:20270102T050000Z
+SUMMARY:Jeremiah Watkins
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeremiah-
+ watkins/
+URL:https://comedyatlas.app/comedy-atlas/event/jeremiah-watkins/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-bankas-on-thin-ice@comedyatlas.app
+DTSTAMP:20270214T000000Z
+DTSTART:20270214T000000Z
+DTEND:20270214T020000Z
+SUMMARY:Ben Bankas: On Thin Ice
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-banka
+ s-on-thin-ice/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-bankas-on-thin-ice/
+END:VEVENT
+END:VCALENDAR

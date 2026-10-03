@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chill-comedy-tour@comedyatlas.app
+DTSTAMP:20261015T183200Z
+DTSTART:20261015T183200Z
+DTEND:20261015T203200Z
+SUMMARY:Chill Comedy Tour
+LOCATION:Bordeaux
+DESCRIPTION:Le Chill Tour est une bande de 5 humoristes qui partent en tour
+ née pour vous offrir un spectacle d'une heure.\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/chill-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/chill-comedy-tour/
+END:VEVENT
+END:VCALENDAR

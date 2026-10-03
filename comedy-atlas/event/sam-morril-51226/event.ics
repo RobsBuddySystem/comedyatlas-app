@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-morril-51226@comedyatlas.app
+DTSTAMP:20261121T000000Z
+DTSTART:20261121T000000Z
+DTEND:20261121T020000Z
+SUMMARY:Sam Morril
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-morri
+ l-51226/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-morril-51226/
+END:VEVENT
+END:VCALENDAR

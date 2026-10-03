@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-rhodes-52984@comedyatlas.app
+DTSTAMP:20270108T040000Z
+DTSTART:20270108T040000Z
+DTEND:20270108T060000Z
+SUMMARY:Tom Rhodes
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-rhode
+ s-52984/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-rhodes-52984/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:l-open-mic-du-complexe@comedyatlas.app
+DTSTAMP:20261005T180000Z
+DTSTART:20261005T180000Z
+DTEND:20261005T200000Z
+SUMMARY:L'Open Mic du Complexe
+LOCATION:Lyon
+DESCRIPTION:10 humoristes aguerris ou débutants se succèderont pour une h
+ eure et quart de pur stand-up !\nMore info: https://comedyatlas.app/comedy-
+ atlas/event/l-open-mic-du-complexe/
+URL:https://comedyatlas.app/comedy-atlas/event/l-open-mic-du-complexe/
+END:VEVENT
+END:VCALENDAR

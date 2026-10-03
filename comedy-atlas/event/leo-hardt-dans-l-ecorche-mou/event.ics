@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:leo-hardt-dans-l-ecorche-mou@comedyatlas.app
+DTSTAMP:20261116T180000Z
+DTSTART:20261116T180000Z
+DTEND:20261116T200000Z
+SUMMARY:Léo Hardt dans L'écorché mou
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Il y a les artistes écorchés vifs\, mais qu'en est-il des éc
+ orchés mous?\nMore info: https://comedyatlas.app/comedy-atlas/event/leo-ha
+ rdt-dans-l-ecorche-mou/
+URL:https://comedyatlas.app/comedy-atlas/event/leo-hardt-dans-l-ecorche-mou
+ /
+END:VEVENT
+END:VCALENDAR

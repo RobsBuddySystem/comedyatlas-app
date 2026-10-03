@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-kay-live-46426@comedyatlas.app
+DTSTAMP:20261114T180000Z
+DTSTART:20261114T180000Z
+DTEND:20261114T200000Z
+SUMMARY:Peter Kay Live
+LOCATION:Brighton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-kay
+ -live-46426/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-kay-live-46426/
+END:VEVENT
+END:VCALENDAR

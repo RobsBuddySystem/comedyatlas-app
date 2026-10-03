@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vitor-sa@comedyatlas.app
+DTSTAMP:20261028T193000Z
+DTSTART:20261028T193000Z
+DTEND:20261028T213000Z
+SUMMARY:Vítor Sá
+LOCATION:Boom Chicago\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vitor-sa/
+URL:https://comedyatlas.app/comedy-atlas/event/vitor-sa/
+END:VEVENT
+END:VCALENDAR

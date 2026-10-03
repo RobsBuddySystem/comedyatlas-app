@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:really-funny-comedians-who-happen-to-be-women-with-mary-houlihan@comedy
+ atlas.app
+DTSTAMP:20261123T030000Z
+DTSTART:20261123T030000Z
+DTEND:20261123T050000Z
+SUMMARY:Really Funny Comedians (Who Happen to Be Women) with Mary Houlihan
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/really-fu
+ nny-comedians-who-happen-to-be-women-with-mary-houlihan/
+URL:https://comedyatlas.app/comedy-atlas/event/really-funny-comedians-who-h
+ appen-to-be-women-with-mary-houlihan/
+END:VEVENT
+END:VCALENDAR

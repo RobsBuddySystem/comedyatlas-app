@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hugo-pecheur-dans-clochette@comedyatlas.app
+DTSTAMP:20261016T183400Z
+DTSTART:20261016T183400Z
+DTEND:20261016T203400Z
+SUMMARY:Hugo Pêcheur dans Clochette
+LOCATION:Cogolin
+DESCRIPTION:Pourquoi est-ce si difficile de dire "je t'aime" ?\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/hugo-pecheur-dans-clochette/
+URL:https://comedyatlas.app/comedy-atlas/event/hugo-pecheur-dans-clochette/
+END:VEVENT
+END:VCALENDAR

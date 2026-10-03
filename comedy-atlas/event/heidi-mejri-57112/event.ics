@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heidi-mejri-57112@comedyatlas.app
+DTSTAMP:20261112T183000Z
+DTSTART:20261112T183000Z
+DTEND:20261112T203000Z
+SUMMARY:Heidi Mejri
+LOCATION:Marseille
+DESCRIPTION:Heidi est un humoriste marseillais d'origine tunisienne et sici
+ lienne comme l'orthographe de son prénom ne l'indique pas.\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/heidi-mejri-57112/
+URL:https://comedyatlas.app/comedy-atlas/event/heidi-mejri-57112/
+END:VEVENT
+END:VCALENDAR

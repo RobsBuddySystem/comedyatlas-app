@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-wexford-mar-6@comedyatlas.app
+DTSTAMP:20270306T200000Z
+DTSTART:20270306T200000Z
+DTEND:20270306T220000Z
+SUMMARY:David McSavage - Wexford - Mar 6
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-wexford-mar-6/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-wexford-mar-6
+ /
+END:VEVENT
+END:VCALENDAR

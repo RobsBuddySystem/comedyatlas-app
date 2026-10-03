@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:susan-calman-tall-tales@comedyatlas.app
+DTSTAMP:20261004T183000Z
+DTSTART:20261004T183000Z
+DTEND:20261004T203000Z
+SUMMARY:Susan Calman: Tall Tales
+LOCATION:Manchester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/susan-cal
+ man-tall-tales/
+URL:https://comedyatlas.app/comedy-atlas/event/susan-calman-tall-tales/
+END:VEVENT
+END:VCALENDAR

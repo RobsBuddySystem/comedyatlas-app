@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dina-martina-christmas-show@comedyatlas.app
+DTSTAMP:20261128T003000Z
+DTSTART:20261128T003000Z
+DTEND:20261128T023000Z
+SUMMARY:Dina Martina - Christmas Show
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dina-mart
+ ina-christmas-show/
+URL:https://comedyatlas.app/comedy-atlas/event/dina-martina-christmas-show/
+END:VEVENT
+END:VCALENDAR

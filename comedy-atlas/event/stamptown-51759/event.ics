@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stamptown-51759@comedyatlas.app
+DTSTAMP:20261202T010000Z
+DTSTART:20261202T010000Z
+DTEND:20261202T030000Z
+SUMMARY:Stamptown
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stamptown
+ -51759/
+URL:https://comedyatlas.app/comedy-atlas/event/stamptown-51759/
+END:VEVENT
+END:VCALENDAR

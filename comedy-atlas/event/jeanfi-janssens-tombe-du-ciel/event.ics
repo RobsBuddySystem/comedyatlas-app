@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeanfi-janssens-tombe-du-ciel@comedyatlas.app
+DTSTAMP:20270421T180000Z
+DTSTART:20270421T180000Z
+DTEND:20270421T200000Z
+SUMMARY:Jeanfi Janssens - Tombé du Ciel
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeanfi-ja
+ nssens-tombe-du-ciel/
+URL:https://comedyatlas.app/comedy-atlas/event/jeanfi-janssens-tombe-du-cie
+ l/
+END:VEVENT
+END:VCALENDAR

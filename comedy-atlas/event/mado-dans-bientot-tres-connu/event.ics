@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mado-dans-bientot-tres-connu@comedyatlas.app
+DTSTAMP:20261009T183400Z
+DTSTART:20261009T183400Z
+DTEND:20261009T203400Z
+SUMMARY:Mado dans Bientôt très connu !
+LOCATION:Cogolin
+DESCRIPTION:Bientôt très connu\, c'est le récit drôle et lucide du parc
+ ours improbable de Mado.\nMore info: https://comedyatlas.app/comedy-atlas/e
+ vent/mado-dans-bientot-tres-connu/
+URL:https://comedyatlas.app/comedy-atlas/event/mado-dans-bientot-tres-connu
+ /
+END:VEVENT
+END:VCALENDAR

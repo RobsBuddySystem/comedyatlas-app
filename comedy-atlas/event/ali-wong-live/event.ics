@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ali-wong-live@comedyatlas.app
+DTSTAMP:20270331T233000Z
+DTSTART:20270331T233000Z
+DTEND:20270401T013000Z
+SUMMARY:Ali Wong Live
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ali-wong-
+ live/
+URL:https://comedyatlas.app/comedy-atlas/event/ali-wong-live/
+END:VEVENT
+END:VCALENDAR

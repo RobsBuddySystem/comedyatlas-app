@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrice-l-ecuyer-apres-seulement-32-ans-d-absence-sur-scene@comedyatlas
+ .app
+DTSTAMP:20270307T003000Z
+DTSTART:20270307T003000Z
+DTEND:20270307T023000Z
+SUMMARY:Patrice L'Ecuyer - Après seulement 32 ans d'absence sur scène
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/patrice-l
+ -ecuyer-apres-seulement-32-ans-d-absence-sur-scene/
+URL:https://comedyatlas.app/comedy-atlas/event/patrice-l-ecuyer-apres-seule
+ ment-32-ans-d-absence-sur-scene/
+END:VEVENT
+END:VCALENDAR

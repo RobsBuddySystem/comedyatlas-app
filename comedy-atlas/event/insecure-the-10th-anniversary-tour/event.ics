@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:insecure-the-10th-anniversary-tour@comedyatlas.app
+DTSTAMP:20261009T030000Z
+DTSTART:20261009T030000Z
+DTEND:20261009T050000Z
+SUMMARY:Insecure: The 10th Anniversary Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/insecure-
+ the-10th-anniversary-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/insecure-the-10th-anniversar
+ y-tour/
+END:VEVENT
+END:VCALENDAR

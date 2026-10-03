@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luz-pazos@comedyatlas.app
+DTSTAMP:20261211T040000Z
+DTSTART:20261211T040000Z
+DTEND:20261211T060000Z
+SUMMARY:Luz Pazos
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luz-pazos
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/luz-pazos/
+END:VEVENT
+END:VCALENDAR

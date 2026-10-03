@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ray-o-leary@comedyatlas.app
+DTSTAMP:20270201T190000Z
+DTSTART:20270201T190000Z
+DTEND:20270201T210000Z
+SUMMARY:Ray O'Leary
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ray-o-lea
+ ry/
+URL:https://comedyatlas.app/comedy-atlas/event/ray-o-leary/
+END:VEVENT
+END:VCALENDAR

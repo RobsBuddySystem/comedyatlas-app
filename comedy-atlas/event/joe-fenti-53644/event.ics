@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-fenti-53644@comedyatlas.app
+DTSTAMP:20270222T013000Z
+DTSTART:20270222T013000Z
+DTEND:20270222T033000Z
+SUMMARY:Joe Fenti
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-fenti
+ -53644/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-fenti-53644/
+END:VEVENT
+END:VCALENDAR

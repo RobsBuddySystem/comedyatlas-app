@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aurie-styla@comedyatlas.app
+DTSTAMP:20261107T193000Z
+DTSTART:20261107T193000Z
+DTEND:20261107T213000Z
+SUMMARY:Aurie Styla
+LOCATION:Northampton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aurie-sty
+ la/
+URL:https://comedyatlas.app/comedy-atlas/event/aurie-styla/
+END:VEVENT
+END:VCALENDAR

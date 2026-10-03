@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nasser-al-rayess-52169@comedyatlas.app
+DTSTAMP:20261211T013000Z
+DTSTART:20261211T013000Z
+DTEND:20261211T033000Z
+SUMMARY:Nasser Al-Rayess
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nasser-al
+ -rayess-52169/
+URL:https://comedyatlas.app/comedy-atlas/event/nasser-al-rayess-52169/
+END:VEVENT
+END:VCALENDAR

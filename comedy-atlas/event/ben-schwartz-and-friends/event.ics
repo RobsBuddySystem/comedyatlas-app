@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-schwartz-and-friends@comedyatlas.app
+DTSTAMP:20261016T010000Z
+DTSTART:20261016T010000Z
+DTEND:20261016T030000Z
+SUMMARY:Ben Schwartz and Friends
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-schwa
+ rtz-and-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-schwartz-and-friends/
+END:VEVENT
+END:VCALENDAR

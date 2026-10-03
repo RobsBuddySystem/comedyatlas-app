@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nick-colletti@comedyatlas.app
+DTSTAMP:20261119T010000Z
+DTSTART:20261119T010000Z
+DTEND:20261119T030000Z
+SUMMARY:Nick Colletti
+LOCATION:Calgary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nick-coll
+ etti/
+URL:https://comedyatlas.app/comedy-atlas/event/nick-colletti/
+END:VEVENT
+END:VCALENDAR

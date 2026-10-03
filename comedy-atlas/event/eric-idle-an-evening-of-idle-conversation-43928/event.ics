@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-idle-an-evening-of-idle-conversation-43928@comedyatlas.app
+DTSTAMP:20261208T083000Z
+DTSTART:20261208T083000Z
+DTEND:20261208T103000Z
+SUMMARY:Eric Idle - An Evening of Idle Conversation
+LOCATION:Sydney
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-idle
+ -an-evening-of-idle-conversation-43928/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-idle-an-evening-of-idle
+ -conversation-43928/
+END:VEVENT
+END:VCALENDAR

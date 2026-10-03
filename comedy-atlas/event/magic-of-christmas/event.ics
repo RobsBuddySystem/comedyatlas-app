@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:magic-of-christmas@comedyatlas.app
+DTSTAMP:20261114T183000Z
+DTSTART:20261114T183000Z
+DTEND:20261114T203000Z
+SUMMARY:Magic of Christmas
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/magic-of-
+ christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/magic-of-christmas/
+END:VEVENT
+END:VCALENDAR

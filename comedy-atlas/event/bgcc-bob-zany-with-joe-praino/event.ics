@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-bob-zany-with-joe-praino@comedyatlas.app
+DTSTAMP:20261222T040000Z
+DTSTART:20261222T040000Z
+DTEND:20261222T060000Z
+SUMMARY:BGCC: Bob Zany with Joe Praino
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-bob-
+ zany-with-joe-praino/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-bob-zany-with-joe-prain
+ o/
+END:VEVENT
+END:VCALENDAR

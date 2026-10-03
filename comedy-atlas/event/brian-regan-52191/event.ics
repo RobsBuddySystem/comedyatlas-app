@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-regan-52191@comedyatlas.app
+DTSTAMP:20261211T040000Z
+DTSTART:20261211T040000Z
+DTEND:20261211T060000Z
+SUMMARY:Brian Regan
+LOCATION:Spokane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-reg
+ an-52191/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-regan-52191/
+END:VEVENT
+END:VCALENDAR

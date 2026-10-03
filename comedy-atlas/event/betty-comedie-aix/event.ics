@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:betty-comedie-aix@comedyatlas.app
+DTSTAMP:20261006T183000Z
+DTSTART:20261006T183000Z
+DTEND:20261006T203000Z
+SUMMARY:Betty Comédie Aix
+LOCATION:Aix en Provence
+DESCRIPTION:Betty Comédie Aix est un plateau d'humoristes en stand-up à A
+ ix en Provence au Bar des Oiseaux.\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/betty-comedie-aix/
+URL:https://comedyatlas.app/comedy-atlas/event/betty-comedie-aix/
+END:VEVENT
+END:VCALENDAR

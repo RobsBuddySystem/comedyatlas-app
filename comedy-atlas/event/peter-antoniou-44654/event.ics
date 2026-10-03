@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-antoniou-44654@comedyatlas.app
+DTSTAMP:20270213T190000Z
+DTSTART:20270213T190000Z
+DTEND:20270213T210000Z
+SUMMARY:Peter Antoniou
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-ant
+ oniou-44654/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-antoniou-44654/
+END:VEVENT
+END:VCALENDAR

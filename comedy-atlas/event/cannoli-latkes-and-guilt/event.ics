@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cannoli-latkes-and-guilt@comedyatlas.app
+DTSTAMP:20261205T020000Z
+DTSTART:20261205T020000Z
+DTEND:20261205T040000Z
+SUMMARY:Cannoli\, Latkes\, And Guilt
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cannoli-l
+ atkes-and-guilt/
+URL:https://comedyatlas.app/comedy-atlas/event/cannoli-latkes-and-guilt/
+END:VEVENT
+END:VCALENDAR

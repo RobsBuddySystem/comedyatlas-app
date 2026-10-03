@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rex-navarrete@comedyatlas.app
+DTSTAMP:20261005T000000Z
+DTSTART:20261005T000000Z
+DTEND:20261005T020000Z
+SUMMARY:Rex Navarrete
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rex-navar
+ rete/
+URL:https://comedyatlas.app/comedy-atlas/event/rex-navarrete/
+END:VEVENT
+END:VCALENDAR

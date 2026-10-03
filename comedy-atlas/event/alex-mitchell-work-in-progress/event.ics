@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-mitchell-work-in-progress@comedyatlas.app
+DTSTAMP:20261111T190000Z
+DTSTART:20261111T190000Z
+DTEND:20261111T210000Z
+SUMMARY:Alex Mitchell – Work in Progress
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-mitc
+ hell-work-in-progress/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-mitchell-work-in-progre
+ ss/
+END:VEVENT
+END:VCALENDAR

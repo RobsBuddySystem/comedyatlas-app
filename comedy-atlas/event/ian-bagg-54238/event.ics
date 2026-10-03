@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-bagg-54238@comedyatlas.app
+DTSTAMP:20270516T000000Z
+DTSTART:20270516T000000Z
+DTEND:20270516T020000Z
+SUMMARY:Ian Bagg
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-bagg-
+ 54238/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-bagg-54238/
+END:VEVENT
+END:VCALENDAR

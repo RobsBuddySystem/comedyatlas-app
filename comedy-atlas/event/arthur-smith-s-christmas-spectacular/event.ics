@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arthur-smith-s-christmas-spectacular@comedyatlas.app
+DTSTAMP:20261220T183000Z
+DTSTART:20261220T183000Z
+DTEND:20261220T203000Z
+SUMMARY:Arthur Smith's Christmas Spectacular
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arthur-sm
+ ith-s-christmas-spectacular/
+URL:https://comedyatlas.app/comedy-atlas/event/arthur-smith-s-christmas-spe
+ ctacular/
+END:VEVENT
+END:VCALENDAR

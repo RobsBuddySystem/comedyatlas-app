@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gaby-mendoza@comedyatlas.app
+DTSTAMP:20261025T010000Z
+DTSTART:20261025T010000Z
+DTEND:20261025T030000Z
+SUMMARY:Gaby Mendoza
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gaby-mend
+ oza/
+URL:https://comedyatlas.app/comedy-atlas/event/gaby-mendoza/
+END:VEVENT
+END:VCALENDAR

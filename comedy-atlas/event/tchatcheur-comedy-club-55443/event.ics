@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tchatcheur-comedy-club-55443@comedyatlas.app
+DTSTAMP:20261107T163000Z
+DTSTART:20261107T163000Z
+DTEND:20261107T183000Z
+SUMMARY:Tchatcheur Comedy Club
+LOCATION:Lille
+DESCRIPTION:Premier Comedy Club de stand-up à Lille\, qui depuis 2017 a vu
+  défiler des stars de l'humour comme Paul Mirabel\, Ilyes Djadel\, Fanny R
+ uwet...\nMore info: https://comedyatlas.app/comedy-atlas/event/tchatcheur-c
+ omedy-club-55443/
+URL:https://comedyatlas.app/comedy-atlas/event/tchatcheur-comedy-club-55443
+ /
+END:VEVENT
+END:VCALENDAR

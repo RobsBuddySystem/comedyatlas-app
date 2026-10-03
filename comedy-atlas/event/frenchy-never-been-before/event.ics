@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:frenchy-never-been-before@comedyatlas.app
+DTSTAMP:20261113T083000Z
+DTSTART:20261113T083000Z
+DTEND:20261113T103000Z
+SUMMARY:Frenchy - Never Been Before
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/frenchy-n
+ ever-been-before/
+URL:https://comedyatlas.app/comedy-atlas/event/frenchy-never-been-before/
+END:VEVENT
+END:VCALENDAR

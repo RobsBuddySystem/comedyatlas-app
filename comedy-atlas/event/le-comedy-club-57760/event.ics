@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-comedy-club-57760@comedyatlas.app
+DTSTAMP:20261114T170000Z
+DTSTART:20261114T170000Z
+DTEND:20261114T190000Z
+SUMMARY:Le Comedy Club
+LOCATION:Nice
+DESCRIPTION:La soirée incontournable du Bobar : une sélection d'humoriste
+ s\, un max de punchlines et une dose garantie de fous rires.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/le-comedy-club-57760/
+URL:https://comedyatlas.app/comedy-atlas/event/le-comedy-club-57760/
+END:VEVENT
+END:VCALENDAR

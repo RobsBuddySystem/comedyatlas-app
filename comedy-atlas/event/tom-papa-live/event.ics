@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-papa-live@comedyatlas.app
+DTSTAMP:20270124T010000Z
+DTSTART:20270124T010000Z
+DTEND:20270124T030000Z
+SUMMARY:Tom Papa Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-papa-
+ live/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-papa-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:two-door-cinema-club@comedyatlas.app
+DTSTAMP:20270205T180000Z
+DTSTART:20270205T180000Z
+DTEND:20270205T200000Z
+SUMMARY:Two Door Cinema Club
+LOCATION:Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/two-door-
+ cinema-club/
+URL:https://comedyatlas.app/comedy-atlas/event/two-door-cinema-club/
+END:VEVENT
+END:VCALENDAR

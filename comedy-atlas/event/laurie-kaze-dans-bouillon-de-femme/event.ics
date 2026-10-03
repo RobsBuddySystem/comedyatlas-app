@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laurie-kaze-dans-bouillon-de-femme@comedyatlas.app
+DTSTAMP:20261024T190000Z
+DTSTART:20261024T190000Z
+DTEND:20261024T210000Z
+SUMMARY:Laurie Kaze dans Bouillon de femme
+LOCATION:Albert
+DESCRIPTION:Et si on faisait bouillir tout ce qui fait une femme... pour en
+  faire un spectacle explosif ?\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/laurie-kaze-dans-bouillon-de-femme/
+URL:https://comedyatlas.app/comedy-atlas/event/laurie-kaze-dans-bouillon-de
+ -femme/
+END:VEVENT
+END:VCALENDAR

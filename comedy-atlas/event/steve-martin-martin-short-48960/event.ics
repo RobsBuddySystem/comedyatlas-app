@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-martin-martin-short-48960@comedyatlas.app
+DTSTAMP:20261011T010000Z
+DTSTART:20261011T010000Z
+DTEND:20261011T030000Z
+SUMMARY:Steve Martin & Martin Short
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-mar
+ tin-martin-short-48960/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-martin-martin-short-48
+ 960/
+END:VEVENT
+END:VCALENDAR

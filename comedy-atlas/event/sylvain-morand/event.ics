@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sylvain-morand@comedyatlas.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Sylvain Morand
+LOCATION:Lyon
+DESCRIPTION:Ce spectacle n'a volontairement pas de pitch.\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/sylvain-morand/
+URL:https://comedyatlas.app/comedy-atlas/event/sylvain-morand/
+END:VEVENT
+END:VCALENDAR

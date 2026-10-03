@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-holmes-53115@comedyatlas.app
+DTSTAMP:20270117T000000Z
+DTSTART:20270117T000000Z
+DTEND:20270117T020000Z
+SUMMARY:Pete Holmes
+LOCATION:Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-holm
+ es-53115/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-holmes-53115/
+END:VEVENT
+END:VCALENDAR

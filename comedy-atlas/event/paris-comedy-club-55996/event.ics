@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club-55996@comedyatlas.app
+DTSTAMP:20261107T200000Z
+DTSTART:20261107T200000Z
+DTEND:20261107T220000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Lagny sur Marne
+DESCRIPTION:Les humoristes les plus drôles de la nouvelle génération. Le
+ s meilleurs humoristes vont jouer sur Paris... Ce soir\, ils viennent chez 
+ vous.\nMore info: https://comedyatlas.app/comedy-atlas/event/paris-comedy-c
+ lub-55996/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-55996/
+END:VEVENT
+END:VCALENDAR

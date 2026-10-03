@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-chroniques-de-demain-marseille@comedyatlas.app
+DTSTAMP:20261014T173000Z
+DTSTART:20261014T173000Z
+DTEND:20261014T193000Z
+SUMMARY:Les Chroniques de Demain Marseille
+LOCATION:Marseille
+DESCRIPTION:Et si l'humour nous aidait à imaginer le futur de Marseille ?\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/les-chroniques-de-de
+ main-marseille/
+URL:https://comedyatlas.app/comedy-atlas/event/les-chroniques-de-demain-mar
+ seille/
+END:VEVENT
+END:VCALENDAR

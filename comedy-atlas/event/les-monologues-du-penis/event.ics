@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-monologues-du-penis@comedyatlas.app
+DTSTAMP:20261029T193000Z
+DTSTART:20261029T193000Z
+DTEND:20261029T213000Z
+SUMMARY:Les monologues du pénis
+LOCATION:Dijon
+DESCRIPTION:Tout ce que vous avez toujours voulu savoir sur le pénis sans 
+ jamais avoir osé le demander.\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/les-monologues-du-penis/
+URL:https://comedyatlas.app/comedy-atlas/event/les-monologues-du-penis/
+END:VEVENT
+END:VCALENDAR

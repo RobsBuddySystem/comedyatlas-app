@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-posehn-presented-by-laugh-life-comedy@comedyatlas.app
+DTSTAMP:20261213T020000Z
+DTSTART:20261213T020000Z
+DTEND:20261213T040000Z
+SUMMARY:Brian Posehn presented by Laugh Life Comedy
+LOCATION:The Howlin' Wolf\, 907 South Peters Street\, New Orleans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-pos
+ ehn-presented-by-laugh-life-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-posehn-presented-by-la
+ ugh-life-comedy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francesca-fiorentini-and-matt-lieb@comedyatlas.app
+DTSTAMP:20261015T233000Z
+DTSTART:20261015T233000Z
+DTEND:20261016T013000Z
+SUMMARY:Francesca Fiorentini and Matt Lieb
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/francesca
+ -fiorentini-and-matt-lieb/
+URL:https://comedyatlas.app/comedy-atlas/event/francesca-fiorentini-and-mat
+ t-lieb/
+END:VEVENT
+END:VCALENDAR

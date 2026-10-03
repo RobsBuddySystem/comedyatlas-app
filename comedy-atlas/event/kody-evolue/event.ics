@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kody-evolue@comedyatlas.app
+DTSTAMP:20261110T190000Z
+DTSTART:20261110T190000Z
+DTEND:20261110T210000Z
+SUMMARY:Kody « Évolué »
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kody-evol
+ ue/
+URL:https://comedyatlas.app/comedy-atlas/event/kody-evolue/
+END:VEVENT
+END:VCALENDAR

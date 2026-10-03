@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aaron-chen-53563@comedyatlas.app
+DTSTAMP:20270214T053000Z
+DTSTART:20270214T053000Z
+DTEND:20270214T073000Z
+SUMMARY:Aaron Chen
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aaron-che
+ n-53563/
+URL:https://comedyatlas.app/comedy-atlas/event/aaron-chen-53563/
+END:VEVENT
+END:VCALENDAR

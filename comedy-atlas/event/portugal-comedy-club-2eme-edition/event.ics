@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:portugal-comedy-club-2eme-edition@comedyatlas.app
+DTSTAMP:20261024T190000Z
+DTSTART:20261024T190000Z
+DTEND:20261024T210000Z
+SUMMARY:Portugal Comedy Club 2ème édition
+LOCATION:Décines Charpieu
+DESCRIPTION:Vous avez été très... trop nombreux pour le Portugal Comedy 
+ Club du 13 février 2026.\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/portugal-comedy-club-2eme-edition/
+URL:https://comedyatlas.app/comedy-atlas/event/portugal-comedy-club-2eme-ed
+ ition/
+END:VEVENT
+END:VCALENDAR

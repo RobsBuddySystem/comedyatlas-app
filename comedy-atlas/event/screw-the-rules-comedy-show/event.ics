@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:screw-the-rules-comedy-show@comedyatlas.app
+DTSTAMP:20261025T020000Z
+DTSTART:20261025T020000Z
+DTEND:20261025T040000Z
+SUMMARY:Screw The Rules Comedy Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/screw-the
+ -rules-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/screw-the-rules-comedy-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:charlotte-boisselier-singuliere@comedyatlas.app
+DTSTAMP:20261010T180000Z
+DTSTART:20261010T180000Z
+DTEND:20261010T200000Z
+SUMMARY:Charlotte Boisselier | Singulière
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/charlotte
+ -boisselier-singuliere/
+URL:https://comedyatlas.app/comedy-atlas/event/charlotte-boisselier-singuli
+ ere/
+END:VEVENT
+END:VCALENDAR

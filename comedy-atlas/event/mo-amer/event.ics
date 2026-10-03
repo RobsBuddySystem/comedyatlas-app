@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-amer@comedyatlas.app
+DTSTAMP:20261106T160000Z
+DTSTART:20261106T160000Z
+DTEND:20261106T180000Z
+SUMMARY:Mo Amer
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-amer/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-amer/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:antoine-officieux-dans-auto-romance@comedyatlas.app
+DTSTAMP:20261010T183000Z
+DTSTART:20261010T183000Z
+DTEND:20261010T203000Z
+SUMMARY:Antoine Officieux dans Auto romance
+LOCATION:Clermont Ferrand
+DESCRIPTION:Venez voir Antoine Officieux dans sont spectacle "Auto Romance"
+  à la Comédie des Volcans.\nMore info: https://comedyatlas.app/comedy-atl
+ as/event/antoine-officieux-dans-auto-romance/
+URL:https://comedyatlas.app/comedy-atlas/event/antoine-officieux-dans-auto-
+ romance/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mechul-pasa@comedyatlas.app
+DTSTAMP:20261018T173000Z
+DTSTART:20261018T173000Z
+DTEND:20261018T193000Z
+SUMMARY:Meçhul Pasa
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mechul-pa
+ sa/
+URL:https://comedyatlas.app/comedy-atlas/event/mechul-pasa/
+END:VEVENT
+END:VCALENDAR

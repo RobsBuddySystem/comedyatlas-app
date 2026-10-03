@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players@comedyatlas.app
+DTSTAMP:20270204T193000Z
+DTSTART:20270204T193000Z
+DTEND:20270204T213000Z
+SUMMARY:The Comedy Store Players
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players/
+END:VEVENT
+END:VCALENDAR

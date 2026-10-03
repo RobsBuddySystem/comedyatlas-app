@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vir-das-live-at-dubai-comedy-festival@comedyatlas.app
+DTSTAMP:20261018T160000Z
+DTSTART:20261018T160000Z
+DTEND:20261018T180000Z
+SUMMARY:Vir Das Live at Dubai Comedy Festival
+LOCATION:Dubai
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vir-das-l
+ ive-at-dubai-comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/vir-das-live-at-dubai-comedy
+ -festival/
+END:VEVENT
+END:VCALENDAR

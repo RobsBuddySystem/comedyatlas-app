@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-45936@comedyatlas.app
+DTSTAMP:20261021T170000Z
+DTSTART:20261021T170000Z
+DTEND:20261021T190000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:AO Arena\, Victoria Station\, Hunts Bank\, Manchester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-45936/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-45936/
+END:VEVENT
+END:VCALENDAR

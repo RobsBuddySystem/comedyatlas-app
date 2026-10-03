@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dunham-inappropiate-contact@comedyatlas.app
+DTSTAMP:20261212T220000Z
+DTSTART:20261212T220000Z
+DTEND:20261213T000000Z
+SUMMARY:Jeff Dunham Inappropiate Contact
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-dunh
+ am-inappropiate-contact/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dunham-inappropiate-con
+ tact/
+END:VEVENT
+END:VCALENDAR

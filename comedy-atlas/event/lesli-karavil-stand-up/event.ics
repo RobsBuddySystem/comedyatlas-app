@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lesli-karavil-stand-up@comedyatlas.app
+DTSTAMP:20261014T170000Z
+DTSTART:20261014T170000Z
+DTEND:20261014T190000Z
+SUMMARY:Lesli Karavil Stand-Up
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lesli-kar
+ avil-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/lesli-karavil-stand-up/
+END:VEVENT
+END:VCALENDAR

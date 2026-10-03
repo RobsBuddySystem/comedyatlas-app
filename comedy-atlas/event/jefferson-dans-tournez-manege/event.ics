@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jefferson-dans-tournez-manege@comedyatlas.app
+DTSTAMP:20261014T173000Z
+DTSTART:20261014T173000Z
+DTEND:20261014T193000Z
+SUMMARY:Jefferson dans Tournez manège
+LOCATION:Théâtre du Marais\, 37\, rue Volta\, Paris
+DESCRIPTION:Plus qu'un spectacle : une boum géante des années 80\, 90 et 
+ 2000 !\nMore info: https://comedyatlas.app/comedy-atlas/event/jefferson-dan
+ s-tournez-manege/
+URL:https://comedyatlas.app/comedy-atlas/event/jefferson-dans-tournez-maneg
+ e/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-skipper-nothing-heavy@comedyatlas.app
+DTSTAMP:20270131T200000Z
+DTSTART:20270131T200000Z
+DTEND:20270131T220000Z
+SUMMARY:Jack Skipper: Nothing Heavy
+LOCATION:Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-skip
+ per-nothing-heavy/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-skipper-nothing-heavy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maddy-smith-presents-bad-genes-tour@comedyatlas.app
+DTSTAMP:20270206T013000Z
+DTSTART:20270206T013000Z
+DTEND:20270206T033000Z
+SUMMARY:Maddy Smith Presents: Bad Genes Tour
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maddy-smi
+ th-presents-bad-genes-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/maddy-smith-presents-bad-gen
+ es-tour/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53532@comedyatlas.app
+DTSTAMP:20270214T003000Z
+DTSTART:20270214T003000Z
+DTEND:20270214T023000Z
+SUMMARY:Aries Spears
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53532/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53532/
+END:VEVENT
+END:VCALENDAR

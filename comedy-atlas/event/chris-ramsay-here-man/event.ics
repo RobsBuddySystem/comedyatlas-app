@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-ramsay-here-man@comedyatlas.app
+DTSTAMP:20261203T193000Z
+DTSTART:20261203T193000Z
+DTEND:20261203T213000Z
+SUMMARY:Chris Ramsay - Here Man
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-ram
+ say-here-man/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-ramsay-here-man/
+END:VEVENT
+END:VCALENDAR

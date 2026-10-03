@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roy-chubby-brown@comedyatlas.app
+DTSTAMP:20270116T183000Z
+DTSTART:20270116T183000Z
+DTEND:20270116T203000Z
+SUMMARY:Roy Chubby Brown
+LOCATION:Manchester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roy-chubb
+ y-brown/
+URL:https://comedyatlas.app/comedy-atlas/event/roy-chubby-brown/
+END:VEVENT
+END:VCALENDAR

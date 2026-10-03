@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jay-silent-bob-save-vegas@comedyatlas.app
+DTSTAMP:20261017T043000Z
+DTSTART:20261017T043000Z
+DTEND:20261017T063000Z
+SUMMARY:Jay & Silent Bob Save Vegas!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jay-silen
+ t-bob-save-vegas/
+URL:https://comedyatlas.app/comedy-atlas/event/jay-silent-bob-save-vegas/
+END:VEVENT
+END:VCALENDAR

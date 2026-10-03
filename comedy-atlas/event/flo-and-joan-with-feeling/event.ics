@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:flo-and-joan-with-feeling@comedyatlas.app
+DTSTAMP:20261121T193000Z
+DTSTART:20261121T193000Z
+DTEND:20261121T213000Z
+SUMMARY:Flo And Joan: With Feeling
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/flo-and-j
+ oan-with-feeling/
+URL:https://comedyatlas.app/comedy-atlas/event/flo-and-joan-with-feeling/
+END:VEVENT
+END:VCALENDAR

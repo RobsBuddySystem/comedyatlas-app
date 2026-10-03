@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-years-eve-comedy-and-after-show-party@comedyatlas.app
+DTSTAMP:20261231T203000Z
+DTSTART:20261231T203000Z
+DTEND:20261231T223000Z
+SUMMARY:New Years Eve Comedy and After Show Party
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-years
+ -eve-comedy-and-after-show-party/
+URL:https://comedyatlas.app/comedy-atlas/event/new-years-eve-comedy-and-aft
+ er-show-party/
+END:VEVENT
+END:VCALENDAR

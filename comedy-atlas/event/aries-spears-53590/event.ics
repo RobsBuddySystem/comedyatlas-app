@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53590@comedyatlas.app
+DTSTAMP:20270220T013000Z
+DTSTART:20270220T013000Z
+DTEND:20270220T033000Z
+SUMMARY:Aries Spears
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53590/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53590/
+END:VEVENT
+END:VCALENDAR

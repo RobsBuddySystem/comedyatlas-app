@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ilana-glazer-live@comedyatlas.app
+DTSTAMP:20261006T010000Z
+DTSTART:20261006T010000Z
+DTEND:20261006T030000Z
+SUMMARY:Ilana Glazer Live!
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ilana-gla
+ zer-live/
+URL:https://comedyatlas.app/comedy-atlas/event/ilana-glazer-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fire-comedy-club@comedyatlas.app
+DTSTAMP:20261008T173000Z
+DTSTART:20261008T173000Z
+DTEND:20261008T193000Z
+SUMMARY:Fire Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:Soirée de Stand-Up aux Chartrons à Bordeaux !\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/fire-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/fire-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michelle-wolf@comedyatlas.app
+DTSTAMP:20270409T020000Z
+DTSTART:20270409T020000Z
+DTEND:20270409T040000Z
+SUMMARY:Michelle Wolf
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/michelle-
+ wolf/
+URL:https://comedyatlas.app/comedy-atlas/event/michelle-wolf/
+END:VEVENT
+END:VCALENDAR

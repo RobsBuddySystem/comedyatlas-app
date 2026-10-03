@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:50-first-jokes@comedyatlas.app
+DTSTAMP:20270107T003000Z
+DTSTART:20270107T003000Z
+DTEND:20270107T023000Z
+SUMMARY:50 First Jokes
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/50-first-
+ jokes/
+URL:https://comedyatlas.app/comedy-atlas/event/50-first-jokes/
+END:VEVENT
+END:VCALENDAR

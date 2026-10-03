@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrew-stanley@comedyatlas.app
+DTSTAMP:20261106T010000Z
+DTSTART:20261106T010000Z
+DTEND:20261106T030000Z
+SUMMARY:Andrew Stanley
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andrew-st
+ anley/
+URL:https://comedyatlas.app/comedy-atlas/event/andrew-stanley/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:timothee-curado-dans-present@comedyatlas.app
+DTSTAMP:20261107T193000Z
+DTSTART:20261107T193000Z
+DTEND:20261107T213000Z
+SUMMARY:Timothée Curado dans Présent !
+LOCATION:Cenon
+DESCRIPTION:Les clichés sur les profs sont-ils toujours d'actualité ?\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/timothee-curado-dans-pr
+ esent/
+URL:https://comedyatlas.app/comedy-atlas/event/timothee-curado-dans-present
+ /
+END:VEVENT
+END:VCALENDAR

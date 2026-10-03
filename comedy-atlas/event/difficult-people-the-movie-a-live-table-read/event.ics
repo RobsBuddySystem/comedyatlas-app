@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:difficult-people-the-movie-a-live-table-read@comedyatlas.app
+DTSTAMP:20261104T000000Z
+DTSTART:20261104T000000Z
+DTEND:20261104T020000Z
+SUMMARY:Difficult People: The Movie (A Live Table Read)
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/difficult
+ -people-the-movie-a-live-table-read/
+URL:https://comedyatlas.app/comedy-atlas/event/difficult-people-the-movie-a
+ -live-table-read/
+END:VEVENT
+END:VCALENDAR

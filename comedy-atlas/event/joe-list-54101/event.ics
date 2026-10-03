@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-list-54101@comedyatlas.app
+DTSTAMP:20270417T230000Z
+DTSTART:20270417T230000Z
+DTEND:20270418T010000Z
+SUMMARY:Joe List
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-list-
+ 54101/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-list-54101/
+END:VEVENT
+END:VCALENDAR

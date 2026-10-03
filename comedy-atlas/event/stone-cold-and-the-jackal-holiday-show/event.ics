@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stone-cold-and-the-jackal-holiday-show@comedyatlas.app
+DTSTAMP:20261108T220000Z
+DTSTART:20261108T220000Z
+DTEND:20261109T000000Z
+SUMMARY:Stone Cold and the Jackal Holiday Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stone-col
+ d-and-the-jackal-holiday-show/
+URL:https://comedyatlas.app/comedy-atlas/event/stone-cold-and-the-jackal-ho
+ liday-show/
+END:VEVENT
+END:VCALENDAR

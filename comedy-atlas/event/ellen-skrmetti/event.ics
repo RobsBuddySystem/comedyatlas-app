@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ellen-skrmetti@comedyatlas.app
+DTSTAMP:20261113T013000Z
+DTSTART:20261113T013000Z
+DTEND:20261113T033000Z
+SUMMARY:Ellen Skrmetti
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ellen-skr
+ metti/
+URL:https://comedyatlas.app/comedy-atlas/event/ellen-skrmetti/
+END:VEVENT
+END:VCALENDAR

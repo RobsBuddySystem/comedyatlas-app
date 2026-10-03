@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:reem-edan@comedyatlas.app
+DTSTAMP:20261111T013000Z
+DTSTART:20261111T013000Z
+DTEND:20261111T033000Z
+SUMMARY:Reem Edan
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/reem-edan
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/reem-edan/
+END:VEVENT
+END:VCALENDAR

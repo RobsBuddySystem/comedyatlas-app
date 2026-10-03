@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-scene-ouverte-56211@comedyatlas.app
+DTSTAMP:20261111T193000Z
+DTSTART:20261111T193000Z
+DTEND:20261111T213000Z
+SUMMARY:Open Mic Scène Ouverte
+LOCATION:Marseille
+DESCRIPTION:L'Open Mic\, c'est une soirée 100% improvisée\, sans programm
+ ation et pleine de surprises !\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/open-mic-scene-ouverte-56211/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-scene-ouverte-56211
+ /
+END:VEVENT
+END:VCALENDAR

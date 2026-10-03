@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:reem-edan-melissa-shoshahi@comedyatlas.app
+DTSTAMP:20261104T033000Z
+DTSTART:20261104T033000Z
+DTEND:20261104T053000Z
+SUMMARY:Reem Edan & Melissa Shoshahi
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/reem-edan
+ -melissa-shoshahi/
+URL:https://comedyatlas.app/comedy-atlas/event/reem-edan-melissa-shoshahi/
+END:VEVENT
+END:VCALENDAR

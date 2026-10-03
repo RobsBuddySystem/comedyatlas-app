@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rohan-joshi@comedyatlas.app
+DTSTAMP:20261204T230000Z
+DTSTART:20261204T230000Z
+DTEND:20261205T010000Z
+SUMMARY:Rohan Joshi
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rohan-jos
+ hi/
+URL:https://comedyatlas.app/comedy-atlas/event/rohan-joshi/
+END:VEVENT
+END:VCALENDAR

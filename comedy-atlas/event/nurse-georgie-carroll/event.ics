@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nurse-georgie-carroll@comedyatlas.app
+DTSTAMP:20261027T193000Z
+DTSTART:20261027T193000Z
+DTEND:20261027T213000Z
+SUMMARY:Nurse Georgie Carroll
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nurse-geo
+ rgie-carroll/
+URL:https://comedyatlas.app/comedy-atlas/event/nurse-georgie-carroll/
+END:VEVENT
+END:VCALENDAR

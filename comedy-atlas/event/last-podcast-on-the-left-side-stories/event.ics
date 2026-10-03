@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:last-podcast-on-the-left-side-stories@comedyatlas.app
+DTSTAMP:20261213T020000Z
+DTSTART:20261213T020000Z
+DTEND:20261213T040000Z
+SUMMARY:Last Podcast On The Left: Side Stories
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/last-podc
+ ast-on-the-left-side-stories/
+URL:https://comedyatlas.app/comedy-atlas/event/last-podcast-on-the-left-sid
+ e-stories/
+END:VEVENT
+END:VCALENDAR

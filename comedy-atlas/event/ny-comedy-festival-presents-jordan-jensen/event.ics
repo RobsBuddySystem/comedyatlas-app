@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-jordan-jensen@comedyatlas.app
+DTSTAMP:20261113T010000Z
+DTSTART:20261113T010000Z
+DTEND:20261113T030000Z
+SUMMARY:NY Comedy Festival Presents Jordan Jensen
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-jordan-jensen/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ jordan-jensen/
+END:VEVENT
+END:VCALENDAR

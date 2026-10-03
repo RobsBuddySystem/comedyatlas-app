@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:takashi-wakasugiwabi-sabi-comedy@comedyatlas.app
+DTSTAMP:20261218T080000Z
+DTSTART:20261218T080000Z
+DTEND:20261218T100000Z
+SUMMARY:Takashi Wakasugi—Wabi-Sabi Comedy
+LOCATION:Hobart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/takashi-w
+ akasugiwabi-sabi-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/takashi-wakasugiwabi-sabi-co
+ medy/
+END:VEVENT
+END:VCALENDAR

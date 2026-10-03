@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fortune-feimster-takin-care-of-biscuits-live-special-taping@comedyatlas
+ .app
+DTSTAMP:20261115T010000Z
+DTSTART:20261115T010000Z
+DTEND:20261115T030000Z
+SUMMARY:Fortune Feimster: Takin' Care of Biscuits Live Special Taping
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fortune-f
+ eimster-takin-care-of-biscuits-live-special-taping/
+URL:https://comedyatlas.app/comedy-atlas/event/fortune-feimster-takin-care-
+ of-biscuits-live-special-taping/
+END:VEVENT
+END:VCALENDAR

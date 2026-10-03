@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-stablein-absolute-frechheit@comedyatlas.app
+DTSTAMP:20270528T180000Z
+DTSTART:20270528T180000Z
+DTEND:20270528T200000Z
+SUMMARY:Simon Stäblein: Absolute Frechheit
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simon-sta
+ blein-absolute-frechheit/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-stablein-absolute-frec
+ hheit/
+END:VEVENT
+END:VCALENDAR

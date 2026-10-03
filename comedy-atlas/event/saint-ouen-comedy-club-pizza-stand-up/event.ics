@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saint-ouen-comedy-club-pizza-stand-up@comedyatlas.app
+DTSTAMP:20261028T190000Z
+DTSTART:20261028T190000Z
+DTEND:20261028T210000Z
+SUMMARY:Saint-Ouen Comedy Club Pizza Stand-up
+LOCATION:Saint Ouen
+DESCRIPTION:Le Saint-Ouen Comedy Club débarque ! Une soirée\, un diner\, 
+ 5 humoristes\, du rire non-stop à deux pas de Paris.\nMore info: https://c
+ omedyatlas.app/comedy-atlas/event/saint-ouen-comedy-club-pizza-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/saint-ouen-comedy-club-pizza
+ -stand-up/
+END:VEVENT
+END:VCALENDAR

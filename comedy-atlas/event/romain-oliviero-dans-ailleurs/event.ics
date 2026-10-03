@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:romain-oliviero-dans-ailleurs@comedyatlas.app
+DTSTAMP:20261106T180000Z
+DTSTART:20261106T180000Z
+DTEND:20261106T200000Z
+SUMMARY:Romain Oliviero dans Ailleurs
+LOCATION:Grenoble
+DESCRIPTION:Romain a quitté sa province natale pour voyager et découvrir 
+ ce qu'il se passait au-delà des champs... " Ailleurs ".\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/romain-oliviero-dans-ailleurs/
+URL:https://comedyatlas.app/comedy-atlas/event/romain-oliviero-dans-ailleur
+ s/
+END:VEVENT
+END:VCALENDAR

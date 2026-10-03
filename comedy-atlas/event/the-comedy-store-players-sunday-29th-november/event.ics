@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players-sunday-29th-november@comedyatlas.app
+DTSTAMP:20261129T193000Z
+DTSTART:20261129T193000Z
+DTEND:20261129T213000Z
+SUMMARY:The Comedy Store Players - Sunday 29th November
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players-sunday-29th-november/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players-sun
+ day-29th-november/
+END:VEVENT
+END:VCALENDAR

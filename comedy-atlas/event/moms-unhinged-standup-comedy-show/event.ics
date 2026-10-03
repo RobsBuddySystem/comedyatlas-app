@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:moms-unhinged-standup-comedy-show@comedyatlas.app
+DTSTAMP:20261018T230000Z
+DTSTART:20261018T230000Z
+DTEND:20261019T010000Z
+SUMMARY:Moms Unhinged Standup Comedy Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/moms-unhi
+ nged-standup-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/moms-unhinged-standup-comedy
+ -show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bored-teachers-is-it-friday-yet@comedyatlas.app
+DTSTAMP:20261204T220000Z
+DTSTART:20261204T220000Z
+DTEND:20261205T000000Z
+SUMMARY:BORED TEACHERS: "IS IT FRIDAY YET?!"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bored-tea
+ chers-is-it-friday-yet/
+URL:https://comedyatlas.app/comedy-atlas/event/bored-teachers-is-it-friday-
+ yet/
+END:VEVENT
+END:VCALENDAR

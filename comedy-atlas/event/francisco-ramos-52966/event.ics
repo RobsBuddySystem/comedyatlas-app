@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francisco-ramos-52966@comedyatlas.app
+DTSTAMP:20270104T030000Z
+DTSTART:20270104T030000Z
+DTEND:20270104T050000Z
+SUMMARY:Francisco Ramos
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/francisco
+ -ramos-52966/
+URL:https://comedyatlas.app/comedy-atlas/event/francisco-ramos-52966/
+END:VEVENT
+END:VCALENDAR

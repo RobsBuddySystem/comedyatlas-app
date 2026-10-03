@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-47626@comedyatlas.app
+DTSTAMP:20270325T183000Z
+DTSTART:20270325T183000Z
+DTEND:20270325T203000Z
+SUMMARY:Paul Smith: Happy
+LOCATION:Brighton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-47626/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-47626/
+END:VEVENT
+END:VCALENDAR

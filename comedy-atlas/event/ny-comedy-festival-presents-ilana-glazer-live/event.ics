@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-ilana-glazer-live@comedyatlas.app
+DTSTAMP:20261113T234500Z
+DTSTART:20261113T234500Z
+DTEND:20261114T014500Z
+SUMMARY:NY Comedy Festival Presents Ilana Glazer Live!
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-ilana-glazer-live/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ ilana-glazer-live/
+END:VEVENT
+END:VCALENDAR

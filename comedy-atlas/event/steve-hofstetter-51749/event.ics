@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-hofstetter-51749@comedyatlas.app
+DTSTAMP:20261201T033000Z
+DTSTART:20261201T033000Z
+DTEND:20261201T053000Z
+SUMMARY:Steve Hofstetter
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-hof
+ stetter-51749/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-hofstetter-51749/
+END:VEVENT
+END:VCALENDAR

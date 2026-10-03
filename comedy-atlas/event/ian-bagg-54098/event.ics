@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-bagg-54098@comedyatlas.app
+DTSTAMP:20270417T223000Z
+DTSTART:20270417T223000Z
+DTEND:20270418T003000Z
+SUMMARY:Ian Bagg
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-bagg-
+ 54098/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-bagg-54098/
+END:VEVENT
+END:VCALENDAR

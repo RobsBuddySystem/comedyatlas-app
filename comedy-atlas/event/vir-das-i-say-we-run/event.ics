@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vir-das-i-say-we-run@comedyatlas.app
+DTSTAMP:20270115T230000Z
+DTSTART:20270115T230000Z
+DTEND:20270116T010000Z
+SUMMARY:Vir Das: I say we RUN!
+LOCATION:Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vir-das-i
+ -say-we-run/
+URL:https://comedyatlas.app/comedy-atlas/event/vir-das-i-say-we-run/
+END:VEVENT
+END:VCALENDAR

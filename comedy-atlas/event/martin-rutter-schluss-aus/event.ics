@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-rutter-schluss-aus@comedyatlas.app
+DTSTAMP:20270221T170000Z
+DTSTART:20270221T170000Z
+DTEND:20270221T190000Z
+SUMMARY:MARTIN RÜTTER - Schluss! Aus!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-ru
+ tter-schluss-aus/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-rutter-schluss-aus/
+END:VEVENT
+END:VCALENDAR

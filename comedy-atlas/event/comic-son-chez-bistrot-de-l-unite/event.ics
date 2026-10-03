@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comic-son-chez-bistrot-de-l-unite@comedyatlas.app
+DTSTAMP:20261007T173000Z
+DTSTART:20261007T173000Z
+DTEND:20261007T193000Z
+SUMMARY:Comic'son chez Bistrot de l'unité
+LOCATION:Bordeaux
+DESCRIPTION:Les mercredis stand-up en terrasse au Bistrot de l'Unité !\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/comic-son-chez-bistrot-
+ de-l-unite/
+URL:https://comedyatlas.app/comedy-atlas/event/comic-son-chez-bistrot-de-l-
+ unite/
+END:VEVENT
+END:VCALENDAR

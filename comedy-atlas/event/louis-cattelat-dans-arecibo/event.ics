@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:louis-cattelat-dans-arecibo@comedyatlas.app
+DTSTAMP:20261009T180000Z
+DTSTART:20261009T180000Z
+DTEND:20261009T200000Z
+SUMMARY:Louis Cattelat dans Arecibo
+LOCATION:Colombes
+DESCRIPTION:Au grand loto de l'univers\, la scène humour a tiré le bon nu
+ méro !\nMore info: https://comedyatlas.app/comedy-atlas/event/louis-cattel
+ at-dans-arecibo/
+URL:https://comedyatlas.app/comedy-atlas/event/louis-cattelat-dans-arecibo/
+END:VEVENT
+END:VCALENDAR

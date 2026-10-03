@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-2-johnnies@comedyatlas.app
+DTSTAMP:20261219T183000Z
+DTSTART:20261219T183000Z
+DTEND:20261219T203000Z
+SUMMARY:The 2 Johnnies
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-2-joh
+ nnies/
+URL:https://comedyatlas.app/comedy-atlas/event/the-2-johnnies/
+END:VEVENT
+END:VCALENDAR

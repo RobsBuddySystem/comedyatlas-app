@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kalabalik-i-fabriken-turne@comedyatlas.app
+DTSTAMP:20261031T150000Z
+DTSTART:20261031T150000Z
+DTEND:20261031T170000Z
+SUMMARY:Kalabalik i Fabriken turné
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kalabalik
+ -i-fabriken-turne/
+URL:https://comedyatlas.app/comedy-atlas/event/kalabalik-i-fabriken-turne/
+END:VEVENT
+END:VCALENDAR

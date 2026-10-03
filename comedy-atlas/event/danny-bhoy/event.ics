@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danny-bhoy@comedyatlas.app
+DTSTAMP:20261006T233000Z
+DTSTART:20261006T233000Z
+DTEND:20261007T013000Z
+SUMMARY:Danny Bhoy
+LOCATION:Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/danny-bho
+ y/
+URL:https://comedyatlas.app/comedy-atlas/event/danny-bhoy/
+END:VEVENT
+END:VCALENDAR

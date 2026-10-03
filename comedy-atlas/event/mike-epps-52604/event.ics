@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-52604@comedyatlas.app
+DTSTAMP:20261220T030000Z
+DTSTART:20261220T030000Z
+DTEND:20261220T050000Z
+SUMMARY:Mike Epps
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -52604/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-52604/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-bishop-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20270429T183000Z
+DTSTART:20270429T183000Z
+DTEND:20270429T203000Z
+SUMMARY:John Bishop - Venue Premium Tickets
+LOCATION:Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-bish
+ op-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/john-bishop-venue-premium-ti
+ ckets/
+END:VEVENT
+END:VCALENDAR

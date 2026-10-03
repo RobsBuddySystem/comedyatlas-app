@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chad-jt@comedyatlas.app
+DTSTAMP:20261114T030000Z
+DTSTART:20261114T030000Z
+DTEND:20261114T050000Z
+SUMMARY:Chad & JT
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chad-jt/
+URL:https://comedyatlas.app/comedy-atlas/event/chad-jt/
+END:VEVENT
+END:VCALENDAR

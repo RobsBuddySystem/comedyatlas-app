@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:las-damitas-histeria@comedyatlas.app
+DTSTAMP:20261012T010000Z
+DTSTART:20261012T010000Z
+DTEND:20261012T030000Z
+SUMMARY:Las Damitas Histeria
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/las-damit
+ as-histeria/
+URL:https://comedyatlas.app/comedy-atlas/event/las-damitas-histeria/
+END:VEVENT
+END:VCALENDAR

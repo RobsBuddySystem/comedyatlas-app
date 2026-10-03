@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jamaica-vs-the-world@comedyatlas.app
+DTSTAMP:20261018T180000Z
+DTSTART:20261018T180000Z
+DTEND:20261018T200000Z
+SUMMARY:Jamaica VS the World
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jamaica-v
+ s-the-world/
+URL:https://comedyatlas.app/comedy-atlas/event/jamaica-vs-the-world/
+END:VEVENT
+END:VCALENDAR

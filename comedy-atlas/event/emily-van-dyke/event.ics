@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emily-van-dyke@comedyatlas.app
+DTSTAMP:20261229T033000Z
+DTSTART:20261229T033000Z
+DTEND:20261229T053000Z
+SUMMARY:Emily Van Dyke
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emily-van
+ -dyke/
+URL:https://comedyatlas.app/comedy-atlas/event/emily-van-dyke/
+END:VEVENT
+END:VCALENDAR

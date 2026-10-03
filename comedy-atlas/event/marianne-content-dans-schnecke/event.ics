@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marianne-content-dans-schnecke@comedyatlas.app
+DTSTAMP:20261009T183000Z
+DTSTART:20261009T183000Z
+DTEND:20261009T203000Z
+SUMMARY:Marianne Content dans Schnecke
+LOCATION:Toulouse
+DESCRIPTION:Des personnages grinçants qui font rire et réfléchir. Réacs
+  s'abstenir... ou pas.\nMore info: https://comedyatlas.app/comedy-atlas/eve
+ nt/marianne-content-dans-schnecke/
+URL:https://comedyatlas.app/comedy-atlas/event/marianne-content-dans-schnec
+ ke/
+END:VEVENT
+END:VCALENDAR

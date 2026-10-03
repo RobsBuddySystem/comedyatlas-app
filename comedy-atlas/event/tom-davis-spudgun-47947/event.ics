@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-davis-spudgun-47947@comedyatlas.app
+DTSTAMP:20270507T183000Z
+DTSTART:20270507T183000Z
+DTEND:20270507T203000Z
+SUMMARY:Tom Davis: Spudgun
+LOCATION:Halifax
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-davis
+ -spudgun-47947/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-davis-spudgun-47947/
+END:VEVENT
+END:VCALENDAR

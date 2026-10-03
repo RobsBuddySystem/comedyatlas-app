@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-beverley@comedyatlas.app
+DTSTAMP:20261114T200000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T220000Z
+SUMMARY:The Comedy Store - Beverley
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-beverley/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-beverley/
+END:VEVENT
+END:VCALENDAR

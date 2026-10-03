@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-goodwin-53132@comedyatlas.app
+DTSTAMP:20270117T013000Z
+DTSTART:20270117T013000Z
+DTEND:20270117T033000Z
+SUMMARY:Mike Goodwin
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-good
+ win-53132/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-goodwin-53132/
+END:VEVENT
+END:VCALENDAR

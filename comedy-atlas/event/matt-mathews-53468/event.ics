@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-mathews-53468@comedyatlas.app
+DTSTAMP:20270212T000000Z
+DTSTART:20270212T000000Z
+DTEND:20270212T020000Z
+SUMMARY:Matt Mathews
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-math
+ ews-53468/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-mathews-53468/
+END:VEVENT
+END:VCALENDAR

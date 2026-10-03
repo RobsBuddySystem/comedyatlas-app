@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alpay-erdem-stand-up@comedyatlas.app
+DTSTAMP:20261009T173000Z
+DTSTART:20261009T173000Z
+DTEND:20261009T193000Z
+SUMMARY:Alpay Erdem Stand Up
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alpay-erd
+ em-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/alpay-erdem-stand-up/
+END:VEVENT
+END:VCALENDAR

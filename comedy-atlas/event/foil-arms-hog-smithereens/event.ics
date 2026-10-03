@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:foil-arms-hog-smithereens@comedyatlas.app
+DTSTAMP:20270107T200000Z
+DTSTART:20270107T200000Z
+DTEND:20270107T220000Z
+SUMMARY:Foil\, Arms & Hog - Smithereens
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/foil-arms
+ -hog-smithereens/
+URL:https://comedyatlas.app/comedy-atlas/event/foil-arms-hog-smithereens/
+END:VEVENT
+END:VCALENDAR

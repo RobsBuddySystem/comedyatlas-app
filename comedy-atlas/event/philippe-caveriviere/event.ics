@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:philippe-caveriviere@comedyatlas.app
+DTSTAMP:20270402T180000Z
+DTSTART:20270402T180000Z
+DTEND:20270402T200000Z
+SUMMARY:Philippe Caverivière
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/philippe-
+ caveriviere/
+URL:https://comedyatlas.app/comedy-atlas/event/philippe-caveriviere/
+END:VEVENT
+END:VCALENDAR

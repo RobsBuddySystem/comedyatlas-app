@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobb-s-comedy-showcase-50213@comedyatlas.app
+DTSTAMP:20261102T030000Z
+DTSTART:20261102T030000Z
+DTEND:20261102T050000Z
+SUMMARY:Cobb's Comedy Showcase
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cobb-s-co
+ medy-showcase-50213/
+URL:https://comedyatlas.app/comedy-atlas/event/cobb-s-comedy-showcase-50213
+ /
+END:VEVENT
+END:VCALENDAR

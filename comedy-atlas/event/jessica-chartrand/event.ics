@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jessica-chartrand@comedyatlas.app
+DTSTAMP:20270325T000000Z
+DTSTART:20270325T000000Z
+DTEND:20270325T020000Z
+SUMMARY:Jessica Chartrand
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jessica-c
+ hartrand/
+URL:https://comedyatlas.app/comedy-atlas/event/jessica-chartrand/
+END:VEVENT
+END:VCALENDAR

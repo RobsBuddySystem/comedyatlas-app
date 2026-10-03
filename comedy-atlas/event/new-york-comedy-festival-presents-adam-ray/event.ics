@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-york-comedy-festival-presents-adam-ray@comedyatlas.app
+DTSTAMP:20261107T000000Z
+DTSTART:20261107T000000Z
+DTEND:20261107T020000Z
+SUMMARY:New York Comedy Festival Presents: Adam Ray
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-york-
+ comedy-festival-presents-adam-ray/
+URL:https://comedyatlas.app/comedy-atlas/event/new-york-comedy-festival-pre
+ sents-adam-ray/
+END:VEVENT
+END:VCALENDAR

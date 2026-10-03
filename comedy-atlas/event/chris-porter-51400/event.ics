@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-porter-51400@comedyatlas.app
+DTSTAMP:20261122T030000Z
+DTSTART:20261122T030000Z
+DTEND:20261122T050000Z
+SUMMARY:Chris Porter
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-por
+ ter-51400/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-porter-51400/
+END:VEVENT
+END:VCALENDAR

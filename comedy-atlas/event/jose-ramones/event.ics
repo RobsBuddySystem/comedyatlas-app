@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jose-ramones@comedyatlas.app
+DTSTAMP:20261005T020000Z
+DTSTART:20261005T020000Z
+DTEND:20261005T040000Z
+SUMMARY:Jose Ramones
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jose-ramo
+ nes/
+URL:https://comedyatlas.app/comedy-atlas/event/jose-ramones/
+END:VEVENT
+END:VCALENDAR

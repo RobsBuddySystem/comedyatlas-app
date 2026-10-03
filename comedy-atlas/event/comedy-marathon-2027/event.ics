@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-marathon-2027@comedyatlas.app
+DTSTAMP:20270510T180000Z
+DTSTART:20270510T180000Z
+DTEND:20270510T200000Z
+SUMMARY:Comedy Marathon 2027
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ma
+ rathon-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-marathon-2027/
+END:VEVENT
+END:VCALENDAR

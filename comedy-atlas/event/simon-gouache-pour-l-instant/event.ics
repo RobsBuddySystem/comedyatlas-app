@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-gouache-pour-l-instant@comedyatlas.app
+DTSTAMP:20261016T000000Z
+DTSTART:20261016T000000Z
+DTEND:20261016T020000Z
+SUMMARY:Simon Gouache - Pour l'instant
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simon-gou
+ ache-pour-l-instant/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-gouache-pour-l-instant
+ /
+END:VEVENT
+END:VCALENDAR

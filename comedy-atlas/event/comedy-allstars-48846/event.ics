@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-allstars-48846@comedyatlas.app
+DTSTAMP:20261010T014500Z
+DTSTART:20261010T014500Z
+DTEND:20261010T034500Z
+SUMMARY:Comedy Allstars
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-al
+ lstars-48846/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-allstars-48846/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vir-das-i-say-we-run-45096@comedyatlas.app
+DTSTAMP:20270117T000000Z
+DTSTART:20270117T000000Z
+DTEND:20270117T020000Z
+SUMMARY:Vir Das: I say we RUN!
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vir-das-i
+ -say-we-run-45096/
+URL:https://comedyatlas.app/comedy-atlas/event/vir-das-i-say-we-run-45096/
+END:VEVENT
+END:VCALENDAR

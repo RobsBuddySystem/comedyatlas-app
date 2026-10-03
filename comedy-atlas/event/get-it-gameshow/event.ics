@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:get-it-gameshow@comedyatlas.app
+DTSTAMP:20261126T033000Z
+DTSTART:20261126T033000Z
+DTEND:20261126T053000Z
+SUMMARY:Get It?! Gameshow
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/get-it-ga
+ meshow/
+URL:https://comedyatlas.app/comedy-atlas/event/get-it-gameshow/
+END:VEVENT
+END:VCALENDAR

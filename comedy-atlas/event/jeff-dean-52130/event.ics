@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dean-52130@comedyatlas.app
+DTSTAMP:20261210T003000Z
+DTSTART:20261210T003000Z
+DTEND:20261210T023000Z
+SUMMARY:Jeff Dean
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-dean
+ -52130/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dean-52130/
+END:VEVENT
+END:VCALENDAR

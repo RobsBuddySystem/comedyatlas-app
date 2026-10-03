@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:susan-calman-47254@comedyatlas.app
+DTSTAMP:20270218T190000Z
+DTSTART:20270218T190000Z
+DTEND:20270218T210000Z
+SUMMARY:Susan Calman
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/susan-cal
+ man-47254/
+URL:https://comedyatlas.app/comedy-atlas/event/susan-calman-47254/
+END:VEVENT
+END:VCALENDAR

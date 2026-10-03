@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-trevino-aces-of-comedy@comedyatlas.app
+DTSTAMP:20261211T060000Z
+DTSTART:20261211T060000Z
+DTEND:20261211T080000Z
+SUMMARY:Steve Trevino Aces of Comedy
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-tre
+ vino-aces-of-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-trevino-aces-of-comedy
+ /
+END:VEVENT
+END:VCALENDAR

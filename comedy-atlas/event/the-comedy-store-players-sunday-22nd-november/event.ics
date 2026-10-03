@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players-sunday-22nd-november@comedyatlas.app
+DTSTAMP:20261122T193000Z
+DTSTART:20261122T193000Z
+DTEND:20261122T213000Z
+SUMMARY:The Comedy Store Players - Sunday 22nd November
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players-sunday-22nd-november/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players-sun
+ day-22nd-november/
+END:VEVENT
+END:VCALENDAR

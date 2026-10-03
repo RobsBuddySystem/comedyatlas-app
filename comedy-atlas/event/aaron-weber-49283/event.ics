@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aaron-weber-49283@comedyatlas.app
+DTSTAMP:20261017T023000Z
+DTSTART:20261017T023000Z
+DTEND:20261017T043000Z
+SUMMARY:Aaron Weber
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aaron-web
+ er-49283/
+URL:https://comedyatlas.app/comedy-atlas/event/aaron-weber-49283/
+END:VEVENT
+END:VCALENDAR

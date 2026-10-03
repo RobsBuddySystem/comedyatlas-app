@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucy-darling-the-more-the-merrier@comedyatlas.app
+DTSTAMP:20261114T003000Z
+DTSTART:20261114T003000Z
+DTEND:20261114T023000Z
+SUMMARY:Lucy Darling: The More the Merrier
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucy-darl
+ ing-the-more-the-merrier/
+URL:https://comedyatlas.app/comedy-atlas/event/lucy-darling-the-more-the-me
+ rrier/
+END:VEVENT
+END:VCALENDAR

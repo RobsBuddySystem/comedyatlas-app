@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucas-hueso-a-la-releve-lyon@comedyatlas.app
+DTSTAMP:20261007T184500Z
+DTSTART:20261007T184500Z
+DTEND:20261007T204500Z
+SUMMARY:Lucas Hueso à la Relève Lyon
+LOCATION:Lyon
+DESCRIPTION:Lucas Hueso est devenu au fil des années un incontournable des
+  comedy clubs lyonnais.\nMore info: https://comedyatlas.app/comedy-atlas/ev
+ ent/lucas-hueso-a-la-releve-lyon/
+URL:https://comedyatlas.app/comedy-atlas/event/lucas-hueso-a-la-releve-lyon
+ /
+END:VEVENT
+END:VCALENDAR

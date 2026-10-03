@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrick-groulx-45145@comedyatlas.app
+DTSTAMP:20270228T010000Z
+DTSTART:20270228T010000Z
+DTEND:20270228T030000Z
+SUMMARY:Patrick Groulx
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/patrick-g
+ roulx-45145/
+URL:https://comedyatlas.app/comedy-atlas/event/patrick-groulx-45145/
+END:VEVENT
+END:VCALENDAR

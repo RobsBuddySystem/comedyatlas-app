@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrick-piard-dans-genant@comedyatlas.app
+DTSTAMP:20261016T190000Z
+DTSTART:20261016T190000Z
+DTEND:20261016T210000Z
+SUMMARY:Patrick Piard dans Gênant
+LOCATION:Le Mans
+DESCRIPTION:Seul en scène face à ses démons\, il incarne les personnages
+  les plus malaisants pour notre plus grand bonheur.\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/patrick-piard-dans-genant/
+URL:https://comedyatlas.app/comedy-atlas/event/patrick-piard-dans-genant/
+END:VEVENT
+END:VCALENDAR

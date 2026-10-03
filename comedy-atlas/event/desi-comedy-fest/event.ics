@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:desi-comedy-fest@comedyatlas.app
+DTSTAMP:20261109T020000Z
+DTSTART:20261109T020000Z
+DTEND:20261109T040000Z
+SUMMARY:Desi Comedy Fest
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/desi-come
+ dy-fest/
+URL:https://comedyatlas.app/comedy-atlas/event/desi-comedy-fest/
+END:VEVENT
+END:VCALENDAR

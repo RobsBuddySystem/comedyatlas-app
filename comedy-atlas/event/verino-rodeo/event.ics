@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:verino-rodeo@comedyatlas.app
+DTSTAMP:20270204T190000Z
+DTSTART:20270204T190000Z
+DTEND:20270204T210000Z
+SUMMARY:Verino - Rodeo
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/verino-ro
+ deo/
+URL:https://comedyatlas.app/comedy-atlas/event/verino-rodeo/
+END:VEVENT
+END:VCALENDAR

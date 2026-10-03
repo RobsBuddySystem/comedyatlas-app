@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:updating-18-event@comedyatlas.app
+DTSTAMP:20261218T010000Z
+DTSTART:20261218T010000Z
+DTEND:20261218T030000Z
+SUMMARY:UpDating (18+ Event)
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/updating-
+ 18-event/
+URL:https://comedyatlas.app/comedy-atlas/event/updating-18-event/
+END:VEVENT
+END:VCALENDAR

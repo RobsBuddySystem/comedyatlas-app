@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paddy-mcdonnell-gout-s-out-tour@comedyatlas.app
+DTSTAMP:20261104T200000Z
+DTSTART:20261104T200000Z
+DTEND:20261104T220000Z
+SUMMARY:Paddy McDonnell - Gout's Out Tour
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paddy-mcd
+ onnell-gout-s-out-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/paddy-mcdonnell-gout-s-out-t
+ our/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wankernomics-show-v4-1-final-usethis@comedyatlas.app
+DTSTAMP:20261209T080000Z
+DTSTART:20261209T080000Z
+DTEND:20261209T100000Z
+SUMMARY:Wankernomics: Show_v4.1_Final_USETHIS
+LOCATION:Sydney
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/wankernom
+ ics-show-v4-1-final-usethis/
+URL:https://comedyatlas.app/comedy-atlas/event/wankernomics-show-v4-1-final
+ -usethis/
+END:VEVENT
+END:VCALENDAR

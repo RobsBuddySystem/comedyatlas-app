@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heroes-off-duty-51140@comedyatlas.app
+DTSTAMP:20261119T013000Z
+DTSTART:20261119T013000Z
+DTEND:20261119T033000Z
+SUMMARY:Heroes Off Duty
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heroes-of
+ f-duty-51140/
+URL:https://comedyatlas.app/comedy-atlas/event/heroes-off-duty-51140/
+END:VEVENT
+END:VCALENDAR

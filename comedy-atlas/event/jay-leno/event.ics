@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jay-leno@comedyatlas.app
+DTSTAMP:20270214T010000Z
+DTSTART:20270214T010000Z
+DTEND:20270214T030000Z
+SUMMARY:Jay Leno
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jay-leno/
+URL:https://comedyatlas.app/comedy-atlas/event/jay-leno/
+END:VEVENT
+END:VCALENDAR

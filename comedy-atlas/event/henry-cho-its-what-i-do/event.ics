@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:henry-cho-its-what-i-do@comedyatlas.app
+DTSTAMP:20270418T010000Z
+DTSTART:20270418T010000Z
+DTEND:20270418T030000Z
+SUMMARY:Henry Cho: Its What I Do
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/henry-cho
+ -its-what-i-do/
+URL:https://comedyatlas.app/comedy-atlas/event/henry-cho-its-what-i-do/
+END:VEVENT
+END:VCALENDAR

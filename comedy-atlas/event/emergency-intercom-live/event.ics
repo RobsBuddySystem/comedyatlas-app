@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emergency-intercom-live@comedyatlas.app
+DTSTAMP:20261010T030000Z
+DTSTART:20261010T030000Z
+DTEND:20261010T050000Z
+SUMMARY:Emergency Intercom Live
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emergency
+ -intercom-live/
+URL:https://comedyatlas.app/comedy-atlas/event/emergency-intercom-live/
+END:VEVENT
+END:VCALENDAR

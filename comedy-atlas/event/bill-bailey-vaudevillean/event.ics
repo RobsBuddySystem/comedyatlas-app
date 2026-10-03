@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bill-bailey-vaudevillean@comedyatlas.app
+DTSTAMP:20270502T180000Z
+DTSTART:20270502T180000Z
+DTEND:20270502T200000Z
+SUMMARY:Bill Bailey: Vaudevillean
+LOCATION:Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bill-bail
+ ey-vaudevillean/
+URL:https://comedyatlas.app/comedy-atlas/event/bill-bailey-vaudevillean/
+END:VEVENT
+END:VCALENDAR

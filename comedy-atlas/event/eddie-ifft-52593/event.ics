@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eddie-ifft-52593@comedyatlas.app
+DTSTAMP:20261220T020000Z
+DTSTART:20261220T020000Z
+DTEND:20261220T040000Z
+SUMMARY:Eddie Ifft
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eddie-iff
+ t-52593/
+URL:https://comedyatlas.app/comedy-atlas/event/eddie-ifft-52593/
+END:VEVENT
+END:VCALENDAR

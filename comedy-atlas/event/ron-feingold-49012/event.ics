@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-feingold-49012@comedyatlas.app
+DTSTAMP:20261011T040000Z
+DTSTART:20261011T040000Z
+DTEND:20261011T060000Z
+SUMMARY:Ron Feingold
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-feing
+ old-49012/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-feingold-49012/
+END:VEVENT
+END:VCALENDAR

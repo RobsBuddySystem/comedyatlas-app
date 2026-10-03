@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chicago-the-musical@comedyatlas.app
+DTSTAMP:20261216T110000Z
+DTSTART:20261216T110000Z
+DTEND:20261216T130000Z
+SUMMARY:CHICAGO THE MUSICAL
+LOCATION:Dubai
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chicago-t
+ he-musical/
+URL:https://comedyatlas.app/comedy-atlas/event/chicago-the-musical/
+END:VEVENT
+END:VCALENDAR

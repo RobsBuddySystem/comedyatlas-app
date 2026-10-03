@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:george-wallace-52892@comedyatlas.app
+DTSTAMP:20270101T020000Z
+DTSTART:20270101T020000Z
+DTEND:20270101T040000Z
+SUMMARY:George Wallace
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/george-wa
+ llace-52892/
+URL:https://comedyatlas.app/comedy-atlas/event/george-wallace-52892/
+END:VEVENT
+END:VCALENDAR

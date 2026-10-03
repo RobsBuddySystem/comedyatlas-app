@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:samantha-bee-how-to-survive-menopause@comedyatlas.app
+DTSTAMP:20270122T030000Z
+DTSTART:20270122T030000Z
+DTEND:20270122T050000Z
+SUMMARY:Samantha Bee: How to Survive Menopause
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/samantha-
+ bee-how-to-survive-menopause/
+URL:https://comedyatlas.app/comedy-atlas/event/samantha-bee-how-to-survive-
+ menopause/
+END:VEVENT
+END:VCALENDAR

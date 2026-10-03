@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marc-maron-53163@comedyatlas.app
+DTSTAMP:20270122T010000Z
+DTSTART:20270122T010000Z
+DTEND:20270122T030000Z
+SUMMARY:Marc Maron
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marc-maro
+ n-53163/
+URL:https://comedyatlas.app/comedy-atlas/event/marc-maron-53163/
+END:VEVENT
+END:VCALENDAR

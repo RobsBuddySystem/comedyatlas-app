@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-funches-51043@comedyatlas.app
+DTSTAMP:20261115T054500Z
+DTSTART:20261115T054500Z
+DTEND:20261115T074500Z
+SUMMARY:Ron Funches
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-funch
+ es-51043/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-funches-51043/
+END:VEVENT
+END:VCALENDAR

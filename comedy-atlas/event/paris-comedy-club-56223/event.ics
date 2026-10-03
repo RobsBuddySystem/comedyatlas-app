@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club-56223@comedyatlas.app
+DTSTAMP:20261112T193000Z
+DTSTART:20261112T193000Z
+DTEND:20261112T213000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Clermont Ferrand
+DESCRIPTION:Les humoristes les plus drôles de la nouvelle génération et 
+ de la scène parisienne en déplacement ! Au programme : des surprises !\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-5622
+ 3/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-56223/
+END:VEVENT
+END:VCALENDAR

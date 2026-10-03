@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-52048@comedyatlas.app
+DTSTAMP:20261206T230000Z
+DTSTART:20261206T230000Z
+DTEND:20261207T010000Z
+SUMMARY:Aries Spears
+LOCATION:Portland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-52048/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-52048/
+END:VEVENT
+END:VCALENDAR

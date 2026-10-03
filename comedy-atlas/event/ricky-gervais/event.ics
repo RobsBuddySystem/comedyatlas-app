@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ricky-gervais@comedyatlas.app
+DTSTAMP:20261116T183000Z
+DTSTART:20261116T183000Z
+DTEND:20261116T203000Z
+SUMMARY:Ricky Gervais
+LOCATION:Brighton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ricky-ger
+ vais/
+URL:https://comedyatlas.app/comedy-atlas/event/ricky-gervais/
+END:VEVENT
+END:VCALENDAR

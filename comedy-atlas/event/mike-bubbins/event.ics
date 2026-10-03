@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-bubbins@comedyatlas.app
+DTSTAMP:20270220T190000Z
+DTSTART:20270220T190000Z
+DTEND:20270220T210000Z
+SUMMARY:Mike Bubbins
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-bubb
+ ins/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-bubbins/
+END:VEVENT
+END:VCALENDAR

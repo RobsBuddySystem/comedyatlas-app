@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:salma-zaky@comedyatlas.app
+DTSTAMP:20261204T003000Z
+DTSTART:20261204T003000Z
+DTEND:20261204T023000Z
+SUMMARY:Salma Zaky
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/salma-zak
+ y/
+URL:https://comedyatlas.app/comedy-atlas/event/salma-zaky/
+END:VEVENT
+END:VCALENDAR

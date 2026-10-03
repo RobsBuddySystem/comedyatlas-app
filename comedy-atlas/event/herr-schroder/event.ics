@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:herr-schroder@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Herr Schröder
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/herr-schr
+ oder/
+URL:https://comedyatlas.app/comedy-atlas/event/herr-schroder/
+END:VEVENT
+END:VCALENDAR

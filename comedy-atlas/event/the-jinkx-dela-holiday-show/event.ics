@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-jinkx-dela-holiday-show@comedyatlas.app
+DTSTAMP:20261209T010000Z
+DTSTART:20261209T010000Z
+DTEND:20261209T030000Z
+SUMMARY:The Jinkx & DeLa Holiday Show
+LOCATION:Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-jinkx
+ -dela-holiday-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-jinkx-dela-holiday-show/
+END:VEVENT
+END:VCALENDAR

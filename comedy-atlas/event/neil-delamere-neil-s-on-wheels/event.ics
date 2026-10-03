@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:neil-delamere-neil-s-on-wheels@comedyatlas.app
+DTSTAMP:20261229T193000Z
+DTSTART:20261229T193000Z
+DTEND:20261229T213000Z
+SUMMARY:Neil Delamere - Neil's On Wheels
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/neil-dela
+ mere-neil-s-on-wheels/
+URL:https://comedyatlas.app/comedy-atlas/event/neil-delamere-neil-s-on-whee
+ ls/
+END:VEVENT
+END:VCALENDAR

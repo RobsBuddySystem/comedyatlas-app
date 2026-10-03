@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-scunthorpe@comedyatlas.app
+DTSTAMP:20261017T190000Z
+DTSTART:20261017T190000Z
+DTEND:20261017T210000Z
+SUMMARY:The Comedy Store - Scunthorpe
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-scunthorpe/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-scunthorpe/
+END:VEVENT
+END:VCALENDAR

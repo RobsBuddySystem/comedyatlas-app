@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53095@comedyatlas.app
+DTSTAMP:20270116T010000Z
+DTSTART:20270116T010000Z
+DTEND:20270116T030000Z
+SUMMARY:Aries Spears
+LOCATION:Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53095/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53095/
+END:VEVENT
+END:VCALENDAR

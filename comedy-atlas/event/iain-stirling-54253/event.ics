@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:iain-stirling-54253@comedyatlas.app
+DTSTAMP:20270520T233000Z
+DTSTART:20270520T233000Z
+DTEND:20270521T013000Z
+SUMMARY:Iain Stirling
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/iain-stir
+ ling-54253/
+URL:https://comedyatlas.app/comedy-atlas/event/iain-stirling-54253/
+END:VEVENT
+END:VCALENDAR

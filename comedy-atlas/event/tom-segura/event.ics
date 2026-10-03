@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-segura@comedyatlas.app
+DTSTAMP:20270131T040000Z
+DTSTART:20270131T040000Z
+DTEND:20270131T060000Z
+SUMMARY:Tom Segura
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-segur
+ a/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-segura/
+END:VEVENT
+END:VCALENDAR

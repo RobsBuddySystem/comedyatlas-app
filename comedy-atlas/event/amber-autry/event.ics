@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:amber-autry@comedyatlas.app
+DTSTAMP:20261017T014500Z
+DTSTART:20261017T014500Z
+DTEND:20261017T034500Z
+SUMMARY:Amber Autry
+LOCATION:Columbus
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/amber-aut
+ ry/
+URL:https://comedyatlas.app/comedy-atlas/event/amber-autry/
+END:VEVENT
+END:VCALENDAR

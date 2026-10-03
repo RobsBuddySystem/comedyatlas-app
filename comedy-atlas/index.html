@@ -1692,7 +1692,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     // 2. HAPPENING SOON. Capped at 6 cards (§5: "3 to 6 cards, with a
     //    'See all shows' link") -- a taste, not a listing. Full listings live
     //    on /shows.html and each city page.
-    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "en"); });
+    var soonAll = events.filter(function (ev) { return A.matchesLanguage(ev, "all"); });
     var soon = soonAll.slice().sort(function (a, b) {
       return new Date(a.starts_at) - new Date(b.starts_at);
     }).slice(0, 60);

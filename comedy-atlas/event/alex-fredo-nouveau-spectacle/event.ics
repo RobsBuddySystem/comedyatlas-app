@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-fredo-nouveau-spectacle@comedyatlas.app
+DTSTAMP:20261104T193000Z
+DTSTART:20261104T193000Z
+DTEND:20261104T213000Z
+SUMMARY:Alex Fredo Nouveau Spectacle
+LOCATION:Boulogne Billancourt
+DESCRIPTION:Après un premier spectacle à Paris et en tournée dans toute 
+ la France Alex revient avec un nouveau spectacle qu'il se réjouit de vous 
+ faire découvrir.\nMore info: https://comedyatlas.app/comedy-atlas/event/al
+ ex-fredo-nouveau-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-fredo-nouveau-spectacle
+ /
+END:VEVENT
+END:VCALENDAR

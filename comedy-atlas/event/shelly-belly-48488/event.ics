@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shelly-belly-48488@comedyatlas.app
+DTSTAMP:20261003T230000Z
+DTSTART:20261003T230000Z
+DTEND:20261004T010000Z
+SUMMARY:Shelly Belly
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shelly-be
+ lly-48488/
+URL:https://comedyatlas.app/comedy-atlas/event/shelly-belly-48488/
+END:VEVENT
+END:VCALENDAR

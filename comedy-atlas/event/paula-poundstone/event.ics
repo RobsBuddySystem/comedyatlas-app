@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paula-poundstone@comedyatlas.app
+DTSTAMP:20261004T000000Z
+DTSTART:20261004T000000Z
+DTEND:20261004T020000Z
+SUMMARY:Paula Poundstone
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paula-pou
+ ndstone/
+URL:https://comedyatlas.app/comedy-atlas/event/paula-poundstone/
+END:VEVENT
+END:VCALENDAR

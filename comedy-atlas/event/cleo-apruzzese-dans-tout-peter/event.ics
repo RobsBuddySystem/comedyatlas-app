@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cleo-apruzzese-dans-tout-peter@comedyatlas.app
+DTSTAMP:20261027T190000Z
+DTSTART:20261027T190000Z
+DTEND:20261027T210000Z
+SUMMARY:Cléo Apruzzese dans Tout péter
+LOCATION:Lyon
+DESCRIPTION:Cléo vient nous raconter ses meilleures blagues avant la fin a
+ nnoncée de l'humanité sur Terre.\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/cleo-apruzzese-dans-tout-peter/
+URL:https://comedyatlas.app/comedy-atlas/event/cleo-apruzzese-dans-tout-pet
+ er/
+END:VEVENT
+END:VCALENDAR

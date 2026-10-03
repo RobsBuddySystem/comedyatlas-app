@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-o-crash-burn@comedyatlas.app
+DTSTAMP:20270116T040000Z
+DTSTART:20270116T040000Z
+DTEND:20270116T060000Z
+SUMMARY:STEVE-O: CRASH & BURN
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-o-c
+ rash-burn/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-o-crash-burn/
+END:VEVENT
+END:VCALENDAR

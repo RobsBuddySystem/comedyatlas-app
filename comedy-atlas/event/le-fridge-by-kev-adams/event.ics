@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-fridge-by-kev-adams@comedyatlas.app
+DTSTAMP:20261103T200000Z
+DTSTART:20261103T200000Z
+DTEND:20261103T220000Z
+SUMMARY:Le Fridge by Kev Adams
+LOCATION:Caen
+DESCRIPTION:C'est le plateau phare du Fridge Comedy Club à Paris qui déba
+ rque au Théâtre à l'Ouest !\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/le-fridge-by-kev-adams/
+URL:https://comedyatlas.app/comedy-atlas/event/le-fridge-by-kev-adams/
+END:VEVENT
+END:VCALENDAR

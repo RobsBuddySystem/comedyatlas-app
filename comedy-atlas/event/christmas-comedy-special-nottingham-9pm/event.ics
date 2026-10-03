@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-comedy-special-nottingham-9pm@comedyatlas.app
+DTSTAMP:20261219T210000Z
+DTSTART:20261219T210000Z
+DTEND:20261219T230000Z
+SUMMARY:Christmas Comedy Special - Nottingham 9pm
+LOCATION:Metronome\, Marco Island\, Huntingdon Street Nottingham\, Nottingh
+ am
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -comedy-special-nottingham-9pm/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-comedy-special-not
+ tingham-9pm/
+END:VEVENT
+END:VCALENDAR

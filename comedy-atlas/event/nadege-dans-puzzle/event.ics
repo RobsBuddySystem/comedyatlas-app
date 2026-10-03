@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nadege-dans-puzzle@comedyatlas.app
+DTSTAMP:20261008T183000Z
+DTSTART:20261008T183000Z
+DTEND:20261008T203000Z
+SUMMARY:Nadège dans Puzzle
+LOCATION:Auray
+DESCRIPTION:À travers une plongée intime dans son histoire\, Nadège part
+ age son vécu de femme\, de fille d'immigrés et de citoyenne du monde.\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/nadege-dans-puzzle/
+URL:https://comedyatlas.app/comedy-atlas/event/nadege-dans-puzzle/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:berlin-du-coole-sau-eine-liebeserklarung@comedyatlas.app
+DTSTAMP:20261022T180000Z
+DTSTART:20261022T180000Z
+DTEND:20261022T200000Z
+SUMMARY:Berlin\, Du coole Sau: Eine Liebeserklärung
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/berlin-du
+ -coole-sau-eine-liebeserklarung/
+URL:https://comedyatlas.app/comedy-atlas/event/berlin-du-coole-sau-eine-lie
+ beserklarung/
+END:VEVENT
+END:VCALENDAR

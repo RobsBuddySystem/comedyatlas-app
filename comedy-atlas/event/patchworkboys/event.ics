@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patchworkboys@comedyatlas.app
+DTSTAMP:20261208T190000Z
+DTSTART:20261208T190000Z
+DTEND:20261208T210000Z
+SUMMARY:PATCHWORKBOYS
+LOCATION:Zurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/patchwork
+ boys/
+URL:https://comedyatlas.app/comedy-atlas/event/patchworkboys/
+END:VEVENT
+END:VCALENDAR

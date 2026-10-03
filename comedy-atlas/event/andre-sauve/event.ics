@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andre-sauve@comedyatlas.app
+DTSTAMP:20261030T000000Z
+DTSTART:20261030T000000Z
+DTEND:20261030T020000Z
+SUMMARY:Andre Sauve
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andre-sau
+ ve/
+URL:https://comedyatlas.app/comedy-atlas/event/andre-sauve/
+END:VEVENT
+END:VCALENDAR

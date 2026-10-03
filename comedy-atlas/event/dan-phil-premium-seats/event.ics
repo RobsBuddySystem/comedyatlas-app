@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dan-phil-premium-seats@comedyatlas.app
+DTSTAMP:20270125T183000Z
+DTSTART:20270125T183000Z
+DTEND:20270125T203000Z
+SUMMARY:Dan & Phil | Premium Seats
+LOCATION:Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dan-phil-
+ premium-seats/
+URL:https://comedyatlas.app/comedy-atlas/event/dan-phil-premium-seats/
+END:VEVENT
+END:VCALENDAR

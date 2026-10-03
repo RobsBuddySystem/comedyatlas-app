@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:omid-djalili-namaste@comedyatlas.app
+DTSTAMP:20270211T200000Z
+DTSTART:20270211T200000Z
+DTEND:20270211T220000Z
+SUMMARY:Omid Djalili: Namaste
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/omid-djal
+ ili-namaste/
+URL:https://comedyatlas.app/comedy-atlas/event/omid-djalili-namaste/
+END:VEVENT
+END:VCALENDAR

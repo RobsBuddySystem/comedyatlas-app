@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ensemble-ou-pas@comedyatlas.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Ensemble (ou pas)
+LOCATION:Marseille
+DESCRIPTION:Deux amis qui s'aiment. L'un plus que l'autre. Devinez lequel..
+ . (il a une barbe).\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ ensemble-ou-pas/
+URL:https://comedyatlas.app/comedy-atlas/event/ensemble-ou-pas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fada-comedy-club@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Fada Comedy Club
+LOCATION:Six Fours les Plages
+DESCRIPTION:Bienvenue dans le monde du FADA Comedy Club !\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/fada-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/fada-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-kay@comedyatlas.app
+DTSTAMP:20261208T060000Z
+DTSTART:20261208T060000Z
+DTEND:20261208T080000Z
+SUMMARY:Adam Kay
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-kay/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-kay/
+END:VEVENT
+END:VCALENDAR

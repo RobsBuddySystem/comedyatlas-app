@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-gumbeaux-50765@comedyatlas.app
+DTSTAMP:20261113T020000Z
+DTSTART:20261113T020000Z
+DTEND:20261113T040000Z
+SUMMARY:Comedy Gumbeaux
+LOCATION:The Howlin' Wolf\, 907 South Peters Street\, New Orleans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-gu
+ mbeaux-50765/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-gumbeaux-50765/
+END:VEVENT
+END:VCALENDAR

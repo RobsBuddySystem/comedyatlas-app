@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-arcuri-53299@comedyatlas.app
+DTSTAMP:20270129T033000Z
+DTSTART:20270129T033000Z
+DTEND:20270129T053000Z
+SUMMARY:Jeff Arcuri
+LOCATION:Portland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-arcu
+ ri-53299/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-arcuri-53299/
+END:VEVENT
+END:VCALENDAR

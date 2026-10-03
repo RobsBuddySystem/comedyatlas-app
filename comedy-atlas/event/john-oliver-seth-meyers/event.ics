@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-oliver-seth-meyers@comedyatlas.app
+DTSTAMP:20261025T233000Z
+DTSTART:20261025T233000Z
+DTEND:20261026T013000Z
+SUMMARY:John Oliver & Seth Meyers
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-oliv
+ er-seth-meyers/
+URL:https://comedyatlas.app/comedy-atlas/event/john-oliver-seth-meyers/
+END:VEVENT
+END:VCALENDAR

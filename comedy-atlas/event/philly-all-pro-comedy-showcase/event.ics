@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:philly-all-pro-comedy-showcase@comedyatlas.app
+DTSTAMP:20261008T233000Z
+DTSTART:20261008T233000Z
+DTEND:20261009T013000Z
+SUMMARY:Philly All-Pro Comedy Showcase
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/philly-al
+ l-pro-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/philly-all-pro-comedy-showca
+ se/
+END:VEVENT
+END:VCALENDAR

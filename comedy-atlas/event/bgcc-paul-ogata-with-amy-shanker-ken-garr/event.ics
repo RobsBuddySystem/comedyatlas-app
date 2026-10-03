@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-paul-ogata-with-amy-shanker-ken-garr@comedyatlas.app
+DTSTAMP:20261204T040000Z
+DTSTART:20261204T040000Z
+DTEND:20261204T060000Z
+SUMMARY:BGCC: Paul Ogata with Amy Shanker & Ken Garr
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-paul
+ -ogata-with-amy-shanker-ken-garr/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-paul-ogata-with-amy-sha
+ nker-ken-garr/
+END:VEVENT
+END:VCALENDAR

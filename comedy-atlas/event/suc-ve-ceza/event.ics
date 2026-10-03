@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:suc-ve-ceza@comedyatlas.app
+DTSTAMP:20261101T160000Z
+DTSTART:20261101T160000Z
+DTEND:20261101T180000Z
+SUMMARY:Suç ve Ceza
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/suc-ve-ce
+ za/
+URL:https://comedyatlas.app/comedy-atlas/event/suc-ve-ceza/
+END:VEVENT
+END:VCALENDAR

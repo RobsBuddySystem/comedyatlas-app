@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-comedy-kings-an-old-school-blowout@comedyatlas.app
+DTSTAMP:20261112T033000Z
+DTSTART:20261112T033000Z
+DTEND:20261112T053000Z
+SUMMARY:SF Comedy Kings: An Old School Blowout
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-comedy
+ -kings-an-old-school-blowout/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-comedy-kings-an-old-schoo
+ l-blowout/
+END:VEVENT
+END:VCALENDAR

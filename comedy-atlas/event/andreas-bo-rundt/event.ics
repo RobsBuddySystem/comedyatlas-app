@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andreas-bo-rundt@comedyatlas.app
+DTSTAMP:20270318T180000Z
+DTSTART:20270318T180000Z
+DTEND:20270318T200000Z
+SUMMARY:Andreas Bo: Rundt
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andreas-b
+ o-rundt/
+URL:https://comedyatlas.app/comedy-atlas/event/andreas-bo-rundt/
+END:VEVENT
+END:VCALENDAR

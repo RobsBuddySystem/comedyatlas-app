@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elon-gold-live@comedyatlas.app
+DTSTAMP:20270318T233000Z
+DTSTART:20270318T233000Z
+DTEND:20270319T013000Z
+SUMMARY:Elon Gold Live
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elon-gold
+ -live/
+URL:https://comedyatlas.app/comedy-atlas/event/elon-gold-live/
+END:VEVENT
+END:VCALENDAR

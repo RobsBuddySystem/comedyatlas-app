@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-7-jours-de-simon-labrosse-57092@comedyatlas.app
+DTSTAMP:20261011T140000Z
+DTSTART:20261011T140000Z
+DTEND:20261011T160000Z
+SUMMARY:Les 7 jours de Simon Labrosse
+LOCATION:Nantes
+DESCRIPTION:Les 7 jours de Simon Labrosse\, c'est une bouffée d'optimisme\
+ , un hymne à la vie.\nMore info: https://comedyatlas.app/comedy-atlas/even
+ t/les-7-jours-de-simon-labrosse-57092/
+URL:https://comedyatlas.app/comedy-atlas/event/les-7-jours-de-simon-labross
+ e-57092/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:old-rope-monday-11th-january@comedyatlas.app
+DTSTAMP:20270111T193000Z
+DTSTART:20270111T193000Z
+DTEND:20270111T213000Z
+SUMMARY:Old Rope - Monday 11th January
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/old-rope-
+ monday-11th-january/
+URL:https://comedyatlas.app/comedy-atlas/event/old-rope-monday-11th-january
+ /
+END:VEVENT
+END:VCALENDAR

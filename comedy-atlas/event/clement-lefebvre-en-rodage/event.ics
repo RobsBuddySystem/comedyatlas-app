@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:clement-lefebvre-en-rodage@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Clément Lefebvre en rodage
+LOCATION:Toulouse
+DESCRIPTION:À 26 ans\, Clément est censé être un adulte. C'est ce qu'on
+  lui répète. Lui n'est toujours pas convaincu.\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/clement-lefebvre-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/clement-lefebvre-en-rodage/
+END:VEVENT
+END:VCALENDAR

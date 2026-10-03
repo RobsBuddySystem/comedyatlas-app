@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carl-hutchinson@comedyatlas.app
+DTSTAMP:20261126T183000Z
+DTSTART:20261126T183000Z
+DTEND:20261126T203000Z
+SUMMARY:Carl Hutchinson
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carl-hutc
+ hinson/
+URL:https://comedyatlas.app/comedy-atlas/event/carl-hutchinson/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:whitney-cummings@comedyatlas.app
+DTSTAMP:20270131T140000Z
+DTSTART:20270131T140000Z
+DTEND:20270131T160000Z
+SUMMARY:Whitney Cummings
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/whitney-c
+ ummings/
+URL:https://comedyatlas.app/comedy-atlas/event/whitney-cummings/
+END:VEVENT
+END:VCALENDAR

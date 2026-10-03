@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-ages-18@comedyatlas.app
+DTSTAMP:20261008T010000Z
+DTSTART:20261008T010000Z
+DTEND:20261008T030000Z
+SUMMARY:ROBBY HOFFMAN - Ages 18+
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-ages-18/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-ages-18/
+END:VEVENT
+END:VCALENDAR

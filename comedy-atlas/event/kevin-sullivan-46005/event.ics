@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-sullivan-46005@comedyatlas.app
+DTSTAMP:20261023T203000Z
+DTSTART:20261023T203000Z
+DTEND:20261023T223000Z
+SUMMARY:Kevin Sullivan
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-sul
+ livan-46005/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-sullivan-46005/
+END:VEVENT
+END:VCALENDAR

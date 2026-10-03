@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brigitte-pintade-dans-la-folle-revue@comedyatlas.app
+DTSTAMP:20261014T190000Z
+DTSTART:20261014T190000Z
+DTEND:20261014T210000Z
+SUMMARY:Brigitte Pintade dans La folle revue
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Vous aimez le drag ? Vous aimez rire ? Cette soirée est faite 
+ pour vous !\nMore info: https://comedyatlas.app/comedy-atlas/event/brigitte
+ -pintade-dans-la-folle-revue/
+URL:https://comedyatlas.app/comedy-atlas/event/brigitte-pintade-dans-la-fol
+ le-revue/
+END:VEVENT
+END:VCALENDAR

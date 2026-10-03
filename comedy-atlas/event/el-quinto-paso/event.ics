@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:el-quinto-paso@comedyatlas.app
+DTSTAMP:20261004T000000Z
+DTSTART:20261004T000000Z
+DTEND:20261004T020000Z
+SUMMARY:El Quinto Paso
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/el-quinto
+ -paso/
+URL:https://comedyatlas.app/comedy-atlas/event/el-quinto-paso/
+END:VEVENT
+END:VCALENDAR

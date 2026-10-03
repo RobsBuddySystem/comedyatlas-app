@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club@comedyatlas.app
+DTSTAMP:20261015T183000Z
+DTSTART:20261015T183000Z
+DTEND:20261015T203000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Auray
+DESCRIPTION:Les humoristes les plus drôles de la nouvelle génération et 
+ de la scène parisienne en déplacement !\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/paris-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club/
+END:VEVENT
+END:VCALENDAR

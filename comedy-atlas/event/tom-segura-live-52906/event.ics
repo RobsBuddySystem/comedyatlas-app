@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-segura-live-52906@comedyatlas.app
+DTSTAMP:20270101T050000Z
+DTSTART:20270101T050000Z
+DTEND:20270101T070000Z
+SUMMARY:Tom Segura Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-segur
+ a-live-52906/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-segura-live-52906/
+END:VEVENT
+END:VCALENDAR

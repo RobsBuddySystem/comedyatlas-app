@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ghyslaine-lesept-dans-y-a-pas-que-le-sapin-qui-a-les-boules@comedyatlas
+ .app
+DTSTAMP:20261017T183000Z
+DTSTART:20261017T183000Z
+DTEND:20261017T203000Z
+SUMMARY:Ghyslaine Lesept dans Y'a pas que le sapin qui a les boules !
+LOCATION:Mauguio
+DESCRIPTION:Le nouveau spectacle de Gigi !\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/ghyslaine-lesept-dans-y-a-pas-que-le-sapin-qui-a-les
+ -boules/
+URL:https://comedyatlas.app/comedy-atlas/event/ghyslaine-lesept-dans-y-a-pa
+ s-que-le-sapin-qui-a-les-boules/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nasser-al-rayess-50150@comedyatlas.app
+DTSTAMP:20261031T230000Z
+DTSTART:20261031T230000Z
+DTEND:20261101T010000Z
+SUMMARY:Nasser Al-Rayess
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nasser-al
+ -rayess-50150/
+URL:https://comedyatlas.app/comedy-atlas/event/nasser-al-rayess-50150/
+END:VEVENT
+END:VCALENDAR

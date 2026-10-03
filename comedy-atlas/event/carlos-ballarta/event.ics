@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carlos-ballarta@comedyatlas.app
+DTSTAMP:20261031T030000Z
+DTSTART:20261031T030000Z
+DTEND:20261031T050000Z
+SUMMARY:Carlos Ballarta
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carlos-ba
+ llarta/
+URL:https://comedyatlas.app/comedy-atlas/event/carlos-ballarta/
+END:VEVENT
+END:VCALENDAR

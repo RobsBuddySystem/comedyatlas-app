@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-gondelman-49611@comedyatlas.app
+DTSTAMP:20261023T003000Z
+DTSTART:20261023T003000Z
+DTEND:20261023T023000Z
+SUMMARY:Josh Gondelman
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-gond
+ elman-49611/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-gondelman-49611/
+END:VEVENT
+END:VCALENDAR

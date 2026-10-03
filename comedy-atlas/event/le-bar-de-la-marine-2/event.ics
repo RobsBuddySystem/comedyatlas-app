@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-bar-de-la-marine-2@comedyatlas.app
+DTSTAMP:20261108T150000Z
+DTSTART:20261108T150000Z
+DTEND:20261108T170000Z
+SUMMARY:Le bar de la marine 2
+LOCATION:Toulon
+DESCRIPTION:Le bar de la marine 2\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/le-bar-de-la-marine-2/
+URL:https://comedyatlas.app/comedy-atlas/event/le-bar-de-la-marine-2/
+END:VEVENT
+END:VCALENDAR

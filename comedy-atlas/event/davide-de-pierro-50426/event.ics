@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:davide-de-pierro-50426@comedyatlas.app
+DTSTAMP:20261107T033000Z
+DTSTART:20261107T033000Z
+DTEND:20261107T053000Z
+SUMMARY:Davide De Pierro
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/davide-de
+ -pierro-50426/
+URL:https://comedyatlas.app/comedy-atlas/event/davide-de-pierro-50426/
+END:VEVENT
+END:VCALENDAR

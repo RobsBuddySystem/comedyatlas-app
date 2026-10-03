@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:w-nkernomics-show-v4-1-final-usethis@comedyatlas.app
+DTSTAMP:20261114T140000Z
+DTSTART:20261114T140000Z
+DTEND:20261114T160000Z
+SUMMARY:W*nkernomics- Show_V4.1_FINAL_USETHIS
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/w-nkernom
+ ics-show-v4-1-final-usethis/
+URL:https://comedyatlas.app/comedy-atlas/event/w-nkernomics-show-v4-1-final
+ -usethis/
+END:VEVENT
+END:VCALENDAR

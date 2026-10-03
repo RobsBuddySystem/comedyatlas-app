@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-black-comedy-show-51793@comedyatlas.app
+DTSTAMP:20261203T043000Z
+DTSTART:20261203T043000Z
+DTEND:20261203T063000Z
+SUMMARY:Big Black Comedy Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-black
+ -comedy-show-51793/
+URL:https://comedyatlas.app/comedy-atlas/event/big-black-comedy-show-51793/
+END:VEVENT
+END:VCALENDAR

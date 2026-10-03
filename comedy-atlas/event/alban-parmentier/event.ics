@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alban-parmentier@comedyatlas.app
+DTSTAMP:20261031T160000Z
+DTSTART:20261031T160000Z
+DTEND:20261031T180000Z
+SUMMARY:Alban Parmentier
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Alban est un kiné joueur qui a décidé de soigner ses patient
+ s par le rire et le divertissement.\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/alban-parmentier/
+URL:https://comedyatlas.app/comedy-atlas/event/alban-parmentier/
+END:VEVENT
+END:VCALENDAR

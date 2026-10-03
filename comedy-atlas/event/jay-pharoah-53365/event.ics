@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jay-pharoah-53365@comedyatlas.app
+DTSTAMP:20270131T033000Z
+DTSTART:20270131T033000Z
+DTEND:20270131T053000Z
+SUMMARY:Jay Pharoah
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jay-pharo
+ ah-53365/
+URL:https://comedyatlas.app/comedy-atlas/event/jay-pharoah-53365/
+END:VEVENT
+END:VCALENDAR

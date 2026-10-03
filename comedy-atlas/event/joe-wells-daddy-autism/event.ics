@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-wells-daddy-autism@comedyatlas.app
+DTSTAMP:20261008T183000Z
+DTSTART:20261008T183000Z
+DTEND:20261008T203000Z
+SUMMARY:Joe Wells: Daddy Autism
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-wells
+ -daddy-autism/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-wells-daddy-autism/
+END:VEVENT
+END:VCALENDAR

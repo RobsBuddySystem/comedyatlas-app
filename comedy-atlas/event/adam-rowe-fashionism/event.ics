@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-rowe-fashionism@comedyatlas.app
+DTSTAMP:20261009T183000Z
+DTSTART:20261009T183000Z
+DTEND:20261009T203000Z
+SUMMARY:Adam Rowe - Fashionism
+LOCATION:Bristol
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-rowe
+ -fashionism/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-rowe-fashionism/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:retour-de-flamme@comedyatlas.app
+DTSTAMP:20261012T173000Z
+DTSTART:20261012T173000Z
+DTEND:20261012T193000Z
+SUMMARY:Retour de flamme
+LOCATION:La Divine Comédie - Salle 2\, 2 rue Saulnier\, Paris
+DESCRIPTION:Une Comédie d'humour noir\, T7thriller\, suspens... de Jean Ma
+ rtiny et Bruno Le Millin.\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/retour-de-flamme/
+URL:https://comedyatlas.app/comedy-atlas/event/retour-de-flamme/
+END:VEVENT
+END:VCALENDAR

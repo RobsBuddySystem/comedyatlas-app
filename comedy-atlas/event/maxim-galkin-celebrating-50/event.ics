@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maxim-galkin-celebrating-50@comedyatlas.app
+DTSTAMP:20270131T030000Z
+DTSTART:20270131T030000Z
+DTEND:20270131T050000Z
+SUMMARY:MAXIM GALKIN: CELEBRATING 50
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maxim-gal
+ kin-celebrating-50/
+URL:https://comedyatlas.app/comedy-atlas/event/maxim-galkin-celebrating-50/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:darryl-vega-live@comedyatlas.app
+DTSTAMP:20261031T230000Z
+DTSTART:20261031T230000Z
+DTEND:20261101T010000Z
+SUMMARY:Darryl Vega LIVE
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/darryl-ve
+ ga-live/
+URL:https://comedyatlas.app/comedy-atlas/event/darryl-vega-live/
+END:VEVENT
+END:VCALENDAR

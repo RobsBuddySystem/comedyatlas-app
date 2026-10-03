@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-of-comedy-with-willie-barcena@comedyatlas.app
+DTSTAMP:20270110T033000Z
+DTSTART:20270110T033000Z
+DTEND:20270110T053000Z
+SUMMARY:An Evening Of Comedy with Willie Barcena
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-of-comedy-with-willie-barcena/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-of-comedy-with-wi
+ llie-barcena/
+END:VEVENT
+END:VCALENDAR

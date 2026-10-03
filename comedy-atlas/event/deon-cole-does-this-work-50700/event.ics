@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deon-cole-does-this-work-50700@comedyatlas.app
+DTSTAMP:20261111T053000Z
+DTSTART:20261111T053000Z
+DTEND:20261111T073000Z
+SUMMARY:Deon Cole: Does This Work?
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deon-cole
+ -does-this-work-50700/
+URL:https://comedyatlas.app/comedy-atlas/event/deon-cole-does-this-work-507
+ 00/
+END:VEVENT
+END:VCALENDAR

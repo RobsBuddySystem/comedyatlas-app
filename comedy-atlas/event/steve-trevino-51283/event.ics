@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-trevino-51283@comedyatlas.app
+DTSTAMP:20261121T030000Z
+DTSTART:20261121T030000Z
+DTEND:20261121T050000Z
+SUMMARY:Steve Treviño
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-tre
+ vino-51283/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-trevino-51283/
+END:VEVENT
+END:VCALENDAR

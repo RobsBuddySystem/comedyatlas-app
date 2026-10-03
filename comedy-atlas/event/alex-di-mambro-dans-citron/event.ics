@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-di-mambro-dans-citron@comedyatlas.app
+DTSTAMP:20261104T193000Z
+DTSTART:20261104T193000Z
+DTEND:20261104T213000Z
+SUMMARY:Alex Di Mambro dans Citron
+LOCATION:Saint Etienne
+DESCRIPTION:Alex Di Mambro est fasciné par l'absurdité du monde dans lequ
+ el nous vivons.\nMore info: https://comedyatlas.app/comedy-atlas/event/alex
+ -di-mambro-dans-citron/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-di-mambro-dans-citron/
+END:VEVENT
+END:VCALENDAR

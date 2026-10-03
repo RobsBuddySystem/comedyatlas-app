@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-sarah-sherman-and-patti-harrison@comedyatla
+ s.app
+DTSTAMP:20261109T000000Z
+DTSTART:20261109T000000Z
+DTEND:20261109T020000Z
+SUMMARY:NY Comedy Festival Presents Sarah Sherman and Patti Harrison
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-sarah-sherman-and-patti-harrison/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ sarah-sherman-and-patti-harrison/
+END:VEVENT
+END:VCALENDAR

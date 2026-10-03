@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-koechner-50600@comedyatlas.app
+DTSTAMP:20261108T220000Z
+DTSTART:20261108T220000Z
+DTEND:20261109T000000Z
+SUMMARY:David Koechner
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-koe
+ chner-50600/
+URL:https://comedyatlas.app/comedy-atlas/event/david-koechner-50600/
+END:VEVENT
+END:VCALENDAR

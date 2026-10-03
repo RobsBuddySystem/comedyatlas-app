@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:geoffrey-asmus-sold-out@comedyatlas.app
+DTSTAMP:20261107T030000Z
+DTSTART:20261107T030000Z
+DTEND:20261107T050000Z
+SUMMARY:Geoffrey Asmus - SOLD OUT
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/geoffrey-
+ asmus-sold-out/
+URL:https://comedyatlas.app/comedy-atlas/event/geoffrey-asmus-sold-out/
+END:VEVENT
+END:VCALENDAR

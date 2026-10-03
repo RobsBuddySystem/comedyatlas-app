@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-amer-52354@comedyatlas.app
+DTSTAMP:20261213T043000Z
+DTSTART:20261213T043000Z
+DTEND:20261213T063000Z
+SUMMARY:Mo Amer
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-amer-5
+ 2354/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-amer-52354/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-50535@comedyatlas.app
+DTSTAMP:20261108T024500Z
+DTSTART:20261108T024500Z
+DTEND:20261108T044500Z
+SUMMARY:Tim Dillon
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-50535/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-50535/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:battle-du-rire-avec-tony-atlaoui@comedyatlas.app
+DTSTAMP:20261004T173000Z
+DTSTART:20261004T173000Z
+DTEND:20261004T193000Z
+SUMMARY:Battle du rire avec Tony Atlaoui
+LOCATION:Grenoble
+DESCRIPTION:Le principe est simple : les humoristes font leur sketch et vou
+ s votez pour votre préféré(e).\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/battle-du-rire-avec-tony-atlaoui/
+URL:https://comedyatlas.app/comedy-atlas/event/battle-du-rire-avec-tony-atl
+ aoui/
+END:VEVENT
+END:VCALENDAR

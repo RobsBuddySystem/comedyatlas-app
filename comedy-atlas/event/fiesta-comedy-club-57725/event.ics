@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fiesta-comedy-club-57725@comedyatlas.app
+DTSTAMP:20261031T190000Z
+DTSTART:20261031T190000Z
+DTEND:20261031T210000Z
+SUMMARY:Fiesta Comedy Club
+LOCATION:Bordeaux
+DESCRIPTION:Le Comedy Club du samedi soir à Bordeaux !\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/fiesta-comedy-club-57725/
+URL:https://comedyatlas.app/comedy-atlas/event/fiesta-comedy-club-57725/
+END:VEVENT
+END:VCALENDAR

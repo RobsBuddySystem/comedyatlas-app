@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-scala-comedy-club@comedyatlas.app
+DTSTAMP:20261008T193000Z
+DTSTART:20261008T193000Z
+DTEND:20261008T213000Z
+SUMMARY:Le Scala Comedy Club
+LOCATION:La Piccola Scala\, 13 Boulevard de Strasbourg\, Paris
+DESCRIPTION:Les grandes voix comiques commencent ici\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/le-scala-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/le-scala-comedy-club/
+END:VEVENT
+END:VCALENDAR

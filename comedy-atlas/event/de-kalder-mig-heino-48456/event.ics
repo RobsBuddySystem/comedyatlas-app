@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:de-kalder-mig-heino-48456@comedyatlas.app
+DTSTAMP:20280412T183000Z
+DTSTART:20280412T183000Z
+DTEND:20280412T203000Z
+SUMMARY:DE KALDER MIG HEINO
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/de-kalder
+ -mig-heino-48456/
+URL:https://comedyatlas.app/comedy-atlas/event/de-kalder-mig-heino-48456/
+END:VEVENT
+END:VCALENDAR

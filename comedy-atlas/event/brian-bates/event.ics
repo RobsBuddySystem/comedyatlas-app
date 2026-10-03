@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-bates@comedyatlas.app
+DTSTAMP:20270115T013000Z
+DTSTART:20270115T013000Z
+DTEND:20270115T033000Z
+SUMMARY:Brian Bates
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-bat
+ es/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-bates/
+END:VEVENT
+END:VCALENDAR

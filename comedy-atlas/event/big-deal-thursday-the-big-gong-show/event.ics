@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-deal-thursday-the-big-gong-show@comedyatlas.app
+DTSTAMP:20261008T180000Z
+DTSTART:20261008T180000Z
+DTEND:20261008T200000Z
+SUMMARY:Big Deal Thursday - The Big Gong Show
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-deal-
+ thursday-the-big-gong-show/
+URL:https://comedyatlas.app/comedy-atlas/event/big-deal-thursday-the-big-go
+ ng-show/
+END:VEVENT
+END:VCALENDAR

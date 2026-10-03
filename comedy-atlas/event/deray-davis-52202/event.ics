@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deray-davis-52202@comedyatlas.app
+DTSTAMP:20261212T000000Z
+DTSTART:20261212T000000Z
+DTEND:20261212T020000Z
+SUMMARY:DeRay Davis
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deray-dav
+ is-52202/
+URL:https://comedyatlas.app/comedy-atlas/event/deray-davis-52202/
+END:VEVENT
+END:VCALENDAR

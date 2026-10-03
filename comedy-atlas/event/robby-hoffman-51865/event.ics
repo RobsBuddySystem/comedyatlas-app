@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-51865@comedyatlas.app
+DTSTAMP:20261205T010000Z
+DTSTART:20261205T010000Z
+DTEND:20261205T030000Z
+SUMMARY:Robby Hoffman
+LOCATION:Kansas City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-51865/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-51865/
+END:VEVENT
+END:VCALENDAR

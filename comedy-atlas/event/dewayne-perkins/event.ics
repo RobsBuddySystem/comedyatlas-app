@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dewayne-perkins@comedyatlas.app
+DTSTAMP:20261110T003000Z
+DTSTART:20261110T003000Z
+DTEND:20261110T023000Z
+SUMMARY:Dewayne Perkins
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dewayne-p
+ erkins/
+URL:https://comedyatlas.app/comedy-atlas/event/dewayne-perkins/
+END:VEVENT
+END:VCALENDAR

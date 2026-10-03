@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-players-sunday-10th-january@comedyatlas.app
+DTSTAMP:20270110T193000Z
+DTSTART:20270110T193000Z
+DTEND:20270110T213000Z
+SUMMARY:The Comedy Store Players - Sunday 10th January
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-players-sunday-10th-january/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-players-sun
+ day-10th-january/
+END:VEVENT
+END:VCALENDAR

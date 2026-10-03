@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luca-ravenna@comedyatlas.app
+DTSTAMP:20261123T190000Z
+DTSTART:20261123T190000Z
+DTEND:20261123T210000Z
+SUMMARY:Luca Ravenna
+LOCATION:Volkshaus Zürich\, 60 Stauffacherstrasse\, Zurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luca-rave
+ nna/
+URL:https://comedyatlas.app/comedy-atlas/event/luca-ravenna/
+END:VEVENT
+END:VCALENDAR

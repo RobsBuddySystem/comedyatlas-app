@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:booder-ah-lecole@comedyatlas.app
+DTSTAMP:20280326T143000Z
+DTSTART:20280326T143000Z
+DTEND:20280326T163000Z
+SUMMARY:Booder\, Ah…l’école !
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/booder-ah
+ -lecole/
+URL:https://comedyatlas.app/comedy-atlas/event/booder-ah-lecole/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-connell-prairie-dog@comedyatlas.app
+DTSTAMP:20261210T080000Z
+DTSTART:20261210T080000Z
+DTEND:20261210T100000Z
+SUMMARY:Daniel Connell: Prairie Dog
+LOCATION:Hobart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daniel-co
+ nnell-prairie-dog/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-connell-prairie-dog/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-magic-of-eric-eaton@comedyatlas.app
+DTSTAMP:20261123T000000Z
+DTSTART:20261123T000000Z
+DTEND:20261123T020000Z
+SUMMARY:The Magic of Eric Eaton
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-magic
+ -of-eric-eaton/
+URL:https://comedyatlas.app/comedy-atlas/event/the-magic-of-eric-eaton/
+END:VEVENT
+END:VCALENDAR

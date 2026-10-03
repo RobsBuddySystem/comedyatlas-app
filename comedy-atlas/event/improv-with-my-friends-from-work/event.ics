@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:improv-with-my-friends-from-work@comedyatlas.app
+DTSTAMP:20261120T003000Z
+DTSTART:20261120T003000Z
+DTEND:20261120T023000Z
+SUMMARY:Improv With My Friends From Work
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/improv-wi
+ th-my-friends-from-work/
+URL:https://comedyatlas.app/comedy-atlas/event/improv-with-my-friends-from-
+ work/
+END:VEVENT
+END:VCALENDAR

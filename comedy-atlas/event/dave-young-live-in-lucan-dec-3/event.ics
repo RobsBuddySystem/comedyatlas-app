@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-young-live-in-lucan-dec-3@comedyatlas.app
+DTSTAMP:20261203T200000Z
+DTSTART:20261203T200000Z
+DTEND:20261203T220000Z
+SUMMARY:Dave Young - Live in Lucan - Dec 3
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-youn
+ g-live-in-lucan-dec-3/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-young-live-in-lucan-dec
+ -3/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-48902@comedyatlas.app
+DTSTAMP:20261010T220000Z
+DTSTART:20261010T220000Z
+DTEND:20261011T000000Z
+SUMMARY:Robby Hoffman
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-48902/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-48902/
+END:VEVENT
+END:VCALENDAR

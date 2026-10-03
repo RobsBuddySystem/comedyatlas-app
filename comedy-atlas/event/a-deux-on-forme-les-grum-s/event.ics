@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-deux-on-forme-les-grum-s@comedyatlas.app
+DTSTAMP:20261023T190000Z
+DTSTART:20261023T190000Z
+DTEND:20261023T210000Z
+SUMMARY:À deux on forme les Grum's
+LOCATION:Lyon
+DESCRIPTION:Deux jumeaux identiquement différents. L'un est prof d'éducat
+ ion sportive\, l'autre est infirmier.\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/a-deux-on-forme-les-grum-s/
+URL:https://comedyatlas.app/comedy-atlas/event/a-deux-on-forme-les-grum-s/
+END:VEVENT
+END:VCALENDAR

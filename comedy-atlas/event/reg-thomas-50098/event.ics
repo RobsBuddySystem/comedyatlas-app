@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:reg-thomas-50098@comedyatlas.app
+DTSTAMP:20261031T014500Z
+DTSTART:20261031T014500Z
+DTEND:20261031T034500Z
+SUMMARY:Reg Thomas
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/reg-thoma
+ s-50098/
+URL:https://comedyatlas.app/comedy-atlas/event/reg-thomas-50098/
+END:VEVENT
+END:VCALENDAR

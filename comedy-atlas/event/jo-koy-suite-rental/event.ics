@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jo-koy-suite-rental@comedyatlas.app
+DTSTAMP:20261025T000000Z
+DTSTART:20261025T000000Z
+DTEND:20261025T020000Z
+SUMMARY:Jo Koy - Suite Rental
+LOCATION:Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jo-koy-su
+ ite-rental/
+URL:https://comedyatlas.app/comedy-atlas/event/jo-koy-suite-rental/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:annecy-comedy-la-soiree-de-l-humour@comedyatlas.app
+DTSTAMP:20261031T193000Z
+DTSTART:20261031T193000Z
+DTEND:20261031T213000Z
+SUMMARY:Annecy Comedy : la soirée de l'humour
+LOCATION:Annecy
+DESCRIPTION:Annecy fait sa comédie et invite l'humour chez elle. 4 humoris
+ tes joueront leurs meilleurs sketches ou stand-up !\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/annecy-comedy-la-soiree-de-l-humour/
+URL:https://comedyatlas.app/comedy-atlas/event/annecy-comedy-la-soiree-de-l
+ -humour/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sami-landri-s-sami-party@comedyatlas.app
+DTSTAMP:20261126T000000Z
+DTSTART:20261126T000000Z
+DTEND:20261126T020000Z
+SUMMARY:Sami Landri's Sami Party
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sami-land
+ ri-s-sami-party/
+URL:https://comedyatlas.app/comedy-atlas/event/sami-landri-s-sami-party/
+END:VEVENT
+END:VCALENDAR

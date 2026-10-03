@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-45210@comedyatlas.app
+DTSTAMP:20270507T233000Z
+DTSTART:20270507T233000Z
+DTEND:20270508T013000Z
+SUMMARY:Maria Bamford
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-45210/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-45210/
+END:VEVENT
+END:VCALENDAR

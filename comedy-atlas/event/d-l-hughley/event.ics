@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d-l-hughley@comedyatlas.app
+DTSTAMP:20261024T000000Z
+DTSTART:20261024T000000Z
+DTEND:20261024T020000Z
+SUMMARY:D.L. Hughley
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/d-l-hughl
+ ey/
+URL:https://comedyatlas.app/comedy-atlas/event/d-l-hughley/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nurse-john@comedyatlas.app
+DTSTAMP:20261010T230000Z
+DTSTART:20261010T230000Z
+DTEND:20261011T010000Z
+SUMMARY:Nurse John
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nurse-joh
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/nurse-john/
+END:VEVENT
+END:VCALENDAR

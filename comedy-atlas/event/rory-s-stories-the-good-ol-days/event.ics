@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rory-s-stories-the-good-ol-days@comedyatlas.app
+DTSTAMP:20261010T190000Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:Rory's Stories - the Good Ol' Days
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rory-s-st
+ ories-the-good-ol-days/
+URL:https://comedyatlas.app/comedy-atlas/event/rory-s-stories-the-good-ol-d
+ ays/
+END:VEVENT
+END:VCALENDAR

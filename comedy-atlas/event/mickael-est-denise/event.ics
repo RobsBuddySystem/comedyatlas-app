@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mickael-est-denise@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Mickael est Denise
+LOCATION:Saint-Riquier
+DESCRIPTION:"Sa joie de vivre" comme il dit si souvent mais aussi par momen
+ t "sa plus grande gêne".\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/mickael-est-denise/
+URL:https://comedyatlas.app/comedy-atlas/event/mickael-est-denise/
+END:VEVENT
+END:VCALENDAR

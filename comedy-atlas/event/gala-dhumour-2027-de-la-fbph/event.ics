@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gala-dhumour-2027-de-la-fbph@comedyatlas.app
+DTSTAMP:20270215T190000Z
+DTSTART:20270215T190000Z
+DTEND:20270215T210000Z
+SUMMARY:Gala d’Humour 2027 de la FBPH
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gala-dhum
+ our-2027-de-la-fbph/
+URL:https://comedyatlas.app/comedy-atlas/event/gala-dhumour-2027-de-la-fbph
+ /
+END:VEVENT
+END:VCALENDAR

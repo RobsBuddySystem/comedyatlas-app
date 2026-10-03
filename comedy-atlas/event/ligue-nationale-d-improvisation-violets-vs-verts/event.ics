@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ligue-nationale-d-improvisation-violets-vs-verts@comedyatlas.app
+DTSTAMP:20270419T230000Z
+DTSTART:20270419T230000Z
+DTEND:20270420T010000Z
+SUMMARY:Ligue Nationale d'Improvisation - Violets vs Verts
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ligue-nat
+ ionale-d-improvisation-violets-vs-verts/
+URL:https://comedyatlas.app/comedy-atlas/event/ligue-nationale-d-improvisat
+ ion-violets-vs-verts/
+END:VEVENT
+END:VCALENDAR

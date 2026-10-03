@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-bochum@comedyatlas.app
+DTSTAMP:20261006T180000Z
+DTSTART:20261006T180000Z
+DTEND:20261006T200000Z
+SUMMARY:Chaos Comedy Club | Bochum
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-bochum/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-bochum/
+END:VEVENT
+END:VCALENDAR

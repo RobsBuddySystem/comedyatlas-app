@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:your-next-comic-a-new-faces-showcase-52789@comedyatlas.app
+DTSTAMP:20261228T000000Z
+DTSTART:20261228T000000Z
+DTEND:20261228T020000Z
+SUMMARY:Your Next Comic - A New Faces Showcase
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/your-next
+ -comic-a-new-faces-showcase-52789/
+URL:https://comedyatlas.app/comedy-atlas/event/your-next-comic-a-new-faces-
+ showcase-52789/
+END:VEVENT
+END:VCALENDAR

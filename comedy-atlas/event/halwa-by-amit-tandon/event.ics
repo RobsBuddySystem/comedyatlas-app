@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halwa-by-amit-tandon@comedyatlas.app
+DTSTAMP:20261011T220000Z
+DTSTART:20261011T220000Z
+DTEND:20261012T000000Z
+SUMMARY:Halwa by Amit Tandon
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/halwa-by-
+ amit-tandon/
+URL:https://comedyatlas.app/comedy-atlas/event/halwa-by-amit-tandon/
+END:VEVENT
+END:VCALENDAR

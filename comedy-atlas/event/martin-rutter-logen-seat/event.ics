@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-rutter-logen-seat@comedyatlas.app
+DTSTAMP:20270213T190000Z
+DTSTART:20270213T190000Z
+DTEND:20270213T210000Z
+SUMMARY:Martin Rütter | Logen-Seat
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-ru
+ tter-logen-seat/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-rutter-logen-seat/
+END:VEVENT
+END:VCALENDAR

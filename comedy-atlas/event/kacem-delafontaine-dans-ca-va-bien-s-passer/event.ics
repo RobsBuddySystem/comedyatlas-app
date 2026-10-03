@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kacem-delafontaine-dans-ca-va-bien-s-passer@comedyatlas.app
+DTSTAMP:20261022T184500Z
+DTSTART:20261022T184500Z
+DTEND:20261022T204500Z
+SUMMARY:Kacem Delafontaine dans Ça va bien s'passer
+LOCATION:Lyon
+DESCRIPTION:Kacem Delafontaine en spectacle\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/kacem-delafontaine-dans-ca-va-bien-s-passer/
+URL:https://comedyatlas.app/comedy-atlas/event/kacem-delafontaine-dans-ca-v
+ a-bien-s-passer/
+END:VEVENT
+END:VCALENDAR

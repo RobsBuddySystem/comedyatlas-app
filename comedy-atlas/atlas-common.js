@@ -175,12 +175,12 @@
     return LANGUAGE_LABELS[code] || (String(code).charAt(0).toUpperCase() + String(code).slice(1));
   }
 
-  // lang: "" or "en" (the default) -> English only; "all" -> every language,
-  // including unconfirmed (null); any other value -> exact code match
-  // (unconfirmed rows never match a specific code — only "all" surfaces them).
+  // 2026-10-03 (Robert): the Atlas lists EVERY show worldwide, so the DEFAULT is
+  // all languages. lang: "" or "all" (the default) -> every language, including
+  // unconfirmed (null); "en" -> English only; any other value -> exact code match.
   function matchesLanguage(ev, lang) {
-    if (!lang || lang === "en") return ev.language === "en";
-    if (lang === "all") return true;
+    if (!lang || lang === "all") return true;
+    if (lang === "en") return ev.language === "en";
     return ev.language === lang;
   }
 

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:impro-shuffle-show@comedyatlas.app
+DTSTAMP:20261029T190000Z
+DTSTART:20261029T190000Z
+DTEND:20261029T210000Z
+SUMMARY:Impro Shuffle show
+LOCATION:Nice
+DESCRIPTION:L'Impro Shuffle Show est le nouveau rendez-vous mensuel du Thé
+ âtre de l'Eau Vive consacré à l'improvisation.\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/impro-shuffle-show/
+URL:https://comedyatlas.app/comedy-atlas/event/impro-shuffle-show/
+END:VEVENT
+END:VCALENDAR

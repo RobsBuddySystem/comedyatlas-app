@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vladimir-caamano@comedyatlas.app
+DTSTAMP:20261106T013000Z
+DTSTART:20261106T013000Z
+DTEND:20261106T033000Z
+SUMMARY:Vladimir Caamano
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vladimir-
+ caamano/
+URL:https://comedyatlas.app/comedy-atlas/event/vladimir-caamano/
+END:VEVENT
+END:VCALENDAR

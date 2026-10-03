@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kenny-vago-live@comedyatlas.app
+DTSTAMP:20261006T173000Z
+DTSTART:20261006T173000Z
+DTEND:20261006T193000Z
+SUMMARY:Kenny Vago - Live
+LOCATION:Lyon
+DESCRIPTION:Kenny Vago en spectacle !\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/kenny-vago-live/
+URL:https://comedyatlas.app/comedy-atlas/event/kenny-vago-live/
+END:VEVENT
+END:VCALENDAR

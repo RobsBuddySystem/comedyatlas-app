@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:okan-cabalar@comedyatlas.app
+DTSTAMP:20261004T160000Z
+DTSTART:20261004T160000Z
+DTEND:20261004T180000Z
+SUMMARY:Okan Çabalar
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/okan-caba
+ lar/
+URL:https://comedyatlas.app/comedy-atlas/event/okan-cabalar/
+END:VEVENT
+END:VCALENDAR

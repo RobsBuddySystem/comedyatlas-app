@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tracy-martina@comedyatlas.app
+DTSTAMP:20261017T230000Z
+DTSTART:20261017T230000Z
+DTEND:20261018T010000Z
+SUMMARY:Tracy & Martina
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tracy-mar
+ tina/
+URL:https://comedyatlas.app/comedy-atlas/event/tracy-martina/
+END:VEVENT
+END:VCALENDAR

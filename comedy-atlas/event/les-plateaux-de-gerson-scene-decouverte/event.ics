@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-plateaux-de-gerson-scene-decouverte@comedyatlas.app
+DTSTAMP:20261026T190000Z
+DTSTART:20261026T190000Z
+DTEND:20261026T210000Z
+SUMMARY:Les Plateaux de Gerson : Scène Découverte
+LOCATION:Lyon
+DESCRIPTION:Votre grand rendez-vous Découverte !\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/les-plateaux-de-gerson-scene-decouverte/
+URL:https://comedyatlas.app/comedy-atlas/event/les-plateaux-de-gerson-scene
+ -decouverte/
+END:VEVENT
+END:VCALENDAR

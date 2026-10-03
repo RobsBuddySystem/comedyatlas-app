@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:er-gou-a-dog-named-love@comedyatlas.app
+DTSTAMP:20261113T083000Z
+DTSTART:20261113T083000Z
+DTEND:20261113T103000Z
+SUMMARY:Er Gou\, "A Dog Named Love"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/er-gou-a-
+ dog-named-love/
+URL:https://comedyatlas.app/comedy-atlas/event/er-gou-a-dog-named-love/
+END:VEVENT
+END:VCALENDAR

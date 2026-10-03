@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-factory@comedyatlas.app
+DTSTAMP:20261019T180000Z
+DTSTART:20261019T180000Z
+DTEND:20261019T200000Z
+SUMMARY:Stand-up Factory
+LOCATION:Paris
+DESCRIPTION:L'Usine des vannes à la chaines\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/stand-up-factory/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-factory/
+END:VEVENT
+END:VCALENDAR

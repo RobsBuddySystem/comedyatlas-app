@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-cleethorpes@comedyatlas.app
+DTSTAMP:20261113T200000Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:The Comedy Store - Cleethorpes
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-cleethorpes/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-cleethorpes
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-allstars-52716@comedyatlas.app
+DTSTAMP:20261224T033000Z
+DTSTART:20261224T033000Z
+DTEND:20261224T053000Z
+SUMMARY:Comedy Allstars
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-al
+ lstars-52716/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-allstars-52716/
+END:VEVENT
+END:VCALENDAR

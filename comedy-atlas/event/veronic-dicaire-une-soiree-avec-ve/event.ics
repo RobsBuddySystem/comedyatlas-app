@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:veronic-dicaire-une-soiree-avec-ve@comedyatlas.app
+DTSTAMP:20270403T000000Z
+DTSTART:20270403T000000Z
+DTEND:20270403T020000Z
+SUMMARY:Véronic DiCaire - Une soirée avec Vé
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/veronic-d
+ icaire-une-soiree-avec-ve/
+URL:https://comedyatlas.app/comedy-atlas/event/veronic-dicaire-une-soiree-a
+ vec-ve/
+END:VEVENT
+END:VCALENDAR

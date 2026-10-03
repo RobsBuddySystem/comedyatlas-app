@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-gaffigan-everything-is-wonderful@comedyatlas.app
+DTSTAMP:20261205T010000Z
+DTSTART:20261205T010000Z
+DTEND:20261205T030000Z
+SUMMARY:Jim Gaffigan: Everything is Wonderful!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-gaffi
+ gan-everything-is-wonderful/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-gaffigan-everything-is-w
+ onderful/
+END:VEVENT
+END:VCALENDAR

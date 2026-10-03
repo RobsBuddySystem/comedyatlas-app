@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-smith-53077@comedyatlas.app
+DTSTAMP:20270115T003000Z
+DTSTART:20270115T003000Z
+DTEND:20270115T023000Z
+SUMMARY:Dave Smith
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-smit
+ h-53077/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-smith-53077/
+END:VEVENT
+END:VCALENDAR

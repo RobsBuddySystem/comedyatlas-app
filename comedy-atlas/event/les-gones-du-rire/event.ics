@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-gones-du-rire@comedyatlas.app
+DTSTAMP:20261106T193000Z
+DTSTART:20261106T193000Z
+DTEND:20261106T213000Z
+SUMMARY:Les gones du rire
+LOCATION:Lyon
+DESCRIPTION:Découvrez les talents du rire d'aujourd'hui et de demain.\nCha
+ cun avec son univers\, mais avec un seul rêve\, vous faire rire.\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/les-gones-du-rire/
+URL:https://comedyatlas.app/comedy-atlas/event/les-gones-du-rire/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jordan-klepper-51234@comedyatlas.app
+DTSTAMP:20261121T003000Z
+DTSTART:20261121T003000Z
+DTEND:20261121T023000Z
+SUMMARY:Jordan Klepper
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jordan-kl
+ epper-51234/
+URL:https://comedyatlas.app/comedy-atlas/event/jordan-klepper-51234/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-antoniou-47191@comedyatlas.app
+DTSTAMP:20270212T183000Z
+DTSTART:20270212T183000Z
+DTEND:20270212T203000Z
+SUMMARY:Peter Antoniou
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-ant
+ oniou-47191/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-antoniou-47191/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ola-dada@comedyatlas.app
+DTSTAMP:20261210T013000Z
+DTSTART:20261210T013000Z
+DTEND:20261210T033000Z
+SUMMARY:Ola Dada
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ola-dada/
+URL:https://comedyatlas.app/comedy-atlas/event/ola-dada/
+END:VEVENT
+END:VCALENDAR

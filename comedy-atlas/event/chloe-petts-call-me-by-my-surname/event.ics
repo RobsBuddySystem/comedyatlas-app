@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chloe-petts-call-me-by-my-surname@comedyatlas.app
+DTSTAMP:20270513T193000Z
+DTSTART:20270513T193000Z
+DTEND:20270513T213000Z
+SUMMARY:Chloe Petts - Call Me By My Surname
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chloe-pet
+ ts-call-me-by-my-surname/
+URL:https://comedyatlas.app/comedy-atlas/event/chloe-petts-call-me-by-my-su
+ rname/
+END:VEVENT
+END:VCALENDAR

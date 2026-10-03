@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paramount-theatre-club-seating-nikki-glaser@comedyatlas.app
+DTSTAMP:20261019T010000Z
+DTSTART:20261019T010000Z
+DTEND:20261019T030000Z
+SUMMARY:Paramount Theatre Club Seating - Nikki Glaser
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paramount
+ -theatre-club-seating-nikki-glaser/
+URL:https://comedyatlas.app/comedy-atlas/event/paramount-theatre-club-seati
+ ng-nikki-glaser/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aaron-chen-53623@comedyatlas.app
+DTSTAMP:20270221T020000Z
+DTSTART:20270221T020000Z
+DTEND:20270221T040000Z
+SUMMARY:Aaron Chen
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aaron-che
+ n-53623/
+URL:https://comedyatlas.app/comedy-atlas/event/aaron-chen-53623/
+END:VEVENT
+END:VCALENDAR

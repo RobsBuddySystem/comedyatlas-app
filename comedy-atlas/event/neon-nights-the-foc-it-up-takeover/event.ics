@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:neon-nights-the-foc-it-up-takeover@comedyatlas.app
+DTSTAMP:20261204T200000Z
+DTSTART:20261204T200000Z
+DTEND:20261204T220000Z
+SUMMARY:Neon Nights: the Foc It Up! Takeover
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/neon-nigh
+ ts-the-foc-it-up-takeover/
+URL:https://comedyatlas.app/comedy-atlas/event/neon-nights-the-foc-it-up-ta
+ keover/
+END:VEVENT
+END:VCALENDAR

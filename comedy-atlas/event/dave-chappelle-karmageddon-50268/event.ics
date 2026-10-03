@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-chappelle-karmageddon-50268@comedyatlas.app
+DTSTAMP:20261105T003000Z
+DTSTART:20261105T003000Z
+DTEND:20261105T023000Z
+SUMMARY:Dave Chappelle Karmageddon
+LOCATION:Atlanta
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-chap
+ pelle-karmageddon-50268/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-chappelle-karmageddon-5
+ 0268/
+END:VEVENT
+END:VCALENDAR

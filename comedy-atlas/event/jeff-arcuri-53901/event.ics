@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-arcuri-53901@comedyatlas.app
+DTSTAMP:20270320T230000Z
+DTSTART:20270320T230000Z
+DTEND:20270321T010000Z
+SUMMARY:Jeff Arcuri
+LOCATION:Dallas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-arcu
+ ri-53901/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-arcuri-53901/
+END:VEVENT
+END:VCALENDAR

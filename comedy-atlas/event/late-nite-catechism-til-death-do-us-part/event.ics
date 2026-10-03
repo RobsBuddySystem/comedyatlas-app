@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-nite-catechism-til-death-do-us-part@comedyatlas.app
+DTSTAMP:20261015T233000Z
+DTSTART:20261015T233000Z
+DTEND:20261016T013000Z
+SUMMARY:Late Nite Catechism: Til Death Do Us Part
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/late-nite
+ -catechism-til-death-do-us-part/
+URL:https://comedyatlas.app/comedy-atlas/event/late-nite-catechism-til-deat
+ h-do-us-part/
+END:VEVENT
+END:VCALENDAR

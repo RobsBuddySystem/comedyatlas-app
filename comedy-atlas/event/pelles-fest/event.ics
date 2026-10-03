@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pelles-fest@comedyatlas.app
+DTSTAMP:20261023T173000Z
+DTSTART:20261023T173000Z
+DTEND:20261023T193000Z
+SUMMARY:PELLES FEST
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pelles-fe
+ st/
+URL:https://comedyatlas.app/comedy-atlas/event/pelles-fest/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-koechner-51884@comedyatlas.app
+DTSTAMP:20261205T023000Z
+DTSTART:20261205T023000Z
+DTEND:20261205T043000Z
+SUMMARY:David Koechner
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-koe
+ chner-51884/
+URL:https://comedyatlas.app/comedy-atlas/event/david-koechner-51884/
+END:VEVENT
+END:VCALENDAR

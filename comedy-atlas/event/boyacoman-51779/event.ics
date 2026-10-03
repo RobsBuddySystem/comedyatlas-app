@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boyacoman-51779@comedyatlas.app
+DTSTAMP:20261203T013000Z
+DTSTART:20261203T013000Z
+DTEND:20261203T033000Z
+SUMMARY:Boyacoman
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/boyacoman
+ -51779/
+URL:https://comedyatlas.app/comedy-atlas/event/boyacoman-51779/
+END:VEVENT
+END:VCALENDAR

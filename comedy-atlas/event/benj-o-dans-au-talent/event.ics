@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:benj-o-dans-au-talent@comedyatlas.app
+DTSTAMP:20261016T191500Z
+DTSTART:20261016T191500Z
+DTEND:20261016T211500Z
+SUMMARY:Benj'o dans Au talent
+LOCATION:Toulouse
+DESCRIPTION:Au talent... On l'a tous dit avant un exam où l'on n'a rien r
+ évisé : "Allez\, j'y vais au talent !" Est-ce que ça fonctionne aussi su
+ r scène ?\nMore info: https://comedyatlas.app/comedy-atlas/event/benj-o-da
+ ns-au-talent/
+URL:https://comedyatlas.app/comedy-atlas/event/benj-o-dans-au-talent/
+END:VEVENT
+END:VCALENDAR

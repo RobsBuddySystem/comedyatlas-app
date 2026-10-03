@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-releve-comedy-club-dirty-comedy@comedyatlas.app
+DTSTAMP:20261020T184500Z
+DTSTART:20261020T184500Z
+DTEND:20261020T204500Z
+SUMMARY:La Relève Comedy Club : Dirty Comedy
+LOCATION:Lyon
+DESCRIPTION:La Relève Comedy Club – L'adresse incontournable du stand-up
+  à Lyon !\nMore info: https://comedyatlas.app/comedy-atlas/event/la-releve
+ -comedy-club-dirty-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/la-releve-comedy-club-dirty-
+ comedy/
+END:VEVENT
+END:VCALENDAR

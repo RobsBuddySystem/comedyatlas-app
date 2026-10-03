@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dom-babin-45079@comedyatlas.app
+DTSTAMP:20270108T010000Z
+DTSTART:20270108T010000Z
+DTEND:20270108T030000Z
+SUMMARY:Dom Babin
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dom-babin
+ -45079/
+URL:https://comedyatlas.app/comedy-atlas/event/dom-babin-45079/
+END:VEVENT
+END:VCALENDAR

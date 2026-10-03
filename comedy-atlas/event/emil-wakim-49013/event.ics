@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emil-wakim-49013@comedyatlas.app
+DTSTAMP:20261011T041500Z
+DTSTART:20261011T041500Z
+DTEND:20261011T061500Z
+SUMMARY:Emil Wakim
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emil-waki
+ m-49013/
+URL:https://comedyatlas.app/comedy-atlas/event/emil-wakim-49013/
+END:VEVENT
+END:VCALENDAR

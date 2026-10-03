@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-53560@comedyatlas.app
+DTSTAMP:20270214T053000Z
+DTSTART:20270214T053000Z
+DTEND:20270214T073000Z
+SUMMARY:Ms. Pat
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-53
+ 560/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-53560/
+END:VEVENT
+END:VCALENDAR

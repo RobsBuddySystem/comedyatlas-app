@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-best-in-stand-up-thursday-19th-november@comedyatlas.app
+DTSTAMP:20261119T193000Z
+DTSTART:20261119T193000Z
+DTEND:20261119T213000Z
+SUMMARY:The Best in Stand Up - Thursday 19th November
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-best-
+ in-stand-up-thursday-19th-november/
+URL:https://comedyatlas.app/comedy-atlas/event/the-best-in-stand-up-thursda
+ y-19th-november/
+END:VEVENT
+END:VCALENDAR

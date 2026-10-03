@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-kinane-51519@comedyatlas.app
+DTSTAMP:20261125T020000Z
+DTSTART:20261125T020000Z
+DTEND:20261125T040000Z
+SUMMARY:Kyle Kinane
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-kina
+ ne-51519/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-kinane-51519/
+END:VEVENT
+END:VCALENDAR

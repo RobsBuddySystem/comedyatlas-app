@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-caponera-49274@comedyatlas.app
+DTSTAMP:20261017T020000Z
+DTSTART:20261017T020000Z
+DTEND:20261017T040000Z
+SUMMARY:John Caponera
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-capo
+ nera-49274/
+URL:https://comedyatlas.app/comedy-atlas/event/john-caponera-49274/
+END:VEVENT
+END:VCALENDAR

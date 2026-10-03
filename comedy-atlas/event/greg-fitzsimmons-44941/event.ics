@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-fitzsimmons-44941@comedyatlas.app
+DTSTAMP:20261028T013000Z
+DTSTART:20261028T013000Z
+DTEND:20261028T033000Z
+SUMMARY:Greg Fitzsimmons
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-fitz
+ simmons-44941/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-fitzsimmons-44941/
+END:VEVENT
+END:VCALENDAR

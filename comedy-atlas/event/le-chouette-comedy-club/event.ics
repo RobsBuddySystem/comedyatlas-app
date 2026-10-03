@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-chouette-comedy-club@comedyatlas.app
+DTSTAMP:20261031T190000Z
+DTSTART:20261031T190000Z
+DTEND:20261031T210000Z
+SUMMARY:Le Chouette Comedy Club
+LOCATION:Dijon
+DESCRIPTION:La soirée la plus drôle de ta semaine t'attend en plein centr
+ e-ville de Dijon !\nMore info: https://comedyatlas.app/comedy-atlas/event/l
+ e-chouette-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/le-chouette-comedy-club/
+END:VEVENT
+END:VCALENDAR

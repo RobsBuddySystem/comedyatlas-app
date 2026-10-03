@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-list-54157@comedyatlas.app
+DTSTAMP:20270430T023000Z
+DTSTART:20270430T023000Z
+DTEND:20270430T043000Z
+SUMMARY:Joe List
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-list-
+ 54157/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-list-54157/
+END:VEVENT
+END:VCALENDAR

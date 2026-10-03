@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cem-gelinoglu-hiperfrontalite-stand-up@comedyatlas.app
+DTSTAMP:20261012T170000Z
+DTSTART:20261012T170000Z
+DTEND:20261012T190000Z
+SUMMARY:Cem Gelinoğlu - Hiperfrontalite Stand-Up
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cem-gelin
+ oglu-hiperfrontalite-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/cem-gelinoglu-hiperfrontalit
+ e-stand-up/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-stone-is-looking-for-the-wow@comedyatlas.app
+DTSTAMP:20261123T200000Z
+DTSTART:20261123T200000Z
+DTEND:20261123T220000Z
+SUMMARY:Ian Stone is “Looking for the Wow”
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-stone
+ -is-looking-for-the-wow/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-stone-is-looking-for-the
+ -wow/
+END:VEVENT
+END:VCALENDAR

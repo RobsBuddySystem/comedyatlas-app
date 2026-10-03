@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dean@comedyatlas.app
+DTSTAMP:20261203T013000Z
+DTSTART:20261203T013000Z
+DTEND:20261203T033000Z
+SUMMARY:Jeff Dean
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-dean
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dean/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fridge-comedy-brunch-rouen@comedyatlas.app
+DTSTAMP:20261011T093000Z
+DTSTART:20261011T093000Z
+DTEND:20261011T113000Z
+SUMMARY:Fridge Comedy Brunch Rouen
+LOCATION:Rouen
+DESCRIPTION:Tout nouveau\, tout beau\, le Fridge Comedy Brunch arrive à Ro
+ uen !\nMore info: https://comedyatlas.app/comedy-atlas/event/fridge-comedy-
+ brunch-rouen/
+URL:https://comedyatlas.app/comedy-atlas/event/fridge-comedy-brunch-rouen/
+END:VEVENT
+END:VCALENDAR

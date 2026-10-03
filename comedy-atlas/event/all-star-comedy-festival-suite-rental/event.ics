@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:all-star-comedy-festival-suite-rental@comedyatlas.app
+DTSTAMP:20261017T230000Z
+DTSTART:20261017T230000Z
+DTEND:20261018T010000Z
+SUMMARY:All Star Comedy Festival - Suite Rental
+LOCATION:Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/all-star-
+ comedy-festival-suite-rental/
+URL:https://comedyatlas.app/comedy-atlas/event/all-star-comedy-festival-sui
+ te-rental/
+END:VEVENT
+END:VCALENDAR

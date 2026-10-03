@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman@comedyatlas.app
+DTSTAMP:20270218T190000Z
+DTSTART:20270218T190000Z
+DTEND:20270218T210000Z
+SUMMARY:Robby Hoffman
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman/
+END:VEVENT
+END:VCALENDAR

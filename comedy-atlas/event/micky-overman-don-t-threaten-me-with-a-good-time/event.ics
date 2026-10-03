@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:micky-overman-don-t-threaten-me-with-a-good-time@comedyatlas.app
+DTSTAMP:20271111T203000Z
+DTSTART:20271111T203000Z
+DTEND:20271111T223000Z
+SUMMARY:Micky Overman - Don't Threaten Me With A Good Time
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/micky-ove
+ rman-don-t-threaten-me-with-a-good-time/
+URL:https://comedyatlas.app/comedy-atlas/event/micky-overman-don-t-threaten
+ -me-with-a-good-time/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucas-richard@comedyatlas.app
+DTSTAMP:20261101T180000Z
+DTSTART:20261101T180000Z
+DTEND:20261101T200000Z
+SUMMARY:Lucas Richard
+LOCATION:Bordeaux
+DESCRIPTION:Drôle\, charismatique et sexy : voilà comment décrire la per
+ sonne qui est entrain de lire cette description...\nMore info: https://come
+ dyatlas.app/comedy-atlas/event/lucas-richard/
+URL:https://comedyatlas.app/comedy-atlas/event/lucas-richard/
+END:VEVENT
+END:VCALENDAR

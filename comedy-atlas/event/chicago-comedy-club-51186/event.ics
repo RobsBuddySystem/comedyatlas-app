@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chicago-comedy-club-51186@comedyatlas.app
+DTSTAMP:20261120T013000Z
+DTSTART:20261120T013000Z
+DTEND:20261120T033000Z
+SUMMARY:Chicago Comedy Club
+LOCATION:House of Blues Chicago\, 329 North Dearborn Street\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chicago-c
+ omedy-club-51186/
+URL:https://comedyatlas.app/comedy-atlas/event/chicago-comedy-club-51186/
+END:VEVENT
+END:VCALENDAR

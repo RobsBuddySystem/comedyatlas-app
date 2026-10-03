@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:show-cocktail@comedyatlas.app
+DTSTAMP:20261014T183000Z
+DTSTART:20261014T183000Z
+DTEND:20261014T203000Z
+SUMMARY:Show Cocktail
+LOCATION:Saint Jean de Védas
+DESCRIPTION:Une soirée de sketches\, un zeste d'invités\, un cocktail du 
+ mois offert\, beaucoup d'esprit Choco !\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/show-cocktail/
+URL:https://comedyatlas.app/comedy-atlas/event/show-cocktail/
+END:VEVENT
+END:VCALENDAR

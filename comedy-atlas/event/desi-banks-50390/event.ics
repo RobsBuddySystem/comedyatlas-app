@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:desi-banks-50390@comedyatlas.app
+DTSTAMP:20261107T013000Z
+DTSTART:20261107T013000Z
+DTEND:20261107T033000Z
+SUMMARY:Desi Banks
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/desi-bank
+ s-50390/
+URL:https://comedyatlas.app/comedy-atlas/event/desi-banks-50390/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fouad-reeves-dans-delicieuse-insolence@comedyatlas.app
+DTSTAMP:20261010T190000Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:Fouad Reeves dans Délicieuse insolence
+LOCATION:Arras
+DESCRIPTION:Et si on arrêtait de marcher sur des oeufs pour recommencer à
+  rire ?\nMore info: https://comedyatlas.app/comedy-atlas/event/fouad-reeves
+ -dans-delicieuse-insolence/
+URL:https://comedyatlas.app/comedy-atlas/event/fouad-reeves-dans-delicieuse
+ -insolence/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dana-gould@comedyatlas.app
+DTSTAMP:20261211T040000Z
+DTSTART:20261211T040000Z
+DTEND:20261211T060000Z
+SUMMARY:Dana Gould
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dana-goul
+ d/
+URL:https://comedyatlas.app/comedy-atlas/event/dana-gould/
+END:VEVENT
+END:VCALENDAR

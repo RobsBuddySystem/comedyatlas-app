@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-blindboy-live-podcast@comedyatlas.app
+DTSTAMP:20271106T190000Z
+DTSTART:20271106T190000Z
+DTEND:20271106T210000Z
+SUMMARY:The Blindboy Live Podcast
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-blind
+ boy-live-podcast/
+URL:https://comedyatlas.app/comedy-atlas/event/the-blindboy-live-podcast/
+END:VEVENT
+END:VCALENDAR

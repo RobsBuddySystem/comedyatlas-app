@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sold-out-maria-bamford@comedyatlas.app
+DTSTAMP:20261010T220000Z
+DTSTART:20261010T220000Z
+DTEND:20261011T000000Z
+SUMMARY:SOLD OUT - MARIA BAMFORD
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sold-out-
+ maria-bamford/
+URL:https://comedyatlas.app/comedy-atlas/event/sold-out-maria-bamford/
+END:VEVENT
+END:VCALENDAR

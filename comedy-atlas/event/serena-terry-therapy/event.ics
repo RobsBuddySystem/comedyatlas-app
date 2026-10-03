@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:serena-terry-therapy@comedyatlas.app
+DTSTAMP:20261006T180000Z
+DTSTART:20261006T180000Z
+DTEND:20261006T200000Z
+SUMMARY:Serena Terry: Therapy
+LOCATION:Manchester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/serena-te
+ rry-therapy/
+URL:https://comedyatlas.app/comedy-atlas/event/serena-terry-therapy/
+END:VEVENT
+END:VCALENDAR

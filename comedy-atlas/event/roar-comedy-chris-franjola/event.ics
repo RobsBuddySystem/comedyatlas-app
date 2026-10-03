@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-chris-franjola@comedyatlas.app
+DTSTAMP:20261205T010000Z
+DTSTART:20261205T010000Z
+DTEND:20261205T030000Z
+SUMMARY:ROAR! Comedy: Chris Franjola
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-chris-franjola/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-chris-franjola/
+END:VEVENT
+END:VCALENDAR

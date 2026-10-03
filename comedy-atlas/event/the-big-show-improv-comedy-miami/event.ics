@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-big-show-improv-comedy-miami@comedyatlas.app
+DTSTAMP:20261004T010000Z
+DTSTART:20261004T010000Z
+DTEND:20261004T030000Z
+SUMMARY:The BIG Show Improv Comedy Miami
+LOCATION:Just The Funny\, 3119 Coral Way\, Miami
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-big-s
+ how-improv-comedy-miami/
+URL:https://comedyatlas.app/comedy-atlas/event/the-big-show-improv-comedy-m
+ iami/
+END:VEVENT
+END:VCALENDAR

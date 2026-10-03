@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-48868@comedyatlas.app
+DTSTAMP:20261010T023000Z
+DTSTART:20261010T023000Z
+DTEND:20261010T043000Z
+SUMMARY:Robby Hoffman
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-48868/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-48868/
+END:VEVENT
+END:VCALENDAR

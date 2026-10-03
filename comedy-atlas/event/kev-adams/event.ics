@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kev-adams@comedyatlas.app
+DTSTAMP:20261112T013000Z
+DTSTART:20261112T013000Z
+DTEND:20261112T033000Z
+SUMMARY:Kev Adams
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kev-adams
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/kev-adams/
+END:VEVENT
+END:VCALENDAR

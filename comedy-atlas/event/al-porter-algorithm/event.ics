@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:al-porter-algorithm@comedyatlas.app
+DTSTAMP:20261009T190000Z
+DTSTART:20261009T190000Z
+DTEND:20261009T210000Z
+SUMMARY:Al Porter - Algorithm
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/al-porter
+ -algorithm/
+URL:https://comedyatlas.app/comedy-atlas/event/al-porter-algorithm/
+END:VEVENT
+END:VCALENDAR

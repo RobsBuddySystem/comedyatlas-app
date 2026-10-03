@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-comedy-club-london-leicester-square@comedyatlas.app
+DTSTAMP:20261128T200000Z
+DTSTART:20261128T200000Z
+DTEND:20261128T220000Z
+SUMMARY:Saturday Comedy Club London | Leicester Square
+LOCATION:21Soho\, 3-5 Sutton Row\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/saturday-
+ comedy-club-london-leicester-square/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-comedy-club-london-
+ leicester-square/
+END:VEVENT
+END:VCALENDAR

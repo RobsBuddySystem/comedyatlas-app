@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bill-bailey-vaundevillean@comedyatlas.app
+DTSTAMP:20261206T193000Z
+DTSTART:20261206T193000Z
+DTEND:20261206T213000Z
+SUMMARY:Bill Bailey: Vaundevillean
+LOCATION:Aberdeen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bill-bail
+ ey-vaundevillean/
+URL:https://comedyatlas.app/comedy-atlas/event/bill-bailey-vaundevillean/
+END:VEVENT
+END:VCALENDAR

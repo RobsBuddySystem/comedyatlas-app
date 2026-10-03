@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:frank-hvam-dsk-43646@comedyatlas.app
+DTSTAMP:20270226T180000Z
+DTSTART:20270226T180000Z
+DTEND:20270226T200000Z
+SUMMARY:Frank Hvam - DSK
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/frank-hva
+ m-dsk-43646/
+URL:https://comedyatlas.app/comedy-atlas/event/frank-hvam-dsk-43646/
+END:VEVENT
+END:VCALENDAR

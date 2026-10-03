@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cedric-the-entertainer@comedyatlas.app
+DTSTAMP:20270116T010000Z
+DTSTART:20270116T010000Z
+DTEND:20270116T030000Z
+SUMMARY:Cedric The Entertainer
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cedric-th
+ e-entertainer/
+URL:https://comedyatlas.app/comedy-atlas/event/cedric-the-entertainer/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-marty-nouveau-spectacle@comedyatlas.app
+DTSTAMP:20261010T180000Z
+DTSTART:20261010T180000Z
+DTEND:20261010T200000Z
+SUMMARY:Thomas Marty Nouveau spectacle
+LOCATION:Perpignan
+DESCRIPTION:Après le succès de son premier spectacle\, Thomas Marty revie
+ nt sur scène pour vous raconter ses nouvelles aventures.\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/thomas-marty-nouveau-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-marty-nouveau-spectac
+ le/
+END:VEVENT
+END:VCALENDAR

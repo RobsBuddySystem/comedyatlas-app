@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:london-cabaret-carnival-soho@comedyatlas.app
+DTSTAMP:20261008T183000Z
+DTSTART:20261008T183000Z
+DTEND:20261008T203000Z
+SUMMARY:London Cabaret Carnival | Soho
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/london-ca
+ baret-carnival-soho/
+URL:https://comedyatlas.app/comedy-atlas/event/london-cabaret-carnival-soho
+ /
+END:VEVENT
+END:VCALENDAR

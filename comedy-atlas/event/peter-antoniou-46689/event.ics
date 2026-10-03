@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-antoniou-46689@comedyatlas.app
+DTSTAMP:20261201T190000Z
+DTSTART:20261201T190000Z
+DTEND:20261201T210000Z
+SUMMARY:Peter Antoniou
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-ant
+ oniou-46689/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-antoniou-46689/
+END:VEVENT
+END:VCALENDAR

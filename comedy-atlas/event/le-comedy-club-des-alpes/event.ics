@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-comedy-club-des-alpes@comedyatlas.app
+DTSTAMP:20261105T193000Z
+DTSTART:20261105T193000Z
+DTEND:20261105T213000Z
+SUMMARY:Le Comedy Club des Alpes
+LOCATION:Chambéry
+DESCRIPTION:Chaque premier jeudi du mois\, La Comédie des Alpes transforme
+  son théâtre en véritable temple du stand-up avec Le Comedy Club des Alp
+ es.\nMore info: https://comedyatlas.app/comedy-atlas/event/le-comedy-club-d
+ es-alpes/
+URL:https://comedyatlas.app/comedy-atlas/event/le-comedy-club-des-alpes/
+END:VEVENT
+END:VCALENDAR

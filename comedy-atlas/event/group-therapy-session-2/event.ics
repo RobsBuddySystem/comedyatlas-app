@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:group-therapy-session-2@comedyatlas.app
+DTSTAMP:20261028T010000Z
+DTSTART:20261028T010000Z
+DTEND:20261028T030000Z
+SUMMARY:Group Therapy: Session 2
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/group-the
+ rapy-session-2/
+URL:https://comedyatlas.app/comedy-atlas/event/group-therapy-session-2/
+END:VEVENT
+END:VCALENDAR

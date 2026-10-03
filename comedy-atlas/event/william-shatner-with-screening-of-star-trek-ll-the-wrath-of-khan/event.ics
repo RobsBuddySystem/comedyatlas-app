@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:william-shatner-with-screening-of-star-trek-ll-the-wrath-of-khan@comedy
+ atlas.app
+DTSTAMP:20270124T230000Z
+DTSTART:20270124T230000Z
+DTEND:20270125T010000Z
+SUMMARY:William Shatner with screening of Star Trek ll: The Wrath of Khan
+LOCATION:San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/william-s
+ hatner-with-screening-of-star-trek-ll-the-wrath-of-khan/
+URL:https://comedyatlas.app/comedy-atlas/event/william-shatner-with-screeni
+ ng-of-star-trek-ll-the-wrath-of-khan/
+END:VEVENT
+END:VCALENDAR

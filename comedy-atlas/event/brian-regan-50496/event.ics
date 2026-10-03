@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-regan-50496@comedyatlas.app
+DTSTAMP:20261108T010000Z
+DTSTART:20261108T010000Z
+DTEND:20261108T030000Z
+SUMMARY:Brian Regan
+LOCATION:Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-reg
+ an-50496/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-regan-50496/
+END:VEVENT
+END:VCALENDAR

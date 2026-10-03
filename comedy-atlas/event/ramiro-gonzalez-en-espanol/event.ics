@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ramiro-gonzalez-en-espanol@comedyatlas.app
+DTSTAMP:20261107T034500Z
+DTSTART:20261107T034500Z
+DTEND:20261107T054500Z
+SUMMARY:Ramiro Gonzalez (En Español)
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ramiro-go
+ nzalez-en-espanol/
+URL:https://comedyatlas.app/comedy-atlas/event/ramiro-gonzalez-en-espanol/
+END:VEVENT
+END:VCALENDAR

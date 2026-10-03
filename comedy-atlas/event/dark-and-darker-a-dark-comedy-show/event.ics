@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dark-and-darker-a-dark-comedy-show@comedyatlas.app
+DTSTAMP:20261008T003000Z
+DTSTART:20261008T003000Z
+DTEND:20261008T023000Z
+SUMMARY:Dark and Darker: A Dark Comedy Show
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dark-and-
+ darker-a-dark-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/dark-and-darker-a-dark-comed
+ y-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-big-dog@comedyatlas.app
+DTSTAMP:20261022T233000Z
+DTSTART:20261022T233000Z
+DTEND:20261023T013000Z
+SUMMARY:Nate Jackson: BIG DOG
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-big-dog/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-big-dog/
+END:VEVENT
+END:VCALENDAR

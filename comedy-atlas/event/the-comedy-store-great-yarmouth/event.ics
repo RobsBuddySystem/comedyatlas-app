@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-great-yarmouth@comedyatlas.app
+DTSTAMP:20261204T200000Z
+DTSTART:20261204T200000Z
+DTEND:20261204T220000Z
+SUMMARY:The Comedy Store - Great Yarmouth
+LOCATION:Norfolk
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-great-yarmouth/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-great-yarmo
+ uth/
+END:VEVENT
+END:VCALENDAR

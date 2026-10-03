@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anthony-rodia-insanely-funny-tour@comedyatlas.app
+DTSTAMP:20261010T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T020000Z
+SUMMARY:Anthony Rodia: Insanely Funny Tour
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anthony-r
+ odia-insanely-funny-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/anthony-rodia-insanely-funny
+ -tour/
+END:VEVENT
+END:VCALENDAR

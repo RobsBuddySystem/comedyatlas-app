@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucy-beaumont-bad-at-quiz-shows-good-with-wierdos@comedyatlas.app
+DTSTAMP:20261025T200000Z
+DTSTART:20261025T200000Z
+DTEND:20261025T220000Z
+SUMMARY:Lucy Beaumont: Bad At Quiz Shows\, Good with Wierdos
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucy-beau
+ mont-bad-at-quiz-shows-good-with-wierdos/
+URL:https://comedyatlas.app/comedy-atlas/event/lucy-beaumont-bad-at-quiz-sh
+ ows-good-with-wierdos/
+END:VEVENT
+END:VCALENDAR

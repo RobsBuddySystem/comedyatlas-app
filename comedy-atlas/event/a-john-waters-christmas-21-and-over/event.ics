@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-john-waters-christmas-21-and-over@comedyatlas.app
+DTSTAMP:20261201T040000Z
+DTSTART:20261201T040000Z
+DTEND:20261201T060000Z
+SUMMARY:A John Waters Christmas (21 and Over)
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-john-wa
+ ters-christmas-21-and-over/
+URL:https://comedyatlas.app/comedy-atlas/event/a-john-waters-christmas-21-a
+ nd-over/
+END:VEVENT
+END:VCALENDAR

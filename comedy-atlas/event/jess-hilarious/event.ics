@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jess-hilarious@comedyatlas.app
+DTSTAMP:20261004T020000Z
+DTSTART:20261004T020000Z
+DTEND:20261004T040000Z
+SUMMARY:Jess Hilarious
+LOCATION:Tacoma
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jess-hila
+ rious/
+URL:https://comedyatlas.app/comedy-atlas/event/jess-hilarious/
+END:VEVENT
+END:VCALENDAR

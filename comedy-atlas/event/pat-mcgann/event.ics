@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pat-mcgann@comedyatlas.app
+DTSTAMP:20261011T040000Z
+DTSTART:20261011T040000Z
+DTEND:20261011T060000Z
+SUMMARY:Pat McGann
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pat-mcgan
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/pat-mcgann/
+END:VEVENT
+END:VCALENDAR

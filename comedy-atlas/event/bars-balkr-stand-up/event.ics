@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bars-balkr-stand-up@comedyatlas.app
+DTSTAMP:20261022T173000Z
+DTSTART:20261022T173000Z
+DTEND:20261022T193000Z
+SUMMARY:Barış Balkır - Stand Up
+LOCATION:Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bars-balk
+ r-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/bars-balkr-stand-up/
+END:VEVENT
+END:VCALENDAR

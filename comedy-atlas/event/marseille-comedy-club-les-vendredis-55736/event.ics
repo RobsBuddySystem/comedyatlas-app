@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marseille-comedy-club-les-vendredis-55736@comedyatlas.app
+DTSTAMP:20261107T203000Z
+DTSTART:20261107T203000Z
+DTEND:20261107T223000Z
+SUMMARY:Marseille Comedy Club Les vendredis
+LOCATION:Marseille
+DESCRIPTION:Le plus grand Comedy Club de la région vous ouvre ses portes !
+  1h15 de fous rires assurés avec les meilleurs humoristes du sud et d'aill
+ eurs.\nMore info: https://comedyatlas.app/comedy-atlas/event/marseille-come
+ dy-club-les-vendredis-55736/
+URL:https://comedyatlas.app/comedy-atlas/event/marseille-comedy-club-les-ve
+ ndredis-55736/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-50408@comedyatlas.app
+DTSTAMP:20261107T024500Z
+DTSTART:20261107T024500Z
+DTEND:20261107T044500Z
+SUMMARY:Ms. Pat
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-50
+ 408/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-50408/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-fitzsimmons-49410@comedyatlas.app
+DTSTAMP:20261018T023000Z
+DTSTART:20261018T023000Z
+DTEND:20261018T043000Z
+SUMMARY:Greg Fitzsimmons
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-fitz
+ simmons-49410/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-fitzsimmons-49410/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:flo-joan@comedyatlas.app
+DTSTAMP:20261205T190000Z
+DTSTART:20261205T190000Z
+DTEND:20261205T210000Z
+SUMMARY:Flo & Joan
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/flo-joan/
+URL:https://comedyatlas.app/comedy-atlas/event/flo-joan/
+END:VEVENT
+END:VCALENDAR

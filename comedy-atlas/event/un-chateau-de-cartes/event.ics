@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:un-chateau-de-cartes@comedyatlas.app
+DTSTAMP:20270219T190000Z
+DTSTART:20270219T190000Z
+DTEND:20270219T210000Z
+SUMMARY:Un château de cartes
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/un-chatea
+ u-de-cartes/
+URL:https://comedyatlas.app/comedy-atlas/event/un-chateau-de-cartes/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cheap-chills@comedyatlas.app
+DTSTAMP:20261025T010000Z
+DTSTART:20261025T010000Z
+DTEND:20261025T030000Z
+SUMMARY:Cheap Chills
+LOCATION:Just The Funny\, 3119 Coral Way\, Miami
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cheap-chi
+ lls/
+URL:https://comedyatlas.app/comedy-atlas/event/cheap-chills/
+END:VEVENT
+END:VCALENDAR

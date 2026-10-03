@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anne-depetrini-dans-a-cote@comedyatlas.app
+DTSTAMP:20261105T193000Z
+DTSTART:20261105T193000Z
+DTEND:20261105T213000Z
+SUMMARY:Anne Depetrini dans A côté
+LOCATION:Clermont Ferrand
+DESCRIPTION:Trop grande\, trop de cheveux\, trop timide\, trop spontanée..
+ .\nMore info: https://comedyatlas.app/comedy-atlas/event/anne-depetrini-dan
+ s-a-cote/
+URL:https://comedyatlas.app/comedy-atlas/event/anne-depetrini-dans-a-cote/
+END:VEVENT
+END:VCALENDAR

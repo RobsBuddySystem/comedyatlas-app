@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elie-semoun-dans-cactus@comedyatlas.app
+DTSTAMP:20261011T160000Z
+DTSTART:20261011T160000Z
+DTEND:20261011T180000Z
+SUMMARY:Elie Semoun dans Cactus
+LOCATION:Enghien Les Bains
+DESCRIPTION:Elie Semoun nous propose une vision à la fois profonde et lég
+ ère de notre société.\nMore info: https://comedyatlas.app/comedy-atlas/e
+ vent/elie-semoun-dans-cactus/
+URL:https://comedyatlas.app/comedy-atlas/event/elie-semoun-dans-cactus/
+END:VEVENT
+END:VCALENDAR

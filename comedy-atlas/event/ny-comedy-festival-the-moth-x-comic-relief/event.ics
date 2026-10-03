@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-the-moth-x-comic-relief@comedyatlas.app
+DTSTAMP:20261114T200000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T220000Z
+SUMMARY:NY Comedy Festival\, The Moth x Comic Relief
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-the-moth-x-comic-relief/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-the-moth-
+ x-comic-relief/
+END:VEVENT
+END:VCALENDAR

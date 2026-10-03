@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-gordon-50271@comedyatlas.app
+DTSTAMP:20261105T020000Z
+DTSTART:20261105T020000Z
+DTEND:20261105T040000Z
+SUMMARY:Kyle Gordon
+LOCATION:recordBar\, 1520 Grand Boulevard\, Kansas City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-gord
+ on-50271/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-gordon-50271/
+END:VEVENT
+END:VCALENDAR

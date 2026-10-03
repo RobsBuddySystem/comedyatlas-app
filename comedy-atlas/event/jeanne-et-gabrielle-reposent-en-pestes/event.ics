@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeanne-et-gabrielle-reposent-en-pestes@comedyatlas.app
+DTSTAMP:20261010T190000Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:Jeanne et Gabrielle reposent en pestes
+LOCATION:Le Mans
+DESCRIPTION:Happy End – Parce que toutes les bonnes choses ont une fin !\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/jeanne-et-gabrielle-
+ reposent-en-pestes/
+URL:https://comedyatlas.app/comedy-atlas/event/jeanne-et-gabrielle-reposent
+ -en-pestes/
+END:VEVENT
+END:VCALENDAR

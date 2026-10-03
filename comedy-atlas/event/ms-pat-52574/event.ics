@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-52574@comedyatlas.app
+DTSTAMP:20261219T233000Z
+DTSTART:20261219T233000Z
+DTEND:20261220T013000Z
+SUMMARY:Ms. Pat
+LOCATION:Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-52
+ 574/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-52574/
+END:VEVENT
+END:VCALENDAR

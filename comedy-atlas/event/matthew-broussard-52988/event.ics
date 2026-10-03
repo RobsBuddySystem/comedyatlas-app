@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matthew-broussard-52988@comedyatlas.app
+DTSTAMP:20270109T000000Z
+DTSTART:20270109T000000Z
+DTEND:20270109T020000Z
+SUMMARY:Matthew Broussard
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matthew-b
+ roussard-52988/
+URL:https://comedyatlas.app/comedy-atlas/event/matthew-broussard-52988/
+END:VEVENT
+END:VCALENDAR

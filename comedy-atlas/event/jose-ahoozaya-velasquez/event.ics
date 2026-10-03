@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jose-ahoozaya-velasquez@comedyatlas.app
+DTSTAMP:20261207T023000Z
+DTSTART:20261207T023000Z
+DTEND:20261207T043000Z
+SUMMARY:Jose ÂHoozayâ Velasquez
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jose-ahoo
+ zaya-velasquez/
+URL:https://comedyatlas.app/comedy-atlas/event/jose-ahoozaya-velasquez/
+END:VEVENT
+END:VCALENDAR

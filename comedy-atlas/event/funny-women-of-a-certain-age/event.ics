@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:funny-women-of-a-certain-age@comedyatlas.app
+DTSTAMP:20261017T233000Z
+DTSTART:20261017T233000Z
+DTEND:20261018T013000Z
+SUMMARY:Funny Women of a Certain Age
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/funny-wom
+ en-of-a-certain-age/
+URL:https://comedyatlas.app/comedy-atlas/event/funny-women-of-a-certain-age
+ /
+END:VEVENT
+END:VCALENDAR

@@ -433,7 +433,7 @@ async function loadShows(){
     // own /comedy-atlas/city.html?city=<name> page.
     SHOWS = events.filter(function (ev) {
       return ev.canonical_event_url && ev.starts_at
-        && (typeof A.matchesLanguage !== 'function' || A.matchesLanguage(ev, 'en'));
+        && (typeof A.matchesLanguage !== 'function' || A.matchesLanguage(ev, 'all'));
     }).map(function (ev) {
       const d = new Date(ev.starts_at);
       const urlObj = new URL(ev.canonical_event_url);

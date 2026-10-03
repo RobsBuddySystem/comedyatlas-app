@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:akim-omiri@comedyatlas.app
+DTSTAMP:20270403T180000Z
+DTSTART:20270403T180000Z
+DTEND:20270403T200000Z
+SUMMARY:Akim Omiri
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/akim-omir
+ i/
+URL:https://comedyatlas.app/comedy-atlas/event/akim-omiri/
+END:VEVENT
+END:VCALENDAR

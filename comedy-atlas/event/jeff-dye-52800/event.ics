@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dye-52800@comedyatlas.app
+DTSTAMP:20261228T030000Z
+DTSTART:20261228T030000Z
+DTEND:20261228T050000Z
+SUMMARY:Jeff Dye
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-dye-
+ 52800/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dye-52800/
+END:VEVENT
+END:VCALENDAR

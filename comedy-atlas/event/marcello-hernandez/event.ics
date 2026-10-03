@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marcello-hernandez@comedyatlas.app
+DTSTAMP:20261128T010000Z
+DTSTART:20261128T010000Z
+DTEND:20261128T030000Z
+SUMMARY:Marcello Hernández
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marcello-
+ hernandez/
+URL:https://comedyatlas.app/comedy-atlas/event/marcello-hernandez/
+END:VEVENT
+END:VCALENDAR

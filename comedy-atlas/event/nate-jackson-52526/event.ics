@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-52526@comedyatlas.app
+DTSTAMP:20261219T024500Z
+DTSTART:20261219T024500Z
+DTEND:20261219T044500Z
+SUMMARY:Nate Jackson
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-52526/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-52526/
+END:VEVENT
+END:VCALENDAR

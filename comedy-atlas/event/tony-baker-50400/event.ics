@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tony-baker-50400@comedyatlas.app
+DTSTAMP:20261107T021500Z
+DTSTART:20261107T021500Z
+DTEND:20261107T041500Z
+SUMMARY:Tony Baker
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tony-bake
+ r-50400/
+URL:https://comedyatlas.app/comedy-atlas/event/tony-baker-50400/
+END:VEVENT
+END:VCALENDAR

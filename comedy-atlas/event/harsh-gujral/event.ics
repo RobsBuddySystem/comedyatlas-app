@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:harsh-gujral@comedyatlas.app
+DTSTAMP:20270326T230000Z
+DTSTART:20270326T230000Z
+DTEND:20270327T010000Z
+SUMMARY:Harsh Gujral
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/harsh-guj
+ ral/
+URL:https://comedyatlas.app/comedy-atlas/event/harsh-gujral/
+END:VEVENT
+END:VCALENDAR

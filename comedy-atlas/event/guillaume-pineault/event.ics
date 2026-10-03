@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guillaume-pineault@comedyatlas.app
+DTSTAMP:20261217T010000Z
+DTSTART:20261217T010000Z
+DTEND:20261217T030000Z
+SUMMARY:Guillaume Pineault
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/guillaume
+ -pineault/
+URL:https://comedyatlas.app/comedy-atlas/event/guillaume-pineault/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:johnathan-pie-the-end-of-the-world-according-to-jonathan-pie@comedyatla
+ s.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Johnathan Pie: The End Of The World According to Jonathan Pie
+LOCATION:Birmingham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/johnathan
+ -pie-the-end-of-the-world-according-to-jonathan-pie/
+URL:https://comedyatlas.app/comedy-atlas/event/johnathan-pie-the-end-of-the
+ -world-according-to-jonathan-pie/
+END:VEVENT
+END:VCALENDAR

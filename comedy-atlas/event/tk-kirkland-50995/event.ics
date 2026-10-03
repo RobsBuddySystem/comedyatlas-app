@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tk-kirkland-50995@comedyatlas.app
+DTSTAMP:20261115T030000Z
+DTSTART:20261115T030000Z
+DTEND:20261115T050000Z
+SUMMARY:TK Kirkland
+LOCATION:Tacoma
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tk-kirkla
+ nd-50995/
+URL:https://comedyatlas.app/comedy-atlas/event/tk-kirkland-50995/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-46969@comedyatlas.app
+DTSTAMP:20270116T193000Z
+DTSTART:20270116T193000Z
+DTEND:20270116T213000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:Cardiff
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-46969/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-46969/
+END:VEVENT
+END:VCALENDAR

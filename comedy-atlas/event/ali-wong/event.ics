@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ali-wong@comedyatlas.app
+DTSTAMP:20261108T030000Z
+DTSTART:20261108T030000Z
+DTEND:20261108T050000Z
+SUMMARY:Ali Wong
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ali-wong/
+URL:https://comedyatlas.app/comedy-atlas/event/ali-wong/
+END:VEVENT
+END:VCALENDAR

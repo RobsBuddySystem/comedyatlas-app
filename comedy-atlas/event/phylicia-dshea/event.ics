@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phylicia-dshea@comedyatlas.app
+DTSTAMP:20261205T024500Z
+DTSTART:20261205T024500Z
+DTEND:20261205T044500Z
+SUMMARY:Phylicia Dshea
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phylicia-
+ dshea/
+URL:https://comedyatlas.app/comedy-atlas/event/phylicia-dshea/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:iliza-shlesinger@comedyatlas.app
+DTSTAMP:20270116T030000Z
+DTSTART:20270116T030000Z
+DTEND:20270116T050000Z
+SUMMARY:Iliza Shlesinger
+LOCATION:Chandler
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/iliza-shl
+ esinger/
+URL:https://comedyatlas.app/comedy-atlas/event/iliza-shlesinger/
+END:VEVENT
+END:VCALENDAR

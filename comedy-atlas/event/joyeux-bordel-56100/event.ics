@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joyeux-bordel-56100@comedyatlas.app
+DTSTAMP:20261113T190000Z
+DTSTART:20261113T190000Z
+DTEND:20261113T210000Z
+SUMMARY:Joyeux Bordel
+LOCATION:Lyon
+DESCRIPTION:On a le bureau\, la cravate\, et le générique de talk-show am
+ éricain. Il manque juste un détail : le scénario.\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/joyeux-bordel-56100/
+URL:https://comedyatlas.app/comedy-atlas/event/joyeux-bordel-56100/
+END:VEVENT
+END:VCALENDAR

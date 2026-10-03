@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sammy-obeid-52918@comedyatlas.app
+DTSTAMP:20270102T020000Z
+DTSTART:20270102T020000Z
+DTEND:20270102T040000Z
+SUMMARY:Sammy Obeid
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sammy-obe
+ id-52918/
+URL:https://comedyatlas.app/comedy-atlas/event/sammy-obeid-52918/
+END:VEVENT
+END:VCALENDAR

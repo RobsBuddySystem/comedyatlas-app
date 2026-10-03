@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elies-zoghlami@comedyatlas.app
+DTSTAMP:20270130T190000Z
+DTSTART:20270130T190000Z
+DTEND:20270130T210000Z
+SUMMARY:Elies zoghlami
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elies-zog
+ hlami/
+URL:https://comedyatlas.app/comedy-atlas/event/elies-zoghlami/
+END:VEVENT
+END:VCALENDAR

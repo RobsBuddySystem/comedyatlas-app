@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:terry-fator-50201@comedyatlas.app
+DTSTAMP:20261102T010000Z
+DTSTART:20261102T010000Z
+DTEND:20261102T030000Z
+SUMMARY:Terry Fator
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/terry-fat
+ or-50201/
+URL:https://comedyatlas.app/comedy-atlas/event/terry-fator-50201/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:leopold-lemarchand@comedyatlas.app
+DTSTAMP:20270305T190000Z
+DTSTART:20270305T190000Z
+DTEND:20270305T210000Z
+SUMMARY:Léopold Lemarchand
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/leopold-l
+ emarchand/
+URL:https://comedyatlas.app/comedy-atlas/event/leopold-lemarchand/
+END:VEVENT
+END:VCALENDAR

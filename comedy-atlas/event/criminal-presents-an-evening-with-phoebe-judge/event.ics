@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:criminal-presents-an-evening-with-phoebe-judge@comedyatlas.app
+DTSTAMP:20261120T003000Z
+DTSTART:20261120T003000Z
+DTEND:20261120T023000Z
+SUMMARY:Criminal Presents: An Evening with Phoebe Judge
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/criminal-
+ presents-an-evening-with-phoebe-judge/
+URL:https://comedyatlas.app/comedy-atlas/event/criminal-presents-an-evening
+ -with-phoebe-judge/
+END:VEVENT
+END:VCALENDAR

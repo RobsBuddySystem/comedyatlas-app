@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club-55497@comedyatlas.app
+DTSTAMP:20261020T170000Z
+DTSTART:20261020T170000Z
+DTEND:20261020T190000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Caen
+DESCRIPTION:Les humoristes les plus drôles de la nouvelle génération et 
+ de la scène parisienne en déplacement au Théâtre à l'Ouest !\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-55497/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-55497/
+END:VEVENT
+END:VCALENDAR

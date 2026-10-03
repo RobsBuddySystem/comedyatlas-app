@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-oliver-live@comedyatlas.app
+DTSTAMP:20261228T020000Z
+DTSTART:20261228T020000Z
+DTEND:20261228T040000Z
+SUMMARY:John Oliver Live
+LOCATION:Nashville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-oliv
+ er-live/
+URL:https://comedyatlas.app/comedy-atlas/event/john-oliver-live/
+END:VEVENT
+END:VCALENDAR

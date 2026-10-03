@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-vig-s-comedy-club@comedyatlas.app
+DTSTAMP:20261015T183000Z
+DTSTART:20261015T183000Z
+DTEND:20261015T203000Z
+SUMMARY:Le Vig's Comedy Club
+LOCATION:Marseille
+DESCRIPTION:Pour décompresser de sa semaine\, faites nous confiance. Des a
+ rtistes sélectionnés parmi la crème de l'humour local et d'ailleurs\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/le-vig-s-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/le-vig-s-comedy-club/
+END:VEVENT
+END:VCALENDAR

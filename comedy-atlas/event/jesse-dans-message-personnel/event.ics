@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jesse-dans-message-personnel@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Jessé dans Message personnel
+LOCATION:Villejuif
+DESCRIPTION:Une rencontre singulière avec un comédien sincère et drôle.
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/jesse-dans-message-
+ personnel/
+URL:https://comedyatlas.app/comedy-atlas/event/jesse-dans-message-personnel
+ /
+END:VEVENT
+END:VCALENDAR

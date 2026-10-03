@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tokyo-kanpai-boys-in-japanese@comedyatlas.app
+DTSTAMP:20261028T023000Z
+DTSTART:20261028T023000Z
+DTEND:20261028T043000Z
+SUMMARY:Tokyo Kanpai Boys (in Japanese)
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tokyo-kan
+ pai-boys-in-japanese/
+URL:https://comedyatlas.app/comedy-atlas/event/tokyo-kanpai-boys-in-japanes
+ e/
+END:VEVENT
+END:VCALENDAR

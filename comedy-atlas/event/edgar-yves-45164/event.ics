@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:edgar-yves-45164@comedyatlas.app
+DTSTAMP:20270307T010000Z
+DTSTART:20270307T010000Z
+DTEND:20270307T030000Z
+SUMMARY:Edgar-Yves
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/edgar-yve
+ s-45164/
+URL:https://comedyatlas.app/comedy-atlas/event/edgar-yves-45164/
+END:VEVENT
+END:VCALENDAR

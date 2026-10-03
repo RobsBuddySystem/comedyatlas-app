@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-tall-box-seat-in-the-ticketmaster-suite@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:Chris Tall | Box seat in the Ticketmaster Suite
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-tal
+ l-box-seat-in-the-ticketmaster-suite/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-tall-box-seat-in-the-t
+ icketmaster-suite/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-whitley-bay@comedyatlas.app
+DTSTAMP:20270313T200000Z
+DTSTART:20270313T200000Z
+DTEND:20270313T220000Z
+SUMMARY:The Comedy Store - Whitley Bay
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-whitley-bay/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-whitley-bay
+ /
+END:VEVENT
+END:VCALENDAR

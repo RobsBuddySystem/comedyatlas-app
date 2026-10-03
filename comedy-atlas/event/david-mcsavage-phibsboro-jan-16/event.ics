@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-phibsboro-jan-16@comedyatlas.app
+DTSTAMP:20270116T200000Z
+DTSTART:20270116T200000Z
+DTEND:20270116T220000Z
+SUMMARY:David McSavage - Phibsboro - Jan 16
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-phibsboro-jan-16/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-phibsboro-jan
+ -16/
+END:VEVENT
+END:VCALENDAR

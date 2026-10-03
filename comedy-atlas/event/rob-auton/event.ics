@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-auton@comedyatlas.app
+DTSTAMP:20270404T193000Z
+DTSTART:20270404T193000Z
+DTEND:20270404T213000Z
+SUMMARY:Rob Auton
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-auton
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/rob-auton/
+END:VEVENT
+END:VCALENDAR

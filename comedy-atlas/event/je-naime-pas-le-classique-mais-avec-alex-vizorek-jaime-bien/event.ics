@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:je-naime-pas-le-classique-mais-avec-alex-vizorek-jaime-bien@comedyatlas
+ .app
+DTSTAMP:20270611T180000Z
+DTSTART:20270611T180000Z
+DTEND:20270611T200000Z
+SUMMARY:Je n’aime pas le Classique\, mais avec Alex Vizorek j’aime bien
+LOCATION:Liege
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/je-naime-
+ pas-le-classique-mais-avec-alex-vizorek-jaime-bien/
+URL:https://comedyatlas.app/comedy-atlas/event/je-naime-pas-le-classique-ma
+ is-avec-alex-vizorek-jaime-bien/
+END:VEVENT
+END:VCALENDAR

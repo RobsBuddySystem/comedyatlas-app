@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joanne-mcnally-pinotphile@comedyatlas.app
+DTSTAMP:20261204T183000Z
+DTSTART:20261204T183000Z
+DTEND:20261204T203000Z
+SUMMARY:Joanne McNally: Pinotphile
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joanne-mc
+ nally-pinotphile/
+URL:https://comedyatlas.app/comedy-atlas/event/joanne-mcnally-pinotphile/
+END:VEVENT
+END:VCALENDAR

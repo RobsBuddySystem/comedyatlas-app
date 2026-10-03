@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rire-issy@comedyatlas.app
+DTSTAMP:20261019T173000Z
+DTSTART:20261019T173000Z
+DTEND:20261019T193000Z
+SUMMARY:Rire Issy
+LOCATION:Issy les Moulineaux
+DESCRIPTION:Le plateau de stand-up à Issy-les-Moulineaux !\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/rire-issy/
+URL:https://comedyatlas.app/comedy-atlas/event/rire-issy/
+END:VEVENT
+END:VCALENDAR

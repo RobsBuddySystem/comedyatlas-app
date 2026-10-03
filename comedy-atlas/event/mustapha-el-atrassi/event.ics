@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mustapha-el-atrassi@comedyatlas.app
+DTSTAMP:20270116T193000Z
+DTSTART:20270116T193000Z
+DTEND:20270116T213000Z
+SUMMARY:Mustapha El Atrassi
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mustapha-
+ el-atrassi/
+URL:https://comedyatlas.app/comedy-atlas/event/mustapha-el-atrassi/
+END:VEVENT
+END:VCALENDAR

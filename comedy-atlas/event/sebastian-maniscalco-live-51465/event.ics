@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sebastian-maniscalco-live-51465@comedyatlas.app
+DTSTAMP:20261123T010000Z
+DTSTART:20261123T010000Z
+DTEND:20261123T030000Z
+SUMMARY:Sebastian Maniscalco Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sebastian
+ -maniscalco-live-51465/
+URL:https://comedyatlas.app/comedy-atlas/event/sebastian-maniscalco-live-51
+ 465/
+END:VEVENT
+END:VCALENDAR

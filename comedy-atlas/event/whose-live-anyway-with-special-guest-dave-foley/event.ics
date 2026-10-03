@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:whose-live-anyway-with-special-guest-dave-foley@comedyatlas.app
+DTSTAMP:20270124T023000Z
+DTSTART:20270124T023000Z
+DTEND:20270124T043000Z
+SUMMARY:Whose Live Anyway? with special guest Dave Foley
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/whose-liv
+ e-anyway-with-special-guest-dave-foley/
+URL:https://comedyatlas.app/comedy-atlas/event/whose-live-anyway-with-speci
+ al-guest-dave-foley/
+END:VEVENT
+END:VCALENDAR

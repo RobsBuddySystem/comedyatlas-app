@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-juice-featuring-martin-rizo-courtney-bee-mike-falzone-and-a-spec
+ ial-guest@comedyatlas.app
+DTSTAMP:20261120T033000Z
+DTSTART:20261120T033000Z
+DTEND:20261120T053000Z
+SUMMARY:Comedy Juice Featuring: Martin Rizo\, Courtney Bee\, Mike Falzone\,
+  and a Special Guest!
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ju
+ ice-featuring-martin-rizo-courtney-bee-mike-falzone-and-a-special-guest/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-juice-featuring-marti
+ n-rizo-courtney-bee-mike-falzone-and-a-special-guest/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-posehn-52166@comedyatlas.app
+DTSTAMP:20261211T010000Z
+DTSTART:20261211T010000Z
+DTEND:20261211T030000Z
+SUMMARY:Brian Posehn
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-pos
+ ehn-52166/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-posehn-52166/
+END:VEVENT
+END:VCALENDAR

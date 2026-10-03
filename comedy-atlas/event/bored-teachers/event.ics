@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bored-teachers@comedyatlas.app
+DTSTAMP:20261009T003000Z
+DTSTART:20261009T003000Z
+DTEND:20261009T023000Z
+SUMMARY:Bored Teachers
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bored-tea
+ chers/
+URL:https://comedyatlas.app/comedy-atlas/event/bored-teachers/
+END:VEVENT
+END:VCALENDAR

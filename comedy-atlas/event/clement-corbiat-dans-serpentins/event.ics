@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:clement-corbiat-dans-serpentins@comedyatlas.app
+DTSTAMP:20261015T180000Z
+DTSTART:20261015T180000Z
+DTEND:20261015T200000Z
+SUMMARY:Clément Corbiat dans Serpentins
+LOCATION:Bordeaux
+DESCRIPTION:"Serpentins"\, nom masculin\, Petit rouleau de papier coloré q
+ ui se déroule quand on le lance.\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/clement-corbiat-dans-serpentins/
+URL:https://comedyatlas.app/comedy-atlas/event/clement-corbiat-dans-serpent
+ ins/
+END:VEVENT
+END:VCALENDAR

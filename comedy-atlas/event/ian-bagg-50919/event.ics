@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-bagg-50919@comedyatlas.app
+DTSTAMP:20261114T234500Z
+DTSTART:20261114T234500Z
+DTEND:20261115T014500Z
+SUMMARY:Ian Bagg
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-bagg-
+ 50919/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-bagg-50919/
+END:VEVENT
+END:VCALENDAR

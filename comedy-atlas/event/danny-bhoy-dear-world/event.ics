@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danny-bhoy-dear-world@comedyatlas.app
+DTSTAMP:20261009T233000Z
+DTSTART:20261009T233000Z
+DTEND:20261010T013000Z
+SUMMARY:Danny Bhoy: Dear World...
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/danny-bho
+ y-dear-world/
+URL:https://comedyatlas.app/comedy-atlas/event/danny-bhoy-dear-world/
+END:VEVENT
+END:VCALENDAR

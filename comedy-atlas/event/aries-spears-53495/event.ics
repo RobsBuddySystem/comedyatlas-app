@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53495@comedyatlas.app
+DTSTAMP:20270213T013000Z
+DTSTART:20270213T013000Z
+DTEND:20270213T033000Z
+SUMMARY:Aries Spears
+LOCATION:Milwaukee
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53495/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53495/
+END:VEVENT
+END:VCALENDAR

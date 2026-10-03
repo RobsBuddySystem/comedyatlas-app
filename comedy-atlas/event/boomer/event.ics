@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boomer@comedyatlas.app
+DTSTAMP:20261024T183000Z
+DTSTART:20261024T183000Z
+DTEND:20261024T203000Z
+SUMMARY:Boomer !
+LOCATION:Toulouse
+DESCRIPTION:Nos enfants nous appellent Boomers... alors on en a fait un spe
+ ctacle !\nMore info: https://comedyatlas.app/comedy-atlas/event/boomer/
+URL:https://comedyatlas.app/comedy-atlas/event/boomer/
+END:VEVENT
+END:VCALENDAR

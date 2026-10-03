@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-night-of-comedy-with-william-lee-martin@comedyatlas.app
+DTSTAMP:20261121T030000Z
+DTSTART:20261121T030000Z
+DTEND:20261121T050000Z
+SUMMARY:A Night of Comedy with William Lee Martin
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-night-o
+ f-comedy-with-william-lee-martin/
+URL:https://comedyatlas.app/comedy-atlas/event/a-night-of-comedy-with-willi
+ am-lee-martin/
+END:VEVENT
+END:VCALENDAR

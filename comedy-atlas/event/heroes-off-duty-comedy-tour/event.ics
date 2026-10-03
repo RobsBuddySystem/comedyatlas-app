@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heroes-off-duty-comedy-tour@comedyatlas.app
+DTSTAMP:20261107T003000Z
+DTSTART:20261107T003000Z
+DTEND:20261107T023000Z
+SUMMARY:Heroes Off Duty Comedy Tour
+LOCATION:Norfolk
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heroes-of
+ f-duty-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/heroes-off-duty-comedy-tour/
+END:VEVENT
+END:VCALENDAR

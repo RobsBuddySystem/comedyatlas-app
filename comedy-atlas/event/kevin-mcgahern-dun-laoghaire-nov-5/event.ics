@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-mcgahern-dun-laoghaire-nov-5@comedyatlas.app
+DTSTAMP:20261105T200000Z
+DTSTART:20261105T200000Z
+DTEND:20261105T220000Z
+SUMMARY:Kevin McGahern - Dún Laoghaire - Nov 5
+LOCATION:Dún Laoghaire
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-mcg
+ ahern-dun-laoghaire-nov-5/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-mcgahern-dun-laoghaire
+ -nov-5/
+END:VEVENT
+END:VCALENDAR

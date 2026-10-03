@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-beau-comedy-club-57565@comedyatlas.app
+DTSTAMP:20261110T190000Z
+DTSTART:20261110T190000Z
+DTEND:20261110T210000Z
+SUMMARY:Le Beau Comedy Club
+LOCATION:Paris
+DESCRIPTION:Six humoristes\, 10 minutes chacun pour plus d'une heure de bla
+ gues !\nMore info: https://comedyatlas.app/comedy-atlas/event/le-beau-comed
+ y-club-57565/
+URL:https://comedyatlas.app/comedy-atlas/event/le-beau-comedy-club-57565/
+END:VEVENT
+END:VCALENDAR

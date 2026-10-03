@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:amiens-comedie-club@comedyatlas.app
+DTSTAMP:20261015T180000Z
+DTSTART:20261015T180000Z
+DTEND:20261015T200000Z
+SUMMARY:Amiens Comedie Club
+LOCATION:Amiens
+DESCRIPTION:Le retour du rendez-vous de l'humour amienois: soirées convivi
+ ales et sketches percutants pour une nouvelle saison chaleureuse sur la sc
+ ène dArts-tist.\nMore info: https://comedyatlas.app/comedy-atlas/event/ami
+ ens-comedie-club/
+URL:https://comedyatlas.app/comedy-atlas/event/amiens-comedie-club/
+END:VEVENT
+END:VCALENDAR

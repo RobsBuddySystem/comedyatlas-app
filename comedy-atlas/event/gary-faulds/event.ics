@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gary-faulds@comedyatlas.app
+DTSTAMP:20261017T173000Z
+DTSTART:20261017T173000Z
+DTEND:20261017T193000Z
+SUMMARY:Gary Faulds
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gary-faul
+ ds/
+URL:https://comedyatlas.app/comedy-atlas/event/gary-faulds/
+END:VEVENT
+END:VCALENDAR

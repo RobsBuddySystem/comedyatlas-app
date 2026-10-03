@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mi-gente-latino-open-mic-espagnol@comedyatlas.app
+DTSTAMP:20261103T190000Z
+DTSTART:20261103T190000Z
+DTEND:20261103T210000Z
+SUMMARY:Mi gente latino : open mic espagnol !
+LOCATION:Lyon
+DESCRIPTION:El stand-up viaja y te invita a descubrir talentos en un idioma
+  diferente.\nMore info: https://comedyatlas.app/comedy-atlas/event/mi-gente
+ -latino-open-mic-espagnol/
+URL:https://comedyatlas.app/comedy-atlas/event/mi-gente-latino-open-mic-esp
+ agnol/
+END:VEVENT
+END:VCALENDAR

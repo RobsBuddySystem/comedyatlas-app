@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-janere-dans-de-libere@comedyatlas.app
+DTSTAMP:20261029T193000Z
+DTSTART:20261029T193000Z
+DTEND:20261029T213000Z
+SUMMARY:Alex Janere dans Dé-Libéré
+LOCATION:Auray
+DESCRIPTION:Qui se cache réellement sous la robe d'Alex Janere ? Un avocat
+  décidé à changer de vie ? Un épicurien conscient du temps qui passe ?\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/alex-janere-dans-de-
+ libere/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-janere-dans-de-libere/
+END:VEVENT
+END:VCALENDAR

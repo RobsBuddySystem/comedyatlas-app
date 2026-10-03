@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-joanne-mcnally-pinotphile@comedyatlas.app
+DTSTAMP:20261107T230000Z
+DTSTART:20261107T230000Z
+DTEND:20261108T010000Z
+SUMMARY:NY Comedy Festival Presents Joanne McNally: Pinotphile
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-joanne-mcnally-pinotphile/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ joanne-mcnally-pinotphile/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:orlando-jones-50160@comedyatlas.app
+DTSTAMP:20261101T003000Z
+DTSTART:20261101T003000Z
+DTEND:20261101T023000Z
+SUMMARY:Orlando Jones
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/orlando-j
+ ones-50160/
+URL:https://comedyatlas.app/comedy-atlas/event/orlando-jones-50160/
+END:VEVENT
+END:VCALENDAR

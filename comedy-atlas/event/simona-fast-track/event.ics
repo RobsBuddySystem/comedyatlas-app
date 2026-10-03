@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simona-fast-track@comedyatlas.app
+DTSTAMP:20261213T180000Z
+DTSTART:20261213T180000Z
+DTEND:20261213T200000Z
+SUMMARY:SIMONA | Fast Track
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simona-fa
+ st-track/
+URL:https://comedyatlas.app/comedy-atlas/event/simona-fast-track/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:davide-de-pierro-45019@comedyatlas.app
+DTSTAMP:20261122T000000Z
+DTSTART:20261122T000000Z
+DTEND:20261122T020000Z
+SUMMARY:Davide De Pierro
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/davide-de
+ -pierro-45019/
+URL:https://comedyatlas.app/comedy-atlas/event/davide-de-pierro-45019/
+END:VEVENT
+END:VCALENDAR

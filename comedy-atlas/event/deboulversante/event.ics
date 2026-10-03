@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deboulversante@comedyatlas.app
+DTSTAMP:20261016T173000Z
+DTSTART:20261016T173000Z
+DTEND:20261016T193000Z
+SUMMARY:Déboulversante
+LOCATION:Dijon
+DESCRIPTION:Avec "Déboulversante"\, cette humoriste provocatrice et sarcas
+ tique à l'humour décapant se livre à vous dans un spectacle autobiograph
+ ique.\nMore info: https://comedyatlas.app/comedy-atlas/event/deboulversante
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/deboulversante/
+END:VEVENT
+END:VCALENDAR

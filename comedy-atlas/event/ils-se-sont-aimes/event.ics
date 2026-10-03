@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ils-se-sont-aimes@comedyatlas.app
+DTSTAMP:20261115T160000Z
+DTSTART:20261115T160000Z
+DTEND:20261115T180000Z
+SUMMARY:Ils se sont aimés
+LOCATION:Lagny sur Marne
+DESCRIPTION:Ils se sont aimés... puis déchirés. Divorce\, coups bas et n
+ uits secrètes : une comédie piquante où l'amour ne lâche jamais vraimen
+ t prise.\nMore info: https://comedyatlas.app/comedy-atlas/event/ils-se-sont
+ -aimes/
+URL:https://comedyatlas.app/comedy-atlas/event/ils-se-sont-aimes/
+END:VEVENT
+END:VCALENDAR

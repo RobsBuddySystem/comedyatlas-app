@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:will-burkart-53960@comedyatlas.app
+DTSTAMP:20270328T020000Z
+DTSTART:20270328T020000Z
+DTEND:20270328T040000Z
+SUMMARY:Will Burkart
+LOCATION:Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/will-burk
+ art-53960/
+URL:https://comedyatlas.app/comedy-atlas/event/will-burkart-53960/
+END:VEVENT
+END:VCALENDAR

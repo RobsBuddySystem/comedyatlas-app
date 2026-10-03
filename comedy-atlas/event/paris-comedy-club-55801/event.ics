@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-comedy-club-55801@comedyatlas.app
+DTSTAMP:20261022T190000Z
+DTSTART:20261022T190000Z
+DTEND:20261022T210000Z
+SUMMARY:Paris Comedy Club
+LOCATION:Arras
+DESCRIPTION:Les humoristes les plus drôles de la nouvelle génération. Le
+ s meilleurs humoristes vont jouer sur Paris... Ce soir\, ils viennent chez 
+ vous.\nMore info: https://comedyatlas.app/comedy-atlas/event/paris-comedy-c
+ lub-55801/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-comedy-club-55801/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jamie-kaler@comedyatlas.app
+DTSTAMP:20261111T033000Z
+DTSTART:20261111T033000Z
+DTEND:20261111T053000Z
+SUMMARY:Jamie Kaler
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jamie-kal
+ er/
+URL:https://comedyatlas.app/comedy-atlas/event/jamie-kaler/
+END:VEVENT
+END:VCALENDAR

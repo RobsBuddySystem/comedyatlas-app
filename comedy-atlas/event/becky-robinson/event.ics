@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:becky-robinson@comedyatlas.app
+DTSTAMP:20261227T020000Z
+DTSTART:20261227T020000Z
+DTEND:20261227T040000Z
+SUMMARY:Becky Robinson
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/becky-rob
+ inson/
+URL:https://comedyatlas.app/comedy-atlas/event/becky-robinson/
+END:VEVENT
+END:VCALENDAR

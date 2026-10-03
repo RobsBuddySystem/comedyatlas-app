@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-at-christmas-fern-brady-bridget-christie@comedyatlas.app
+DTSTAMP:20261208T193000Z
+DTSTART:20261208T193000Z
+DTEND:20261208T213000Z
+SUMMARY:Live at Christmas: Fern Brady & Bridget Christie
+LOCATION:Cheltenham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/live-at-c
+ hristmas-fern-brady-bridget-christie/
+URL:https://comedyatlas.app/comedy-atlas/event/live-at-christmas-fern-brady
+ -bridget-christie/
+END:VEVENT
+END:VCALENDAR

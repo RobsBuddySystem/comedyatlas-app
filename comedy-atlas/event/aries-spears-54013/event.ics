@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-54013@comedyatlas.app
+DTSTAMP:20270410T000000Z
+DTSTART:20270410T000000Z
+DTEND:20270410T020000Z
+SUMMARY:Aries Spears
+LOCATION:Charleston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-54013/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-54013/
+END:VEVENT
+END:VCALENDAR

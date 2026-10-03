@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith@comedyatlas.app
+DTSTAMP:20270131T173000Z
+DTSTART:20270131T173000Z
+DTEND:20270131T193000Z
+SUMMARY:Paul Smith
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith/
+END:VEVENT
+END:VCALENDAR

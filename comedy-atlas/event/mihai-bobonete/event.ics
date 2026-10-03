@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mihai-bobonete@comedyatlas.app
+DTSTAMP:20261115T173000Z
+DTSTART:20261115T173000Z
+DTEND:20261115T193000Z
+SUMMARY:Mihai Bobonete
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mihai-bob
+ onete/
+URL:https://comedyatlas.app/comedy-atlas/event/mihai-bobonete/
+END:VEVENT
+END:VCALENDAR

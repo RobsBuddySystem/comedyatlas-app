@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:beth-hart@comedyatlas.app
+DTSTAMP:20270225T190000Z
+DTSTART:20270225T190000Z
+DTEND:20270225T210000Z
+SUMMARY:Beth Hart
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/beth-hart
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/beth-hart/
+END:VEVENT
+END:VCALENDAR

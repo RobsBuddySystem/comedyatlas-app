@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-sydney-comedy-revue@comedyatlas.app
+DTSTAMP:20261229T093000Z
+DTSTART:20261229T093000Z
+DTEND:20261229T113000Z
+SUMMARY:2026 Sydney Comedy Revue
+LOCATION:Sydney
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/2026-sydn
+ ey-comedy-revue/
+URL:https://comedyatlas.app/comedy-atlas/event/2026-sydney-comedy-revue/
+END:VEVENT
+END:VCALENDAR

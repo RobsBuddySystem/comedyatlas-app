@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:impro-club@comedyatlas.app
+DTSTAMP:20261021T180000Z
+DTSTART:20261021T180000Z
+DTEND:20261021T200000Z
+SUMMARY:Impro Club
+LOCATION:Rouen
+DESCRIPTION:Le Fridge Rouen présente l'impro club du Jamel Comedy Club !\n
+ More info: https://comedyatlas.app/comedy-atlas/event/impro-club/
+URL:https://comedyatlas.app/comedy-atlas/event/impro-club/
+END:VEVENT
+END:VCALENDAR

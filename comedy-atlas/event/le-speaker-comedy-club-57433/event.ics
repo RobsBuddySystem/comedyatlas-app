@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-speaker-comedy-club-57433@comedyatlas.app
+DTSTAMP:20261015T194500Z
+DTSTART:20261015T194500Z
+DTEND:20261015T214500Z
+SUMMARY:Le Speaker Comedy club
+LOCATION:Lyon
+DESCRIPTION:Bienvenue au Comedy club du Speaker\, le premier lieu 100% déd
+ ié au stand-up en plein coeur de Lyon !\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/le-speaker-comedy-club-57433/
+URL:https://comedyatlas.app/comedy-atlas/event/le-speaker-comedy-club-57433
+ /
+END:VEVENT
+END:VCALENDAR

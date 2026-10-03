@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ivo-graham-orange-crush@comedyatlas.app
+DTSTAMP:20261126T193000Z
+DTSTART:20261126T193000Z
+DTEND:20261126T213000Z
+SUMMARY:Ivo Graham: Orange Crush
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ivo-graha
+ m-orange-crush/
+URL:https://comedyatlas.app/comedy-atlas/event/ivo-graham-orange-crush/
+END:VEVENT
+END:VCALENDAR

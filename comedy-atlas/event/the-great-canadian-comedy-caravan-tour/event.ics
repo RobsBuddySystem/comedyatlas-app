@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-great-canadian-comedy-caravan-tour@comedyatlas.app
+DTSTAMP:20270508T233000Z
+DTSTART:20270508T233000Z
+DTEND:20270509T013000Z
+SUMMARY:The Great Canadian Comedy Caravan Tour
+LOCATION:Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-great
+ -canadian-comedy-caravan-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/the-great-canadian-comedy-ca
+ ravan-tour/
+END:VEVENT
+END:VCALENDAR

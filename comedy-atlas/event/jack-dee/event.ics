@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-dee@comedyatlas.app
+DTSTAMP:20261021T190000Z
+DTSTART:20261021T190000Z
+DTEND:20261021T210000Z
+SUMMARY:Jack Dee
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-dee/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-dee/
+END:VEVENT
+END:VCALENDAR

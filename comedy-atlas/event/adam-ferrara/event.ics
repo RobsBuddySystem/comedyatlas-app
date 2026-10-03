@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-ferrara@comedyatlas.app
+DTSTAMP:20270109T000000Z
+DTSTART:20270109T000000Z
+DTEND:20270109T020000Z
+SUMMARY:Adam Ferrara
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-ferr
+ ara/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-ferrara/
+END:VEVENT
+END:VCALENDAR

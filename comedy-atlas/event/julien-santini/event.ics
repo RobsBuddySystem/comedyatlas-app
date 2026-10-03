@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julien-santini@comedyatlas.app
+DTSTAMP:20270415T183000Z
+DTSTART:20270415T183000Z
+DTEND:20270415T203000Z
+SUMMARY:Julien Santini
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julien-sa
+ ntini/
+URL:https://comedyatlas.app/comedy-atlas/event/julien-santini/
+END:VEVENT
+END:VCALENDAR

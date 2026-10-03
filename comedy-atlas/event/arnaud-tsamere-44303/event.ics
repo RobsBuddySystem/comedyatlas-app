@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arnaud-tsamere-44303@comedyatlas.app
+DTSTAMP:20270116T190000Z
+DTSTART:20270116T190000Z
+DTEND:20270116T210000Z
+SUMMARY:Arnaud Tsamere
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arnaud-ts
+ amere-44303/
+URL:https://comedyatlas.app/comedy-atlas/event/arnaud-tsamere-44303/
+END:VEVENT
+END:VCALENDAR

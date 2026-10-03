@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:queen-pas-parfaite@comedyatlas.app
+DTSTAMP:20261010T153000Z
+DTSTART:20261010T153000Z
+DTEND:20261010T173000Z
+SUMMARY:Queen pas parfaite
+LOCATION:Paris
+DESCRIPTION:Un spectacle d'humour sur la maternité\, l'identité et la fé
+ minité.\nMore info: https://comedyatlas.app/comedy-atlas/event/queen-pas-p
+ arfaite/
+URL:https://comedyatlas.app/comedy-atlas/event/queen-pas-parfaite/
+END:VEVENT
+END:VCALENDAR

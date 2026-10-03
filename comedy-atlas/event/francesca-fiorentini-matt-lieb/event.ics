@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francesca-fiorentini-matt-lieb@comedyatlas.app
+DTSTAMP:20261013T233000Z
+DTSTART:20261013T233000Z
+DTEND:20261014T013000Z
+SUMMARY:Francesca Fiorentini & Matt Lieb
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/francesca
+ -fiorentini-matt-lieb/
+URL:https://comedyatlas.app/comedy-atlas/event/francesca-fiorentini-matt-li
+ eb/
+END:VEVENT
+END:VCALENDAR

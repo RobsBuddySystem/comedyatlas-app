@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chinedu-unaka@comedyatlas.app
+DTSTAMP:20261008T030000Z
+DTSTART:20261008T030000Z
+DTEND:20261008T050000Z
+SUMMARY:Chinedu Unaka
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chinedu-u
+ naka/
+URL:https://comedyatlas.app/comedy-atlas/event/chinedu-unaka/
+END:VEVENT
+END:VCALENDAR

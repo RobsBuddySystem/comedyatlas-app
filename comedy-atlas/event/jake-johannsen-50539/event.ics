@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jake-johannsen-50539@comedyatlas.app
+DTSTAMP:20261108T030000Z
+DTSTART:20261108T030000Z
+DTEND:20261108T050000Z
+SUMMARY:Jake Johannsen
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jake-joha
+ nnsen-50539/
+URL:https://comedyatlas.app/comedy-atlas/event/jake-johannsen-50539/
+END:VEVENT
+END:VCALENDAR

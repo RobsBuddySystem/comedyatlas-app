@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-marty@comedyatlas.app
+DTSTAMP:20270508T170000Z
+DTSTART:20270508T170000Z
+DTEND:20270508T190000Z
+SUMMARY:Thomas Marty
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thomas-ma
+ rty/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-marty/
+END:VEVENT
+END:VCALENDAR

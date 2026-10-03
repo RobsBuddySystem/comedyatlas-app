@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-de-saint-sernin-en-spectacle@comedyatlas.app
+DTSTAMP:20261105T190000Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Paul de Saint Sernin en spectacle
+LOCATION:Vincennes
+DESCRIPTION:Paul de Saint Sernin se distingue par une écriture incisive et
+  des performances scéniques mémorables.\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/paul-de-saint-sernin-en-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-de-saint-sernin-en-spec
+ tacle/
+END:VEVENT
+END:VCALENDAR

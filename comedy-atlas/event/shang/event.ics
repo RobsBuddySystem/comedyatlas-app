@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shang@comedyatlas.app
+DTSTAMP:20270107T040000Z
+DTSTART:20270107T040000Z
+DTEND:20270107T060000Z
+SUMMARY:Shang
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shang/
+URL:https://comedyatlas.app/comedy-atlas/event/shang/
+END:VEVENT
+END:VCALENDAR

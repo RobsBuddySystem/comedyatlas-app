@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rodrigue@comedyatlas.app
+DTSTAMP:20280423T160000Z
+DTSTART:20280423T160000Z
+DTEND:20280423T180000Z
+SUMMARY:Rodrigue
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rodrigue/
+URL:https://comedyatlas.app/comedy-atlas/event/rodrigue/
+END:VEVENT
+END:VCALENDAR

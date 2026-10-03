@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:felix-lobrecht-logen-seat@comedyatlas.app
+DTSTAMP:20261127T190000Z
+DTSTART:20261127T190000Z
+DTEND:20261127T210000Z
+SUMMARY:Felix Lobrecht | Logen-Seat
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/felix-lob
+ recht-logen-seat/
+URL:https://comedyatlas.app/comedy-atlas/event/felix-lobrecht-logen-seat/
+END:VEVENT
+END:VCALENDAR

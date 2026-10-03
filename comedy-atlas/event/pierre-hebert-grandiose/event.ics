@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pierre-hebert-grandiose@comedyatlas.app
+DTSTAMP:20270221T010000Z
+DTSTART:20270221T010000Z
+DTEND:20270221T030000Z
+SUMMARY:Pierre Hébert - Grandiose
+LOCATION:Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pierre-he
+ bert-grandiose/
+URL:https://comedyatlas.app/comedy-atlas/event/pierre-hebert-grandiose/
+END:VEVENT
+END:VCALENDAR

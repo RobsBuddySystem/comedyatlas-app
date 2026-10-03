@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-petras-nouveau-spectacle@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Greg Petras Nouveau spectacle
+LOCATION:Marseille
+DESCRIPTION:Suite au succès de son premier spectacle\, Greg PETRAS revient
+  avec un nouveau one man show.\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/greg-petras-nouveau-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-petras-nouveau-spectacl
+ e/
+END:VEVENT
+END:VCALENDAR

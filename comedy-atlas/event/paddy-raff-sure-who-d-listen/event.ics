@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paddy-raff-sure-who-d-listen@comedyatlas.app
+DTSTAMP:20270417T190000Z
+DTSTART:20270417T190000Z
+DTEND:20270417T210000Z
+SUMMARY:Paddy Raff : Sure Who'd Listen?
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paddy-raf
+ f-sure-who-d-listen/
+URL:https://comedyatlas.app/comedy-atlas/event/paddy-raff-sure-who-d-listen
+ /
+END:VEVENT
+END:VCALENDAR

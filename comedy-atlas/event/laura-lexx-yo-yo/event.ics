@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laura-lexx-yo-yo@comedyatlas.app
+DTSTAMP:20261031T190000Z
+DTSTART:20261031T190000Z
+DTEND:20261031T210000Z
+SUMMARY:Laura Lexx: Yo Yo
+LOCATION:Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laura-lex
+ x-yo-yo/
+URL:https://comedyatlas.app/comedy-atlas/event/laura-lexx-yo-yo/
+END:VEVENT
+END:VCALENDAR

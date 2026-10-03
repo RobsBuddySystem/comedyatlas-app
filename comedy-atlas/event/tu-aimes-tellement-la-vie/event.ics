@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tu-aimes-tellement-la-vie@comedyatlas.app
+DTSTAMP:20270110T170000Z
+DTSTART:20270110T170000Z
+DTEND:20270110T190000Z
+SUMMARY:Tu aimes tellement la vie
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tu-aimes-
+ tellement-la-vie/
+URL:https://comedyatlas.app/comedy-atlas/event/tu-aimes-tellement-la-vie/
+END:VEVENT
+END:VCALENDAR

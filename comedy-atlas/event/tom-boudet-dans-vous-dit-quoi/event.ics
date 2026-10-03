@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-boudet-dans-vous-dit-quoi@comedyatlas.app
+DTSTAMP:20261015T190000Z
+DTSTART:20261015T190000Z
+DTEND:20261015T210000Z
+SUMMARY:Tom Boudet dans Vous dit quoi
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Tom Boudet est un jeune humoriste\, comédien\, et YouTubeur li
+ llois.\nMore info: https://comedyatlas.app/comedy-atlas/event/tom-boudet-da
+ ns-vous-dit-quoi/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-boudet-dans-vous-dit-quo
+ i/
+END:VEVENT
+END:VCALENDAR

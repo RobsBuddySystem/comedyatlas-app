@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:celibataire-mode-d-emploi@comedyatlas.app
+DTSTAMP:20261027T190000Z
+DTSTART:20261027T190000Z
+DTEND:20261027T210000Z
+SUMMARY:Célibataire mode d'emploi
+LOCATION:Montpellier
+DESCRIPTION:Célibataire ou plutôt célibérées ?\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/celibataire-mode-d-emploi/
+URL:https://comedyatlas.app/comedy-atlas/event/celibataire-mode-d-emploi/
+END:VEVENT
+END:VCALENDAR

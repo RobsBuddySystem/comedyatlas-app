@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-live@comedyatlas.app
+DTSTAMP:20270516T180000Z
+DTSTART:20270516T180000Z
+DTEND:20270516T200000Z
+SUMMARY:Aries Spears Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-live/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-live/
+END:VEVENT
+END:VCALENDAR

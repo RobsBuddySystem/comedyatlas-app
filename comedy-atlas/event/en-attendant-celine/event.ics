@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:en-attendant-celine@comedyatlas.app
+DTSTAMP:20261030T180000Z
+DTSTART:20261030T180000Z
+DTEND:20261030T200000Z
+SUMMARY:En attendant Céline
+LOCATION:Toulouse
+DESCRIPTION:Angel Ramos Sanchez est bien embarrassé de devoir annoncer au 
+ public que Céline Dion a un "pequenio problemo" et qu'elle "va venir".\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/en-attendant-celine/
+URL:https://comedyatlas.app/comedy-atlas/event/en-attendant-celine/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cbc-radio-accent-on-toronto@comedyatlas.app
+DTSTAMP:20261015T233000Z
+DTSTART:20261015T233000Z
+DTEND:20261016T013000Z
+SUMMARY:CBC Radio - Accent on Toronto
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cbc-radio
+ -accent-on-toronto/
+URL:https://comedyatlas.app/comedy-atlas/event/cbc-radio-accent-on-toronto/
+END:VEVENT
+END:VCALENDAR

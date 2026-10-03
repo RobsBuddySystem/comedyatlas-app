@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-naas-jan-1@comedyatlas.app
+DTSTAMP:20270101T200000Z
+DTSTART:20270101T200000Z
+DTEND:20270101T220000Z
+SUMMARY:David McSavage - Naas - Jan 1
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-naas-jan-1/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-naas-jan-1/
+END:VEVENT
+END:VCALENDAR

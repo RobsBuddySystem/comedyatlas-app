@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:j-me-lance-57177@comedyatlas.app
+DTSTAMP:20261101T160000Z
+DTSTART:20261101T160000Z
+DTEND:20261101T180000Z
+SUMMARY:J'me Lance !
+LOCATION:Nantes
+DESCRIPTION:Un dimanche par mois\, les élèves de La Compagnie du Café-Th
+ éâtre montent sur scène.\nMore info: https://comedyatlas.app/comedy-atla
+ s/event/j-me-lance-57177/
+URL:https://comedyatlas.app/comedy-atlas/event/j-me-lance-57177/
+END:VEVENT
+END:VCALENDAR

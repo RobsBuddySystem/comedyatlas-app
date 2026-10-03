@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:foil-arms-hog-smithereens-2027@comedyatlas.app
+DTSTAMP:20270318T233000Z
+DTSTART:20270318T233000Z
+DTEND:20270319T013000Z
+SUMMARY:Foil Arms & Hog: Smithereens 2027
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/foil-arms
+ -hog-smithereens-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/foil-arms-hog-smithereens-20
+ 27/
+END:VEVENT
+END:VCALENDAR

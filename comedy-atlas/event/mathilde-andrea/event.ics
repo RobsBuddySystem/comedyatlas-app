@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mathilde-andrea@comedyatlas.app
+DTSTAMP:20261107T183000Z
+DTSTART:20261107T183000Z
+DTEND:20261107T203000Z
+SUMMARY:Mathilde Andréa
+LOCATION:Avignon
+DESCRIPTION:Stand-up en rodage\, mais très drôle !\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/mathilde-andrea/
+URL:https://comedyatlas.app/comedy-atlas/event/mathilde-andrea/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:holiday-is-nice@comedyatlas.app
+DTSTAMP:20261015T173000Z
+DTSTART:20261015T173000Z
+DTEND:20261015T193000Z
+SUMMARY:Holiday is nice !
+LOCATION:Pessac
+DESCRIPTION:Mais pas pour tout le monde !\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/holiday-is-nice/
+URL:https://comedyatlas.app/comedy-atlas/event/holiday-is-nice/
+END:VEVENT
+END:VCALENDAR

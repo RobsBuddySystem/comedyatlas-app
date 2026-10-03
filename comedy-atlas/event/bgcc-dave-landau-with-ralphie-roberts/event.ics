@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-dave-landau-with-ralphie-roberts@comedyatlas.app
+DTSTAMP:20261028T030000Z
+DTSTART:20261028T030000Z
+DTEND:20261028T050000Z
+SUMMARY:BGCC: Dave Landau with Ralphie Roberts
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-dave
+ -landau-with-ralphie-roberts/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-dave-landau-with-ralphi
+ e-roberts/
+END:VEVENT
+END:VCALENDAR

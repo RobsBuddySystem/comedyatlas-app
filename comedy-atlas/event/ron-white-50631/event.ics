@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-50631@comedyatlas.app
+DTSTAMP:20261109T010000Z
+DTSTART:20261109T010000Z
+DTEND:20261109T030000Z
+SUMMARY:RON WHITE
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -50631/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-50631/
+END:VEVENT
+END:VCALENDAR

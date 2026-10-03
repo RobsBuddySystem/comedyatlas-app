@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tape-face-50216@comedyatlas.app
+DTSTAMP:20261102T033000Z
+DTSTART:20261102T033000Z
+DTEND:20261102T053000Z
+SUMMARY:Tape Face
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tape-face
+ -50216/
+URL:https://comedyatlas.app/comedy-atlas/event/tape-face-50216/
+END:VEVENT
+END:VCALENDAR

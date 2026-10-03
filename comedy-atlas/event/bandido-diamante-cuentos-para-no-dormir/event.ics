@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bandido-diamante-cuentos-para-no-dormir@comedyatlas.app
+DTSTAMP:20261106T030000Z
+DTSTART:20261106T030000Z
+DTEND:20261106T050000Z
+SUMMARY:Bandido Diamante - Cuentos para no Dormir
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bandido-d
+ iamante-cuentos-para-no-dormir/
+URL:https://comedyatlas.app/comedy-atlas/event/bandido-diamante-cuentos-par
+ a-no-dormir/
+END:VEVENT
+END:VCALENDAR

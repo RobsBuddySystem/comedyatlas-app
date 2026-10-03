@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:camille-lorente@comedyatlas.app
+DTSTAMP:20261106T190000Z
+DTSTART:20261106T190000Z
+DTEND:20261106T210000Z
+SUMMARY:Camille Lorente
+LOCATION:Pacé
+DESCRIPTION:Le spectacle le plus drôle de Camille Lorente ! C'est son prem
+ ier. Et le seul pour l'instant. Mais il est vraiment bien.\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/camille-lorente/
+URL:https://comedyatlas.app/comedy-atlas/event/camille-lorente/
+END:VEVENT
+END:VCALENDAR

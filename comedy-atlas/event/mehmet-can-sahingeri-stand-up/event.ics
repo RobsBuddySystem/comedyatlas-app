@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mehmet-can-sahingeri-stand-up@comedyatlas.app
+DTSTAMP:20261009T170000Z
+DTSTART:20261009T170000Z
+DTEND:20261009T190000Z
+SUMMARY:Mehmet Can Şahingeri Stand Up
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mehmet-ca
+ n-sahingeri-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/mehmet-can-sahingeri-stand-u
+ p/
+END:VEVENT
+END:VCALENDAR

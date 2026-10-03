@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:felipe-esparza-presents-live-taping-of-saul-trujillo-with-special-guest
+ s-martin-rizo-and-felipe-esparza-show-1@comedyatlas.app
+DTSTAMP:20261009T020000Z
+DTSTART:20261009T020000Z
+DTEND:20261009T040000Z
+SUMMARY:Felipe Esparza Presents: Live Taping of Saul Trujillo with special 
+ guests Martin Rizo and Felipe Esparza (Show 1)
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/felipe-es
+ parza-presents-live-taping-of-saul-trujillo-with-special-guests-martin-rizo
+ -and-felipe-esparza-show-1/
+URL:https://comedyatlas.app/comedy-atlas/event/felipe-esparza-presents-live
+ -taping-of-saul-trujillo-with-special-guests-martin-rizo-and-felipe-esparza
+ -show-1/
+END:VEVENT
+END:VCALENDAR

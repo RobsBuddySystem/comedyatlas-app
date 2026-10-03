@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brent-morin-50163@comedyatlas.app
+DTSTAMP:20261101T010000Z
+DTSTART:20261101T010000Z
+DTEND:20261101T030000Z
+SUMMARY:Brent Morin
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brent-mor
+ in-50163/
+URL:https://comedyatlas.app/comedy-atlas/event/brent-morin-50163/
+END:VEVENT
+END:VCALENDAR

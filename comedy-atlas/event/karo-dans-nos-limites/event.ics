@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:karo-dans-nos-limites@comedyatlas.app
+DTSTAMP:20261114T193000Z
+DTSTART:20261114T193000Z
+DTEND:20261114T213000Z
+SUMMARY:Karo dans Nos limites
+LOCATION:Annecy
+DESCRIPTION:Miroir de nos petites imperfections\, Karo est hilarante et ins
+ pirante !\nMore info: https://comedyatlas.app/comedy-atlas/event/karo-dans-
+ nos-limites/
+URL:https://comedyatlas.app/comedy-atlas/event/karo-dans-nos-limites/
+END:VEVENT
+END:VCALENDAR

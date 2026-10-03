@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:qg-comedy-club-jeudi-stand-up@comedyatlas.app
+DTSTAMP:20261022T170000Z
+DTSTART:20261022T170000Z
+DTEND:20261022T190000Z
+SUMMARY:QG Comedy Club : Jeudi Stand up
+LOCATION:Grenoble
+DESCRIPTION:Le QG Comedy Club propose un plateau déjanté de plusieurs hum
+ oristes qui vous feront vriller de rire.\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/qg-comedy-club-jeudi-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/qg-comedy-club-jeudi-stand-u
+ p/
+END:VEVENT
+END:VCALENDAR

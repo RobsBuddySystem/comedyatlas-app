@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bad-parenting-comedy-tour@comedyatlas.app
+DTSTAMP:20261112T013000Z
+DTSTART:20261112T013000Z
+DTEND:20261112T033000Z
+SUMMARY:Bad Parenting Comedy Tour
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bad-paren
+ ting-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/bad-parenting-comedy-tour/
+END:VEVENT
+END:VCALENDAR

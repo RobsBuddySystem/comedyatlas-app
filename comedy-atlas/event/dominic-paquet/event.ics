@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dominic-paquet@comedyatlas.app
+DTSTAMP:20261107T010000Z
+DTSTART:20261107T010000Z
+DTEND:20261107T030000Z
+SUMMARY:Dominic Paquet
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dominic-p
+ aquet/
+URL:https://comedyatlas.app/comedy-atlas/event/dominic-paquet/
+END:VEVENT
+END:VCALENDAR

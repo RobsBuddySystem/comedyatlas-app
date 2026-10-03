@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mustapha-dans-intermutant-du-spectacle@comedyatlas.app
+DTSTAMP:20261030T190000Z
+DTSTART:20261030T190000Z
+DTEND:20261030T210000Z
+SUMMARY:Mustapha dans Intermutant du spectacle
+LOCATION:Marly
+DESCRIPTION:Quand on perd l'amour\, on gagne du temps. Et Mustapha\, lui\, 
+ en profite pour muter.\nMore info: https://comedyatlas.app/comedy-atlas/eve
+ nt/mustapha-dans-intermutant-du-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/mustapha-dans-intermutant-du
+ -spectacle/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rachel-feinstein-52530@comedyatlas.app
+DTSTAMP:20261219T030000Z
+DTSTART:20261219T030000Z
+DTEND:20261219T050000Z
+SUMMARY:Rachel Feinstein
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rachel-fe
+ instein-52530/
+URL:https://comedyatlas.app/comedy-atlas/event/rachel-feinstein-52530/
+END:VEVENT
+END:VCALENDAR

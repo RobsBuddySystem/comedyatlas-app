@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-kent@comedyatlas.app
+DTSTAMP:20261024T180000Z
+DTSTART:20261024T180000Z
+DTEND:20261024T200000Z
+SUMMARY:Chris Kent
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-ken
+ t/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-kent/
+END:VEVENT
+END:VCALENDAR

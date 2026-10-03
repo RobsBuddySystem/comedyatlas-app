@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:veronic-dicaire-enchantee@comedyatlas.app
+DTSTAMP:20261201T190000Z
+DTSTART:20261201T190000Z
+DTEND:20261201T210000Z
+SUMMARY:Véronic Dicaire - Enchantée
+LOCATION:Liege
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/veronic-d
+ icaire-enchantee/
+URL:https://comedyatlas.app/comedy-atlas/event/veronic-dicaire-enchantee/
+END:VEVENT
+END:VCALENDAR

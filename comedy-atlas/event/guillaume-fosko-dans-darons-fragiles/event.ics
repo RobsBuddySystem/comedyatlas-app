@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guillaume-fosko-dans-darons-fragiles@comedyatlas.app
+DTSTAMP:20261015T181000Z
+DTSTART:20261015T181000Z
+DTEND:20261015T201000Z
+SUMMARY:Guillaume Fosko dans Darons fragiles
+LOCATION:Le Métropole\, 39 rue du sentier\, Paris
+DESCRIPTION:Ceci n'est pas un spectacle sur sa famille. C'est un spectacle 
+ sur la vôtre.\nMore info: https://comedyatlas.app/comedy-atlas/event/guill
+ aume-fosko-dans-darons-fragiles/
+URL:https://comedyatlas.app/comedy-atlas/event/guillaume-fosko-dans-darons-
+ fragiles/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:runnin-late-with-cab-comedy-show@comedyatlas.app
+DTSTAMP:20261224T003000Z
+DTSTART:20261224T003000Z
+DTEND:20261224T023000Z
+SUMMARY:Runnin' Late With Cab Comedy Show
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/runnin-la
+ te-with-cab-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/runnin-late-with-cab-comedy-
+ show/
+END:VEVENT
+END:VCALENDAR

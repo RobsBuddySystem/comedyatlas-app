@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:katt-williams-on-book-tour@comedyatlas.app
+DTSTAMP:20261015T030000Z
+DTSTART:20261015T030000Z
+DTEND:20261015T050000Z
+SUMMARY:Katt Williams On Book Tour!
+LOCATION:Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/katt-will
+ iams-on-book-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/katt-williams-on-book-tour/
+END:VEVENT
+END:VCALENDAR

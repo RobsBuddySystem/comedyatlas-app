@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sacto-stand-up-in-the-callback-bar@comedyatlas.app
+DTSTAMP:20261017T023000Z
+DTSTART:20261017T023000Z
+DTEND:20261017T043000Z
+SUMMARY:Sacto Stand-Up - in the Callback Bar
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sacto-sta
+ nd-up-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/sacto-stand-up-in-the-callba
+ ck-bar/
+END:VEVENT
+END:VCALENDAR

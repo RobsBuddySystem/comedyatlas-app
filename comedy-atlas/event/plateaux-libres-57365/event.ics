@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:plateaux-libres-57365@comedyatlas.app
+DTSTAMP:20261028T180000Z
+DTSTART:20261028T180000Z
+DTEND:20261028T200000Z
+SUMMARY:Plateaux libres
+LOCATION:Lyon
+DESCRIPTION:Bienvenue au Plateau libre du Speaker\, le premier Comedy Club 
+ 100% dédié au stand-up en plein coeur de Lyon !\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/plateaux-libres-57365/
+URL:https://comedyatlas.app/comedy-atlas/event/plateaux-libres-57365/
+END:VEVENT
+END:VCALENDAR

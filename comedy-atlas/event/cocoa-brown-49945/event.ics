@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cocoa-brown-49945@comedyatlas.app
+DTSTAMP:20261026T020000Z
+DTSTART:20261026T020000Z
+DTEND:20261026T040000Z
+SUMMARY:Cocoa Brown
+LOCATION:Tacoma
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cocoa-bro
+ wn-49945/
+URL:https://comedyatlas.app/comedy-atlas/event/cocoa-brown-49945/
+END:VEVENT
+END:VCALENDAR

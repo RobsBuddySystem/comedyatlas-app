@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roman-doduik-nouveau-spectacle@comedyatlas.app
+DTSTAMP:20261022T183000Z
+DTSTART:20261022T183000Z
+DTEND:20261022T203000Z
+SUMMARY:Roman Doduik Nouveau spectacle
+LOCATION:Clermont Ferrand
+DESCRIPTION:Venez voir Roman Doduik dans son nouveau spectacle à la Coméd
+ ie des Volcans à Clermont-Ferrand\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/roman-doduik-nouveau-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/roman-doduik-nouveau-spectac
+ le/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-jacobs@comedyatlas.app
+DTSTAMP:20261221T000000Z
+DTSTART:20261221T000000Z
+DTEND:20261221T020000Z
+SUMMARY:John Jacobs
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-jaco
+ bs/
+URL:https://comedyatlas.app/comedy-atlas/event/john-jacobs/
+END:VEVENT
+END:VCALENDAR

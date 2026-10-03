@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucas-zelnick-43880@comedyatlas.app
+DTSTAMP:20261111T113000Z
+DTSTART:20261111T113000Z
+DTEND:20261111T133000Z
+SUMMARY:Lucas Zelnick
+LOCATION:Brisbane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucas-zel
+ nick-43880/
+URL:https://comedyatlas.app/comedy-atlas/event/lucas-zelnick-43880/
+END:VEVENT
+END:VCALENDAR

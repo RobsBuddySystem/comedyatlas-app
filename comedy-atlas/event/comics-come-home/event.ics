@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comics-come-home@comedyatlas.app
+DTSTAMP:20261108T010000Z
+DTSTART:20261108T010000Z
+DTEND:20261108T030000Z
+SUMMARY:Comics Come Home
+LOCATION:Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comics-co
+ me-home/
+URL:https://comedyatlas.app/comedy-atlas/event/comics-come-home/
+END:VEVENT
+END:VCALENDAR

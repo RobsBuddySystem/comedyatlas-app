@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-friday-night-show-46725@comedyatlas.app
+DTSTAMP:20261204T180000Z
+DTSTART:20261204T180000Z
+DTEND:20261204T200000Z
+SUMMARY:THE FRIDAY NIGHT SHOW!
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-frida
+ y-night-show-46725/
+URL:https://comedyatlas.app/comedy-atlas/event/the-friday-night-show-46725/
+END:VEVENT
+END:VCALENDAR

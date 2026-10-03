@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-funches-funchadelic@comedyatlas.app
+DTSTAMP:20261012T020000Z
+DTSTART:20261012T020000Z
+DTEND:20261012T040000Z
+SUMMARY:Ron Funches: Funchadelic
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-funch
+ es-funchadelic/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-funches-funchadelic/
+END:VEVENT
+END:VCALENDAR

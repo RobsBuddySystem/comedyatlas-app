@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arnaud-demanche-nouveau-spectacle@comedyatlas.app
+DTSTAMP:20261105T193000Z
+DTSTART:20261105T193000Z
+DTEND:20261105T213000Z
+SUMMARY:Arnaud Demanche Nouveau spectacle
+LOCATION:Saint-Riquier
+DESCRIPTION:Alors qu'il est anorexique\, une femme lui lance lors son premi
+ er rendez-vous amoureux :\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/arnaud-demanche-nouveau-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/arnaud-demanche-nouveau-spec
+ tacle/
+END:VEVENT
+END:VCALENDAR

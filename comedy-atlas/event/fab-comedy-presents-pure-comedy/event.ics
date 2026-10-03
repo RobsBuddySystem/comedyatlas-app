@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fab-comedy-presents-pure-comedy@comedyatlas.app
+DTSTAMP:20261121T023000Z
+DTSTART:20261121T023000Z
+DTEND:20261121T043000Z
+SUMMARY:Fab Comedy Presents: Pure Comedy
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fab-comed
+ y-presents-pure-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/fab-comedy-presents-pure-com
+ edy/
+END:VEVENT
+END:VCALENDAR

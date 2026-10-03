@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:k-pop-live@comedyatlas.app
+DTSTAMP:20270425T130000Z
+DTSTART:20270425T130000Z
+DTEND:20270425T150000Z
+SUMMARY:K-Pop Live
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/k-pop-liv
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/k-pop-live/
+END:VEVENT
+END:VCALENDAR

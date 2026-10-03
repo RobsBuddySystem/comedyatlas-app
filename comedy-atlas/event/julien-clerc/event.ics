@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julien-clerc@comedyatlas.app
+DTSTAMP:20270125T190000Z
+DTSTART:20270125T190000Z
+DTEND:20270125T210000Z
+SUMMARY:Julien Clerc
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julien-cl
+ erc/
+URL:https://comedyatlas.app/comedy-atlas/event/julien-clerc/
+END:VEVENT
+END:VCALENDAR

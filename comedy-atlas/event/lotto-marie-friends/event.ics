@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lotto-marie-friends@comedyatlas.app
+DTSTAMP:20261126T013000Z
+DTSTART:20261126T013000Z
+DTEND:20261126T033000Z
+SUMMARY:Lotto Marie & Friends
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lotto-mar
+ ie-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/lotto-marie-friends/
+END:VEVENT
+END:VCALENDAR

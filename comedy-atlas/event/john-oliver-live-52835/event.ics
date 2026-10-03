@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-oliver-live-52835@comedyatlas.app
+DTSTAMP:20261230T000000Z
+DTSTART:20261230T000000Z
+DTEND:20261230T020000Z
+SUMMARY:John Oliver Live
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-oliv
+ er-live-52835/
+URL:https://comedyatlas.app/comedy-atlas/event/john-oliver-live-52835/
+END:VEVENT
+END:VCALENDAR

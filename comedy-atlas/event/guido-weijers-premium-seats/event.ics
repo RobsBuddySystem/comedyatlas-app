@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guido-weijers-premium-seats@comedyatlas.app
+DTSTAMP:20261223T190000Z
+DTSTART:20261223T190000Z
+DTEND:20261223T210000Z
+SUMMARY:Guido Weijers | Premium Seats
+LOCATION:Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/guido-wei
+ jers-premium-seats/
+URL:https://comedyatlas.app/comedy-atlas/event/guido-weijers-premium-seats/
+END:VEVENT
+END:VCALENDAR

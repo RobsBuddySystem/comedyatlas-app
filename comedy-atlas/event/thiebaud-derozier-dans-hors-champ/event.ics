@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thiebaud-derozier-dans-hors-champ@comedyatlas.app
+DTSTAMP:20261029T190000Z
+DTSTART:20261029T190000Z
+DTEND:20261029T210000Z
+SUMMARY:Thiébaud Derozier dans Hors-Champ
+LOCATION:Dijon
+DESCRIPTION:Thiébaud Derozier\, humoriste dijonnais\, vous dévoile son pr
+ emier spectacle de stand-up. Focus.\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/thiebaud-derozier-dans-hors-champ/
+URL:https://comedyatlas.app/comedy-atlas/event/thiebaud-derozier-dans-hors-
+ champ/
+END:VEVENT
+END:VCALENDAR

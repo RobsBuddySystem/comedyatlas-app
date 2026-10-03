@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gus-heagerty@comedyatlas.app
+DTSTAMP:20261021T023000Z
+DTSTART:20261021T023000Z
+DTEND:20261021T043000Z
+SUMMARY:Gus Heagerty
+LOCATION:San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gus-heage
+ rty/
+URL:https://comedyatlas.app/comedy-atlas/event/gus-heagerty/
+END:VEVENT
+END:VCALENDAR

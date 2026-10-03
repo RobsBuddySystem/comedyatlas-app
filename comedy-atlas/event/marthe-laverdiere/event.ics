@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marthe-laverdiere@comedyatlas.app
+DTSTAMP:20270620T000000Z
+DTSTART:20270620T000000Z
+DTEND:20270620T020000Z
+SUMMARY:Marthe Laverdière
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marthe-la
+ verdiere/
+URL:https://comedyatlas.app/comedy-atlas/event/marthe-laverdiere/
+END:VEVENT
+END:VCALENDAR

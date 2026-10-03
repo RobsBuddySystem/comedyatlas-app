@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roy-chubby-brown-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20270403T170000Z
+DTSTART:20270403T170000Z
+DTEND:20270403T190000Z
+SUMMARY:Roy Chubby Brown - Venue Premium Tickets
+LOCATION:York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roy-chubb
+ y-brown-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/roy-chubby-brown-venue-premi
+ um-tickets/
+END:VEVENT
+END:VCALENDAR

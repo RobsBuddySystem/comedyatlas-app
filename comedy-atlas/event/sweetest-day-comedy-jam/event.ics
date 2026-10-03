@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sweetest-day-comedy-jam@comedyatlas.app
+DTSTAMP:20261018T010000Z
+DTSTART:20261018T010000Z
+DTEND:20261018T030000Z
+SUMMARY:Sweetest Day Comedy Jam
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sweetest-
+ day-comedy-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/sweetest-day-comedy-jam/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:absolute-radio-live@comedyatlas.app
+DTSTAMP:20261115T183000Z
+DTSTART:20261115T183000Z
+DTEND:20261115T203000Z
+SUMMARY:Absolute Radio Live
+LOCATION:London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/absolute-
+ radio-live/
+URL:https://comedyatlas.app/comedy-atlas/event/absolute-radio-live/
+END:VEVENT
+END:VCALENDAR

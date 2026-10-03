@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:che-durena-live@comedyatlas.app
+DTSTAMP:20261015T110000Z
+DTSTART:20261015T110000Z
+DTEND:20261015T130000Z
+SUMMARY:Che Durena Live
+LOCATION:Perth
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/che-duren
+ a-live/
+URL:https://comedyatlas.app/comedy-atlas/event/che-durena-live/
+END:VEVENT
+END:VCALENDAR

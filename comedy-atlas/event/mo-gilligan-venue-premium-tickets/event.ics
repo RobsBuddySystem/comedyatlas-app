@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-gilligan-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20270410T183000Z
+DTSTART:20270410T183000Z
+DTEND:20270410T203000Z
+SUMMARY:Mo Gilligan - Venue Premium Tickets
+LOCATION:York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-gillig
+ an-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-gilligan-venue-premium-ti
+ ckets/
+END:VEVENT
+END:VCALENDAR

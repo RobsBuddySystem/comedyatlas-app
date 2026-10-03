@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:faites-l-amour-pas-des-gosses@comedyatlas.app
+DTSTAMP:20261107T160000Z
+DTSTART:20261107T160000Z
+DTEND:20261107T180000Z
+SUMMARY:Faites l'Amour\, pas des Gosses
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/faites-l-
+ amour-pas-des-gosses/
+URL:https://comedyatlas.app/comedy-atlas/event/faites-l-amour-pas-des-gosse
+ s/
+END:VEVENT
+END:VCALENDAR

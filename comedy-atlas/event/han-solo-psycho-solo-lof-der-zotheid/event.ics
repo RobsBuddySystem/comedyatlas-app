@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:han-solo-psycho-solo-lof-der-zotheid@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Han Solo "Psycho Solo: Lof der Zotheid"
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/han-solo-
+ psycho-solo-lof-der-zotheid/
+URL:https://comedyatlas.app/comedy-atlas/event/han-solo-psycho-solo-lof-der
+ -zotheid/
+END:VEVENT
+END:VCALENDAR

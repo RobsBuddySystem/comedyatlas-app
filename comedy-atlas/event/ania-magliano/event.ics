@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ania-magliano@comedyatlas.app
+DTSTAMP:20270504T180000Z
+DTSTART:20270504T180000Z
+DTEND:20270504T200000Z
+SUMMARY:Ania Magliano
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ania-magl
+ iano/
+URL:https://comedyatlas.app/comedy-atlas/event/ania-magliano/
+END:VEVENT
+END:VCALENDAR

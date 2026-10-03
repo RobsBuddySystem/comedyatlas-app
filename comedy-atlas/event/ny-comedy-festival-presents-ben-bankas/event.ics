@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ny-comedy-festival-presents-ben-bankas@comedyatlas.app
+DTSTAMP:20261113T000000Z
+DTSTART:20261113T000000Z
+DTEND:20261113T020000Z
+SUMMARY:NY Comedy Festival Presents Ben Bankas
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ny-comedy
+ -festival-presents-ben-bankas/
+URL:https://comedyatlas.app/comedy-atlas/event/ny-comedy-festival-presents-
+ ben-bankas/
+END:VEVENT
+END:VCALENDAR

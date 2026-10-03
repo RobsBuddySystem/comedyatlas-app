@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sarah-anna-dans-sale@comedyatlas.app
+DTSTAMP:20261010T170000Z
+DTSTART:20261010T170000Z
+DTEND:20261010T190000Z
+SUMMARY:Sarah-Anna dans Salé
+LOCATION:Bordeaux
+DESCRIPTION:L'humour noir a sa nouvelle princesse !\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/sarah-anna-dans-sale/
+URL:https://comedyatlas.app/comedy-atlas/event/sarah-anna-dans-sale/
+END:VEVENT
+END:VCALENDAR

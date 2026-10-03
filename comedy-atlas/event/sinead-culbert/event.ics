@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sinead-culbert@comedyatlas.app
+DTSTAMP:20270114T193000Z
+DTSTART:20270114T193000Z
+DTEND:20270114T213000Z
+SUMMARY:Sinead Culbert
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sinead-cu
+ lbert/
+URL:https://comedyatlas.app/comedy-atlas/event/sinead-culbert/
+END:VEVENT
+END:VCALENDAR

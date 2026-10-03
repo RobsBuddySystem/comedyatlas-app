@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carrot-top-52492@comedyatlas.app
+DTSTAMP:20261218T040000Z
+DTSTART:20261218T040000Z
+DTEND:20261218T060000Z
+SUMMARY:Carrot Top
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carrot-to
+ p-52492/
+URL:https://comedyatlas.app/comedy-atlas/event/carrot-top-52492/
+END:VEVENT
+END:VCALENDAR

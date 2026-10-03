@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hein@comedyatlas.app
+DTSTAMP:20261022T182000Z
+DTSTART:20261022T182000Z
+DTEND:20261022T202000Z
+SUMMARY:Hein ?!
+LOCATION:Lyon
+DESCRIPTION:Au début\, ça finit toujours bien\, sauf quand le commencemen
+ t débute mieux que la fin qu'on imaginait commencer au moment où...\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/hein/
+URL:https://comedyatlas.app/comedy-atlas/event/hein/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-comedy-crackers@comedyatlas.app
+DTSTAMP:20261210T193000Z
+DTSTART:20261210T193000Z
+DTEND:20261210T213000Z
+SUMMARY:Christmas Comedy Crackers
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -comedy-crackers/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-comedy-crackers/
+END:VEVENT
+END:VCALENDAR

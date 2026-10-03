@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:giroud-stotz-classe@comedyatlas.app
+DTSTAMP:20261202T190000Z
+DTSTART:20261202T190000Z
+DTEND:20261202T210000Z
+SUMMARY:Giroud & Stotz : classe !
+LOCATION:Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/giroud-st
+ otz-classe/
+URL:https://comedyatlas.app/comedy-atlas/event/giroud-stotz-classe/
+END:VEVENT
+END:VCALENDAR

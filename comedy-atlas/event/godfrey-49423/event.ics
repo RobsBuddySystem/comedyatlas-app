@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:godfrey-49423@comedyatlas.app
+DTSTAMP:20261018T031500Z
+DTSTART:20261018T031500Z
+DTEND:20261018T051500Z
+SUMMARY:Godfrey
+LOCATION:Denver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/godfrey-4
+ 9423/
+URL:https://comedyatlas.app/comedy-atlas/event/godfrey-49423/
+END:VEVENT
+END:VCALENDAR

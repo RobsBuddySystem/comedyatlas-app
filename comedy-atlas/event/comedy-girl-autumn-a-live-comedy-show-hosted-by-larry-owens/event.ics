@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-girl-autumn-a-live-comedy-show-hosted-by-larry-owens@comedyatlas
+ .app
+DTSTAMP:20261004T220000Z
+DTSTART:20261004T220000Z
+DTEND:20261005T000000Z
+SUMMARY:COMEDY GIRL AUTUMN : A Live Comedy Show Hosted by Larry Owens
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-gi
+ rl-autumn-a-live-comedy-show-hosted-by-larry-owens/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-girl-autumn-a-live-co
+ medy-show-hosted-by-larry-owens/
+END:VEVENT
+END:VCALENDAR

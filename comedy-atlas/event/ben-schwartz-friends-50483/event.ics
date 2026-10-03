@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-schwartz-friends-50483@comedyatlas.app
+DTSTAMP:20261108T000000Z
+DTSTART:20261108T000000Z
+DTEND:20261108T020000Z
+SUMMARY:Ben Schwartz & Friends
+LOCATION:Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-schwa
+ rtz-friends-50483/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-schwartz-friends-50483/
+END:VEVENT
+END:VCALENDAR

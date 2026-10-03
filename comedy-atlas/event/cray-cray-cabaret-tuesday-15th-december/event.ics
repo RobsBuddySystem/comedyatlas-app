@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cray-cray-cabaret-tuesday-15th-december@comedyatlas.app
+DTSTAMP:20261215T193000Z
+DTSTART:20261215T193000Z
+DTEND:20261215T213000Z
+SUMMARY:Cray Cray Cabaret - Tuesday 15th December
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cray-cray
+ -cabaret-tuesday-15th-december/
+URL:https://comedyatlas.app/comedy-atlas/event/cray-cray-cabaret-tuesday-15
+ th-december/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-stant@comedyatlas.app
+DTSTAMP:20261022T010000Z
+DTSTART:20261022T010000Z
+DTEND:20261022T030000Z
+SUMMARY:Rob Stant
+LOCATION:Austin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-stant
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/rob-stant/
+END:VEVENT
+END:VCALENDAR

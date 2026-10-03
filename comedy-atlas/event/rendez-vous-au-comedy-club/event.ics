@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rendez-vous-au-comedy-club@comedyatlas.app
+DTSTAMP:20261105T190000Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Rendez-vous au Comedy Club
+LOCATION:Sillingy
+DESCRIPTION:C'est nouveau tous les premiers jeudis du mois\, retrouvez le R
+ endez-vous Comedy Club.\nMore info: https://comedyatlas.app/comedy-atlas/ev
+ ent/rendez-vous-au-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/rendez-vous-au-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-46927@comedyatlas.app
+DTSTAMP:20270108T200000Z
+DTSTART:20270108T200000Z
+DTEND:20270108T220000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-46927/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-46927/
+END:VEVENT
+END:VCALENDAR

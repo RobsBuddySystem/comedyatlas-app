@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paula-lambert@comedyatlas.app
+DTSTAMP:20261107T190000Z
+DTSTART:20261107T190000Z
+DTEND:20261107T210000Z
+SUMMARY:Paula Lambert
+LOCATION:Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paula-lam
+ bert/
+URL:https://comedyatlas.app/comedy-atlas/event/paula-lambert/
+END:VEVENT
+END:VCALENDAR

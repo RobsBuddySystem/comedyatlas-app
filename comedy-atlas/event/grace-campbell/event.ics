@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:grace-campbell@comedyatlas.app
+DTSTAMP:20261127T190000Z
+DTSTART:20261127T190000Z
+DTEND:20261127T210000Z
+SUMMARY:Grace Campbell
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/grace-cam
+ pbell/
+URL:https://comedyatlas.app/comedy-atlas/event/grace-campbell/
+END:VEVENT
+END:VCALENDAR

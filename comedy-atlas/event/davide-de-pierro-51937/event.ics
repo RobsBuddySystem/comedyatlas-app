@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:davide-de-pierro-51937@comedyatlas.app
+DTSTAMP:20261205T210000Z
+DTSTART:20261205T210000Z
+DTEND:20261205T230000Z
+SUMMARY:Davide De Pierro
+LOCATION:Dallas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/davide-de
+ -pierro-51937/
+URL:https://comedyatlas.app/comedy-atlas/event/davide-de-pierro-51937/
+END:VEVENT
+END:VCALENDAR

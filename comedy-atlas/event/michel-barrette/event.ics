@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michel-barrette@comedyatlas.app
+DTSTAMP:20261101T200000Z
+DTSTART:20261101T200000Z
+DTEND:20261101T220000Z
+SUMMARY:Michel Barrette
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/michel-ba
+ rrette/
+URL:https://comedyatlas.app/comedy-atlas/event/michel-barrette/
+END:VEVENT
+END:VCALENDAR

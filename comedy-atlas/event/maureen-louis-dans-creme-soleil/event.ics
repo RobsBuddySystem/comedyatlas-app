@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maureen-louis-dans-creme-soleil@comedyatlas.app
+DTSTAMP:20261015T190000Z
+DTSTART:20261015T190000Z
+DTEND:20261015T210000Z
+SUMMARY:Maureen Louis dans Crème Soleil
+LOCATION:Nantes
+DESCRIPTION:Un spectacle avec beaucoup de "pourquoi ?"\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/maureen-louis-dans-creme-soleil/
+URL:https://comedyatlas.app/comedy-atlas/event/maureen-louis-dans-creme-sol
+ eil/
+END:VEVENT
+END:VCALENDAR

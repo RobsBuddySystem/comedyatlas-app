@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stephen-lynch-the-me-tour@comedyatlas.app
+DTSTAMP:20270106T190000Z
+DTSTART:20270106T190000Z
+DTEND:20270106T210000Z
+SUMMARY:Stephen Lynch: the Me Tour
+LOCATION:Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stephen-l
+ ynch-the-me-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/stephen-lynch-the-me-tour/
+END:VEVENT
+END:VCALENDAR

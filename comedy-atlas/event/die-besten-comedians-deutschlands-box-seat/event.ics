@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:die-besten-comedians-deutschlands-box-seat@comedyatlas.app
+DTSTAMP:20261202T190000Z
+DTSTART:20261202T190000Z
+DTEND:20261202T210000Z
+SUMMARY:Die besten Comedians Deutschlands | Box seat
+LOCATION:Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/die-beste
+ n-comedians-deutschlands-box-seat/
+URL:https://comedyatlas.app/comedy-atlas/event/die-besten-comedians-deutsch
+ lands-box-seat/
+END:VEVENT
+END:VCALENDAR

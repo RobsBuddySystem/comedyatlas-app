@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tracy-and-martina-live@comedyatlas.app
+DTSTAMP:20261105T010000Z
+DTSTART:20261105T010000Z
+DTEND:20261105T030000Z
+SUMMARY:Tracy and Martina: Live
+LOCATION:Winnipeg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tracy-and
+ -martina-live/
+URL:https://comedyatlas.app/comedy-atlas/event/tracy-and-martina-live/
+END:VEVENT
+END:VCALENDAR

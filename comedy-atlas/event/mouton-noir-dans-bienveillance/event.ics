@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mouton-noir-dans-bienveillance@comedyatlas.app
+DTSTAMP:20261104T180000Z
+DTSTART:20261104T180000Z
+DTEND:20261104T200000Z
+SUMMARY:Mouton Noir dans Bienveillance
+LOCATION:Angers
+DESCRIPTION:Mouton Noir veut devenir quelqu'un de bien. Ses tentatives rat
+ ées deviennent un spectacle plein d'autodérision.\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/mouton-noir-dans-bienveillance/
+URL:https://comedyatlas.app/comedy-atlas/event/mouton-noir-dans-bienveillan
+ ce/
+END:VEVENT
+END:VCALENDAR

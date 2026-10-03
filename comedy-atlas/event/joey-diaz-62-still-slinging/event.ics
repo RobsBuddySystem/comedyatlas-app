@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joey-diaz-62-still-slinging@comedyatlas.app
+DTSTAMP:20261106T020000Z
+DTSTART:20261106T020000Z
+DTEND:20261106T040000Z
+SUMMARY:Joey Diaz: 62 & Still Slinging
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joey-diaz
+ -62-still-slinging/
+URL:https://comedyatlas.app/comedy-atlas/event/joey-diaz-62-still-slinging/
+END:VEVENT
+END:VCALENDAR

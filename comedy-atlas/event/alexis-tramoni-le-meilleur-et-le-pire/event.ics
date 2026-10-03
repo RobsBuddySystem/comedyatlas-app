@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alexis-tramoni-le-meilleur-et-le-pire@comedyatlas.app
+DTSTAMP:20270625T183000Z
+DTSTART:20270625T183000Z
+DTEND:20270625T203000Z
+SUMMARY:Alexis Tramoni - Le meilleur et Le pire
+LOCATION:Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alexis-tr
+ amoni-le-meilleur-et-le-pire/
+URL:https://comedyatlas.app/comedy-atlas/event/alexis-tramoni-le-meilleur-e
+ t-le-pire/
+END:VEVENT
+END:VCALENDAR

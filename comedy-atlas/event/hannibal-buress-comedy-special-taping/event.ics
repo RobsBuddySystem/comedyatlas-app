@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hannibal-buress-comedy-special-taping@comedyatlas.app
+DTSTAMP:20261025T000000Z
+DTSTART:20261025T000000Z
+DTEND:20261025T020000Z
+SUMMARY:Hannibal Buress -- Comedy Special Taping
+LOCATION:New Orleans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hannibal-
+ buress-comedy-special-taping/
+URL:https://comedyatlas.app/comedy-atlas/event/hannibal-buress-comedy-speci
+ al-taping/
+END:VEVENT
+END:VCALENDAR

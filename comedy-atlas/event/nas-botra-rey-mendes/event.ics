@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nas-botra-rey-mendes@comedyatlas.app
+DTSTAMP:20261105T190000Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Nas Botra / Rey Mendes
+LOCATION:Colombes
+DESCRIPTION:Un plateau partagé pour un humour démultiplié !\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/nas-botra-rey-mendes/
+URL:https://comedyatlas.app/comedy-atlas/event/nas-botra-rey-mendes/
+END:VEVENT
+END:VCALENDAR

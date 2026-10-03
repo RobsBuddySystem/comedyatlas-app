@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bar-a-rire-comedy-club-55627@comedyatlas.app
+DTSTAMP:20261103T190000Z
+DTSTART:20261103T190000Z
+DTEND:20261103T210000Z
+SUMMARY:Bar à rire Comedy Club
+LOCATION:Marly
+DESCRIPTION:Un micro\, un public\, des vannes !\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/bar-a-rire-comedy-club-55627/
+URL:https://comedyatlas.app/comedy-atlas/event/bar-a-rire-comedy-club-55627
+ /
+END:VEVENT
+END:VCALENDAR
