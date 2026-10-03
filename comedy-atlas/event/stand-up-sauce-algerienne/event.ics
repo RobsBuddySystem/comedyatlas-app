@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-sauce-algerienne@comedyatlas.app
+DTSTAMP:20261008T170000Z
+DTSTART:20261008T170000Z
+DTEND:20261008T190000Z
+SUMMARY:[STAND-UP] SAUCE ALGÉRIENNE
+LOCATION:The Dissident Club\, 58 Rue Richer\, 75009 Paris\, Paris
+DESCRIPTION:Prépare-toi à rigoler avec une bonne dose d’humour piquant 
+ à la sauce bien algérienne !\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/stand-up-sauce-algerienne/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-sauce-algerienne/
+END:VEVENT
+END:VCALENDAR

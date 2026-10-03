@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:podcast-pardongpt@comedyatlas.app
+DTSTAMP:20261025T201500Z
+DTSTART:20261025T201500Z
+DTEND:20261025T221500Z
+SUMMARY:Podcast PardonGPT
+LOCATION:Le Point Virgule\, 7 Rue Sainte Croix de la Bretonnerie\, Paris
+DESCRIPTION:Avec PardonGPT\, Shakespeare a trouvé ses héritiers et le div
+ ertissement a trouvé son futur...\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/podcast-pardongpt/
+URL:https://comedyatlas.app/comedy-atlas/event/podcast-pardongpt/
+END:VEVENT
+END:VCALENDAR

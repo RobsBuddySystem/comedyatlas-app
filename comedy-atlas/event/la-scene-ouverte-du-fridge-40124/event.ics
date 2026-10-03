@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-scene-ouverte-du-fridge-40124@comedyatlas.app
+DTSTAMP:20261011T140000Z
+DTSTART:20261011T140000Z
+DTEND:20261011T160000Z
+SUMMARY:La Scène Ouverte du Fridge
+LOCATION:Le Fridge Comedy\, 164 rue Saint-Denis\, Paris
+DESCRIPTION:Découvrez-les avant tout le monde !\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/la-scene-ouverte-du-fridge-40124/
+URL:https://comedyatlas.app/comedy-atlas/event/la-scene-ouverte-du-fridge-4
+ 0124/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kiss-comedy-club-42573@comedyatlas.app
+DTSTAMP:20261111T190000Z
+DTSTART:20261111T190000Z
+DTEND:20261111T210000Z
+SUMMARY:Kiss Comedy Club
+LOCATION:Kiss Comedy Club\, 119 rue des Amandiers\, Paris
+DESCRIPTION:1 mercredi sur 2 : niché dans le sous-sol caché du Bar Le Coq
+ uin\, ce lieu intimiste vous plonge dans une ambiance feutrée où l'on rit
+  fort et vrai.\nMore info: https://comedyatlas.app/comedy-atlas/event/kiss-
+ comedy-club-42573/
+URL:https://comedyatlas.app/comedy-atlas/event/kiss-comedy-club-42573/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ilona-dans-grave@comedyatlas.app
+DTSTAMP:20261030T183000Z
+DTSTART:20261030T183000Z
+DTEND:20261030T203000Z
+SUMMARY:Ilona dans Grave
+LOCATION:La Petite Loge Théâtre\, 2 rue la bruyère\, Paris
+DESCRIPTION:Ilona est une jeune humoriste bruxelloise\, elle est montée su
+ r scène pour une raison simple : l'échec.\nMore info: https://comedyatlas
+ .app/comedy-atlas/event/ilona-dans-grave/
+URL:https://comedyatlas.app/comedy-atlas/event/ilona-dans-grave/
+END:VEVENT
+END:VCALENDAR

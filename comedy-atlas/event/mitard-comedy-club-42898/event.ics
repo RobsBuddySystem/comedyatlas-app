@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mitard-comedy-club-42898@comedyatlas.app
+DTSTAMP:20261028T190000Z
+DTSTART:20261028T190000Z
+DTEND:20261028T210000Z
+SUMMARY:Mitard Comedy Club
+LOCATION:Les copains\, 11 rue de Paradis\, Paris
+DESCRIPTION:Ici\, on purge des peines... de rire.\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/mitard-comedy-club-42898/
+URL:https://comedyatlas.app/comedy-atlas/event/mitard-comedy-club-42898/
+END:VEVENT
+END:VCALENDAR

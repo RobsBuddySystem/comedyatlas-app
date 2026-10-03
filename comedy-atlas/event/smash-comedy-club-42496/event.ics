@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:smash-comedy-club-42496@comedyatlas.app
+DTSTAMP:20261024T170000Z
+DTSTART:20261024T170000Z
+DTEND:20261024T190000Z
+SUMMARY:Smash Comedy Club
+LOCATION:31 Rue Pierre Fontaine\, 31 Rue Pierre Fontaine\, Paris
+DESCRIPTION:Venez assister au plateau de Stand Up le plus explosif de Pigal
+ le : le Smash Comedy Club !\nMore info: https://comedyatlas.app/comedy-atla
+ s/event/smash-comedy-club-42496/
+URL:https://comedyatlas.app/comedy-atlas/event/smash-comedy-club-42496/
+END:VEVENT
+END:VCALENDAR

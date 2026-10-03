@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aurelien-belliard-dans-moi-c-est-pire@comedyatlas.app
+DTSTAMP:20261109T200000Z
+DTSTART:20261109T200000Z
+DTEND:20261109T220000Z
+SUMMARY:Aurélien Belliard dans Moi c'est pire
+LOCATION:Comédie des 3 Bornes\, 32\, rue des Trois Bornes\, Paris
+DESCRIPTION:C'est un jeu qu'on a inventé avec mes ami•es. Chacun•e rac
+ onte une\nanecdote en commençant par "Moi c'est pire" et à la fin du jeu 
+ c'est moi qui gagne.\nMore info: https://comedyatlas.app/comedy-atlas/event
+ /aurelien-belliard-dans-moi-c-est-pire/
+URL:https://comedyatlas.app/comedy-atlas/event/aurelien-belliard-dans-moi-c
+ -est-pire/
+END:VEVENT
+END:VCALENDAR

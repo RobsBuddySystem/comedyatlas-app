@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:manu-tchao-43240@comedyatlas.app
+DTSTAMP:20261031T190000Z
+DTSTART:20261031T190000Z
+DTEND:20261031T210000Z
+SUMMARY:Manu Tchao
+LOCATION:Théâtre des 2 Anes\, 100 boulevard de Clichy\, Paris
+DESCRIPTION:L'heure de la délivrance a sonné.\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/manu-tchao-43240/
+URL:https://comedyatlas.app/comedy-atlas/event/manu-tchao-43240/
+END:VEVENT
+END:VCALENDAR

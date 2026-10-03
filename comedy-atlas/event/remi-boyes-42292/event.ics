@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:remi-boyes-42292@comedyatlas.app
+DTSTAMP:20261009T180000Z
+DTSTART:20261009T180000Z
+DTEND:20261009T200000Z
+SUMMARY:Rémi Boyes
+LOCATION:Le Point Virgule\, 7 Rue Sainte Croix de la Bretonnerie\, Paris
+DESCRIPTION:Ce que vous allez voir\, c'est le fruit de 12 ans de travail et
+  de 36 ans d'existence en tant qu'humain.\nMore info: https://comedyatlas.a
+ pp/comedy-atlas/event/remi-boyes-42292/
+URL:https://comedyatlas.app/comedy-atlas/event/remi-boyes-42292/
+END:VEVENT
+END:VCALENDAR

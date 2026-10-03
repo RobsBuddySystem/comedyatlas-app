@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-studio@comedyatlas.app
+DTSTAMP:20261030T183000Z
+DTSTART:20261030T183000Z
+DTEND:20261030T203000Z
+SUMMARY:Stand Up Studio
+LOCATION:Le Kibele\, 12 rue de l'Échiquier\, 75010 Paris\, Paris
+DESCRIPTION:Et si\, au lieu de voir un seul artiste\, vous en découvriez p
+ lusieurs ?\nMore info: https://comedyatlas.app/comedy-atlas/event/stand-up-
+ studio/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-studio/
+END:VEVENT
+END:VCALENDAR

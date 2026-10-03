@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:choumi-in-english@comedyatlas.app
+DTSTAMP:20261011T183000Z
+DTSTART:20261011T183000Z
+DTEND:20261011T203000Z
+SUMMARY:Choumi in English
+LOCATION:Choumi Comedy Club\, 80 rue des Martyrs\, 75018 Paris\, Paris
+DESCRIPTION:Choumi Comedy Club in English! Your brand new comedy hotspot in
+  Paris' historical Montmartre.\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/choumi-in-english/
+URL:https://comedyatlas.app/comedy-atlas/event/choumi-in-english/
+END:VEVENT
+END:VCALENDAR

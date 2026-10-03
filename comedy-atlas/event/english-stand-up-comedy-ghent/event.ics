@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:english-stand-up-comedy-ghent@comedyatlas.app
+DTSTAMP:20261024T180000Z
+DTSTART:20261024T180000Z
+DTEND:20261024T200000Z
+SUMMARY:English Stand-Up Comedy Ghent
+LOCATION:Brussels
+DESCRIPTION:English stand-up in Ghent at Amai Comedy Club — 50 seats\, ti
+ ckets from €12.\nMore info: https://comedyatlas.app/comedy-atlas/event/en
+ glish-stand-up-comedy-ghent/
+URL:https://comedyatlas.app/comedy-atlas/event/english-stand-up-comedy-ghen
+ t/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:choumi-comedy-club-42101@comedyatlas.app
+DTSTAMP:20261031T220000Z
+DTSTART:20261031T220000Z
+DTEND:20261101T000000Z
+SUMMARY:Choumi Comedy Club
+LOCATION:Choumi Comedy Club\, 80 rue des Martyrs\, 75018 Paris\, Paris
+DESCRIPTION:Choumi Comedy c'est tous les soirs du lundi au dimanche !\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/choumi-comedy-club-42101/
+URL:https://comedyatlas.app/comedy-atlas/event/choumi-comedy-club-42101/
+END:VEVENT
+END:VCALENDAR

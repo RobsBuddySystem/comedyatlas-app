@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bastille-comedy-42050@comedyatlas.app
+DTSTAMP:20261105T190000Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Bastille Comedy
+LOCATION:La Seine Café\, 32ter Boulevard de la Bastille\, Paris
+DESCRIPTION:Deux fois par mois\, le café La Seine accueille une nouvelle s
+ élection d'humoristes parisiens\, triés sur le volet !\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/bastille-comedy-42050/
+URL:https://comedyatlas.app/comedy-atlas/event/bastille-comedy-42050/
+END:VEVENT
+END:VCALENDAR

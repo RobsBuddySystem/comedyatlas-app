@@ -321,7 +321,17 @@ html[data-auth-tab="register"] #register-card{display:block!important}
         return;
       }
       if (msg) { msg.textContent = "Signed in with Google."; msg.className = "msg ok"; }
-      location.href = next;
+      // 2026-10-02: `next` was computed once from ?role= alone, so a booker
+      // who picked the dropdown landed on comic.html. An explicit ?next=
+      // still wins; otherwise route off the role the server recorded.
+      var googleOverride = nextOverride();
+      if (googleOverride) { location.href = googleOverride; return; }
+      var pickedRole = chosenRegisterRole();
+      A.me().then(function (me) {
+        location.href = destinationForRole((me && me.role) || pickedRole, pickedRole);
+      }).catch(function () {
+        location.href = destinationForRole(pickedRole, pickedRole);
+      });
     }).catch(function (e) {
       if (msg) {
         msg.textContent = e.body && e.body.detail ? e.body.detail : "Google sign-in failed.";

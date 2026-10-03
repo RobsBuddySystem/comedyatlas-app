@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:manon-bril-dans-300-000-ans@comedyatlas.app
+DTSTAMP:20261008T170000Z
+DTSTART:20261008T170000Z
+DTEND:20261008T190000Z
+SUMMARY:Manon Bril dans 300 000 ans
+LOCATION:Théâtre de la Madeleine\, 19 Rue de Surene\, Paris
+DESCRIPTION:Manon Bril - 300 000 ans\nMore info: https://comedyatlas.app/co
+ medy-atlas/event/manon-bril-dans-300-000-ans/
+URL:https://comedyatlas.app/comedy-atlas/event/manon-bril-dans-300-000-ans/
+END:VEVENT
+END:VCALENDAR

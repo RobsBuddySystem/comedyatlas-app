@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-seine-ouverte@comedyatlas.app
+DTSTAMP:20261005T180000Z
+DTSTART:20261005T180000Z
+DTEND:20261005T200000Z
+SUMMARY:La Seine ouverte
+LOCATION:Bateau Concorde Atlantique\, 23\, quai Anatole France\, Paris
+DESCRIPTION:La Seine Ouverte regroupe les meilleurs artistes de stand up du
+  moment sur le toit de la Péniche Concorde Atlantique !\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/la-seine-ouverte/
+URL:https://comedyatlas.app/comedy-atlas/event/la-seine-ouverte/
+END:VEVENT
+END:VCALENDAR

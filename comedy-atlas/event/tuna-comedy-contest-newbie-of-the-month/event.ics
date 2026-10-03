@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tuna-comedy-contest-newbie-of-the-month@comedyatlas.app
+DTSTAMP:20261003T183000Z
+DTSTART:20261003T183000Z
+DTEND:20261003T203000Z
+SUMMARY:Tuna Comedy Contest - Newbie of the Month
+LOCATION:Volta\, 336 Houtmankade\, Amsterdam
+DESCRIPTION:Watch the best new comedians to surface this month compete! Vot
+ e for who you think should be the winner of 'Newbie of the Month'!\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/tuna-comedy-contest-newbie-o
+ f-the-month/
+URL:https://comedyatlas.app/comedy-atlas/event/tuna-comedy-contest-newbie-o
+ f-the-month/
+END:VEVENT
+END:VCALENDAR

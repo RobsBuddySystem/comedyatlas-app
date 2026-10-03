@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bastien-morisson-dans-simple-42611@comedyatlas.app
+DTSTAMP:20261031T180000Z
+DTSTART:20261031T180000Z
+DTEND:20261031T200000Z
+SUMMARY:Bastien Morisson dans Simple
+LOCATION:Le Lieu\, 41\, Rue de Trévise\, Paris
+DESCRIPTION:Pourquoi faire compliqué quand on peut faire simple ?\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/bastien-morisson-dans-simple
+ -42611/
+URL:https://comedyatlas.app/comedy-atlas/event/bastien-morisson-dans-simple
+ -42611/
+END:VEVENT
+END:VCALENDAR

@@ -210,6 +210,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="no-shows-cta" type="button">Create your show now →</button>
     </div>
 
+    <div class="card" id="vc-card">
+      <h2>🏛️ Your venue — claim it in one step</h2>
+      <p class="privacy" style="margin-bottom:10px">Run a night at a bar or
+      club? Type its name, pick it, hit <b>Claim</b>. Once we've confirmed
+      it's yours, every show at that venue is yours to run — one tap, no
+      waiting.</p>
+      <label for="vc-q">Venue name</label>
+      <input id="vc-q" type="text" autocomplete="off"
+             placeholder="Start typing, e.g. Velvet Bar">
+      <div id="vc-results" style="margin-top:8px"></div>
+      <div class="msg" id="vc-msg"></div>
+      <div id="vc-mine" style="margin-top:8px"></div>
+    </div>
+
     <div class="card">
       <h2>Claim a show — "this is my show, help me book it"</h2>
       <p class="privacy" style="margin-bottom:10px">Signed in with a
@@ -248,6 +262,45 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </section>
 
     <section data-tab="shows">
+    <div class="card" id="dt-card">
+      <h2>💶 Your deal with the venue</h2>
+      <p class="privacy" style="margin-bottom:10px">Tell us how it works at
+      your room — it goes on the venue's card so it stops saying "unknown".
+      Only you and our team see who declared it.</p>
+      <label for="dt-venue">Your venue</label>
+      <select id="dt-venue"><option value="">Loading your venues…</option></select>
+      <div class="row">
+        <div><label for="dt-type">Deal type</label>
+          <select id="dt-type">
+            <option value="">— not set —</option>
+            <option value="door_split">Door split</option>
+            <option value="fifty_fifty">50/50</option>
+            <option value="min_guarantee">Minimum guarantee</option>
+            <option value="flat_fee">Flat fee</option>
+            <option value="hat">Hat / bucket</option>
+            <option value="room_hire">Room hire</option>
+            <option value="free">Free</option>
+          </select></div>
+        <div><label for="dt-guarantee">Guarantee (€)</label>
+          <input id="dt-guarantee" type="number" step="1" min="0"></div>
+      </div>
+      <div class="row">
+        <div><label for="dt-pct">Split to the act (%)</label>
+          <input id="dt-pct" type="number" step="0.1" min="0" max="100"></div>
+        <div><label for="dt-basis">Split of</label>
+          <select id="dt-basis"><option value="">— not set —</option>
+            <option value="gross_door">Gross door</option>
+            <option value="net_door">Net door</option></select></div>
+        <div><label for="dt-bar">Bar</label>
+          <select id="dt-bar"><option value="">— not set —</option>
+            <option value="venue_keeps">Venue keeps the bar</option>
+            <option value="share">Shared with the act</option>
+            <option value="none">No bar</option></select></div>
+      </div>
+      <button id="dt-save" type="button">Save my deal</button>
+      <div class="msg" id="dt-msg"></div>
+    </div>
+
     <div class="card">
       <h2>Post an open spot</h2>
       <p class="privacy" style="margin-bottom:10px">Need comics for a date?
@@ -313,7 +366,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 
       <div class="tabs2">
         <div class="tab2 active" id="occ-tab-single">Single date</div>
-        <div class="tab2" id="occ-tab-recurring">Weekly recurrence</div>
+        <div class="tab2" id="occ-tab-recurring">Weekly / monthly night</div>
       </div>
 
       <div id="occ-single-fields">
@@ -340,7 +393,15 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
             <input id="occ-rec-time" type="time" value="19:00">
           </div>
           <div>
-            <label for="occ-rec-weeks">Number of weeks</label>
+            <label for="occ-rec-cadence">How often</label>
+            <select id="occ-rec-cadence">
+              <option value="weekly">Every week</option>
+              <option value="biweekly">Every 2 weeks</option>
+              <option value="monthly">Once a month (same weekday, same week)</option>
+            </select>
+          </div>
+          <div>
+            <label for="occ-rec-weeks">How many nights</label>
             <input id="occ-rec-weeks" type="number" min="1" max="52" value="4">
           </div>
         </div>
@@ -477,6 +538,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           <input id="lu-find" type="search" autocomplete="off"
                  placeholder="Type 2+ letters, e.g. Ziko — then drag them in">
           <div class="msg" id="lu-find-msg"></div>
+          <div id="lu-add-box" style="margin:10px 0;padding:10px;border:1px dashed var(--border)">
+            <b>Comic not on Atlas yet?</b> Type their name — they become a
+            card you can drag in right away, marked <i>invited · unverified</i>.
+            No public page is created.
+            <label for="lu-add-name">Comic's name</label>
+            <input id="lu-add-name" type="text" autocomplete="off" placeholder="e.g. Noé Martin">
+            <label for="lu-add-ig">Instagram (optional)</label>
+            <input id="lu-add-ig" type="text" autocomplete="off" placeholder="@theirhandle">
+            <button type="button" id="lu-add-btn">Add as a card</button>
+            <div class="msg" id="lu-add-msg"></div>
+          </div>
           <div id="lu-candidates"></div>
         </div>
       </div>
@@ -1500,6 +1572,103 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   });
 
   // ------------------------------------------------------------------
+  // 🏛️ Claim my venue in one step (GET /booker/venues/search,
+  // POST /booker/venues/{id}/claim, GET /booker/venue-claims)
+  // ------------------------------------------------------------------
+  var vcTimer = null;
+  function vcStatusText(st) {
+    return st === "approved" ? "✅ confirmed — yours"
+      : st === "pending_review" ? "⏳ sent — we confirm it's you, usually within a day" : "";
+  }
+  function vcLoadMine() {
+    return A.get("/booker/venue-claims").then(function (rows) {
+      document.getElementById("vc-mine").innerHTML = rows.length
+        ? "<b>Your venues</b><br>" + rows.map(function (r) {
+            return A.escapeHtml(r.name) + (r.city_name ? " (" + A.escapeHtml(r.city_name) + ")" : "") +
+              " — " + vcStatusText(r.status);
+          }).join("<br>")
+        : "";
+    }).catch(function () {});
+  }
+  document.getElementById("vc-q").addEventListener("input", function () {
+    var q = this.value.trim(), box = document.getElementById("vc-results");
+    clearTimeout(vcTimer);
+    if (q.length < 2) { box.innerHTML = ""; return; }
+    vcTimer = setTimeout(function () {
+      A.get("/booker/venues/search?q=" + encodeURIComponent(q)).then(function (rows) {
+        box.innerHTML = rows.length ? rows.map(function (v) {
+          return '<div style="display:flex;gap:8px;align-items:center;margin:4px 0">' +
+            '<span style="flex:1">' + A.escapeHtml(v.name) +
+            (v.city_name ? " (" + A.escapeHtml(v.city_name) + ")" : "") + '</span>' +
+            (v.claim_status
+              ? '<span>' + vcStatusText(v.claim_status) + '</span>'
+              : '<button type="button" class="vc-claim" data-id="' + v.venue_id + '" style="margin:0">Claim</button>') +
+            '</div>';
+        }).join("") : "No venue with that name — try fewer letters, or suggest it under “Find venues”.";
+      }).catch(function () {});
+    }, 300);
+  });
+  document.getElementById("vc-results").addEventListener("click", function (ev) {
+    var btn = ev.target.closest(".vc-claim"); if (!btn) return;
+    var msg = document.getElementById("vc-msg");
+    msg.textContent = "Sending…"; msg.className = "msg";
+    A.post("/booker/venues/" + btn.dataset.id + "/claim", {}).then(function (r) {
+      msg.textContent = r.status === "approved"
+        ? "✅ Done — it's yours. Now claim or create your show below."
+        : "✅ Claim sent. We check it's you and confirm — then every show at that venue is yours in one tap.";
+      msg.className = "msg ok";
+      btn.outerHTML = "<span>" + vcStatusText(r.status) + "</span>";
+      vcLoadMine();
+    }).catch(function (e) {
+      msg.textContent = (e.body && typeof e.body.detail === "string" && e.body.detail) || "Couldn't send the claim — please try again.";
+      msg.className = "msg error";
+    });
+  });
+  vcLoadMine();
+
+  // ------------------------------------------------------------------
+  // 💶 Deal terms for my own venue (GET /booker/my-venues,
+  // POST /booker/venues/{id}/terms)
+  // ------------------------------------------------------------------
+  function dtLoadVenues() {
+    return A.get("/booker/my-venues").then(function (rows) {
+      var sel = document.getElementById("dt-venue");
+      sel.innerHTML = rows.length
+        ? rows.map(function (v) {
+            return '<option value="' + v.venue_id + '">' + A.escapeHtml(v.name) +
+              (v.city_name ? " (" + A.escapeHtml(v.city_name) + ")" : "") + '</option>';
+          }).join("")
+        : '<option value="">Create or claim a show first</option>';
+    }).catch(function () {});
+  }
+  function dtNum(id) {
+    var v = document.getElementById(id).value;
+    return v === "" || isNaN(Number(v)) ? null : Number(v);
+  }
+  function dtStr(id) { var v = document.getElementById(id).value; return v === "" ? null : v; }
+  document.getElementById("dt-save").addEventListener("click", function () {
+    var msg = document.getElementById("dt-msg");
+    var vid = document.getElementById("dt-venue").value;
+    if (!vid) { msg.textContent = "Pick your venue first."; msg.className = "msg error"; return; }
+    var g = dtNum("dt-guarantee");
+    var body = {
+      deal_type: dtStr("dt-type"),
+      guarantee_amount_cents: g != null ? Math.round(g * 100) : null,
+      guarantee_currency: g != null ? "EUR" : null,
+      percentage_rate: dtNum("dt-pct"), percentage_basis: dtStr("dt-basis"),
+      bar_policy: dtStr("dt-bar")
+    };
+    msg.textContent = "Saving…"; msg.className = "msg";
+    A.post("/booker/venues/" + vid + "/terms", body).then(function () {
+      msg.textContent = "✅ Saved — thank you. It's on the venue's card now."; msg.className = "msg ok";
+    }).catch(function (e) {
+      msg.textContent = (e.body && typeof e.body.detail === "string" && e.body.detail) || "Couldn't save — please try again.";
+      msg.className = "msg error";
+    });
+  });
+  dtLoadVenues();
+
+  // ------------------------------------------------------------------
   // Create a show (not scraped yet)
   document.getElementById("do-create-show").addEventListener("click", function () {
     var msg = document.getElementById("new-show-msg");
@@ -1509,12 +1678,29 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (!name || !venue || !city) { msg.textContent = "Add a show name, venue, and city."; msg.className = "msg error"; return; }
     msg.textContent = "Creating…"; msg.className = "msg";
     A.post("/booker/shows/create", { show_name: name, venue_name: venue, city: city }).then(function (r) {
-      msg.textContent = "Created & you own it — show #" + r.show_series_id + ". It's on your calendar now."; msg.className = "msg ok";
+      msg.textContent = (r.adopted_existing_show
+        ? "That show was already on Comedy Atlas at your venue — it's yours now (show #"
+        : "Created & you own it — show #") + r.show_series_id + (r.adopted_existing_show ? "). Add its dates below." : "). It's on your calendar now."); msg.className = "msg ok";
       // Refresh the show list so the empty-state banner clears and every
       // show <select> picks up the new show immediately (2026-07-24 review
       // finding 1: the primary onboarding path left the stale banner up).
       loadMyShows();
-    }).catch(function (e) { msg.textContent = (e.body && e.body.detail) || "Failed."; msg.className = "msg error"; });
+      dtLoadVenues();
+    }).catch(function (e) {
+      var d = e.body && e.body.detail;
+      if (e.status === 409 && d && d.status === "show_already_exists") {
+        // 2026-10-02 (Neil: "Failed."): the show is already in our data --
+        // say so and pre-select it in the Claim picker just below.
+        msg.textContent = d.message; msg.className = "msg error";
+        var cs = document.getElementById("claim-show");
+        cs.value = name;
+        claimShowSearch(name).then(function () { claimShowSyncSelection(); });
+        cs.scrollIntoView({behavior: "smooth", block: "center"});
+        return;
+      }
+      msg.textContent = (d && (d.message || (typeof d === "string" && d))) || "Couldn't create the show — please try again, or tell us what you typed.";
+      msg.className = "msg error";
+    });
   });
 
   // Claim a show -- type-to-search picker (GET /booker/shows/search).
@@ -1881,7 +2067,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         msg.className = "msg ok";
         occLoadList();
       }).catch(function (e) {
-        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add date.";
+        msg.textContent = (e.body && e.body.detail && typeof e.body.detail === "string") ? e.body.detail : ((e.body && e.body.detail && e.body.detail.error) || "Failed to add date.");
         msg.className = "msg error";
       });
     } else {
@@ -1901,12 +2087,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var pyWeekday = (jsDay + 6) % 7;
       A.post("/booker/shows/" + showId + "/occurrences/recurring", {
         start_date: startDate, weekday: pyWeekday, time: recTime, count: weeks,
+        cadence: document.getElementById("occ-rec-cadence").value,
       }).then(function (rows) {
         msg.textContent = "✅ " + rows.length + " date(s) added.";
         msg.className = "msg ok";
         occLoadList();
       }).catch(function (e) {
-        msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to add recurring dates.";
+        msg.textContent = (e.body && e.body.detail && typeof e.body.detail === "string") ? e.body.detail : ((e.body && e.body.detail && e.body.detail.error) || "Failed to add recurring dates.");
         msg.className = "msg error";
       });
     }
@@ -1973,7 +2160,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       : '<div class="comic-photo placeholder">🎤</div>';
     return '<div class="cand-card' + (picked ? ' picked' : '') + '" draggable="true" data-id="' + c.person_id + '">' +
       photo + '<div style="flex:1;min-width:0"><div>' + A.escapeHtml(c.stage_name) +
-      (c.tier ? ' <span class="tier">' + A.escapeHtml(c.tier) + '</span>' : '') + '</div>' +
+      (c.tier ? ' <span class="tier">' + A.escapeHtml(c.tier) + '</span>' : '') +
+      (c.unverified ? ' <span class="tier" title="Typed in by you — no Atlas page yet">invited · unverified</span>' : '') + '</div>' +
       '<div style="color:var(--muted);font-size:11px">' + (c.sources || []).join(", ") + '</div></div>' +
       '<button type="button" class="secondary cc-open-btn" data-id="' + c.person_id +
       '" data-name="' + A.escapeHtml(c.stage_name) +
@@ -1984,6 +2172,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var filled = s.comic_person_id != null;
     var body = filled
       ? A.escapeHtml(s.comic_stage_name || ("comic #" + s.comic_person_id)) +
+        (s.unverified ? ' <span class="tier">unverified</span>' : '') +
         ' <button class="clear-slot" type="button" data-i="' + s.slot_index + '">clear</button>'
       : '<span class="slot-empty">empty — drag or tap a comic</span>';
     return '<div class="slot' + (filled ? ' filled' : '') + '" data-i="' + s.slot_index + '">' +
@@ -2072,6 +2261,34 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       msg.className = "msg error";
     });
   }
+
+  // Comic with no Atlas page: POST .../lineup/unlisted-comic, then it is a
+  // card like any other (kept in luExtra so it survives re-renders).
+  document.getElementById("lu-add-btn").addEventListener("click", function () {
+    var msg = document.getElementById("lu-add-msg");
+    var nameEl = document.getElementById("lu-add-name");
+    var igEl = document.getElementById("lu-add-ig");
+    if (!luEventId) { msg.textContent = "Load a night first."; msg.className = "msg error"; return; }
+    if (nameEl.value.trim().length < 2) { msg.textContent = "Type the comic's name."; msg.className = "msg error"; return; }
+    msg.textContent = "Adding…"; msg.className = "msg";
+    A.post("/booker/events/" + luEventId + "/lineup/unlisted-comic",
+           {name: nameEl.value, instagram: igEl.value || null}).then(function (c) {
+      luExtra = luExtra.filter(function (x) { return x.person_id !== c.person_id; });
+      luExtra.push({person_id: c.person_id, stage_name: c.stage_name, photo_url: null,
+                    tier: null, sources: c.listed ? ["listed"] : ["invited"],
+                    unverified: !!c.unverified});
+      msg.textContent = c.listed
+        ? c.stage_name + " already has an Atlas page — their card is ready to drag."
+        : c.stage_name + " added — drag the card into a slot.";
+      msg.className = "msg ok";
+      nameEl.value = ""; igEl.value = "";
+      return A.get("/booker/events/" + luEventId + "/lineup");
+    }).then(function (data) { if (data) renderLineupBoard(data); }).catch(function (e) {
+      var d = e.body && e.body.detail;
+      msg.textContent = (typeof d === "string" && d) || "Couldn't add that comic.";
+      msg.className = "msg error";
+    });
+  });
 
   document.getElementById("lu-find").addEventListener("input", function () {
     var box = this, msg = document.getElementById("lu-find-msg");

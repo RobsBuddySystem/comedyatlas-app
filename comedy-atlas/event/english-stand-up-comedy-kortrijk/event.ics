@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:english-stand-up-comedy-kortrijk@comedyatlas.app
+DTSTAMP:20261016T180000Z
+DTSTART:20261016T180000Z
+DTEND:20261016T200000Z
+SUMMARY:English Stand-Up Comedy Kortrijk
+LOCATION:Brussels
+DESCRIPTION:English stand-up at Artisan's in Kortrijk — 50 seats\, ticket
+ s from €10.\nMore info: https://comedyatlas.app/comedy-atlas/event/englis
+ h-stand-up-comedy-kortrijk/
+URL:https://comedyatlas.app/comedy-atlas/event/english-stand-up-comedy-kort
+ rijk/
+END:VEVENT
+END:VCALENDAR

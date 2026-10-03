@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:oscar-comedy-club-38363@comedyatlas.app
+DTSTAMP:20261128T180000Z
+DTSTART:20261128T180000Z
+DTEND:20261128T200000Z
+SUMMARY:Oscar Comedy Club
+LOCATION:Cafe Oscar\, 155 Rue Montmartre\, 75002 Paris\, Paris
+DESCRIPTION:Profitez des meilleurs humoristes dans l'atmosphère intimiste 
+ du mythique Café Oscar !\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/oscar-comedy-club-38363/
+URL:https://comedyatlas.app/comedy-atlas/event/oscar-comedy-club-38363/
+END:VEVENT
+END:VCALENDAR

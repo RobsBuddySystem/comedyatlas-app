@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sarah-lele-dans-la-mauvaise-education@comedyatlas.app
+DTSTAMP:20261029T203000Z
+DTSTART:20261029T203000Z
+DTEND:20261029T223000Z
+SUMMARY:Sarah Lélé dans La mauvaise éducation
+LOCATION:Le Sacré Comédie\, 142 Rue Montmartre\, Paris
+DESCRIPTION:"Je me rappelle quand on m'a demandé d'écrire mon travail de 
+ fin d'étude en droit..."\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/sarah-lele-dans-la-mauvaise-education/
+URL:https://comedyatlas.app/comedy-atlas/event/sarah-lele-dans-la-mauvaise-
+ education/
+END:VEVENT
+END:VCALENDAR

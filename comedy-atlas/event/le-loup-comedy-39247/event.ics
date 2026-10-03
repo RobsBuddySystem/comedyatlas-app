@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-loup-comedy-39247@comedyatlas.app
+DTSTAMP:20261023T190000Z
+DTSTART:20261023T190000Z
+DTEND:20261023T210000Z
+SUMMARY:Le Loup Comedy
+LOCATION:Hôtel 1K Paris\, 13\, Boulevard du Temple\, Paris
+DESCRIPTION:Le Loup Comedy\, c'est une soirée rythmée par les punchlines 
+ d'humoristes dans un l'un des hôtels les plus prestigieux de Paris.\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/le-loup-comedy-39247/
+URL:https://comedyatlas.app/comedy-atlas/event/le-loup-comedy-39247/
+END:VEVENT
+END:VCALENDAR

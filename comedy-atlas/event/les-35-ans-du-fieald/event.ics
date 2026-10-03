@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-35-ans-du-fieald@comedyatlas.app
+DTSTAMP:20261004T173000Z
+DTSTART:20261004T173000Z
+DTEND:20261004T193000Z
+SUMMARY:Les 35 ans du Fieald
+LOCATION:Casino de Paris\, 16\, rue de Clichy\, Paris
+DESCRIPTION:Imaginez une scène ouverte aux artistes de toutes disciplines\
+ , sans audition... C'est bon ?\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/les-35-ans-du-fieald/
+URL:https://comedyatlas.app/comedy-atlas/event/les-35-ans-du-fieald/
+END:VEVENT
+END:VCALENDAR

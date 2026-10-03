@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arthur-fournier-dans-bon-camarade@comedyatlas.app
+DTSTAMP:20261006T173000Z
+DTSTART:20261006T173000Z
+DTEND:20261006T193000Z
+SUMMARY:Arthur Fournier dans Bon camarade
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Un spectacle vite fait de gauche.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/arthur-fournier-dans-bon-camarade/
+URL:https://comedyatlas.app/comedy-atlas/event/arthur-fournier-dans-bon-cam
+ arade/
+END:VEVENT
+END:VCALENDAR

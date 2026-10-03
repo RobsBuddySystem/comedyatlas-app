@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brunch-comedy@comedyatlas.app
+DTSTAMP:20261011T101500Z
+DTSTART:20261011T101500Z
+DTEND:20261011T121500Z
+SUMMARY:Brunch Comedy
+LOCATION:Le Fridge Comedy\, 164 rue Saint-Denis\, Paris
+DESCRIPTION:Tous les dimanches au Fridge\, venez déguster notre brunch et 
+ assister au spectacle de 15H00.\nMore info: https://comedyatlas.app/comedy-
+ atlas/event/brunch-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/brunch-comedy/
+END:VEVENT
+END:VCALENDAR

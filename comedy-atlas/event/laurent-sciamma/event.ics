@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laurent-sciamma@comedyatlas.app
+DTSTAMP:20261023T190000Z
+DTSTART:20261023T190000Z
+DTEND:20261023T210000Z
+SUMMARY:Laurent Sciamma
+LOCATION:Comédie des 3 Bornes\, 32\, rue des Trois Bornes\, Paris
+DESCRIPTION:"Tout est chaos" comme disait Mylène. Oui\, mais la faute à q
+ ui ?\nMore info: https://comedyatlas.app/comedy-atlas/event/laurent-sciamma
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/laurent-sciamma/
+END:VEVENT
+END:VCALENDAR

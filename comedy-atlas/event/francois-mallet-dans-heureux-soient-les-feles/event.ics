@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francois-mallet-dans-heureux-soient-les-feles@comedyatlas.app
+DTSTAMP:20261010T160000Z
+DTSTART:20261010T160000Z
+DTEND:20261010T180000Z
+SUMMARY:François Mallet dans Heureux soient les fêlés
+LOCATION:Théâtre du Marais\, 37\, rue Volta\, Paris
+DESCRIPTION:Et si on faisait de notre santé mentale notre priorité ?\nSi 
+ on aimait enfin nos fêlures ?\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/francois-mallet-dans-heureux-soient-les-feles/
+URL:https://comedyatlas.app/comedy-atlas/event/francois-mallet-dans-heureux
+ -soient-les-feles/
+END:VEVENT
+END:VCALENDAR

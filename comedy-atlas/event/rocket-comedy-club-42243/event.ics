@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rocket-comedy-club-42243@comedyatlas.app
+DTSTAMP:20261014T170000Z
+DTSTART:20261014T170000Z
+DTEND:20261014T190000Z
+SUMMARY:Rocket Comedy Club
+LOCATION:Cotte 23\, 23 Rue de la Mare\, 75020 Paris\, Paris
+DESCRIPTION:Le Rocket Comedy Club te donne rendez-vous pour te faire décou
+ vrir des humoristes de talent dans une ambiance intimiste et inédite.\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/rocket-comedy-club-42243
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/rocket-comedy-club-42243/
+END:VEVENT
+END:VCALENDAR

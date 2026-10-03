@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kitch-n-comedy-club@comedyatlas.app
+DTSTAMP:20261004T140000Z
+DTSTART:20261004T140000Z
+DTEND:20261004T160000Z
+SUMMARY:Kitch'n Comedy Club
+LOCATION:Les Acolytes\, 195 rue de Saint Maur\, Paris
+DESCRIPTION:Au menu : Un line up de qualité\, avec un supplément rire aux
+  éclats\, le tout\, accompagné de sa bonne ambiance !\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/kitch-n-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/kitch-n-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-big-show-38217@comedyatlas.app
+DTSTAMP:20270130T203000Z
+DTSTART:20270130T203000Z
+DTEND:20270130T223000Z
+SUMMARY:Le Big Show
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Les nouveaux talents de l'humour !\nMore info: https://comedyat
+ las.app/comedy-atlas/event/le-big-show-38217/
+URL:https://comedyatlas.app/comedy-atlas/event/le-big-show-38217/
+END:VEVENT
+END:VCALENDAR

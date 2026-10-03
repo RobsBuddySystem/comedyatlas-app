@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:golden-comedy-club-40051@comedyatlas.app
+DTSTAMP:20261113T221000Z
+DTSTART:20261113T221000Z
+DTEND:20261114T001000Z
+SUMMARY:Golden Comedy Club
+LOCATION:Golden Comedy Châtelet\, 163 rue Saint-Martin\, Paris
+DESCRIPTION:Le Golden Comedy est votre scène Stand-Up emblématique et myt
+ hique de la capitale. Ses plateaux d'humour déjantés vous offrirons des m
+ oments uniques !\nMore info: https://comedyatlas.app/comedy-atlas/event/gol
+ den-comedy-club-40051/
+URL:https://comedyatlas.app/comedy-atlas/event/golden-comedy-club-40051/
+END:VEVENT
+END:VCALENDAR

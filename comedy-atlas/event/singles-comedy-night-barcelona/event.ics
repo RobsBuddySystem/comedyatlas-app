@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:singles-comedy-night-barcelona@comedyatlas.app
+DTSTAMP:20261016T180000Z
+DTSTART:20261016T180000Z
+DTEND:20261016T193000Z
+SUMMARY:Singles Comedy Night Barcelona
+LOCATION:Secret Comedy Club Barcelona\, 28 Carrer de la Junta de Comerç\, 
+ Barcelona
+DESCRIPTION:This isn’t just a comedy show – it’s a social night for s
+ ingles!\nMore info: https://comedyatlas.app/comedy-atlas/event/singles-come
+ dy-night-barcelona/
+URL:https://comedyatlas.app/comedy-atlas/event/singles-comedy-night-barcelo
+ na/
+END:VEVENT
+END:VCALENDAR

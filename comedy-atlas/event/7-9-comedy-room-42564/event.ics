@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:7-9-comedy-room-42564@comedyatlas.app
+DTSTAMP:20261114T190000Z
+DTSTART:20261114T190000Z
+DTEND:20261114T210000Z
+SUMMARY:7-9 Comedy Room
+LOCATION:7-9 Comedy Room\, 7\, rue Louise Emilie de la Tour d'Auvergne\, Pa
+ ris
+DESCRIPTION:Le 7-9 Comedy Room a du talent et le prouve chaque semaine avec
+  des humoristes différents. Soyez les premiers à découvrir les stars de 
+ demain !\nMore info: https://comedyatlas.app/comedy-atlas/event/7-9-comedy-
+ room-42564/
+URL:https://comedyatlas.app/comedy-atlas/event/7-9-comedy-room-42564/
+END:VEVENT
+END:VCALENDAR

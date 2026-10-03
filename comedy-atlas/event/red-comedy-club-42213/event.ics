@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:red-comedy-club-42213@comedyatlas.app
+DTSTAMP:20261031T213000Z
+DTSTART:20261031T213000Z
+DTEND:20261031T233000Z
+SUMMARY:Red Comedy Club
+LOCATION:Red Comedy Club\, 48 rue Basfroi\, Paris
+DESCRIPTION:Le Red\, ce sont des soirées mémorables avec des humoristes t
+ alentueux\, des plats délicieux\, des cocktails variés\, et une ambiance 
+ chaleureuse.\nMore info: https://comedyatlas.app/comedy-atlas/event/red-com
+ edy-club-42213/
+URL:https://comedyatlas.app/comedy-atlas/event/red-comedy-club-42213/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ike-43220@comedyatlas.app
+DTSTAMP:20261111T200000Z
+DTSTART:20261111T200000Z
+DTEND:20261111T220000Z
+SUMMARY:Ike
+LOCATION:Théâtre BO Saint Martin\, 19\, Boulevard Saint Martin\, Paris
+DESCRIPTION:Et si les étoiles avaient bon dos ?\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/ike-43220/
+URL:https://comedyatlas.app/comedy-atlas/event/ike-43220/
+END:VEVENT
+END:VCALENDAR

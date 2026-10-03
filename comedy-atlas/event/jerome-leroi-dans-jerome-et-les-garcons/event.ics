@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerome-leroi-dans-jerome-et-les-garcons@comedyatlas.app
+DTSTAMP:20261016T190000Z
+DTSTART:20261016T190000Z
+DTEND:20261016T210000Z
+SUMMARY:Jérôme Leroi dans Jérôme et les garçons
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Jérôme\, était destiné à aimer le foot. Pourtant\, petit\,
+  il jouait à la poupée Barbie.\nMore info: https://comedyatlas.app/comedy
+ -atlas/event/jerome-leroi-dans-jerome-et-les-garcons/
+URL:https://comedyatlas.app/comedy-atlas/event/jerome-leroi-dans-jerome-et-
+ les-garcons/
+END:VEVENT
+END:VCALENDAR

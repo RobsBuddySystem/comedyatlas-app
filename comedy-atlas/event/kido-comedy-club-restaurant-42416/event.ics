@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kido-comedy-club-restaurant-42416@comedyatlas.app
+DTSTAMP:20261107T160000Z
+DTSTART:20261107T160000Z
+DTEND:20261107T180000Z
+SUMMARY:Kido Comedy Club & Restaurant
+LOCATION:Kido Comedy Club\, 39 boulevard Saint-Michel\, Paris
+DESCRIPTION:N°1 à Paris\, le Kido c'est l'expérience Stand-Up & Bistrono
+ mie.\nMore info: https://comedyatlas.app/comedy-atlas/event/kido-comedy-clu
+ b-restaurant-42416/
+URL:https://comedyatlas.app/comedy-atlas/event/kido-comedy-club-restaurant-
+ 42416/
+END:VEVENT
+END:VCALENDAR

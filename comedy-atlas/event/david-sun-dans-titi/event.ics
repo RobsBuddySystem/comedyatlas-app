@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-sun-dans-titi@comedyatlas.app
+DTSTAMP:20261028T183000Z
+DTSTART:20261028T183000Z
+DTEND:20261028T203000Z
+SUMMARY:David Sun dans Titi
+LOCATION:L'Européen\, 5\, rue Biot\, Paris
+DESCRIPTION:À 31 ans\, David détient 3 diplômes en médecine et rassembl
+ e tous les critères pour remplir un CV plutôt qu'une salle de spectacle.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/david-sun-dans-titi/
+URL:https://comedyatlas.app/comedy-atlas/event/david-sun-dans-titi/
+END:VEVENT
+END:VCALENDAR

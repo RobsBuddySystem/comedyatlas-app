@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rainbow-comedy-club-40648@comedyatlas.app
+DTSTAMP:20261103T190000Z
+DTSTART:20261103T190000Z
+DTEND:20261103T210000Z
+SUMMARY:Rainbow Comedy Club
+LOCATION:Cabaret des Merveilles\, 25 rue de l'hirondelle\, Paris
+DESCRIPTION:Des blagues safe et inclusives dans une ambiance survoltée !\n
+ More info: https://comedyatlas.app/comedy-atlas/event/rainbow-comedy-club-4
+ 0648/
+URL:https://comedyatlas.app/comedy-atlas/event/rainbow-comedy-club-40648/
+END:VEVENT
+END:VCALENDAR

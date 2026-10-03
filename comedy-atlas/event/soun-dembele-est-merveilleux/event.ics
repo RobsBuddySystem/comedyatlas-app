@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:soun-dembele-est-merveilleux@comedyatlas.app
+DTSTAMP:20261024T191500Z
+DTSTART:20261024T191500Z
+DTEND:20261024T211500Z
+SUMMARY:Soun Dembele est merveilleux
+LOCATION:Le Point Virgule\, 7 Rue Sainte Croix de la Bretonnerie\, Paris
+DESCRIPTION:Après avoir puisé sa force dans les comedy clubs parisiens\, 
+ Soun vous livre un second spectacle pleins de refs sur les années 90.\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/soun-dembele-est-merveil
+ leux/
+URL:https://comedyatlas.app/comedy-atlas/event/soun-dembele-est-merveilleux
+ /
+END:VEVENT
+END:VCALENDAR

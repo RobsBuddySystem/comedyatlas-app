@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mehdi-djaadi-dans-couleur-framboise@comedyatlas.app
+DTSTAMP:20261029T200000Z
+DTSTART:20261029T200000Z
+DTEND:20261029T220000Z
+SUMMARY:Mehdi Djaadi dans Couleur Framboise
+LOCATION:La Scala Paris - Grande Salle\, 13 boulevard de Strasbourg\, Paris
+DESCRIPTION:Après le succès de son premier spectacle nommé aux Molières
+ \, Mehdi Djaadi revient avec "Couleur Framboise".\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/mehdi-djaadi-dans-couleur-framboise/
+URL:https://comedyatlas.app/comedy-atlas/event/mehdi-djaadi-dans-couleur-fr
+ amboise/
+END:VEVENT
+END:VCALENDAR

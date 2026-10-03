@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-sii-dans-competitif@comedyatlas.app
+DTSTAMP:20261010T180000Z
+DTSTART:20261010T180000Z
+DTEND:20261010T200000Z
+SUMMARY:Thomas Sii dans Compétitif
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Bravo de lire ce descriptif\, je te kiffe déjà !\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/thomas-sii-dans-competitif/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-sii-dans-competitif/
+END:VEVENT
+END:VCALENDAR

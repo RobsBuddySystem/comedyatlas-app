@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-azria-42599@comedyatlas.app
+DTSTAMP:20261112T203000Z
+DTSTART:20261112T203000Z
+DTEND:20261112T223000Z
+SUMMARY:David Azria
+LOCATION:Apollo Comedy - salle Apollo 200\, 18 rue du faubourg du temple\, 
+ Paris
+DESCRIPTION:Le spectacle a un concept simple : 15 minutes gratuites\, si tu
+  n'aimes pas tu parts\, si tu veux voir la suite Paye pour voir.\nMore info
+ : https://comedyatlas.app/comedy-atlas/event/david-azria-42599/
+URL:https://comedyatlas.app/comedy-atlas/event/david-azria-42599/
+END:VEVENT
+END:VCALENDAR

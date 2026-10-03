@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nash-43077@comedyatlas.app
+DTSTAMP:20261025T180000Z
+DTSTART:20261025T180000Z
+DTEND:20261025T200000Z
+SUMMARY:Nash
+LOCATION:L'Européen\, 5\, rue Biot\, Paris
+DESCRIPTION:Avec beaucoup de sincérité et une énergie communicative\, Na
+ sh nous livre son parcours\, qui l'a menée à être sur scène aujourd'hui
+ .\nMore info: https://comedyatlas.app/comedy-atlas/event/nash-43077/
+URL:https://comedyatlas.app/comedy-atlas/event/nash-43077/
+END:VEVENT
+END:VCALENDAR

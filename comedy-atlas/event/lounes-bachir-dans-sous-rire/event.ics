@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lounes-bachir-dans-sous-rire@comedyatlas.app
+DTSTAMP:20261003T160000Z
+DTSTART:20261003T160000Z
+DTEND:20261003T180000Z
+SUMMARY:Lounes Bachir dans Sous rire
+LOCATION:La Petite Loge Théâtre\, 2 rue la bruyère\, Paris
+DESCRIPTION:Sous rire.\nou les chroniques d'une peur transmise d'un père 
+ à son fils.\nMore info: https://comedyatlas.app/comedy-atlas/event/lounes-
+ bachir-dans-sous-rire/
+URL:https://comedyatlas.app/comedy-atlas/event/lounes-bachir-dans-sous-rire
+ /
+END:VEVENT
+END:VCALENDAR

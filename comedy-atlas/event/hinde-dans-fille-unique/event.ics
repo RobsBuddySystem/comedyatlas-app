@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hinde-dans-fille-unique@comedyatlas.app
+DTSTAMP:20261014T174500Z
+DTSTART:20261014T174500Z
+DTEND:20261014T194500Z
+SUMMARY:Hinde dans Fille unique
+LOCATION:Théâtre La Boussole - petite salle\, 29 rue de Dunkerque\, Paris
+DESCRIPTION:Hinde est de retour avec une version revisitée de son spectacl
+ e !\nMore info: https://comedyatlas.app/comedy-atlas/event/hinde-dans-fille
+ -unique/
+URL:https://comedyatlas.app/comedy-atlas/event/hinde-dans-fille-unique/
+END:VEVENT
+END:VCALENDAR

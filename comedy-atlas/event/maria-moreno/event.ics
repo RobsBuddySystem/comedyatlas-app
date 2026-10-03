@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-moreno@comedyatlas.app
+DTSTAMP:20261006T173000Z
+DTSTART:20261006T173000Z
+DTEND:20261006T193000Z
+SUMMARY:María Moreno
+LOCATION:Théâtre du Marais\, 37\, rue Volta\, Paris
+DESCRIPTION:Salut\, moi c'est María. Accrochez-vous\, la rencontre risque 
+ d'être mouvementée.\nMore info: https://comedyatlas.app/comedy-atlas/even
+ t/maria-moreno/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-moreno/
+END:VEVENT
+END:VCALENDAR

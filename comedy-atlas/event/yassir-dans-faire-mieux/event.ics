@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yassir-dans-faire-mieux@comedyatlas.app
+DTSTAMP:20261010T153000Z
+DTSTART:20261010T153000Z
+DTEND:20261010T173000Z
+SUMMARY:Yassir dans Faire mieux
+LOCATION:Théâtre BO Saint Martin\, 19\, Boulevard Saint Martin\, Paris
+DESCRIPTION:Personne n'est parfait\, beaucoup essaient de l'être mais pas 
+ Yassir.\nMore info: https://comedyatlas.app/comedy-atlas/event/yassir-dans-
+ faire-mieux/
+URL:https://comedyatlas.app/comedy-atlas/event/yassir-dans-faire-mieux/
+END:VEVENT
+END:VCALENDAR

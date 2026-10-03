@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-kube-comedy-club-42010@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:Le Kube Comedy Club
+LOCATION:Hôtel Kube\, 1-5 passage Ruelle\, Paris
+DESCRIPTION:Le Kube Comedy est l'endroit idéal pour vous détendre et vous
+  amuser ! Chaque semaine\, notre scène s'anime avec les meilleurs humorist
+ es du moment.\nMore info: https://comedyatlas.app/comedy-atlas/event/le-kub
+ e-comedy-club-42010/
+URL:https://comedyatlas.app/comedy-atlas/event/le-kube-comedy-club-42010/
+END:VEVENT
+END:VCALENDAR

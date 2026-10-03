@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-toucang-dans-devenir-un-homme@comedyatlas.app
+DTSTAMP:20261109T200000Z
+DTSTART:20261109T200000Z
+DTEND:20261109T220000Z
+SUMMARY:Paul Toucang dans Devenir un homme
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Un stand up décalé où la vulnérabilité masculine est cél
+ ébrée plutôt que tue et où le rire permet de défier les attentes plut
+ ôt que de les renforcer.\nMore info: https://comedyatlas.app/comedy-atlas/
+ event/paul-toucang-dans-devenir-un-homme/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-toucang-dans-devenir-un
+ -homme/
+END:VEVENT
+END:VCALENDAR

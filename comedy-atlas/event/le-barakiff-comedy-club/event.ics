@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-barakiff-comedy-club@comedyatlas.app
+DTSTAMP:20261015T180000Z
+DTSTART:20261015T180000Z
+DTEND:20261015T200000Z
+SUMMARY:Le Barakiff Comedy Club
+LOCATION:Le Bar À Mines\, 64 Rue de Charenton\, Paris
+DESCRIPTION:Le Barakiff Comedy Club\, stand-up intimiste à Bastille.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/le-barakiff-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/le-barakiff-comedy-club/
+END:VEVENT
+END:VCALENDAR

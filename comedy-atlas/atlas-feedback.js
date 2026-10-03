@@ -396,6 +396,30 @@
     }
   };
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
+  // 3. quiet "Start here" footer link (2026-10-03): the ONE public trace of
+  //    the new-user tour. No banner, no pop-up, nothing in the header. It
+  //    lives here for the same reason as the hamburger nav above: this is
+  //    the one script on every page, hand-authored and generated, so no
+  //    generator or footer constant has to change. Skipped on the tour page
+  //    itself and on the private investor page (/comedy-atlas/p/...).
+  function initStartLink() {
+    try {
+      var path = location.pathname;
+      if (path.indexOf("/comedy-atlas/start/") === 0 || path.indexOf("/comedy-atlas/p/") === 0) return;
+      var footer = document.querySelector("footer");
+      if (!footer || footer.querySelector("[data-atlas-start-link]")) return;
+      var row = footer.querySelector(".footer-links");
+      if (!row) return;
+      var a = document.createElement("a");
+      a.href = "/comedy-atlas/start/";
+      a.setAttribute("data-atlas-start-link", "");
+      a.textContent = "Start here";
+      row.appendChild(document.createTextNode(" \u00b7 "));
+      row.appendChild(a);
+    } catch (e) { /* cosmetic only -- never break a page over a footer link */ }
+  }
+
+  function boot() { init(); initStartLink(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();

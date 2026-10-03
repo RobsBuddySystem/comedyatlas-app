@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-piet-dans-koala@comedyatlas.app
+DTSTAMP:20261006T190000Z
+DTSTART:20261006T190000Z
+DTEND:20261006T210000Z
+SUMMARY:Thomas Piet dans Koala
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Koala est un seul-en-scène drôle\, musical et intime où Thom
+ as démonte tout ce qu'on a mis dans sa tête pour faire de lui un "vrai bo
+ nhomme putain" !\nMore info: https://comedyatlas.app/comedy-atlas/event/tho
+ mas-piet-dans-koala/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-piet-dans-koala/
+END:VEVENT
+END:VCALENDAR

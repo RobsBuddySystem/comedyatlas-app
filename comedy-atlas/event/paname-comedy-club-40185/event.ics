@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paname-comedy-club-40185@comedyatlas.app
+DTSTAMP:20261009T130000Z
+DTSTART:20261009T130000Z
+DTEND:20261009T150000Z
+SUMMARY:Paname Comedy Club
+LOCATION:Paname Art Café\, Paname Art Café\, 14 rue de la Fontaine au Roi
+ \, 75011\, Paris
+DESCRIPTION:Le Paname Comedy Club vous donne rendez-vous pour découvrir le
+ s meilleurs moments des one man show de sa sélection d'humoristes.\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/paname-comedy-club-40185/
+URL:https://comedyatlas.app/comedy-atlas/event/paname-comedy-club-40185/
+END:VEVENT
+END:VCALENDAR

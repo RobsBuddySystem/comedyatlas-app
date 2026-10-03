@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:antek-dans-fripon@comedyatlas.app
+DTSTAMP:20261003T173000Z
+DTSTART:20261003T173000Z
+DTEND:20261003T193000Z
+SUMMARY:Antek dans Fripon
+LOCATION:Théâtre du Marais\, 37\, rue Volta\, Paris
+DESCRIPTION:Sérotonine\, c'est "l'hormone du bonheur".\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/antek-dans-fripon/
+URL:https://comedyatlas.app/comedy-atlas/event/antek-dans-fripon/
+END:VEVENT
+END:VCALENDAR

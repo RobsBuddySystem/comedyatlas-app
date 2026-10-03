@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:soiree-des-astres-43205@comedyatlas.app
+DTSTAMP:20261107T173000Z
+DTSTART:20261107T173000Z
+DTEND:20261107T193000Z
+SUMMARY:Soirée des astres
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Douze signes. Une soirée. Et vous.\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/soiree-des-astres-43205/
+URL:https://comedyatlas.app/comedy-atlas/event/soiree-des-astres-43205/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:camille-fievez-en-rodage@comedyatlas.app
+DTSTAMP:20261013T190000Z
+DTSTART:20261013T190000Z
+DTEND:20261013T210000Z
+SUMMARY:Camille Fievez en rodage
+LOCATION:La Nouvelle Seine\, Péniche sur berge\, face au 3 quai Montebello
+ \, Paris
+DESCRIPTION:Entre tradition et médiocrité\, Camille Fievez apporte avec s
+ obriété sa pierre à l'édifice de la grande histoire du théâtre à la 
+ française.\nMore info: https://comedyatlas.app/comedy-atlas/event/camille-
+ fievez-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/camille-fievez-en-rodage/
+END:VEVENT
+END:VCALENDAR

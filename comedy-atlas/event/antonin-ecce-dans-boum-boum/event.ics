@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:antonin-ecce-dans-boum-boum@comedyatlas.app
+DTSTAMP:20261031T191500Z
+DTSTART:20261031T191500Z
+DTEND:20261031T211500Z
+SUMMARY:Antonin Ecce dans Boum boum
+LOCATION:Théâtre BO Saint Martin\, 19\, Boulevard Saint Martin\, Paris
+DESCRIPTION:Antonin aime les soirées techno\, regarder les gens draguer et
+  les trucs de geek.\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ antonin-ecce-dans-boum-boum/
+URL:https://comedyatlas.app/comedy-atlas/event/antonin-ecce-dans-boum-boum/
+END:VEVENT
+END:VCALENDAR

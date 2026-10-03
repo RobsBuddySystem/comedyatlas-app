@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-grand-rapprochement@comedyatlas.app
+DTSTAMP:20261031T170000Z
+DTSTART:20261031T170000Z
+DTEND:20261031T190000Z
+SUMMARY:Le Grand Rapprochement
+LOCATION:Le Paris de l'Humour\, Paris\, Paris
+DESCRIPTION:Trois Français d'Origine Incontrôlée secouent les idées sur
+  la francitude... à leur manière.\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/le-grand-rapprochement/
+URL:https://comedyatlas.app/comedy-atlas/event/le-grand-rapprochement/
+END:VEVENT
+END:VCALENDAR

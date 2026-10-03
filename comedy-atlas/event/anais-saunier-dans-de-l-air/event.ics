@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anais-saunier-dans-de-l-air@comedyatlas.app
+DTSTAMP:20261116T183000Z
+DTSTART:20261116T183000Z
+DTEND:20261116T203000Z
+SUMMARY:Anaïs Saunier dans De l'air !
+LOCATION:Théâtre Clavel\, 3 rue Clavel\, Paris
+DESCRIPTION:D'avocate à acrobate\, Anaïs Saunier vous livre la quête de 
+ sens qui l'a conduite sur scène !\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/anais-saunier-dans-de-l-air/
+URL:https://comedyatlas.app/comedy-atlas/event/anais-saunier-dans-de-l-air/
+END:VEVENT
+END:VCALENDAR

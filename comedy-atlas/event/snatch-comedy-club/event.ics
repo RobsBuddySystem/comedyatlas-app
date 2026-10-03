@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:snatch-comedy-club@comedyatlas.app
+DTSTAMP:20261003T170000Z
+DTSTART:20261003T170000Z
+DTEND:20261003T190000Z
+SUMMARY:Snatch Comedy Club
+LOCATION:Snatch Comedy Club\, 8 avenue de la Porte de Montreuil\, Paris
+DESCRIPTION:Rires garantis\, énergie contagieuse et vannes affûtées :\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/snatch-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/snatch-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:amelie-lemelo-dans-respire@comedyatlas.app
+DTSTAMP:20261004T160000Z
+DTSTART:20261004T160000Z
+DTEND:20261004T180000Z
+SUMMARY:Amélie Lemélo dans Respire
+LOCATION:Comédie des 3 Bornes\, 32\, rue des Trois Bornes\, Paris
+DESCRIPTION:Amélie a parfois du mal à comprendre le monde\, alors elle a 
+ écrit un spectacle pour que le monde la comprenne.\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/amelie-lemelo-dans-respire/
+URL:https://comedyatlas.app/comedy-atlas/event/amelie-lemelo-dans-respire/
+END:VEVENT
+END:VCALENDAR

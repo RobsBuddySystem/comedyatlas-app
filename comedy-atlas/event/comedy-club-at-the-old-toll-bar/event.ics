@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-at-the-old-toll-bar@comedyatlas.app
+DTSTAMP:20261025T200000Z
+DTSTART:20261025T200000Z
+DTEND:20261025T220000Z
+SUMMARY:Comedy Club at The Old Toll Bar
+LOCATION:The Old Toll Bar\, 1 - 3 Paisley Road West\, Glasgow
+DESCRIPTION:Our monthly Comedy Club in the Red Door Club at the Old Toll Ba
+ r\nSun 25 Oct\nHosted by Chris Scott\nOct headliner Chris Dinwoodie\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/comedy-club-at-the-old-toll
+ -bar/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-at-the-old-toll-
+ bar/
+END:VEVENT
+END:VCALENDAR
