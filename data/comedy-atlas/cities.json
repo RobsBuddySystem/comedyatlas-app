@@ -535,7 +535,7 @@
     "id": 44,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 85
+      "unconfirmed": 1
     },
     "latitude": 60.1699,
     "longitude": 24.9384,
@@ -812,7 +812,7 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 7,
+      "en": 6,
       "unconfirmed": 145
     },
     "latitude": 40.7128,
@@ -847,7 +847,7 @@
     "country_name": "United States",
     "id": 77,
     "language_counts": {
-      "unconfirmed": 75
+      "unconfirmed": 74
     },
     "latitude": 41.8781,
     "longitude": -87.6298,
@@ -1105,7 +1105,7 @@
     "country_name": "United States",
     "id": 93,
     "language_counts": {
-      "unconfirmed": 72
+      "unconfirmed": 71
     },
     "latitude": 39.7392,
     "longitude": -104.9903,
@@ -1345,7 +1345,7 @@
     "id": 108,
     "language_counts": {
       "en": 451,
-      "unconfirmed": 488
+      "unconfirmed": 487
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1533,7 +1533,7 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 249
+      "unconfirmed": 248
     },
     "latitude": 38.895098,
     "longitude": -77.036385,
@@ -1806,7 +1806,7 @@
     "country_name": "United States",
     "id": 139,
     "language_counts": {
-      "unconfirmed": 66
+      "unconfirmed": 65
     },
     "latitude": 40.75962,
     "longitude": -111.886797,
@@ -10905,7 +10905,7 @@
     "country_name": "United States",
     "id": 798,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 4
     },
     "latitude": 26.7174,
     "longitude": -80.069504,
@@ -11058,7 +11058,7 @@
     "country_name": "United States",
     "id": 807,
     "language_counts": {
-      "unconfirmed": 126
+      "unconfirmed": 128
     },
     "latitude": 29.506241,
     "longitude": -98.492723,
@@ -11124,6 +11124,23 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 811,
+    "language_counts": {
+      "unconfirmed": 11
+    },
+    "latitude": 35.993306,
+    "longitude": -78.902225,
+    "name": "Durham",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 812,
     "language_counts": {
       "unconfirmed": 56
@@ -11177,7 +11194,7 @@
     "country_name": "United States",
     "id": 815,
     "language_counts": {
-      "unconfirmed": 20
+      "unconfirmed": 21
     },
     "latitude": 42.100016,
     "longitude": -72.587027,
@@ -11415,7 +11432,7 @@
     "country_name": "United States",
     "id": 830,
     "language_counts": {
-      "unconfirmed": 1163
+      "unconfirmed": 1167
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -11552,7 +11569,7 @@
     "country_name": "United States",
     "id": 838,
     "language_counts": {
-      "unconfirmed": 20
+      "unconfirmed": 23
     },
     "latitude": 21.27724,
     "longitude": -157.8271,
@@ -11654,7 +11671,7 @@
     "country_name": "United States",
     "id": 845,
     "language_counts": {
-      "unconfirmed": 13
+      "unconfirmed": 15
     },
     "latitude": 35.140108,
     "longitude": -90.055029,
@@ -11671,7 +11688,7 @@
     "country_name": "United States",
     "id": 847,
     "language_counts": {
-      "unconfirmed": 22
+      "unconfirmed": 23
     },
     "latitude": 35.226295,
     "longitude": -80.799601,
@@ -11756,7 +11773,7 @@
     "country_name": "United States",
     "id": 852,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 11
     },
     "latitude": 30.325,
     "longitude": -81.662448,
@@ -11773,7 +11790,7 @@
     "country_name": "United States",
     "id": 853,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 37.284113,
     "longitude": -80.041138,
@@ -11841,7 +11858,7 @@
     "country_name": "United States",
     "id": 857,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 10
     },
     "latitude": 42.396646,
     "longitude": -71.123041,
@@ -12164,7 +12181,7 @@
     "country_name": "United States",
     "id": 878,
     "language_counts": {
-      "unconfirmed": 30
+      "unconfirmed": 31
     },
     "latitude": 38.642712,
     "longitude": -90.257305,
@@ -12181,7 +12198,7 @@
     "country_name": "United States",
     "id": 879,
     "language_counts": {
-      "unconfirmed": 8
+      "unconfirmed": 9
     },
     "latitude": 42.945834,
     "longitude": -77.829322,
@@ -12349,6 +12366,23 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
+    "id": 889,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 41.651038,
+    "longitude": -83.537571,
+    "name": "Toledo",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
     "id": 890,
     "language_counts": {
       "unconfirmed": 4
@@ -12419,7 +12453,7 @@
     "country_name": "United States",
     "id": 894,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 3
     },
     "latitude": 38.832001,
     "longitude": -104.815697,
@@ -12436,7 +12470,7 @@
     "country_name": "United States",
     "id": 895,
     "language_counts": {
-      "unconfirmed": 14
+      "unconfirmed": 15
     },
     "latitude": 32.225101,
     "longitude": -110.969001,
@@ -12929,7 +12963,7 @@
     "country_name": "United States",
     "id": 925,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 33.433998,
     "longitude": -111.848297,
@@ -13014,7 +13048,7 @@
     "country_name": "United States",
     "id": 931,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 3
     },
     "latitude": 41.260143,
     "longitude": -95.931222,
@@ -13507,7 +13541,7 @@
     "country_name": "United States",
     "id": 961,
     "language_counts": {
-      "unconfirmed": 7
+      "unconfirmed": 8
     },
     "latitude": 31.57534,
     "longitude": -84.153649,
@@ -13541,7 +13575,7 @@
     "country_name": "United States",
     "id": 963,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 41.888802,
     "longitude": -88.755798,
@@ -13687,6 +13721,23 @@
     "region_name": null,
     "region_type": null,
     "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 972,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 37.615799,
+    "longitude": -77.636398,
+    "name": "Richmond",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
   },
   {
     "country_id": 60,
@@ -14000,7 +14051,7 @@
     "country_name": "United States",
     "id": 994,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 7
     },
     "latitude": 29.577096,
     "longitude": -95.643628,
@@ -14340,7 +14391,7 @@
     "country_name": "United States",
     "id": 1014,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 61.217581,
     "longitude": -149.892542,
@@ -14425,7 +14476,7 @@
     "country_name": "United States",
     "id": 1019,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 9
     },
     "latitude": 27.942743,
     "longitude": -82.451772,
@@ -14561,7 +14612,7 @@
     "country_name": "United States",
     "id": 1027,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 5
     },
     "latitude": 41.50922,
     "longitude": -81.61206,
@@ -14663,7 +14714,7 @@
     "country_name": "United States",
     "id": 1034,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 4
     },
     "latitude": 31.22479,
     "longitude": -85.39003,
@@ -15020,7 +15071,7 @@
     "country_name": "United States",
     "id": 1055,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 36.297501,
     "longitude": -82.384598,
@@ -15088,7 +15139,7 @@
     "country_name": "United States",
     "id": 1059,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 7
     },
     "latitude": 35.597471,
     "longitude": -82.555289,
@@ -15275,7 +15326,7 @@
     "country_name": "United States",
     "id": 1070,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 27.981199,
     "longitude": -82.715599,
@@ -15326,7 +15377,7 @@
     "country_name": "United States",
     "id": 1073,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 3
     },
     "latitude": 34.4179,
     "longitude": -119.710999,
@@ -15370,5 +15421,277 @@
     "region_name": null,
     "region_type": null,
     "timezone": "America/New_York"
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 1076,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 49.889878,
+    "longitude": -119.496563,
+    "name": "Kelowna",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1077,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 43.608066,
+    "longitude": -116.50803,
+    "name": "Nampa",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1078,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 44.500206,
+    "longitude": -88.056561,
+    "name": "Green Bay",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1079,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 39.66774,
+    "longitude": -105.208969,
+    "name": "Morrison",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1080,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 35.377549,
+    "longitude": -119.021636,
+    "name": "Bakersfield",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1081,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 42.81237,
+    "longitude": -73.94176,
+    "name": "Schenectady",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1082,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 35.686975,
+    "longitude": -105.937799,
+    "name": "Santa Fe",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1083,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 40.407337,
+    "longitude": -79.902964,
+    "name": "Homestead",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1084,
+    "language_counts": {
+      "unconfirmed": 3
+    },
+    "latitude": 38.492946,
+    "longitude": -122.749298,
+    "name": "Santa Rosa",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1085,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 27.342566,
+    "longitude": -82.546716,
+    "name": "Sarasota",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1086,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 20.89273,
+    "longitude": -156.480418,
+    "name": "Kahului",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Pacific/Honolulu"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1087,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 44.048618,
+    "longitude": -123.092766,
+    "name": "Eugene",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1088,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 43.201429,
+    "longitude": -71.534542,
+    "name": "Concord",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1089,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 41.135,
+    "longitude": -104.821114,
+    "name": "Cheyenne",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Denver"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1090,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 35.208486,
+    "longitude": -101.832467,
+    "name": "Amarillo",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1091,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 36.330228,
+    "longitude": -119.292059,
+    "name": "Visalia",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Los_Angeles"
   }
 ]
