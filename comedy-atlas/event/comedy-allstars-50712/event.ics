@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-allstars-50712@comedyatlas.app
+DTSTAMP:20261112T013000Z
+DTSTART:20261112T013000Z
+DTEND:20261112T033000Z
+SUMMARY:Comedy Allstars
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-al
+ lstars-50712/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-allstars-50712/
+END:VEVENT
+END:VCALENDAR

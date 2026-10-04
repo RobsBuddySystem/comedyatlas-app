@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-plymouth@comedyatlas.app
+DTSTAMP:20261030T193000Z
+DTSTART:20261030T193000Z
+DTEND:20261030T213000Z
+SUMMARY:The Comedy Store - Plymouth
+LOCATION:Quad Theatre\, Marjon University\, Plymouth
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-plymouth/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-plymouth/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-lauren-mary-show@comedyatlas.app
+DTSTAMP:20261115T003000Z
+DTSTART:20261115T003000Z
+DTEND:20261115T023000Z
+SUMMARY:The Lauren & Mary Show
+LOCATION:The Bell House\, 149 7th Street\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-laure
+ n-mary-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-lauren-mary-show/
+END:VEVENT
+END:VCALENDAR

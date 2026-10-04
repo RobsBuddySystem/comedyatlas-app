@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-feingold@comedyatlas.app
+DTSTAMP:20261009T030000Z
+DTSTART:20261009T030000Z
+DTEND:20261009T050000Z
+SUMMARY:Ron Feingold
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-feing
+ old/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-feingold/
+END:VEVENT
+END:VCALENDAR

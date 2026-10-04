@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tafkal-most-wanted@comedyatlas.app
+DTSTAMP:20270527T180000Z
+DTSTART:20270527T180000Z
+DTEND:20270527T200000Z
+SUMMARY:TAFKAL: Most Wanted
+LOCATION:MAINSTAGE Brabanthallen\, Oude Engelenseweg 1\, Den Bosch
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tafkal-mo
+ st-wanted/
+URL:https://comedyatlas.app/comedy-atlas/event/tafkal-most-wanted/
+END:VEVENT
+END:VCALENDAR

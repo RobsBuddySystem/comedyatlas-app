@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrew-dice-clay@comedyatlas.app
+DTSTAMP:20261022T233000Z
+DTSTART:20261022T233000Z
+DTEND:20261023T013000Z
+SUMMARY:Andrew Dice Clay
+LOCATION:West Herr Auditorium Theatre at West Herr Performing Arts Center\,
+  885 East Main Street\, Rochester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andrew-di
+ ce-clay/
+URL:https://comedyatlas.app/comedy-atlas/event/andrew-dice-clay/
+END:VEVENT
+END:VCALENDAR

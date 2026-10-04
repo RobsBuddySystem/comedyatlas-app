@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jason-cook-nothing-but-happy-bits@comedyatlas.app
+DTSTAMP:20270227T183000Z
+DTSTART:20270227T183000Z
+DTEND:20270227T203000Z
+SUMMARY:Jason Cook - Nothing but Happy Bits
+LOCATION:O2 City Hall Newcastle\, Northumberland Road\, Newcastle Upon Tyne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jason-coo
+ k-nothing-but-happy-bits/
+URL:https://comedyatlas.app/comedy-atlas/event/jason-cook-nothing-but-happy
+ -bits/
+END:VEVENT
+END:VCALENDAR

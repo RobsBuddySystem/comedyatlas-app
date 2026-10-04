@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:francisco-ramos-en-espanol@comedyatlas.app
+DTSTAMP:20270102T033000Z
+DTSTART:20270102T033000Z
+DTEND:20270102T053000Z
+SUMMARY:Francisco Ramos (en Español)
+LOCATION:Punch Line Comedy Club - Sacramento\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/francisco
+ -ramos-en-espanol/
+URL:https://comedyatlas.app/comedy-atlas/event/francisco-ramos-en-espanol/
+END:VEVENT
+END:VCALENDAR

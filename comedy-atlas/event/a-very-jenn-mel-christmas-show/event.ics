@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-very-jenn-mel-christmas-show@comedyatlas.app
+DTSTAMP:20261129T200000Z
+DTSTART:20261129T200000Z
+DTEND:20261129T220000Z
+SUMMARY:A Very Jenn & Mel Christmas Show
+LOCATION:Bergen Performing Arts Center\, 30 N. Van Brunt Street\, Englewood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-very-je
+ nn-mel-christmas-show/
+URL:https://comedyatlas.app/comedy-atlas/event/a-very-jenn-mel-christmas-sh
+ ow/
+END:VEVENT
+END:VCALENDAR

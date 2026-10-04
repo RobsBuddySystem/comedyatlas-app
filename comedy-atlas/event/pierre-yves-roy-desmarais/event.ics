@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pierre-yves-roy-desmarais@comedyatlas.app
+DTSTAMP:20261023T000000Z
+DTSTART:20261023T000000Z
+DTEND:20261023T020000Z
+SUMMARY:Pierre-Yves Roy-Desmarais
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pierre-yv
+ es-roy-desmarais/
+URL:https://comedyatlas.app/comedy-atlas/event/pierre-yves-roy-desmarais/
+END:VEVENT
+END:VCALENDAR

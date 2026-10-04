@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:art@comedyatlas.app
+DTSTAMP:20270420T180000Z
+DTSTART:20270420T180000Z
+DTEND:20270420T200000Z
+SUMMARY:ART
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/art/
+URL:https://comedyatlas.app/comedy-atlas/event/art/
+END:VEVENT
+END:VCALENDAR

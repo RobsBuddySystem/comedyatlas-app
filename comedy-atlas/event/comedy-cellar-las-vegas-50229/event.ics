@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-cellar-las-vegas-50229@comedyatlas.app
+DTSTAMP:20261103T030000Z
+DTSTART:20261103T030000Z
+DTEND:20261103T050000Z
+SUMMARY:Comedy Cellar (Las Vegas)
+LOCATION:Comedy Cellar at Rio Las Vegas\, 3700 W Flamingo Rd\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ce
+ llar-las-vegas-50229/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-cellar-las-vegas-5022
+ 9/
+END:VEVENT
+END:VCALENDAR

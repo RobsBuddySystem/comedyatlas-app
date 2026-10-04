@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-roi-soleil@comedyatlas.app
+DTSTAMP:20270320T140000Z
+DTSTART:20270320T140000Z
+DTEND:20270320T160000Z
+SUMMARY:Le Roi Soleil
+LOCATION:Vorst Nationaal/Forest National\, Avenue Victor Rousseau 208\, For
+ est (Brussels)
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/le-roi-so
+ leil/
+URL:https://comedyatlas.app/comedy-atlas/event/le-roi-soleil/
+END:VEVENT
+END:VCALENDAR

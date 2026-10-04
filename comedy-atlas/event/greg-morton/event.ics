@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-morton@comedyatlas.app
+DTSTAMP:20261016T003000Z
+DTSTART:20261016T003000Z
+DTEND:20261016T023000Z
+SUMMARY:Greg Morton
+LOCATION:Topeka Performing Arts Center\, 214 SE 8th\, Topeka
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-mort
+ on/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-morton/
+END:VEVENT
+END:VCALENDAR

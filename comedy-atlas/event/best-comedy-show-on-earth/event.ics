@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:best-comedy-show-on-earth@comedyatlas.app
+DTSTAMP:20261114T060000Z
+DTSTART:20261114T060000Z
+DTEND:20261114T080000Z
+SUMMARY:Best Comedy Show on Earth
+LOCATION:Bruce Mason Centre\, The Promenade\, Takapuna Beach
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/best-come
+ dy-show-on-earth/
+URL:https://comedyatlas.app/comedy-atlas/event/best-comedy-show-on-earth/
+END:VEVENT
+END:VCALENDAR

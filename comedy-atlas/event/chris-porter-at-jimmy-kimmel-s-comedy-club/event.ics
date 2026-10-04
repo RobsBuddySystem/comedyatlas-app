@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-porter-at-jimmy-kimmel-s-comedy-club@comedyatlas.app
+DTSTAMP:20261114T033000Z
+DTSTART:20261114T033000Z
+DTEND:20261114T053000Z
+SUMMARY:Chris Porter At Jimmy Kimmel's Comedy Club
+LOCATION:Jimmy Kimmel's Comedy Club\, 3545 S Las Vegas Blvd\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-por
+ ter-at-jimmy-kimmel-s-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-porter-at-jimmy-kimmel
+ -s-comedy-club/
+END:VEVENT
+END:VCALENDAR

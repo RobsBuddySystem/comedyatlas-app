@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heroes-off-duty-51259@comedyatlas.app
+DTSTAMP:20261121T013000Z
+DTSTART:20261121T013000Z
+DTEND:20261121T033000Z
+SUMMARY:Heroes Off Duty
+LOCATION:Charline McCombs Empire Theatre\, 226 N. St. Mary's St.\, San Anto
+ nio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heroes-of
+ f-duty-51259/
+URL:https://comedyatlas.app/comedy-atlas/event/heroes-off-duty-51259/
+END:VEVENT
+END:VCALENDAR

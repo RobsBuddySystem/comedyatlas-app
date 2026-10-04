@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-delisle@comedyatlas.app
+DTSTAMP:20270124T010000Z
+DTSTART:20270124T010000Z
+DTEND:20270124T030000Z
+SUMMARY:Simon Delisle
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simon-del
+ isle/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-delisle/
+END:VEVENT
+END:VCALENDAR

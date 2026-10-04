@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:frankie-quinones-rialto-theatre@comedyatlas.app
+DTSTAMP:20261206T030000Z
+DTSTART:20261206T030000Z
+DTEND:20261206T050000Z
+SUMMARY:Frankie Quiñones @ Rialto Theatre
+LOCATION:Rialto Theatre-Tucson\, 318 Congress St\, Tucson
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/frankie-q
+ uinones-rialto-theatre/
+URL:https://comedyatlas.app/comedy-atlas/event/frankie-quinones-rialto-thea
+ tre/
+END:VEVENT
+END:VCALENDAR

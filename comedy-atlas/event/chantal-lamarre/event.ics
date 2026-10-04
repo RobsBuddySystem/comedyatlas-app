@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chantal-lamarre@comedyatlas.app
+DTSTAMP:20270110T010000Z
+DTSTART:20270110T010000Z
+DTEND:20270110T030000Z
+SUMMARY:Chantal Lamarre
+LOCATION:Salle Richard-Sauvageau\, 1100\, boulevard Taschereau\, La Prairie
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chantal-l
+ amarre/
+URL:https://comedyatlas.app/comedy-atlas/event/chantal-lamarre/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mein-dschungel-by-serdar-karibik@comedyatlas.app
+DTSTAMP:20270305T190000Z
+DTSTART:20270305T190000Z
+DTEND:20270305T210000Z
+SUMMARY:Mein Dschungel by Serdar Karibik
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mein-dsch
+ ungel-by-serdar-karibik/
+URL:https://comedyatlas.app/comedy-atlas/event/mein-dschungel-by-serdar-kar
+ ibik/
+END:VEVENT
+END:VCALENDAR

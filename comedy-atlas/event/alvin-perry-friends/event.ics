@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alvin-perry-friends@comedyatlas.app
+DTSTAMP:20261102T010000Z
+DTSTART:20261102T010000Z
+DTEND:20261102T030000Z
+SUMMARY:Alvin Perry & Friends
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alvin-per
+ ry-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/alvin-perry-friends/
+END:VEVENT
+END:VCALENDAR

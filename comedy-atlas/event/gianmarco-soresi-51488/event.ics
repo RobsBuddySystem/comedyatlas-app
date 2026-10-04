@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gianmarco-soresi-51488@comedyatlas.app
+DTSTAMP:20261123T043000Z
+DTSTART:20261123T043000Z
+DTEND:20261123T063000Z
+SUMMARY:Gianmarco Soresi
+LOCATION:San Jose Improv\, 62 S Second St\, San Jose
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gianmarco
+ -soresi-51488/
+URL:https://comedyatlas.app/comedy-atlas/event/gianmarco-soresi-51488/
+END:VEVENT
+END:VCALENDAR

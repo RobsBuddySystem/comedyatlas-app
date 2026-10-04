@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:not-a-band-prof-elemental@comedyatlas.app
+DTSTAMP:20261219T190000Z
+DTSTART:20261219T190000Z
+DTEND:20261219T210000Z
+SUMMARY:Not A Band + Prof. Elemental
+LOCATION:Southampton 1865\, Brunswick Square\, Southampton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/not-a-ban
+ d-prof-elemental/
+URL:https://comedyatlas.app/comedy-atlas/event/not-a-band-prof-elemental/
+END:VEVENT
+END:VCALENDAR

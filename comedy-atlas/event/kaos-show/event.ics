@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kaos-show@comedyatlas.app
+DTSTAMP:20261115T193000Z
+DTSTART:20261115T193000Z
+DTEND:20261115T213000Z
+SUMMARY:KAOS Show
+LOCATION:Trixxo Theater Hasselt\, Trichterheideweg\, Hasselt
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kaos-show
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/kaos-show/
+END:VEVENT
+END:VCALENDAR

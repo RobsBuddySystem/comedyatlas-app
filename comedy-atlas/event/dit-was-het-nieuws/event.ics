@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dit-was-het-nieuws@comedyatlas.app
+DTSTAMP:20261014T180000Z
+DTSTART:20261014T180000Z
+DTEND:20261014T200000Z
+SUMMARY:Dit Was Het Nieuws
+LOCATION:Mediapark Studio 5\, Joop van den Endeplein 17\, Hilversum
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dit-was-h
+ et-nieuws/
+URL:https://comedyatlas.app/comedy-atlas/event/dit-was-het-nieuws/
+END:VEVENT
+END:VCALENDAR

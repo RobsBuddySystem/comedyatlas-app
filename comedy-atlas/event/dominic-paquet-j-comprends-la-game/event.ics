@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dominic-paquet-j-comprends-la-game@comedyatlas.app
+DTSTAMP:20261009T000000Z
+DTSTART:20261009T000000Z
+DTEND:20261009T020000Z
+SUMMARY:Dominic Paquet - J'comprends la game
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dominic-p
+ aquet-j-comprends-la-game/
+URL:https://comedyatlas.app/comedy-atlas/event/dominic-paquet-j-comprends-l
+ a-game/
+END:VEVENT
+END:VCALENDAR

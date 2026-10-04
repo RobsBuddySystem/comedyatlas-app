@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:filiz-tasdan-filiz-touchdown@comedyatlas.app
+DTSTAMP:20271204T190000Z
+DTSTART:20271204T190000Z
+DTEND:20271204T210000Z
+SUMMARY:FILIZ TASDAN - Filiz Touchdown
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/filiz-tas
+ dan-filiz-touchdown/
+URL:https://comedyatlas.app/comedy-atlas/event/filiz-tasdan-filiz-touchdown
+ /
+END:VEVENT
+END:VCALENDAR

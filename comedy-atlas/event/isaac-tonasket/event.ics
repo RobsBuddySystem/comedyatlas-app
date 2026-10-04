@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:isaac-tonasket@comedyatlas.app
+DTSTAMP:20261115T030000Z
+DTSTART:20261115T030000Z
+DTEND:20261115T050000Z
+SUMMARY:Isaac Tonasket
+LOCATION:Showroom at Talking Stick Resort\, 9800 E. Indian Bend Road\, Scot
+ tsdale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/isaac-ton
+ asket/
+URL:https://comedyatlas.app/comedy-atlas/event/isaac-tonasket/
+END:VEVENT
+END:VCALENDAR

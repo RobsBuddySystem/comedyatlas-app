@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:conor-moore@comedyatlas.app
+DTSTAMP:20270311T000000Z
+DTSTART:20270311T000000Z
+DTEND:20270311T020000Z
+SUMMARY:Conor Moore
+LOCATION:Arts at the Armory\, 191 Highland Ave.\, Somerville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/conor-moo
+ re/
+URL:https://comedyatlas.app/comedy-atlas/event/conor-moore/
+END:VEVENT
+END:VCALENDAR

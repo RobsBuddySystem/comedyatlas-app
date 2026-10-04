@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kill-tony-50986@comedyatlas.app
+DTSTAMP:20261115T030000Z
+DTSTART:20261115T030000Z
+DTEND:20261115T050000Z
+SUMMARY:Kill Tony
+LOCATION:Dolby Live\, 3770 S. Las Vegas Blvd\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kill-tony
+ -50986/
+URL:https://comedyatlas.app/comedy-atlas/event/kill-tony-50986/
+END:VEVENT
+END:VCALENDAR

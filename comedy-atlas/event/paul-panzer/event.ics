@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-panzer@comedyatlas.app
+DTSTAMP:20261219T190000Z
+DTSTART:20261219T190000Z
+DTEND:20261219T210000Z
+SUMMARY:Paul Panzer
+LOCATION:SWT Arena\, Fort Worth-Platz 1\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-panz
+ er/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-panzer/
+END:VEVENT
+END:VCALENDAR

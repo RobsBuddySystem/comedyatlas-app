@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seann-walsh@comedyatlas.app
+DTSTAMP:20270322T193000Z
+DTSTART:20270322T193000Z
+DTEND:20270322T213000Z
+SUMMARY:Seann Walsh
+LOCATION:Dolans Warehouse\, 3-4 Dock Road\, Limerick
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/seann-wal
+ sh/
+URL:https://comedyatlas.app/comedy-atlas/event/seann-walsh/
+END:VEVENT
+END:VCALENDAR

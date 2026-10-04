@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-hofstetter-im-not-running@comedyatlas.app
+DTSTAMP:20271210T030000Z
+DTSTART:20271210T030000Z
+DTEND:20271210T050000Z
+SUMMARY:Steve Hofstetter: Im Not Running
+LOCATION:Crest Theater\, 1013 K Street\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-hof
+ stetter-im-not-running/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-hofstetter-im-not-runn
+ ing/
+END:VEVENT
+END:VCALENDAR

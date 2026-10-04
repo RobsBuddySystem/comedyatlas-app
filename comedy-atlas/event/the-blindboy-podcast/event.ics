@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-blindboy-podcast@comedyatlas.app
+DTSTAMP:20270409T080000Z
+DTSTART:20270409T080000Z
+DTEND:20270409T100000Z
+SUMMARY:The Blindboy Podcast
+LOCATION:Great Hall\, Auckland Town Hall\, Queen Street\, Auckland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-blind
+ boy-podcast/
+URL:https://comedyatlas.app/comedy-atlas/event/the-blindboy-podcast/
+END:VEVENT
+END:VCALENDAR

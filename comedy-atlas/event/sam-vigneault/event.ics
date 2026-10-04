@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-vigneault@comedyatlas.app
+DTSTAMP:20270619T000000Z
+DTSTART:20270619T000000Z
+DTEND:20270619T020000Z
+SUMMARY:Sam Vigneault
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-vigne
+ ault/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-vigneault/
+END:VEVENT
+END:VCALENDAR

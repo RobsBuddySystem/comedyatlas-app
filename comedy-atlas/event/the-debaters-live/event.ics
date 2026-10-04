@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-debaters-live@comedyatlas.app
+DTSTAMP:20261212T233000Z
+DTSTART:20261212T233000Z
+DTEND:20261213T013000Z
+SUMMARY:The Debaters Live
+LOCATION:The Molson Canadian Centre at Casino New Brunswick\, 21 Casino Dri
+ ve\, Moncton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-debat
+ ers-live/
+URL:https://comedyatlas.app/comedy-atlas/event/the-debaters-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-restos-du-rire@comedyatlas.app
+DTSTAMP:20270228T130000Z
+DTSTART:20270228T130000Z
+DTEND:20270228T150000Z
+SUMMARY:Les Restos du Rire
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/les-resto
+ s-du-rire/
+URL:https://comedyatlas.app/comedy-atlas/event/les-restos-du-rire/
+END:VEVENT
+END:VCALENDAR

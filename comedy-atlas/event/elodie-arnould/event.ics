@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elodie-arnould@comedyatlas.app
+DTSTAMP:20270310T190000Z
+DTSTART:20270310T190000Z
+DTEND:20270310T210000Z
+SUMMARY:Elodie Arnould
+LOCATION:Aula Magna\, Place Raymond Lemaire\, 1\, Louvain-la-Neuve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elodie-ar
+ nould/
+URL:https://comedyatlas.app/comedy-atlas/event/elodie-arnould/
+END:VEVENT
+END:VCALENDAR

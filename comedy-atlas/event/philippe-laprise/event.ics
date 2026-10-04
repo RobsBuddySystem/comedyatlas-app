@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:philippe-laprise@comedyatlas.app
+DTSTAMP:20261105T010000Z
+DTSTART:20261105T010000Z
+DTEND:20261105T030000Z
+SUMMARY:Philippe Laprise
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/philippe-
+ laprise/
+URL:https://comedyatlas.app/comedy-atlas/event/philippe-laprise/
+END:VEVENT
+END:VCALENDAR

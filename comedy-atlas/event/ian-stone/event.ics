@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-stone@comedyatlas.app
+DTSTAMP:20261111T200000Z
+DTSTART:20261111T200000Z
+DTEND:20261111T220000Z
+SUMMARY:Ian Stone
+LOCATION:Kendal Brewery Arts Centre\, 122a Highgate\, Kendal\, Cumbria
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-stone
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/ian-stone/
+END:VEVENT
+END:VCALENDAR

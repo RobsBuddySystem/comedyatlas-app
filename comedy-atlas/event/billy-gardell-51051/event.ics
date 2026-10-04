@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:billy-gardell-51051@comedyatlas.app
+DTSTAMP:20261115T230000Z
+DTSTART:20261115T230000Z
+DTEND:20261116T010000Z
+SUMMARY:Billy Gardell
+LOCATION:Raleigh Improv\, 1224 Parkside Main St\, Cary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/billy-gar
+ dell-51051/
+URL:https://comedyatlas.app/comedy-atlas/event/billy-gardell-51051/
+END:VEVENT
+END:VCALENDAR

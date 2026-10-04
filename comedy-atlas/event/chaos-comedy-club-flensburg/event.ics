@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-flensburg@comedyatlas.app
+DTSTAMP:20270116T190000Z
+DTSTART:20270116T190000Z
+DTEND:20270116T210000Z
+SUMMARY:Chaos Comedy Club | Flensburg
+LOCATION:Kulturwerkstatt Kühlhaus\, Mühlendamm 25\, Flensburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-flensburg/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-flensburg/
+END:VEVENT
+END:VCALENDAR

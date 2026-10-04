@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mojo-brookzz-live@comedyatlas.app
+DTSTAMP:20261007T000000Z
+DTSTART:20261007T000000Z
+DTEND:20261007T020000Z
+SUMMARY:Mojo Brookzz LIVE!
+LOCATION:VSU Multi-Purpose Center\, 20809 2nd Avenue\, Petersburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mojo-broo
+ kzz-live/
+URL:https://comedyatlas.app/comedy-atlas/event/mojo-brookzz-live/
+END:VEVENT
+END:VCALENDAR

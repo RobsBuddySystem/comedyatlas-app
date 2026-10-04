@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:megan-brouillard@comedyatlas.app
+DTSTAMP:20270115T010000Z
+DTSTART:20270115T010000Z
+DTEND:20270115T030000Z
+SUMMARY:Megan Brouillard
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/megan-bro
+ uillard/
+URL:https://comedyatlas.app/comedy-atlas/event/megan-brouillard/
+END:VEVENT
+END:VCALENDAR

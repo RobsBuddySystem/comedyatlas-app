@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mic-wreckers-in-the-callback-bar@comedyatlas.app
+DTSTAMP:20261016T023000Z
+DTSTART:20261016T023000Z
+DTEND:20261016T043000Z
+SUMMARY:Mic Wreckers - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mic-wreck
+ ers-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/mic-wreckers-in-the-callback
+ -bar/
+END:VEVENT
+END:VCALENDAR

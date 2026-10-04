@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:max-amini-live-in-hollywood-48640@comedyatlas.app
+DTSTAMP:20261005T030000Z
+DTSTART:20261005T030000Z
+DTEND:20261005T050000Z
+SUMMARY:Max Amini Live in Hollywood!
+LOCATION:Dolby Theatre\, 6801 Hollywood Blvd.\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/max-amini
+ -live-in-hollywood-48640/
+URL:https://comedyatlas.app/comedy-atlas/event/max-amini-live-in-hollywood-
+ 48640/
+END:VEVENT
+END:VCALENDAR

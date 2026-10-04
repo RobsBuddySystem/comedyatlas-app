@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:terry-fator-a-very-terry-christmas@comedyatlas.app
+DTSTAMP:20261217T010000Z
+DTSTART:20261217T010000Z
+DTEND:20261217T030000Z
+SUMMARY:Terry Fator A Very Terry Christmas
+LOCATION:Rialto Square Theatre\, 102 N Chicago\, Joliet
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/terry-fat
+ or-a-very-terry-christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/terry-fator-a-very-terry-chr
+ istmas/
+END:VEVENT
+END:VCALENDAR

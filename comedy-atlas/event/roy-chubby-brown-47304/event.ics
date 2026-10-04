@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roy-chubby-brown-47304@comedyatlas.app
+DTSTAMP:20270220T200000Z
+DTSTART:20270220T200000Z
+DTEND:20270220T220000Z
+SUMMARY:Roy Chubby Brown
+LOCATION:Whitby Pavilion Theatre\, West Cliff\, Whitby
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roy-chubb
+ y-brown-47304/
+URL:https://comedyatlas.app/comedy-atlas/event/roy-chubby-brown-47304/
+END:VEVENT
+END:VCALENDAR

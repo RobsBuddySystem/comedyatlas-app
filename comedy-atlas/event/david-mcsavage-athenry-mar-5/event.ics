@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-athenry-mar-5@comedyatlas.app
+DTSTAMP:20270305T200000Z
+DTSTART:20270305T200000Z
+DTEND:20270305T220000Z
+SUMMARY:David McSavage - Athenry - Mar 5
+LOCATION:Raheen Woods Hotel\, Raheen\, Athenry
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-athenry-mar-5/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-athenry-mar-5
+ /
+END:VEVENT
+END:VCALENDAR

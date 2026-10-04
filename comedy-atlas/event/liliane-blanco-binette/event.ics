@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liliane-blanco-binette@comedyatlas.app
+DTSTAMP:20270617T000000Z
+DTSTART:20270617T000000Z
+DTEND:20270617T020000Z
+SUMMARY:Liliane Blanco-Binette
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liliane-b
+ lanco-binette/
+URL:https://comedyatlas.app/comedy-atlas/event/liliane-blanco-binette/
+END:VEVENT
+END:VCALENDAR

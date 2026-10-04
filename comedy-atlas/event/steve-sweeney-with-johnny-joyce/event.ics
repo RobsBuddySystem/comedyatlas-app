@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-sweeney-with-johnny-joyce@comedyatlas.app
+DTSTAMP:20261204T010000Z
+DTSTART:20261204T010000Z
+DTEND:20261204T030000Z
+SUMMARY:Steve Sweeney with Johnny Joyce
+LOCATION:Agoro's\, 2756 County Street\, Somerset
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-swe
+ eney-with-johnny-joyce/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-sweeney-with-johnny-jo
+ yce/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-fraticelli@comedyatlas.app
+DTSTAMP:20270122T190000Z
+DTSTART:20270122T190000Z
+DTEND:20270122T210000Z
+SUMMARY:Eric Fraticelli
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-frat
+ icelli/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-fraticelli/
+END:VEVENT
+END:VCALENDAR

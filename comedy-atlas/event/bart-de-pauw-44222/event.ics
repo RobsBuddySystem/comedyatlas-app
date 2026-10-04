@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bart-de-pauw-44222@comedyatlas.app
+DTSTAMP:20261029T190000Z
+DTSTART:20261029T190000Z
+DTEND:20261029T210000Z
+SUMMARY:Bart De Pauw
+LOCATION:Stadsschouwburg Antwerpen\, Theaterplein 1\, Antwerp
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bart-de-p
+ auw-44222/
+URL:https://comedyatlas.app/comedy-atlas/event/bart-de-pauw-44222/
+END:VEVENT
+END:VCALENDAR

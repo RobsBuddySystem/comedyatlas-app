@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:becky-robinson-s-holiday-spectacular@comedyatlas.app
+DTSTAMP:20261122T040000Z
+DTSTART:20261122T040000Z
+DTEND:20261122T060000Z
+SUMMARY:Becky Robinson's Holiday Spectacular
+LOCATION:Scherr Forum- B of A Performing Arts Center\, Thousand Oaks\, 2100
+  E. Thousand Oaks Blvd\, Thousand Oaks
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/becky-rob
+ inson-s-holiday-spectacular/
+URL:https://comedyatlas.app/comedy-atlas/event/becky-robinson-s-holiday-spe
+ ctacular/
+END:VEVENT
+END:VCALENDAR

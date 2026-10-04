@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-breton-ga-le-aller-45058@comedyatlas.app
+DTSTAMP:20261211T010000Z
+DTSTART:20261211T010000Z
+DTEND:20261211T030000Z
+SUMMARY:Sam Breton - Ga-lé aller
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-breto
+ n-ga-le-aller-45058/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-breton-ga-le-aller-45058
+ /
+END:VEVENT
+END:VCALENDAR

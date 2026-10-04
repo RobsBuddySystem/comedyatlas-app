@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-mathews-53408@comedyatlas.app
+DTSTAMP:20270206T020000Z
+DTSTART:20270206T020000Z
+DTEND:20270206T040000Z
+SUMMARY:Matt Mathews
+LOCATION:The Hall at Live!\, 7002 Arundel Mills Cir #7777\, Hanover
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-math
+ ews-53408/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-mathews-53408/
+END:VEVENT
+END:VCALENDAR

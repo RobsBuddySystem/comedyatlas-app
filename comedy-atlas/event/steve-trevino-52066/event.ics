@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-trevino-52066@comedyatlas.app
+DTSTAMP:20261207T020000Z
+DTSTART:20261207T020000Z
+DTEND:20261207T040000Z
+SUMMARY:Steve Trevino
+LOCATION:Ontario Improv\, 4555 Mills Cir\, Ontario
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-tre
+ vino-52066/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-trevino-52066/
+END:VEVENT
+END:VCALENDAR

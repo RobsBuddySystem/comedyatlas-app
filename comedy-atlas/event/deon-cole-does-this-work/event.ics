@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deon-cole-does-this-work@comedyatlas.app
+DTSTAMP:20261102T050000Z
+DTSTART:20261102T050000Z
+DTEND:20261102T070000Z
+SUMMARY:Deon Cole: Does This Work?
+LOCATION:Hollywood Improv (The Lab)\, 8162 Melrose Avenue\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deon-cole
+ -does-this-work/
+URL:https://comedyatlas.app/comedy-atlas/event/deon-cole-does-this-work/
+END:VEVENT
+END:VCALENDAR

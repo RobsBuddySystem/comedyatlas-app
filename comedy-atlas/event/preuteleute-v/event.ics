@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:preuteleute-v@comedyatlas.app
+DTSTAMP:20270416T180000Z
+DTSTART:20270416T180000Z
+DTEND:20270416T200000Z
+SUMMARY:Preuteleute "V"
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/preuteleu
+ te-v/
+URL:https://comedyatlas.app/comedy-atlas/event/preuteleute-v/
+END:VEVENT
+END:VCALENDAR

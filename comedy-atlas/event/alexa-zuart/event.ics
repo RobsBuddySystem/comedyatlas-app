@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alexa-zuart@comedyatlas.app
+DTSTAMP:20270306T030000Z
+DTSTART:20270306T030000Z
+DTEND:20270306T050000Z
+SUMMARY:Alexa Zuart
+LOCATION:Auditorio Nacional\, Paseo de la Reforma # 50 Col Polanco V Secci
+ ón\, Mexico City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alexa-zua
+ rt/
+URL:https://comedyatlas.app/comedy-atlas/event/alexa-zuart/
+END:VEVENT
+END:VCALENDAR

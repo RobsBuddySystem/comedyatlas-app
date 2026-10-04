@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:genx-takeover-comedy-tour@comedyatlas.app
+DTSTAMP:20261010T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T020000Z
+SUMMARY:GenX Takeover Comedy Tour
+LOCATION:Living Arts Centre Auditorium\, 4141 Living Arts Dr\, Mississauga
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/genx-take
+ over-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/genx-takeover-comedy-tour/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-corner-dave-landau@comedyatlas.app
+DTSTAMP:20270124T010000Z
+DTSTART:20270124T010000Z
+DTEND:20270124T030000Z
+SUMMARY:Comedy Corner - Dave Landau
+LOCATION:Sunrise Theatre\, 117 South Second St\, Fort Pierce
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-co
+ rner-dave-landau/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-corner-dave-landau/
+END:VEVENT
+END:VCALENDAR

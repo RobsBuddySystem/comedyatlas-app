@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cristela-alonzo@comedyatlas.app
+DTSTAMP:20270411T020000Z
+DTSTART:20270411T020000Z
+DTEND:20270411T040000Z
+SUMMARY:Cristela Alonzo
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cristela-
+ alonzo/
+URL:https://comedyatlas.app/comedy-atlas/event/cristela-alonzo/
+END:VEVENT
+END:VCALENDAR

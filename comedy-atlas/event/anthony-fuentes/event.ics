@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anthony-fuentes@comedyatlas.app
+DTSTAMP:20261113T013000Z
+DTSTART:20261113T013000Z
+DTEND:20261113T033000Z
+SUMMARY:Anthony Fuentes
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anthony-f
+ uentes/
+URL:https://comedyatlas.app/comedy-atlas/event/anthony-fuentes/
+END:VEVENT
+END:VCALENDAR

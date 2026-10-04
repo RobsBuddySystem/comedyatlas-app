@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-bourgeois-gentilhomme@comedyatlas.app
+DTSTAMP:20270113T190000Z
+DTSTART:20270113T190000Z
+DTEND:20270113T210000Z
+SUMMARY:Le Bourgeois Gentilhomme
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/le-bourge
+ ois-gentilhomme/
+URL:https://comedyatlas.app/comedy-atlas/event/le-bourgeois-gentilhomme/
+END:VEVENT
+END:VCALENDAR

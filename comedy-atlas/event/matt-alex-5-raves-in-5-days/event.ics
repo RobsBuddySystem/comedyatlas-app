@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-alex-5-raves-in-5-days@comedyatlas.app
+DTSTAMP:20261030T070000Z
+DTSTART:20261030T070000Z
+DTEND:20261030T090000Z
+SUMMARY:MATT & ALEX | 5 RAVES IN 5 DAYS
+LOCATION:Manning Bar\, Manning Rd\, Camperdown
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-alex
+ -5-raves-in-5-days/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-alex-5-raves-in-5-days/
+END:VEVENT
+END:VCALENDAR

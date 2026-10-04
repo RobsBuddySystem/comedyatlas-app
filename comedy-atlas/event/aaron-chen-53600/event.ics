@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aaron-chen-53600@comedyatlas.app
+DTSTAMP:20270220T033000Z
+DTSTART:20270220T033000Z
+DTEND:20270220T053000Z
+SUMMARY:Aaron Chen
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aaron-che
+ n-53600/
+URL:https://comedyatlas.app/comedy-atlas/event/aaron-chen-53600/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andre-sauve-45215@comedyatlas.app
+DTSTAMP:20270515T000000Z
+DTSTART:20270515T000000Z
+DTEND:20270515T020000Z
+SUMMARY:Andre Sauve
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andre-sau
+ ve-45215/
+URL:https://comedyatlas.app/comedy-atlas/event/andre-sauve-45215/
+END:VEVENT
+END:VCALENDAR

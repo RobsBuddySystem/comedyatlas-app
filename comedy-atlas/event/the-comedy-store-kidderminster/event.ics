@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-kidderminster@comedyatlas.app
+DTSTAMP:20261010T190000Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:The Comedy Store - Kidderminster
+LOCATION:Kidderminster Town Hall\, 7 Vicar Street\, Kidderminster
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-kidderminster/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-kidderminst
+ er/
+END:VEVENT
+END:VCALENDAR

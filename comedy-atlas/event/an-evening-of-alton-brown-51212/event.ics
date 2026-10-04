@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-of-alton-brown-51212@comedyatlas.app
+DTSTAMP:20261120T040000Z
+DTSTART:20261120T040000Z
+DTEND:20261120T060000Z
+SUMMARY:An Evening of Alton Brown
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-of-alton-brown-51212/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-of-alton-brown-51
+ 212/
+END:VEVENT
+END:VCALENDAR

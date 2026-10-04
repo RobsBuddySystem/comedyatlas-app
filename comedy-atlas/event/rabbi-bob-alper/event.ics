@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rabbi-bob-alper@comedyatlas.app
+DTSTAMP:20261213T003000Z
+DTSTART:20261213T003000Z
+DTEND:20261213T023000Z
+SUMMARY:Rabbi Bob Alper
+LOCATION:The Studio at Mizner Park\, 201 W Plaza Real\, Boca Raton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rabbi-bob
+ -alper/
+URL:https://comedyatlas.app/comedy-atlas/event/rabbi-bob-alper/
+END:VEVENT
+END:VCALENDAR

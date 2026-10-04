@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nino-frassica-in-novella-bella@comedyatlas.app
+DTSTAMP:20270507T191500Z
+DTSTART:20270507T191500Z
+DTEND:20270507T211500Z
+SUMMARY:Nino Frassica in "Novella Bella"
+LOCATION:Gran Teatro GEOX\, Via Tassinari\, 1\, Padova
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nino-fras
+ sica-in-novella-bella/
+URL:https://comedyatlas.app/comedy-atlas/event/nino-frassica-in-novella-bel
+ la/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bisi-dicem@comedyatlas.app
+DTSTAMP:20261106T173000Z
+DTSTART:20261106T173000Z
+DTEND:20261106T193000Z
+SUMMARY:Bişi Dicem
+LOCATION:Metreküp Bodrum\, Cumhuriyet Caddesi Müskebi Mahallesi No: 6 Ort
+ akent Midtown Plaza\, Muğla
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bisi-dice
+ m/
+URL:https://comedyatlas.app/comedy-atlas/event/bisi-dicem/
+END:VEVENT
+END:VCALENDAR

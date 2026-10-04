@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jo-cormier@comedyatlas.app
+DTSTAMP:20261127T010000Z
+DTSTART:20261127T010000Z
+DTEND:20261127T030000Z
+SUMMARY:Jo Cormier
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jo-cormie
+ r/
+URL:https://comedyatlas.app/comedy-atlas/event/jo-cormier/
+END:VEVENT
+END:VCALENDAR

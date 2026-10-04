@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-coventry-48012@comedyatlas.app
+DTSTAMP:20270514T183000Z
+DTSTART:20270514T183000Z
+DTEND:20270514T203000Z
+SUMMARY:The Comedy Store - Coventry
+LOCATION:The Albany Theatre\, 53 Butts\, Coventry
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-coventry-48012/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-coventry-48
+ 012/
+END:VEVENT
+END:VCALENDAR

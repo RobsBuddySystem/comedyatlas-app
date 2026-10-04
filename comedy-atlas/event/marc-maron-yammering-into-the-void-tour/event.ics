@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marc-maron-yammering-into-the-void-tour@comedyatlas.app
+DTSTAMP:20261025T010000Z
+DTSTART:20261025T010000Z
+DTEND:20261025T030000Z
+SUMMARY:Marc Maron: Yammering into the Void Tour
+LOCATION:The Magnolia\, 210 E Main Street\, El Cajon
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marc-maro
+ n-yammering-into-the-void-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/marc-maron-yammering-into-th
+ e-void-tour/
+END:VEVENT
+END:VCALENDAR

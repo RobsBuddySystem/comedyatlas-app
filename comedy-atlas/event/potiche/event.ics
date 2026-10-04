@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:potiche@comedyatlas.app
+DTSTAMP:20270206T190000Z
+DTSTART:20270206T190000Z
+DTEND:20270206T210000Z
+SUMMARY:Potiche
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/potiche/
+URL:https://comedyatlas.app/comedy-atlas/event/potiche/
+END:VEVENT
+END:VCALENDAR

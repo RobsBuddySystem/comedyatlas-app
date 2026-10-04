@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trevor-wallace-the-alpha-beta-male@comedyatlas.app
+DTSTAMP:20261106T190000Z
+DTSTART:20261106T190000Z
+DTEND:20261106T210000Z
+SUMMARY:Trevor Wallace - The Alpha Beta Male
+LOCATION:Falkonersalen\, Falkoner Alle 9\, Frederiksberg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/trevor-wa
+ llace-the-alpha-beta-male/
+URL:https://comedyatlas.app/comedy-atlas/event/trevor-wallace-the-alpha-bet
+ a-male/
+END:VEVENT
+END:VCALENDAR

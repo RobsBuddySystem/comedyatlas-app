@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-gaudet@comedyatlas.app
+DTSTAMP:20270123T010000Z
+DTSTART:20270123T010000Z
+DTEND:20270123T030000Z
+SUMMARY:Dave Gaudet
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-gaud
+ et/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-gaudet/
+END:VEVENT
+END:VCALENDAR

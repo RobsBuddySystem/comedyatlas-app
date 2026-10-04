@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anne-bakland-slangetmmer@comedyatlas.app
+DTSTAMP:20270902T170000Z
+DTSTART:20270902T170000Z
+DTEND:20270902T190000Z
+SUMMARY:Anne Bakland – Slangetæmmer
+LOCATION:Slagelse Musikhus\, Sdr. Stationsvej 3-5\, Slagelse
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/anne-bakl
+ and-slangetmmer/
+URL:https://comedyatlas.app/comedy-atlas/event/anne-bakland-slangetmmer/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-gilligan-arches-bar-experience@comedyatlas.app
+DTSTAMP:20270409T180000Z
+DTSTART:20270409T180000Z
+DTEND:20270409T200000Z
+SUMMARY:Mo Gilligan: Arches Bar Experience
+LOCATION:Sheffield City Hall Oval Hall\, Barkers Pool\, Sheffield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-gillig
+ an-arches-bar-experience/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-gilligan-arches-bar-exper
+ ience/
+END:VEVENT
+END:VCALENDAR

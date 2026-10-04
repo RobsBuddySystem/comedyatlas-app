@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-black-comedy-show-52807@comedyatlas.app
+DTSTAMP:20261228T043000Z
+DTSTART:20261228T043000Z
+DTEND:20261228T063000Z
+SUMMARY:Big Black Comedy Show
+LOCATION:V Theater at Planet Hollywood Inside the Miracle Mile Mall\, 3663 
+ Las Vegas Blvd South Suite 360A\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/big-black
+ -comedy-show-52807/
+URL:https://comedyatlas.app/comedy-atlas/event/big-black-comedy-show-52807/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-bartnick@comedyatlas.app
+DTSTAMP:20261008T233000Z
+DTSTART:20261008T233000Z
+DTEND:20261009T013000Z
+SUMMARY:Joe Bartnick
+LOCATION:West Nyack Levity Live\, 4210 Palisades Center Dr A - 401\, West N
+ yack
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-bartn
+ ick/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-bartnick/
+END:VEVENT
+END:VCALENDAR

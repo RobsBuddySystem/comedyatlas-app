@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:natasha-leggero@comedyatlas.app
+DTSTAMP:20261113T003000Z
+DTSTART:20261113T003000Z
+DTEND:20261113T023000Z
+SUMMARY:Natasha Leggero
+LOCATION:West Nyack Levity Live\, 4210 Palisades Center Dr A - 401\, West N
+ yack
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/natasha-l
+ eggero/
+URL:https://comedyatlas.app/comedy-atlas/event/natasha-leggero/
+END:VEVENT
+END:VCALENDAR

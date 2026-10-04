@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hermanos-de-leche@comedyatlas.app
+DTSTAMP:20261206T030000Z
+DTSTART:20261206T030000Z
+DTEND:20261206T050000Z
+SUMMARY:Hermanos De Leche
+LOCATION:Escenario GNP Seguros\, Av. Benito Juárez No. 1002\, Monterrey
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hermanos-
+ de-leche/
+URL:https://comedyatlas.app/comedy-atlas/event/hermanos-de-leche/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-51804@comedyatlas.app
+DTSTAMP:20261204T010000Z
+DTSTART:20261204T010000Z
+DTEND:20261204T030000Z
+SUMMARY:John Crist Live!
+LOCATION:Jefferson Theatre\, 345 Fannin Street\, Beaumont
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-51804/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-51804/
+END:VEVENT
+END:VCALENDAR

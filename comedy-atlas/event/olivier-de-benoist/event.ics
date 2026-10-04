@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:olivier-de-benoist@comedyatlas.app
+DTSTAMP:20261206T170000Z
+DTSTART:20261206T170000Z
+DTEND:20261206T190000Z
+SUMMARY:Olivier de Benoist
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/olivier-d
+ e-benoist/
+URL:https://comedyatlas.app/comedy-atlas/event/olivier-de-benoist/
+END:VEVENT
+END:VCALENDAR

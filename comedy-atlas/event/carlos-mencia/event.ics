@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carlos-mencia@comedyatlas.app
+DTSTAMP:20261017T003000Z
+DTSTART:20261017T003000Z
+DTEND:20261017T023000Z
+SUMMARY:Carlos Mencia
+LOCATION:Addison Improv\, 4980 Beltline Road #250\, Addison
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carlos-me
+ ncia/
+URL:https://comedyatlas.app/comedy-atlas/event/carlos-mencia/
+END:VEVENT
+END:VCALENDAR

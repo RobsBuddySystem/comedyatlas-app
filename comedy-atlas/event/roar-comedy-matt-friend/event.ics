@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-matt-friend@comedyatlas.app
+DTSTAMP:20261114T010000Z
+DTSTART:20261114T010000Z
+DTEND:20261114T030000Z
+SUMMARY:ROAR! Comedy: Matt Friend
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-matt-friend/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-matt-friend/
+END:VEVENT
+END:VCALENDAR

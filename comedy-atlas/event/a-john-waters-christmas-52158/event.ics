@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-john-waters-christmas-52158@comedyatlas.app
+DTSTAMP:20261211T000000Z
+DTSTART:20261211T000000Z
+DTEND:20261211T020000Z
+SUMMARY:A John Waters Christmas
+LOCATION:Gartner Auditorium\, 11150 East Blvd.\, Cleveland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-john-wa
+ ters-christmas-52158/
+URL:https://comedyatlas.app/comedy-atlas/event/a-john-waters-christmas-5215
+ 8/
+END:VEVENT
+END:VCALENDAR

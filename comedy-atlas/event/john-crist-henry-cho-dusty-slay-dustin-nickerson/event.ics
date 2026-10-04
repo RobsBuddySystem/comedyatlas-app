@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-henry-cho-dusty-slay-dustin-nickerson@comedyatlas.app
+DTSTAMP:20261115T000000Z
+DTSTART:20261115T000000Z
+DTEND:20261115T020000Z
+SUMMARY:John Crist\, Henry Cho\, Dusty Slay\, Dustin Nickerson
+LOCATION:GIANT Center\, 550 West Hersheypark Drive\, Hershey
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-henry-cho-dusty-slay-dustin-nickerson/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-henry-cho-dusty-s
+ lay-dustin-nickerson/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-davis-spudgun-48126@comedyatlas.app
+DTSTAMP:20270529T183000Z
+DTSTART:20270529T183000Z
+DTEND:20270529T203000Z
+SUMMARY:Tom Davis: Spudgun
+LOCATION:The Anvil\, Churchill Way\, Basingstoke
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-davis
+ -spudgun-48126/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-davis-spudgun-48126/
+END:VEVENT
+END:VCALENDAR

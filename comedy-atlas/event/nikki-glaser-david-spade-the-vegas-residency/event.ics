@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nikki-glaser-david-spade-the-vegas-residency@comedyatlas.app
+DTSTAMP:20270123T040000Z
+DTSTART:20270123T040000Z
+DTEND:20270123T060000Z
+SUMMARY:Nikki Glaser & David Spade: The Vegas Residency
+LOCATION:The Colosseum at Caesars Palace\, 3570 S Las Vegas Blvd\, Las Vega
+ s
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nikki-gla
+ ser-david-spade-the-vegas-residency/
+URL:https://comedyatlas.app/comedy-atlas/event/nikki-glaser-david-spade-the
+ -vegas-residency/
+END:VEVENT
+END:VCALENDAR

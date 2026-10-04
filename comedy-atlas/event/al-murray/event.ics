@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:al-murray@comedyatlas.app
+DTSTAMP:20270228T153000Z
+DTSTART:20270228T153000Z
+DTEND:20270228T173000Z
+SUMMARY:Al Murray
+LOCATION:Alban Arena\, Civic Centre\, St Albans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/al-murray
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/al-murray/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trae-crowder@comedyatlas.app
+DTSTAMP:20261017T000000Z
+DTSTART:20261017T000000Z
+DTEND:20261017T020000Z
+SUMMARY:Trae Crowder
+LOCATION:Bijou Theatre\, 803 S. Gay St.\, Knoxville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/trae-crow
+ der/
+URL:https://comedyatlas.app/comedy-atlas/event/trae-crowder/
+END:VEVENT
+END:VCALENDAR

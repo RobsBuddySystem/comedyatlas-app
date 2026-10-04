@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-maidstone@comedyatlas.app
+DTSTAMP:20261009T190000Z
+DTSTART:20261009T190000Z
+DTEND:20261009T210000Z
+SUMMARY:The Comedy Store - Maidstone
+LOCATION:Hazlitt Theatre\, Earl Street\, Maidstone
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-maidstone/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-maidstone/
+END:VEVENT
+END:VCALENDAR

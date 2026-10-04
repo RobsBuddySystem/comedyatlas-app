@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guy-nantel-45078@comedyatlas.app
+DTSTAMP:20270107T010000Z
+DTSTART:20270107T010000Z
+DTEND:20270107T030000Z
+SUMMARY:Guy Nantel
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/guy-nante
+ l-45078/
+URL:https://comedyatlas.app/comedy-atlas/event/guy-nantel-45078/
+END:VEVENT
+END:VCALENDAR

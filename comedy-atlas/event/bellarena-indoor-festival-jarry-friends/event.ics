@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bellarena-indoor-festival-jarry-friends@comedyatlas.app
+DTSTAMP:20261107T190000Z
+DTSTART:20261107T190000Z
+DTEND:20261107T210000Z
+SUMMARY:Bellarena Indoor Festival | Jarry & Friends
+LOCATION:BCF ARENA\, Chemin de St-Léonard 5\, Fribourg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bellarena
+ -indoor-festival-jarry-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/bellarena-indoor-festival-ja
+ rry-friends/
+END:VEVENT
+END:VCALENDAR

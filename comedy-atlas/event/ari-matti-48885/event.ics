@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ari-matti-48885@comedyatlas.app
+DTSTAMP:20261010T041500Z
+DTSTART:20261010T041500Z
+DTEND:20261010T061500Z
+SUMMARY:Ari Matti
+LOCATION:Punch Line Comedy Club - Sacramento\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ari-matti
+ -48885/
+URL:https://comedyatlas.app/comedy-atlas/event/ari-matti-48885/
+END:VEVENT
+END:VCALENDAR

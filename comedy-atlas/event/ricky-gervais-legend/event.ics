@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ricky-gervais-legend@comedyatlas.app
+DTSTAMP:20261005T183000Z
+DTSTART:20261005T183000Z
+DTEND:20261005T203000Z
+SUMMARY:Ricky Gervais: Legend
+LOCATION:The Anvil\, Churchill Way\, Basingstoke
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ricky-ger
+ vais-legend/
+URL:https://comedyatlas.app/comedy-atlas/event/ricky-gervais-legend/
+END:VEVENT
+END:VCALENDAR

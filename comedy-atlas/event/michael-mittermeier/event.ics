@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michael-mittermeier@comedyatlas.app
+DTSTAMP:20271104T190000Z
+DTSTART:20271104T190000Z
+DTEND:20271104T210000Z
+SUMMARY:MICHAEL MITTERMEIER
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/michael-m
+ ittermeier/
+URL:https://comedyatlas.app/comedy-atlas/event/michael-mittermeier/
+END:VEVENT
+END:VCALENDAR

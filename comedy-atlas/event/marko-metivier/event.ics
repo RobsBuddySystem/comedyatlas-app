@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marko-metivier@comedyatlas.app
+DTSTAMP:20270319T000000Z
+DTSTART:20270319T000000Z
+DTEND:20270319T020000Z
+SUMMARY:Marko Métivier
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marko-met
+ ivier/
+URL:https://comedyatlas.app/comedy-atlas/event/marko-metivier/
+END:VEVENT
+END:VCALENDAR

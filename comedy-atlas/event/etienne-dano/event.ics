@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:etienne-dano@comedyatlas.app
+DTSTAMP:20270109T010000Z
+DTSTART:20270109T010000Z
+DTEND:20270109T030000Z
+SUMMARY:Etienne Dano
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/etienne-d
+ ano/
+URL:https://comedyatlas.app/comedy-atlas/event/etienne-dano/
+END:VEVENT
+END:VCALENDAR

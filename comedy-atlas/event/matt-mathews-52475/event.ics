@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-mathews-52475@comedyatlas.app
+DTSTAMP:20261218T010000Z
+DTSTART:20261218T010000Z
+DTEND:20261218T030000Z
+SUMMARY:Matt Mathews
+LOCATION:Dothan Civic Center\, 126 N. Saint Andrews Street\, Dothan
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/matt-math
+ ews-52475/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-mathews-52475/
+END:VEVENT
+END:VCALENDAR

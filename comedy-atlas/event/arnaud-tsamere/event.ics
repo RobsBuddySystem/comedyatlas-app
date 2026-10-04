@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arnaud-tsamere@comedyatlas.app
+DTSTAMP:20261212T190000Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:Arnaud Tsamere
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arnaud-ts
+ amere/
+URL:https://comedyatlas.app/comedy-atlas/event/arnaud-tsamere/
+END:VEVENT
+END:VCALENDAR

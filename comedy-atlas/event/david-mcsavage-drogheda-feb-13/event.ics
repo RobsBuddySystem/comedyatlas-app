@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-drogheda-feb-13@comedyatlas.app
+DTSTAMP:20270213T200000Z
+DTSTART:20270213T200000Z
+DTEND:20270213T220000Z
+SUMMARY:David McSavage - Drogheda - Feb 13
+LOCATION:McHugh's\, 1-3 Cord Road\, Drogheda
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-drogheda-feb-13/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-drogheda-feb-
+ 13/
+END:VEVENT
+END:VCALENDAR

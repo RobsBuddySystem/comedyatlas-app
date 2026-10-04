@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-spade@comedyatlas.app
+DTSTAMP:20270130T010000Z
+DTSTART:20270130T010000Z
+DTEND:20270130T030000Z
+SUMMARY:David Spade
+LOCATION:OLG Stage at Fallsview Casino\, 6366 Stanley Ave\, Niagara Falls
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-spa
+ de/
+URL:https://comedyatlas.app/comedy-atlas/event/david-spade/
+END:VEVENT
+END:VCALENDAR

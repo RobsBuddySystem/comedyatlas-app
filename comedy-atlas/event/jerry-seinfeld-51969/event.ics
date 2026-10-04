@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-51969@comedyatlas.app
+DTSTAMP:20261206T010000Z
+DTSTART:20261206T010000Z
+DTEND:20261206T030000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Music Box at the Borgata\, One Borgata Way\, Atlantic City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-51969/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-51969/
+END:VEVENT
+END:VCALENDAR

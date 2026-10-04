@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:il-cello@comedyatlas.app
+DTSTAMP:20261219T190000Z
+DTSTART:20261219T190000Z
+DTEND:20261219T210000Z
+SUMMARY:IL CELLO
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/il-cello/
+URL:https://comedyatlas.app/comedy-atlas/event/il-cello/
+END:VEVENT
+END:VCALENDAR

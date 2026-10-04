@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-live-lounge-premium-package@comedyatlas.app
+DTSTAMP:20261029T173000Z
+DTSTART:20261029T173000Z
+DTEND:20261029T193000Z
+SUMMARY:Paul Smith - 'Happy' - Live Lounge Premium Package
+LOCATION:Vaillant Live\, Derby\, 2 Colyear Street\, Derby
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-live-lounge-premium-package/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-live-lounge
+ -premium-package/
+END:VEVENT
+END:VCALENDAR

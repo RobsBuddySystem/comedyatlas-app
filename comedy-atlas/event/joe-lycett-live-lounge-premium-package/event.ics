@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-lycett-live-lounge-premium-package@comedyatlas.app
+DTSTAMP:20270513T163000Z
+DTSTART:20270513T163000Z
+DTEND:20270513T183000Z
+SUMMARY:Joe Lycett - Live Lounge Premium Package
+LOCATION:Vaillant Live\, Derby\, 2 Colyear Street\, Derby
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-lycet
+ t-live-lounge-premium-package/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-lycett-live-lounge-premi
+ um-package/
+END:VEVENT
+END:VCALENDAR

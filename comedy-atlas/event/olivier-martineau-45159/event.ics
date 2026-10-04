@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:olivier-martineau-45159@comedyatlas.app
+DTSTAMP:20270306T010000Z
+DTSTART:20270306T010000Z
+DTEND:20270306T030000Z
+SUMMARY:Olivier Martineau
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/olivier-m
+ artineau-45159/
+URL:https://comedyatlas.app/comedy-atlas/event/olivier-martineau-45159/
+END:VEVENT
+END:VCALENDAR

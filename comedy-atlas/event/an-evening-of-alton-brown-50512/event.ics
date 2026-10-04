@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-of-alton-brown-50512@comedyatlas.app
+DTSTAMP:20261108T013000Z
+DTSTART:20261108T013000Z
+DTEND:20261108T033000Z
+SUMMARY:An Evening of Alton Brown
+LOCATION:Coronado Theatre\, 314 N. Main Street\, Rockford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-of-alton-brown-50512/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-of-alton-brown-50
+ 512/
+END:VEVENT
+END:VCALENDAR

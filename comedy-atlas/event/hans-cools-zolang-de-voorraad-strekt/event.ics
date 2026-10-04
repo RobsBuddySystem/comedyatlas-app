@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hans-cools-zolang-de-voorraad-strekt@comedyatlas.app
+DTSTAMP:20261203T190000Z
+DTSTART:20261203T190000Z
+DTEND:20261203T210000Z
+SUMMARY:Hans Cools "Zolang de voorraad strekt"
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hans-cool
+ s-zolang-de-voorraad-strekt/
+URL:https://comedyatlas.app/comedy-atlas/event/hans-cools-zolang-de-voorraa
+ d-strekt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-53233@comedyatlas.app
+DTSTAMP:20270124T010000Z
+DTSTART:20270124T010000Z
+DTEND:20270124T030000Z
+SUMMARY:Aries Spears
+LOCATION:Wells Hall at The Parker\, 707 NE 8th Street\, Ft Lauderdale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-53233/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-53233/
+END:VEVENT
+END:VCALENDAR

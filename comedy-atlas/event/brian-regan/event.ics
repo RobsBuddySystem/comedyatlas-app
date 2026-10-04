@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-regan@comedyatlas.app
+DTSTAMP:20261010T030000Z
+DTSTART:20261010T030000Z
+DTEND:20261010T050000Z
+SUMMARY:Brian Regan
+LOCATION:Uptown Theatre Napa\, 1350 3rd St\, Napa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-reg
+ an/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-regan/
+END:VEVENT
+END:VCALENDAR

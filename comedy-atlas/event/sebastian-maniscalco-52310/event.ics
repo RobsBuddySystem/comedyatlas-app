@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sebastian-maniscalco-52310@comedyatlas.app
+DTSTAMP:20261213T013000Z
+DTSTART:20261213T013000Z
+DTEND:20261213T033000Z
+SUMMARY:Sebastian Maniscalco
+LOCATION:Great Cedar Showroom at Foxwoods Resort Casino\, 39 Norwich Wester
+ ly Road\, Mashantucket
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sebastian
+ -maniscalco-52310/
+URL:https://comedyatlas.app/comedy-atlas/event/sebastian-maniscalco-52310/
+END:VEVENT
+END:VCALENDAR

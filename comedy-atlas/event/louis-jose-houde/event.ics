@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:louis-jose-houde@comedyatlas.app
+DTSTAMP:20261011T000000Z
+DTSTART:20261011T000000Z
+DTEND:20261011T020000Z
+SUMMARY:Louis-Jose Houde
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/louis-jos
+ e-houde/
+URL:https://comedyatlas.app/comedy-atlas/event/louis-jose-houde/
+END:VEVENT
+END:VCALENDAR

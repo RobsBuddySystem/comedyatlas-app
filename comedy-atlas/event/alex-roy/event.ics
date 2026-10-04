@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-roy@comedyatlas.app
+DTSTAMP:20270114T010000Z
+DTSTART:20270114T010000Z
+DTEND:20270114T030000Z
+SUMMARY:Alex Roy
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-roy/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-roy/
+END:VEVENT
+END:VCALENDAR

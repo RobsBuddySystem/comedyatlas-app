@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:filthy-pop-up-comedy-show@comedyatlas.app
+DTSTAMP:20261107T033000Z
+DTSTART:20261107T033000Z
+DTEND:20261107T053000Z
+SUMMARY:Filthy Pop-Up Comedy Show
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/filthy-po
+ p-up-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/filthy-pop-up-comedy-show/
+END:VEVENT
+END:VCALENDAR

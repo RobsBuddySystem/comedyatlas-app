@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:henry-cho-it-s-what-i-do@comedyatlas.app
+DTSTAMP:20270123T010000Z
+DTSTART:20270123T010000Z
+DTEND:20270123T030000Z
+SUMMARY:Henry Cho: It's What I Do
+LOCATION:Jacksonville Center for the Performing Arts - Terry Theater\, 300 
+ West Water Street\, Jacksonville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/henry-cho
+ -it-s-what-i-do/
+URL:https://comedyatlas.app/comedy-atlas/event/henry-cho-it-s-what-i-do/
+END:VEVENT
+END:VCALENDAR

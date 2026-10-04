@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lions-on-jeeps@comedyatlas.app
+DTSTAMP:20261026T000000Z
+DTSTART:20261026T000000Z
+DTEND:20261026T020000Z
+SUMMARY:Lions on Jeeps
+LOCATION:George Van Dusen Theatre at North Shore Center\, 9501 Skokie Blvd\
+ , Skokie
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lions-on-
+ jeeps/
+URL:https://comedyatlas.app/comedy-atlas/event/lions-on-jeeps/
+END:VEVENT
+END:VCALENDAR

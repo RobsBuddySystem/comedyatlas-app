@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ig-gestion-de-patrimoine@comedyatlas.app
+DTSTAMP:20261110T003000Z
+DTSTART:20261110T003000Z
+DTEND:20261110T023000Z
+SUMMARY:Ig Gestion De Patrimoine
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ig-gestio
+ n-de-patrimoine/
+URL:https://comedyatlas.app/comedy-atlas/event/ig-gestion-de-patrimoine/
+END:VEVENT
+END:VCALENDAR

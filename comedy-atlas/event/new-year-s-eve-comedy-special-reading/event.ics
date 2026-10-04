@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-comedy-special-reading@comedyatlas.app
+DTSTAMP:20261231T193000Z
+DTSTART:20261231T193000Z
+DTEND:20261231T213000Z
+SUMMARY:New Year's Eve Comedy Special - Reading
+LOCATION:Sub89\, 110-117 Friar Street\, Reading
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-year-
+ s-eve-comedy-special-reading/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-comedy-specia
+ l-reading/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-blue-53986@comedyatlas.app
+DTSTAMP:20270404T020000Z
+DTSTART:20270404T020000Z
+DTEND:20270404T040000Z
+SUMMARY:Josh Blue
+LOCATION:The ELM\, 506 N 7th Ave\, Bozeman
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-blue
+ -53986/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-blue-53986/
+END:VEVENT
+END:VCALENDAR

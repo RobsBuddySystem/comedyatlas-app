@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-51352@comedyatlas.app
+DTSTAMP:20261122T010000Z
+DTSTART:20261122T010000Z
+DTEND:20261122T030000Z
+SUMMARY:Mike Epps
+LOCATION:The Theater at MGM National Harbor\, 101 MGM National Ave\, Nation
+ al Harbor
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -51352/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-51352/
+END:VEVENT
+END:VCALENDAR

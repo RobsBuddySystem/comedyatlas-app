@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-breuer-find-the-funny@comedyatlas.app
+DTSTAMP:20261121T010000Z
+DTSTART:20261121T010000Z
+DTEND:20261121T030000Z
+SUMMARY:Jim Breuer: Find The Funny
+LOCATION:Kodak Center\, 200 West Ridge Rd.\, Rochester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-breue
+ r-find-the-funny/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-breuer-find-the-funny/
+END:VEVENT
+END:VCALENDAR

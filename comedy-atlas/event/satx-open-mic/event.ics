@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:satx-open-mic@comedyatlas.app
+DTSTAMP:20261007T003000Z
+DTSTART:20261007T003000Z
+DTEND:20261007T023000Z
+SUMMARY:Satx Open Mic
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/satx-open
+ -mic/
+URL:https://comedyatlas.app/comedy-atlas/event/satx-open-mic/
+END:VEVENT
+END:VCALENDAR

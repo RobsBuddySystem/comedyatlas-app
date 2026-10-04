@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-wolf-at-jimmy-kimmel-s-comedy-club@comedyatlas.app
+DTSTAMP:20261026T023000Z
+DTSTART:20261026T023000Z
+DTEND:20261026T043000Z
+SUMMARY:Josh Wolf at Jimmy Kimmel's Comedy Club
+LOCATION:Jimmy Kimmel's Comedy Club\, 3545 S Las Vegas Blvd\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-wolf
+ -at-jimmy-kimmel-s-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-wolf-at-jimmy-kimmel-s-
+ comedy-club/
+END:VEVENT
+END:VCALENDAR

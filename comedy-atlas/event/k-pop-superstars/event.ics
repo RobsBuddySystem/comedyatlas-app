@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:k-pop-superstars@comedyatlas.app
+DTSTAMP:20270404T120000Z
+DTSTART:20270404T120000Z
+DTEND:20270404T140000Z
+SUMMARY:K-POP Superstars!
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/k-pop-sup
+ erstars/
+URL:https://comedyatlas.app/comedy-atlas/event/k-pop-superstars/
+END:VEVENT
+END:VCALENDAR

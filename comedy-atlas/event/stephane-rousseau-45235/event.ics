@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stephane-rousseau-45235@comedyatlas.app
+DTSTAMP:20270703T000000Z
+DTSTART:20270703T000000Z
+DTEND:20270703T020000Z
+SUMMARY:Stéphane Rousseau
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stephane-
+ rousseau-45235/
+URL:https://comedyatlas.app/comedy-atlas/event/stephane-rousseau-45235/
+END:VEVENT
+END:VCALENDAR

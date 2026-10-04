@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:everybody-eats-comedy-with-artie-valenzuela-in-the-callback-bar@comedya
+ tlas.app
+DTSTAMP:20261102T033000Z
+DTSTART:20261102T033000Z
+DTEND:20261102T053000Z
+SUMMARY:Everybody Eats Comedy with Artie Valenzuela - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/everybody
+ -eats-comedy-with-artie-valenzuela-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/everybody-eats-comedy-with-a
+ rtie-valenzuela-in-the-callback-bar/
+END:VEVENT
+END:VCALENDAR

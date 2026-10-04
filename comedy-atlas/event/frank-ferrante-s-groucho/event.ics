@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:frank-ferrante-s-groucho@comedyatlas.app
+DTSTAMP:20261122T220000Z
+DTSTART:20261122T220000Z
+DTEND:20261123T000000Z
+SUMMARY:Frank Ferrante's Groucho
+LOCATION:ASU Kerr\, 6110 North Scottsdale Road\, Scottsdale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/frank-fer
+ rante-s-groucho/
+URL:https://comedyatlas.app/comedy-atlas/event/frank-ferrante-s-groucho/
+END:VEVENT
+END:VCALENDAR

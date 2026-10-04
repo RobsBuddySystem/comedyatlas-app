@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-o-crash-and-burn@comedyatlas.app
+DTSTAMP:20270320T000000Z
+DTSTART:20270320T000000Z
+DTEND:20270320T020000Z
+SUMMARY:Steve-O: Crash and Burn!
+LOCATION:Milwaukee Improv (Main Room)\, 20110 Lower Union Street\, Brookfie
+ ld
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-o-c
+ rash-and-burn/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-o-crash-and-burn/
+END:VEVENT
+END:VCALENDAR

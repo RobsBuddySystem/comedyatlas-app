@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-lee@comedyatlas.app
+DTSTAMP:20261120T013000Z
+DTSTART:20261120T013000Z
+DTEND:20261120T033000Z
+SUMMARY:Pete Lee
+LOCATION:Topeka Performing Arts Center\, 214 SE 8th\, Topeka
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-lee/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-lee/
+END:VEVENT
+END:VCALENDAR

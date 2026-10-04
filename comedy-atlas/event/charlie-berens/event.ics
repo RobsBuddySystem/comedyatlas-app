@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:charlie-berens@comedyatlas.app
+DTSTAMP:20270319T233000Z
+DTSTART:20270319T233000Z
+DTEND:20270320T013000Z
+SUMMARY:Charlie Berens
+LOCATION:Music Box at the Borgata\, One Borgata Way\, Atlantic City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/charlie-b
+ erens/
+URL:https://comedyatlas.app/comedy-atlas/event/charlie-berens/
+END:VEVENT
+END:VCALENDAR

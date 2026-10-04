@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-morril-53962@comedyatlas.app
+DTSTAMP:20270328T023000Z
+DTSTART:20270328T023000Z
+DTEND:20270328T043000Z
+SUMMARY:Sam Morril
+LOCATION:Addison Improv\, 4980 Beltline Road #250\, Addison
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-morri
+ l-53962/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-morril-53962/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-allen@comedyatlas.app
+DTSTAMP:20270109T010000Z
+DTSTART:20270109T010000Z
+DTEND:20270109T030000Z
+SUMMARY:Tim Allen
+LOCATION:Hard Rock Live\, 1 Seminole Way\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-allen
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/tim-allen/
+END:VEVENT
+END:VCALENDAR

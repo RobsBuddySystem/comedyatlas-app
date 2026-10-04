@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jarry@comedyatlas.app
+DTSTAMP:20270129T190000Z
+DTSTART:20270129T190000Z
+DTEND:20270129T210000Z
+SUMMARY:Jarry
+LOCATION:Vorst Nationaal/Forest National\, Avenue Victor Rousseau 208\, For
+ est (Brussels)
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jarry/
+URL:https://comedyatlas.app/comedy-atlas/event/jarry/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:loni-love@comedyatlas.app
+DTSTAMP:20270115T040000Z
+DTSTART:20270115T040000Z
+DTEND:20270115T060000Z
+SUMMARY:Loni Love
+LOCATION:Ontario Improv\, 4555 Mills Cir\, Ontario
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/loni-love
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/loni-love/
+END:VEVENT
+END:VCALENDAR

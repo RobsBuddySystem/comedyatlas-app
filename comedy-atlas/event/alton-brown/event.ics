@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alton-brown@comedyatlas.app
+DTSTAMP:20261019T000000Z
+DTSTART:20261019T000000Z
+DTEND:20261019T020000Z
+SUMMARY:Alton Brown
+LOCATION:Rialto Square Theatre\, 102 N Chicago\, Joliet
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alton-bro
+ wn/
+URL:https://comedyatlas.app/comedy-atlas/event/alton-brown/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-machine-des-enfants@comedyatlas.app
+DTSTAMP:20261125T133000Z
+DTSTART:20261125T133000Z
+DTEND:20261125T153000Z
+SUMMARY:La machine des enfants
+LOCATION:Petit Théâtre du Centre Culturel\, Rue Servais 8\, Spa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/la-machin
+ e-des-enfants/
+URL:https://comedyatlas.app/comedy-atlas/event/la-machine-des-enfants/
+END:VEVENT
+END:VCALENDAR

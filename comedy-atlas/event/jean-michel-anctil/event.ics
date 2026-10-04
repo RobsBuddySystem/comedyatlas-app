@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jean-michel-anctil@comedyatlas.app
+DTSTAMP:20261128T200000Z
+DTSTART:20261128T200000Z
+DTEND:20261128T220000Z
+SUMMARY:Jean-Michel Anctil
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jean-mich
+ el-anctil/
+URL:https://comedyatlas.app/comedy-atlas/event/jean-michel-anctil/
+END:VEVENT
+END:VCALENDAR

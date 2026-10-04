@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-perfect-match-game-show@comedyatlas.app
+DTSTAMP:20261029T003000Z
+DTSTART:20261029T003000Z
+DTEND:20261029T023000Z
+SUMMARY:The Perfect Match Game Show
+LOCATION:Arlington Improv\, 309 Curtis Mathes Way #147\, Arlington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-perfe
+ ct-match-game-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-perfect-match-game-show/
+END:VEVENT
+END:VCALENDAR

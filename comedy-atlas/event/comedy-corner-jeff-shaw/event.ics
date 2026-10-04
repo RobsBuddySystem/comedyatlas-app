@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-corner-jeff-shaw@comedyatlas.app
+DTSTAMP:20261115T010000Z
+DTSTART:20261115T010000Z
+DTEND:20261115T030000Z
+SUMMARY:Comedy Corner - Jeff Shaw
+LOCATION:Sunrise Theatre\, 117 South Second St\, Fort Pierce
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-co
+ rner-jeff-shaw/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-corner-jeff-shaw/
+END:VEVENT
+END:VCALENDAR

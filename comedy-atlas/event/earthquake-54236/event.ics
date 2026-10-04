@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:earthquake-54236@comedyatlas.app
+DTSTAMP:20270516T000000Z
+DTSTART:20270516T000000Z
+DTEND:20270516T020000Z
+SUMMARY:Earthquake
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/earthquak
+ e-54236/
+URL:https://comedyatlas.app/comedy-atlas/event/earthquake-54236/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jey-fournier@comedyatlas.app
+DTSTAMP:20270306T010000Z
+DTSTART:20270306T010000Z
+DTEND:20270306T030000Z
+SUMMARY:Jey Fournier
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jey-fourn
+ ier/
+URL:https://comedyatlas.app/comedy-atlas/event/jey-fournier/
+END:VEVENT
+END:VCALENDAR

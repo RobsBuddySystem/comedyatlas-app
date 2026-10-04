@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-hofstetter-in-evans-ga@comedyatlas.app
+DTSTAMP:20270110T000000Z
+DTSTART:20270110T000000Z
+DTEND:20270110T020000Z
+SUMMARY:Steve Hofstetter in Evans\, GA!
+LOCATION:Hardin Auditorium\, 7022 Evans Town Center Blvd\, Evans
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-hof
+ stetter-in-evans-ga/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-hofstetter-in-evans-ga
+ /
+END:VEVENT
+END:VCALENDAR

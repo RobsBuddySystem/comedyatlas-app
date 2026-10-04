@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:don-barnhart@comedyatlas.app
+DTSTAMP:20261128T030000Z
+DTSTART:20261128T030000Z
+DTEND:20261128T050000Z
+SUMMARY:Don Barnhart
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/don-barnh
+ art/
+URL:https://comedyatlas.app/comedy-atlas/event/don-barnhart/
+END:VEVENT
+END:VCALENDAR

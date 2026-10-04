@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:george-wallace@comedyatlas.app
+DTSTAMP:20261114T033000Z
+DTSTART:20261114T033000Z
+DTEND:20261114T053000Z
+SUMMARY:George Wallace
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/george-wa
+ llace/
+URL:https://comedyatlas.app/comedy-atlas/event/george-wallace/
+END:VEVENT
+END:VCALENDAR

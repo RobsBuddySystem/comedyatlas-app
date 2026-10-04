@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:radio-guga-ondersteboven@comedyatlas.app
+DTSTAMP:20261126T190000Z
+DTSTART:20261126T190000Z
+DTEND:20261126T210000Z
+SUMMARY:Radio Guga - Ondersteboven
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/radio-gug
+ a-ondersteboven/
+URL:https://comedyatlas.app/comedy-atlas/event/radio-guga-ondersteboven/
+END:VEVENT
+END:VCALENDAR

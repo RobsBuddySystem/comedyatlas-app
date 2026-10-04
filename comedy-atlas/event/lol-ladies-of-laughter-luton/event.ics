@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lol-ladies-of-laughter-luton@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:LOL : Ladies Of Laughter – Luton
+LOCATION:Hat Factory Arts Centre\, 65\, 67 Bute St\, Luton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lol-ladie
+ s-of-laughter-luton/
+URL:https://comedyatlas.app/comedy-atlas/event/lol-ladies-of-laughter-luton
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-bridges@comedyatlas.app
+DTSTAMP:20270308T070000Z
+DTSTART:20270308T070000Z
+DTEND:20270308T090000Z
+SUMMARY:Kevin Bridges
+LOCATION:St James Theatre Wellington\, 77-87 Courtenay Pl\, Wellington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-bri
+ dges/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-bridges/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maria-bamford-45073@comedyatlas.app
+DTSTAMP:20261220T000000Z
+DTSTART:20261220T000000Z
+DTEND:20261220T020000Z
+SUMMARY:Maria Bamford
+LOCATION:Algonquin Commons Theatre\, 1385 Woodroffe Ave\, Algonquin College
+  - Bldg E\, Nepean
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maria-bam
+ ford-45073/
+URL:https://comedyatlas.app/comedy-atlas/event/maria-bamford-45073/
+END:VEVENT
+END:VCALENDAR

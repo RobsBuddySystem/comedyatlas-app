@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rene-vaca-that-mexican-ot@comedyatlas.app
+DTSTAMP:20261119T033000Z
+DTSTART:20261119T033000Z
+DTEND:20261119T053000Z
+SUMMARY:Rene Vaca & That Mexican OT
+LOCATION:Save Mart Center\, 2650 East Shaw Ave.\, Fresno
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rene-vaca
+ -that-mexican-ot/
+URL:https://comedyatlas.app/comedy-atlas/event/rene-vaca-that-mexican-ot/
+END:VEVENT
+END:VCALENDAR

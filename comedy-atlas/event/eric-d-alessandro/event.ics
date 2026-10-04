@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-d-alessandro@comedyatlas.app
+DTSTAMP:20261107T010000Z
+DTSTART:20261107T010000Z
+DTEND:20261107T030000Z
+SUMMARY:Eric D'Alessandro
+LOCATION:St. George Theatre\, 35 Hyatt Street\, Staten Island
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-d-al
+ essandro/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-d-alessandro/
+END:VEVENT
+END:VCALENDAR

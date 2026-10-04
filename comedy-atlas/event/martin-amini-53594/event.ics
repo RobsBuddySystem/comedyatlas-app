@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-53594@comedyatlas.app
+DTSTAMP:20270220T023000Z
+DTSTART:20270220T023000Z
+DTEND:20270220T043000Z
+SUMMARY:Martin Amini
+LOCATION:Brooklyn Improv (The Main Room)\, 64 N 9th St\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-53594/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-53594/
+END:VEVENT
+END:VCALENDAR

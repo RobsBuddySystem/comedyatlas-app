@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-eachus@comedyatlas.app
+DTSTAMP:20261106T040000Z
+DTSTART:20261106T040000Z
+DTEND:20261106T060000Z
+SUMMARY:Daniel Eachus
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daniel-ea
+ chus/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-eachus/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lakeside-laughs-comedy-club@comedyatlas.app
+DTSTAMP:20261017T043000Z
+DTSTART:20261017T043000Z
+DTEND:20261017T063000Z
+SUMMARY:Lakeside Laughs Comedy Club
+LOCATION:The Cabaret at Caesars Republic Lake Tahoe\, 18 Hwy 50\, Lake Taho
+ e
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lakeside-
+ laughs-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/lakeside-laughs-comedy-club/
+END:VEVENT
+END:VCALENDAR

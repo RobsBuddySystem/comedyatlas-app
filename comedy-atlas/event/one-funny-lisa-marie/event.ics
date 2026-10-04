@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:one-funny-lisa-marie@comedyatlas.app
+DTSTAMP:20270319T233000Z
+DTSTART:20270319T233000Z
+DTEND:20270320T013000Z
+SUMMARY:One Funny Lisa Marie
+LOCATION:St. George Theatre\, 35 Hyatt Street\, Staten Island
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/one-funny
+ -lisa-marie/
+URL:https://comedyatlas.app/comedy-atlas/event/one-funny-lisa-marie/
+END:VEVENT
+END:VCALENDAR

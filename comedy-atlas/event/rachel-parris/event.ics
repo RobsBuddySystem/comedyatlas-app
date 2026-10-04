@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rachel-parris@comedyatlas.app
+DTSTAMP:20270411T183000Z
+DTSTART:20270411T183000Z
+DTEND:20270411T203000Z
+SUMMARY:Rachel Parris
+LOCATION:Scarborough Spa Theatre\, South Bay\, Scarborough
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rachel-pa
+ rris/
+URL:https://comedyatlas.app/comedy-atlas/event/rachel-parris/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danny-gonzalez-friends-rialto-theatre@comedyatlas.app
+DTSTAMP:20270107T020000Z
+DTSTART:20270107T020000Z
+DTEND:20270107T040000Z
+SUMMARY:Danny Gonzalez & Friends @ Rialto Theatre
+LOCATION:Rialto Theatre-Tucson\, 318 Congress St\, Tucson
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/danny-gon
+ zalez-friends-rialto-theatre/
+URL:https://comedyatlas.app/comedy-atlas/event/danny-gonzalez-friends-rialt
+ o-theatre/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-antoniou-53088@comedyatlas.app
+DTSTAMP:20270115T040000Z
+DTSTART:20270115T040000Z
+DTEND:20270115T060000Z
+SUMMARY:Peter Antoniou
+LOCATION:Uptown Theatre Napa\, 1350 3rd St\, Napa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-ant
+ oniou-53088/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-antoniou-53088/
+END:VEVENT
+END:VCALENDAR

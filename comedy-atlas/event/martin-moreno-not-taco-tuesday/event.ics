@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-moreno-not-taco-tuesday@comedyatlas.app
+DTSTAMP:20261014T003000Z
+DTSTART:20261014T003000Z
+DTEND:20261014T023000Z
+SUMMARY:Martin Moreno: Not Taco Tuesday
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-mo
+ reno-not-taco-tuesday/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-moreno-not-taco-tuesd
+ ay/
+END:VEVENT
+END:VCALENDAR

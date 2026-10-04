@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-43549@comedyatlas.app
+DTSTAMP:20270220T053000Z
+DTSTART:20270220T053000Z
+DTEND:20270220T073000Z
+SUMMARY:Paul Smith - Happy
+LOCATION:Spark Arena\, 42 - 80 Mahuhu Crescent\, Auckland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-43549/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-43549/
+END:VEVENT
+END:VCALENDAR

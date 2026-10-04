@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:larry-omaha@comedyatlas.app
+DTSTAMP:20261126T030000Z
+DTSTART:20261126T030000Z
+DTEND:20261126T050000Z
+SUMMARY:Larry Omaha
+LOCATION:Showroom at Talking Stick Resort\, 9800 E. Indian Bend Road\, Scot
+ tsdale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/larry-oma
+ ha/
+URL:https://comedyatlas.app/comedy-atlas/event/larry-omaha/
+END:VEVENT
+END:VCALENDAR

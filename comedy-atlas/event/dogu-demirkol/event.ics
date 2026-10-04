@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dogu-demirkol@comedyatlas.app
+DTSTAMP:20261008T173000Z
+DTSTART:20261008T173000Z
+DTEND:20261008T193000Z
+SUMMARY:Doğu Demirkol
+LOCATION:Metreküp Bodrum\, Cumhuriyet Caddesi Müskebi Mahallesi No: 6 Ort
+ akent Midtown Plaza\, Muğla
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dogu-demi
+ rkol/
+URL:https://comedyatlas.app/comedy-atlas/event/dogu-demirkol/
+END:VEVENT
+END:VCALENDAR

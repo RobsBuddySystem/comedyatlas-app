@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eddie-ifft-52621@comedyatlas.app
+DTSTAMP:20261220T043000Z
+DTSTART:20261220T043000Z
+DTEND:20261220T063000Z
+SUMMARY:Eddie Ifft
+LOCATION:Corona Improv\, 2710 Lakeshore Dr\, Corona
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eddie-iff
+ t-52621/
+URL:https://comedyatlas.app/comedy-atlas/event/eddie-ifft-52621/
+END:VEVENT
+END:VCALENDAR

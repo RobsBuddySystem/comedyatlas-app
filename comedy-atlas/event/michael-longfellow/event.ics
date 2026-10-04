@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michael-longfellow@comedyatlas.app
+DTSTAMP:20270521T003000Z
+DTSTART:20270521T003000Z
+DTEND:20270521T023000Z
+SUMMARY:Michael Longfellow
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/michael-l
+ ongfellow/
+URL:https://comedyatlas.app/comedy-atlas/event/michael-longfellow/
+END:VEVENT
+END:VCALENDAR

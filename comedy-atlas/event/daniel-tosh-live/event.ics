@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-tosh-live@comedyatlas.app
+DTSTAMP:20270213T040000Z
+DTSTART:20270213T040000Z
+DTEND:20270213T060000Z
+SUMMARY:Daniel Tosh Live
+LOCATION:The Cosmopolitan of Las Vegas\, 3708 Las Vegas Boulevard South\, L
+ as Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daniel-to
+ sh-live/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-tosh-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dan-and-phil@comedyatlas.app
+DTSTAMP:20261031T030000Z
+DTSTART:20261031T030000Z
+DTEND:20261031T050000Z
+SUMMARY:Dan and Phil
+LOCATION:Auditorio BB\, Av. Insurgentes Sur #453\, Col. Hipódromo\, Mexico
+  City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dan-and-p
+ hil/
+URL:https://comedyatlas.app/comedy-atlas/event/dan-and-phil/
+END:VEVENT
+END:VCALENDAR

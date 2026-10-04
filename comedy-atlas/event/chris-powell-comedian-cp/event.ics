@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-powell-comedian-cp@comedyatlas.app
+DTSTAMP:20261024T044500Z
+DTSTART:20261024T044500Z
+DTEND:20261024T064500Z
+SUMMARY:Chris Powell (Comedian CP)
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-pow
+ ell-comedian-cp/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-powell-comedian-cp/
+END:VEVENT
+END:VCALENDAR

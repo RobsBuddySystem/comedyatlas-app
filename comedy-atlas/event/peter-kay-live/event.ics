@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-kay-live@comedyatlas.app
+DTSTAMP:20261010T173000Z
+DTSTART:20261010T173000Z
+DTEND:20261010T193000Z
+SUMMARY:Peter Kay Live
+LOCATION:Connexin Live\, Myton Street\, Hull
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/peter-kay
+ -live/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-kay-live/
+END:VEVENT
+END:VCALENDAR

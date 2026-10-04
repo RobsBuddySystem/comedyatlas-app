@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adib-alkhalidey@comedyatlas.app
+DTSTAMP:20261205T010000Z
+DTSTART:20261205T010000Z
+DTEND:20261205T030000Z
+SUMMARY:Adib Alkhalidey
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adib-alkh
+ alidey/
+URL:https://comedyatlas.app/comedy-atlas/event/adib-alkhalidey/
+END:VEVENT
+END:VCALENDAR

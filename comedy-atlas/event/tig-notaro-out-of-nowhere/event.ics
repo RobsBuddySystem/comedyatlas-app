@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tig-notaro-out-of-nowhere@comedyatlas.app
+DTSTAMP:20261004T013000Z
+DTSTART:20261004T013000Z
+DTEND:20261004T033000Z
+SUMMARY:Tig Notaro: Out Of Nowhere
+LOCATION:The Walker Theatre\, 399 McCallie Avenue\, Chattanooga
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tig-notar
+ o-out-of-nowhere/
+URL:https://comedyatlas.app/comedy-atlas/event/tig-notaro-out-of-nowhere/
+END:VEVENT
+END:VCALENDAR

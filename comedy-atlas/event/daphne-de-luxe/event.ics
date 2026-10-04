@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daphne-de-luxe@comedyatlas.app
+DTSTAMP:20281118T190000Z
+DTSTART:20281118T190000Z
+DTEND:20281118T210000Z
+SUMMARY:Daphne de Luxe
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daphne-de
+ -luxe/
+URL:https://comedyatlas.app/comedy-atlas/event/daphne-de-luxe/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-segura-live@comedyatlas.app
+DTSTAMP:20261114T010000Z
+DTSTART:20261114T010000Z
+DTEND:20261114T030000Z
+SUMMARY:Tom Segura Live
+LOCATION:Wichita Orpheum Theatre\, 200 North Broadway\, Wichita
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-segur
+ a-live/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-segura-live/
+END:VEVENT
+END:VCALENDAR

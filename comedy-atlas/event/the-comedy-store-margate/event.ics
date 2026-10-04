@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-margate@comedyatlas.app
+DTSTAMP:20261017T183000Z
+DTSTART:20261017T183000Z
+DTEND:20261017T203000Z
+SUMMARY:The Comedy Store - Margate
+LOCATION:Hall By The Sea\, Dreamland Margate\, Dreamland Margate\, Margate
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-margate/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-margate/
+END:VEVENT
+END:VCALENDAR

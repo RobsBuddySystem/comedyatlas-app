@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-52566@comedyatlas.app
+DTSTAMP:20261219T054500Z
+DTSTART:20261219T054500Z
+DTEND:20261219T074500Z
+SUMMARY:Mike Epps
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -52566/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-52566/
+END:VEVENT
+END:VCALENDAR

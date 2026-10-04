@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-schimmel@comedyatlas.app
+DTSTAMP:20261127T193000Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:Comedy Club Schimmel
+LOCATION:Falcon Tilburg\, Piushaven 20E\, 5017 AN Tilburg\, Tilburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-cl
+ ub-schimmel/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-schimmel/
+END:VEVENT
+END:VCALENDAR

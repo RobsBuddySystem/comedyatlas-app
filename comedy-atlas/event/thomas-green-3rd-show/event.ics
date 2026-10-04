@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-green-3rd-show@comedyatlas.app
+DTSTAMP:20270306T073000Z
+DTSTART:20270306T073000Z
+DTEND:20270306T093000Z
+SUMMARY:Thomas Green | 3rd Show
+LOCATION:The Comics Lounge\, 26 Errol Street\, North Melbourne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thomas-gr
+ een-3rd-show/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-green-3rd-show/
+END:VEVENT
+END:VCALENDAR

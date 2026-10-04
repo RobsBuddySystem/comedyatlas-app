@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyla-cobbler-gone-rogue@comedyatlas.app
+DTSTAMP:20261021T230000Z
+DTSTART:20261021T230000Z
+DTEND:20261022T010000Z
+SUMMARY:Kyla Cobbler: Gone Rogue
+LOCATION:Algonquin Commons Theatre\, 1385 Woodroffe Ave\, Algonquin College
+  - Bldg E\, Nepean
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyla-cobb
+ ler-gone-rogue/
+URL:https://comedyatlas.app/comedy-atlas/event/kyla-cobbler-gone-rogue/
+END:VEVENT
+END:VCALENDAR

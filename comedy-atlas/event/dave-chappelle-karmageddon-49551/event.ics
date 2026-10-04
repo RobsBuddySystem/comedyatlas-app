@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-chappelle-karmageddon-49551@comedyatlas.app
+DTSTAMP:20261021T233000Z
+DTSTART:20261021T233000Z
+DTEND:20261022T013000Z
+SUMMARY:Dave Chappelle Karmageddon
+LOCATION:Spectrum Center\, 333 East Trade Street\, Charlotte
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-chap
+ pelle-karmageddon-49551/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-chappelle-karmageddon-4
+ 9551/
+END:VEVENT
+END:VCALENDAR

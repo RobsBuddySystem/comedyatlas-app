@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deon-cole-live@comedyatlas.app
+DTSTAMP:20270101T003000Z
+DTSTART:20270101T003000Z
+DTEND:20270101T023000Z
+SUMMARY:Deon Cole Live
+LOCATION:The Dome by Rutter Mills\, 400 20th Street\, Virginia Beach
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deon-cole
+ -live/
+URL:https://comedyatlas.app/comedy-atlas/event/deon-cole-live/
+END:VEVENT
+END:VCALENDAR

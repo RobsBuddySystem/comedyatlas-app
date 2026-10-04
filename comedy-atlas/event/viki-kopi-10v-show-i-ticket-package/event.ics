@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:viki-kopi-10v-show-i-ticket-package@comedyatlas.app
+DTSTAMP:20261120T163000Z
+DTSTART:20261120T163000Z
+DTEND:20261120T183000Z
+SUMMARY:VIKI & KÖPI 10V SHOW I TICKET PACKAGE
+LOCATION:Veikkaus Arena\, Areenankuja 1\, Helsinki
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/viki-kopi
+ -10v-show-i-ticket-package/
+URL:https://comedyatlas.app/comedy-atlas/event/viki-kopi-10v-show-i-ticket-
+ package/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tatty-macleod-things-my-mother-did@comedyatlas.app
+DTSTAMP:20261023T180000Z
+DTSTART:20261023T180000Z
+DTEND:20261023T200000Z
+SUMMARY:Tatty Macleod - Things My Mother Did
+LOCATION:Bâtiment des Forces Motrices\, Place des Volontaires 2\, Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tatty-mac
+ leod-things-my-mother-did/
+URL:https://comedyatlas.app/comedy-atlas/event/tatty-macleod-things-my-moth
+ er-did/
+END:VEVENT
+END:VCALENDAR

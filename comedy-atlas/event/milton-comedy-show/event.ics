@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:milton-comedy-show@comedyatlas.app
+DTSTAMP:20261023T000000Z
+DTSTART:20261023T000000Z
+DTEND:20261023T020000Z
+SUMMARY:Milton Comedy Show
+LOCATION:Grand Pointe\, 939 N Magnolia Ave\, Ocala
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/milton-co
+ medy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/milton-comedy-show/
+END:VEVENT
+END:VCALENDAR

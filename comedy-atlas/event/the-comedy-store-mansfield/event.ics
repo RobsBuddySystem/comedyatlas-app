@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-mansfield@comedyatlas.app
+DTSTAMP:20270220T193000Z
+DTSTART:20270220T193000Z
+DTEND:20270220T213000Z
+SUMMARY:The Comedy Store - Mansfield
+LOCATION:Mansfield Palace Theatre\, Leeming Street\, Mansfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-mansfield/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-mansfield/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-comedy-armagh-city-hotel@comedyatlas.app
+DTSTAMP:20261223T200000Z
+DTSTART:20261223T200000Z
+DTEND:20261223T220000Z
+SUMMARY:Christmas Comedy - Armagh City Hotel
+LOCATION:Armagh City Hotel\, 2 Friary Road\, Armagh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -comedy-armagh-city-hotel/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-comedy-armagh-city
+ -hotel/
+END:VEVENT
+END:VCALENDAR

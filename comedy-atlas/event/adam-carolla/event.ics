@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-carolla@comedyatlas.app
+DTSTAMP:20261114T040000Z
+DTSTART:20261114T040000Z
+DTEND:20261114T060000Z
+SUMMARY:Adam Carolla
+LOCATION:Uptown Theatre Napa\, 1350 3rd St\, Napa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-caro
+ lla/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-carolla/
+END:VEVENT
+END:VCALENDAR

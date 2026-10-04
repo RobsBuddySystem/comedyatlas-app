@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:there-s-something-here@comedyatlas.app
+DTSTAMP:20261016T011500Z
+DTSTART:20261016T011500Z
+DTEND:20261016T031500Z
+SUMMARY:There's Something Here
+LOCATION:Brooklyn Improv (The Lab)\, 64 N 9th Street\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/there-s-s
+ omething-here/
+URL:https://comedyatlas.app/comedy-atlas/event/there-s-something-here/
+END:VEVENT
+END:VCALENDAR

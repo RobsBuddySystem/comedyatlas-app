@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:neil-delamere-live-dun-laoghaire-nov-8@comedyatlas.app
+DTSTAMP:20261108T200000Z
+DTSTART:20261108T200000Z
+DTEND:20261108T220000Z
+SUMMARY:Neil Delamere Live @ Dún Laoghaire - Nov 8
+LOCATION:The Purty Kitchen\, 4-5 Old Dun Leary Road\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/neil-dela
+ mere-live-dun-laoghaire-nov-8/
+URL:https://comedyatlas.app/comedy-atlas/event/neil-delamere-live-dun-laogh
+ aire-nov-8/
+END:VEVENT
+END:VCALENDAR

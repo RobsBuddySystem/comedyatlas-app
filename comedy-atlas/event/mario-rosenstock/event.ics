@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mario-rosenstock@comedyatlas.app
+DTSTAMP:20261126T190000Z
+DTSTART:20261126T190000Z
+DTEND:20261126T210000Z
+SUMMARY:Mario Rosenstock
+LOCATION:Live at The Spiegeltent Pavilion\, North Circular Road\, Limerick
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mario-ros
+ enstock/
+URL:https://comedyatlas.app/comedy-atlas/event/mario-rosenstock/
+END:VEVENT
+END:VCALENDAR

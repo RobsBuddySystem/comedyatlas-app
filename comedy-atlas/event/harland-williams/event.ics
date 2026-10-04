@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:harland-williams@comedyatlas.app
+DTSTAMP:20261121T033000Z
+DTSTART:20261121T033000Z
+DTEND:20261121T053000Z
+SUMMARY:Harland Williams
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/harland-w
+ illiams/
+URL:https://comedyatlas.app/comedy-atlas/event/harland-williams/
+END:VEVENT
+END:VCALENDAR

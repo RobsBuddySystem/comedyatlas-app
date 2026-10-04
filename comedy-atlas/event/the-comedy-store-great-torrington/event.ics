@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-great-torrington@comedyatlas.app
+DTSTAMP:20270206T200000Z
+DTSTART:20270206T200000Z
+DTEND:20270206T220000Z
+SUMMARY:The Comedy Store - Great Torrington
+LOCATION:Plough Arts Centre\, 9-11 Fore Street\, Devon
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-great-torrington/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-great-torri
+ ngton/
+END:VEVENT
+END:VCALENDAR

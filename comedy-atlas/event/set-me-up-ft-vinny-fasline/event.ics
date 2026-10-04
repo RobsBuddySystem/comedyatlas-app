@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:set-me-up-ft-vinny-fasline@comedyatlas.app
+DTSTAMP:20261008T043000Z
+DTSTART:20261008T043000Z
+DTEND:20261008T063000Z
+SUMMARY:Set Me Up ft. Vinny Fasline
+LOCATION:Hollywood Improv (The Main Room)\, 8162 Melrose Avenue\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/set-me-up
+ -ft-vinny-fasline/
+URL:https://comedyatlas.app/comedy-atlas/event/set-me-up-ft-vinny-fasline/
+END:VEVENT
+END:VCALENDAR

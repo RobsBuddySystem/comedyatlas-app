@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tara-cannistraci@comedyatlas.app
+DTSTAMP:20261115T030000Z
+DTSTART:20261115T030000Z
+DTEND:20261115T050000Z
+SUMMARY:Tara Cannistraci
+LOCATION:Cascade Lounge at Agua Caliente Casino Palm Springs\, 401 E. Amado
+  Rd.\, Palm Springs
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tara-cann
+ istraci/
+URL:https://comedyatlas.app/comedy-atlas/event/tara-cannistraci/
+END:VEVENT
+END:VCALENDAR

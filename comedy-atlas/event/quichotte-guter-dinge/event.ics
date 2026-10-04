@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge@comedyatlas.app
+DTSTAMP:20271209T190000Z
+DTSTART:20271209T190000Z
+DTEND:20271209T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Bora\, Dellplatz 16a\, Duisburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jessica-kirson-rialto-theatre@comedyatlas.app
+DTSTAMP:20261114T020000Z
+DTSTART:20261114T020000Z
+DTEND:20261114T040000Z
+SUMMARY:Jessica Kirson @ Rialto Theatre
+LOCATION:Rialto Theatre-Tucson\, 318 Congress St\, Tucson
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jessica-k
+ irson-rialto-theatre/
+URL:https://comedyatlas.app/comedy-atlas/event/jessica-kirson-rialto-theatr
+ e/
+END:VEVENT
+END:VCALENDAR

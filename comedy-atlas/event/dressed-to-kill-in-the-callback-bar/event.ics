@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dressed-to-kill-in-the-callback-bar@comedyatlas.app
+DTSTAMP:20261026T020000Z
+DTSTART:20261026T020000Z
+DTEND:20261026T040000Z
+SUMMARY:Dressed to Kill - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dressed-t
+ o-kill-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/dressed-to-kill-in-the-callb
+ ack-bar/
+END:VEVENT
+END:VCALENDAR

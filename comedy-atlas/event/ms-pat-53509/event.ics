@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-53509@comedyatlas.app
+DTSTAMP:20270213T033000Z
+DTSTART:20270213T033000Z
+DTEND:20270213T053000Z
+SUMMARY:Ms. Pat
+LOCATION:Ontario Improv\, 4555 Mills Cir\, Ontario
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-53
+ 509/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-53509/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:j-valentino@comedyatlas.app
+DTSTAMP:20261210T013000Z
+DTSTART:20261210T013000Z
+DTEND:20261210T033000Z
+SUMMARY:J Valentino
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/j-valenti
+ no/
+URL:https://comedyatlas.app/comedy-atlas/event/j-valentino/
+END:VEVENT
+END:VCALENDAR

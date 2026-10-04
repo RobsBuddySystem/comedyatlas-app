@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-cambridge@comedyatlas.app
+DTSTAMP:20261016T183000Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:The Comedy Store - Cambridge
+LOCATION:Cambridge Junction\, Clifton Way\, Cambridge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-cambridge/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-cambridge/
+END:VEVENT
+END:VCALENDAR

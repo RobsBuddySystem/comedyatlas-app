@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dries-heyneman-voor-normale-mensen@comedyatlas.app
+DTSTAMP:20270514T180000Z
+DTSTART:20270514T180000Z
+DTEND:20270514T200000Z
+SUMMARY:Dries Heyneman "Voor Normale Mensen"
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dries-hey
+ neman-voor-normale-mensen/
+URL:https://comedyatlas.app/comedy-atlas/event/dries-heyneman-voor-normale-
+ mensen/
+END:VEVENT
+END:VCALENDAR

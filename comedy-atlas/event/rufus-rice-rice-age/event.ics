@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rufus-rice-rice-age@comedyatlas.app
+DTSTAMP:20261119T053000Z
+DTSTART:20261119T053000Z
+DTEND:20261119T073000Z
+SUMMARY:RUFUS RICE: RICE AGE
+LOCATION:Tuning Fork\, Spark Arena\, 42 - 80 Mahuhu Crescent\, Auckland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rufus-ric
+ e-rice-age/
+URL:https://comedyatlas.app/comedy-atlas/event/rufus-rice-rice-age/
+END:VEVENT
+END:VCALENDAR

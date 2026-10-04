@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carrot-top@comedyatlas.app
+DTSTAMP:20261020T030000Z
+DTSTART:20261020T030000Z
+DTEND:20261020T050000Z
+SUMMARY:Carrot Top
+LOCATION:Atrium Showroom at Luxor Hotel and Casino\, 3900 Las Vegas Blvd So
+ uth\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carrot-to
+ p/
+URL:https://comedyatlas.app/comedy-atlas/event/carrot-top/
+END:VEVENT
+END:VCALENDAR

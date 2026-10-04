@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-caponera-49428@comedyatlas.app
+DTSTAMP:20261018T040000Z
+DTSTART:20261018T040000Z
+DTEND:20261018T060000Z
+SUMMARY:John Caponera
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-capo
+ nera-49428/
+URL:https://comedyatlas.app/comedy-atlas/event/john-caponera-49428/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-nihill@comedyatlas.app
+DTSTAMP:20270303T003000Z
+DTSTART:20270303T003000Z
+DTEND:20270303T023000Z
+SUMMARY:David Nihill
+LOCATION:Tilles Center - Krasnoff Theater\, 720 Northern Boulevard\, Brookv
+ ille
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-nih
+ ill/
+URL:https://comedyatlas.app/comedy-atlas/event/david-nihill/
+END:VEVENT
+END:VCALENDAR

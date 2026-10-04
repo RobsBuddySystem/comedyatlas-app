@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tony-v@comedyatlas.app
+DTSTAMP:20261009T000000Z
+DTSTART:20261009T000000Z
+DTEND:20261009T020000Z
+SUMMARY:Tony V
+LOCATION:Agoro's\, 2756 County Street\, Somerset
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tony-v/
+URL:https://comedyatlas.app/comedy-atlas/event/tony-v/
+END:VEVENT
+END:VCALENDAR

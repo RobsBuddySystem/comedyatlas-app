@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-51279@comedyatlas.app
+DTSTAMP:20261121T023000Z
+DTSTART:20261121T023000Z
+DTEND:20261121T043000Z
+SUMMARY:Robby Hoffman
+LOCATION:Ridgefield Playhouse\, 80 E Ridge Rd\, Ridgefield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-51279/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-51279/
+END:VEVENT
+END:VCALENDAR

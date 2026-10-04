@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:barutz-due-ore-d-aria@comedyatlas.app
+DTSTAMP:20270213T201500Z
+DTSTART:20270213T201500Z
+DTEND:20270213T221500Z
+SUMMARY:Barutz - Due ore d'aria
+LOCATION:Teatro Clerici\, Via S. Zeno\, 168\, Brescia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/barutz-du
+ e-ore-d-aria/
+URL:https://comedyatlas.app/comedy-atlas/event/barutz-due-ore-d-aria/
+END:VEVENT
+END:VCALENDAR

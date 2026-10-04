@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-falcon-50003@comedyatlas.app
+DTSTAMP:20261028T043000Z
+DTSTART:20261028T043000Z
+DTEND:20261028T063000Z
+SUMMARY:Steve Falcon
+LOCATION:Underground Theater at MGM Grand\, 3799 Las Vegas Blvd South\, Las
+  Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-fal
+ con-50003/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-falcon-50003/
+END:VEVENT
+END:VCALENDAR

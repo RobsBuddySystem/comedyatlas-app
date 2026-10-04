@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-roy@comedyatlas.app
+DTSTAMP:20270320T000000Z
+DTSTART:20270320T000000Z
+DTEND:20270320T020000Z
+SUMMARY:Phil Roy
+LOCATION:Salle Richard-Sauvageau\, 1100\, boulevard Taschereau\, La Prairie
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phil-roy/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-roy/
+END:VEVENT
+END:VCALENDAR

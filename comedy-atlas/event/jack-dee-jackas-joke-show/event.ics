@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-dee-jackas-joke-show@comedyatlas.app
+DTSTAMP:20270220T183000Z
+DTSTART:20270220T183000Z
+DTEND:20270220T203000Z
+SUMMARY:Jack Dee: JackâS Joke Show
+LOCATION:University of Wolverhampton at The Wulfrun Hall\, Mitre Fold\, Wol
+ verhampton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-dee-
+ jackas-joke-show/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-dee-jackas-joke-show/
+END:VEVENT
+END:VCALENDAR

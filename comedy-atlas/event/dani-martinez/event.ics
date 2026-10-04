@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dani-martinez@comedyatlas.app
+DTSTAMP:20270221T170000Z
+DTSTART:20270221T170000Z
+DTEND:20270221T190000Z
+SUMMARY:Dani Martinez
+LOCATION:Palacio de Congresos de Toledo\, Paseo Miradero\, s/n\, Toledo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dani-mart
+ inez/
+URL:https://comedyatlas.app/comedy-atlas/event/dani-martinez/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:small-town-murder-50928@comedyatlas.app
+DTSTAMP:20261115T000000Z
+DTSTART:20261115T000000Z
+DTEND:20261115T020000Z
+SUMMARY:Small Town Murder
+LOCATION:Chevalier Theatre\, 30 Forest Street\, Medford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/small-tow
+ n-murder-50928/
+URL:https://comedyatlas.app/comedy-atlas/event/small-town-murder-50928/
+END:VEVENT
+END:VCALENDAR

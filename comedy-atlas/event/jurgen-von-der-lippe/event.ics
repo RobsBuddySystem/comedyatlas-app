@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jurgen-von-der-lippe@comedyatlas.app
+DTSTAMP:20270306T190000Z
+DTSTART:20270306T190000Z
+DTEND:20270306T210000Z
+SUMMARY:Jürgen von der Lippe
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jurgen-vo
+ n-der-lippe/
+URL:https://comedyatlas.app/comedy-atlas/event/jurgen-von-der-lippe/
+END:VEVENT
+END:VCALENDAR

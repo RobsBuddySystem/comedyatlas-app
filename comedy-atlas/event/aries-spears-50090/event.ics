@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-50090@comedyatlas.app
+DTSTAMP:20261031T003000Z
+DTSTART:20261031T003000Z
+DTEND:20261031T023000Z
+SUMMARY:Aries Spears
+LOCATION:Vibrant Music Hall\, 2938 Grand Prairie Pkwy\, Waukee
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-50090/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-50090/
+END:VEVENT
+END:VCALENDAR

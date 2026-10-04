@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sacramento-comedy-showcase@comedyatlas.app
+DTSTAMP:20261007T023000Z
+DTSTART:20261007T023000Z
+DTEND:20261007T043000Z
+SUMMARY:Sacramento Comedy Showcase
+LOCATION:Punch Line Comedy Club - Sacramento\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sacrament
+ o-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/sacramento-comedy-showcase/
+END:VEVENT
+END:VCALENDAR

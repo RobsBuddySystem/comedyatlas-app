@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-49759@comedyatlas.app
+DTSTAMP:20261024T044500Z
+DTSTART:20261024T044500Z
+DTEND:20261024T064500Z
+SUMMARY:Martin Amini
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-49759/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-49759/
+END:VEVENT
+END:VCALENDAR

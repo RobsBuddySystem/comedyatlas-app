@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-50944@comedyatlas.app
+DTSTAMP:20261115T010000Z
+DTSTART:20261115T010000Z
+DTEND:20261115T030000Z
+SUMMARY:Martin Amini
+LOCATION:Aztec Theatre\, 104 North St. Mary's Street\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-50944/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-50944/
+END:VEVENT
+END:VCALENDAR

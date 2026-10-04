@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:al-murray-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20270205T180000Z
+DTSTART:20270205T180000Z
+DTEND:20270205T200000Z
+SUMMARY:Al Murray - Venue Premium Tickets
+LOCATION:Connexin Live\, Myton Street\, Hull
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/al-murray
+ -venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/al-murray-venue-premium-tick
+ ets/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:funny-women-of-a-certain-age-53029@comedyatlas.app
+DTSTAMP:20270110T010000Z
+DTSTART:20270110T010000Z
+DTEND:20270110T030000Z
+SUMMARY:Funny Women of a Certain Age
+LOCATION:Milford Theater\, 114 E Catharine St\, Milford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/funny-wom
+ en-of-a-certain-age-53029/
+URL:https://comedyatlas.app/comedy-atlas/event/funny-women-of-a-certain-age
+ -53029/
+END:VEVENT
+END:VCALENDAR

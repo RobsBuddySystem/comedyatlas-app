@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rita-rudner@comedyatlas.app
+DTSTAMP:20270131T030000Z
+DTSTART:20270131T030000Z
+DTEND:20270131T050000Z
+SUMMARY:Rita Rudner
+LOCATION:Suquamish Clearwater Casino Event Center\, 15347 Suquamish Way NE\
+ , Suquamish
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rita-rudn
+ er/
+URL:https://comedyatlas.app/comedy-atlas/event/rita-rudner/
+END:VEVENT
+END:VCALENDAR

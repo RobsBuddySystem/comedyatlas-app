@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-belle-et-la-bete@comedyatlas.app
+DTSTAMP:20270424T170000Z
+DTSTART:20270424T170000Z
+DTEND:20270424T190000Z
+SUMMARY:La Belle et la Bête
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/la-belle-
+ et-la-bete/
+URL:https://comedyatlas.app/comedy-atlas/event/la-belle-et-la-bete/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mohsin-abbas-moh@comedyatlas.app
+DTSTAMP:20270331T180000Z
+DTSTART:20270331T180000Z
+DTEND:20270331T200000Z
+SUMMARY:Mohsin Abbas - Moh?!
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mohsin-ab
+ bas-moh/
+URL:https://comedyatlas.app/comedy-atlas/event/mohsin-abbas-moh/
+END:VEVENT
+END:VCALENDAR

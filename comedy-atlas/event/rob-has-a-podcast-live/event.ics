@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-has-a-podcast-live@comedyatlas.app
+DTSTAMP:20261210T005000Z
+DTSTART:20261210T005000Z
+DTEND:20261210T025000Z
+SUMMARY:Rob Has A Podcast Live
+LOCATION:The Fillmore Charlotte\, 820 Hamilton Street\, Charlotte
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-has-a
+ -podcast-live/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-has-a-podcast-live/
+END:VEVENT
+END:VCALENDAR

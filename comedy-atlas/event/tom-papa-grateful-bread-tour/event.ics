@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-papa-grateful-bread-tour@comedyatlas.app
+DTSTAMP:20261120T010000Z
+DTSTART:20261120T010000Z
+DTEND:20261120T030000Z
+SUMMARY:Tom Papa: Grateful Bread Tour
+LOCATION:The Avalon Theatre At Niagara Fallsview Casino Resort\, 6380 Falls
+ view Boulevard\, Niagara Falls
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-papa-
+ grateful-bread-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-papa-grateful-bread-tour
+ /
+END:VEVENT
+END:VCALENDAR

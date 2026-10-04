@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-slam-deluxe@comedyatlas.app
+DTSTAMP:20261022T173000Z
+DTSTART:20261022T173000Z
+DTEND:20261022T193000Z
+SUMMARY:Comedy Slam Deluxe
+LOCATION:Moritzbastei Veranstaltungstonne\, Kurt-Masur-Platz 1\, Leipzig
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-sl
+ am-deluxe/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-slam-deluxe/
+END:VEVENT
+END:VCALENDAR
