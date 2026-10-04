@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-voinson-avant-nous@comedyatlas.app
+DTSTAMP:20270217T190000Z
+DTSTART:20270217T190000Z
+DTEND:20270217T210000Z
+SUMMARY:David Voinson - Avant nous
+LOCATION:Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-voi
+ nson-avant-nous/
+URL:https://comedyatlas.app/comedy-atlas/event/david-voinson-avant-nous/
+END:VEVENT
+END:VCALENDAR

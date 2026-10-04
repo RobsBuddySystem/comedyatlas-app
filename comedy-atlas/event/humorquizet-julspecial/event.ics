@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:humorquizet-julspecial@comedyatlas.app
+DTSTAMP:20261126T180000Z
+DTSTART:20261126T180000Z
+DTEND:20261126T200000Z
+SUMMARY:Humorquizet – Julspecial
+LOCATION:Linköping
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/humorquiz
+ et-julspecial/
+URL:https://comedyatlas.app/comedy-atlas/event/humorquizet-julspecial/
+END:VEVENT
+END:VCALENDAR

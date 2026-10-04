@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:peter-kazman-stand-up-comedy-special@comedyatlas.app
+DTSTAMP:20261010T180000Z
+DTSTART:20261010T180000Z
+DTEND:20261010T200000Z
+SUMMARY:Peter Kazman – Stand-up Comedy Special
+LOCATION:Southend Comedy Club\, 45 IJsbaanpad\, Amsterdam
+DESCRIPTION:بيتر قزمان stand-up comedian مصري عايش بره 
+ مصر بقاله 11 سنة، بين دبي ولندن، ودايمًا ي
+ ا بيقدم على فيزا يا بيدور على ميعاد سفارة.
+  “مش من هنا” رحلة كوميدية عن […]\n\\n\nMore info:
+  https://comedyatlas.app/comedy-atlas/event/peter-kazman-stand-up-comedy-sp
+ ecial/
+URL:https://comedyatlas.app/comedy-atlas/event/peter-kazman-stand-up-comedy
+ -special/
+END:VEVENT
+END:VCALENDAR

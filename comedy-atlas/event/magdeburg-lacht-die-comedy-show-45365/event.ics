@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:magdeburg-lacht-die-comedy-show-45365@comedyatlas.app
+DTSTAMP:20270129T190000Z
+DTSTART:20270129T190000Z
+DTEND:20270129T210000Z
+SUMMARY:Magdeburg Lacht! die Comedy Show
+LOCATION:Magdeburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/magdeburg
+ -lacht-die-comedy-show-45365/
+URL:https://comedyatlas.app/comedy-atlas/event/magdeburg-lacht-die-comedy-s
+ how-45365/
+END:VEVENT
+END:VCALENDAR

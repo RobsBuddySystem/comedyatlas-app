@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-sun-titi@comedyatlas.app
+DTSTAMP:20270227T193000Z
+DTSTART:20270227T193000Z
+DTEND:20270227T213000Z
+SUMMARY:David Sun - Titi
+LOCATION:Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-sun
+ -titi/
+URL:https://comedyatlas.app/comedy-atlas/event/david-sun-titi/
+END:VEVENT
+END:VCALENDAR

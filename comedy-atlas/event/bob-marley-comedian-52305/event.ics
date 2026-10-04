@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bob-marley-comedian-52305@comedyatlas.app
+DTSTAMP:20261213T010000Z
+DTSTART:20261213T010000Z
+DTEND:20261213T030000Z
+SUMMARY:Bob Marley Comedian
+LOCATION:Salisbury
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bob-marle
+ y-comedian-52305/
+URL:https://comedyatlas.app/comedy-atlas/event/bob-marley-comedian-52305/
+END:VEVENT
+END:VCALENDAR

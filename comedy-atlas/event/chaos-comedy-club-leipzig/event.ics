@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-leipzig@comedyatlas.app
+DTSTAMP:20270113T190000Z
+DTSTART:20270113T190000Z
+DTEND:20270113T210000Z
+SUMMARY:Chaos Comedy Club | Leipzig
+LOCATION:Leipzig
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-leipzig/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-leipzig/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gnash@comedyatlas.app
+DTSTAMP:20261015T183000Z
+DTSTART:20261015T183000Z
+DTEND:20261015T203000Z
+SUMMARY:Gnash
+LOCATION:McNeill's Bar\, 102-106 Torrisdale Street\, Glasgow
+DESCRIPTION:Recurring event series exploring art as comedy and comedy as ar
+ t\nMore info: https://comedyatlas.app/comedy-atlas/event/gnash/
+URL:https://comedyatlas.app/comedy-atlas/event/gnash/
+END:VEVENT
+END:VCALENDAR

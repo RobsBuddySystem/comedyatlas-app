@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-night-at-the-new-port-arms@comedyatlas.app
+DTSTAMP:20261023T190000Z
+DTSTART:20261023T190000Z
+DTEND:20261023T210000Z
+SUMMARY:Comedy Night At The New Port Arms
+LOCATION:The New Port Arms\, Lady Bee Marina Industrial Estate\, Brighton
+DESCRIPTION:Comedy night event at The New Port Arms.\nA line up of great up
+  coming comedians for an evening of laughter\, great food & drinks.\nMore i
+ nfo: https://comedyatlas.app/comedy-atlas/event/comedy-night-at-the-new-por
+ t-arms/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-night-at-the-new-port
+ -arms/
+END:VEVENT
+END:VCALENDAR

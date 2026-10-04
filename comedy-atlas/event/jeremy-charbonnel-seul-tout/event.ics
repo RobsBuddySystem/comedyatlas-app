@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeremy-charbonnel-seul-tout@comedyatlas.app
+DTSTAMP:20271002T183000Z
+DTSTART:20271002T183000Z
+DTEND:20271002T203000Z
+SUMMARY:Jérémy Charbonnel - Seul Tout
+LOCATION:Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeremy-ch
+ arbonnel-seul-tout/
+URL:https://comedyatlas.app/comedy-atlas/event/jeremy-charbonnel-seul-tout/
+END:VEVENT
+END:VCALENDAR

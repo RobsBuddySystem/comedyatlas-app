@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-50502@comedyatlas.app
+DTSTAMP:20261108T010000Z
+DTSTART:20261108T010000Z
+DTEND:20261108T030000Z
+SUMMARY:Ron White
+LOCATION:Niagara Falls
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -50502/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-50502/
+END:VEVENT
+END:VCALENDAR

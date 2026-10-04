@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:evigt-edvin-en-humorshow-med-edvin-tornblom@comedyatlas.app
+DTSTAMP:20261107T200000Z
+DTSTART:20261107T200000Z
+DTEND:20261107T220000Z
+SUMMARY:Evigt Edvin - En humorshow med Edvin Törnblom
+LOCATION:Linköping
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/evigt-edv
+ in-en-humorshow-med-edvin-tornblom/
+URL:https://comedyatlas.app/comedy-atlas/event/evigt-edvin-en-humorshow-med
+ -edvin-tornblom/
+END:VEVENT
+END:VCALENDAR

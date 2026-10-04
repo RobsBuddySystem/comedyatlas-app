@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:die-comedy-show-halle-lacht@comedyatlas.app
+DTSTAMP:20261024T180000Z
+DTSTART:20261024T180000Z
+DTEND:20261024T200000Z
+SUMMARY:die Comedy Show - Halle Lacht
+LOCATION:Halle (Saale)
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/die-comed
+ y-show-halle-lacht/
+URL:https://comedyatlas.app/comedy-atlas/event/die-comedy-show-halle-lacht/
+END:VEVENT
+END:VCALENDAR
