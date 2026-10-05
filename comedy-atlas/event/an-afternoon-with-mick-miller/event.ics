@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-afternoon-with-mick-miller@comedyatlas.app
+DTSTAMP:20261018T140000Z
+DTSTART:20261018T140000Z
+DTEND:20261018T160000Z
+SUMMARY:An Afternoon with Mick Miller
+LOCATION:Southport Comedy Festival Under Canvas At Victoria Park\, Esplanad
+ e\, Southport
+DESCRIPTION:Comedy legend Mick Miller returns to the Southport Comedy Festi
+ val for a very special afternoon packed with laughs\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/an-afternoon-with-mick-miller/
+URL:https://comedyatlas.app/comedy-atlas/event/an-afternoon-with-mick-mille
+ r/
+END:VEVENT
+END:VCALENDAR

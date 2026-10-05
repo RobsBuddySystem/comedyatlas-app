@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alan-carr-work-in-progress@comedyatlas.app
+DTSTAMP:20261117T190000Z
+DTSTART:20261117T190000Z
+DTEND:20261117T210000Z
+SUMMARY:Alan Carr : Work in progress
+LOCATION:Old Fire Station\, Warwick Street\, Carlisle
+DESCRIPTION:Join Alan as he warms up ahead of his brand-new tour\nMore info
+ : https://comedyatlas.app/comedy-atlas/event/alan-carr-work-in-progress/
+URL:https://comedyatlas.app/comedy-atlas/event/alan-carr-work-in-progress/
+END:VEVENT
+END:VCALENDAR

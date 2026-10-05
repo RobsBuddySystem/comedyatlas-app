@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crafty-monkeys-comedy-club@comedyatlas.app
+DTSTAMP:20261212T190000Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:Crafty Monkeys Comedy Club
+LOCATION:Bromsgrove Crafty Monkeys\, Unit 30\, Worcester
+DESCRIPTION:Christmas Comedy Special at BCM Evesham\n\nGet ready for a fant
+ astic festive night of stand-up comedy\, craft beer and plenty of laughs\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/crafty-monkeys-comedy-
+ club/
+URL:https://comedyatlas.app/comedy-atlas/event/crafty-monkeys-comedy-club/
+END:VEVENT
+END:VCALENDAR

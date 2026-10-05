@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wildcard-w01-stirling-comedy-club-open-mic-competition@comedyatlas.app
+DTSTAMP:20261025T163000Z
+DTSTART:20261025T163000Z
+DTEND:20261025T183000Z
+SUMMARY:WILDCARD W01 Stirling Comedy Club Open Mic Competition
+LOCATION:Stirling Comedy Club\, 2 Forth Street\, Stirling
+DESCRIPTION:Stirling Comedy Club presents Dead Funny Open Mic Competition 2
+ 027 Wildcard W01 Hosted by Pete Otway\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/wildcard-w01-stirling-comedy-club-open-mic-competition/
+URL:https://comedyatlas.app/comedy-atlas/event/wildcard-w01-stirling-comedy
+ -club-open-mic-competition/
+END:VEVENT
+END:VCALENDAR

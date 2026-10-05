@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-live-at-cinnabar-stevenage@comedyatlas.app
+DTSTAMP:20261015T190000Z
+DTSTART:20261015T190000Z
+DTEND:20261015T210000Z
+SUMMARY:Comedy Club - Live at Cinnabar Stevenage
+LOCATION:Cinnabar\, 56-58 High Street\, Stevenage
+DESCRIPTION:Comedy club hosted by Gary G Knightley\, serving stand-up com
+ edy with non-stop entertainment. Step right up & get ready to laugh until 
+ your cheeks hurt\nMore info: https://comedyatlas.app/comedy-atlas/event/com
+ edy-club-live-at-cinnabar-stevenage/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-live-at-cinnabar
+ -stevenage/
+END:VEVENT
+END:VCALENDAR

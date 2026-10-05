@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:headlining-alex-giampapa@comedyatlas.app
+DTSTAMP:20261018T020000Z
+DTSTART:20261018T020000Z
+DTEND:20261018T040000Z
+SUMMARY:Headlining Alex Giampapa
+LOCATION:Brooklyn
+DESCRIPTION:Eastville Comedy Club is Brooklyn's oldest comedy club\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/headlining-alex-giampapa/
+URL:https://comedyatlas.app/comedy-atlas/event/headlining-alex-giampapa/
+END:VEVENT
+END:VCALENDAR

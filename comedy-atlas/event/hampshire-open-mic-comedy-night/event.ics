@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hampshire-open-mic-comedy-night@comedyatlas.app
+DTSTAMP:20261104T190000Z
+DTSTART:20261104T190000Z
+DTEND:20261104T210000Z
+SUMMARY:Hampshire Open Mic Comedy Night
+LOCATION:The Attic\, 32 Winsor Road\, Totton\, Southampton
+DESCRIPTION:Southampton best 'Comedy Open Mic Night' in Hampshire Wednesday
+  4th November\nMore info: https://comedyatlas.app/comedy-atlas/event/hampsh
+ ire-open-mic-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/hampshire-open-mic-comedy-ni
+ ght/
+END:VEVENT
+END:VCALENDAR

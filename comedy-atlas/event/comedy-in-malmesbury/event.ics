@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-in-malmesbury@comedyatlas.app
+DTSTAMP:20261030T200000Z
+DTSTART:20261030T200000Z
+DTEND:20261030T220000Z
+SUMMARY:Comedy in Malmesbury
+LOCATION:Malmesbury Town Hall\, Cross Hayes\, Swindon
+DESCRIPTION:Laughter Craft Comedy are very excited to be launching a comedy
+  night in Malmesbury\n\nWe are bringing a line up full of TV and Award Winn
+ ing Comedians\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy
+ -in-malmesbury/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-in-malmesbury/
+END:VEVENT
+END:VCALENDAR

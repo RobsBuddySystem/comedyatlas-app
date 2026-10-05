@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-at-caplins-bar@comedyatlas.app
+DTSTAMP:20261019T063000Z
+DTSTART:20261019T063000Z
+DTEND:20261019T083000Z
+SUMMARY:Comedy At Caplins Bar
+LOCATION:Chaplins Cellar Bar\, 529 Christchurch Road\, Bournemouth
+DESCRIPTION:Get ready to laugh your socks off with some hilarious stand-up 
+ acts that'll brighten your day\nMore info: https://comedyatlas.app/comedy-a
+ tlas/event/comedy-at-caplins-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-at-caplins-bar/
+END:VEVENT
+END:VCALENDAR

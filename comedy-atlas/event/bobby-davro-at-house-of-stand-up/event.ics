@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bobby-davro-at-house-of-stand-up@comedyatlas.app
+DTSTAMP:20261119T194500Z
+DTSTART:20261119T194500Z
+DTEND:20261119T214500Z
+SUMMARY:Bobby Davro at House of Stand Up
+LOCATION:Coulsdon Club\, 194 Brighton Rd\, Croydon
+DESCRIPTION:House of Stand Up present their very own brand of live comedy.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/bobby-davro-at-house
+ -of-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/bobby-davro-at-house-of-stan
+ d-up/
+END:VEVENT
+END:VCALENDAR

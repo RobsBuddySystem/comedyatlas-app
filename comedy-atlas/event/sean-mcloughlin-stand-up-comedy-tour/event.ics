@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sean-mcloughlin-stand-up-comedy-tour@comedyatlas.app
+DTSTAMP:20270218T200000Z
+DTSTART:20270218T200000Z
+DTEND:20270218T220000Z
+SUMMARY:Sean McLoughlin Stand up Comedy Tour
+LOCATION:The Attic\, 32 Winsor Road\, Totton\, Southampton
+DESCRIPTION:Sean McLoughlin 'Halfway' stand up comedy tour in Southampton T
+ hursday 18th February\nMore info: https://comedyatlas.app/comedy-atlas/even
+ t/sean-mcloughlin-stand-up-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/sean-mcloughlin-stand-up-com
+ edy-tour/
+END:VEVENT
+END:VCALENDAR

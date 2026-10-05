@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-ezan-dans-bienvenue-chez-moi@comedyatlas.app
+DTSTAMP:20261018T160000Z
+DTSTART:20261018T160000Z
+DTEND:20261018T180000Z
+SUMMARY:David Ezan dans Bienvenue chez moi !
+LOCATION:Comédie de Tours\, 39 Rue Michelet\, Tours
+DESCRIPTION:Pourquoi aller dans un théâtre alors que j'ai assez de place 
+ chez moi pour tous vous recevoir et tout vous raconter ?\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/david-ezan-dans-bienvenue-chez-moi/
+URL:https://comedyatlas.app/comedy-atlas/event/david-ezan-dans-bienvenue-ch
+ ez-moi/
+END:VEVENT
+END:VCALENDAR

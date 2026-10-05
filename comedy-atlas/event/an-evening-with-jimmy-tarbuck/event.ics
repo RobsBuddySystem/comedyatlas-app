@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-with-jimmy-tarbuck@comedyatlas.app
+DTSTAMP:20261018T180000Z
+DTSTART:20261018T180000Z
+DTEND:20261018T200000Z
+SUMMARY:An Evening with Jimmy Tarbuck
+LOCATION:Old Fire Station\, Warwick Street\, Carlisle
+DESCRIPTION:JIMMY TARBUCK OBE\, one of the most popular household names fro
+ m the golden era of British stand up\, is back with a bang.\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/an-evening-with-jimmy-tarbuck/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-with-jimmy-tarbuc
+ k/
+END:VEVENT
+END:VCALENDAR

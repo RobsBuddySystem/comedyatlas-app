@@ -49,7 +49,26 @@ button:hover{opacity:.9}
 .msg{margin-top:10px;font-size:13px}
 .msg.error{color:var(--red)}
 .msg.ok{color:var(--green)}
-.avail-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.avail-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dispo-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:10px 0}
+.dispo-tools .grow{flex:1 1 220px}
+.dispo-travel{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 14px;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:14px;color:var(--text);margin:0;background:var(--bg)}
+.dispo-travel input{width:22px;height:22px;margin:0;accent-color:var(--gold)}
+.dispo-nav{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+.dispo-nav button{width:48px;height:48px;margin:0;padding:0;font-size:20px}
+.dispo-nav .month{font-weight:700;font-size:16px;text-transform:capitalize}
+.dispo-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dispo-grid .dow{font-size:11px;color:var(--muted);text-align:center;padding:2px 0}
+.dispo-day{min-height:46px;margin:0;padding:0;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:15px;font-weight:600;cursor:pointer;position:relative}
+.dispo-day:disabled{opacity:.3;cursor:default}
+.dispo-day.on{background:var(--green);border-color:var(--green);color:#fff}
+.dispo-day .plane{position:absolute;top:1px;right:3px;font-size:10px}
+.dispo-day.blank{visibility:hidden}
+.dispo-legend{font-size:12px;color:var(--muted);margin:8px 0}
+.avail-item .why{color:var(--muted);font-size:11px}
+.avail-item .x{margin:0 0 0 10px;padding:4px 12px;min-height:36px;font-size:13px}
+@media (max-width:480px){.dispo-day{min-height:48px}}
+
 .opp-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
 .opp-item .name{font-weight:700}
 .signed-out{padding:40px 0;text-align:center;color:var(--muted)}
@@ -252,7 +271,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       entirely (and manage booking-offer alerts, quiet hours, muting,
       etc.) from <a href="notification-settings.html">Notification
       settings</a>.</p>
+      <h3 style="margin:14px 0 4px;font-size:16px">Tap the days you are free <span style="color:var(--muted);font-weight:400">· Touchez vos jours dispo</span></h3>
+      <div class="dispo-tools">
+        <div class="grow">
+          <label for="dispo-note">Note for new days (optional) <span style="font-weight:400">· Note</span></label>
+          <input id="dispo-note" type="text" maxlength="200" placeholder="evening only · soirée seulement">
+        </div>
+        <label class="dispo-travel" for="dispo-travel"><input type="checkbox" id="dispo-travel"> ✈ I can travel · Je peux voyager</label>
+      </div>
+      <div class="dispo-nav">
+        <button type="button" id="dispo-prev" aria-label="Previous month · Mois précédent">‹</button>
+        <span class="month" id="dispo-month"></span>
+        <button type="button" id="dispo-next" aria-label="Next month · Mois suivant">›</button>
+      </div>
+      <div class="dispo-grid" id="dispo-grid"></div>
+      <p class="dispo-legend">Green = free (saved instantly). Tap a green day again to remove it. ✈ = can travel.<br>Vert = dispo (enregistré tout de suite). Retouchez pour retirer.</p>
+      <div class="msg" id="dispo-msg"></div>
       <div id="avail-list"></div>
+      <details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--muted);min-height:36px">More options (city, date range, email alerts) · Plus d'options</summary>
       <div class="row" style="margin-top:12px">
         <div>
           <label for="avail-date">Available date</label>
@@ -285,6 +321,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       </div>
       <button id="add-availability-range" class="secondary" type="button">Add date range</button>
       <div class="msg" id="avail-range-msg"></div>
+      </details>
     </div>
 
     <div class="card">
@@ -343,9 +380,50 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   var meId = null;
   window.AtlasNav.wireSignOut("#atlas-signout");
 
+  var availRows = [];
+  var dispoMonth = new Date(); dispoMonth.setDate(1);
+  function ymd(d) { return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  function renderDispoGrid() {
+    var grid = document.getElementById("dispo-grid"); if (!grid) return;
+    var byDate = {}; availRows.forEach(function (r) { byDate[r.available_date] = r; });
+    var y = dispoMonth.getFullYear(), m = dispoMonth.getMonth();
+    document.getElementById("dispo-month").textContent =
+      dispoMonth.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    var lead = (new Date(y, m, 1).getDay() + 6) % 7;           // Monday first
+    var days = new Date(y, m + 1, 0).getDate();
+    var today = ymd(new Date());
+    var h = ["L","M","M","J","V","S","D"].map(function (d) { return '<div class="dow">' + d + '</div>'; }).join("");
+    for (var i = 0; i < lead; i++) h += '<button class="dispo-day blank" disabled></button>';
+    for (var d = 1; d <= days; d++) {
+      var key = y + "-" + ("0" + (m + 1)).slice(-2) + "-" + ("0" + d).slice(-2);
+      var r = byDate[key];
+      h += '<button type="button" class="dispo-day' + (r ? " on" : "") + '" data-d="' + key + '"' +
+        (key < today ? " disabled" : "") + ' aria-pressed="' + (r ? "true" : "false") + '">' + d +
+        (r && r.can_travel ? '<span class="plane">✈</span>' : "") + '</button>';
+    }
+    grid.innerHTML = h;
+  }
+  function dispoMsg(t, ok) { var e = document.getElementById("dispo-msg"); e.textContent = t; e.className = "msg " + (ok ? "ok" : "error"); }
+  function refreshAvail() { return A.get("/comic/" + meId + "/availability").then(renderAvailability); }
+  document.getElementById("dispo-grid").addEventListener("click", function (ev) {
+    var b = ev.target.closest(".dispo-day[data-d]"); if (!b || b.disabled) return;
+    var d = b.getAttribute("data-d"), on = b.classList.contains("on");
+    b.disabled = true;
+    var req = on
+      ? A.del("/comic/" + meId + "/availability", { dates: [d] })
+      : A.put("/comic/" + meId + "/availability", { dates: [{
+          available_date: d, note: document.getElementById("dispo-note").value.trim() || null,
+          can_travel: document.getElementById("dispo-travel").checked }] });
+    req.then(function () { dispoMsg(on ? "Removed · Retiré" : "Saved · Enregistré", true); return refreshAvail(); })
+      .catch(function () { dispoMsg("Failed · Échec", false); b.disabled = false; });
+  });
+  document.getElementById("dispo-prev").addEventListener("click", function () { dispoMonth.setMonth(dispoMonth.getMonth() - 1); renderDispoGrid(); });
+  document.getElementById("dispo-next").addEventListener("click", function () { dispoMonth.setMonth(dispoMonth.getMonth() + 1); renderDispoGrid(); });
+
   function renderAvailability(rows) {
+    availRows = rows; renderDispoGrid();
     var list = document.getElementById("avail-list");
-    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No dates published yet.</p>'; return; }
+    if (!rows.length) { list.innerHTML = '<p style="color:var(--muted);font-size:13px">No dates published yet. · Aucune date.</p>'; return; }
     list.innerHTML = rows.map(function (r) {
       // notify_opportunities (migration 0050) drives ingest/matching.py --
       // shown here so "email me about matching spots" isn't a silent
@@ -353,11 +431,17 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       var notifyBit = r.notify_opportunities
         ? '<span title="You\'ll be emailed about matching open spots for this date">🔔 opportunity alerts on</span>'
         : '<span title="You will not be emailed about matching open spots for this date">🔕 opportunity alerts off</span>';
-      return '<div class="avail-item"><span>' + A.escapeHtml(r.available_date) + '</span>' +
-        '<span style="color:var(--muted);font-size:11px">' + notifyBit + ' · ' +
-        A.escapeHtml(r.visibility) + '</span></div>';
+      return '<div class="avail-item"><span><b>' + A.escapeHtml(r.available_date) + '</b>' +
+        (r.can_travel ? ' ✈' : '') + (r.note ? ' · ' + A.escapeHtml(r.note) : '') +
+        '<br><span class="why">' + notifyBit + ' · ' + A.escapeHtml(r.visibility) + '</span></span>' +
+        '<button type="button" class="secondary x" data-del="' + A.escapeHtml(r.available_date) + '">✕</button></div>';
     }).join("");
   }
+  document.getElementById("avail-list").addEventListener("click", function (ev) {
+    var b = ev.target.closest("[data-del]"); if (!b) return;
+    A.del("/comic/" + meId + "/availability", { dates: [b.getAttribute("data-del")] })
+      .then(refreshAvail).catch(function () { dispoMsg("Failed · Échec", false); });
+  });
 
   // Counter-offer negotiation (migration 0115 -- propose_counter/
   // respond_to_counter). A pending invite (bo.status === "pending") can be

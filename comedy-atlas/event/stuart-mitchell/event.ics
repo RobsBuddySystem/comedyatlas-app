@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stuart-mitchell@comedyatlas.app
+DTSTAMP:20270323T190000Z
+DTSTART:20270323T190000Z
+DTEND:20270323T210000Z
+SUMMARY:Stuart Mitchell
+LOCATION:Old Fire Station\, Warwick Street\, Carlisle
+DESCRIPTION:A fresh hour of comedy that promises new razor-sharp one-liners
+ \, lightning-fast improvisation\, and brilliantly relatable storytelling.\n
+ More info: https://comedyatlas.app/comedy-atlas/event/stuart-mitchell/
+URL:https://comedyatlas.app/comedy-atlas/event/stuart-mitchell/
+END:VEVENT
+END:VCALENDAR

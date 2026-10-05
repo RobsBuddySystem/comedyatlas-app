@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:just-the-tonic-comedy-club@comedyatlas.app
+DTSTAMP:20270128T190000Z
+DTSTART:20270128T190000Z
+DTEND:20270128T210000Z
+SUMMARY:Just the Tonic Comedy Club
+LOCATION:Old Fire Station\, Warwick Street\, Carlisle
+DESCRIPTION:One night\, 4 comedians and lots of laughs\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/just-the-tonic-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/just-the-tonic-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kts-comedy-club-at-the-queens-hotel@comedyatlas.app
+DTSTAMP:20261204T200000Z
+DTSTART:20261204T200000Z
+DTEND:20261204T220000Z
+SUMMARY:KTS Comedy Club at The Queens Hotel.
+LOCATION:The Queens Hotel Macclesfield\, 5 Albert Place\, Macclesfield SK11
+  6JW\, Stockport
+DESCRIPTION:KTS Comedy Club comes to The Queens Hotel for a fun night of st
+ and-up\nMore info: https://comedyatlas.app/comedy-atlas/event/kts-comedy-cl
+ ub-at-the-queens-hotel/
+URL:https://comedyatlas.app/comedy-atlas/event/kts-comedy-club-at-the-queen
+ s-hotel/
+END:VEVENT
+END:VCALENDAR

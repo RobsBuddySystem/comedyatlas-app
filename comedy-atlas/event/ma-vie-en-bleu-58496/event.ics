@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ma-vie-en-bleu-58496@comedyatlas.app
+DTSTAMP:20261102T191500Z
+DTSTART:20261102T191500Z
+DTEND:20261102T211500Z
+SUMMARY:Ma vie en bleu
+LOCATION:Boui Boui Café Comique\, 7 rue Mourguet\, Lyon
+DESCRIPTION:Rire avec la police\, ça n'a pas de prix et c'est moins long q
+ u'une garde à vue !\nMore info: https://comedyatlas.app/comedy-atlas/event
+ /ma-vie-en-bleu-58496/
+URL:https://comedyatlas.app/comedy-atlas/event/ma-vie-en-bleu-58496/
+END:VEVENT
+END:VCALENDAR

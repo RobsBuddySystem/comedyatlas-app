@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-comedy-night-near-me@comedyatlas.app
+DTSTAMP:20270120T193000Z
+DTSTART:20270120T193000Z
+DTEND:20270120T213000Z
+SUMMARY:Open Mic Comedy Night near me
+LOCATION:The Attic\, 32 Winsor Road\, Totton\, Southampton
+DESCRIPTION:Southampton 'Comedy Open Mic Night' near me at The Wednesday 20
+ th January 2027\nMore info: https://comedyatlas.app/comedy-atlas/event/open
+ -mic-comedy-night-near-me/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-comedy-night-near-m
+ e/
+END:VEVENT
+END:VCALENDAR

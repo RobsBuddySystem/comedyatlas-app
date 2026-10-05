@@ -557,7 +557,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
 
     <div class="card">
-      <h2>Search comics</h2>
+      <h2>Who is free on a date? · Search comics</h2>
+      <p class="privacy" style="margin-bottom:6px">Pick a date to list every comic who ticked it. Add a city to narrow down — comics who ticked “can travel” show up for any city.</p>
       <div class="row">
         <div>
           <label for="search-city">City</label>
@@ -2562,7 +2563,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
           '<div class="info"><div class="name">' + A.escapeHtml(r.stage_name) +
           ' <span style="color:var(--muted);font-weight:400">(id ' + r.person_id + ')</span></div>' +
           '<div style="color:var(--muted)">' + A.escapeHtml(r.home_market || "") + ' · ' +
-          A.escapeHtml(r.touring_status || "") + '</div></div></label>' +
+          A.escapeHtml(r.touring_status || "") + '</div>' +
+          (d ? '<div style="margin-top:3px;font-size:13px"><span style="color:var(--green);font-weight:700">✓ free ' + A.escapeHtml(d) + '</span>' +
+            (r.can_travel ? ' · ✈ can travel' : '') +
+            (r.availability_note ? ' · “' + A.escapeHtml(r.availability_note) + '”' : '') + '</div>' : '') +
+          '</div></label>' +
           '<button type="button" class="secondary cc-open-btn" data-id="' + r.person_id +
           '">CRM card</button></div>';
       }).join("");

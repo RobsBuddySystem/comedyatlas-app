@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:treehouse-comedy-club@comedyatlas.app
+DTSTAMP:20261119T190000Z
+DTSTART:20261119T190000Z
+DTEND:20261119T210000Z
+SUMMARY:Treehouse Comedy Club
+LOCATION:Redroom The Oakwood\, 67 High St West\, Stockport
+DESCRIPTION:Live Comedy upstairs in the oakwood Performances by Jordan Mack
+ \, Mike Carter\, Tabish Akbar\, Hosted by MC Jacko Life's better when you'r
+ e Laffin\nMore info: https://comedyatlas.app/comedy-atlas/event/treehouse-c
+ omedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/treehouse-comedy-club/
+END:VEVENT
+END:VCALENDAR

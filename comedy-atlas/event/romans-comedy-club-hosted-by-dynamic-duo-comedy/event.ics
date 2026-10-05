@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:romans-comedy-club-hosted-by-dynamic-duo-comedy@comedyatlas.app
+DTSTAMP:20261021T183000Z
+DTSTART:20261021T183000Z
+DTEND:20261021T203000Z
+SUMMARY:Romans Comedy Club hosted by Dynamic Duo Comedy
+LOCATION:Romans Rest\, Celtic Point\, Sheffield
+DESCRIPTION:As a one off we are raising money for an amazing cause Macmilla
+ n Cancer Care\, with 4 amazing comedians Dan Lythe\, Calum Murray\, Wendy K
+ ing & Russ Lee\nMore info: https://comedyatlas.app/comedy-atlas/event/roman
+ s-comedy-club-hosted-by-dynamic-duo-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/romans-comedy-club-hosted-by
+ -dynamic-duo-comedy/
+END:VEVENT
+END:VCALENDAR

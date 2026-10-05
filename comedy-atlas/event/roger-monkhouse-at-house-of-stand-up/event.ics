@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roger-monkhouse-at-house-of-stand-up@comedyatlas.app
+DTSTAMP:20261204T200000Z
+DTSTART:20261204T200000Z
+DTEND:20261204T220000Z
+SUMMARY:Roger Monkhouse at House of Stand Up
+LOCATION:Soper Hall (Main Hall)\, Harestone Valley Road\, Croydon
+DESCRIPTION:House of Stand Up present their very own brand of live comedy e
+ ach month.\nMore info: https://comedyatlas.app/comedy-atlas/event/roger-mon
+ khouse-at-house-of-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/roger-monkhouse-at-house-of-
+ stand-up/
+END:VEVENT
+END:VCALENDAR

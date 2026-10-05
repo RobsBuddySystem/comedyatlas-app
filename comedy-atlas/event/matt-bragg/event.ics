@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:matt-bragg@comedyatlas.app
+DTSTAMP:20270513T183000Z
+DTSTART:20270513T183000Z
+DTEND:20270513T203000Z
+SUMMARY:Matt Bragg
+LOCATION:Old Fire Station\, Warwick Street\, Carlisle
+DESCRIPTION:Matt Bragg is one of the UK's most distinctive comedic voices\,
+  back with another hour packed with sharply observed\, meticulously crafted
+  material.\nMore info: https://comedyatlas.app/comedy-atlas/event/matt-brag
+ g/
+URL:https://comedyatlas.app/comedy-atlas/event/matt-bragg/
+END:VEVENT
+END:VCALENDAR

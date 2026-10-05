@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 222,
+      "en": 223,
       "unconfirmed": 43
     },
     "latitude": 52.52,
@@ -179,7 +179,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 150,
+      "en": 151,
       "unconfirmed": 123
     },
     "latitude": 41.3851,
@@ -249,9 +249,9 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 105,
-      "fr": 4129,
-      "unconfirmed": 12
+      "en": 110,
+      "fr": 4136,
+      "unconfirmed": 13
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -535,7 +535,7 @@
     "id": 44,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 33
+      "unconfirmed": 34
     },
     "latitude": 60.1699,
     "longitude": 24.9384,
@@ -810,8 +810,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 5,
-      "unconfirmed": 133
+      "en": 19,
+      "unconfirmed": 118
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -1068,7 +1068,7 @@
     "country_name": "United States",
     "id": 91,
     "language_counts": {
-      "unconfirmed": 54
+      "unconfirmed": 53
     },
     "latitude": 47.6062,
     "longitude": -122.3321,
@@ -1086,7 +1086,7 @@
     "id": 92,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 305
+      "unconfirmed": 304
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1737,7 +1737,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 116
+      "unconfirmed": 115
     },
     "latitude": 47.657193,
     "longitude": -117.42351,
@@ -1771,7 +1771,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 251
+      "unconfirmed": 250
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1890,7 +1890,7 @@
     "country_name": "United States",
     "id": 146,
     "language_counts": {
-      "unconfirmed": 214
+      "unconfirmed": 212
     },
     "latitude": 37.787936,
     "longitude": -122.40752,
@@ -2606,7 +2606,7 @@
     "country_name": "France",
     "id": 207,
     "language_counts": {
-      "fr": 10
+      "fr": 11
     },
     "latitude": null,
     "longitude": null,
@@ -2640,7 +2640,7 @@
     "country_name": "France",
     "id": 209,
     "language_counts": {
-      "fr": 16
+      "fr": 17
     },
     "latitude": null,
     "longitude": null,
@@ -2742,7 +2742,7 @@
     "country_name": "France",
     "id": 217,
     "language_counts": {
-      "fr": 10
+      "fr": 11
     },
     "latitude": null,
     "longitude": null,
@@ -3865,7 +3865,7 @@
     "country_name": "France",
     "id": 289,
     "language_counts": {
-      "fr": 4
+      "fr": 6
     },
     "latitude": null,
     "longitude": null,
@@ -4035,7 +4035,7 @@
     "country_name": "France",
     "id": 301,
     "language_counts": {
-      "fr": 6
+      "fr": 8
     },
     "latitude": null,
     "longitude": null,
@@ -4856,6 +4856,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Odense C",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Copenhagen"
+  },
+  {
+    "country_id": 6,
+    "country_iso2": "DK",
+    "country_name": "Denmark",
+    "id": 402,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 55.67853,
+    "longitude": 12.57277,
+    "name": "K\u00f8benhavn K",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -9628,7 +9645,8 @@
     "country_name": "UK",
     "id": 698,
     "language_counts": {
-      "unconfirmed": 10
+      "en": 1,
+      "unconfirmed": 9
     },
     "latitude": null,
     "longitude": null,
@@ -11447,7 +11465,7 @@
     "country_name": "United States",
     "id": 805,
     "language_counts": {
-      "unconfirmed": 81
+      "unconfirmed": 80
     },
     "latitude": 34.101772,
     "longitude": -118.340202,
@@ -11804,7 +11822,7 @@
     "country_name": "United States",
     "id": 830,
     "language_counts": {
-      "unconfirmed": 965
+      "unconfirmed": 958
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -11822,7 +11840,7 @@
     "id": 831,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 159
+      "unconfirmed": 158
     },
     "latitude": 38.595283,
     "longitude": -121.417411,
@@ -11890,7 +11908,7 @@
     "country_name": "United States",
     "id": 835,
     "language_counts": {
-      "unconfirmed": 65
+      "unconfirmed": 64
     },
     "latitude": 39.530692,
     "longitude": -119.815314,
@@ -11924,7 +11942,7 @@
     "country_name": "United States",
     "id": 838,
     "language_counts": {
-      "unconfirmed": 16
+      "unconfirmed": 15
     },
     "latitude": 21.27724,
     "longitude": -157.8271,
@@ -12009,7 +12027,7 @@
     "country_name": "United States",
     "id": 843,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 11
     },
     "latitude": 40.739502,
     "longitude": -74.16809,
@@ -12048,6 +12066,23 @@
     "latitude": 35.140108,
     "longitude": -90.055029,
     "name": "Memphis",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Chicago"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 846,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 32.2833,
+    "longitude": -89.984424,
+    "name": "Brandon",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -13777,7 +13812,7 @@
     "country_name": "United States",
     "id": 948,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 6
     },
     "latitude": null,
     "longitude": null,
@@ -14309,6 +14344,23 @@
     "latitude": 44.788122,
     "longitude": -68.778278,
     "name": "Bangor",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/New_York"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 981,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 39.851086,
+    "longitude": -75.348032,
+    "name": "Chester",
     "region_code": null,
     "region_id": null,
     "region_name": null,

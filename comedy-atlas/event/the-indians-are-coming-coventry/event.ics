@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-indians-are-coming-coventry@comedyatlas.app
+DTSTAMP:20261101T200000Z
+DTSTART:20261101T200000Z
+DTEND:20261101T220000Z
+SUMMARY:The Indians Are Coming Coventry
+LOCATION:Warwick Arts Centre\, University of Warwick\, Coventry
+DESCRIPTION:The Indians Are Coming... Bringing a night of comedy\, big pers
+ onalities and even bigger laughs.\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/the-indians-are-coming-coventry/
+URL:https://comedyatlas.app/comedy-atlas/event/the-indians-are-coming-coven
+ try/
+END:VEVENT
+END:VCALENDAR
