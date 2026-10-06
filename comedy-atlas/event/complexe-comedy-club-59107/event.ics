@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:complexe-comedy-club-59107@comedyatlas.app
+DTSTAMP:20261020T173000Z
+DTSTART:20261020T173000Z
+DTEND:20261020T193000Z
+SUMMARY:Complexe Comedy Club
+LOCATION:Le Complexe Café-Théâtre - salle du haut\, 7 rue des Capucins\,
+  Lyon
+DESCRIPTION:Le meilleur du stand-up !\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/complexe-comedy-club-59107/
+URL:https://comedyatlas.app/comedy-atlas/event/complexe-comedy-club-59107/
+END:VEVENT
+END:VCALENDAR

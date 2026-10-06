@@ -556,6 +556,41 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="msg" id="lu-confirm-msg"></div>
     </div>
 
+    <div class="card" id="fl-card">
+      <h2>Visuels pour les réseaux · Social media flyers</h2>
+      <p class="privacy" style="margin-bottom:6px">Feed post + stories (DEMAIN / CE SOIR) and a caption, generated from the night you loaded above. Edit anything, then create them — nothing is posted or sent.</p>
+      <div id="fl-empty" class="msg">Load a night above to prepare its flyers.</div>
+      <div id="fl-form" style="display:none">
+        <div class="row">
+          <div style="flex:1;min-width:200px"><label for="fl-title">Titre · Title</label><input id="fl-title" type="text" maxlength="40"></div>
+          <div style="flex:1;min-width:200px"><label for="fl-subtitle">Sous-titre · Subtitle</label><input id="fl-subtitle" type="text" maxlength="60"></div>
+        </div>
+        <div class="row">
+          <div style="flex:1;min-width:140px"><label for="fl-date">Date</label><input id="fl-date" type="text" maxlength="40"></div>
+          <div style="flex:1;min-width:100px"><label for="fl-time">Heure · Time</label><input id="fl-time" type="text" maxlength="40"></div>
+        </div>
+        <label for="fl-venue">Lieu · Venue line</label><input id="fl-venue" type="text" maxlength="90">
+        <label for="fl-info">Info (optionnel · optional)</label><input id="fl-info" type="text" maxlength="80">
+        <label for="fl-cta">Appel à l'action · Call to action</label><input id="fl-cta" type="text" maxlength="80">
+        <label for="fl-url">Lien billetterie · Ticket link (for the caption)</label><input id="fl-url" type="text" maxlength="300" placeholder="https://">
+        <div class="row" style="margin-top:6px">
+          <div><label for="fl-bg1">Fond 1</label><input id="fl-bg1" type="color" value="#7a163c" style="width:64px;padding:2px;height:36px"></div>
+          <div><label for="fl-bg2">Fond 2</label><input id="fl-bg2" type="color" value="#34081c" style="width:64px;padding:2px;height:36px"></div>
+          <div><label for="fl-text">Texte · Text</label><input id="fl-text" type="color" value="#f7ecde" style="width:64px;padding:2px;height:36px"></div>
+          <div><label for="fl-accent">Accent</label><input id="fl-accent" type="color" value="#e2b05c" style="width:64px;padding:2px;height:36px"></div>
+        </div>
+        <label>Humoristes · Comics (tick to include)</label>
+        <div id="fl-comics"></div>
+        <button type="button" id="fl-render">Créer / mettre à jour les visuels</button>
+        <div class="msg" id="fl-msg"></div>
+        <div id="fl-grid" class="row" style="margin-top:12px"></div>
+        <label for="fl-caption">Légende · Caption</label>
+        <textarea id="fl-caption" rows="10" readonly></textarea>
+        <button type="button" id="fl-copy" class="secondary">Copier la légende</button>
+        <span class="msg" id="fl-copy-msg"></span>
+      </div>
+    </div>
+
     <div class="card">
       <h2>Who is free on a date? · Search comics</h2>
       <p class="privacy" style="margin-bottom:6px">Pick a date to list every comic who ticked it. Add a city to narrow down — comics who ticked “can travel” show up for any city.</p>
@@ -2327,6 +2362,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       luDraftId = data.draft_id;
       renderLineupBoard(data);
       msg.textContent = "Lineup loaded."; msg.className = "msg ok";
+      flLoad(eventId);
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load lineup.";
       msg.className = "msg error";
@@ -2340,11 +2376,121 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     A.post("/booker/events/" + luEventId + "/lineup/confirm", {}).then(function (r) {
       msg.textContent = "Sent " + r.invited.length + " confirmation(s).";
       msg.className = "msg ok";
+      if (r.flyers) { flFill(r.flyers.spec); flShow(r.flyers.files, r.flyers.caption);
+                      flSetMsg("Visuels mis à jour · Flyers refreshed.", "ok"); }
+      else if (r.flyers_error) { flSetMsg("Flyers could not be created automatically: " + r.flyers_error, "error"); }
       return A.get("/booker/events/" + luEventId + "/lineup");
     }).then(renderLineupBoard).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to send confirmations.";
       msg.className = "msg error";
     });
+  });
+
+
+  // ---- Social media flyers (POST/GET /booker/events/{id}/flyers, /flyer-spec) ----
+  var FL_LABELS = {"post.png": "Post", "post_demain.png": "Post · DEMAIN", "post_ce_soir.png": "Post · CE SOIR",
+                   "story.png": "Story", "story_demain.png": "Story · DEMAIN", "story_ce_soir.png": "Story · CE SOIR"};
+  var FL_ORDER = ["post.png", "post_demain.png", "post_ce_soir.png", "story.png", "story_demain.png", "story_ce_soir.png"];
+  var flLang = "fr", flRendered = false;
+  function flEl(id) { return document.getElementById(id); }
+  function flSetMsg(text, cls) { var m = flEl("fl-msg"); m.textContent = text; m.className = "msg" + (cls ? " " + cls : ""); }
+  function flApiBase() {
+    var b = (window.AtlasAuth && (A.apiBase || A.base)) || "";
+    return typeof b === "string" ? b.replace(/\/$/, "") : "";
+  }
+  function flFill(spec) {
+    flLang = spec.lang === "en" ? "en" : "fr";
+    flEl("fl-title").value = spec.title || ""; flEl("fl-subtitle").value = spec.subtitle || "";
+    flEl("fl-date").value = spec.date_label || ""; flEl("fl-time").value = spec.time_label || "";
+    flEl("fl-venue").value = spec.venue_line || ""; flEl("fl-info").value = spec.info_line || "";
+    flEl("fl-cta").value = spec.cta || ""; flEl("fl-url").value = spec.ticket_url || "";
+    var pal = spec.palette || {};
+    ["bg1", "bg2", "text", "accent"].forEach(function (k) {
+      if (/^#[0-9A-Fa-f]{6}$/.test(pal[k] || "")) { flEl("fl-" + k).value = pal[k].toLowerCase(); }
+    });
+    flEl("fl-form").dataset.place = spec.place_caption || "";
+    var box = flEl("fl-comics"); box.innerHTML = "";
+    (spec.comics || []).forEach(function (c) {
+      var row = document.createElement("div"); row.className = "row fl-comic"; row.style.alignItems = "center";
+      var cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = c.include !== false;
+      cb.style.width = "auto"; cb.setAttribute("aria-label", "Include " + (c.name || ""));
+      var nm = document.createElement("input"); nm.type = "text"; nm.maxLength = 40; nm.value = c.name || "";
+      nm.style.flex = "2"; nm.style.minWidth = "140px"; nm.setAttribute("aria-label", "Name");
+      var hd = document.createElement("input"); hd.type = "text"; hd.maxLength = 31; hd.placeholder = "@handle";
+      hd.value = c.handle ? "@" + c.handle : ""; hd.style.flex = "1"; hd.style.minWidth = "110px";
+      hd.setAttribute("aria-label", "Instagram handle");
+      row.appendChild(cb); row.appendChild(nm); row.appendChild(hd); box.appendChild(row);
+    });
+  }
+  function flCollect() {
+    var comics = [];
+    Array.prototype.forEach.call(document.querySelectorAll("#fl-comics .fl-comic"), function (row) {
+      var i = row.querySelectorAll("input");
+      comics.push({name: i[1].value.trim(), handle: i[2].value.trim().replace(/^@/, ""), include: i[0].checked});
+    });
+    return {
+      lang: flLang, title: flEl("fl-title").value.trim(), subtitle: flEl("fl-subtitle").value.trim(),
+      date_label: flEl("fl-date").value.trim(), time_label: flEl("fl-time").value.trim(),
+      venue_line: flEl("fl-venue").value.trim(), info_line: flEl("fl-info").value.trim(),
+      cta: flEl("fl-cta").value.trim(), ticket_url: flEl("fl-url").value.trim(),
+      place_caption: flEl("fl-form").dataset.place || "",
+      palette: {bg1: flEl("fl-bg1").value, bg2: flEl("fl-bg2").value,
+                text: flEl("fl-text").value, accent: flEl("fl-accent").value},
+      comics: comics.filter(function (c) { return c.name; })
+    };
+  }
+  function flShow(files, caption) {
+    var grid = flEl("fl-grid"); grid.innerHTML = "";
+    var byName = {}; (files || []).forEach(function (f) { byName[f.name] = f.url; });
+    var stamp = "?t=" + Date.now();           // same URL after a re-render: dodge the browser cache
+    FL_ORDER.forEach(function (n) {
+      if (!byName[n]) { return; }
+      var url = flApiBase() + byName[n];
+      var cell = document.createElement("div"); cell.style.cssText = "flex:1 1 150px;max-width:220px;text-align:center";
+      var img = document.createElement("img"); img.alt = FL_LABELS[n]; img.loading = "lazy";
+      img.style.cssText = "width:100%;border-radius:8px;border:1px solid var(--border);background:#222";
+      // Owner-only files: the session cookie rides along (same-site); blob: URLs would be blocked by the page CSP.
+      img.src = url + stamp;
+      var cap = document.createElement("div"); cap.className = "msg"; cap.textContent = FL_LABELS[n];
+      var dl = document.createElement("a"); dl.textContent = "Télécharger"; dl.setAttribute("download", n);
+      dl.href = url + stamp; dl.style.marginRight = "10px";
+      var op = document.createElement("a"); op.textContent = "Ouvrir"; op.target = "_blank"; op.rel = "noopener"; op.href = url + stamp;
+      cell.appendChild(img); cell.appendChild(cap); cell.appendChild(dl); cell.appendChild(op); grid.appendChild(cell);
+    });
+    flEl("fl-caption").value = caption || "";
+  }
+  function flLoad(eventId) {
+    flEl("fl-empty").style.display = "none"; flEl("fl-form").style.display = "";
+    flSetMsg("", "");
+    return A.get("/booker/events/" + eventId + "/flyer-spec").then(function (r) {
+      flFill(r.spec); flShow(r.files, r.caption);
+      if (!(r.spec.comics || []).length) { flSetMsg("Fill at least one slot in the lineup first.", ""); }
+    }).catch(function (e) {
+      flSetMsg(e.body && typeof e.body.detail === "string" ? e.body.detail : "Couldn't load the flyer settings.", "error");
+    });
+  }
+  flEl("fl-render").addEventListener("click", function () {
+    if (!luEventId) { flSetMsg("Load a night first.", "error"); return; }
+    flSetMsg("Création en cours… · Rendering…", "");
+    A.post("/booker/events/" + luEventId + "/flyers", flCollect()).then(function (r) {
+      flFill(r.spec); flShow(r.files, r.caption);
+      flSetMsg("Visuels prêts · Flyers ready (" + FL_ORDER.length + " images + caption).", "ok");
+    }).catch(function (e) {
+      var d = e.body && e.body.detail;
+      flSetMsg((typeof d === "string" && d) || "Couldn't create the flyers.", "error");
+    });
+  });
+  flEl("fl-copy").addEventListener("click", function () {
+    var ta = flEl("fl-caption"), m = flEl("fl-copy-msg");
+    function done(ok) { m.textContent = ok ? " Copié ✓" : " Select the text and copy it manually."; m.className = "msg " + (ok ? "ok" : "error"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta.value).then(function () { done(true); }, function () { done(fbCopy()); });
+    } else { done(fbCopy()); }
+    function fbCopy() {
+      try { ta.removeAttribute("readonly"); ta.select(); ta.setSelectionRange(0, ta.value.length);
+            var ok = document.execCommand("copy"); ta.setAttribute("readonly", ""); return ok; }
+      catch (e) { ta.setAttribute("readonly", ""); return false; }
+    }
   });
 
   var selected = {}; // person_id -> stage_name
