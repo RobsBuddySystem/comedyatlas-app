@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 208,
+      "en": 209,
       "unconfirmed": 44
     },
     "latitude": 52.52,
@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 177,
-      "unconfirmed": 51
+      "unconfirmed": 53
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 101,
-      "fr": 3927,
+      "fr": 3922,
       "unconfirmed": 10
     },
     "latitude": 48.8566,
@@ -340,7 +340,7 @@
     "id": 30,
     "language_counts": {
       "en": 1,
-      "fr": 574
+      "fr": 573
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -811,7 +811,7 @@
     "id": 74,
     "language_counts": {
       "en": 1041,
-      "unconfirmed": 931
+      "unconfirmed": 930
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -829,7 +829,7 @@
     "id": 75,
     "language_counts": {
       "en": 7,
-      "unconfirmed": 99
+      "unconfirmed": 100
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -3361,7 +3361,7 @@
     "id": 258,
     "language_counts": {
       "en": 3,
-      "fr": 63
+      "fr": 62
     },
     "latitude": null,
     "longitude": null,
@@ -3667,7 +3667,7 @@
     "country_name": "France",
     "id": 278,
     "language_counts": {
-      "fr": 21
+      "fr": 19
     },
     "latitude": null,
     "longitude": null,
@@ -5054,23 +5054,6 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Australia/Melbourne"
-  },
-  {
-    "country_id": 1,
-    "country_iso2": "AU",
-    "country_name": "Australia",
-    "id": 421,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": -32.928624,
-    "longitude": 151.766622,
-    "name": "Newcastle West",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Australia/Sydney"
   },
   {
     "country_id": 1,
@@ -8274,7 +8257,7 @@
     "country_name": "UK",
     "id": 625,
     "language_counts": {
-      "unconfirmed": 35
+      "unconfirmed": 33
     },
     "latitude": 53.741346,
     "longitude": -0.342266,
@@ -11778,7 +11761,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 69
+      "unconfirmed": 71
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
