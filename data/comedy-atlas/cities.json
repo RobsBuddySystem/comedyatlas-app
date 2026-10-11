@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 101,
-      "fr": 3922,
+      "fr": 3901,
       "unconfirmed": 10
     },
     "latitude": 48.8566,
@@ -811,7 +811,7 @@
     "id": 74,
     "language_counts": {
       "en": 1041,
-      "unconfirmed": 930
+      "unconfirmed": 929
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -3256,23 +3256,6 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
-    "id": 251,
-    "language_counts": {
-      "fr": 1
-    },
-    "latitude": null,
-    "longitude": null,
-    "name": "Mauves sur Loire",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Paris"
-  },
-  {
-    "country_id": 20,
-    "country_iso2": "FR",
-    "country_name": "France",
     "id": 253,
     "language_counts": {
       "fr": 2
@@ -3343,7 +3326,7 @@
     "country_name": "France",
     "id": 257,
     "language_counts": {
-      "fr": 70
+      "fr": 69
     },
     "latitude": null,
     "longitude": null,
@@ -8614,7 +8597,7 @@
     "country_name": "UK",
     "id": 651,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 9
     },
     "latitude": 53.994463,
     "longitude": -1.540004,
