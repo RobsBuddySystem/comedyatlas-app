@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:armed-and-funny@comedyatlas.app
+DTSTAMP:20261109T040000Z
+DTSTART:20261109T040000Z
+DTEND:20261109T060000Z
+SUMMARY:Armed and Funny
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/armed-and
+ -funny/
+URL:https://comedyatlas.app/comedy-atlas/event/armed-and-funny/
+END:VEVENT
+END:VCALENDAR

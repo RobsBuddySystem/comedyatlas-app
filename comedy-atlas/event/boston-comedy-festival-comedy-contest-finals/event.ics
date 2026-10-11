@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boston-comedy-festival-comedy-contest-finals@comedyatlas.app
+DTSTAMP:20261115T010000Z
+DTSTART:20261115T010000Z
+DTEND:20261115T030000Z
+SUMMARY:Boston Comedy Festival: Comedy Contest Finals
+LOCATION:Crystal Ballroom at Somerville Theatre\, 55 Davis Square\, Somervi
+ lle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/boston-co
+ medy-festival-comedy-contest-finals/
+URL:https://comedyatlas.app/comedy-atlas/event/boston-comedy-festival-comed
+ y-contest-finals/
+END:VEVENT
+END:VCALENDAR

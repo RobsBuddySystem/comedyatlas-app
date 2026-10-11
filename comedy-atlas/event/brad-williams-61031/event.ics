@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brad-williams-61031@comedyatlas.app
+DTSTAMP:20261213T180000Z
+DTSTART:20261213T180000Z
+DTEND:20261213T200000Z
+SUMMARY:Brad Williams
+LOCATION:Sentrum Scene\, Arbeidersamfunnets plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brad-will
+ iams-61031/
+URL:https://comedyatlas.app/comedy-atlas/event/brad-williams-61031/
+END:VEVENT
+END:VCALENDAR

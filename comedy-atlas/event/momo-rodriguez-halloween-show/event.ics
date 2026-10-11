@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:momo-rodriguez-halloween-show@comedyatlas.app
+DTSTAMP:20261023T030000Z
+DTSTART:20261023T030000Z
+DTEND:20261023T050000Z
+SUMMARY:Momo Rodriguez Halloween Show
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/momo-rodr
+ iguez-halloween-show/
+URL:https://comedyatlas.app/comedy-atlas/event/momo-rodriguez-halloween-sho
+ w/
+END:VEVENT
+END:VCALENDAR

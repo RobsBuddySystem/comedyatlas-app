@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:capital-comedy-festival@comedyatlas.app
+DTSTAMP:20270313T010000Z
+DTSTART:20270313T010000Z
+DTEND:20270313T030000Z
+SUMMARY:Capital Comedy Festival
+LOCATION:DAR Constitution Hall\, 1776 D Street NW\, Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/capital-c
+ omedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/capital-comedy-festival/
+END:VEVENT
+END:VCALENDAR

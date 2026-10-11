@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-pigalle-60705@comedyatlas.app
+DTSTAMP:20261113T181500Z
+DTSTART:20261113T181500Z
+DTEND:20261113T201500Z
+SUMMARY:Comedy Pigalle
+LOCATION:31 Rue Pierre Fontaine\, 31 Rue Pierre Fontaine\, Paris
+DESCRIPTION:Venez découvrir les nouveaux talents du rire au Comedy Pigalle
+ \, la soirée stand up à deux pas du Moulin Rouge !\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/comedy-pigalle-60705/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-pigalle-60705/
+END:VEVENT
+END:VCALENDAR

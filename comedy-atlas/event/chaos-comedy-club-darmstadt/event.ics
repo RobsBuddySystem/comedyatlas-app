@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-darmstadt@comedyatlas.app
+DTSTAMP:20261211T190000Z
+DTSTART:20261211T190000Z
+DTEND:20261211T210000Z
+SUMMARY:Chaos Comedy Club | Darmstadt
+LOCATION:Comedy Keller Darmstadt\, Bessunger Str. 88\, Darmstadt
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-darmstadt/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-darmstadt/
+END:VEVENT
+END:VCALENDAR

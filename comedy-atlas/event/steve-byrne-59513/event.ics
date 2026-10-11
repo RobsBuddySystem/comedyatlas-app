@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-byrne-59513@comedyatlas.app
+DTSTAMP:20261101T000000Z
+DTSTART:20261101T000000Z
+DTEND:20261101T020000Z
+SUMMARY:Steve Byrne
+LOCATION:Improv Comedy Club- Houston\, 7620 Katy Fwy.\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-byr
+ ne-59513/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-byrne-59513/
+END:VEVENT
+END:VCALENDAR

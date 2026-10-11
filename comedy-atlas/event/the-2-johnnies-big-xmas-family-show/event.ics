@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-2-johnnies-big-xmas-family-show@comedyatlas.app
+DTSTAMP:20261228T170000Z
+DTSTART:20261228T170000Z
+DTEND:20261228T190000Z
+SUMMARY:The 2 Johnnies - Big Xmas Family Show
+LOCATION:Gleneagle Arena\, Muckross Road\, Co. Kerry
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-2-joh
+ nnies-big-xmas-family-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-2-johnnies-big-xmas-fami
+ ly-show/
+END:VEVENT
+END:VCALENDAR

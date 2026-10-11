@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bianca-del-rio@comedyatlas.app
+DTSTAMP:20270419T180000Z
+DTSTART:20270419T180000Z
+DTEND:20270419T200000Z
+SUMMARY:Bianca Del Rio
+LOCATION:Stadsschouwburg Antwerpen\, Theaterplein 1\, Antwerp
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bianca-de
+ l-rio/
+URL:https://comedyatlas.app/comedy-atlas/event/bianca-del-rio/
+END:VEVENT
+END:VCALENDAR

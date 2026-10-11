@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-big-dog-late-show@comedyatlas.app
+DTSTAMP:20261205T050000Z
+DTSTART:20261205T050000Z
+DTEND:20261205T070000Z
+SUMMARY:Nate Jackson: Big Dog (Late Show)
+LOCATION:The Auditorium\, 50 E Ida B. Wells Drive\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-big-dog-late-show/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-big-dog-late-sh
+ ow/
+END:VEVENT
+END:VCALENDAR

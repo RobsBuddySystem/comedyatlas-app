@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:female-dads-tour@comedyatlas.app
+DTSTAMP:20270116T033000Z
+DTSTART:20270116T033000Z
+DTEND:20270116T053000Z
+SUMMARY:Female Dads Tour
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/female-da
+ ds-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/female-dads-tour/
+END:VEVENT
+END:VCALENDAR

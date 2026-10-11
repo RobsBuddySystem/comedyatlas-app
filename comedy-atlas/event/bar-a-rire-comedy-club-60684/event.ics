@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bar-a-rire-comedy-club-60684@comedyatlas.app
+DTSTAMP:20261117T190000Z
+DTSTART:20261117T190000Z
+DTEND:20261117T210000Z
+SUMMARY:Bar à rire Comedy Club
+LOCATION:Bar à Rire Théâtre\, 55 rue Jean Jaurès\, Marly
+DESCRIPTION:Un micro\, un public\, des vannes !\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/bar-a-rire-comedy-club-60684/
+URL:https://comedyatlas.app/comedy-atlas/event/bar-a-rire-comedy-club-60684
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:remy-golo-dans-qui@comedyatlas.app
+DTSTAMP:20261116T200000Z
+DTSTART:20261116T200000Z
+DTEND:20261116T220000Z
+SUMMARY:Rémy Golo dans Qui ?
+LOCATION:Le Spotlight\, 100 rue Léon Gambetta\, Lille
+DESCRIPTION:Qui aurait pu croire qu'un jour\, un beau roux hypermétrope d'
+ un mètre soixante-quatorze du doux nom de Rémy Golo ferait un spectacle ?
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/remy-golo-dans-qui/
+URL:https://comedyatlas.app/comedy-atlas/event/remy-golo-dans-qui/
+END:VEVENT
+END:VCALENDAR

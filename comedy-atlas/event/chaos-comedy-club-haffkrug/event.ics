@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-haffkrug@comedyatlas.app
+DTSTAMP:20261017T170000Z
+DTSTART:20261017T170000Z
+DTEND:20261017T190000Z
+SUMMARY:Chaos Comedy Club | Haffkrug
+LOCATION:Haffhuus\, Bahnhofstraße 7\, Scharbeutz
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-haffkrug/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-haffkrug/
+END:VEVENT
+END:VCALENDAR

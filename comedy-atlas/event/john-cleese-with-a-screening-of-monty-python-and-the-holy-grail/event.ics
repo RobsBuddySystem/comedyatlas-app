@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-cleese-with-a-screening-of-monty-python-and-the-holy-grail@comedya
+ tlas.app
+DTSTAMP:20270331T020000Z
+DTSTART:20270331T020000Z
+DTEND:20270331T040000Z
+SUMMARY:John Cleese With A Screening Of Monty Python And The Holy Grail
+LOCATION:Balboa Theatre\, 868 Fourth Avenue\, San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-clee
+ se-with-a-screening-of-monty-python-and-the-holy-grail/
+URL:https://comedyatlas.app/comedy-atlas/event/john-cleese-with-a-screening
+ -of-monty-python-and-the-holy-grail/
+END:VEVENT
+END:VCALENDAR

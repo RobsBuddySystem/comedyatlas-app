@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-night-comedy-show-nov-6@comedyatlas.app
+DTSTAMP:20261106T220000Z
+DTSTART:20261106T220000Z
+DTEND:20261107T000000Z
+SUMMARY:Late Night Comedy Show - Nov 6
+LOCATION:Co Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/late-nigh
+ t-comedy-show-nov-6/
+URL:https://comedyatlas.app/comedy-atlas/event/late-night-comedy-show-nov-6
+ /
+END:VEVENT
+END:VCALENDAR

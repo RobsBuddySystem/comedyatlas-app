@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yannick-de-la-peche-danke-mama@comedyatlas.app
+DTSTAMP:20261118T190000Z
+DTSTART:20261118T190000Z
+DTEND:20261118T210000Z
+SUMMARY:Yannick de la Pêche - Danke\, Mama
+LOCATION:St. Pauli Comedy Club\, Hein-Hoyer-Straße 76\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yannick-d
+ e-la-peche-danke-mama/
+URL:https://comedyatlas.app/comedy-atlas/event/yannick-de-la-peche-danke-ma
+ ma/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-agnew-no-more-heroes-60919@comedyatlas.app
+DTSTAMP:20270304T190000Z
+DTSTART:20270304T190000Z
+DTEND:20270304T210000Z
+SUMMARY:Alex Agnew "No more heroes"
+LOCATION:Trixxo Theater Hasselt\, Trichterheideweg\, Hasselt
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-agne
+ w-no-more-heroes-60919/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-agnew-no-more-heroes-60
+ 919/
+END:VEVENT
+END:VCALENDAR

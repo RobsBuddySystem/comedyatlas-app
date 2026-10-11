@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shawn-chidiac@comedyatlas.app
+DTSTAMP:20270113T010000Z
+DTSTART:20270113T010000Z
+DTEND:20270113T030000Z
+SUMMARY:Shawn Chidiac
+LOCATION:The Laugh Shop\, 5940 Blackfoot Trail SE\, Calgary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shawn-chi
+ diac/
+URL:https://comedyatlas.app/comedy-atlas/event/shawn-chidiac/
+END:VEVENT
+END:VCALENDAR

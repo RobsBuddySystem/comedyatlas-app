@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tolga-cevik-tolgshow@comedyatlas.app
+DTSTAMP:20270120T173000Z
+DTSTART:20270120T173000Z
+DTEND:20270120T193000Z
+SUMMARY:Tolga Çevik - Tolgshow
+LOCATION:Congresium Ankara\, Söğütözü Cad. No:1/A\, Ankara
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tolga-cev
+ ik-tolgshow/
+URL:https://comedyatlas.app/comedy-atlas/event/tolga-cevik-tolgshow/
+END:VEVENT
+END:VCALENDAR

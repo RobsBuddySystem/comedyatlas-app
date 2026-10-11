@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lovers-legends@comedyatlas.app
+DTSTAMP:20270214T000000Z
+DTSTART:20270214T000000Z
+DTEND:20270214T020000Z
+SUMMARY:Lovers & Legends
+LOCATION:Bojangles Coliseum\, 2700 E Independence Boulevard\, Charlotte
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lovers-le
+ gends/
+URL:https://comedyatlas.app/comedy-atlas/event/lovers-legends/
+END:VEVENT
+END:VCALENDAR

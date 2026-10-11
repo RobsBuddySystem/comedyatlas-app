@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abi-clarke-just-tell-me-when-its-over@comedyatlas.app
+DTSTAMP:20270126T190000Z
+DTSTART:20270126T190000Z
+DTEND:20270126T210000Z
+SUMMARY:Abi Clarke - Just Tell Me When Its Over
+LOCATION:Bristol Old Vic\, Kings Street\, Bristol
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/abi-clark
+ e-just-tell-me-when-its-over/
+URL:https://comedyatlas.app/comedy-atlas/event/abi-clarke-just-tell-me-when
+ -its-over/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jose-cruz@comedyatlas.app
+DTSTAMP:20261107T190000Z
+DTSTART:20261107T190000Z
+DTEND:20261107T210000Z
+SUMMARY:José Cruz
+LOCATION:Aula Magna\, Place Raymond Lemaire\, 1\, Louvain-la-Neuve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jose-cruz
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/jose-cruz/
+END:VEVENT
+END:VCALENDAR

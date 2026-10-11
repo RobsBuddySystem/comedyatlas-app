@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abi-clarke@comedyatlas.app
+DTSTAMP:20270117T200000Z
+DTSTART:20270117T200000Z
+DTEND:20270117T220000Z
+SUMMARY:Abi clarke
+LOCATION:Whelans\, 25 Wexford St\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/abi-clark
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/abi-clarke/
+END:VEVENT
+END:VCALENDAR

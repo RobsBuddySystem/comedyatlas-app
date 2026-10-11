@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-59858@comedyatlas.app
+DTSTAMP:20270116T020000Z
+DTSTART:20270116T020000Z
+DTEND:20270116T040000Z
+SUMMARY:Mike Epps
+LOCATION:Margaritaville Resort Casino\, 777 Margaritaville Way\, Bossier Ci
+ ty
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -59858/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-59858/
+END:VEVENT
+END:VCALENDAR

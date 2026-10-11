@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:april-fools-comedy-show@comedyatlas.app
+DTSTAMP:20270404T010000Z
+DTSTART:20270404T010000Z
+DTEND:20270404T030000Z
+SUMMARY:April Fools Comedy Show
+LOCATION:Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/april-foo
+ ls-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/april-fools-comedy-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:neev@comedyatlas.app
+DTSTAMP:20270417T000000Z
+DTSTART:20270417T000000Z
+DTEND:20270417T020000Z
+SUMMARY:Neev
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/neev/
+URL:https://comedyatlas.app/comedy-atlas/event/neev/
+END:VEVENT
+END:VCALENDAR

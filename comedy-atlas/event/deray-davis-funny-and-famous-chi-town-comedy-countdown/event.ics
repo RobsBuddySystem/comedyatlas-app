@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deray-davis-funny-and-famous-chi-town-comedy-countdown@comedyatlas.app
+DTSTAMP:20270101T020000Z
+DTSTART:20270101T020000Z
+DTEND:20270101T040000Z
+SUMMARY:DeRay Davis' Funny And Famous Chi Town Comedy Countdown
+LOCATION:Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/deray-dav
+ is-funny-and-famous-chi-town-comedy-countdown/
+URL:https://comedyatlas.app/comedy-atlas/event/deray-davis-funny-and-famous
+ -chi-town-comedy-countdown/
+END:VEVENT
+END:VCALENDAR

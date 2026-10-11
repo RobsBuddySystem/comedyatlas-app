@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:beat-the-gong-english-standup-comedy-and-magic-special@comedyatlas.app
+DTSTAMP:20261120T183000Z
+DTSTART:20261120T183000Z
+DTEND:20261120T201500Z
+SUMMARY:Beat the Gong - English Standup Comedy and Magic Special
+LOCATION:Munich
+DESCRIPTION:Survival of the Funniest. Performers compete for the audience. 
+ If the audience doesn't like the performer\, they can vote them off!\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/beat-the-gong-english-stan
+ dup-comedy-and-magic-special/
+URL:https://comedyatlas.app/comedy-atlas/event/beat-the-gong-english-standu
+ p-comedy-and-magic-special/
+END:VEVENT
+END:VCALENDAR

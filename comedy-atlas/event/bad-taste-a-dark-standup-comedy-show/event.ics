@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bad-taste-a-dark-standup-comedy-show@comedyatlas.app
+DTSTAMP:20261114T183000Z
+DTSTART:20261114T183000Z
+DTEND:20261114T201500Z
+SUMMARY:Bad Taste - A dark standup comedy show!
+LOCATION:Munich
+DESCRIPTION:Welcome to Bad Taste\, the standup comedy show for people who l
+ ike their humor darker.\nMore info: https://comedyatlas.app/comedy-atlas/ev
+ ent/bad-taste-a-dark-standup-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/bad-taste-a-dark-standup-com
+ edy-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-garcia@comedyatlas.app
+DTSTAMP:20261220T030000Z
+DTSTART:20261220T030000Z
+DTEND:20261220T050000Z
+SUMMARY:Jerry Garcia
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-gar
+ cia/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-garcia/
+END:VEVENT
+END:VCALENDAR

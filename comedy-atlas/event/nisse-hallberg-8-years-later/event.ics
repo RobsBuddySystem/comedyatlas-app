@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nisse-hallberg-8-years-later@comedyatlas.app
+DTSTAMP:20261105T183000Z
+DTSTART:20261105T183000Z
+DTEND:20261105T203000Z
+SUMMARY:Nisse Hallberg - 8 years later
+LOCATION:Sara kulturhus Stage 1\, Kanalgatan 43b\, Skellefteå
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nisse-hal
+ lberg-8-years-later/
+URL:https://comedyatlas.app/comedy-atlas/event/nisse-hallberg-8-years-later
+ /
+END:VEVENT
+END:VCALENDAR

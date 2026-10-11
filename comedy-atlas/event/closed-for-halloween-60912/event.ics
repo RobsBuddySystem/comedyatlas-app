@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:closed-for-halloween-60912@comedyatlas.app
+DTSTAMP:20261101T010000Z
+DTSTART:20261101T010000Z
+DTEND:20261101T030000Z
+SUMMARY:Closed for Halloween!
+LOCATION:Spokane Comedy Club\, 315 W. Sprague\, Spokane
+DESCRIPTION:Closed for Halloween! Enjoy the festivities and check our club'
+ s calendar for exciting shows coming up!\nMore info: https://comedyatlas.ap
+ p/comedy-atlas/event/closed-for-halloween-60912/
+URL:https://comedyatlas.app/comedy-atlas/event/closed-for-halloween-60912/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:clichy-comedy-club@comedyatlas.app
+DTSTAMP:20261111T190000Z
+DTSTART:20261111T190000Z
+DTEND:20261111T210000Z
+SUMMARY:Clichy Comedy Club
+LOCATION:L'Imprimerie Hôtel\, 15 rue Victor Méric\, Clichy
+DESCRIPTION:Une scène\, un micro\, des vannes\, des verres : le meilleur d
+ u stand-up débarque à Clichy et ça va envoyer !\nMore info: https://come
+ dyatlas.app/comedy-atlas/event/clichy-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/clichy-comedy-club/
+END:VEVENT
+END:VCALENDAR

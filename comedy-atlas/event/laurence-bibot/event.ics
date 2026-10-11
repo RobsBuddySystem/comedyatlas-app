@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laurence-bibot@comedyatlas.app
+DTSTAMP:20280118T190000Z
+DTSTART:20280118T190000Z
+DTEND:20280118T210000Z
+SUMMARY:Laurence Bibot
+LOCATION:Cirque Royal - Koninklijk Circus\, R de l'Enseignement-Onderrichts
+ straat 81\, Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laurence-
+ bibot/
+URL:https://comedyatlas.app/comedy-atlas/event/laurence-bibot/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mario-rosenstock-boom@comedyatlas.app
+DTSTAMP:20270313T193000Z
+DTSTART:20270313T193000Z
+DTEND:20270313T213000Z
+SUMMARY:Mario Rosenstock - BOOM!
+LOCATION:University Concert Hall\, Plassey\, Limerick City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mario-ros
+ enstock-boom/
+URL:https://comedyatlas.app/comedy-atlas/event/mario-rosenstock-boom/
+END:VEVENT
+END:VCALENDAR

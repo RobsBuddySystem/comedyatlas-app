@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-titisee-neustadt@comedyatlas.app
+DTSTAMP:20270128T190000Z
+DTSTART:20270128T190000Z
+DTEND:20270128T210000Z
+SUMMARY:Chaos Comedy Club | Titisee-Neustadt
+LOCATION:Krone-Theater\, Hirschenbuckel 5\, Titisee-Neustadt
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-titisee-neustadt/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-titisee-ne
+ ustadt/
+END:VEVENT
+END:VCALENDAR

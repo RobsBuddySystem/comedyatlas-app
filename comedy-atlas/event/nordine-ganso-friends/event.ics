@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nordine-ganso-friends@comedyatlas.app
+DTSTAMP:20261217T193000Z
+DTSTART:20261217T193000Z
+DTEND:20261217T213000Z
+SUMMARY:Nordine Ganso & Friends
+LOCATION:Le Maxime\, Rue Sigismond-Thalberg 2\, Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nordine-g
+ anso-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/nordine-ganso-friends/
+END:VEVENT
+END:VCALENDAR

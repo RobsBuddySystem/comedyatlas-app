@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ed-night-remains@comedyatlas.app
+DTSTAMP:20270429T193000Z
+DTSTART:20270429T193000Z
+DTEND:20270429T213000Z
+SUMMARY:Ed Night - Remains
+LOCATION:The Sugar Club\, 8 Lower Leeson Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ed-night-
+ remains/
+URL:https://comedyatlas.app/comedy-atlas/event/ed-night-remains/
+END:VEVENT
+END:VCALENDAR

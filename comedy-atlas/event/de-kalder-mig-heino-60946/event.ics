@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:de-kalder-mig-heino-60946@comedyatlas.app
+DTSTAMP:20271106T193000Z
+DTSTART:20271106T193000Z
+DTEND:20271106T213000Z
+SUMMARY:DE KALDER MIG HEINO
+LOCATION:Falkonersalen\, Falkoner Alle 9\, Frederiksberg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/de-kalder
+ -mig-heino-60946/
+URL:https://comedyatlas.app/comedy-atlas/event/de-kalder-mig-heino-60946/
+END:VEVENT
+END:VCALENDAR

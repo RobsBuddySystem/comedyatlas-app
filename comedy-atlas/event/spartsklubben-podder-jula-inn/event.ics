@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spartsklubben-podder-jula-inn@comedyatlas.app
+DTSTAMP:20261204T070000Z
+DTSTART:20261204T070000Z
+DTEND:20261204T090000Z
+SUMMARY:Spårtsklubben podder jula inn!
+LOCATION:Sentrum Scene\, Arbeidersamfunnets plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/spartsklu
+ bben-podder-jula-inn/
+URL:https://comedyatlas.app/comedy-atlas/event/spartsklubben-podder-jula-in
+ n/
+END:VEVENT
+END:VCALENDAR

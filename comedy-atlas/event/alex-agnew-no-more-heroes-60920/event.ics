@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-agnew-no-more-heroes-60920@comedyatlas.app
+DTSTAMP:20270325T190000Z
+DTSTART:20270325T190000Z
+DTEND:20270325T210000Z
+SUMMARY:Alex Agnew "No more heroes"
+LOCATION:Stadsschouwburg Antwerpen\, Theaterplein 1\, Antwerp
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-agne
+ w-no-more-heroes-60920/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-agnew-no-more-heroes-60
+ 920/
+END:VEVENT
+END:VCALENDAR

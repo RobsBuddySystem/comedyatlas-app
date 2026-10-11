@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bogdan-lisevsky-berlin@comedyatlas.app
+DTSTAMP:20261110T180000Z
+DTSTART:20261110T180000Z
+DTEND:20261110T200000Z
+SUMMARY:Bogdan Lisevsky | Berlin
+LOCATION:PUNCH L!NE Club Berlin\, Marlene-Dietrich-Platz 1\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bogdan-li
+ sevsky-berlin/
+URL:https://comedyatlas.app/comedy-atlas/event/bogdan-lisevsky-berlin/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:red-comedy-club-61229@comedyatlas.app
+DTSTAMP:20261116T180000Z
+DTSTART:20261116T180000Z
+DTEND:20261116T200000Z
+SUMMARY:Red Comedy Club
+LOCATION:Red Comedy Club\, 48 rue Basfroi\, Paris
+DESCRIPTION:Situé rue Basfroi dans le 11e arrondissement de Paris\, craque
+ z pour l'atmosphère intime et cosy du Red Comedy Club !\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/red-comedy-club-61229/
+URL:https://comedyatlas.app/comedy-atlas/event/red-comedy-club-61229/
+END:VEVENT
+END:VCALENDAR

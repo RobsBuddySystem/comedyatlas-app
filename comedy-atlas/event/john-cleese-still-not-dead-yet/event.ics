@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-cleese-still-not-dead-yet@comedyatlas.app
+DTSTAMP:20270311T000000Z
+DTSTART:20270311T000000Z
+DTEND:20270311T020000Z
+SUMMARY:John Cleese: Still Not Dead (Yet)
+LOCATION:Old National Centre\, 502 N. New Jersey\, Indianapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-clee
+ se-still-not-dead-yet/
+URL:https://comedyatlas.app/comedy-atlas/event/john-cleese-still-not-dead-y
+ et/
+END:VEVENT
+END:VCALENDAR

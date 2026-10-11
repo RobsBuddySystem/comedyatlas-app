@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrew-bird-59627@comedyatlas.app
+DTSTAMP:20270303T193000Z
+DTSTART:20270303T193000Z
+DTEND:20270303T213000Z
+SUMMARY:Andrew Bird
+LOCATION:Wardrobe\, 6 St. Peters Square\, Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andrew-bi
+ rd-59627/
+URL:https://comedyatlas.app/comedy-atlas/event/andrew-bird-59627/
+END:VEVENT
+END:VCALENDAR
