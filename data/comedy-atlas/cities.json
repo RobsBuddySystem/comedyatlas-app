@@ -57,7 +57,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 233
+      "unconfirmed": 229
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -829,7 +829,7 @@
     "id": 75,
     "language_counts": {
       "en": 7,
-      "unconfirmed": 100
+      "unconfirmed": 99
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -846,7 +846,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 25
+      "unconfirmed": 24
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -1104,7 +1104,7 @@
     "id": 92,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 286
+      "unconfirmed": 284
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1362,8 +1362,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 464,
-      "unconfirmed": 470
+      "en": 462,
+      "unconfirmed": 466
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1551,7 +1551,7 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 238
+      "unconfirmed": 237
     },
     "latitude": 38.895098,
     "longitude": -77.036385,
@@ -1671,7 +1671,7 @@
     "country_name": "United States",
     "id": 130,
     "language_counts": {
-      "unconfirmed": 69
+      "unconfirmed": 68
     },
     "latitude": 34.075596,
     "longitude": -84.294596,
@@ -1706,7 +1706,7 @@
     "id": 132,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 148
+      "unconfirmed": 146
     },
     "latitude": 33.306203,
     "longitude": -111.841185,
@@ -1791,7 +1791,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 243
+      "unconfirmed": 240
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1842,7 +1842,7 @@
     "country_name": "United States",
     "id": 140,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 40.606134,
     "longitude": -111.939521,
@@ -1859,7 +1859,7 @@
     "country_name": "United States",
     "id": 141,
     "language_counts": {
-      "unconfirmed": 18
+      "unconfirmed": 17
     },
     "latitude": 41.223005,
     "longitude": -111.973843,
@@ -1910,7 +1910,7 @@
     "country_name": "United States",
     "id": 146,
     "language_counts": {
-      "unconfirmed": 208
+      "unconfirmed": 206
     },
     "latitude": 37.787936,
     "longitude": -122.40752,
@@ -5044,7 +5044,7 @@
     "country_name": "Australia",
     "id": 420,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": -37.754791,
     "longitude": 145.001038,
@@ -11129,23 +11129,6 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
-    "id": 798,
-    "language_counts": {
-      "unconfirmed": 2
-    },
-    "latitude": 26.7174,
-    "longitude": -80.069504,
-    "name": "West Palm Beach",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/New_York"
-  },
-  {
-    "country_id": 60,
-    "country_iso2": "US",
-    "country_name": "United States",
     "id": 799,
     "language_counts": {
       "unconfirmed": 1
@@ -11573,7 +11556,7 @@
     "country_name": "United States",
     "id": 827,
     "language_counts": {
-      "unconfirmed": 59
+      "unconfirmed": 58
     },
     "latitude": 33.652275,
     "longitude": -117.744924,
@@ -11590,7 +11573,7 @@
     "country_name": "United States",
     "id": 828,
     "language_counts": {
-      "unconfirmed": 7
+      "unconfirmed": 6
     },
     "latitude": 42.494671,
     "longitude": -96.407236,
@@ -11624,7 +11607,7 @@
     "country_name": "United States",
     "id": 830,
     "language_counts": {
-      "unconfirmed": 1076
+      "unconfirmed": 1068
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -11642,7 +11625,7 @@
     "id": 831,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 164
+      "unconfirmed": 162
     },
     "latitude": 38.595283,
     "longitude": -121.417411,
@@ -11676,7 +11659,7 @@
     "country_name": "United States",
     "id": 833,
     "language_counts": {
-      "unconfirmed": 54
+      "unconfirmed": 53
     },
     "latitude": 34.074345,
     "longitude": -117.550029,
@@ -11693,7 +11676,7 @@
     "country_name": "United States",
     "id": 834,
     "language_counts": {
-      "unconfirmed": 25
+      "unconfirmed": 24
     },
     "latitude": 33.455577,
     "longitude": -117.1059,
@@ -11710,7 +11693,7 @@
     "country_name": "United States",
     "id": 835,
     "language_counts": {
-      "unconfirmed": 62
+      "unconfirmed": 59
     },
     "latitude": 39.530692,
     "longitude": -119.815314,
@@ -11795,7 +11778,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 70
+      "unconfirmed": 69
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -12135,23 +12118,6 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
-    "id": 862,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 34.230202,
-    "longitude": -119.170799,
-    "name": "Oxnard",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/Los_Angeles"
-  },
-  {
-    "country_id": 60,
-    "country_iso2": "US",
-    "country_name": "United States",
     "id": 863,
     "language_counts": {
       "unconfirmed": 5
@@ -12427,7 +12393,7 @@
     "country_name": "United States",
     "id": 881,
     "language_counts": {
-      "unconfirmed": 15
+      "unconfirmed": 14
     },
     "latitude": 38.298,
     "longitude": -122.286417,
@@ -12478,7 +12444,7 @@
     "country_name": "United States",
     "id": 885,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 34.175071,
     "longitude": -118.849491,
@@ -12631,7 +12597,7 @@
     "country_name": "United States",
     "id": 895,
     "language_counts": {
-      "unconfirmed": 16
+      "unconfirmed": 15
     },
     "latitude": 32.225101,
     "longitude": -110.969001,
@@ -12649,7 +12615,7 @@
     "id": 896,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 2
+      "unconfirmed": 1
     },
     "latitude": 39.052116,
     "longitude": -121.511833,
@@ -12666,7 +12632,7 @@
     "country_name": "United States",
     "id": 897,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 1
     },
     "latitude": 46.375069,
     "longitude": -120.342318,
@@ -16106,7 +16072,7 @@
     "country_name": "Mexico",
     "id": 1108,
     "language_counts": {
-      "unconfirmed": 43
+      "unconfirmed": 41
     },
     "latitude": 19.394672,
     "longitude": -99.16067,
