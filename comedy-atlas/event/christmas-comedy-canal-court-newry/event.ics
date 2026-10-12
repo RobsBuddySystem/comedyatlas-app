@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-comedy-canal-court-newry@comedyatlas.app
+DTSTAMP:20261229T200000Z
+DTSTART:20261229T200000Z
+DTEND:20261229T220000Z
+SUMMARY:Christmas Comedy - Canal Court\, Newry
+LOCATION:Canal Court Hotel\, Merchants Quay\,\, Newry
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -comedy-canal-court-newry/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-comedy-canal-court
+ -newry/
+END:VEVENT
+END:VCALENDAR

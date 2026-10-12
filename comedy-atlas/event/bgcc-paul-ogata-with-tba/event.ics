@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-paul-ogata-with-tba@comedyatlas.app
+DTSTAMP:20261026T030000Z
+DTSTART:20261026T030000Z
+DTEND:20261026T050000Z
+SUMMARY:BGCC: Paul Ogata with TBA
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-paul
+ -ogata-with-tba/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-paul-ogata-with-tba/
+END:VEVENT
+END:VCALENDAR

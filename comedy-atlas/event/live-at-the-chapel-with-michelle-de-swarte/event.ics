@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-at-the-chapel-with-michelle-de-swarte@comedyatlas.app
+DTSTAMP:20270410T184500Z
+DTSTART:20270410T184500Z
+DTEND:20270410T204500Z
+SUMMARY:Live at The Chapel with Michelle De Swarte
+LOCATION:Union Chapel\, Compton Terrace\, Off Upper ST\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/live-at-t
+ he-chapel-with-michelle-de-swarte/
+URL:https://comedyatlas.app/comedy-atlas/event/live-at-the-chapel-with-mich
+ elle-de-swarte/
+END:VEVENT
+END:VCALENDAR

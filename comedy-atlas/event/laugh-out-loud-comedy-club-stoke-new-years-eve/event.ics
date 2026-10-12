@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-out-loud-comedy-club-stoke-new-years-eve@comedyatlas.app
+DTSTAMP:20261231T190000Z
+DTSTART:20261231T190000Z
+DTEND:20261231T210000Z
+SUMMARY:Laugh Out Loud Comedy Club - Stoke - New Years Eve
+LOCATION:Regent Theatre\, 35-37 Piccadilly\, Stoke-On-Trent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-out
+ -loud-comedy-club-stoke-new-years-eve/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-out-loud-comedy-club-s
+ toke-new-years-eve/
+END:VEVENT
+END:VCALENDAR

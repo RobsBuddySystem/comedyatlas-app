@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-comedy-silverbirch-hotel-omagh@comedyatlas.app
+DTSTAMP:20261230T200000Z
+DTSTART:20261230T200000Z
+DTEND:20261230T220000Z
+SUMMARY:Christmas Comedy - Silverbirch Hotel\, Omagh
+LOCATION:Silverbirch Hotel\, Gortin Road\, Omagh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christmas
+ -comedy-silverbirch-hotel-omagh/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-comedy-silverbirch
+ -hotel-omagh/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-night-at-up-the-creek-with-paul-sinha@comedyatlas.app
+DTSTAMP:20261101T183000Z
+DTSTART:20261101T183000Z
+DTEND:20261101T203000Z
+SUMMARY:A Night At Up The Creek with Paul Sinha
+LOCATION:Up The Creek\, 302 Creek Road\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-night-a
+ t-up-the-creek-with-paul-sinha/
+URL:https://comedyatlas.app/comedy-atlas/event/a-night-at-up-the-creek-with
+ -paul-sinha/
+END:VEVENT
+END:VCALENDAR

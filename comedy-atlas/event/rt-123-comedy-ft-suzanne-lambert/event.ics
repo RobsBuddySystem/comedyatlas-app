@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rt-123-comedy-ft-suzanne-lambert@comedyatlas.app
+DTSTAMP:20261025T000000Z
+DTSTART:20261025T000000Z
+DTEND:20261025T020000Z
+SUMMARY:Rt. 123 Comedy ft. Suzanne Lambert
+LOCATION:Tysons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rt-123-co
+ medy-ft-suzanne-lambert/
+URL:https://comedyatlas.app/comedy-atlas/event/rt-123-comedy-ft-suzanne-lam
+ bert/
+END:VEVENT
+END:VCALENDAR
