@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:talking-bollox-live@comedyatlas.app
+DTSTAMP:20270430T173000Z
+DTSTART:20270430T173000Z
+DTEND:20270430T193000Z
+SUMMARY:Talking Bollox Live
+LOCATION:3Arena\, East Link Bridge\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/talking-b
+ ollox-live/
+URL:https://comedyatlas.app/comedy-atlas/event/talking-bollox-live/
+END:VEVENT
+END:VCALENDAR

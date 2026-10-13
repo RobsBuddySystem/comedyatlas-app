@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-mcsavage-tallaght-jan-2@comedyatlas.app
+DTSTAMP:20270102T200000Z
+DTSTART:20270102T200000Z
+DTEND:20270102T220000Z
+SUMMARY:David McSavage - Tallaght - Jan 2
+LOCATION:Maldron Hotel Tallaght\, Whitestown Way\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-mcs
+ avage-tallaght-jan-2/
+URL:https://comedyatlas.app/comedy-atlas/event/david-mcsavage-tallaght-jan-
+ 2/
+END:VEVENT
+END:VCALENDAR

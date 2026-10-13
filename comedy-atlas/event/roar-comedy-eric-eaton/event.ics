@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-eric-eaton@comedyatlas.app
+DTSTAMP:20270423T230000Z
+DTSTART:20270423T230000Z
+DTEND:20270424T010000Z
+SUMMARY:ROAR! Comedy: Eric Eaton
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-eric-eaton/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-eric-eaton/
+END:VEVENT
+END:VCALENDAR

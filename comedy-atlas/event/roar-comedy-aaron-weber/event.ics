@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-aaron-weber@comedyatlas.app
+DTSTAMP:20270404T000000Z
+DTSTART:20270404T000000Z
+DTEND:20270404T020000Z
+SUMMARY:ROAR! Comedy: Aaron Weber
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-aaron-weber/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-aaron-weber/
+END:VEVENT
+END:VCALENDAR

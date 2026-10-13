@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-hofstetter-61932@comedyatlas.app
+DTSTAMP:20270807T023000Z
+DTSTART:20270807T023000Z
+DTEND:20270807T043000Z
+SUMMARY:Steve Hofstetter
+LOCATION:Neptune Theatre\, 1303 NE 45th Street\, Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-hof
+ stetter-61932/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-hofstetter-61932/
+END:VEVENT
+END:VCALENDAR

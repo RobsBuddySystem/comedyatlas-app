@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-61799@comedyatlas.app
+DTSTAMP:20270116T010000Z
+DTSTART:20270116T010000Z
+DTEND:20270116T030000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Pensacola Saenger Theatre\, 118 S Palafox\, Pensacola
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-61799/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-61799/
+END:VEVENT
+END:VCALENDAR

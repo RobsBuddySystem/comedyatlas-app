@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-natalie-cuomo@comedyatlas.app
+DTSTAMP:20270606T003000Z
+DTSTART:20270606T003000Z
+DTEND:20270606T023000Z
+SUMMARY:ROAR! Comedy: Natalie Cuomo
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-natalie-cuomo/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-natalie-cuomo/
+END:VEVENT
+END:VCALENDAR

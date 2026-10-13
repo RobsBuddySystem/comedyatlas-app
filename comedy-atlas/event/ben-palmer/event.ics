@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-palmer@comedyatlas.app
+DTSTAMP:20270423T230000Z
+DTSTART:20270423T230000Z
+DTEND:20270424T010000Z
+SUMMARY:Ben Palmer
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-palme
+ r/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-palmer/
+END:VEVENT
+END:VCALENDAR

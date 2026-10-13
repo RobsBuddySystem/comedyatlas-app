@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yurie-collins@comedyatlas.app
+DTSTAMP:20270121T013000Z
+DTSTART:20270121T013000Z
+DTEND:20270121T033000Z
+SUMMARY:Yurie Collins
+LOCATION:Houston Improv\, 7620 Katy Freeway\, Ste. 455\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yurie-col
+ lins/
+URL:https://comedyatlas.app/comedy-atlas/event/yurie-collins/
+END:VEVENT
+END:VCALENDAR
