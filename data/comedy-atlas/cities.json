@@ -127,7 +127,7 @@
     "country_name": "Netherlands",
     "id": 16,
     "language_counts": {
-      "en": 177,
+      "en": 178,
       "unconfirmed": 51
     },
     "latitude": 52.3676,
@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 255
+      "unconfirmed": 254
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -266,8 +266,8 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 101,
-      "fr": 3790,
+      "en": 100,
+      "fr": 3760,
       "unconfirmed": 10
     },
     "latitude": 48.8566,
@@ -340,7 +340,7 @@
     "id": 30,
     "language_counts": {
       "en": 1,
-      "fr": 572
+      "fr": 564
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -535,7 +535,7 @@
     "id": 43,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 7
+      "unconfirmed": 6
     },
     "latitude": 59.9139,
     "longitude": 10.7522,
@@ -725,7 +725,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 74
+      "unconfirmed": 73
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -2356,7 +2356,7 @@
     "id": 189,
     "language_counts": {
       "en": 2,
-      "fr": 96
+      "fr": 95
     },
     "latitude": 50.6292,
     "longitude": 3.0573,
@@ -2441,7 +2441,7 @@
     "country_name": "France",
     "id": 194,
     "language_counts": {
-      "fr": 13
+      "fr": 12
     },
     "latitude": null,
     "longitude": null,
@@ -2611,7 +2611,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 230
+      "fr": 227
     },
     "latitude": null,
     "longitude": null,
@@ -5314,23 +5314,6 @@
     "country_id": 45,
     "country_iso2": "TR",
     "country_name": "T\u00fcrkiye",
-    "id": 439,
-    "language_counts": {
-      "unconfirmed": 2
-    },
-    "latitude": 39.773134,
-    "longitude": 30.525909,
-    "name": "Eski\u015fehir",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Istanbul"
-  },
-  {
-    "country_id": 45,
-    "country_iso2": "TR",
-    "country_name": "T\u00fcrkiye",
     "id": 440,
     "language_counts": {
       "unconfirmed": 3
@@ -5367,7 +5350,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 442,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 8
     },
     "latitude": 40.228159,
     "longitude": 28.984566,
@@ -5469,7 +5452,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 449,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 5
     },
     "latitude": 36.716242,
     "longitude": 34.468184,
