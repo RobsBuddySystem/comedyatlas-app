@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 99,
-      "fr": 3726,
+      "fr": 3721,
       "unconfirmed": 20
     },
     "latitude": 48.8566,
@@ -285,7 +285,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 20,
+      "en": 22,
       "unconfirmed": 2
     },
     "latitude": 38.7223,
@@ -2611,7 +2611,8 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 236
+      "fr": 236,
+      "unconfirmed": 1
     },
     "latitude": null,
     "longitude": null,
