@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:network-presents-network-comedy-club@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Network Presents: Network Comedy Club
+LOCATION:Network Sheffield 14 16 Matilda Street S14qd\, Network  14-16 mati
+ lda street\, Sheffield
+DESCRIPTION:Comedy For everyone. No gatekeeping\, no pretension. Just a goo
+ d laugh on a Friday evening.\nMore info: https://comedyatlas.app/comedy-atl
+ as/event/network-presents-network-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/network-presents-network-com
+ edy-club/
+END:VEVENT
+END:VCALENDAR

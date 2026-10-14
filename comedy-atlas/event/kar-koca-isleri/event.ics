@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kar-koca-isleri@comedyatlas.app
+DTSTAMP:20261018T170000Z
+DTSTART:20261018T170000Z
+DTEND:20261018T190000Z
+SUMMARY:Karı Koca İşleri
+LOCATION:Cemil Meriç Kültür Merkezi\, Hamidiye\, Billur Sk. No:6\, 16600
+ \, Bursa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kar-koca-
+ isleri/
+URL:https://comedyatlas.app/comedy-atlas/event/kar-koca-isleri/
+END:VEVENT
+END:VCALENDAR

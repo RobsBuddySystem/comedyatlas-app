@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-joke-comedy-club-open-mic@comedyatlas.app
+DTSTAMP:20261017T130000Z
+DTSTART:20261017T130000Z
+DTEND:20261017T150000Z
+SUMMARY:The Joke Comedy Club : Open Mic
+LOCATION:The Joke\, 37 rue Quincampoix\, Paris
+DESCRIPTION:Découvrez le plateau "Open Mic"\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/the-joke-comedy-club-open-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/the-joke-comedy-club-open-mi
+ c/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-vault-comedy-club@comedyatlas.app
+DTSTAMP:20261101T190000Z
+DTSTART:20261101T190000Z
+DTEND:20261101T210000Z
+SUMMARY:The vault comedy club
+LOCATION:The Vault Bar And Lounge\, 2A Crescent East\, Blackpool
+DESCRIPTION:Comedy is coming to Cleveleys... and it's going to be a belter\
+ nGet ready for a night of live stand-up comedy at The Vault Comedy Club on\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/the-vault-comedy-clu
+ b/
+URL:https://comedyatlas.app/comedy-atlas/event/the-vault-comedy-club/
+END:VEVENT
+END:VCALENDAR

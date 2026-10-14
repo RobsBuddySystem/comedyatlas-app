@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drink-draw@comedyatlas.app
+DTSTAMP:20270220T190000Z
+DTSTART:20270220T190000Z
+DTEND:20270220T210000Z
+SUMMARY:Drink & Draw
+LOCATION:The OEC\, Owlerton Sports Stadium\, Penistone Road\, Sheffield
+DESCRIPTION:Our sell out show - Drink & Draw - returns\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/drink-draw/
+URL:https://comedyatlas.app/comedy-atlas/event/drink-draw/
+END:VEVENT
+END:VCALENDAR

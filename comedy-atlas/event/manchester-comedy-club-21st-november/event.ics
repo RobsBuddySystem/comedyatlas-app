@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:manchester-comedy-club-21st-november@comedyatlas.app
+DTSTAMP:20261121T183000Z
+DTSTART:20261121T183000Z
+DTEND:20261121T203000Z
+SUMMARY:Manchester Comedy Club - 21st November
+LOCATION:Area Manchester\, 50 Sackville Street\, Manchester
+DESCRIPTION:Join us for another brilliant evening of live comedy at Manches
+ ter Comedy Club.\nMore info: https://comedyatlas.app/comedy-atlas/event/man
+ chester-comedy-club-21st-november/
+URL:https://comedyatlas.app/comedy-atlas/event/manchester-comedy-club-21st-
+ november/
+END:VEVENT
+END:VCALENDAR

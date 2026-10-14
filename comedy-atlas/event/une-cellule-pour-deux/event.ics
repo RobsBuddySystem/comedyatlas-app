@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:une-cellule-pour-deux@comedyatlas.app
+DTSTAMP:20261017T180000Z
+DTSTART:20261017T180000Z
+DTEND:20261017T200000Z
+SUMMARY:Une cellule pour deux
+LOCATION:Bar à Rire Théâtre\, 55 rue Jean Jaurès\, Marly
+DESCRIPTION:Vannes\, quiproquos\, et clowneries sont au rendez-vous de cett
+ e aventure carcérale absurde portée par un duo explosif qui ravira vos zy
+ gomatiques.\nMore info: https://comedyatlas.app/comedy-atlas/event/une-cell
+ ule-pour-deux/
+URL:https://comedyatlas.app/comedy-atlas/event/une-cellule-pour-deux/
+END:VEVENT
+END:VCALENDAR

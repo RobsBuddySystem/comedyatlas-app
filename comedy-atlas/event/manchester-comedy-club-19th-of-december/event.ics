@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:manchester-comedy-club-19th-of-december@comedyatlas.app
+DTSTAMP:20261219T183000Z
+DTSTART:20261219T183000Z
+DTEND:20261219T203000Z
+SUMMARY:Manchester Comedy Club - 19th of December
+LOCATION:Area Manchester\, 50 Sackville Street\, Manchester
+DESCRIPTION:Join us for another brilliant evening of live comedy at Manches
+ ter Comedy Club.\nMore info: https://comedyatlas.app/comedy-atlas/event/man
+ chester-comedy-club-19th-of-december/
+URL:https://comedyatlas.app/comedy-atlas/event/manchester-comedy-club-19th-
+ of-december/
+END:VEVENT
+END:VCALENDAR
