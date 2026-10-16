@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drag-cabaret@comedyatlas.app
+DTSTAMP:20261114T090000Z
+DTSTART:20261114T090000Z
+DTEND:20261114T110000Z
+SUMMARY:Drag Cabaret
+LOCATION:The Venue\, Bucks\, Bucks Students Union\, High Wycombe
+DESCRIPTION:Drag Cabaret is BACK bigger and better than ever\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/drag-cabaret/
+URL:https://comedyatlas.app/comedy-atlas/event/drag-cabaret/
+END:VEVENT
+END:VCALENDAR

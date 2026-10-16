@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mk11-comedy-club-freddy-quinne@comedyatlas.app
+DTSTAMP:20270121T190000Z
+DTSTART:20270121T190000Z
+DTEND:20270121T210000Z
+SUMMARY:MK11 Comedy Club: Freddy Quinne
+LOCATION:MK11 LIVE MUSIC VENUE\, Keller Close\, Kiln Farm\, Milton Keynes\,
+  Milton Keynes
+DESCRIPTION:Award-winning comedian Freddy Quinne is a regular headliner at 
+ many of the biggest and best comedy clubs across the UK and internationally
+ .\nMore info: https://comedyatlas.app/comedy-atlas/event/mk11-comedy-club-f
+ reddy-quinne/
+URL:https://comedyatlas.app/comedy-atlas/event/mk11-comedy-club-freddy-quin
+ ne/
+END:VEVENT
+END:VCALENDAR

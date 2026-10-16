@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-christmas-comedy-show-at-st-johns-house@comedyatlas.app
+DTSTAMP:20261220T170000Z
+DTSTART:20261220T170000Z
+DTEND:20261220T190000Z
+SUMMARY:The Christmas Comedy Show at St Johns House
+LOCATION:St Johns House Lichfield\, 28 St John Street\, Walsall
+DESCRIPTION:The best in stand-up comedy comes to Lichfield plus delicious h
+ ot snacks\nMore info: https://comedyatlas.app/comedy-atlas/event/the-christ
+ mas-comedy-show-at-st-johns-house/
+URL:https://comedyatlas.app/comedy-atlas/event/the-christmas-comedy-show-at
+ -st-johns-house/
+END:VEVENT
+END:VCALENDAR

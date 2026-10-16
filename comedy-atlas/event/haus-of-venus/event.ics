@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:haus-of-venus@comedyatlas.app
+DTSTAMP:20261124T200000Z
+DTSTART:20261124T200000Z
+DTEND:20261124T220000Z
+SUMMARY:HAUS of Venus
+LOCATION:The Venue\, Bucks\, Bucks Students Union\, High Wycombe
+DESCRIPTION:Come join us to the best Tuesday drag Show\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/haus-of-venus/
+URL:https://comedyatlas.app/comedy-atlas/event/haus-of-venus/
+END:VEVENT
+END:VCALENDAR

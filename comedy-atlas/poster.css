@@ -51,8 +51,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 #editor{display:none}
 .editor-grid{display:flex;flex-direction:column;gap:14px}
 @media(min-width:900px){.editor-grid{flex-direction:row;align-items:flex-start}
-  .canvas-col{flex:1;min-width:0}
-  .tools-col{width:340px;flex-shrink:0;position:sticky;top:76px}}
+  .canvas-col{flex:1;min-width:0;position:sticky;top:76px}
+  .tools-col{width:420px;flex-shrink:0}}
+.tools-col,.canvas-col{min-width:0}
 
 .canvas-wrap{position:relative;display:flex;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;overflow:hidden}
 #poster-canvas{max-width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.45);touch-action:none;cursor:grab}
@@ -88,9 +89,73 @@ input[type=range]{width:100%;accent-color:var(--gold);min-height:34px}
 .stepper{display:flex;align-items:center;gap:10px}
 .stepper button{width:44px;height:40px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:19px;cursor:pointer}
 .stepper span{font-size:13px;color:var(--muted);min-width:52px;text-align:center}
-.file-btn input{display:none}
 .export-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
 #status-msg{font-size:13px;margin-top:10px;min-height:18px}
 #status-msg.ok{color:var(--green)}
 #status-msg.error{color:var(--red)}
 .back-link{font-size:13px;margin-bottom:12px;display:inline-block}
+
+/* ---- form panel (added 2026-10-15) ---- */
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top-actions{margin-bottom:10px}
+.card h2 .muted-count{color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0}
+.pill,.stepper button{min-height:44px}
+.pill[aria-pressed=true]{border-color:var(--gold);color:var(--gold);font-weight:700}
+.pill:disabled{opacity:.4;cursor:default}
+.pill[hidden]{display:none}
+.chips{flex-wrap:wrap}
+.muted-count,.fld-help{font-size:12px;color:var(--muted)}
+.fld-help{margin:4px 0 8px}
+
+#checklist{list-style:none}
+#checklist li{margin:0}
+#checklist button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;min-height:44px;padding:8px 6px;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--text);font:inherit;font-size:14px;cursor:pointer}
+#checklist button:hover{background:rgba(201,168,76,.08)}
+#checklist .tick{flex:0 0 22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#06130a;background:var(--green)}
+#checklist .todo .tick{background:#e0a21b;color:#2a1c00}
+#checklist .todo .cl-state{color:#e0a21b}
+@media (prefers-color-scheme: light){#checklist .todo .cl-state{color:#8a5a00}}
+#checklist .cl-state{margin-left:auto;font-size:12px;color:var(--muted)}
+
+details.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px}
+details.sec>summary{cursor:pointer;list-style:none;padding:14px 18px;min-height:48px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);display:flex;align-items:center;justify-content:space-between;border-radius:12px}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted)}
+details.sec[open]>summary::after{content:"\2212"}
+.sec-body{padding:0 18px 18px}
+
+.fld{display:block;margin:10px 0}
+.fld>span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.fld input[type=text],.fld input[type=url],.fld input[type=number],.fld input[type=date],.fld input[type=time],.fld select,.fld textarea,#caption-text{width:100%;min-height:44px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:16px;font-family:inherit}
+.fld textarea,#caption-text{resize:vertical;line-height:1.4}
+.fld select option{color:#171512;background:#fff}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--gold)}
+.fld.chk{display:flex;align-items:center;gap:10px;min-height:44px}
+.fld.chk>span{margin:0;font-size:14px;color:var(--text)}
+.fld.chk input{width:22px;height:22px;accent-color:var(--gold);flex-shrink:0}
+.fld-row{display:flex;gap:10px;flex-wrap:wrap}
+.fld-row>.fld{flex:1 1 140px;min-width:0}
+.fld-row.three>.fld{flex:1 1 100px}
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.color-grid input[type=color]{width:100%;height:44px;padding:2px;border-radius:10px;border:1px solid var(--border);background:transparent;cursor:pointer}
+#bg-photo-btn:focus-within,#logo-btn:focus-within,.file-btn:focus-within{outline:3px solid var(--gold);outline-offset:2px}
+.file-btn input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.file-btn{position:relative;display:inline-flex;align-items:center}
+
+/* lineup rows */
+.lu-row{border:1px solid var(--border);border-radius:10px;padding:10px;margin-bottom:10px}
+.lu-row .fld{margin:6px 0}
+.lu-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.lu-head strong{font-size:13px;margin-right:auto}
+.lu-btn{min-width:44px;min-height:44px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;font-size:16px;font-family:inherit}
+.lu-btn:disabled{opacity:.35;cursor:default}
+.lu-photo{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lu-thumb{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+
+#caption-copy.done{background:var(--green);border-color:var(--green)}
+.jump-poster{position:fixed;right:14px;bottom:14px;z-index:90;padding:12px 18px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#100c00;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.4);min-height:44px}
+.jump-poster[hidden]{display:none}
+@media(min-width:900px){.jump-poster{display:none!important}}
+#draft-card[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){details.sec>summary{transition:background .15s}}
+.fld[hidden],.pill[hidden]{display:none!important}

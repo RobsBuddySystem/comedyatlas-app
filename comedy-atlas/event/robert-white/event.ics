@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robert-white@comedyatlas.app
+DTSTAMP:20270218T073000Z
+DTSTART:20270218T073000Z
+DTEND:20270218T093000Z
+SUMMARY:Robert White
+LOCATION:Exeter Phoenix\, Brandninch Place\, Exeter
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robert-wh
+ ite/
+URL:https://comedyatlas.app/comedy-atlas/event/robert-white/
+END:VEVENT
+END:VCALENDAR

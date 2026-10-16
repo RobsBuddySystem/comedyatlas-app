@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:taskmaster-live-on-stage@comedyatlas.app
+DTSTAMP:20270526T173000Z
+DTSTART:20270526T173000Z
+DTEND:20270526T193000Z
+SUMMARY:Taskmaster Live On Stage
+LOCATION:AO Arena\, Victoria Station\, Hunts Bank\, Manchester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/taskmaste
+ r-live-on-stage/
+URL:https://comedyatlas.app/comedy-atlas/event/taskmaster-live-on-stage/
+END:VEVENT
+END:VCALENDAR

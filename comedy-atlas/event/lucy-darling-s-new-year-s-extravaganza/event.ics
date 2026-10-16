@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lucy-darling-s-new-year-s-extravaganza@comedyatlas.app
+DTSTAMP:20270101T033000Z
+DTSTART:20270101T033000Z
+DTEND:20270101T053000Z
+SUMMARY:Lucy Darling's New Year's Extravaganza
+LOCATION:Neptune Theatre\, 1303 NE 45th Street\, Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lucy-darl
+ ing-s-new-year-s-extravaganza/
+URL:https://comedyatlas.app/comedy-atlas/event/lucy-darling-s-new-year-s-ex
+ travaganza/
+END:VEVENT
+END:VCALENDAR

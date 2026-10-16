@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:robby-hoffman-live-special-taping@comedyatlas.app
+DTSTAMP:20261218T000000Z
+DTSTART:20261218T000000Z
+DTEND:20261218T020000Z
+SUMMARY:Robby Hoffman: Live Special Taping
+LOCATION:Town Hall\, 123 West 43rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/robby-hof
+ fman-live-special-taping/
+URL:https://comedyatlas.app/comedy-atlas/event/robby-hoffman-live-special-t
+ aping/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:that-metal-show-annual-holiday-bash@comedyatlas.app
+DTSTAMP:20261219T000000Z
+DTSTART:20261219T000000Z
+DTEND:20261219T020000Z
+SUMMARY:That Metal Show Annual Holiday Bash
+LOCATION:Dingbatz\, 620 Van Houten Avenue\, Clifton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/that-meta
+ l-show-annual-holiday-bash/
+URL:https://comedyatlas.app/comedy-atlas/event/that-metal-show-annual-holid
+ ay-bash/
+END:VEVENT
+END:VCALENDAR

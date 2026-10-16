@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-comedy-covent-garden@comedyatlas.app
+DTSTAMP:20261231T200000Z
+DTSTART:20261231T200000Z
+DTEND:20261231T220000Z
+SUMMARY:New Year's Eve Comedy\, Covent Garden
+LOCATION:Seven Dials Club\, 42 Earlham Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-year-
+ s-eve-comedy-covent-garden/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-comedy-covent
+ -garden/
+END:VEVENT
+END:VCALENDAR

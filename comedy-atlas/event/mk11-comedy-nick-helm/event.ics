@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mk11-comedy-nick-helm@comedyatlas.app
+DTSTAMP:20270218T190000Z
+DTSTART:20270218T190000Z
+DTEND:20270218T210000Z
+SUMMARY:MK11 Comedy: Nick Helm
+LOCATION:MK11 LIVE MUSIC VENUE\, Keller Close\, Kiln Farm\, Milton Keynes\,
+  Milton Keynes
+DESCRIPTION:Nick Helm returns to MK11\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/mk11-comedy-nick-helm/
+URL:https://comedyatlas.app/comedy-atlas/event/mk11-comedy-nick-helm/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-live-63822@comedyatlas.app
+DTSTAMP:20261214T010000Z
+DTSTART:20261214T010000Z
+DTEND:20261214T030000Z
+SUMMARY:Mike Epps Live!
+LOCATION:Concert Hall at Century II\, 225 W Douglas Avenue\, Wichita
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -live-63822/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-live-63822/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seattle-international-comedy-competition@comedyatlas.app
+DTSTAMP:20261113T030000Z
+DTSTART:20261113T030000Z
+DTEND:20261113T050000Z
+SUMMARY:Seattle International Comedy Competition
+LOCATION:Nate Jackson's Super Funny Comedy Club\, 1530 Pacific Ave\, Tacoma
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/seattle-i
+ nternational-comedy-competition/
+URL:https://comedyatlas.app/comedy-atlas/event/seattle-international-comedy
+ -competition/
+END:VEVENT
+END:VCALENDAR

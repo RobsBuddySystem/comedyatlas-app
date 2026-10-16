@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phil-medina-live@comedyatlas.app
+DTSTAMP:20261017T040000Z
+DTSTART:20261017T040000Z
+DTEND:20261017T060000Z
+SUMMARY:Phil Medina Live
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phil-medi
+ na-live/
+URL:https://comedyatlas.app/comedy-atlas/event/phil-medina-live/
+END:VEVENT
+END:VCALENDAR

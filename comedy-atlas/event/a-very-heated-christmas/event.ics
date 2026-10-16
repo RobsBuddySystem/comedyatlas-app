@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-very-heated-christmas@comedyatlas.app
+DTSTAMP:20261211T190000Z
+DTSTART:20261211T190000Z
+DTEND:20261211T210000Z
+SUMMARY:A very heated Christmas
+LOCATION:Mytholmroyd Community Centre\, Caldene Ave\, Mytholmroyd\, Hebden 
+ Bridge HX7 5AF\, Halifax
+DESCRIPTION:Join us at Mytholmroyd community centre for a Christmas show li
+ ke no other\n\nJoin our 7 very talented queens as they bring you a show lik
+ e no other\nMore info: https://comedyatlas.app/comedy-atlas/event/a-very-he
+ ated-christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/a-very-heated-christmas/
+END:VEVENT
+END:VCALENDAR

@@ -51,10 +51,20 @@
   <p class="intro">Make a poster for your show in one minute. Pick a show and the
   title, date, venue and ticket link fill themselves in — then tap any text to
   edit it, swap fonts, drop in your own photo, and download a full-resolution
-  PNG. Everything happens on your device; your photo is never uploaded anywhere.</p>
+  PNG. Everything happens on your device; your photo is never uploaded anywhere.
+  A form on the side lists everything a good poster needs, so nothing gets forgotten.</p>
 
   <!-- STEP 1: pick a show (or blank canvas) -->
   <div id="picker">
+    <div class="card" id="draft-card" hidden>
+      <h2>Your saved draft</h2>
+      <p class="data-note" id="draft-note" style="margin:0 0 10px"></p>
+      <div class="pill-row">
+        <button class="pill primary" id="draft-continue" type="button">Continue your draft</button>
+        <button class="pill" id="draft-discard" type="button">Delete draft</button>
+      </div>
+      <p class="data-note">Drafts are saved in this browser only. Headshots and the logo are kept; a background photo is not.</p>
+    </div>
     <div class="card">
       <h2>Start from a show</h2>
       <input id="show-search" type="search" placeholder="Search shows by name, venue or city…" autocomplete="off" spellcheck="true" lang="en">
@@ -73,20 +83,44 @@
           <canvas id="poster-canvas" width="1080" height="1080" aria-label="Poster canvas — tap text to select it, tap again to edit, drag to move"></canvas>
           <textarea id="inline-editor" rows="2" aria-label="Edit text" spellcheck="true" lang="en"></textarea>
         </div>
-        <p class="canvas-hint">Tap text to select · tap again to edit · drag to move</p>
+        <p class="canvas-hint">Tap text to select · tap again to edit · drag to move. Or just fill in the form.</p>
       </div>
 
-      <div class="tools-col">
+      <div class="tools-col" id="form-panel">
+        <!-- actions + checklist -->
+        <div class="card">
+          <div class="pill-row top-actions">
+            <button class="pill" id="undo-btn" type="button" aria-label="Undo last change" disabled>↶ Undo</button>
+            <button class="pill" id="redo-btn" type="button" aria-label="Redo" disabled>↷ Redo</button>
+            <button class="pill" id="reset-layout" type="button">Reset layout</button>
+            <button class="pill danger" id="start-over" type="button">Start over</button>
+          </div>
+          <div class="export-row">
+            <button class="pill primary" id="export-png" type="button">Download PNG</button>
+            <button class="pill" id="copy-png" type="button">Copy image</button>
+          </div>
+          <div id="status-msg" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="card" id="checklist-card">
+          <h2 id="checklist-h">Don’t forget <span id="checklist-count" class="muted-count"></span></h2>
+          <ul id="checklist" aria-labelledby="checklist-h"></ul>
+        </div>
+
         <div class="card">
           <span class="tool-label">Size</span>
           <div class="pill-row" id="size-row">
-            <button class="pill active" data-size="ig-post" type="button">IG post 1:1</button>
+            <button class="pill active" data-size="ig-post" type="button">Square 1:1</button>
+            <button class="pill" data-size="ig-portrait" type="button">IG post 4:5</button>
             <button class="pill" data-size="ig-story" type="button">IG story 9:16</button>
+            <button class="pill" data-size="fb-cover" type="button">Facebook event cover</button>
             <button class="pill" data-size="a4" type="button">A4 print</button>
+            <button class="pill" data-size="a3" type="button">A3 print</button>
           </div>
           <span class="tool-label">Template</span>
           <div class="pill-row scroll" id="template-row">
             <button class="pill active" data-template="classic" type="button">Classic gig</button>
+            <button class="pill" data-template="house" type="button">House style</button>
             <button class="pill" data-template="minimal" type="button">Minimalist</button>
             <button class="pill" data-template="photo" type="button">Photo</button>
             <button class="pill" data-template="fringe" type="button">Fringe flyer</button>
@@ -129,43 +163,206 @@
           </div>
         </div>
         <div class="card" id="no-sel-card">
-          <p class="no-sel-note">Tap any text on the poster to change its font,
-          size, color or alignment — or add a new line below.</p>
+          <p class="no-sel-note" id="no-sel-note">Tap any text on the poster to change its font,
+          size, color or alignment — or add a new line in Extras. The form below fills the poster in for you.</p>
         </div>
 
-        <div class="card">
-          <span class="tool-label">Background</span>
-          <div class="pill-row" id="bg-row">
-            <button class="pill" data-bg="solid" type="button">Solid</button>
-            <button class="pill" data-bg="gradient" type="button">Gradient</button>
-            <label class="pill file-btn" id="bg-photo-btn">Photo…<input type="file" id="bg-file" accept="image/*"></label>
+        <!-- 1. SHOW -->
+        <details class="sec" id="sec-show" open>
+          <summary>1 · Show</summary>
+          <div class="sec-body">
+            <label class="fld"><span>Show title</span><input id="f-title" type="text" autocomplete="off" maxlength="120" placeholder="e.g. Friday Night Stand-Up"></label>
+            <label class="fld"><span>Tagline (optional)</span><input id="f-tagline" type="text" autocomplete="off" maxlength="140" placeholder="e.g. Five comics, one mic"></label>
+            <span class="tool-label" id="lbl-formats">Format</span>
+            <div class="pill-row chips" id="f-formats" role="group" aria-labelledby="lbl-formats">
+              <button class="pill" type="button" data-format="standup" aria-pressed="false">Stand-up</button>
+              <button class="pill" type="button" data-format="openmic" aria-pressed="false">Open mic</button>
+              <button class="pill" type="button" data-format="improv" aria-pressed="false">Improv</button>
+              <button class="pill" type="button" data-format="showcase" aria-pressed="false">Showcase</button>
+              <button class="pill" type="button" data-format="storytelling" aria-pressed="false">Storytelling</button>
+              <button class="pill" type="button" data-format="roast" aria-pressed="false">Roast</button>
+              <button class="pill" type="button" data-format="other" aria-pressed="false">Other</button>
+            </div>
+            <label class="fld" id="f-format-other-wrap" hidden><span>Other format</span><input id="f-format-other" type="text" maxlength="40" autocomplete="off" placeholder="e.g. Sketch night"></label>
+            <div class="fld-row">
+              <label class="fld"><span>Language</span>
+                <select id="f-lang"><option value="en">English</option><option value="fr">French</option><option value="bi">English and French</option></select></label>
+              <label class="fld"><span>Age note</span>
+                <select id="f-age"><option value="">Not shown</option><option value="all">All ages</option><option value="16">16+</option><option value="18">18+</option></select></label>
+            </div>
+            <div class="fld-row">
+              <label class="fld"><span>Price</span>
+                <select id="f-price-kind"><option value="">Not shown</option><option value="free">Free</option><option value="pwyw">Pay what you want</option><option value="amount">Set price (€)</option><option value="from">From (€)</option></select></label>
+              <label class="fld" id="f-price-amt-wrap" hidden><span>Amount in €</span><input id="f-price-amt" type="number" min="0" step="0.5" inputmode="decimal" placeholder="10"></label>
+            </div>
+            <label class="fld"><span>Promo code text (optional)</span><input id="f-promo" type="text" maxlength="60" autocomplete="off" placeholder="Use code LAUGH10"></label>
           </div>
-          <div class="swatch-row" style="margin-top:8px" id="bg-swatch-row">
-            <button class="swatch" data-bgcolor="#0a0e1a" style="background:#0a0e1a" type="button" aria-label="Navy background"></button>
-            <button class="swatch" data-bgcolor="#1a0a2e" style="background:#1a0a2e" type="button" aria-label="Deep purple background"></button>
-            <button class="swatch" data-bgcolor="#c41e3a" style="background:#c41e3a" type="button" aria-label="Red background"></button>
-            <button class="swatch" data-bgcolor="#c9a84c" style="background:#c9a84c" type="button" aria-label="Gold background"></button>
-            <button class="swatch" data-bgcolor="#f7f5f0" style="background:#f7f5f0" type="button" aria-label="Cream background"></button>
-            <input type="color" class="swatch" id="bg-custom-color" value="#0a0e1a" aria-label="Custom background color">
-          </div>
-          <span class="tool-label">Darken photo (for readable text)</span>
-          <input type="range" id="darken-range" min="0" max="80" value="40" aria-label="Darken background photo">
-        </div>
+        </details>
 
-        <div class="card">
-          <div class="pill-row">
-            <button class="pill" id="add-text" type="button">＋ Add text</button>
-            <button class="pill" id="toggle-sticker" type="button">Atlas character</button>
-            <button class="pill active" id="toggle-credit" type="button">“made with COMEDY ATLAS”</button>
+        <!-- 2. WHEN -->
+        <details class="sec" id="sec-when">
+          <summary>2 · When</summary>
+          <div class="sec-body">
+            <div class="fld-row">
+              <label class="fld"><span>Date</span><input id="f-date" type="date"></label>
+              <label class="fld chk"><input id="f-weekly" type="checkbox"><span>Every week (shows “Every Thursday”)</span></label>
+            </div>
+            <div class="fld-row three">
+              <label class="fld"><span>Doors</span><input id="f-doors" type="time"></label>
+              <label class="fld"><span>Start</span><input id="f-start" type="time"></label>
+              <label class="fld"><span>End</span><input id="f-end" type="time"></label>
+            </div>
+            <span class="tool-label" id="lbl-timefmt">Time format</span>
+            <div class="pill-row" id="f-timefmt" role="group" aria-labelledby="lbl-timefmt">
+              <button class="pill" type="button" data-timefmt="12" aria-pressed="false">12-hour (8pm)</button>
+              <button class="pill" type="button" data-timefmt="24" aria-pressed="false">24-hour (20:00)</button>
+              <button class="pill" type="button" data-timefmt="fr" aria-pressed="false">French (20h00)</button>
+            </div>
+            <p class="fld-help">The date follows the language you chose (Thu 22 Oct or jeu. 22 oct.). Your time format is remembered on this device.</p>
           </div>
-          <div class="export-row">
-            <button class="pill primary" id="export-png" type="button">Download PNG</button>
-            <button class="pill" id="copy-png" type="button">Copy image</button>
+        </details>
+
+        <!-- 3. WHERE -->
+        <details class="sec" id="sec-where">
+          <summary>3 · Where</summary>
+          <div class="sec-body">
+            <label class="fld"><span>Venue name</span><input id="f-venue" type="text" maxlength="100" autocomplete="off" placeholder="e.g. The Comedy Basement"></label>
+            <label class="fld"><span>Street address</span><input id="f-address" type="text" maxlength="140" autocomplete="street-address" placeholder="e.g. 12 Rue Oberkampf"></label>
+            <label class="fld"><span>City</span><input id="f-city" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Paris"></label>
+            <label class="fld"><span>Nearest metro or transport (optional)</span><input id="f-transit" type="text" maxlength="100" autocomplete="off" placeholder="e.g. Oberkampf, line 5 and 9"></label>
+            <label class="fld"><span>Map or directions link (optional, goes in the caption)</span><input id="f-map" type="url" maxlength="300" autocomplete="off" placeholder="https://maps.example/…"></label>
+            <label class="fld"><span>Entrance note (optional)</span><input id="f-entrance" type="text" maxlength="100" autocomplete="off" placeholder="e.g. Red door, ring the bell"></label>
           </div>
-          <div id="status-msg" role="status"></div>
-        </div>
+        </details>
+
+        <!-- 4. LINEUP -->
+        <details class="sec" id="sec-lineup">
+          <summary>4 · Lineup</summary>
+          <div class="sec-body">
+            <div id="lineup-list"></div>
+            <div class="pill-row"><button class="pill" id="lineup-add" type="button">＋ Add a comic</button></div>
+            <label class="fld chk"><input id="f-show-heads" type="checkbox"><span>Show headshots on the poster</span></label>
+            <label class="fld chk"><input id="f-show-handles" type="checkbox"><span>Show @handles on the poster</span></label>
+            <p class="fld-help">Images stay on your device.</p>
+          </div>
+        </details>
+
+        <!-- 5. TICKETS & LINKS -->
+        <details class="sec" id="sec-tickets">
+          <summary>5 · Tickets and links</summary>
+          <div class="sec-body">
+            <label class="fld"><span>Ticket or booking link</span><input id="f-ticket" type="url" maxlength="300" autocomplete="off" placeholder="https://…"></label>
+            <p class="fld-help" id="f-ticket-help">Short links look best on a poster.</p>
+            <div class="fld-row">
+              <label class="fld chk"><input id="f-qr" type="checkbox"><span>Add a QR code for the ticket link</span></label>
+              <label class="fld"><span>QR corner</span>
+                <select id="f-qr-corner"><option value="br">Bottom right</option><option value="bl">Bottom left</option><option value="tr">Top right</option><option value="tl">Top left</option></select></label>
+            </div>
+            <label class="fld"><span>Website (optional)</span><input id="f-website" type="text" maxlength="120" autocomplete="off" placeholder="example.com"></label>
+            <label class="fld"><span>Instagram handle (optional)</span><input id="f-instagram" type="text" maxlength="40" autocomplete="off" placeholder="@yourshow"></label>
+            <label class="fld"><span>Hashtag (optional)</span><input id="f-hashtag" type="text" maxlength="40" autocomplete="off" placeholder="#parisstandup"></label>
+            <label class="fld"><span>“Presented by” line (optional)</span><input id="f-presented" type="text" maxlength="80" autocomplete="off" placeholder="Your collective name"></label>
+            <label class="fld"><span>Sponsor line (optional)</span><input id="f-sponsor" type="text" maxlength="100" autocomplete="off" placeholder="Supported by …"></label>
+          </div>
+        </details>
+
+        <!-- 6. BRAND -->
+        <details class="sec" id="sec-brand">
+          <summary>6 · Brand</summary>
+          <div class="sec-body">
+            <span class="tool-label">Logo</span>
+            <div class="pill-row">
+              <label class="pill file-btn" id="logo-btn">Upload logo…<input type="file" id="f-logo-file" accept="image/png,image/jpeg,image/svg+xml,image/webp"></label>
+              <button class="pill" id="logo-remove" type="button" hidden>Remove logo</button>
+            </div>
+            <div class="fld-row">
+              <label class="fld"><span>Logo corner</span>
+                <select id="f-logo-pos"><option value="tl">Top left</option><option value="tr">Top right</option><option value="bl">Bottom left</option><option value="br">Bottom right</option></select></label>
+              <label class="fld"><span>Logo size</span><input id="f-logo-size" type="range" min="6" max="40" value="16"></label>
+            </div>
+            <p class="fld-help">Images stay on your device.</p>
+
+            <span class="tool-label">Background</span>
+            <div class="pill-row" id="bg-row">
+              <button class="pill" data-bg="solid" type="button">Solid</button>
+              <button class="pill" data-bg="gradient" type="button">Gradient</button>
+              <label class="pill file-btn" id="bg-photo-btn">Photo…<input type="file" id="bg-file" accept="image/*"></label>
+            </div>
+            <div class="swatch-row" style="margin-top:8px" id="bg-swatch-row">
+              <button class="swatch" data-bgcolor="#0a0e1a" style="background:#0a0e1a" type="button" aria-label="Navy background"></button>
+              <button class="swatch" data-bgcolor="#1a0a2e" style="background:#1a0a2e" type="button" aria-label="Deep purple background"></button>
+              <button class="swatch" data-bgcolor="#c41e3a" style="background:#c41e3a" type="button" aria-label="Red background"></button>
+              <button class="swatch" data-bgcolor="#c9a84c" style="background:#c9a84c" type="button" aria-label="Gold background"></button>
+              <button class="swatch" data-bgcolor="#f7f5f0" style="background:#f7f5f0" type="button" aria-label="Cream background"></button>
+              <input type="color" class="swatch" id="bg-custom-color" value="#0a0e1a" aria-label="Custom background color">
+            </div>
+            <label class="fld"><span>Darken photo (for readable text)</span><input type="range" id="darken-range" min="0" max="80" value="40"></label>
+            <p class="fld-help">Images stay on your device.</p>
+
+            <span class="tool-label" id="lbl-palette">Colour presets</span>
+            <div class="pill-row" id="palette-row" role="group" aria-labelledby="lbl-palette">
+              <button class="pill" type="button" data-palette="none" aria-pressed="false">Template colours</button>
+              <button class="pill" type="button" data-palette="velvet" aria-pressed="false">Velvet</button>
+              <button class="pill" type="button" data-palette="neutral" aria-pressed="false">Neutral</button>
+              <button class="pill" type="button" data-palette="dark" aria-pressed="false">Dark</button>
+              <button class="pill" type="button" data-palette="bright" aria-pressed="false">Bright</button>
+            </div>
+            <div class="color-grid">
+              <label class="fld"><span>Background top</span><input type="color" id="f-c-bg1" value="#0a0e1a"></label>
+              <label class="fld"><span>Background bottom</span><input type="color" id="f-c-bg2" value="#2a1a4a"></label>
+              <label class="fld"><span>Text</span><input type="color" id="f-c-text" value="#ffffff"></label>
+              <label class="fld"><span>Accent</span><input type="color" id="f-c-accent" value="#c9a84c"></label>
+            </div>
+
+            <span class="tool-label" id="lbl-pair">Font pairing</span>
+            <div class="pill-row" id="pair-row" role="group" aria-labelledby="lbl-pair">
+              <button class="pill" type="button" data-pair="none" aria-pressed="false">Template fonts</button>
+              <button class="pill font-pill-anton" type="button" data-pair="poster" aria-pressed="false">Bold poster</button>
+              <button class="pill font-pill-playfair" type="button" data-pair="classic" aria-pressed="false">Classic</button>
+              <button class="pill font-pill-oswald" type="button" data-pair="condensed" aria-pressed="false">Condensed</button>
+              <button class="pill font-pill-marker" type="button" data-pair="hand" aria-pressed="false">Hand-drawn</button>
+              <button class="pill font-pill-playfair" type="button" data-pair="editorial" aria-pressed="false">Editorial</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- 7. EXTRAS -->
+        <details class="sec" id="sec-extras">
+          <summary>7 · Extras</summary>
+          <div class="sec-body">
+            <span class="tool-label" id="lbl-ribbons">Ribbons</span>
+            <div class="pill-row chips" id="f-ribbons" role="group" aria-labelledby="lbl-ribbons">
+              <button class="pill" type="button" data-ribbon="free" aria-pressed="false">Free entry</button>
+              <button class="pill" type="button" data-ribbon="sold" aria-pressed="false">Sold out</button>
+              <button class="pill" type="button" data-ribbon="last" aria-pressed="false">Last tickets</button>
+              <button class="pill" type="button" data-ribbon="resa" aria-pressed="false">Reservations recommended</button>
+              <button class="pill" type="button" data-ribbon="doors" aria-pressed="false" id="ribbon-doors">Doors open at …</button>
+              <button class="pill" type="button" data-ribbon="bar" aria-pressed="false">Bar open</button>
+            </div>
+            <label class="fld"><span>Free-text note (optional)</span><textarea id="f-note" rows="2" maxlength="200" placeholder="e.g. Bring a friend. First drink is on us."></textarea></label>
+            <label class="fld chk"><input id="f-credit" type="checkbox" checked><span id="f-credit-label">Add a small Atlas credit</span></label>
+            <div class="pill-row">
+              <button class="pill" id="add-text" type="button">＋ Add text</button>
+              <button class="pill" id="toggle-sticker" type="button">Atlas character</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- CAPTION -->
+        <details class="sec" id="sec-caption">
+          <summary>Caption for your post</summary>
+          <div class="sec-body">
+            <label class="fld"><span>Built from your form — edit it if you like</span><textarea id="caption-text" rows="9" spellcheck="true"></textarea></label>
+            <div class="pill-row">
+              <button class="pill primary" id="caption-copy" type="button">Copy caption</button>
+              <button class="pill" id="caption-rebuild" type="button">Rebuild from form</button>
+            </div>
+            <div id="caption-status" role="status" aria-live="polite" class="fld-help"></div>
+          </div>
+        </details>
       </div>
     </div>
+    <button type="button" id="jump-poster" class="jump-poster" hidden>↑ Poster</button>
   </div>
 </div>
 <footer>
@@ -176,6 +373,7 @@
 </footer>
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script src="atlas-auth.js"></script>
+<script src="vendor/qr-encoder.js"></script>
 <script src="poster.js"></script>
 </body>
 </html>

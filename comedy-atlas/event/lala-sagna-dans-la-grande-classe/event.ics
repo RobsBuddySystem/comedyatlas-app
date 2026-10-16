@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lala-sagna-dans-la-grande-classe@comedyatlas.app
+DTSTAMP:20261127T200000Z
+DTSTART:20261127T200000Z
+DTEND:20261127T220000Z
+SUMMARY:Lala Sagna dans La grande classe
+LOCATION:Comédie Le Mans\, 37 rue Nationale\, Le Mans
+DESCRIPTION:Armez-vous de vos meilleurs (et pires) souvenirs d'école !\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/lala-sagna-dans-la-gran
+ de-classe/
+URL:https://comedyatlas.app/comedy-atlas/event/lala-sagna-dans-la-grande-cl
+ asse/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-davidson-live-no-holds-barred@comedyatlas.app
+DTSTAMP:20271023T180000Z
+DTSTART:20271023T180000Z
+DTEND:20271023T200000Z
+SUMMARY:Jim Davidson Live\, No Holds Barred
+LOCATION:Circus Tavern\, Mead Corner\, London Road\, Romford
+DESCRIPTION:Jim Davidson is back at the Circus Tavern on the 23nd of Octobe
+ r 2027\nMore info: https://comedyatlas.app/comedy-atlas/event/jim-davidson-
+ live-no-holds-barred/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-davidson-live-no-holds-b
+ arred/
+END:VEVENT
+END:VCALENDAR

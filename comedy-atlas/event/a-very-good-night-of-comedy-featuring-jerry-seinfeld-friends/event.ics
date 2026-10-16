@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-very-good-night-of-comedy-featuring-jerry-seinfeld-friends@comedyatla
+ s.app
+DTSTAMP:20261118T003000Z
+DTSTART:20261118T003000Z
+DTEND:20261118T023000Z
+SUMMARY:A Very Good+ Night of Comedy Featuring Jerry Seinfeld + Friends
+LOCATION:Beacon Theatre\, 2124 Broadway @ 74th St\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-very-go
+ od-night-of-comedy-featuring-jerry-seinfeld-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/a-very-good-night-of-comedy-
+ featuring-jerry-seinfeld-friends/
+END:VEVENT
+END:VCALENDAR

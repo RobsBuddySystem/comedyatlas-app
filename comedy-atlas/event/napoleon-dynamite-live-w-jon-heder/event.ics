@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:napoleon-dynamite-live-w-jon-heder@comedyatlas.app
+DTSTAMP:20261108T010000Z
+DTSTART:20261108T010000Z
+DTEND:20261108T030000Z
+SUMMARY:Napoleon Dynamite Live w/ Jon Heder
+LOCATION:EPIC Event Center\, 2351 Holmgren Way Suite 1\, Green Bay
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/napoleon-
+ dynamite-live-w-jon-heder/
+URL:https://comedyatlas.app/comedy-atlas/event/napoleon-dynamite-live-w-jon
+ -heder/
+END:VEVENT
+END:VCALENDAR
