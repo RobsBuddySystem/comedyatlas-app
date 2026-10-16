@@ -18,7 +18,7 @@
 <meta property="og:description" content="Red Grant — see it on COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/red-grant-48621/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Denver"}, "name": "Denver"}, "name": "Red Grant", "organizer": {"@type": "Organization", "name": "Ticketmaster Discovery - comedy"}, "startDate": "2026-10-04T18:00:00-06:00", "url": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/"}, {"@id": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://comedyatlas.app/", "name": "COMEDY ATLAS", "position": 1}, {"@type": "ListItem", "item": "https://comedyatlas.app/shows.html", "name": "Shows", "position": 2}, {"@type": "ListItem", "item": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/", "name": "Red Grant", "position": 3}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Denver", "streetAddress": "8246 E 49th Ave #1400"}, "geo": {"@type": "GeoCoordinates", "latitude": 39.782478, "longitude": -104.89133}, "name": "Denver Improv"}, "name": "Red Grant", "organizer": {"@type": "Organization", "name": "Ticketmaster Discovery - comedy"}, "startDate": "2026-10-04T18:00:00-06:00", "url": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/"}, {"@id": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://comedyatlas.app/", "name": "COMEDY ATLAS", "position": 1}, {"@type": "ListItem", "item": "https://comedyatlas.app/shows.html", "name": "Shows", "position": 2}, {"@type": "ListItem", "item": "https://comedyatlas.app/comedy-atlas/event/red-grant-48621/", "name": "Red Grant", "position": 3}]}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -185,7 +185,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-10-05T02:00:00+02:00">Sun, Oct 4 2026 · 18:00 (UTC-06:00)</time></div>
   <p class="atlas-promise">No description provided yet by the organizer.</p>
   
-  <div class="field-row" style="margin-top:10px">Venue TBA, Denver — <a href="https://www.openstreetmap.org/search?query=Denver" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Denver" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Denver Improv, 8246 E 49th Ave #1400, Denver — <a href="https://www.openstreetmap.org/?mlat=39.782478&amp;mlon=-104.891330#map=17/39.782478/-104.891330" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=39.782478,-104.891330" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Ticketmaster Discovery - comedy</div>
   
   <div class="field-row"><span>Price: 5.00 USD</span></div>
@@ -285,7 +285,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Denver Improv</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 48621, &quot;slug&quot;: &quot;red-grant-48621&quot;, &quot;title&quot;: &quot;Red Grant&quot;, &quot;venue_id&quot;: 3819, &quot;venue_name&quot;: &quot;Denver Improv&quot;, &quot;venue_latitude&quot;: 39.782478, &quot;venue_longitude&quot;: -104.89133, &quot;canonical_event_url&quot;: &quot;https://www.ticketweb.com/event/red-grant-denver-improv-tickets/14323814&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=39.782478%2C-104.891330" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:39.782478,-104.891330">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   

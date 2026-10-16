@@ -18,7 +18,7 @@
 <meta property="og:description" content="Jess Hilarious — see it on COMEDY ATLAS.">
 <meta property="og:url" content="https://comedyatlas.app/comedy-atlas/event/jess-hilarious/">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Tacoma"}, "name": "Tacoma"}, "name": "Jess Hilarious", "organizer": {"@type": "Organization", "name": "Ticketmaster Discovery - comedy"}, "startDate": "2026-10-03T19:00:00-07:00", "url": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/"}, {"@id": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://comedyatlas.app/", "name": "COMEDY ATLAS", "position": 1}, {"@type": "ListItem", "item": "https://comedyatlas.app/shows.html", "name": "Shows", "position": 2}, {"@type": "ListItem", "item": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/", "name": "Jess Hilarious", "position": 3}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Event", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled", "location": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Tacoma", "streetAddress": "1530 Pacific Ave"}, "geo": {"@type": "GeoCoordinates", "latitude": 47.248452, "longitude": -122.437961}, "name": "Nate Jackson's Super Funny Comedy Club"}, "name": "Jess Hilarious", "organizer": {"@type": "Organization", "name": "Ticketmaster Discovery - comedy"}, "startDate": "2026-10-03T19:00:00-07:00", "url": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/"}, {"@id": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://comedyatlas.app/", "name": "COMEDY ATLAS", "position": 1}, {"@type": "ListItem", "item": "https://comedyatlas.app/shows.html", "name": "Shows", "position": 2}, {"@type": "ListItem", "item": "https://comedyatlas.app/comedy-atlas/event/jess-hilarious/", "name": "Jess Hilarious", "position": 3}]}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -185,7 +185,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <div class="atlas-subtitle"><time datetime="2026-10-04T04:00:00+02:00">Sat, Oct 3 2026 · 19:00 (UTC-07:00)</time></div>
   <p class="atlas-promise">No description provided yet by the organizer.</p>
   
-  <div class="field-row" style="margin-top:10px">Venue TBA, Tacoma — <a href="https://www.openstreetmap.org/search?query=Tacoma" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Tacoma" rel="nofollow noopener">directions →</a></div>
+  <div class="field-row" style="margin-top:10px">Nate Jackson&#x27;s Super Funny Comedy Club, 1530 Pacific Ave, Tacoma — <a href="https://www.openstreetmap.org/?mlat=47.248452&amp;mlon=-122.437961#map=17/47.248452/-122.437961" rel="nofollow noopener">map →</a> — <a href="https://www.google.com/maps/dir/?api=1&amp;destination=47.248452,-122.437961" rel="nofollow noopener">directions →</a></div>
   <div class="field-row">Ticketmaster Discovery - comedy</div>
   
   <div class="field-row"><span>Price: 44.81 USD</span></div>
@@ -285,7 +285,24 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   </button>
   <div class="field-row" id="share-status" style="margin-top:6px"></div>
 </div>
-  <h2 class="section-heading">Venue &amp; directions</h2><div class="venue-map-empty">No mapped venue yet for this event — venue coordinates are added as our OSM verification work reaches this venue. Nothing is guessed: a venue only gets a pin once its location is confirmed.</div>
+  <h2 class="section-heading">Venue &amp; directions</h2>
+<div class="card">
+  <div style="font-weight:700;margin-bottom:8px">Nate Jackson&#x27;s Super Funny Comedy Club</div>
+  <div id="event-venue-map" data-events='[{&quot;id&quot;: 48549, &quot;slug&quot;: &quot;jess-hilarious&quot;, &quot;title&quot;: &quot;Jess Hilarious&quot;, &quot;venue_id&quot;: 3825, &quot;venue_name&quot;: &quot;Nate Jackson&#x27;s Super Funny Comedy Club&quot;, &quot;venue_latitude&quot;: 47.248452, &quot;venue_longitude&quot;: -122.437961, &quot;canonical_event_url&quot;: &quot;https://www.ticketweb.com/event/jess-hilarious-nate-jacksons-super-funny-comedy-tickets/14966873&quot;}]'
+       style="height:280px;border-radius:12px;overflow:hidden;background:var(--bg)"></div>
+  <a class="directions-btn" href="https://www.openstreetmap.org/directions?to=47.248452%2C-122.437961" rel="nofollow noopener" target="_blank"
+     data-geo-href="geo:47.248452,-122.437961">Get directions →</a>
+</div>
+<script src="/comedy-atlas/atlas-venue-map.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('event-venue-map');
+  if(!el || !window.AtlasVenueMap) return;
+  var events;
+  try { events = JSON.parse(el.getAttribute('data-events')); } catch(e) { return; }
+  window.AtlasVenueMap.render(el, events, {basePath: '/comedy-atlas/'});
+})();
+</script>
   
   
   
