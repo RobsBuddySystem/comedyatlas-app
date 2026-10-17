@@ -103,16 +103,36 @@
   // from "price unknown" — and this function returned null (no badge shown)
   // even though the show WAS free. is_free is a real, independent,
   // source-declared fact, not derived from price being absent.
+  // 2026-10-17 (TRUST_AUDIT_2026-10-17): the homepage "tonight" list printed
+  // "9.95 EUR". Mirror of scripts/seo_common.format_price: a known currency
+  // renders as its symbol ("€9.95", "£5–10"), whole amounts drop the decimals,
+  // an unknown currency falls back to "12 PLN".
+  var CURRENCY_SYMBOL = { EUR: "€", GBP: "£", USD: "$", CAD: "CA$", AUD: "A$", NZD: "NZ$" };
+
+  function fmtAmount(n) {
+    var x = Number(n);
+    if (!isFinite(x)) return String(n);
+    return x === Math.round(x) ? String(Math.round(x)) : x.toFixed(2);
+  }
+
+  function fmtMoney(lo, hi, currency) {
+    var cur = String(currency || "").trim().toUpperCase();
+    var sym = CURRENCY_SYMBOL[cur];
+    if (hi == null || Number(hi) === Number(lo)) {
+      return sym ? sym + fmtAmount(lo) : fmtAmount(lo) + (cur ? " " + cur : "");
+    }
+    if (Number(lo) === 0) return "Free–" + (sym ? sym + fmtAmount(hi) : fmtAmount(hi) + (cur ? " " + cur : ""));
+    return sym ? sym + fmtAmount(lo) + "–" + fmtAmount(hi)
+               : fmtAmount(lo) + "–" + fmtAmount(hi) + (cur ? " " + cur : "");
+  }
+
   function fmtPrice(ev) {
     if (ev.is_free === true) return "Free";
     if (ev.price_min == null && ev.price_max == null) return null;
-    var cur = ev.currency ? (" " + ev.currency) : "";
-    if (ev.price_min != null && ev.price_max != null && ev.price_min !== ev.price_max) {
-      if (ev.price_min === 0) return "Free" + (ev.price_max ? (" – " + ev.price_max + cur) : "");
-      return ev.price_min + "–" + ev.price_max + cur;
-    }
-    var p = ev.price_min != null ? ev.price_min : ev.price_max;
-    return (Number(p) === 0 ? "Free" : (p + cur));
+    var lo = ev.price_min != null ? ev.price_min : ev.price_max;
+    var hi = (ev.price_min != null && ev.price_max != null) ? ev.price_max : null;
+    if (Number(lo) === 0 && (hi == null || Number(hi) === 0)) return "Free";
+    return fmtMoney(lo, hi, ev.currency);
   }
 
   // Badge logic inverted 2026-07-19 (Robert: a blanket "Verified" pill on
@@ -959,6 +979,7 @@
     fmtTime: fmtTime,
     eventZone: eventZone,
     fmtPrice: fmtPrice,
+    fmtMoney: fmtMoney,
     statusBadge: statusBadge,
     LANGUAGE_LABELS: LANGUAGE_LABELS,
     languageLabel: languageLabel,

@@ -94,13 +94,12 @@
   // root-cause writeup), so falling straight to "no price_min -> blank"
   // was silently hiding the one signal a free show actually had.
   function fmtPrice(ev) {
+    // One formatter for every surface (atlas-common.js fmtPrice -> "€9.95",
+    // never "9.95 EUR"); the local fallback only runs if atlas-common is absent.
+    if (A && A.fmtPrice) return escapeHtml(A.fmtPrice(ev) || "");
     if (ev.is_free === true) return "Free";
     if (ev.price_min === null || ev.price_min === undefined) return "";
-    var cur = ev.currency || "";
-    if (ev.price_max && ev.price_max !== ev.price_min) {
-      return escapeHtml(ev.price_min) + "–" + escapeHtml(ev.price_max) + " " + escapeHtml(cur);
-    }
-    return escapeHtml(ev.price_min) + " " + escapeHtml(cur);
+    return escapeHtml(ev.price_min) + " " + escapeHtml(ev.currency || "");
   }
 
   function renderPanelState(panel, html) {

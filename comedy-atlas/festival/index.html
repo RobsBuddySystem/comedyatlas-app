@@ -220,8 +220,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <label>Country <select id="ff-country"><option value="">All</option><option value="DE">DE</option>
 <option value="IE">IE</option></select></label>
   <label>Year <select id="ff-year"><option value="">All</option><option value="2026">2026</option></select></label>
-  <label>Status <select id="ff-status"><option value="">All</option><option value="planned">planned</option>
-<option value="unknown">unknown</option></select></label>
+  <label>Status <select id="ff-status"><option value="">All</option><option value="planned">planned</option></select></label>
   <label>Programme <select id="ff-programme">
     <option value="">All</option>
     <option value="listed">Programme listed</option>
@@ -335,10 +334,11 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   var status = document.getElementById('ff-status');
   var programme = document.getElementById('ff-programme');
   var empty = document.getElementById('ff-empty');
-  if (!country || !year || !status || !programme) return;
+  if (!country || !year || !programme) return;  // status select is optional
 
   function matches(el) {
-    var c = country.value, y = year.value, s = status.value, p = programme.value;
+    var c = country.value, y = year.value, p = programme.value;
+    var s = status ? status.value : '';
     if (c && el.getAttribute('data-country') !== c) return false;
     if (y && el.getAttribute('data-year') !== y) return false;
     if (s && el.getAttribute('data-status') !== s) return false;
@@ -366,7 +366,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   }
 
   [country, year, status, programme].forEach(function (sel) {
-    sel.addEventListener('change', apply);
+    if (sel) sel.addEventListener('change', apply);
   });
   apply();
 })();
