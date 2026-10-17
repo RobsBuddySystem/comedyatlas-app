@@ -48184,5 +48184,41 @@
     "primary_language": null,
     "typical_duration_minutes": null,
     "typical_spot_minutes": null
+  },
+  {
+    "active_status": "unknown",
+    "age_policy": null,
+    "city_id": 189,
+    "city_name": "Lille",
+    "country_iso2": "FR",
+    "description": "English-language stand-up night at Le Spotlight, Lille, run by Neil Sinclair. Sign in and claim this show if it's yours.",
+    "format_type": "showcase",
+    "frequency_type": "unknown",
+    "id": 5865,
+    "name": "English Stand Up Comedy Club",
+    "organization_id": 186,
+    "organization_name": "English Stand Up Comedy Club",
+    "other_languages": null,
+    "primary_language": "en",
+    "typical_duration_minutes": null,
+    "typical_spot_minutes": null
+  },
+  {
+    "active_status": "unknown",
+    "age_policy": null,
+    "city_id": 3,
+    "city_name": "Brussels",
+    "country_iso2": "BE",
+    "description": "Monthly English-language stand-up night in Brussels, 19h, run by Neil Sinclair. Sign in and claim this show if it's yours.",
+    "format_type": "showcase",
+    "frequency_type": "monthly",
+    "id": 5866,
+    "name": "Kings of Comedy Club Brussels",
+    "organization_id": 188,
+    "organization_name": "Kings of Comedy Club Brussels",
+    "other_languages": null,
+    "primary_language": "en",
+    "typical_duration_minutes": null,
+    "typical_spot_minutes": null
   }
 ]
