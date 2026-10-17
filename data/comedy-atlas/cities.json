@@ -266,8 +266,8 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 125,
-      "fr": 3417,
+      "en": 116,
+      "fr": 3404,
       "unconfirmed": 20
     },
     "latitude": 48.8566,
@@ -1068,7 +1068,7 @@
     "country_name": "United States",
     "id": 90,
     "language_counts": {
-      "unconfirmed": 22
+      "unconfirmed": 23
     },
     "latitude": 30.2672,
     "longitude": -97.7431,
@@ -15933,6 +15933,23 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/London"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1286,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 20.02672,
+    "longitude": -155.66606,
+    "name": "Waimea",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "America/Anchorage"
   },
   {
     "country_id": 60,
