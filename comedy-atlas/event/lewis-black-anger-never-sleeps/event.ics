@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lewis-black-anger-never-sleeps@comedyatlas.app
+DTSTAMP:20270521T233000Z
+DTSTART:20270521T233000Z
+DTEND:20270522T013000Z
+SUMMARY:Lewis Black: Anger Never Sleeps
+LOCATION:Beacon Theatre\, 2124 Broadway @ 74th St\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lewis-bla
+ ck-anger-never-sleeps/
+URL:https://comedyatlas.app/comedy-atlas/event/lewis-black-anger-never-slee
+ ps/
+END:VEVENT
+END:VCALENDAR

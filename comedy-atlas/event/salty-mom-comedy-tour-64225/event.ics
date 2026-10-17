@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:salty-mom-comedy-tour-64225@comedyatlas.app
+DTSTAMP:20270208T000000Z
+DTSTART:20270208T000000Z
+DTEND:20270208T020000Z
+SUMMARY:Salty Mom Comedy Tour
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/salty-mom
+ -comedy-tour-64225/
+URL:https://comedyatlas.app/comedy-atlas/event/salty-mom-comedy-tour-64225/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ivan-decker-middle-child@comedyatlas.app
+DTSTAMP:20261127T000000Z
+DTSTART:20261127T000000Z
+DTEND:20261127T020000Z
+SUMMARY:IVAN DECKER: MIDDLE CHILD
+LOCATION:The Royal Theatre\, 608 College Street West\, Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ivan-deck
+ er-middle-child/
+URL:https://comedyatlas.app/comedy-atlas/event/ivan-decker-middle-child/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d-j-demers-64230@comedyatlas.app
+DTSTAMP:20270211T033000Z
+DTSTART:20270211T033000Z
+DTEND:20270211T053000Z
+SUMMARY:D.J. Demers
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/d-j-demer
+ s-64230/
+URL:https://comedyatlas.app/comedy-atlas/event/d-j-demers-64230/
+END:VEVENT
+END:VCALENDAR

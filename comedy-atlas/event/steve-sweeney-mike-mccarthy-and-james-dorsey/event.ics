@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-sweeney-mike-mccarthy-and-james-dorsey@comedyatlas.app
+DTSTAMP:20261031T000000Z
+DTSTART:20261031T000000Z
+DTEND:20261031T020000Z
+SUMMARY:Steve Sweeney\, Mike McCarthy and James Dorsey
+LOCATION:Lincoln
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-swe
+ eney-mike-mccarthy-and-james-dorsey/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-sweeney-mike-mccarthy-
+ and-james-dorsey/
+END:VEVENT
+END:VCALENDAR

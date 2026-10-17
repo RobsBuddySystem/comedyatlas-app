@@ -70,6 +70,7 @@
       <input id="show-search" type="search" placeholder="Search shows by name, venue or city…" autocomplete="off" spellcheck="true" lang="en">
       <div id="show-results" role="list"></div>
       <p class="data-note" id="picker-note">Loading upcoming shows…</p>
+      <p class="data-note" id="bk-note" role="status" aria-live="polite"></p>
     </div>
     <button class="blank-btn" id="blank-btn" type="button">Or start with a blank canvas →</button>
   </div>
@@ -87,6 +88,16 @@
       </div>
 
       <div class="tools-col" id="form-panel">
+        <!-- P2.5: shown only when opened from the booker page (poster.html#show=<event id>) -->
+        <div class="card" id="booker-card" hidden>
+          <h2>Your show</h2>
+          <p class="data-note" id="bk-summary" style="margin:0 0 10px"></p>
+          <div class="pill-row">
+            <button class="pill primary" id="bk-save" type="button">Save flyer + captions to my show</button>
+            <a class="pill" id="bk-back" href="booker.html#lineups">Back to my booker page</a>
+          </div>
+          <div id="bk-status" role="status" aria-live="polite" class="fld-help"></div>
+        </div>
         <!-- actions + checklist -->
         <div class="card">
           <div class="pill-row top-actions">
@@ -348,14 +359,18 @@
           </div>
         </details>
 
-        <!-- CAPTION -->
+        <!-- CAPTION: French + English, built from the same form -->
         <details class="sec" id="sec-caption">
-          <summary>Caption for your post</summary>
+          <summary>Captions for your post (French and English)</summary>
           <div class="sec-body">
-            <label class="fld"><span>Built from your form — edit it if you like</span><textarea id="caption-text" rows="9" spellcheck="true"></textarea></label>
+            <label class="fld"><span>Français — built from your form, edit it if you like</span><textarea id="caption-fr" rows="9" spellcheck="true" lang="fr"></textarea></label>
             <div class="pill-row">
-              <button class="pill primary" id="caption-copy" type="button">Copy caption</button>
-              <button class="pill" id="caption-rebuild" type="button">Rebuild from form</button>
+              <button class="pill primary" id="caption-copy-fr" type="button">Copy French caption</button>
+            </div>
+            <label class="fld"><span>English — built from your form, edit it if you like</span><textarea id="caption-en" rows="9" spellcheck="true" lang="en"></textarea></label>
+            <div class="pill-row">
+              <button class="pill primary" id="caption-copy-en" type="button">Copy English caption</button>
+              <button class="pill" id="caption-rebuild" type="button">Rebuild both from form</button>
             </div>
             <div id="caption-status" role="status" aria-live="polite" class="fld-help"></div>
           </div>

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-with-larry-the-cable-guy@comedyatlas.app
+DTSTAMP:20270129T010000Z
+DTSTART:20270129T010000Z
+DTEND:20270129T030000Z
+SUMMARY:An Evening With Larry The Cable Guy
+LOCATION:Hard Rock Live\, 1 Seminole Way\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-with-larry-the-cable-guy/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-with-larry-the-ca
+ ble-guy/
+END:VEVENT
+END:VCALENDAR

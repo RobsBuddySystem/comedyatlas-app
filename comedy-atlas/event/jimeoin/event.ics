@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimeoin@comedyatlas.app
+DTSTAMP:20270109T083000Z
+DTSTART:20270109T083000Z
+DTEND:20270109T103000Z
+SUMMARY:Jimeoin
+LOCATION:Anita's Theatre\, 264-270 Lawrence Hargrave Dr\, Thirroul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimeoin/
+URL:https://comedyatlas.app/comedy-atlas/event/jimeoin/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:berk-karan-stand-up@comedyatlas.app
+DTSTAMP:20261209T180000Z
+DTSTART:20261209T180000Z
+DTEND:20261209T200000Z
+SUMMARY:Berk Karan Stand Up
+LOCATION:Paribu Art - Ana Sahne\, Hasanpaşa Mah.\, Kurbağalıdere Cad.\, 
+ GH Blok No:2/26\, İç Kapı No:13\, 34722\, Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/berk-kara
+ n-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/berk-karan-stand-up/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-64265@comedyatlas.app
+DTSTAMP:20270305T013000Z
+DTSTART:20270305T013000Z
+DTEND:20270305T033000Z
+SUMMARY:Martin Amini
+LOCATION:Arlington Improv\, 309 Curtis Mathes Way #147\, Arlington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-64265/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-64265/
+END:VEVENT
+END:VCALENDAR

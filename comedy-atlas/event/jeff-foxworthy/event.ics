@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-foxworthy@comedyatlas.app
+DTSTAMP:20270227T020000Z
+DTSTART:20270227T020000Z
+DTEND:20270227T040000Z
+SUMMARY:Jeff Foxworthy
+LOCATION:River City Casino & Hotel\, 777 River City Casino Blvd\, Saint Lou
+ is
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-foxw
+ orthy/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-foxworthy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steven-rogers@comedyatlas.app
+DTSTAMP:20270122T003000Z
+DTSTART:20270122T003000Z
+DTEND:20270122T023000Z
+SUMMARY:Steven Rogers
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steven-ro
+ gers/
+URL:https://comedyatlas.app/comedy-atlas/event/steven-rogers/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ryan-carrick-this-genuinely-did-happen@comedyatlas.app
+DTSTAMP:20270521T190000Z
+DTSTART:20270521T190000Z
+DTEND:20270521T210000Z
+SUMMARY:Ryan Carrick - This Genuinely Did Happen
+LOCATION:Vicar Street\, 58 Thomas Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ryan-carr
+ ick-this-genuinely-did-happen/
+URL:https://comedyatlas.app/comedy-atlas/event/ryan-carrick-this-genuinely-
+ did-happen/
+END:VEVENT
+END:VCALENDAR

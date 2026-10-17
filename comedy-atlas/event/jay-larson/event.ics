@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jay-larson@comedyatlas.app
+DTSTAMP:20270205T040000Z
+DTSTART:20270205T040000Z
+DTEND:20270205T060000Z
+SUMMARY:Jay Larson
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jay-larso
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/jay-larson/
+END:VEVENT
+END:VCALENDAR

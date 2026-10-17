@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yohay-sponder@comedyatlas.app
+DTSTAMP:20270222T010100Z
+DTSTART:20270222T010100Z
+DTEND:20270222T030100Z
+SUMMARY:Yohay Sponder
+LOCATION:Vic Theatre\, 3145 N Sheffield Ave\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yohay-spo
+ nder/
+URL:https://comedyatlas.app/comedy-atlas/event/yohay-sponder/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:johann-konig@comedyatlas.app
+DTSTAMP:20281208T190000Z
+DTSTART:20281208T190000Z
+DTEND:20281208T210000Z
+SUMMARY:Johann König
+LOCATION:SWT Arena\, Fort Worth-Platz 1\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/johann-ko
+ nig/
+URL:https://comedyatlas.app/comedy-atlas/event/johann-konig/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:osan-yaran@comedyatlas.app
+DTSTAMP:20271124T190000Z
+DTSTART:20271124T190000Z
+DTEND:20271124T210000Z
+SUMMARY:Osan Yaran
+LOCATION:Europahalle\, Viehmarktplatz 15\, Trier
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/osan-yara
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/osan-yaran/
+END:VEVENT
+END:VCALENDAR

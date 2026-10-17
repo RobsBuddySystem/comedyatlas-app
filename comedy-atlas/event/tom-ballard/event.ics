@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-ballard@comedyatlas.app
+DTSTAMP:20270225T080000Z
+DTSTART:20270225T080000Z
+DTEND:20270225T100000Z
+SUMMARY:Tom Ballard
+LOCATION:Altar Bar\, 112 Murray Street\, Hobart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-balla
+ rd/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-ballard/
+END:VEVENT
+END:VCALENDAR

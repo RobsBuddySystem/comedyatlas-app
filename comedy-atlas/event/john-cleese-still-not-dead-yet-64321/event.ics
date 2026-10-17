@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-cleese-still-not-dead-yet-64321@comedyatlas.app
+DTSTAMP:20270331T020000Z
+DTSTART:20270331T020000Z
+DTEND:20270331T040000Z
+SUMMARY:John Cleese: Still Not Dead (Yet)
+LOCATION:Balboa Theatre\, 868 Fourth Avenue\, San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-clee
+ se-still-not-dead-yet-64321/
+URL:https://comedyatlas.app/comedy-atlas/event/john-cleese-still-not-dead-y
+ et-64321/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nurse-georgie-carroll-64102@comedyatlas.app
+DTSTAMP:20270201T000000Z
+DTSTART:20270201T000000Z
+DTEND:20270201T020000Z
+SUMMARY:Nurse Georgie Carroll
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nurse-geo
+ rgie-carroll-64102/
+URL:https://comedyatlas.app/comedy-atlas/event/nurse-georgie-carroll-64102/
+END:VEVENT
+END:VCALENDAR

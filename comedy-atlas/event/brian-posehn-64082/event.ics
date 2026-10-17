@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-posehn-64082@comedyatlas.app
+DTSTAMP:20270124T040000Z
+DTSTART:20270124T040000Z
+DTEND:20270124T060000Z
+SUMMARY:Brian Posehn
+LOCATION:Aladdin Theater\, 3017 SE Milwaukie Avenue\, Portland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-pos
+ ehn-64082/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-posehn-64082/
+END:VEVENT
+END:VCALENDAR

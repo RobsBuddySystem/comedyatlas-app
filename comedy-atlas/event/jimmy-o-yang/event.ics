@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimmy-o-yang@comedyatlas.app
+DTSTAMP:20270327T020000Z
+DTSTART:20270327T020000Z
+DTEND:20270327T040000Z
+SUMMARY:Jimmy O. Yang
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimmy-o-y
+ ang/
+URL:https://comedyatlas.app/comedy-atlas/event/jimmy-o-yang/
+END:VEVENT
+END:VCALENDAR

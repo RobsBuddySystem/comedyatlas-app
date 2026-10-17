@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halloween-special-english-comedy-night-in-the-heart-of-berlin@comedyatl
+ as.app
+DTSTAMP:20261031T180000Z
+DTSTART:20261031T180000Z
+DTEND:20261031T200000Z
+SUMMARY:Halloween Special – English Comedy Night in the Heart of Berlin!
+LOCATION:Comedy Club Kookaburra\, Schönhauser Allee 184\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/halloween
+ -special-english-comedy-night-in-the-heart-of-berlin/
+URL:https://comedyatlas.app/comedy-atlas/event/halloween-special-english-co
+ medy-night-in-the-heart-of-berlin/
+END:VEVENT
+END:VCALENDAR

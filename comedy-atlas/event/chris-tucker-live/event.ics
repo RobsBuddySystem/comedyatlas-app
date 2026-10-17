@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-tucker-live@comedyatlas.app
+DTSTAMP:20270116T040000Z
+DTSTART:20270116T040000Z
+DTEND:20270116T060000Z
+SUMMARY:Chris Tucker Live!
+LOCATION:Encore Theater at Wynn Las Vegas\, 3131 Las Vegas Boulevard South\
+ , Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-tuc
+ ker-live/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-tucker-live/
+END:VEVENT
+END:VCALENDAR

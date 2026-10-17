@@ -377,6 +377,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 (function () {
   "use strict";
   var A = window.AtlasAuth;
+  // P1.1: logged-out visitors make no /auth/me or /booker|/comic requests.
+  if (A.quietLoggedOut) A.quietLoggedOut();   // guarded: a cached older atlas-auth.js lacks it
   var meId = null;
   window.AtlasNav.wireSignOut("#atlas-signout");
 
@@ -953,7 +955,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     refreshInvites();
   }
 
-  A.me().then(function (r) {
+  (A.meIfSession ? A.meIfSession() : A.me()).then(function (r) {
     meId = r.person_id;
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";

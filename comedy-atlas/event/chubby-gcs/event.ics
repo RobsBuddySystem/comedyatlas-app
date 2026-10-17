@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chubby-gcs@comedyatlas.app
+DTSTAMP:20261210T183000Z
+DTSTART:20261210T183000Z
+DTEND:20261210T203000Z
+SUMMARY:CHUBBY GCs
+LOCATION:WS14 9JE\, Horse & jockey Freeford\, Walsall
+DESCRIPTION:Featuring Chubby GC's ultimate tribute - fully endorsed by Roy 
+ Chubby Brown\nStrictly 18+\nMore info: https://comedyatlas.app/comedy-atlas
+ /event/chubby-gcs/
+URL:https://comedyatlas.app/comedy-atlas/event/chubby-gcs/
+END:VEVENT
+END:VCALENDAR

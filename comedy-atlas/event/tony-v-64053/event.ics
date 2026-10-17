@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tony-v-64053@comedyatlas.app
+DTSTAMP:20261114T010000Z
+DTSTART:20261114T010000Z
+DTEND:20261114T030000Z
+SUMMARY:Tony V
+LOCATION:Lincoln
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tony-v-64
+ 053/
+URL:https://comedyatlas.app/comedy-atlas/event/tony-v-64053/
+END:VEVENT
+END:VCALENDAR

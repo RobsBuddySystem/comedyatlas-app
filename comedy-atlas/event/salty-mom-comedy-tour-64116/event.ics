@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:salty-mom-comedy-tour-64116@comedyatlas.app
+DTSTAMP:20270205T033000Z
+DTSTART:20270205T033000Z
+DTEND:20270205T053000Z
+SUMMARY:Salty Mom Comedy Tour
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/salty-mom
+ -comedy-tour-64116/
+URL:https://comedyatlas.app/comedy-atlas/event/salty-mom-comedy-tour-64116/
+END:VEVENT
+END:VCALENDAR

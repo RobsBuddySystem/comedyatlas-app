@@ -207,7 +207,7 @@
   var imgs = {};          // image store: id -> { img, url }
   var nextImg = 1;
   var qrCache = { url: null, q: null };
-  var captionEdited = false;
+  var captionEdited = { fr: false, en: false };   // per-language: don't overwrite a caption the person edited
 
   var canvas = document.getElementById("poster-canvas");
   var ctx = canvas.getContext("2d");
@@ -416,6 +416,18 @@
     if (/^https?:\/\//i.test(u)) return u;
     if (/^[a-z][a-z0-9+.-]*:/i.test(u)) return "";
     return /\./.test(u) && !/\s/.test(u) ? "https://" + u : "";
+  }
+  // Anything coming from the API or a link goes through these before it touches the DOM / a URL slot.
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  // absolute http(s) URL or "" -- never javascript:, data:, protocol-relative or whitespace-laden strings
+  function safeHttpUrl(u) {
+    u = typeof u === "string" ? u.trim() : "";
+    if (!u || u.length > 2000 || !/^https?:\/\/[^\s<>"'`\\]+$/i.test(u)) return "";
+    try { var p = new URL(u); return p.protocol === "http:" || p.protocol === "https:" ? u : ""; } catch (e) { return ""; }
   }
   function shortUrl(u) {
     return (u || "").trim().replace(/^https?:\/\//i, "").replace(/^www\./i, "").replace(/\/$/, "");
@@ -1099,6 +1111,7 @@
     form.address = show.street || "";
     form.city = show.city || "";
     form.ticketUrl = show.slug ? "https://comedyatlas.app/comedy-atlas/show/" + show.slug + "/" : "";
+    if (show.booker) applyBookerData(show.booker);
   }
 
   function loadEvents() {
@@ -1189,7 +1202,7 @@
     state.bg.darken = 0.4;
     state.sticker.on = false;
     state.credit = true;
-    captionEdited = false;
+    captionEdited = { fr: false, en: false };
     histReset();
   }
 
@@ -1203,6 +1216,7 @@
     }
     syncToolbar();
     syncControls();
+    syncBookerCard();
     refresh();
     updateChecklist();
     updateCaption(true);
@@ -1701,6 +1715,32 @@
     return (t || "").toLowerCase().replace(/[^a-z0-9]/g, "");
   }
 
+  // Hashtags: exactly 5, deterministic, no LLM. #standup + #standupcomedy (#improv for
+  // improv-only nights), the city, #comedieparis when the city is Paris, then the show's own
+  // hashtag, then fillers (city comedy tag, language-appropriate generic tags).
+  function captionTags(lang) {
+    var f = form, fr = lang === "fr";
+    var city = (f.city || "").trim(), ct = cityTag(city);
+    var paris = /\bparis\b/i.test(city);
+    var fm = f.formats || [];
+    var improvOnly = fm.indexOf("improv") !== -1 && fm.indexOf("standup") === -1 && fm.indexOf("openmic") === -1;
+    var out = improvOnly ? ["#improv", "#improvcomedy"] : ["#standup", "#standupcomedy"];
+    if (ct) out.push("#" + ct);
+    if (paris) out.push("#comedieparis");
+    var own = handle(f.hashtag, "#");
+    if (own) out.push(own);
+    if (fm.indexOf("openmic") !== -1) out.push("#openmic");
+    if (ct) out.push("#" + ct + "comedy");
+    var fill = fr ? ["#humour", "#soireehumour", "#comedie", "#spectacle"] : ["#comedy", "#livecomedy", "#comedyshow", "#comedynight"];
+    out = out.concat(fill);
+    var seen = {}, res = [];
+    out.forEach(function (t) {
+      var k = t.toLowerCase();
+      if (!seen[k] && res.length < 5) { seen[k] = 1; res.push(t); }
+    });
+    return res;
+  }
+
   function buildCaption() {
     var f = form, fr = f.lang === "fr", lines = [];
     var title = (f.title || "").trim();
@@ -1721,9 +1761,10 @@
     var where = [(f.venue || "").trim(), (f.address || "").trim(), city].filter(Boolean).join(", ");
     if (where) lines.push((fr ? "Où : " : "Where: ") + where);
     if ((f.transit || "").trim()) lines.push(L("transit") + ": " + f.transit.trim());
+    // running order, as entered; a comic with a public Instagram handle is tagged @handle, otherwise the name
     var names = f.lineup.filter(function (c) { return (c.name || "").trim(); }).map(function (c) {
       var h = handle(c.handle, "@");
-      return c.name.trim() + (h ? " " + h : "");
+      return h || c.name.trim();
     });
     if (names.length) lines.push((fr ? "Avec : " : "With: ") + names.join(", "));
     var pt = priceText(f), pr = [pt, (f.promo || "").trim(), ageText(f)].filter(Boolean).join(" · ");
@@ -1736,35 +1777,40 @@
     if (note) lines.push(note);
     var ig = handle(f.instagram, "@");
     if (ig) lines.push(ig);
-    var tags = [];
-    if (f.formats.indexOf("standup") !== -1) tags.push("#standupcomedy");
-    if (f.formats.indexOf("openmic") !== -1) tags.push("#openmic");
-    if (f.formats.indexOf("improv") !== -1) tags.push("#improv");
-    if (cityTag(city)) tags.push("#" + cityTag(city) + "comedy");
-    var ht = handle(f.hashtag, "#");
-    if (ht) tags.push(ht);
-    if (!tags.length) tags.push("#comedy");
-    lines.push(tags.join(" "));
+    lines.push(captionTags(fr ? "fr" : "en").join(" "));
     return lines.join("\n");
   }
 
-  function updateCaption(force) {
-    var el = $("caption-text");
-    if (captionEdited && !force) return;
-    el.value = buildCaption();
+  // The same form, written in one language: swap form.lang (and a French-only time style) for the
+  // duration of the build, then put everything back.
+  function captionIn(lang) {
+    var prevLang = form.lang, prevFmt = form.timeFmt;
+    form.lang = lang === "fr" ? "fr" : "en";
+    form.timeFmt = lang === "fr" ? "fr" : (prevFmt === "fr" ? "12" : prevFmt);
+    try { return buildCaption(); }
+    finally { form.lang = prevLang; form.timeFmt = prevFmt; }
   }
-  $("caption-text").addEventListener("input", function () { captionEdited = true; scheduleCommit(); });
-  $("caption-rebuild").addEventListener("click", function () {
-    captionEdited = false;
-    updateCaption(true);
-    $("caption-status").textContent = "Caption rebuilt from the form.";
+
+  function updateCaption(force) {
+    ["fr", "en"].forEach(function (lg) {
+      if (captionEdited[lg] && !force) return;
+      $("caption-" + lg).value = captionIn(lg);
+    });
+  }
+  ["fr", "en"].forEach(function (lg) {
+    $("caption-" + lg).addEventListener("input", function () { captionEdited[lg] = true; scheduleCommit(); });
   });
-  $("caption-copy").addEventListener("click", function () {
-    var el = $("caption-text"), btn = $("caption-copy");
+  $("caption-rebuild").addEventListener("click", function () {
+    captionEdited = { fr: false, en: false };
+    updateCaption(true);
+    $("caption-status").textContent = "Both captions rebuilt from the form.";
+  });
+  function copyCaption(lg) {
+    var el = $("caption-" + lg), btn = $("caption-copy-" + lg), label = btn.textContent;
     function ok() {
       btn.classList.add("done"); btn.textContent = "Copied";
-      $("caption-status").textContent = "Caption copied. Paste it into your post.";
-      setTimeout(function () { btn.classList.remove("done"); btn.textContent = "Copy caption"; }, 2000);
+      $("caption-status").textContent = (lg === "fr" ? "French" : "English") + " caption copied. Paste it into your post.";
+      setTimeout(function () { btn.classList.remove("done"); btn.textContent = label; }, 2000);
     }
     function fallback() {
       el.focus(); el.select();
@@ -1775,7 +1821,9 @@
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(el.value).then(ok, fallback);
     } else { fallback(); }
-  });
+  }
+  $("caption-copy-fr").addEventListener("click", function () { copyCaption("fr"); });
+  $("caption-copy-en").addEventListener("click", function () { copyCaption("en"); });
 
   // -------------------------------------------------- undo / redo / draft
   var hist = { stack: [], idx: -1, timer: null, restoring: false, dirty: false };
@@ -1786,7 +1834,7 @@
       bg: { mode: state.bg.mode, c1: state.bg.c1, c2: state.bg.c2, darken: state.bg.darken },
       ov: state.ov, custom: state.custom, sticker: { on: state.sticker.on, x: state.sticker.x, y: state.sticker.y },
       credit: state.credit, show: state.show, captionEdited: captionEdited,
-      caption: captionEdited ? $("caption-text").value : ""
+      caption: { fr: captionEdited.fr ? $("caption-fr").value : "", en: captionEdited.en ? $("caption-en").value : "" }
     });
   }
 
@@ -1807,8 +1855,19 @@
     if (state.sticker.on && !stickerImg) loadSticker();
     state.credit = d.credit !== false;
     state.show = d.show || null;
-    captionEdited = !!d.captionEdited;
-    if (captionEdited) $("caption-text").value = d.caption || "";
+    // older drafts kept ONE caption in the poster's language (captionEdited was a boolean)
+    if (d.captionEdited && typeof d.captionEdited === "object") {
+      captionEdited = { fr: !!d.captionEdited.fr, en: !!d.captionEdited.en };
+      if (captionEdited.fr) $("caption-fr").value = (d.caption && d.caption.fr) || "";
+      if (captionEdited.en) $("caption-en").value = (d.caption && d.caption.en) || "";
+    } else {
+      captionEdited = { fr: false, en: false };
+      if (d.captionEdited && typeof d.caption === "string") {
+        var lg = form.lang === "fr" ? "fr" : "en";
+        captionEdited[lg] = true;
+        $("caption-" + lg).value = d.caption;
+      }
+    }
     state.selected = null;
     syncToolbar(); syncControls();
     refresh();
@@ -2313,7 +2372,7 @@
   }
 
   function exportFilename() {
-    var base = (state.show && state.show.slug) ? state.show.slug : "comedy-poster";
+    var base = (state.show && (state.show.slug || state.show.fileSlug)) ? (state.show.slug || state.show.fileSlug) : "comedy-poster";
     return base + "-" + state.sizeKey + ".png";
   }
 
@@ -2420,6 +2479,187 @@
     if ($("editor").style.display === "block") fitCanvas();
   });
 
+  // ------------------------------------------------ P2.5 booker bridge
+  // poster.html#show=<event id> (the "Make flyer" button on booker.html) fetches
+  // GET /booker/events/<id>/poster-data -- the booker's own lineup, in the order they
+  // dragged it -- and opens the editor pre-filled: show, date/time (FR or EN per the show's
+  // language), venue + city, ticket link + QR, and the lineup with Atlas headshots (initials
+  // when a comic has no photo or the image fails to load). "Save flyer + captions to my show"
+  // POSTs the PNG and both captions back; booker.html shows them. Everything the API sends is
+  // inserted with textContent / form values (never innerHTML) and URLs pass safeHttpUrl.
+  function bookerEventIdFromHash() {
+    var m = /^#show=(\d{1,9})$/.exec(location.hash || "");
+    return m ? parseInt(m[1], 10) : 0;
+  }
+  function bkApiBase() { return (window.AtlasAuth && window.AtlasAuth.apiBase) || ""; }
+
+  // Headshot URL the canvas may use: absolute http(s), or one of our own /uploads/ paths.
+  function photoSrc(u) {
+    if (typeof u !== "string") return "";
+    u = u.trim();
+    if (/^\/uploads\/[A-Za-z0-9._\/-]+$/.test(u) && u.indexOf("..") === -1) {
+      return safeHttpUrl((bkApiBase() || location.origin) + u);
+    }
+    return safeHttpUrl(u);
+  }
+
+  // -> image id, or null (no photo, 404, blocked by CORS, timeout): the caller shows initials.
+  // crossOrigin="anonymous" keeps the canvas clean (a tainted canvas cannot be exported);
+  // the picture is then copied to a local data: URL so drafts and undo never refetch it.
+  function loadHeadshot(url) {
+    return new Promise(function (resolve) {
+      if (!url) { resolve(null); return; }
+      var done = false, im = new Image();
+      function finish(v) { if (!done) { done = true; clearTimeout(timer); resolve(v); } }
+      var timer = setTimeout(function () { finish(null); }, 8000);
+      im.crossOrigin = "anonymous";
+      im.onerror = function () { finish(null); };
+      im.onload = function () {
+        try {
+          var iw = im.naturalWidth, ih = im.naturalHeight;
+          if (!iw || !ih) { finish(null); return; }
+          var sc = Math.min(1, 480 / Math.max(iw, ih));
+          var c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(iw * sc)); c.height = Math.max(1, Math.round(ih * sc));
+          var cx = c.getContext("2d");
+          cx.fillStyle = "#ffffff"; cx.fillRect(0, 0, c.width, c.height);
+          cx.drawImage(im, 0, 0, c.width, c.height);
+          var dataUrl = c.toDataURL("image/jpeg", 0.88); // throws on a tainted canvas
+          var local = new Image();
+          local.onload = function () {
+            if (done) return;
+            var id = "i" + (nextImg++);
+            imgs[id] = { img: local, url: dataUrl };
+            finish(id);
+          };
+          local.onerror = function () { finish(null); };
+          local.src = dataUrl;
+        } catch (e) { finish(null); }
+      };
+      im.src = url;
+    });
+  }
+
+  function slugify(t) {
+    var x = (t || "").normalize ? t.normalize("NFD").replace(/[̀-ͯ]/g, "") : (t || "");
+    return x.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+  }
+
+  // Called from prefillForm() when the picked "show" came from the booker.
+  function applyBookerData(b) {
+    form.lang = b.lang === "en" ? "en" : "fr";
+    if (!lsGet(PREFS_KEY)) form.timeFmt = form.lang === "fr" ? "fr" : "12";   // no saved choice: 20h00 / 8pm
+    form.ticketUrl = b.ticketUrl || "";
+    form.qr = !!form.ticketUrl;
+    form.lineup = (b.lineup || []).map(function (c, i) {
+      return { id: "c" + (i + 1), name: c.name, handle: c.handle, role: c.role, special: false, photoId: c.photoId || null };
+    });
+    form.nextLu = form.lineup.length + 1;
+    form.showHeads = true;
+    form.showHandles = true;
+  }
+
+  function syncBookerCard() {
+    var b = state.show && state.show.booker;
+    $("booker-card").hidden = !b;
+    if (!b) return;
+    var n = form.lineup.filter(function (c) { return (c.name || "").trim(); }).length;
+    $("bk-summary").textContent = (form.title || "Your show") + (dateText(form) ? " · " + dateText(form) : "") +
+      " · " + n + (n === 1 ? " comic" : " comics") + " from your lineup builder. Edit anything, then save.";
+  }
+
+  function bkStatus(msg, cls) {
+    var el = $("bk-status");
+    el.textContent = msg;
+    el.className = "fld-help" + (cls ? " " + cls : "");
+  }
+
+  function bkNote(msg, signInLink) {
+    var el = $("bk-note");
+    el.textContent = msg;
+    if (signInLink) {
+      var a = document.createElement("a");
+      a.href = "booker.html#lineups"; a.textContent = "Open the booker page";
+      el.appendChild(document.createTextNode(" "));
+      el.appendChild(a);
+    }
+  }
+
+  function startFromBooker(eventId) {
+    if (!window.AtlasAuth) { bkNote("Couldn't load your lineup (sign-in helper missing)."); return; }
+    bkNote("Loading your lineup…");
+    window.AtlasAuth.get("/booker/events/" + eventId + "/poster-data").then(function (data) {
+      var sh = (data && data.show) || {};
+      var lineup = (Array.isArray(data && data.lineup) ? data.lineup : []).filter(function (c) {
+        return c && typeof c.name === "string" && c.name.trim();
+      }).slice(0, 20);
+      return Promise.all(lineup.map(function (c) { return loadHeadshot(photoSrc(c.photo_url)); })).then(function (ids) {
+        var rows = lineup.map(function (c, i) {
+          var role = String(c.role || "").toLowerCase();
+          var ig = typeof c.instagram === "string" ? c.instagram.replace(/^@/, "").trim() : "";
+          return {
+            name: c.name.trim().slice(0, 60),
+            handle: /^[A-Za-z0-9._]{1,30}$/.test(ig) ? "@" + ig : "",
+            role: ROLE_KEYS[role] ? role : "",
+            photoId: ids[i]
+          };
+        });
+        var title = String(sh.name || sh.title || "Comedy night").trim().slice(0, 120);
+        var date = /^\d{4}-\d{2}-\d{2}$/.test(sh.local_date || "") ? sh.local_date : "";
+        var time = /^\d{2}:\d{2}$/.test(sh.local_time || "") ? sh.local_time : "";
+        state.show = {
+          title: title, seriesName: title, slug: "", fileSlug: slugify(title),
+          dateLine: null, venueLine: String(sh.venue_name || ""), addrLine: "", ticketsLine: "",
+          date: date, time: time, venueName: String(sh.venue_name || "").slice(0, 100),
+          street: String(sh.address || "").slice(0, 140), city: String(sh.city || "").slice(0, 60),
+          booker: { eventId: eventId, lang: sh.lang === "en" ? "en" : "fr",
+                    ticketUrl: safeHttpUrl(sh.ticket_url).slice(0, 300), lineup: rows }
+        };
+        return fontsP;
+      });
+    }).then(function () {
+      openEditor(false);
+      bkNote("");
+    }).catch(function (e) {
+      var st = e && e.status;
+      if (st === 401) bkNote("Please sign in on your booker page, then press Make flyer again.", true);
+      else if (st === 403) bkNote("That night isn't one of your shows. Pick it from your booker page.", true);
+      else bkNote("Couldn't load your lineup (" + escapeHtml((e && e.message) || "error") + "). You can still pick a show below.");
+    });
+  }
+
+  function blobToBase64(blob) {
+    return new Promise(function (resolve, reject) {
+      var r = new FileReader();
+      r.onerror = function () { reject(new Error("Could not read the image")); };
+      r.onload = function () { resolve(String(r.result).split(",")[1] || ""); };
+      r.readAsDataURL(blob);
+    });
+  }
+
+  $("bk-save").addEventListener("click", function () {
+    var b = state.show && state.show.booker, btn = this;
+    if (!b || !window.AtlasAuth) return;
+    btn.disabled = true;
+    bkStatus("Saving…", "");
+    exportBlob().then(blobToBase64).then(function (b64) {
+      return window.AtlasAuth.post("/booker/events/" + b.eventId + "/poster", {
+        png_base64: b64, caption_fr: $("caption-fr").value, caption_en: $("caption-en").value, size: state.sizeKey
+      });
+    }).then(function () {
+      bkStatus("Saved to your show. It is now on your booker page under Social media flyers.", "ok");
+    }).catch(function (e) {
+      bkStatus("Couldn't save: " + ((e && e.body && typeof e.body.detail === "string" && e.body.detail) || (e && e.message) || "error"), "error");
+    }).then(function () { btn.disabled = false; });
+  });
+
+  var bkId = bookerEventIdFromHash();
+  if (bkId) startFromBooker(bkId);
+  window.addEventListener("hashchange", function () {
+    var id = bookerEventIdFromHash();
+    if (id) startFromBooker(id);
+  });
+
   // expose for tests
   window.AtlasPoster = {
     state: state,
@@ -2430,6 +2670,9 @@
     applyTemplate: applyTemplate,
     exportBlob: exportBlob,
     buildCaption: buildCaption,
+    captionIn: captionIn,
+    captionTags: captionTags,
+    safeHttpUrl: safeHttpUrl,
     undo: undo,
     redo: redo,
     SIZES: SIZES

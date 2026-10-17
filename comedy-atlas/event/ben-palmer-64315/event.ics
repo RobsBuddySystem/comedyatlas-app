@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-palmer-64315@comedyatlas.app
+DTSTAMP:20270326T020000Z
+DTSTART:20270326T020000Z
+DTEND:20270326T040000Z
+SUMMARY:Ben Palmer
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-palme
+ r-64315/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-palmer-64315/
+END:VEVENT
+END:VCALENDAR

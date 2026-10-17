@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pj-thibodeau@comedyatlas.app
+DTSTAMP:20261128T010000Z
+DTSTART:20261128T010000Z
+DTEND:20261128T030000Z
+SUMMARY:PJ Thibodeau
+LOCATION:Lincoln
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pj-thibod
+ eau/
+URL:https://comedyatlas.app/comedy-atlas/event/pj-thibodeau/
+END:VEVENT
+END:VCALENDAR

@@ -522,6 +522,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         </div>
       </div>
       <button id="lu-load">Load lineup</button>
+      <button id="lu-make-flyer" class="secondary" type="button" disabled
+        title="Opens the poster maker with this night's show, venue, ticket link and your lineup already filled in">🎨 Make flyer</button>
       <div class="msg" id="lu-msg"></div>
       <div id="lu-status" class="lineup-status"></div>
       <p class="privacy" id="lu-hint" style="display:none;margin:6px 0">
@@ -588,6 +590,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         <textarea id="fl-caption" rows="10" readonly></textarea>
         <button type="button" id="fl-copy" class="secondary">Copier la légende</button>
         <span class="msg" id="fl-copy-msg"></span>
+
+        <h3 style="margin-top:18px">Affiche du Poster maker · Poster-maker flyer saved to this night</h3>
+        <div id="fl-poster-empty" class="msg">None yet. Press <b>🎨 Make flyer</b> above: the poster maker opens with this night and your lineup filled in; save it there and it shows up here.</div>
+        <div id="fl-poster" style="display:none">
+          <img id="fl-poster-img" alt="Saved flyer" style="max-width:260px;width:100%;border-radius:8px;border:1px solid var(--border);background:#222">
+          <div style="margin:6px 0"><a id="fl-poster-dl" download="flyer.png" style="margin-right:10px">Télécharger</a><a id="fl-poster-open" target="_blank" rel="noopener">Ouvrir</a></div>
+          <label for="fl-poster-cap-fr">Légende FR · French caption</label>
+          <textarea id="fl-poster-cap-fr" rows="7" readonly></textarea>
+          <button type="button" id="fl-poster-copy-fr" class="secondary">Copier FR</button>
+          <label for="fl-poster-cap-en">Légende EN · English caption</label>
+          <textarea id="fl-poster-cap-en" rows="7" readonly></textarea>
+          <button type="button" id="fl-poster-copy-en" class="secondary">Copy EN</button>
+          <span class="msg" id="fl-poster-msg"></span>
+        </div>
       </div>
     </div>
 
@@ -1015,6 +1031,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 (function () {
   "use strict";
   var A = window.AtlasAuth;
+  // P1.1: logged-out visitors make no /auth/me or /booker|/comic requests.
+  if (A.quietLoggedOut) A.quietLoggedOut();   // guarded: a cached older atlas-auth.js lacks it
   window.AtlasNav.wireSignOut("#atlas-signout");
 
   // City picker: same name-autocomplete pattern as comic.html's cityNameToId
@@ -1068,7 +1086,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // comic.html's identical single-call pattern below. If a future change
   // adds any retry/backoff logic here, it MUST stop permanently after the
   // first 401 -- never re-poll an unauthenticated session.
-  A.me().then(function (r) {
+  (A.meIfSession ? A.meIfSession() : A.me()).then(function (r) {
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";
     if (r.stage_name || r.email) {
@@ -1216,6 +1234,114 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return nights.map(function (n) { return n.day + " ×" + n.count; }).join(", ");
   }
 
+  // ----- Deal-sheet v2 (product spec P2.4, 2026-10-17) ------------------
+  // The card renders `v.deal_sheet` (GET /booker/venues/{id}/deal-sheet shape):
+  // every field is {value, source:{kind, at, label}} -- label is the badge text
+  // ("venue said · 12 Oct", "booker said · 12 Oct", "derived from 5 past spots",
+  // "ask the venue"). The helpers below are pure (no DOM, no A) so a node test
+  // can execute them; escaping happens at the render site only.
+  function vsCellSet(cell) {
+    return !!cell && cell.value != null && !(Array.isArray(cell.value) && !cell.value.length);
+  }
+  function vsBadgeText(cell) {
+    if (!vsCellSet(cell)) return "ask the venue";
+    return (cell.source && cell.source.label) || "ask the venue";
+  }
+  function vsMoneyText(cents, cur) {
+    var c = (cur || "EUR").trim().toUpperCase();
+    var sym = c === "EUR" ? "€" : (c === "GBP" ? "£" : (c === "USD" ? "$" : (c + " ")));
+    var n = cents / 100;
+    return sym + (n === Math.round(n) ? String(n) : n.toFixed(2));
+  }
+  function vsDealSheetDealText(f) {
+    var t = f.deal_type && f.deal_type.value;
+    if (!t || t === "unknown") return null;
+    var cur = f.guarantee_currency && f.guarantee_currency.value;
+    var parts = [];
+    if (t === "door_split") {
+      parts.push("Door split" + (vsCellSet(f.split_pct) ? (" " + f.split_pct.value + "% to the act") : ""));
+      if (vsCellSet(f.guarantee_cents)) parts.push("min guarantee " + vsMoneyText(f.guarantee_cents.value, cur));
+    } else if (t === "min_guarantee") {
+      parts.push("Minimum guarantee" + (vsCellSet(f.guarantee_cents) ? (" " + vsMoneyText(f.guarantee_cents.value, cur)) : ""));
+      if (vsCellSet(f.split_pct)) parts.push(f.split_pct.value + "% to the act above it");
+    } else if (t === "flat_fee") {
+      parts.push("Flat fee" + (vsCellSet(f.flat_cents) ? (" " + vsMoneyText(f.flat_cents.value, cur)) : ""));
+    } else if (t === "room_hire") {
+      parts.push("Room hire" + (vsCellSet(f.room_hire_cents) ? (" " + vsMoneyText(f.room_hire_cents.value, cur)) : ""));
+    } else if (t === "hat") {
+      parts.push("Hat / bucket");
+    } else {
+      parts.push(String(t).replace(/_/g, " "));
+    }
+    return parts.join(", ");
+  }
+  function vsBarSheetText(cell) {
+    var v = cell && cell.value;
+    if (v === "venue_keeps") return "venue keeps the bar";
+    if (v === "share") return "bar take shared with the act";
+    if (v === "none") return "no bar";
+    return null;
+  }
+  function vsStageText(f) {
+    var bits = [];
+    if (vsCellSet(f.mics)) bits.push(f.mics.value + " mic" + (f.mics.value === 1 ? "" : "s"));
+    if (vsCellSet(f.has_pa)) bits.push(f.has_pa.value ? "PA" : "no PA");
+    if (vsCellSet(f.has_lights)) bits.push(f.has_lights.value ? "lights" : "no lights");
+    if (vsCellSet(f.has_stage)) bits.push(f.has_stage.value ? "stage" : "no stage");
+    return bits.length ? bits.join(" · ") : null;
+  }
+  function vsStageBadge(f) {
+    var seen = [];
+    ["mics", "has_pa", "has_lights", "has_stage"].forEach(function (k) {
+      if (vsCellSet(f[k])) {
+        var l = vsBadgeText(f[k]);
+        if (seen.indexOf(l) < 0) seen.push(l);
+      }
+    });
+    return seen.length ? seen.join(" / ") : "ask the venue";
+  }
+  var VS_NIGHT_NAMES = {mon: "Mon", tue: "Tue", wed: "Wed", thu: "Thu", fri: "Fri", sat: "Sat", sun: "Sun"};
+  function vsNightsText(cell) {
+    if (!vsCellSet(cell)) return null;
+    return cell.value.map(function (n) { return VS_NIGHT_NAMES[n] || n; }).join(", ");
+  }
+  function vsDealSheetRows(sheet) {
+    var f = (sheet && sheet.fields) || {};
+    var rows = [];
+    rows.push({label: "Deal", text: vsDealSheetDealText(f), badge: vsBadgeText(f.deal_type)});
+    rows.push({label: "Bar", text: vsBarSheetText(f.bar), badge: vsBadgeText(f.bar)});
+    rows.push({label: "Capacity", text: vsCellSet(f.capacity) ? (f.capacity.value + " seats") : null,
+               badge: vsBadgeText(f.capacity)});
+    rows.push({label: "Stage setup", text: vsStageText(f), badge: vsStageBadge(f)});
+    rows.push({label: "Nights available", text: vsNightsText(f.nights_available),
+               badge: vsBadgeText(f.nights_available)});
+    rows.push({label: "Programmed by", text: vsCellSet(f.programmer_text) ? f.programmer_text.value : null,
+               badge: vsBadgeText(f.programmer_text)});
+    rows.push({label: "Last comedy event seen",
+               text: vsCellSet(f.last_event_seen_at) ? String(f.last_event_seen_at.value).slice(0, 10) : null,
+               badge: vsBadgeText(f.last_event_seen_at)});
+    rows.push({label: "Verified",
+               text: sheet && sheet.verified && sheet.verified.verified_at ? sheet.verified.label : null,
+               badge: sheet && sheet.verified && sheet.verified.verified_at ? "" : "ask the venue"});
+    if (vsCellSet(f.notes)) rows.push({label: "Notes", text: f.notes.value, badge: vsBadgeText(f.notes)});
+    return rows;
+  }
+  function vsRowHtml(row) {
+    return '<div style="margin-top:3px"><b>' + A.escapeHtml(row.label) + ':</b> ' +
+      (row.text != null ? A.escapeHtml(row.text) : '<span style="color:var(--muted)">not known yet</span>') +
+      (row.badge ? ' <span class="vs-src" style="font-size:.78em;color:var(--muted);border:1px solid var(--border,#3a3a3a);border-radius:10px;padding:1px 7px;white-space:nowrap">' +
+        A.escapeHtml(row.badge) + '</span>' : '') + '</div>';
+  }
+  // Only http(s) URLs become an href; javascript:/data: or junk -> "" (no link).
+  function safeHttpUrl(rawUrl) {
+    try {
+      var u = new URL(rawUrl);
+      return /^https?:$/.test(u.protocol) ? u.href : "";
+    } catch (_) {
+      return "";
+    }
+  }
+
   function renderVenueCard(v) {
     var badge = v.verification.status === "verified"
       ? '<span style="color:var(--green);font-weight:700">VERIFIED' +
@@ -1223,86 +1349,91 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         '</span>'
       : '<span style="color:var(--gold);font-weight:700">POTENTIAL · not yet verified</span>';
     var address = v.address_line ? A.escapeHtml(v.address_line) : "address unknown";
-    var capacity = v.capacity != null ? (v.capacity + " seats") : "capacity unknown";
-    var stage = v.stage_notes ? A.escapeHtml(v.stage_notes) : "stage setup: not recorded";
     var access = v.accessibility_notes ? A.escapeHtml(v.accessibility_notes) : "accessibility: not recorded";
-    var deal = A.escapeHtml(formatDeal(v.deal));
-    var bar = A.escapeHtml(vsBarText(v.bar));
-    var programmedBy = A.escapeHtml(vsProgrammersText(v.programmers));
-    var houseNights = A.escapeHtml(vsHouseNightsText(v.house_nights));
-    var lastSeen = (v.verification.last_comedy_event_at)
-      ? (A.escapeHtml(String(v.verification.last_comedy_event_at).slice(0, 10)) +
-         " (" + (v.verification.events_seen || 0) + " event(s) seen)")
-      : "no comedy events recorded yet";
-    var contactBits = [];
-    if (v.contact && v.contact.public_email) {
-      contactBits.push('<a href="mailto:' + A.escapeHtml(v.contact.public_email) + '">' +
-        A.escapeHtml(v.contact.public_email) + '</a>');
-    }
-    if (v.contact && v.contact.website_url) {
-      contactBits.push('<a href="' + A.escapeHtml(v.contact.website_url) + '" target="_blank" rel="noopener">website</a>');
-    }
-    var contact = contactBits.length ? contactBits.join(" · ") : "no contact on file";
     var distance = v.distance_km != null
       ? '<div style="color:var(--muted);margin-top:2px">' + v.distance_km + " km away</div>"
       : "";
     var vid = v.id;
-    var dealType = v.deal && v.deal.deal_type ? String(v.deal.deal_type) : "";
-    var barPolicy = v.bar && v.bar.bar_policy ? String(v.bar.bar_policy) : "";
+    var sheet = v.deal_sheet || null;
+    var rowsHtml = sheet
+      ? vsDealSheetRows(sheet).map(vsRowHtml).join("")
+      : '<div style="margin-top:6px"><b>Deal:</b> ' + A.escapeHtml(formatDeal(v.deal)) + '</div>';
+    var canContact = !!(v.contact && v.contact.can_contact);
+    var site = v.contact && v.contact.website_url ? safeHttpUrl(v.contact.website_url) : "";
+    var siteHtml = site
+      ? ' <a href="' + A.escapeHtml(site) + '" target="_blank" rel="noopener">website</a>'
+      : "";
+    var nightBoxes = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"].map(function (n) {
+      return '<label style="display:inline-flex;gap:3px;margin-right:8px"><input type="checkbox" class="vs-night" value="' + n +
+        '" style="width:auto"> ' + VS_NIGHT_NAMES[n] + '</label>';
+    }).join("");
+    function tri(id) {
+      return '<select id="' + id + '-' + vid + '"><option value="">— not set —</option>' +
+        '<option value="yes">Yes</option><option value="no">No</option></select>';
+    }
 
     return '<div class="result-item" id="vs-card-' + vid + '" style="padding:14px 0" data-venue-id="' + vid + '">' +
       '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">' +
       '<span class="name">' + A.escapeHtml(v.name) + '</span>' + badge +
       '</div>' +
-      '<div style="color:var(--muted);margin-top:4px">' + address + '</div>' +
+      '<div style="color:var(--muted);margin-top:4px">' + address + siteHtml + '</div>' +
       distance +
-      '<div style="margin-top:8px">' + capacity + ' · ' + stage + '</div>' +
       '<div style="margin-top:4px">' + access + '</div>' +
-      '<div style="margin-top:8px"><b>Deal:</b> ' + deal + '</div>' +
-      '<div><b>Bar:</b> ' + bar + '</div>' +
-      '<div><b>Programmed by:</b> ' + programmedBy + '</div>' +
-      '<div><b>House nights:</b> ' + houseNights + '</div>' +
-      '<div><b>Last comedy event seen:</b> ' + lastSeen + '</div>' +
-      '<div style="margin-top:6px"><b>Contact:</b> ' + contact + '</div>' +
+      '<div style="margin-top:8px">' + rowsHtml + '</div>' +
+      '<div style="margin-top:6px"><b>Contact:</b> ' +
+      A.escapeHtml(sheet && sheet.contact ? sheet.contact.label : "no contact on file") + '</div>' +
       '<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">' +
+      '<button type="button" class="vs-contact-btn" data-venue-id="' + vid + '"' +
+      (canContact ? '' : ' disabled title="ATLAS has no contact route for this venue yet"') +
+      '>Contact this venue</button>' +
       '<button type="button" class="vs-claim-btn" data-venue-id="' + vid + '">Claim this venue</button>' +
       '<button type="button" class="vs-terms-toggle" data-venue-id="' + vid + '">Declare terms</button>' +
       '</div>' +
       '<div class="msg" id="vs-claim-msg-' + vid + '"></div>' +
+      '<div id="vs-contact-form-' + vid + '" hidden style="margin-top:8px;padding:10px;border:1px solid var(--border,#3a3a3a);border-radius:6px">' +
+      '<label>Your message to the venue</label>' +
+      '<textarea id="vs-contact-text-' + vid + '" maxlength="1000" rows="4" ' +
+      'placeholder="Who you are, your show, the date you want. No emails, links or phone numbers: ATLAS passes it on and the replies come back through ATLAS."></textarea>' +
+      '<button type="button" class="vs-contact-send" data-venue-id="' + vid + '">Send through ATLAS</button>' +
+      '<div class="msg" id="vs-contact-msg-' + vid + '"></div>' +
+      '</div>' +
       '<div id="vs-terms-form-' + vid + '" hidden style="margin-top:8px;padding:10px;border:1px solid var(--border,#3a3a3a);border-radius:6px">' +
+      '<div class="privacy" style="margin-bottom:6px">Say only what you know. Leave a field empty to leave it as it is.</div>' +
       '<div class="row">' +
       '<div><label>Deal type</label><select id="vs-terms-deal-type-' + vid + '">' +
       '<option value="">— not set —</option>' +
-      '<option value="door_split"' + (dealType === "door_split" ? " selected" : "") + '>Door split</option>' +
-      '<option value="fifty_fifty"' + (dealType === "fifty_fifty" ? " selected" : "") + '>50/50</option>' +
-      '<option value="min_guarantee"' + (dealType === "min_guarantee" ? " selected" : "") + '>Minimum guarantee</option>' +
-      '<option value="flat_fee"' + (dealType === "flat_fee" ? " selected" : "") + '>Flat fee</option>' +
-      '<option value="hat"' + (dealType === "hat" ? " selected" : "") + '>Hat/bucket</option>' +
-      '<option value="room_hire"' + (dealType === "room_hire" ? " selected" : "") + '>Room hire</option>' +
-      '<option value="free"' + (dealType === "free" ? " selected" : "") + '>Free</option>' +
+      '<option value="door_split">Door split</option>' +
+      '<option value="min_guarantee">Minimum guarantee</option>' +
+      '<option value="flat_fee">Flat fee</option>' +
+      '<option value="hat">Hat/bucket</option>' +
+      '<option value="room_hire">Room hire</option>' +
       '</select></div>' +
-      '<div><label>Guarantee (€)</label><input type="number" step="1" id="vs-terms-guarantee-' + vid + '"></div>' +
+      '<div><label>Split to the act (%)</label><input type="number" step="0.5" min="0" max="100" id="vs-terms-split-' + vid + '"></div>' +
       '</div>' +
       '<div class="row">' +
-      '<div><label>Percentage rate (%)</label><input type="number" step="0.1" id="vs-terms-pct-' + vid + '"></div>' +
-      '<div><label>Percentage basis</label><select id="vs-terms-basis-' + vid + '">' +
+      '<div><label>Guarantee (€)</label><input type="number" step="1" min="0" id="vs-terms-guarantee-' + vid + '"></div>' +
+      '<div><label>Flat fee (€)</label><input type="number" step="1" min="0" id="vs-terms-flat-' + vid + '"></div>' +
+      '<div><label>Room hire (€)</label><input type="number" step="1" min="0" id="vs-terms-hire-' + vid + '"></div>' +
+      '</div>' +
+      '<div class="row">' +
+      '<div><label>Bar</label><select id="vs-terms-bar-' + vid + '">' +
       '<option value="">— not set —</option>' +
-      '<option value="gross_door">Gross door</option>' +
-      '<option value="net_door">Net door</option>' +
+      '<option value="venue_keeps">Venue keeps the bar</option>' +
+      '<option value="share">Shared with act</option>' +
+      '<option value="none">No bar</option>' +
       '</select></div>' +
+      '<div><label>Capacity</label><input type="number" step="1" min="0" id="vs-terms-capacity-' + vid + '"></div>' +
+      '<div><label>Mics</label><input type="number" step="1" min="0" id="vs-terms-mics-' + vid + '"></div>' +
       '</div>' +
       '<div class="row">' +
-      '<div><label>Bar policy</label><select id="vs-terms-bar-' + vid + '">' +
-      '<option value="">— not set —</option>' +
-      '<option value="venue_keeps"' + (barPolicy === "venue_keeps" ? " selected" : "") + '>Venue keeps the bar</option>' +
-      '<option value="share"' + (barPolicy === "share" ? " selected" : "") + '>Shared with act</option>' +
-      '<option value="none"' + (barPolicy === "none" ? " selected" : "") + '>No bar</option>' +
-      '</select></div>' +
-      '<div><label>Capacity</label><input type="number" step="1" id="vs-terms-capacity-' + vid + '"></div>' +
+      '<div><label>PA</label>' + tri("vs-terms-pa") + '</div>' +
+      '<div><label>Lights</label>' + tri("vs-terms-lights") + '</div>' +
+      '<div><label>Stage</label>' + tri("vs-terms-stage") + '</div>' +
       '</div>' +
+      '<div style="margin-top:6px"><label>Nights available</label><div id="vs-terms-nights-' + vid + '">' + nightBoxes + '</div></div>' +
       '<div class="row">' +
-      '<div><label>Stage notes</label><input type="text" id="vs-terms-stage-' + vid + '"></div>' +
-      '<div><label>Note</label><input type="text" id="vs-terms-note-' + vid + '"></div>' +
+      '<div><label>Who programs it</label><input type="text" maxlength="200" id="vs-terms-programmer-' + vid + '"></div>' +
+      '<div><label>Note</label><input type="text" maxlength="500" id="vs-terms-note-' + vid + '"></div>' +
       '</div>' +
       '<button type="button" class="vs-terms-submit" data-venue-id="' + vid + '">Save terms</button>' +
       '<div class="msg" id="vs-terms-msg-' + vid + '"></div>' +
@@ -1334,7 +1465,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       list.innerHTML = "";
       var cityName = (data.city && data.city.name) || (data.centre && data.centre.label) || "this city";
       msg.textContent = "No venues on ATLAS yet for " + cityName +
-        ". Know one? Tell us: contact@comedyatlas.app";
+        ". Know one? Use “Not listed? Suggest a venue” below.";
       msg.className = "msg";
       return;
     }
@@ -1388,30 +1519,87 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return el.value;
   }
 
+  function vsEuroCents(id) {
+    var n = vsNumOrNull(id);
+    return n != null ? Math.round(n * 100) : null;
+  }
+  function vsTri(id) {
+    var v = vsStrOrNull(id);
+    return v === "yes" ? true : (v === "no" ? false : null);
+  }
+  function vsErrText(e, fallback) {
+    return (e && e.body && typeof e.body.detail === "string" && e.body.detail) || fallback;
+  }
+
+  // POST /booker/venues/{id}/deal-terms -> {saved, declared_by_kind, deal_sheet}
   function vsSubmitTerms(venueId) {
     var msg = document.getElementById("vs-terms-msg-" + venueId);
-    var guaranteeEuros = vsNumOrNull("vs-terms-guarantee-" + venueId);
+    var nights = [];
+    var nightBox = document.getElementById("vs-terms-nights-" + venueId);
+    if (nightBox) {
+      nightBox.querySelectorAll("input.vs-night:checked").forEach(function (cb) { nights.push(cb.value); });
+    }
     var body = {
       deal_type: vsStrOrNull("vs-terms-deal-type-" + venueId),
-      guarantee_amount_cents: guaranteeEuros != null ? Math.round(guaranteeEuros * 100) : null,
-      guarantee_currency: guaranteeEuros != null ? "EUR" : null,
-      percentage_rate: vsNumOrNull("vs-terms-pct-" + venueId),
-      percentage_basis: vsStrOrNull("vs-terms-basis-" + venueId),
-      bar_policy: vsStrOrNull("vs-terms-bar-" + venueId),
+      split_pct: vsNumOrNull("vs-terms-split-" + venueId),
+      guarantee_cents: vsEuroCents("vs-terms-guarantee-" + venueId),
+      flat_cents: vsEuroCents("vs-terms-flat-" + venueId),
+      room_hire_cents: vsEuroCents("vs-terms-hire-" + venueId),
+      bar: vsStrOrNull("vs-terms-bar-" + venueId),
       capacity: vsNumOrNull("vs-terms-capacity-" + venueId),
-      stage_notes: vsStrOrNull("vs-terms-stage-" + venueId),
-      note: vsStrOrNull("vs-terms-note-" + venueId)
+      mics: vsNumOrNull("vs-terms-mics-" + venueId),
+      has_pa: vsTri("vs-terms-pa-" + venueId),
+      has_lights: vsTri("vs-terms-lights-" + venueId),
+      has_stage: vsTri("vs-terms-stage-" + venueId),
+      nights_available: nights.length ? nights : null,
+      programmer_text: vsStrOrNull("vs-terms-programmer-" + venueId),
+      notes: vsStrOrNull("vs-terms-note-" + venueId)
     };
+    if (body.guarantee_cents != null) body.guarantee_currency = "EUR";
     msg.textContent = "Saving…";
     msg.className = "msg";
-    A.post("/booker/venues/" + venueId + "/terms", body)
+    A.post("/booker/venues/" + venueId + "/deal-terms", body)
       .then(function (resp) {
-        vsReplaceCard(venueId, resp.venue);
+        var card = vsVenuesById()[venueId] || {id: Number(venueId), name: "", verification: {status: "potential"}};
+        card.deal_sheet = resp.deal_sheet;
+        card.contact = {route: resp.deal_sheet.contact.route, can_contact: resp.deal_sheet.contact.can_contact,
+                        website_url: card.contact ? card.contact.website_url : null};
+        vsReplaceCard(venueId, card);
         var newMsg = document.getElementById("vs-claim-msg-" + venueId);
-        if (newMsg) { newMsg.textContent = "Terms saved."; newMsg.className = "msg ok"; }
+        if (newMsg) { newMsg.textContent = "Terms saved — thank you."; newMsg.className = "msg ok"; }
       })
       .catch(function (e) {
-        msg.textContent = (e.body && e.body.detail) || "Couldn't save those terms right now.";
+        msg.textContent = vsErrText(e, "Couldn't save those terms right now.");
+        msg.className = "msg error";
+      });
+  }
+
+  function vsToggleContactForm(venueId) {
+    var form = document.getElementById("vs-contact-form-" + venueId);
+    if (form) form.hidden = !form.hidden;
+  }
+
+  // POST /booker/venues/{id}/pitch -> relay thread (409 when the venue has no
+  // contact route: the message below is the server's own plain-English reason).
+  function vsSendContact(venueId) {
+    var msg = document.getElementById("vs-contact-msg-" + venueId);
+    var ta = document.getElementById("vs-contact-text-" + venueId);
+    var text = ta ? ta.value.trim() : "";
+    if (text.length < 10) {
+      msg.textContent = "Write a sentence or two: who you are, your show, the date you want.";
+      msg.className = "msg error";
+      return;
+    }
+    msg.textContent = "Sending…";
+    msg.className = "msg";
+    A.post("/booker/venues/" + venueId + "/pitch", {message: text})
+      .then(function (resp) {
+        msg.textContent = typeof resp.message === "string" ? resp.message : "Sent through ATLAS.";
+        msg.className = "msg ok";
+        if (ta) ta.value = "";
+      })
+      .catch(function (e) {
+        msg.textContent = vsErrText(e, "Couldn't send that right now.");
         msg.className = "msg error";
       });
   }
@@ -1423,6 +1611,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (btn.classList.contains("vs-claim-btn")) vsClaimVenue(venueId);
     else if (btn.classList.contains("vs-terms-toggle")) vsToggleTermsForm(venueId);
     else if (btn.classList.contains("vs-terms-submit")) vsSubmitTerms(venueId);
+    else if (btn.classList.contains("vs-contact-btn")) vsToggleContactForm(venueId);
+    else if (btn.classList.contains("vs-contact-send")) vsSendContact(venueId);
   });
 
   document.getElementById("vs-sug-submit").addEventListener("click", function () {
@@ -2186,9 +2376,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         return '<option value="' + r.event_id + '">' + A.escapeHtml(d) + ' — ' +
           A.escapeHtml(r.title || "") + (r.venue_name ? " @ " + A.escapeHtml(r.venue_name) : "") + '</option>';
       }).join("");
+      luSyncFlyerBtn();
     }).catch(function () {});
   }
   document.getElementById("lu-show").addEventListener("change", loadLineupEvents);
+  document.getElementById("lu-event").addEventListener("change", function () { luSyncFlyerBtn(); });
 
   function candidateCardHtml(c, picked) {
     var photo = c.photo_url
@@ -2463,7 +2655,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     flEl("fl-empty").style.display = "none"; flEl("fl-form").style.display = "";
     flSetMsg("", "");
     return A.get("/booker/events/" + eventId + "/flyer-spec").then(function (r) {
-      flFill(r.spec); flShow(r.files, r.caption);
+      flFill(r.spec); flShow(r.files, r.caption); plShow(r.poster);
       if (!(r.spec.comics || []).length) { flSetMsg("Fill at least one slot in the lineup first.", ""); }
     }).catch(function (e) {
       flSetMsg(e.body && typeof e.body.detail === "string" ? e.body.detail : "Couldn't load the flyer settings.", "error");
@@ -2492,6 +2684,56 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       catch (e) { ta.setAttribute("readonly", ""); return false; }
     }
   });
+
+  // ---- Make flyer / saved poster-maker flyer (P2.5) ----
+  // "Make flyer" opens poster.html#show=<event id>: the poster maker fetches this night's show, venue,
+  // ticket link and the lineup exactly as dragged above (GET /booker/events/{id}/poster-data), builds
+  // the flyer + FR/EN captions, and "Save to my show" POSTs them back. The saved copy is read here from
+  // GET /booker/events/{id}/flyer-spec (key "poster"). Every value is set with textContent / .value / .src.
+  function luSyncFlyerBtn() {
+    var btn = document.getElementById("lu-make-flyer");
+    btn.disabled = !/^\d+$/.test(document.getElementById("lu-event").value || "");
+  }
+  document.getElementById("lu-make-flyer").addEventListener("click", function () {
+    var id = document.getElementById("lu-event").value;
+    if (!/^\d+$/.test(id || "")) { return; }
+    window.open("poster.html#show=" + id, "_blank", "noopener");
+  });
+  function plShow(poster) {
+    var ok = poster && typeof poster.url === "string" && poster.url.indexOf("/studio/outputs/") === 0 && poster.url.indexOf("..") === -1;
+    document.getElementById("fl-poster").style.display = ok ? "" : "none";
+    document.getElementById("fl-poster-empty").style.display = ok ? "none" : "";
+    if (!ok) { return; }
+    var url = flApiBase() + poster.url + "?t=" + Date.now();
+    document.getElementById("fl-poster-img").src = url;
+    var dl = document.getElementById("fl-poster-dl"); dl.href = url;
+    document.getElementById("fl-poster-open").href = url;
+    document.getElementById("fl-poster-cap-fr").value = poster.caption_fr || "";
+    document.getElementById("fl-poster-cap-en").value = poster.caption_en || "";
+  }
+  function plRefresh() {
+    if (!luEventId || document.hidden) { return; }
+    var id = luEventId;
+    A.get("/booker/events/" + id + "/flyer-spec").then(function (r) {
+      if (id === luEventId) { plShow(r.poster); }
+    }).catch(function () {});
+  }
+  document.addEventListener("visibilitychange", plRefresh);   // back from the poster tab: show what was saved
+  window.addEventListener("focus", plRefresh);
+  function plCopy(taId) {
+    var ta = document.getElementById(taId), m = document.getElementById("fl-poster-msg");
+    function done(ok) { m.textContent = ok ? " Copié ✓ · Copied" : " Select the text and copy it manually."; m.className = "msg " + (ok ? "ok" : "error"); }
+    function fb() {
+      try { ta.removeAttribute("readonly"); ta.select(); ta.setSelectionRange(0, ta.value.length);
+            var ok = document.execCommand("copy"); ta.setAttribute("readonly", ""); return ok; }
+      catch (e) { ta.setAttribute("readonly", ""); return false; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta.value).then(function () { done(true); }, function () { done(fb()); });
+    } else { done(fb()); }
+  }
+  document.getElementById("fl-poster-copy-fr").addEventListener("click", function () { plCopy("fl-poster-cap-fr"); });
+  document.getElementById("fl-poster-copy-en").addEventListener("click", function () { plCopy("fl-poster-cap-en"); });
 
   var selected = {}; // person_id -> stage_name
 
