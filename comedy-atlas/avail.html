@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Are you free? — COMEDY ATLAS</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0a0e1a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--red:#e34b64;--green:#3fb950;--amber:#d69e2e;--on-accent:#0a0e1a}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--purple-light:#6d28d9;--red:#c41e3a;--green:#1f7a2e;--amber:#8a5a00;--on-accent:#ffffff}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5;-webkit-text-size-adjust:100%}
+.wrap{max-width:520px;margin:0 auto;padding:20px 16px 48px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.logo{font-size:16px;font-weight:800}
+.logo .dot{color:var(--gold)}
+.lang{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:6px 10px;font-size:13px;min-height:36px;cursor:pointer}
+h1{font-size:24px;margin-bottom:4px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+.yesall{display:block;width:100%;min-height:60px;border:0;border-radius:14px;background:var(--green);color:var(--on-accent);font-size:19px;font-weight:800;cursor:pointer;margin-bottom:16px}
+.date{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:12px}
+.dlabel{font-weight:700;font-size:18px;margin-bottom:10px}
+.choices{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px}
+.ch{min-height:52px;border-radius:12px;border:2px solid var(--border);background:transparent;color:var(--text);font-size:16px;font-weight:700;cursor:pointer}
+.ch.yes.on{background:var(--green);border-color:var(--green);color:var(--on-accent)}
+.ch.maybe.on{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.ch.no.on{background:var(--red);border-color:var(--red);color:var(--on-accent)}
+.ch:focus-visible,.yesall:focus-visible,.lang:focus-visible{outline:3px solid var(--purple-light);outline-offset:2px}
+.status{min-height:24px;margin:10px 0;font-size:15px}
+.status.ok{color:var(--green)}
+.status.err{color:var(--red)}
+.fine{color:var(--muted);font-size:13px;margin-top:18px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;font-size:16px}
+.big{font-size:22px;font-weight:800;margin:8px 0}
+footer{border-top:1px solid var(--border);padding:24px 16px;text-align:center;color:var(--muted);font-size:13px}
+footer a{color:var(--muted);text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="logo">COMEDY ATLAS<span class="dot">.</span></div>
+    <button type="button" class="lang" id="lang-toggle" aria-label="Language / Langue">FR</button>
+  </div>
+  <main id="app" aria-live="polite"><p class="sub">Loading…</p></main>
+  <noscript><p class="sub">This page needs JavaScript. / Cette page a besoin de JavaScript.</p></noscript>
+</div>
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+</footer>
+<script src="avail.js"></script>
+</body>
+</html>

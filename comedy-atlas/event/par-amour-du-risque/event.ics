@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:par-amour-du-risque@comedyatlas.app
+DTSTAMP:20261121T194500Z
+DTSTART:20261121T194500Z
+DTEND:20261121T214500Z
+SUMMARY:Par amour du risque
+LOCATION:Comédie de Tours\, 39 Rue Michelet\, Tours
+DESCRIPTION:Si on peut rire de tout dans la vie\, peut-on parler de tout da
+ ns un couple ?\nMore info: https://comedyatlas.app/comedy-atlas/event/par-a
+ mour-du-risque/
+URL:https://comedyatlas.app/comedy-atlas/event/par-amour-du-risque/
+END:VEVENT
+END:VCALENDAR

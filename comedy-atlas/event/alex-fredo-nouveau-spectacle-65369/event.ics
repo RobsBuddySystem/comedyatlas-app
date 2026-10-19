@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-fredo-nouveau-spectacle-65369@comedyatlas.app
+DTSTAMP:20261119T193000Z
+DTSTART:20261119T193000Z
+DTEND:20261119T213000Z
+SUMMARY:Alex Fredo Nouveau Spectacle
+LOCATION:Comédie des Volcans\, 15 Boulevard Louis Chartoire\, Clermont Fer
+ rand
+DESCRIPTION:Venez voir Alex Fredo dans son nouveau spectacle à la Comédie
+  des Volcans\nMore info: https://comedyatlas.app/comedy-atlas/event/alex-fr
+ edo-nouveau-spectacle-65369/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-fredo-nouveau-spectacle
+ -65369/
+END:VEVENT
+END:VCALENDAR

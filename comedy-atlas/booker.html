@@ -669,6 +669,51 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div id="wa-links" style="margin-top:10px"></div>
     </div>
 
+    <div class="card" id="ap-card">
+      <h2>🗓️ Find the date · Trouver la date</h2>
+      <p class="privacy" style="margin-bottom:10px">Pick <b>2 to 6 candidate dates</b>
+      and your comics. You get <b>one magic link per comic</b> to copy and send yourself
+      (WhatsApp, Instagram, email) — <b>ATLAS sends nothing</b>. Each comic taps
+      Yes / Maybe / No on their phone, no login. When enough say Yes, lock the date
+      in one click and it becomes your show's date.<br>
+      Choisis <b>2 à 6 dates possibles</b> et tes humoristes. Tu obtiens <b>un lien par
+      humoriste</b> à copier et envoyer toi-même — <b>ATLAS n'envoie rien</b>. Chacun
+      répond Oui / Peut-être / Non depuis son téléphone, sans compte. Quand assez
+      d'humoristes disent Oui, verrouille la date en un clic : elle devient la date
+      de ton spectacle.</p>
+      <label for="ap-show">Your show · Ton spectacle</label>
+      <select id="ap-show"><option value="">Loading your shows…</option></select>
+      <label>Candidate dates · Dates possibles (2–6)</label>
+      <div id="ap-dates" class="row"></div>
+      <button class="secondary" id="ap-add-date" type="button">+ Add a date · Ajouter une date</button>
+      <label>Comics · Humoristes</label>
+      <div id="ap-comics" style="margin:6px 0"></div>
+      <div class="row">
+        <button class="secondary" id="ap-from-search" type="button">Add the comics ticked in search · Ajouter les cochés</button>
+        <button class="secondary" id="ap-from-lineup" type="button">Add my loaded lineup · Ajouter la composition</button>
+      </div>
+      <label for="ap-find">Find a comic by name · Chercher un humoriste</label>
+      <input id="ap-find" type="search" autocomplete="off" placeholder="e.g. Betty">
+      <div id="ap-find-results" style="margin:6px 0"></div>
+      <div class="row">
+        <div>
+          <label for="ap-needed">Yes needed to lock · Oui nécessaires</label>
+          <input id="ap-needed" type="number" min="1" value="">
+        </div>
+        <div>
+          <label for="ap-lang">Comic page language · Langue de la page</label>
+          <select id="ap-lang"><option value="fr">Français</option><option value="en">English</option></select>
+        </div>
+      </div>
+      <button id="ap-create" type="button">Create poll &amp; get links · Créer et obtenir les liens</button>
+      <div class="msg" id="ap-msg"></div>
+      <div id="ap-links" style="margin-top:10px"></div>
+      <hr style="border-color:var(--border);margin:16px 0">
+      <button class="secondary" id="ap-refresh" type="button">Refresh results · Actualiser</button>
+      <div class="msg" id="ap-poll-msg"></div>
+      <div id="ap-polls" style="margin-top:10px"></div>
+    </div>
+
     <div class="card">
       <h2>🗳️ Availability poll (share in WhatsApp)</h2>
       <p class="privacy" style="margin-bottom:10px">Make a poll of the dates you
@@ -2104,7 +2149,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   // render logic, populated from /booker/my-shows once here, instead of
   // each reinventing its own option-building code.
   var SHOW_SELECT_IDS = ["cal-show", "tray-show", "invites-show", "wa-show",
-    "opp-show", "inv-show", "occ-show", "cfd-show"];
+    "opp-show", "inv-show", "occ-show", "cfd-show", "ap-show"];
 
   function showOptionsHtml(rows) {
     return rows.map(function (s) {
@@ -3105,6 +3150,239 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     if (!showId) { msg.textContent = "Pick your show first."; msg.className = "msg error"; return; }
     loadInvitesForShow(showId);
   });
+
+  // ------------------------------------------------------------------
+  // 🗓️ Availability poll with one magic link per comic (product spec P2.6;
+  // ingest/availability_magic_polls.py, apps/atlas_api/routes_booker_avail_polls.py).
+  // ATLAS sends NOTHING: links are shown here to copy. Every server string goes
+  // through A.escapeHtml; links are only ever put in a readonly input .value.
+  // ------------------------------------------------------------------
+  var apComics = {};          // person_id -> stage_name
+  var apTimer = null;
+  var AP_MAX_DATES = 6;
+
+  function apTodayIso() {
+    var d = new Date();
+    return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  }
+  function apAddDateInput(value) {
+    var box = document.getElementById("ap-dates");
+    if (box.children.length >= AP_MAX_DATES) { return; }
+    var inp = document.createElement("input");
+    inp.type = "date"; inp.min = apTodayIso(); inp.value = value || "";
+    inp.setAttribute("aria-label", "Candidate date " + (box.children.length + 1));
+    inp.style.width = "auto";
+    box.appendChild(inp);
+    document.getElementById("ap-add-date").style.display = box.children.length >= AP_MAX_DATES ? "none" : "";
+  }
+  apAddDateInput(); apAddDateInput();
+  document.getElementById("ap-add-date").addEventListener("click", function () { apAddDateInput(); });
+
+  function apRenderComics() {
+    var ids = Object.keys(apComics);
+    var box = document.getElementById("ap-comics");
+    box.innerHTML = ids.length ? ids.map(function (id) {
+      return '<span class="tier" style="display:inline-block;margin:2px 6px 2px 0;padding:4px 8px">' +
+        A.escapeHtml(apComics[id]) + ' <button type="button" class="clear-slot" data-id="' + A.escapeHtml(id) +
+        '" aria-label="Remove ' + A.escapeHtml(apComics[id]) + '">✕</button></span>';
+    }).join("") : '<span style="color:var(--muted);font-size:13px">No comics yet · Aucun humoriste</span>';
+    box.querySelectorAll("button[data-id]").forEach(function (b) {
+      b.addEventListener("click", function () { delete apComics[b.getAttribute("data-id")]; apRenderComics(); });
+    });
+    var needed = document.getElementById("ap-needed");
+    if (!needed.dataset.touched) { needed.value = ids.length ? String(ids.length) : ""; }
+    needed.max = String(ids.length || 1);
+  }
+  document.getElementById("ap-needed").addEventListener("input", function () { this.dataset.touched = "1"; });
+  apRenderComics();
+
+  document.getElementById("ap-from-search").addEventListener("click", function () {
+    Object.keys(selected).forEach(function (id) { apComics[id] = selected[id]; });
+    apRenderComics();
+  });
+  document.getElementById("ap-from-lineup").addEventListener("click", function () {
+    var msg = document.getElementById("ap-msg");
+    if (!luLast || !luLast.slots) { msg.textContent = "Load a lineup above first. · Charge d'abord une composition."; msg.className = "msg error"; return; }
+    luLast.slots.forEach(function (sl) {
+      if (sl.comic_person_id != null) { apComics[sl.comic_person_id] = sl.comic_stage_name || ("comic #" + sl.comic_person_id); }
+    });
+    msg.textContent = ""; msg.className = "msg";
+    apRenderComics();
+  });
+  var apFindTimer = null;
+  document.getElementById("ap-find").addEventListener("input", function () {
+    var box = this, out = document.getElementById("ap-find-results");
+    clearTimeout(apFindTimer);
+    var q = box.value.trim();
+    if (q.length < 2) { out.innerHTML = ""; return; }
+    apFindTimer = setTimeout(function () {
+      A.get("/booker/comics/search?q=" + encodeURIComponent(q)).then(function (rows) {
+        if (box.value.trim() !== q) { return; }
+        out.innerHTML = rows.slice(0, 8).map(function (r) {
+          return '<button type="button" class="secondary" style="margin:2px 6px 2px 0" data-id="' + A.escapeHtml(r.person_id) +
+            '" data-name="' + A.escapeHtml(r.stage_name) + '">+ ' + A.escapeHtml(r.stage_name) + '</button>';
+        }).join("") || '<span style="color:var(--muted);font-size:13px">No comic found. · Aucun résultat.</span>';
+        out.querySelectorAll("button[data-id]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            apComics[b.getAttribute("data-id")] = b.getAttribute("data-name"); apRenderComics();
+          });
+        });
+      }).catch(function () { out.innerHTML = ""; });
+    }, 300);
+  });
+
+  function apCopy(text, done) {
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta); done(ok);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    } else { fallback(); }
+  }
+  function apMessage(link, lang, showName) {
+    var first = (link.first_name || "").trim();
+    return lang === "en"
+      ? "Hi " + first + ", are you free for " + showName + "? Tap your dates here (one tap each, no login): " + link.url
+      : "Salut " + first + ", tu es libre pour " + showName + " ? Réponds en un clic (aucun compte) : " + link.url;
+  }
+  function apShowLinks(poll, showName) {
+    var box = document.getElementById("ap-links");
+    var lang = poll.lang || "fr";
+    box.innerHTML = '<p class="privacy">Links are shown once — copy them now. Lost one? Use “New link” below (the old one stops working). · ' +
+      'Les liens ne s\'affichent qu\'une fois — copie-les maintenant. Perdu ? « Nouveau lien » ci-dessous (l\'ancien cesse de marcher).</p>' +
+      poll.links.map(function (l, i) {
+        return '<div class="row" style="align-items:center;margin:6px 0"><b style="min-width:110px">' + A.escapeHtml(l.stage_name || l.first_name) +
+          '</b><input readonly style="flex:1;min-width:160px" data-i="' + i + '" onclick="this.select()">' +
+          '<button type="button" class="secondary" data-copy="msg" data-i="' + i + '">Copy message · Copier le message</button>' +
+          '<button type="button" class="secondary" data-copy="url" data-i="' + i + '">Copy link · Lien</button></div>';
+      }).join("") +
+      '<button type="button" id="ap-copy-all">Copy all (name: link) · Tout copier</button><span class="msg" id="ap-copy-msg"></span>';
+    box.querySelectorAll("input[data-i]").forEach(function (inp) { inp.value = poll.links[+inp.getAttribute("data-i")].url; });
+    var cm = document.getElementById("ap-copy-msg");
+    function note(ok) { cm.textContent = ok ? " Copied ✓ · Copié" : " Select the text and copy it manually."; cm.className = "msg " + (ok ? "ok" : "error"); }
+    box.querySelectorAll("button[data-copy]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var l = poll.links[+b.getAttribute("data-i")];
+        apCopy(b.getAttribute("data-copy") === "msg" ? apMessage(l, lang, showName) : l.url, note);
+      });
+    });
+    document.getElementById("ap-copy-all").addEventListener("click", function () {
+      apCopy(poll.links.map(function (l) { return (l.stage_name || l.first_name) + ": " + l.url; }).join("\n"), note);
+    });
+  }
+
+  document.getElementById("ap-create").addEventListener("click", function () {
+    var msg = document.getElementById("ap-msg");
+    var showSel = document.getElementById("ap-show");
+    var showId = parseInt(showSel.value, 10);
+    var dates = Array.prototype.map.call(document.querySelectorAll("#ap-dates input"), function (i) { return i.value; })
+      .filter(Boolean);
+    var ids = Object.keys(apComics).map(function (i) { return parseInt(i, 10); });
+    function fail(t) { msg.textContent = t; msg.className = "msg error"; }
+    if (!showId) { return fail("Pick your show. · Choisis ton spectacle."); }
+    if (dates.length < 2) { return fail("Pick at least 2 dates. · Au moins 2 dates."); }
+    if (!ids.length) { return fail("Add at least one comic. · Ajoute au moins un humoriste."); }
+    var needed = parseInt(document.getElementById("ap-needed").value, 10);
+    var body = { show_series_id: showId, dates: dates, comic_person_ids: ids,
+                 lang: document.getElementById("ap-lang").value };
+    if (needed) { body.needed = needed; }
+    var btn = this; btn.disabled = true;
+    A.post("/booker/avail-polls", body).then(function (r) {
+      msg.textContent = "Poll created — copy each comic's link below and send it yourself. · Sondage créé."; msg.className = "msg ok";
+      var opt = showSel.options[showSel.selectedIndex];
+      apShowLinks(r, opt ? opt.textContent.replace(/\s*\([^)]*\)\s*$/, "") : "the show");
+      apLoadPolls();
+    }).catch(function (e) { fail((e.body && e.body.detail) || "Failed. · Échec."); })
+      .then(function () { btn.disabled = false; });
+  });
+
+  function apWeekday(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso));
+    if (!m) { return ""; }
+    return ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])).getUTCDay()];
+  }
+  function apPollHtml(res) {
+    var closed = res.status !== "open";
+    var dates = res.dates.map(function (d) {
+      var who = [];
+      if (d.yes_names.length) { who.push("Yes: " + d.yes_names.map(A.escapeHtml).join(", ")); }
+      if (d.maybe_names.length) { who.push("Maybe: " + d.maybe_names.map(A.escapeHtml).join(", ")); }
+      if (d.no_names.length) { who.push("No: " + d.no_names.map(A.escapeHtml).join(", ")); }
+      var isLocked = res.locked_date === d.date;
+      return '<div style="padding:8px 0;border-bottom:1px solid var(--border)">' +
+        '<b>' + A.escapeHtml(apWeekday(d.date)) + ' ' + A.escapeHtml(d.date) + '</b> ' +
+        (isLocked ? '<span class="tier">🔒 locked · verrouillée</span> ' : '') +
+        '<span style="color:var(--green)">✅ ' + d.yes + '</span> · ❓ ' + d.maybe + ' · <span style="color:var(--red)">❌ ' + d.no + '</span> · ⏳ ' + d.pending +
+        (closed ? '' : ' <button type="button" class="secondary" data-lock="' + A.escapeHtml(d.date) + '" data-poll="' + res.poll_id + '"' +
+          (d.can_lock ? '' : ' disabled title="Needs ' + res.needed + ' Yes"') + '>Lock this date · Verrouiller</button>') +
+        (who.length ? '<div style="color:var(--muted);font-size:13px">' + who.join(' · ') + '</div>' : '') + '</div>';
+    }).join("");
+    var comics = res.comics.map(function (c) {
+      return '<span style="display:inline-block;margin:3px 10px 3px 0">' + A.escapeHtml(c.name) + ' ' +
+        (c.expired ? '<span style="color:var(--red)">(link expired)</span>' : '<span style="color:var(--muted)">' + c.answered + '/' + res.dates.length + '</span>') +
+        (closed ? '' : ' <button type="button" class="secondary" data-newlink="' + c.comic_person_id + '" data-poll="' + res.poll_id + '">New link · Nouveau lien</button>') +
+        '</span>';
+    }).join("");
+    return '<div class="ap-poll" style="margin-bottom:18px" data-poll-id="' + res.poll_id + '">' +
+      '<div style="font-weight:700">' + A.escapeHtml(res.title) + ' <span style="color:var(--muted);font-weight:400">· ' +
+      (closed ? 'closed · clos' + (res.locked_date ? ' — ' + A.escapeHtml(res.locked_date) : '') : 'needs ' + res.needed + ' Yes · ' + res.needed + ' Oui requis') + '</span></div>' +
+      dates + '<div style="margin-top:6px">' + comics + '</div>' +
+      (closed ? '' : '<label for="ap-time-' + res.poll_id + '">Start time if you lock · Heure si tu verrouilles</label>' +
+        '<input id="ap-time-' + res.poll_id + '" type="time" value="20:00" style="width:auto">') +
+      '</div>';
+  }
+  function apLoadPolls() {
+    var box = document.getElementById("ap-polls"), pm = document.getElementById("ap-poll-msg");
+    return A.get("/booker/avail-polls").then(function (polls) {
+      if (!polls.length) { box.innerHTML = '<p style="color:var(--muted);font-size:13px">No polls yet. · Aucun sondage.</p>'; apStopTimer(); return; }
+      return Promise.all(polls.slice(0, 5).map(function (p) { return A.get("/booker/avail-polls/" + p.poll_id); }))
+        .then(function (all) {
+          box.innerHTML = all.map(apPollHtml).join("");
+          if (all.some(function (r) { return r.status === "open"; })) { apStartTimer(); } else { apStopTimer(); }
+        });
+    }).catch(function (e) {
+      apStopTimer();           // never keep polling after an error (e.g. a 401)
+      if (e && e.local) { return; }
+      pm.textContent = (e.body && e.body.detail) || "Could not load polls."; pm.className = "msg error";
+    });
+  }
+  function apStopTimer() { if (apTimer) { clearInterval(apTimer); apTimer = null; } }
+  function apStartTimer() {
+    if (apTimer) { return; }
+    apTimer = setInterval(function () { if (!document.hidden) { apLoadPolls(); } }, 30000);
+  }
+  document.getElementById("ap-refresh").addEventListener("click", function () {
+    var pm = document.getElementById("ap-poll-msg"); pm.textContent = ""; pm.className = "msg";
+    apLoadPolls();
+  });
+  document.getElementById("ap-polls").addEventListener("click", function (ev) {
+    var b = ev.target && ev.target.closest ? ev.target.closest("button") : null;
+    if (!b) { return; }
+    var pm = document.getElementById("ap-poll-msg");
+    if (b.hasAttribute("data-lock")) {
+      var pid = b.getAttribute("data-poll"), date = b.getAttribute("data-lock");
+      var time = (document.getElementById("ap-time-" + pid) || {}).value || "20:00";
+      if (!window.confirm("Lock " + date + " at " + time + " as the show's date? This creates the date on your show; nobody is notified. · Verrouiller cette date ? Elle sera créée sur ton spectacle ; personne n'est prévenu.")) { return; }
+      b.disabled = true;
+      A.post("/booker/avail-polls/" + pid + "/lock", { date: date, start_time: time }).then(function () {
+        pm.textContent = "Locked ✓ — the date is now on your show. · Date verrouillée ✓"; pm.className = "msg ok";
+        return apLoadPolls();
+      }).catch(function (e) { b.disabled = false; pm.textContent = (e.body && e.body.detail) || "Could not lock."; pm.className = "msg error"; });
+    } else if (b.hasAttribute("data-newlink")) {
+      A.post("/booker/avail-polls/" + b.getAttribute("data-poll") + "/links",
+             { comic_person_id: parseInt(b.getAttribute("data-newlink"), 10) }).then(function (l) {
+        apShowLinks({ links: [l], lang: document.getElementById("ap-lang").value }, "the show");
+        pm.textContent = "New link below (the old one no longer works). · Nouveau lien ci-dessus."; pm.className = "msg ok";
+        apLoadPolls();
+      }).catch(function (e) { pm.textContent = (e.body && e.body.detail) || "Could not make a new link."; pm.className = "msg error"; });
+    }
+  });
+  if (A.hasSession && A.hasSession()) { apLoadPolls(); }
 
   document.getElementById("poll-create").addEventListener("click", function () {
     var msg = document.getElementById("poll-msg"), out = document.getElementById("poll-link");

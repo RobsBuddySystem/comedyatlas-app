@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-camus-dans-happy-hour@comedyatlas.app
+DTSTAMP:20261114T200000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T220000Z
+SUMMARY:Daniel Camus dans Happy Hour
+LOCATION:Théâtre à l'Ouest Auray\, 8 rue du Levenant\, Auray
+DESCRIPTION:Un bar c'est comme les réseaux sociaux\, c'est plein de gens q
+ ui se retrouvent au même endroit mais qui devraient ne jamais se croiser.\
+ nMore info: https://comedyatlas.app/comedy-atlas/event/daniel-camus-dans-ha
+ ppy-hour/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-camus-dans-happy-hour
+ /
+END:VEVENT
+END:VCALENDAR
