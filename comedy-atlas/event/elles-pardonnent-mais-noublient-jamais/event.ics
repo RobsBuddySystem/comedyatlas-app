@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elles-pardonnent-mais-noublient-jamais@comedyatlas.app
+DTSTAMP:20270305T190000Z
+DTSTART:20270305T190000Z
+DTEND:20270305T210000Z
+SUMMARY:Elles pardonnent mais n’oublient jamais
+LOCATION:Aula Magna\, Place Raymond Lemaire\, 1\, Louvain-la-Neuve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elles-par
+ donnent-mais-noublient-jamais/
+URL:https://comedyatlas.app/comedy-atlas/event/elles-pardonnent-mais-noubli
+ ent-jamais/
+END:VEVENT
+END:VCALENDAR

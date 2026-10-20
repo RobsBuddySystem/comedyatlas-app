@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-lock-in-65831@comedyatlas.app
+DTSTAMP:20270508T191500Z
+DTSTART:20270508T191500Z
+DTEND:20270508T211500Z
+SUMMARY:The Comedy Lock-In
+LOCATION:Beehive Inn\, 18-20 Grassmarket\, Edinburgh
+DESCRIPTION:Edinburgh's Original 'Gig Above a Pub' Comedy Club\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/the-comedy-lock-in-65831/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-lock-in-65831/
+END:VEVENT
+END:VCALENDAR

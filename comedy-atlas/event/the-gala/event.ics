@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-gala@comedyatlas.app
+DTSTAMP:20270317T083000Z
+DTSTART:20270317T083000Z
+DTEND:20270317T103000Z
+SUMMARY:The Gala
+LOCATION:Palais Theatre\, Lower Esplanade\, St Kilda
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-gala/
+URL:https://comedyatlas.app/comedy-atlas/event/the-gala/
+END:VEVENT
+END:VCALENDAR

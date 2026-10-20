@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:notting-hill-comedy-club-presents@comedyatlas.app
+DTSTAMP:20261027T183000Z
+DTSTART:20261027T183000Z
+DTEND:20261027T203000Z
+SUMMARY:Notting Hill Comedy Club Presents
+LOCATION:Notting Hill Arts Club\, 21 Notting Hill Gate\, London
+DESCRIPTION:A hilarious night of stand-up comedy in the heart of Notting Hi
+ ll\nMore info: https://comedyatlas.app/comedy-atlas/event/notting-hill-come
+ dy-club-presents/
+URL:https://comedyatlas.app/comedy-atlas/event/notting-hill-comedy-club-pre
+ sents/
+END:VEVENT
+END:VCALENDAR

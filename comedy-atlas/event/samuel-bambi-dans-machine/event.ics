@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:samuel-bambi-dans-machine@comedyatlas.app
+DTSTAMP:20261128T193000Z
+DTSTART:20261128T193000Z
+DTEND:20261128T213000Z
+SUMMARY:Samuel Bambi dans Machine !
+LOCATION:Atria Novotel\, 5 Boulevard de Prague\, Nîmes
+DESCRIPTION:"Un coeur qui bat sous ce corps imberbe"\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/samuel-bambi-dans-machine/
+URL:https://comedyatlas.app/comedy-atlas/event/samuel-bambi-dans-machine/
+END:VEVENT
+END:VCALENDAR

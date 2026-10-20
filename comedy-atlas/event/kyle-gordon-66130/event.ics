@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-gordon-66130@comedyatlas.app
+DTSTAMP:20261214T010000Z
+DTSTART:20261214T010000Z
+DTEND:20261214T030000Z
+SUMMARY:KYLE GORDON
+LOCATION:Bar le Ritz PDB\, 179 Jean-Talon Ouest\, Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-gord
+ on-66130/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-gordon-66130/
+END:VEVENT
+END:VCALENDAR

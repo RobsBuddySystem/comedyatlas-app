@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-night-in-the-pub-with-phil-nichol-friends@comedyatlas.app
+DTSTAMP:20261112T190000Z
+DTSTART:20261112T190000Z
+DTEND:20261112T210000Z
+SUMMARY:Comedy Night in the Pub with Phil Nichol & Friends
+LOCATION:Rockwater Hove\, Kingsway\, Brighton
+DESCRIPTION:Comedy night in the Pub with Phil Nichol & Friends\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/comedy-night-in-the-pub-with-phi
+ l-nichol-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-night-in-the-pub-with
+ -phil-nichol-friends/
+END:VEVENT
+END:VCALENDAR

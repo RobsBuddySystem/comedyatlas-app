@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arj-barker-the-eleventh-hour@comedyatlas.app
+DTSTAMP:20270325T084500Z
+DTSTART:20270325T084500Z
+DTEND:20270325T104500Z
+SUMMARY:Arj Barker: The Eleventh Hour
+LOCATION:Athenaeum Theatre Two\, 188 Collins Street\, Melbourne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arj-barke
+ r-the-eleventh-hour/
+URL:https://comedyatlas.app/comedy-atlas/event/arj-barker-the-eleventh-hour
+ /
+END:VEVENT
+END:VCALENDAR

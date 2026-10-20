@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:foil-arms-hog-smithereens-65900@comedyatlas.app
+DTSTAMP:20270122T200000Z
+DTSTART:20270122T200000Z
+DTEND:20270122T220000Z
+SUMMARY:Foil\, Arms & Hog - Smithereens
+LOCATION:Vicar Street\, 58 Thomas Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/foil-arms
+ -hog-smithereens-65900/
+URL:https://comedyatlas.app/comedy-atlas/event/foil-arms-hog-smithereens-65
+ 900/
+END:VEVENT
+END:VCALENDAR

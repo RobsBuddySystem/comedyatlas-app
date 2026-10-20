@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-65926@comedyatlas.app
+DTSTAMP:20271110T191500Z
+DTSTART:20271110T191500Z
+DTEND:20271110T211500Z
+SUMMARY:Paul Smith - Happy
+LOCATION:De Meervaart\, Meer en Vaart 300\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-65926/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-65926/
+END:VEVENT
+END:VCALENDAR
