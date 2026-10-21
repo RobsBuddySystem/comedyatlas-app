@@ -183,6 +183,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="poster.html">🎨 Free poster maker</a>
     <span style="margin:0 8px;color:var(--muted)">·</span>
     <a href="#" id="atlas-signout">Sign out</a>
+    <span id="godmode-slot" style="display:none"><span style="margin:0 8px;color:var(--muted)">·</span><a id="godmode-link">Admin</a></span>
   </div>
   <div id="atlas-2fa-banner-slot"></div>
 
@@ -653,7 +654,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div id="invites-list" style="margin-top:10px"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="wa-card">
       <h2>📲 Ask your roster on WhatsApp</h2>
       <p class="privacy" style="margin-bottom:10px">Message comics you already
       know from <b>your own WhatsApp</b> — free, no account linking. Each gets a
@@ -915,8 +916,9 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         <label for="inv-contact">Their contact (email, IG handle, phone...)</label>
         <input id="inv-contact" type="text">
         <p class="privacy">Stored internally only. Never shown to you or anyone
-        else again through COMEDY ATLAS — they get a relay invite to claim
-        their own profile.</p>
+        else again through COMEDY ATLAS. We email only addresses the comic has
+        confirmed themselves: otherwise the invite is saved as <b>not delivered</b>
+        and you get a WhatsApp / Instagram / claim link to send it yourself.</p>
       </div>
 
       <label for="inv-booker-name">Your name (shown to the comic)</label>
@@ -1134,6 +1136,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   (A.meIfSession ? A.meIfSession() : A.me()).then(function (r) {
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";
+    // 2026-10-20: admin link, only once signed in (a logged-out visit makes no API calls)
+    // and only for allow-listed accounts (/admin/god/me never errors).
+    try {
+      window.AtlasAuth.get("/admin/god/me").then(function (r) {
+        if (r && r.admin) { document.getElementById("godmode-link").href = (window.AtlasAuth.apiBase || "") + "/admin/god"; document.getElementById("godmode-slot").style.display = "inline"; }
+      }).catch(function () {});
+    } catch (e) {}
     if (r.stage_name || r.email) {
       document.getElementById("booker-identity-name").textContent = r.stage_name || "";
       document.getElementById("booker-identity-email").textContent = r.email || "";
@@ -3048,8 +3057,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).then(function (r) {
       var sent = r.results.filter(function (x) { return x.status === "sent"; }).length;
       var already = r.results.filter(function (x) { return x.status === "already_invited"; }).length;
-      msg.textContent = sent + " invited, " + already + " already invited previously.";
-      msg.className = "msg ok";
+      var held = r.results.filter(function (x) {
+        return x.status === "sent" && x.delivery && x.delivery.state === "held"; }).length;
+      msg.textContent = sent + " invited, " + already + " already invited previously." +
+        (held ? " " + held + " NOT delivered (no confirmed email) - open 'Invites for a show' to send them by WhatsApp or Instagram." : "");
+      msg.className = held ? "msg error" : "msg ok";
       selected = {};
       renderTray();
     }).catch(function (e) {
@@ -3078,6 +3090,57 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     return parts.length ? parts.join(" · ") : "no specific terms offered";
   }
 
+  // A HELD invite (no email we may use) -> the host's own ways to send it:
+  // WhatsApp click-to-send (the same free wa.me link as the roster tool below), a
+  // paste-ready Instagram DM, and a claim link that signs the comic into the offer.
+  // Everything server-supplied goes through A.escapeHtml / .value / .href only.
+  function openShareFor(showId, offerId, into) {
+    into.textContent = "Loading...";
+    A.get("/booker/shows/" + parseInt(showId, 10) + "/invites/" + parseInt(offerId, 10) + "/share")
+      .then(function (r) {
+        into.innerHTML = "";
+        var wa = document.createElement("a");
+        wa.href = r.wa_me_url; wa.target = "_blank"; wa.rel = "noopener";
+        wa.style.cssText = "display:inline-block;background:#25D366;color:#fff;padding:8px 14px;" +
+          "border-radius:8px;font-weight:700;margin:4px 6px 4px 0";
+        wa.textContent = "Send via WhatsApp";
+        into.appendChild(wa);
+        var tool = document.createElement("a");
+        tool.href = "#wa-card"; tool.textContent = "or use the WhatsApp roster tool";
+        tool.style.marginLeft = "6px";
+        tool.addEventListener("click", function () {
+          var sel = document.getElementById("wa-show");
+          if (sel) { sel.value = String(showId); }
+        });
+        into.appendChild(tool);
+        if (r.claim_url) {
+          var lab = document.createElement("div");
+          lab.style.marginTop = "8px"; lab.textContent = "Claim link - paste it in an Instagram/WhatsApp DM:";
+          into.appendChild(lab);
+          var inp = document.createElement("input");
+          inp.type = "text"; inp.readOnly = true; inp.value = r.claim_url;
+          into.appendChild(inp);
+          var cp = document.createElement("button");
+          cp.type = "button"; cp.className = "secondary"; cp.textContent = "Copy claim link";
+          cp.addEventListener("click", function () {
+            inp.select();
+            try { navigator.clipboard.writeText(inp.value); } catch (e) { document.execCommand("copy"); }
+            cp.textContent = "Copied";
+          });
+          into.appendChild(cp);
+        }
+        var lab2 = document.createElement("div");
+        lab2.style.marginTop = "8px"; lab2.textContent = "Full message (for an Instagram DM):";
+        into.appendChild(lab2);
+        var ta = document.createElement("textarea");
+        ta.rows = 4; ta.readOnly = true; ta.value = r.instagram_dm_text;
+        into.appendChild(ta);
+      }).catch(function (e) {
+        into.textContent = (e && e.body && e.body.detail && typeof e.body.detail === "string")
+          ? e.body.detail : "Could not build the links.";
+      });
+  }
+
   function renderInvites(rows) {
     var el = document.getElementById("invites-list");
     if (!rows.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px">No invites yet.</p>'; return; }
@@ -3103,8 +3166,24 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         counter = '<div class="counter-box"><div class="counter-label">Agreed terms (counter accepted)</div>' +
           A.escapeHtml(r.counter_terms || "") + '</div>';
       }
-      return '<div class="invite-row">' + head + terms + counter + '</div>';
+      var held = "";
+      if (r.delivery && r.delivery.state === "held") {
+        held = '<div class="counter-box" data-held="' + r.offer_id + '">' +
+          '<div class="counter-label">Not delivered - send via WhatsApp/Instagram</div>' +
+          A.escapeHtml(r.delivery.label || "") +
+          '<div class="counter-actions"><button type="button" class="secondary" data-share-offer="' +
+          r.offer_id + '">Get WhatsApp / claim link</button></div>' +
+          '<div class="share-out" style="margin-top:8px"></div></div>';
+      }
+      return '<div class="invite-row">' + head + terms + held + counter + '</div>';
     }).join("");
+
+    el.querySelectorAll("button[data-share-offer]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        openShareFor(currentInvitesShowId, btn.dataset.shareOffer,
+          btn.closest("[data-held]").querySelector(".share-out"));
+      });
+    });
 
     el.querySelectorAll("button.cc-open-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -3737,7 +3816,21 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       payload.contact_value = document.getElementById("inv-contact").value;
     }
     A.post("/booker/shows/" + showId + "/invite", payload).then(function (r) {
-      msg.textContent = "Invite sent (offer #" + r.offer_id + ")."; msg.className = "msg ok";
+      var d = r.delivery;
+      if (d && d.state === "held") {
+        msg.innerHTML = "";
+        msg.appendChild(document.createTextNode(
+          "Invite saved (offer #" + r.offer_id + ") but NOT delivered. " + d.label + " "));
+        var go = document.createElement("button");
+        go.type = "button"; go.className = "secondary"; go.textContent = "Get WhatsApp / claim link";
+        go.addEventListener("click", function () { openShareFor(showId, r.offer_id, msg); });
+        msg.appendChild(go);
+        msg.className = "msg error";
+      } else {
+        msg.textContent = "Invite sent (offer #" + r.offer_id + ")" +
+          (d && d.state === "delivered" ? " - emailed, waiting in their inbox." : ".");
+        msg.className = "msg ok";
+      }
     }).catch(function (e) {
       msg.textContent = inviteErrorMessage(e, "Failed to send invite.");
       msg.className = "msg error";

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-66851@comedyatlas.app
+DTSTAMP:20270227T030000Z
+DTSTART:20270227T030000Z
+DTEND:20270227T050000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Bob Hope Theatre\, 242 E Main St.\, Stockton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-66851/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-66851/
+END:VEVENT
+END:VCALENDAR

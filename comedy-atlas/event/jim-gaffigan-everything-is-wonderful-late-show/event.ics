@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-gaffigan-everything-is-wonderful-late-show@comedyatlas.app
+DTSTAMP:20270117T010000Z
+DTSTART:20270117T010000Z
+DTEND:20270117T030000Z
+SUMMARY:Jim Gaffigan: Everything Is Wonderful! - Late Show
+LOCATION:Hard Rock Live Rockford\, 7801 E State Street\, Rockford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-gaffi
+ gan-everything-is-wonderful-late-show/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-gaffigan-everything-is-w
+ onderful-late-show/
+END:VEVENT
+END:VCALENDAR

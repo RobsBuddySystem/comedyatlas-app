@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:larry-the-cable-guy-an-evening-with-larry-the-cable-guy@comedyatlas.app
+DTSTAMP:20270211T010000Z
+DTSTART:20270211T010000Z
+DTEND:20270211T030000Z
+SUMMARY:Larry the Cable Guy: An Evening with Larry the Cable Guy
+LOCATION:Pensacola Saenger Theatre\, 118 S Palafox\, Pensacola
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/larry-the
+ -cable-guy-an-evening-with-larry-the-cable-guy/
+URL:https://comedyatlas.app/comedy-atlas/event/larry-the-cable-guy-an-eveni
+ ng-with-larry-the-cable-guy/
+END:VEVENT
+END:VCALENDAR

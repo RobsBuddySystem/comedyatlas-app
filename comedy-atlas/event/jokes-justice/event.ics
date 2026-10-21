@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jokes-justice@comedyatlas.app
+DTSTAMP:20261209T013000Z
+DTSTART:20261209T013000Z
+DTEND:20261209T033000Z
+SUMMARY:Jokes & Justice
+LOCATION:Houston Improv\, 7620 Katy Freeway\, Ste. 455\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jokes-jus
+ tice/
+URL:https://comedyatlas.app/comedy-atlas/event/jokes-justice/
+END:VEVENT
+END:VCALENDAR

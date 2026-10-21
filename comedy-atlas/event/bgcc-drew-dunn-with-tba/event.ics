@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-drew-dunn-with-tba@comedyatlas.app
+DTSTAMP:20270409T030000Z
+DTSTART:20270409T030000Z
+DTEND:20270409T050000Z
+SUMMARY:BGCC: Drew Dunn with TBA
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-drew
+ -dunn-with-tba/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-drew-dunn-with-tba/
+END:VEVENT
+END:VCALENDAR

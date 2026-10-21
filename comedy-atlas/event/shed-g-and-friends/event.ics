@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shed-g-and-friends@comedyatlas.app
+DTSTAMP:20261126T013000Z
+DTSTART:20261126T013000Z
+DTEND:20261126T033000Z
+SUMMARY:Shed G and Friends
+LOCATION:Arlington Improv\, 309 Curtis Mathes Way #147\, Arlington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shed-g-an
+ d-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/shed-g-and-friends/
+END:VEVENT
+END:VCALENDAR

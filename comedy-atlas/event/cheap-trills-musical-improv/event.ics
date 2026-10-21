@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cheap-trills-musical-improv@comedyatlas.app
+DTSTAMP:20261122T020000Z
+DTSTART:20261122T020000Z
+DTEND:20261122T040000Z
+SUMMARY:Cheap Trills Musical Improv
+LOCATION:Just The Funny\, 3119 Coral Way\, Miami
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cheap-tri
+ lls-musical-improv/
+URL:https://comedyatlas.app/comedy-atlas/event/cheap-trills-musical-improv/
+END:VEVENT
+END:VCALENDAR

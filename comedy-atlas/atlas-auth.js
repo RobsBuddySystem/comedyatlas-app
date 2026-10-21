@@ -25,16 +25,28 @@ window.AtlasAuth = (function () {
   })(location.hostname);
 
   // P1.1 (TRUST_AUDIT_2026-10-16): the session cookie is HttpOnly, so the page
-  // cannot see it. A logged-out visitor opening booker.html / comic.html used to
-  // fire /auth/me (+ booker/*) and log 401s in the console. We keep a harmless
-  // non-secret HINT ("a sign-in succeeded in this browser") in localStorage:
-  // set on any successful /auth/* response, cleared on logout or any 401. The
-  // portal pages call meIfSession(), which makes NO request without the hint.
+  // cannot see it. We keep a harmless non-secret HINT ("a sign-in succeeded in
+  // this browser") in localStorage: set on any successful /auth/* response,
+  // cleared on logout or any 401.
+  //
+  // LOGIN-LOOP FIX (2026-10-21): localStorage is per ORIGIN, and the login page
+  // (comedyatlas.app / pariscomedy.com) is a different origin from the portal
+  // (api.comedyatlas.app / atlas-api.pariscomedy.com). The hint written after a
+  // successful sign-in is therefore invisible on the portal, and a MISSING hint
+  // used to mean "signed out" -> "You need to sign in" right after a 200 login.
+  // Now a missing hint means UNKNOWN: meIfSession() makes one /auth/me call and
+  // the answer decides. Only an explicit "0" means "known signed out" and skips
+  // the network. Nothing in this file persists "0" on a 401 or logout (that
+  // would be sticky and unseen by a later sign-in on the other origin); the
+  // hint is simply removed back to unknown.
   // Storage can be blocked (private mode): every access is try/caught and a
-  // failure just means "no hint" -> the signed-out panel, never an exception.
+  // failure just means "unknown", never an exception.
   var HINT_KEY = "atlas_session_hint";
   function hasSession() {
     try { return window.localStorage.getItem(HINT_KEY) === "1"; } catch (e) { return false; }
+  }
+  function knownSignedOut() {
+    try { return window.localStorage.getItem(HINT_KEY) === "0"; } catch (e) { return false; }
   }
   function setHint(on) {
     try {
@@ -44,9 +56,10 @@ window.AtlasAuth = (function () {
   }
 
   // booker.html / comic.html call quietLoggedOut() first: from then on, a
-  // /booker/* or /comic/* request with no sign-in hint is rejected locally
+  // /booker/* or /comic/* request while the hint is an explicit "0" is rejected locally
   // (401-shaped, err.local) instead of hitting the network and logging a 401.
   var quiet = false;
+  var probe = null;   // the in-flight/settled /auth/me probe for this page load
   function quietLoggedOut() { quiet = true; }
   function localSignedOut() {
     var err = new Error("not signed in");
@@ -56,9 +69,19 @@ window.AtlasAuth = (function () {
   }
 
   function api(path, opts) {
-    if (quiet && !hasSession() && (path.indexOf("/booker/") === 0 || path.indexOf("/comic/") === 0)) {
-      return Promise.reject(localSignedOut());
+    if (quiet && (path.indexOf("/booker/") === 0 || path.indexOf("/comic/") === 0)) {
+      if (knownSignedOut()) return Promise.reject(localSignedOut());
+      if (!hasSession()) {
+        // Unknown: let ONE /auth/me probe decide. 401 -> reject locally (no console
+        // noise); OK -> the hint becomes "1" and the call goes out.
+        return (probe || meIfSession()).then(function () { return send(path, opts); },
+                                              function () { throw localSignedOut(); });
+      }
     }
+    return send(path, opts);
+  }
+
+  function send(path, opts) {
     opts = opts || {};
     opts.headers = Object.assign({"Content-Type": "application/json"}, opts.headers || {});
     opts.credentials = "include";
@@ -102,11 +125,13 @@ window.AtlasAuth = (function () {
     return get("/auth/me");
   }
 
-  // Like me(), but silent when this browser has never signed in: rejects with a
-  // local 401-shaped error WITHOUT touching the network.
+  // Like me(), but silent when this origin KNOWS it is signed out (hint "0"):
+  // rejects with a local 401-shaped error WITHOUT touching the network. A missing
+  // hint is "unknown" and asks the server (see LOGIN-LOOP FIX above).
   function meIfSession() {
-    if (!hasSession()) return Promise.reject(localSignedOut());
-    return me();
+    if (knownSignedOut()) return Promise.reject(localSignedOut());
+    probe = me();
+    return probe;
   }
 
   function escapeHtml(s) {

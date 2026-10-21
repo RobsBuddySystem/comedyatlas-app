@@ -159,6 +159,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     <a href="notification-settings.html">Notification settings</a>
     <span style="margin:0 8px;color:var(--muted)">·</span>
     <a href="#" id="atlas-signout">Sign out</a>
+    <span id="godmode-slot" style="display:none"><span style="margin:0 8px;color:var(--muted)">·</span><a id="godmode-link">Admin</a></span>
   </div>
   <div id="atlas-2fa-banner-slot"></div>
 
@@ -959,6 +960,13 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     meId = r.person_id;
     document.getElementById("app").style.display = "block";
     document.getElementById("atlas-portal-bar").style.display = "block";
+    // 2026-10-20: admin link, only once signed in (a logged-out visit makes no API calls)
+    // and only for allow-listed accounts (/admin/god/me never errors).
+    try {
+      window.AtlasAuth.get("/admin/god/me").then(function (r) {
+        if (r && r.admin) { document.getElementById("godmode-link").href = (window.AtlasAuth.apiBase || "") + "/admin/god"; document.getElementById("godmode-slot").style.display = "inline"; }
+      }).catch(function () {});
+    } catch (e) {}
     loadCities().then(loadAll);
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
   }).catch(function () {

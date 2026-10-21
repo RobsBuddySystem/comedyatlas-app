@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-66270@comedyatlas.app
+DTSTAMP:20261025T180000Z
+DTSTART:20261025T180000Z
+DTEND:20261025T200000Z
+SUMMARY:Comedy Club
+LOCATION:L'Art Dû\, 83 rue Marengo\, Marseille
+DESCRIPTION:Viens à la rencontre des humoristes de Marseille et d'ailleurs
+  !\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-club-66270
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-66270/
+END:VEVENT
+END:VCALENDAR

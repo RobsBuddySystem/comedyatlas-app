@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:don-t-stop-i-m-about-to-jazz@comedyatlas.app
+DTSTAMP:20261218T003000Z
+DTSTART:20261218T003000Z
+DTEND:20261218T023000Z
+SUMMARY:Don't Stop I'm About to Jazz
+LOCATION:The Bell House\, 149 7th Street\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/don-t-sto
+ p-i-m-about-to-jazz/
+URL:https://comedyatlas.app/comedy-atlas/event/don-t-stop-i-m-about-to-jazz
+ /
+END:VEVENT
+END:VCALENDAR

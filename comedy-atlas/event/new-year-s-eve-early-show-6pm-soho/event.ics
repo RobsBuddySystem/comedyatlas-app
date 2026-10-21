@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-early-show-6pm-soho@comedyatlas.app
+DTSTAMP:20261231T180000Z
+DTSTART:20261231T180000Z
+DTEND:20261231T200000Z
+SUMMARY:New Year's Eve Early Show\, 6PM\, Soho
+LOCATION:JK Comedy Club At The Spice Of Life\, JK Comedy Club Soho\, 6 Moor
+  St\, London
+DESCRIPTION:Stand-up comedy in the heart of Soho. Exceptional comedians.\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-early-s
+ how-6pm-soho/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-early-show-6p
+ m-soho/
+END:VEVENT
+END:VCALENDAR

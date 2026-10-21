@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:closed-for-thanksgiving@comedyatlas.app
+DTSTAMP:20261127T000000Z
+DTSTART:20261127T000000Z
+DTEND:20261127T020000Z
+SUMMARY:Closed for Thanksgiving
+LOCATION:Bricktown Comedy Club\, 409 E. California Ave.\, Oklahoma City
+DESCRIPTION:Closed for Thanksgiving. Enjoy your friends and family. Check o
+ ut the calendar for outstanding shows coming up!\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/closed-for-thanksgiving/
+URL:https://comedyatlas.app/comedy-atlas/event/closed-for-thanksgiving/
+END:VEVENT
+END:VCALENDAR

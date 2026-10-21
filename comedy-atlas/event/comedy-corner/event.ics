@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-corner@comedyatlas.app
+DTSTAMP:20270110T010000Z
+DTSTART:20270110T010000Z
+DTEND:20270110T030000Z
+SUMMARY:Comedy Corner
+LOCATION:Sunrise Theatre\, 117 South Second St\, Fort Pierce
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-co
+ rner/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-corner/
+END:VEVENT
+END:VCALENDAR

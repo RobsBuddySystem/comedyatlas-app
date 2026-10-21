@@ -173,6 +173,16 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       msg.textContent = "Applied! We've let " + (r.show_name || "the show") +
         " know — you'll hear back if selected.";
       msg.className = "msg ok";
+      // 2026-10-20: the same email on a free account picks this application up
+      // (the invite/answer then shows in the inbox -- see ingest/placeholder_people).
+      var more = document.createElement("div");
+      more.style.marginTop = "8px";
+      more.appendChild(document.createTextNode("Want to see the answer and the next open spots? "));
+      var a = document.createElement("a");
+      a.href = "/comedy-atlas/login.html?role=comic&next=comic.html";
+      a.textContent = "Create your free account with the same email";
+      more.appendChild(a);
+      msg.appendChild(more);
       document.getElementById("ap-stage-name").value = "";
       document.getElementById("ap-email").value = "";
       document.getElementById("ap-note").value = "";

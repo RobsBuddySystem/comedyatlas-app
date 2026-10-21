@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-66841@comedyatlas.app
+DTSTAMP:20270221T010000Z
+DTSTART:20270221T010000Z
+DTEND:20270221T030000Z
+SUMMARY:Ms. Pat
+LOCATION:Tropicana Showroom at Tropicana Atlantic City\, 2831 Boardwalk Ave
+ \, Atlantic City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-66
+ 841/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-66841/
+END:VEVENT
+END:VCALENDAR

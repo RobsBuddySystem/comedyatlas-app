@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:greg-warren-andrew-stanley@comedyatlas.app
+DTSTAMP:20270201T000000Z
+DTSTART:20270201T000000Z
+DTEND:20270201T020000Z
+SUMMARY:GREG WARREN & ANDREW STANLEY
+LOCATION:Bijou Theatre\, 803 S. Gay St.\, Knoxville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/greg-warr
+ en-andrew-stanley/
+URL:https://comedyatlas.app/comedy-atlas/event/greg-warren-andrew-stanley/
+END:VEVENT
+END:VCALENDAR

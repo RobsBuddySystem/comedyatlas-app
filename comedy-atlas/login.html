@@ -308,12 +308,20 @@ html[data-auth-tab="register"] #register-card{display:block!important}
   // We forward it as-is to the backend, which verifies it via Google's own
   // tokeninfo endpoint (apps/atlas_api/auth.py::verify_google_id_token) --
   // this page never inspects or trusts the token itself.
+  // 2026-10-20: an invite/claim token from a host's DM (?invite=...) makes the new
+  // account BE the person the invite was addressed to (offer already in the inbox).
+  function inviteTokenParam() {
+    try { return new URLSearchParams(window.location.search).get("invite") || null; }
+    catch (e) { return null; }
+  }
+
   window.handleGoogleCredential = function (response) {
     var msg = document.getElementById("li-msg");
     A.post("/auth/google", {
       id_token: response.credential,
       role: chosenRegisterRole(),
       lang: chosenLang,
+      invite_token: inviteTokenParam(),
     }).then(function (r) {
       if (r && r.twofa_required) {
         if (msg) { msg.textContent = ""; msg.className = "msg"; }
@@ -524,6 +532,7 @@ html[data-auth-tab="register"] #register-card{display:block!important}
       role: chosenRole,
       lang: chosenLang,
       force_new: !!forceNew,
+      invite_token: inviteTokenParam(),
     }).then(function (resp) {
       msg.textContent = "Account created."; msg.className = "msg ok";
       // Atlas feedback #10 (2026-09-04): a booker who registered was always

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-night-comedy-7pm-soho@comedyatlas.app
+DTSTAMP:20270101T190000Z
+DTSTART:20270101T190000Z
+DTEND:20270101T210000Z
+SUMMARY:Friday Night Comedy\, 7PM\, Soho
+LOCATION:JK Comedy Club At The Spice Of Life\, JK Comedy Club Soho\, 6 Moor
+  St\, London
+DESCRIPTION:Stand-up comedy in the heart of Soho. Exceptional comedians.\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/friday-night-comedy-7p
+ m-soho/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-night-comedy-7pm-soho
+ /
+END:VEVENT
+END:VCALENDAR

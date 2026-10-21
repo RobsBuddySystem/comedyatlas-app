@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:james-dorsey-with-john-perrotta@comedyatlas.app
+DTSTAMP:20261219T010000Z
+DTSTART:20261219T010000Z
+DTEND:20261219T030000Z
+SUMMARY:James Dorsey with John Perrotta
+LOCATION:Lincoln
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/james-dor
+ sey-with-john-perrotta/
+URL:https://comedyatlas.app/comedy-atlas/event/james-dorsey-with-john-perro
+ tta/
+END:VEVENT
+END:VCALENDAR

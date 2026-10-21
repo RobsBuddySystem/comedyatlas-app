@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julie-conti@comedyatlas.app
+DTSTAMP:20261103T190000Z
+DTSTART:20261103T190000Z
+DTEND:20261103T210000Z
+SUMMARY:Julie Conti
+LOCATION:Le Point Virgule\, 7 Rue Sainte Croix de la Bretonnerie\, Paris
+DESCRIPTION:La société change\, mais clairement pas assez vite pour Julie
+  Conti !\nMore info: https://comedyatlas.app/comedy-atlas/event/julie-conti
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/julie-conti/
+END:VEVENT
+END:VCALENDAR

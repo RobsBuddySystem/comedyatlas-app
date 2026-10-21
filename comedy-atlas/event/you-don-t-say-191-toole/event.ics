@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:you-don-t-say-191-toole@comedyatlas.app
+DTSTAMP:20261122T020000Z
+DTSTART:20261122T020000Z
+DTEND:20261122T040000Z
+SUMMARY:You Don't Say @ 191 Toole
+LOCATION:191 Toole\, 191 E Toole Ave\, Tucson
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/you-don-t
+ -say-191-toole/
+URL:https://comedyatlas.app/comedy-atlas/event/you-don-t-say-191-toole/
+END:VEVENT
+END:VCALENDAR

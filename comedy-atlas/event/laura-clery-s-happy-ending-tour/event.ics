@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laura-clery-s-happy-ending-tour@comedyatlas.app
+DTSTAMP:20270116T000000Z
+DTSTART:20270116T000000Z
+DTEND:20270116T020000Z
+SUMMARY:Laura Clery's Happy Ending Tour
+LOCATION:Varsity Theater\, 1308 SE 4th Street\, Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laura-cle
+ ry-s-happy-ending-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/laura-clery-s-happy-ending-t
+ our/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-mike-e-winfield@comedyatlas.app
+DTSTAMP:20270224T040000Z
+DTSTART:20270224T040000Z
+DTEND:20270224T060000Z
+SUMMARY:BGCC: Mike E. Winfield
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-mike
+ -e-winfield/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-mike-e-winfield/
+END:VEVENT
+END:VCALENDAR

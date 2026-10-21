@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christmas-party@comedyatlas.app
+DTSTAMP:20261204T190000Z
+DTSTART:20261204T190000Z
+DTEND:20261204T210000Z
+SUMMARY:Christmas Party
+LOCATION:Bo'ness Town Hall\, Glebe Park\, Stewart Avenue\,\, Bo'ness\, Edin
+ burgh
+DESCRIPTION:Come along for a night full of laughter at our Christmas Party 
+ Night\nMore info: https://comedyatlas.app/comedy-atlas/event/christmas-part
+ y/
+URL:https://comedyatlas.app/comedy-atlas/event/christmas-party/
+END:VEVENT
+END:VCALENDAR
