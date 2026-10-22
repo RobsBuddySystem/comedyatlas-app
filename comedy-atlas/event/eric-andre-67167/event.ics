@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-andre-67167@comedyatlas.app
+DTSTAMP:20270625T020000Z
+DTSTART:20270625T020000Z
+DTEND:20270625T040000Z
+SUMMARY:Eric Andre
+LOCATION:Celebrity Theatre\, 440 North 32nd St\, Phoenix
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-andr
+ e-67167/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-andre-67167/
+END:VEVENT
+END:VCALENDAR

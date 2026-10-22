@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-brad-garrett-with-alonzo-bodden@comedyatlas.app
+DTSTAMP:20270530T030000Z
+DTSTART:20270530T030000Z
+DTEND:20270530T050000Z
+SUMMARY:BGCC: Brad Garrett with Alonzo Bodden
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-brad
+ -garrett-with-alonzo-bodden/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-brad-garrett-with-alonz
+ o-bodden/
+END:VEVENT
+END:VCALENDAR

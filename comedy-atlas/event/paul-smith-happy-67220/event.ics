@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67220@comedyatlas.app
+DTSTAMP:20270927T020000Z
+DTSTART:20270927T020000Z
+DTEND:20270927T040000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67220/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67220/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-michael-loftus@comedyatlas.app
+DTSTAMP:20270602T030000Z
+DTSTART:20270602T030000Z
+DTEND:20270602T050000Z
+SUMMARY:BGCC:Michael Loftus
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-mich
+ ael-loftus/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-michael-loftus/
+END:VEVENT
+END:VCALENDAR

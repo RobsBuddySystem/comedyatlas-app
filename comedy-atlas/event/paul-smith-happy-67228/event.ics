@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67228@comedyatlas.app
+DTSTAMP:20271008T230000Z
+DTSTART:20271008T230000Z
+DTEND:20271009T010000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:Arts at the Armory\, 191 Highland Ave.\, Somerville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67228/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67228/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:helperby-comedy-night@comedyatlas.app
+DTSTAMP:20261113T200000Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:Helperby Comedy Night
+LOCATION:Helperby Village Hall\, Main Street\, York
+DESCRIPTION:Brand new night of stand up comedy at Helperby Village Hall\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/helperby-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/helperby-comedy-night/
+END:VEVENT
+END:VCALENDAR

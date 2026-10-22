@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67222@comedyatlas.app
+DTSTAMP:20271001T230000Z
+DTSTART:20271001T230000Z
+DTEND:20271002T010000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:House of Blues Chicago\, 329 North Dearborn Street\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67222/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67222/
+END:VEVENT
+END:VCALENDAR

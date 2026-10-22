@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bgcc-vince-carone@comedyatlas.app
+DTSTAMP:20270720T030000Z
+DTSTART:20270720T030000Z
+DTEND:20270720T050000Z
+SUMMARY:BGCC: Vince Carone
+LOCATION:Brad Garrett's Comedy Club\, 3799 Las Vegas Blvd South Las Vegas\,
+  Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bgcc-vinc
+ e-carone/
+URL:https://comedyatlas.app/comedy-atlas/event/bgcc-vince-carone/
+END:VEVENT
+END:VCALENDAR

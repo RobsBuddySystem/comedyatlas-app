@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:william-shatner-the-uckers@comedyatlas.app
+DTSTAMP:20270228T000000Z
+DTSTART:20270228T000000Z
+DTEND:20270228T020000Z
+SUMMARY:WILLIAM SHATNER & THE UCKERS
+LOCATION:Ferg's Pavilion\, 1320 Central Avenue\, St. Petersburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/william-s
+ hatner-the-uckers/
+URL:https://comedyatlas.app/comedy-atlas/event/william-shatner-the-uckers/
+END:VEVENT
+END:VCALENDAR

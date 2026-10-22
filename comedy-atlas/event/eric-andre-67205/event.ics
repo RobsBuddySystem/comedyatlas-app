@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-andre-67205@comedyatlas.app
+DTSTAMP:20270813T230000Z
+DTSTART:20270813T230000Z
+DTEND:20270814T010000Z
+SUMMARY:Eric Andre
+LOCATION:Mahaffey Theater\, 400 1st Street S\, St Petersburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-andr
+ e-67205/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-andre-67205/
+END:VEVENT
+END:VCALENDAR

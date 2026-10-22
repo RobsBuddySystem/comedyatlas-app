@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67229@comedyatlas.app
+DTSTAMP:20271009T230000Z
+DTSTART:20271009T230000Z
+DTEND:20271010T010000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67229/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67229/
+END:VEVENT
+END:VCALENDAR

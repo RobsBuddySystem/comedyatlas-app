@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67230@comedyatlas.app
+DTSTAMP:20271010T230000Z
+DTSTART:20271010T230000Z
+DTEND:20271011T010000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67230/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67230/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-andre-subtle-18-w-id@comedyatlas.app
+DTSTAMP:20270628T010000Z
+DTSTART:20270628T010000Z
+DTEND:20270628T030000Z
+SUMMARY:Eric Andre: Subtle (18+ W/ ID)
+LOCATION:The Magnolia\, 210 E Main Street\, El Cajon
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-andr
+ e-subtle-18-w-id/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-andre-subtle-18-w-id/
+END:VEVENT
+END:VCALENDAR

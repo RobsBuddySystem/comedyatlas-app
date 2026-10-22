@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimmy-carr-killing-jokes@comedyatlas.app
+DTSTAMP:20270617T230000Z
+DTSTART:20270617T230000Z
+DTEND:20270618T010000Z
+SUMMARY:Jimmy Carr: Killing Jokes
+LOCATION:State Theatre\, 609 Congress St\, Portland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimmy-car
+ r-killing-jokes/
+URL:https://comedyatlas.app/comedy-atlas/event/jimmy-carr-killing-jokes/
+END:VEVENT
+END:VCALENDAR
