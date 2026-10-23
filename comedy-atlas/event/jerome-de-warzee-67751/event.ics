@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerome-de-warzee-67751@comedyatlas.app
+DTSTAMP:20280121T190000Z
+DTSTART:20280121T190000Z
+DTEND:20280121T210000Z
+SUMMARY:Jérôme de Warzée
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerome-de
+ -warzee-67751/
+URL:https://comedyatlas.app/comedy-atlas/event/jerome-de-warzee-67751/
+END:VEVENT
+END:VCALENDAR

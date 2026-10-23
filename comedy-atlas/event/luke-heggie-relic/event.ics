@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-heggie-relic@comedyatlas.app
+DTSTAMP:20270506T103000Z
+DTSTART:20270506T103000Z
+DTEND:20270506T123000Z
+SUMMARY:Luke Heggie - Relic
+LOCATION:Wyola Club\, 81 High St\, Fremantle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-hegg
+ ie-relic/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-heggie-relic/
+END:VEVENT
+END:VCALENDAR

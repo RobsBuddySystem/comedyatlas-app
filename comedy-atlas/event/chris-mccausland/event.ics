@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-mccausland@comedyatlas.app
+DTSTAMP:20271023T173000Z
+DTSTART:20271023T173000Z
+DTEND:20271023T193000Z
+SUMMARY:Chris McCausland
+LOCATION:Vaillant Live\, Derby\, 2 Colyear Street\, Derby
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-mcc
+ ausland/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-mccausland/
+END:VEVENT
+END:VCALENDAR

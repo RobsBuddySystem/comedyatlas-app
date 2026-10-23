@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jamiroquai-tribute-show-space-cowboy@comedyatlas.app
+DTSTAMP:20271210T190000Z
+DTSTART:20271210T190000Z
+DTEND:20271210T210000Z
+SUMMARY:Jamiroquai tribute show – Space Cowboy
+LOCATION:Southampton 1865\, Brunswick Square\, Southampton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jamiroqua
+ i-tribute-show-space-cowboy/
+URL:https://comedyatlas.app/comedy-atlas/event/jamiroquai-tribute-show-spac
+ e-cowboy/
+END:VEVENT
+END:VCALENDAR

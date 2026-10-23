@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-firman-jokus-pokus@comedyatlas.app
+DTSTAMP:20271015T183000Z
+DTSTART:20271015T183000Z
+DTEND:20271015T203000Z
+SUMMARY:Pete Firman: Jokus Pokus
+LOCATION:Gloucester Guildhall\, 23 Eastgate Street\, Gloucester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-firm
+ an-jokus-pokus/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-firman-jokus-pokus/
+END:VEVENT
+END:VCALENDAR

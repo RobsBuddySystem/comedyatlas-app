@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-show-7pm-covent-garden@comedyatlas.app
+DTSTAMP:20261231T190000Z
+DTSTART:20261231T190000Z
+DTEND:20261231T210000Z
+SUMMARY:New Year's Eve Show\, 7PM\, Covent Garden
+LOCATION:JK Comedy Club Covent Garden\, 29 Catherine Street\, London
+DESCRIPTION:Stand-up comedy in the heart of Covent Garden. Exceptional come
+ dians.\nMore info: https://comedyatlas.app/comedy-atlas/event/new-year-s-ev
+ e-show-7pm-covent-garden/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-show-7pm-cove
+ nt-garden/
+END:VEVENT
+END:VCALENDAR

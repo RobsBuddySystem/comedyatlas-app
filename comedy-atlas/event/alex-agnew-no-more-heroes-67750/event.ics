@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-agnew-no-more-heroes-67750@comedyatlas.app
+DTSTAMP:20270317T190000Z
+DTSTART:20270317T190000Z
+DTEND:20270317T210000Z
+SUMMARY:Alex Agnew "No more heroes"
+LOCATION:Capitole Gent\, Graaf van Vlaanderenplein 5\, Ghent
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-agne
+ w-no-more-heroes-67750/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-agnew-no-more-heroes-67
+ 750/
+END:VEVENT
+END:VCALENDAR

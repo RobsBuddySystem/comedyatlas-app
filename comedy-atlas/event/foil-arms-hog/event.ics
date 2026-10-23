@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:foil-arms-hog@comedyatlas.app
+DTSTAMP:20271204T200000Z
+DTSTART:20271204T200000Z
+DTEND:20271204T220000Z
+SUMMARY:Foil Arms & Hog
+LOCATION:TF Royal Theatre\, Castlebar\, Old Westport Road\, Co. Mayo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/foil-arms
+ -hog/
+URL:https://comedyatlas.app/comedy-atlas/event/foil-arms-hog/
+END:VEVENT
+END:VCALENDAR

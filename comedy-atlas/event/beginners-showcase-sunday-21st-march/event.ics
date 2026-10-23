@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:beginners-showcase-sunday-21st-march@comedyatlas.app
+DTSTAMP:20270321T143000Z
+DTSTART:20270321T143000Z
+DTEND:20270321T163000Z
+SUMMARY:Beginner’s Showcase - Sunday 21st March
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/beginners
+ -showcase-sunday-21st-march/
+URL:https://comedyatlas.app/comedy-atlas/event/beginners-showcase-sunday-21
+ st-march/
+END:VEVENT
+END:VCALENDAR

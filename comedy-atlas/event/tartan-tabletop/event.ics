@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tartan-tabletop@comedyatlas.app
+DTSTAMP:20261221T193000Z
+DTSTART:20261221T193000Z
+DTEND:20261221T213000Z
+SUMMARY:Tartan Tabletop
+LOCATION:King Tuts Wah Wah Hut\, 272a ST Vincent Street\, Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tartan-ta
+ bletop/
+URL:https://comedyatlas.app/comedy-atlas/event/tartan-tabletop/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:british-comedian-of-the-year-2026@comedyatlas.app
+DTSTAMP:20261208T193000Z
+DTSTART:20261208T193000Z
+DTEND:20261208T213000Z
+SUMMARY:British Comedian of the Year 2026
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/british-c
+ omedian-of-the-year-2026/
+URL:https://comedyatlas.app/comedy-atlas/event/british-comedian-of-the-year
+ -2026/
+END:VEVENT
+END:VCALENDAR

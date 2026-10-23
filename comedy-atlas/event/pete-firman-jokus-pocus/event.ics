@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-firman-jokus-pocus@comedyatlas.app
+DTSTAMP:20271014T183000Z
+DTSTART:20271014T183000Z
+DTEND:20271014T203000Z
+SUMMARY:Pete Firman - Jokus Pocus
+LOCATION:The Quarry Theatre at St Luke's\, 26 St Peters Street\, Bedford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-firm
+ an-jokus-pocus/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-firman-jokus-pocus/
+END:VEVENT
+END:VCALENDAR

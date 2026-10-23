@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-glasgow-comedy-club-presents-susie-mccabe-friends@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:The Glasgow Comedy Club presents Susie McCabe & Friends
+LOCATION:Frostfyr Festival Spiegeltent\, 17 W Greenhill Pl\, Glasgow
+DESCRIPTION:Susie McCabe hosts a night of big laughs with her handpicked fa
+ vourite comedians from across the UK\, inside the heated Frostfyr Spiegelte
+ nt.\nMore info: https://comedyatlas.app/comedy-atlas/event/the-glasgow-come
+ dy-club-presents-susie-mccabe-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/the-glasgow-comedy-club-pres
+ ents-susie-mccabe-friends/
+END:VEVENT
+END:VCALENDAR

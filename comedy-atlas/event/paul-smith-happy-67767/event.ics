@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-smith-happy-67767@comedyatlas.app
+DTSTAMP:20271107T180000Z
+DTSTART:20271107T180000Z
+DTEND:20271107T200000Z
+SUMMARY:Paul Smith: HAPPY
+LOCATION:København V
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-smit
+ h-happy-67767/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-smith-happy-67767/
+END:VEVENT
+END:VCALENDAR

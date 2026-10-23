@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-mccausland-waffle@comedyatlas.app
+DTSTAMP:20280212T193000Z
+DTSTART:20280212T193000Z
+DTEND:20280212T213000Z
+SUMMARY:Chris McCausland: Waffle
+LOCATION:Alhambra Theatre\, 33 Canmore Street\, Dunfermline
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-mcc
+ ausland-waffle/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-mccausland-waffle/
+END:VEVENT
+END:VCALENDAR

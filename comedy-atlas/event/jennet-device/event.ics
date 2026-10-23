@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jennet-device@comedyatlas.app
+DTSTAMP:20261031T150000Z
+DTSTART:20261031T150000Z
+DTEND:20261031T170000Z
+SUMMARY:Jennet Device
+LOCATION:West End Playhouse\, 21C Yorkshire Street West\, Lancaster
+DESCRIPTION:Part of Halloween on Yorkshire Street.\nA one off return of the
+  sell out show fresh from LancasterMusicFestival. Book your places now\nMor
+ e info: https://comedyatlas.app/comedy-atlas/event/jennet-device/
+URL:https://comedyatlas.app/comedy-atlas/event/jennet-device/
+END:VEVENT
+END:VCALENDAR

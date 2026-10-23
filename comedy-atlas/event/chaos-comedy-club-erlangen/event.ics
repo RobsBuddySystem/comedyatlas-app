@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-erlangen@comedyatlas.app
+DTSTAMP:20270108T190000Z
+DTSTART:20270108T190000Z
+DTEND:20270108T210000Z
+SUMMARY:Chaos Comedy Club | Erlangen
+LOCATION:E-Werk Kulturzentrum Kellerbühne\, Fuchsenwiese 1\, Erlangen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-erlangen/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-erlangen/
+END:VEVENT
+END:VCALENDAR

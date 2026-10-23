@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yann-stotz-popcorn@comedyatlas.app
+DTSTAMP:20261202T190000Z
+DTSTART:20261202T190000Z
+DTEND:20261202T210000Z
+SUMMARY:Yann Stotz | Popcorn
+LOCATION:Cirque Royal - Koninklijk Circus\, R de l'Enseignement-Onderrichts
+ straat 81\, Brussels
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yann-stot
+ z-popcorn/
+URL:https://comedyatlas.app/comedy-atlas/event/yann-stotz-popcorn/
+END:VEVENT
+END:VCALENDAR

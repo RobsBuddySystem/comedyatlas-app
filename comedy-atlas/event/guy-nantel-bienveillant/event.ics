@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guy-nantel-bienveillant@comedyatlas.app
+DTSTAMP:20270529T233000Z
+DTSTART:20270529T233000Z
+DTEND:20270530T013000Z
+SUMMARY:Guy Nantel - Bienveillant
+LOCATION:CABARET DU CASINO DE MONTREAL\, 1\, avenue du Casino\, Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/guy-nante
+ l-bienveillant/
+URL:https://comedyatlas.app/comedy-atlas/event/guy-nantel-bienveillant/
+END:VEVENT
+END:VCALENDAR

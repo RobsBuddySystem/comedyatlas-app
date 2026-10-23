@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hysterical-women-at-royal-albert-hall@comedyatlas.app
+DTSTAMP:20270307T180000Z
+DTSTART:20270307T180000Z
+DTEND:20270307T200000Z
+SUMMARY:Hysterical Women at Royal Albert Hall
+LOCATION:Royal Albert Hall\, Kensington Gore\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hysterica
+ l-women-at-royal-albert-hall/
+URL:https://comedyatlas.app/comedy-atlas/event/hysterical-women-at-royal-al
+ bert-hall/
+END:VEVENT
+END:VCALENDAR

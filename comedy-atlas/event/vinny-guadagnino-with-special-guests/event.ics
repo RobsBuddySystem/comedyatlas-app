@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vinny-guadagnino-with-special-guests@comedyatlas.app
+DTSTAMP:20270605T230000Z
+DTSTART:20270605T230000Z
+DTEND:20270606T010000Z
+SUMMARY:Vinny Guadagnino with Special Guests
+LOCATION:The Danforth Music Hall\, 147 Danforth Ave.\, Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vinny-gua
+ dagnino-with-special-guests/
+URL:https://comedyatlas.app/comedy-atlas/event/vinny-guadagnino-with-specia
+ l-guests/
+END:VEVENT
+END:VCALENDAR

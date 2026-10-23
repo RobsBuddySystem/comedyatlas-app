@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chaos-comedy-club-braunschweig@comedyatlas.app
+DTSTAMP:20270119T190000Z
+DTSTART:20270119T190000Z
+DTEND:20270119T210000Z
+SUMMARY:Chaos Comedy Club | Braunschweig
+LOCATION:Schön & Frölich\, Broitzemer Str. 220\, Braunschweig
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chaos-com
+ edy-club-braunschweig/
+URL:https://comedyatlas.app/comedy-atlas/event/chaos-comedy-club-braunschwe
+ ig/
+END:VEVENT
+END:VCALENDAR

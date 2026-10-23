@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-out-loud-comedy-club-york-new-years-eve@comedyatlas.app
+DTSTAMP:20261231T180000Z
+DTSTART:20261231T180000Z
+DTEND:20261231T200000Z
+SUMMARY:Laugh Out Loud Comedy Club - York - New Years Eve
+LOCATION:The Basement\, City Screen Picturehouse\, 13 - 17 Coney Street\, Y
+ ork
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-out
+ -loud-comedy-club-york-new-years-eve/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-out-loud-comedy-club-y
+ ork-new-years-eve/
+END:VEVENT
+END:VCALENDAR

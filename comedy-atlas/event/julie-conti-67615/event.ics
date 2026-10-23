@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julie-conti-67615@comedyatlas.app
+DTSTAMP:20261127T193000Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:Julie Conti
+LOCATION:Les Trois Ducs\, 48 rue Michelet\, Saint Etienne
+DESCRIPTION:La société change\, mais clairement pas assez vite pour Julie
+  Conti !\nMore info: https://comedyatlas.app/comedy-atlas/event/julie-conti
+ -67615/
+URL:https://comedyatlas.app/comedy-atlas/event/julie-conti-67615/
+END:VEVENT
+END:VCALENDAR

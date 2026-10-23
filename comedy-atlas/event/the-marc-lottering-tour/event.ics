@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-marc-lottering-tour@comedyatlas.app
+DTSTAMP:20270425T123000Z
+DTSTART:20270425T123000Z
+DTEND:20270425T143000Z
+SUMMARY:The Marc Lottering Tour
+LOCATION:The Rechabite\, 224 William St\, Perth
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-marc-
+ lottering-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/the-marc-lottering-tour/
+END:VEVENT
+END:VCALENDAR
