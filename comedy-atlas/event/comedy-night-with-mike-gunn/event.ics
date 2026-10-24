@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-night-with-mike-gunn@comedyatlas.app
+DTSTAMP:20261216T190000Z
+DTSTART:20261216T190000Z
+DTEND:20261216T210000Z
+SUMMARY:Comedy Night with Mike Gunn
+LOCATION:Rockwater\, Pinecliff Road\, Poole
+DESCRIPTION:Comedy night with Mike Gunn\nMore info: https://comedyatlas.app
+ /comedy-atlas/event/comedy-night-with-mike-gunn/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-night-with-mike-gunn/
+END:VEVENT
+END:VCALENDAR

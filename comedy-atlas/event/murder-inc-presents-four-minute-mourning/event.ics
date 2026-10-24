@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:murder-inc-presents-four-minute-mourning@comedyatlas.app
+DTSTAMP:20261118T193000Z
+DTSTART:20261118T193000Z
+DTEND:20261118T213000Z
+SUMMARY:Murder Inc presents: Four Minute Mourning
+LOCATION:Thread Stockport\, 22 Market Place\, Stockport
+DESCRIPTION:An improvised comedy murder mystery set in a nuclear bunker.\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/murder-inc-presents-fo
+ ur-minute-mourning/
+URL:https://comedyatlas.app/comedy-atlas/event/murder-inc-presents-four-min
+ ute-mourning/
+END:VEVENT
+END:VCALENDAR
