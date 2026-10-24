@@ -828,8 +828,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 11,
-      "unconfirmed": 110
+      "en": 18,
+      "unconfirmed": 102
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -1207,7 +1207,7 @@
     "country_name": "United States",
     "id": 99,
     "language_counts": {
-      "unconfirmed": 36
+      "unconfirmed": 35
     },
     "latitude": 32.7157,
     "longitude": -117.1611,
@@ -1364,7 +1364,7 @@
     "id": 108,
     "language_counts": {
       "en": 452,
-      "unconfirmed": 455
+      "unconfirmed": 454
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1707,7 +1707,7 @@
     "id": 132,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 150
+      "unconfirmed": 148
     },
     "latitude": 33.306203,
     "longitude": -111.841185,
@@ -10557,7 +10557,7 @@
     "country_name": "United States",
     "id": 805,
     "language_counts": {
-      "unconfirmed": 82
+      "unconfirmed": 81
     },
     "latitude": 34.101772,
     "longitude": -118.340202,
@@ -10932,7 +10932,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1340
+      "unconfirmed": 1332
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -10950,7 +10950,7 @@
     "id": 831,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 151
+      "unconfirmed": 150
     },
     "latitude": 38.595283,
     "longitude": -121.417411,
@@ -11103,7 +11103,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 84
+      "unconfirmed": 83
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -11258,7 +11258,7 @@
     "id": 851,
     "language_counts": {
       "en": 4,
-      "unconfirmed": 35
+      "unconfirmed": 34
     },
     "latitude": 33.919902,
     "longitude": -117.897147,
@@ -12283,7 +12283,7 @@
     "country_name": "United States",
     "id": 926,
     "language_counts": {
-      "unconfirmed": 31
+      "unconfirmed": 30
     },
     "latitude": 38.960308,
     "longitude": -119.942696,
@@ -12685,23 +12685,6 @@
     "region_name": null,
     "region_type": null,
     "timezone": "America/Chicago"
-  },
-  {
-    "country_id": 60,
-    "country_iso2": "US",
-    "country_name": "United States",
-    "id": 960,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 36.328357,
-    "longitude": -119.647845,
-    "name": "Hanford",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/Los_Angeles"
   },
   {
     "country_id": 60,
