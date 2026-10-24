@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:in-poor-taste-comedy-showcase@comedyatlas.app
+DTSTAMP:20261025T065900Z
+DTSTART:20261025T065900Z
+DTEND:20261025T085900Z
+SUMMARY:In Poor Taste Comedy Showcase
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/in-poor-t
+ aste-comedy-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/in-poor-taste-comedy-showcas
+ e/
+END:VEVENT
+END:VCALENDAR

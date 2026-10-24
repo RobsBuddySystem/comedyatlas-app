@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:doknow-s-funkin-funny-fridays@comedyatlas.app
+DTSTAMP:20261107T060000Z
+DTSTART:20261107T060000Z
+DTEND:20261107T080000Z
+SUMMARY:Doknow's Funkin Funny Fridays
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/doknow-s-funkin-funny-fridays/
+URL:https://comedyatlas.app/comedy-atlas/event/doknow-s-funkin-funny-friday
+ s/
+END:VEVENT
+END:VCALENDAR

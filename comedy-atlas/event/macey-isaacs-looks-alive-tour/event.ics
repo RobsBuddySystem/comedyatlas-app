@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:macey-isaacs-looks-alive-tour@comedyatlas.app
+DTSTAMP:20261206T033000Z
+DTSTART:20261206T033000Z
+DTEND:20261206T053000Z
+SUMMARY:Macey Isaacs Looks Alive Tour
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/macey-isaacs-looks-alive-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/macey-isaacs-looks-alive-tou
+ r/
+END:VEVENT
+END:VCALENDAR

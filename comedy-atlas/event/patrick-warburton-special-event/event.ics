@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrick-warburton-special-event@comedyatlas.app
+DTSTAMP:20261119T040000Z
+DTSTART:20261119T040000Z
+DTEND:20261119T060000Z
+SUMMARY:Patrick Warburton (Special Event)
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, Legendary Room\, 18 and Over.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/patrick-warburton-special-event/
+URL:https://comedyatlas.app/comedy-atlas/event/patrick-warburton-special-ev
+ ent/
+END:VEVENT
+END:VCALENDAR

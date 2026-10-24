@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crack-em-up-thursdays@comedyatlas.app
+DTSTAMP:20261030T050000Z
+DTSTART:20261030T050000Z
+DTEND:20261030T070000Z
+SUMMARY:Crack'Em Up Thursdays
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/crack-em-up-thursdays/
+URL:https://comedyatlas.app/comedy-atlas/event/crack-em-up-thursdays/
+END:VEVENT
+END:VCALENDAR

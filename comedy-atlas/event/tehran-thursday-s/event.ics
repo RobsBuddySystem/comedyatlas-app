@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tehran-thursday-s@comedyatlas.app
+DTSTAMP:20261030T044500Z
+DTSTART:20261030T044500Z
+DTEND:20261030T064500Z
+SUMMARY:Tehran Thursday's
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tehran-th
+ ursday-s/
+URL:https://comedyatlas.app/comedy-atlas/event/tehran-thursday-s/
+END:VEVENT
+END:VCALENDAR

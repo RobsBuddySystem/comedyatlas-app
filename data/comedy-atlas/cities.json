@@ -145,7 +145,7 @@
     "country_name": "Singapore",
     "id": 17,
     "language_counts": {
-      "unconfirmed": 4
+      "unconfirmed": 3
     },
     "latitude": 1.3521,
     "longitude": 103.8198,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 151,
-      "fr": 2779,
+      "fr": 2776,
       "unconfirmed": 22
     },
     "latitude": 48.8566,
@@ -846,7 +846,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 24
+      "unconfirmed": 548
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -949,7 +949,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 392
+      "unconfirmed": 391
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -8022,7 +8022,7 @@
     "country_name": "UK",
     "id": 650,
     "language_counts": {
-      "unconfirmed": 43
+      "unconfirmed": 42
     },
     "latitude": 54.970633,
     "longitude": -1.621588,
@@ -10557,16 +10557,16 @@
     "country_name": "United States",
     "id": 805,
     "language_counts": {
-      "unconfirmed": 81
+      "unconfirmed": 20
     },
-    "latitude": 34.101772,
-    "longitude": -118.340202,
+    "latitude": 26.0112,
+    "longitude": -80.1495,
     "name": "Hollywood",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/Los_Angeles"
+    "region_code": "US-FL",
+    "region_id": 3113,
+    "region_name": "Florida",
+    "region_type": "State",
+    "timezone": "America/New_York"
   },
   {
     "country_id": 60,
@@ -12952,23 +12952,6 @@
     "latitude": 34.148792,
     "longitude": -118.254562,
     "name": "Glendale",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/Los_Angeles"
-  },
-  {
-    "country_id": 60,
-    "country_iso2": "US",
-    "country_name": "United States",
-    "id": 977,
-    "language_counts": {
-      "unconfirmed": 2
-    },
-    "latitude": null,
-    "longitude": null,
-    "name": "North Hollywood",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -15901,5 +15884,22 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/London"
+  },
+  {
+    "country_id": 60,
+    "country_iso2": "US",
+    "country_name": "United States",
+    "id": 1330,
+    "language_counts": {
+      "unconfirmed": 42
+    },
+    "latitude": 34.1478,
+    "longitude": -118.1445,
+    "name": "Pasadena",
+    "region_code": "US-CA",
+    "region_id": 3108,
+    "region_name": "California",
+    "region_type": "State",
+    "timezone": "America/Los_Angeles"
   }
 ]

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brad-upton-live@comedyatlas.app
+DTSTAMP:20261030T180000Z
+DTSTART:20261030T180000Z
+DTEND:20261030T193000Z
+SUMMARY:Brad Upton Live
+LOCATION:Southend Comedy Club\, 45 IJsbaanpad\, Amsterdam
+DESCRIPTION:BRAD UPTON live in Amsterdam @ Southend Comedy Club!\n\\n\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/brad-upton-live/
+URL:https://comedyatlas.app/comedy-atlas/event/brad-upton-live/
+END:VEVENT
+END:VCALENDAR

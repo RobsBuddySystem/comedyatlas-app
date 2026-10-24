@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heavy-handed@comedyatlas.app
+DTSTAMP:20261112T033000Z
+DTSTART:20261112T033000Z
+DTEND:20261112T053000Z
+SUMMARY:Heavy Handed
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/heavy-handed/
+URL:https://comedyatlas.app/comedy-atlas/event/heavy-handed/
+END:VEVENT
+END:VCALENDAR

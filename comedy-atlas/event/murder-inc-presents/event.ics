@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:murder-inc-presents@comedyatlas.app
+DTSTAMP:20261202T193000Z
+DTSTART:20261202T193000Z
+DTEND:20261202T213000Z
+SUMMARY:Murder Inc presents
+LOCATION:Thread Stockport\, 22 Market Place\, Stockport
+DESCRIPTION:Comedy. Improv. Murder. Mystery.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/murder-inc-presents/
+URL:https://comedyatlas.app/comedy-atlas/event/murder-inc-presents/
+END:VEVENT
+END:VCALENDAR

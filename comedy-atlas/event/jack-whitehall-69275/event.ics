@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-whitehall-69275@comedyatlas.app
+DTSTAMP:20261214T033000Z
+DTSTART:20261214T033000Z
+DTEND:20261214T053000Z
+SUMMARY:Jack Whitehall
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Main Room.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/jack-whitehall-69275/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-whitehall-69275/
+END:VEVENT
+END:VCALENDAR

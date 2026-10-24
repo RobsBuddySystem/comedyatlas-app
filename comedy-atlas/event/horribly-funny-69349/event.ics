@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:horribly-funny-69349@comedyatlas.app
+DTSTAMP:20270101T060000Z
+DTSTART:20270101T060000Z
+DTEND:20270101T080000Z
+SUMMARY:Horribly Funny
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Main Room.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/horribly-funny-69349/
+URL:https://comedyatlas.app/comedy-atlas/event/horribly-funny-69349/
+END:VEVENT
+END:VCALENDAR

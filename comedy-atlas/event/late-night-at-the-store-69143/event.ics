@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-night-at-the-store-69143@comedyatlas.app
+DTSTAMP:20261115T075900Z
+DTSTART:20261115T075900Z
+DTEND:20261115T095900Z
+SUMMARY:Late Night at The Store
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Original Room.\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/late-night-at-the-store-69143/
+URL:https://comedyatlas.app/comedy-atlas/event/late-night-at-the-store-6914
+ 3/
+END:VEVENT
+END:VCALENDAR

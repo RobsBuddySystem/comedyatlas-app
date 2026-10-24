@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-meeker-69262@comedyatlas.app
+DTSTAMP:20261212T040000Z
+DTSTART:20261212T040000Z
+DTEND:20261212T060000Z
+SUMMARY:Nate Meeker
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/nate-meeker-69262/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-meeker-69262/
+END:VEVENT
+END:VCALENDAR

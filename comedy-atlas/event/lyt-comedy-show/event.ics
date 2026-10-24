@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lyt-comedy-show@comedyatlas.app
+DTSTAMP:20261031T030000Z
+DTSTART:20261031T030000Z
+DTEND:20261031T050000Z
+SUMMARY:LYT Comedy Show
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, California Room\, 21 and Over.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/lyt-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/lyt-comedy-show/
+END:VEVENT
+END:VCALENDAR

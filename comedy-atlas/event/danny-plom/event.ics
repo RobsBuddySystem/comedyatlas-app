@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danny-plom@comedyatlas.app
+DTSTAMP:20261219T033000Z
+DTSTART:20261219T033000Z
+DTEND:20261219T053000Z
+SUMMARY:Danny Plom
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/danny-plom/
+URL:https://comedyatlas.app/comedy-atlas/event/danny-plom/
+END:VEVENT
+END:VCALENDAR

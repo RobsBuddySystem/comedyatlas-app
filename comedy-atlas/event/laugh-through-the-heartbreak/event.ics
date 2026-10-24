@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-through-the-heartbreak@comedyatlas.app
+DTSTAMP:20261113T033000Z
+DTSTART:20261113T033000Z
+DTEND:20261113T053000Z
+SUMMARY:Laugh Through The Heartbreak
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laugh-thr
+ ough-the-heartbreak/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-through-the-heartbreak
+ /
+END:VEVENT
+END:VCALENDAR

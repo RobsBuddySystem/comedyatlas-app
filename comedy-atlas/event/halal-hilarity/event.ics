@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halal-hilarity@comedyatlas.app
+DTSTAMP:20270312T033000Z
+DTSTART:20270312T033000Z
+DTEND:20270312T053000Z
+SUMMARY:Halal Hilarity
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/halal-hil
+ arity/
+URL:https://comedyatlas.app/comedy-atlas/event/halal-hilarity/
+END:VEVENT
+END:VCALENDAR

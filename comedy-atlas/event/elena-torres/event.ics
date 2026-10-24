@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elena-torres@comedyatlas.app
+DTSTAMP:20270228T030000Z
+DTSTART:20270228T030000Z
+DTEND:20270228T050000Z
+SUMMARY:Elena Torres
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, California Room\, 21 and Over.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/elena-torres/
+URL:https://comedyatlas.app/comedy-atlas/event/elena-torres/
+END:VEVENT
+END:VCALENDAR

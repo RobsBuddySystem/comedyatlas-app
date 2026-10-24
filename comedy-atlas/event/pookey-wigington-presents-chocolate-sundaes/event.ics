@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pookey-wigington-presents-chocolate-sundaes@comedyatlas.app
+DTSTAMP:20261026T020000Z
+DTSTART:20261026T020000Z
+DTEND:20261026T040000Z
+SUMMARY:Pookey Wigington Presents: Chocolate Sundaes
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pookey-wi
+ gington-presents-chocolate-sundaes/
+URL:https://comedyatlas.app/comedy-atlas/event/pookey-wigington-presents-ch
+ ocolate-sundaes/
+END:VEVENT
+END:VCALENDAR

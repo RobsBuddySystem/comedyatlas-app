@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:breaking-the-ice-open-mic@comedyatlas.app
+DTSTAMP:20261030T010000Z
+DTSTART:20261030T010000Z
+DTEND:20261030T030000Z
+SUMMARY:Breaking the Ice Open Mic
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, California Room\, 21 and Over.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/breaking-the-ice-open-mic/
+URL:https://comedyatlas.app/comedy-atlas/event/breaking-the-ice-open-mic/
+END:VEVENT
+END:VCALENDAR

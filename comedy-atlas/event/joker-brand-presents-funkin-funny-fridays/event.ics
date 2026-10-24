@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joker-brand-presents-funkin-funny-fridays@comedyatlas.app
+DTSTAMP:20261205T060000Z
+DTSTART:20261205T060000Z
+DTEND:20261205T080000Z
+SUMMARY:Joker Brand Presents Funkin Funny Fridays
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/joker-brand-presents-funkin-funny-fridays/
+URL:https://comedyatlas.app/comedy-atlas/event/joker-brand-presents-funkin-
+ funny-fridays/
+END:VEVENT
+END:VCALENDAR

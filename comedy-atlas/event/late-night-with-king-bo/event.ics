@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-night-with-king-bo@comedyatlas.app
+DTSTAMP:20261030T023000Z
+DTSTART:20261030T023000Z
+DTEND:20261030T043000Z
+SUMMARY:Late Night with King Bo
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/late-nigh
+ t-with-king-bo/
+URL:https://comedyatlas.app/comedy-atlas/event/late-night-with-king-bo/
+END:VEVENT
+END:VCALENDAR

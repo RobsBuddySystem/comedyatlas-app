@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:keys-to-the-store@comedyatlas.app
+DTSTAMP:20261121T030000Z
+DTSTART:20261121T030000Z
+DTEND:20261121T050000Z
+SUMMARY:Keys to the Store
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Original Room.\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/keys-to-the-store/
+URL:https://comedyatlas.app/comedy-atlas/event/keys-to-the-store/
+END:VEVENT
+END:VCALENDAR

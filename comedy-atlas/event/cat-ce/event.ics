@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cat-ce@comedyatlas.app
+DTSTAMP:20261205T053000Z
+DTSTART:20261205T053000Z
+DTEND:20261205T073000Z
+SUMMARY:Cat Ce
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, California Room\, 21 and Over.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/cat-ce/
+URL:https://comedyatlas.app/comedy-atlas/event/cat-ce/
+END:VEVENT
+END:VCALENDAR

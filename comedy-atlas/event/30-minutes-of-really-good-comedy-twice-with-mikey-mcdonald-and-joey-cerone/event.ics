@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:30-minutes-of-really-good-comedy-twice-with-mikey-mcdonald-and-joey-cer
+ one@comedyatlas.app
+DTSTAMP:20261105T040000Z
+DTSTART:20261105T040000Z
+DTEND:20261105T060000Z
+SUMMARY:30 Minutes of Really Good Comedy Twice With Mikey McDonald and Joey
+  Cerone
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/30-minutes-of-really-good-comedy-twice-with-mikey
+ -mcdonald-and-joey-cerone/
+URL:https://comedyatlas.app/comedy-atlas/event/30-minutes-of-really-good-co
+ medy-twice-with-mikey-mcdonald-and-joey-cerone/
+END:VEVENT
+END:VCALENDAR

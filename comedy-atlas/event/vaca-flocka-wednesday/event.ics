@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vaca-flocka-wednesday@comedyatlas.app
+DTSTAMP:20261119T053000Z
+DTSTART:20261119T053000Z
+DTEND:20261119T073000Z
+SUMMARY:Vaca Flocka Wednesday
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vaca-floc
+ ka-wednesday/
+URL:https://comedyatlas.app/comedy-atlas/event/vaca-flocka-wednesday/
+END:VEVENT
+END:VCALENDAR

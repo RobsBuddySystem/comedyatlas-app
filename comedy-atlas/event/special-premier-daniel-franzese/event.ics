@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:special-premier-daniel-franzese@comedyatlas.app
+DTSTAMP:20261117T040000Z
+DTSTART:20261117T040000Z
+DTEND:20261117T060000Z
+SUMMARY:Special Premier: Daniel Franzese
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/special-p
+ remier-daniel-franzese/
+URL:https://comedyatlas.app/comedy-atlas/event/special-premier-daniel-franz
+ ese/
+END:VEVENT
+END:VCALENDAR

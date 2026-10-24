@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fallback-comedy@comedyatlas.app
+DTSTAMP:20261102T003000Z
+DTSTART:20261102T003000Z
+DTEND:20261102T023000Z
+SUMMARY:FALLBACK COMEDY
+LOCATION:Brooklyn
+DESCRIPTION:Eastville Comedy Club is Brooklyn's oldest comedy club\nMore in
+ fo: https://comedyatlas.app/comedy-atlas/event/fallback-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/fallback-comedy/
+END:VEVENT
+END:VCALENDAR

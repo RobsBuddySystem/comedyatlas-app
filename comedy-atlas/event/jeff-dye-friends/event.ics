@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-dye-friends@comedyatlas.app
+DTSTAMP:20261111T040000Z
+DTSTART:20261111T040000Z
+DTEND:20261111T060000Z
+SUMMARY:Jeff Dye & Friends
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Main Room.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/jeff-dye-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-dye-friends/
+END:VEVENT
+END:VCALENDAR

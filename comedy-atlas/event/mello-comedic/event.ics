@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mello-comedic@comedyatlas.app
+DTSTAMP:20261029T030000Z
+DTSTART:20261029T030000Z
+DTEND:20261029T050000Z
+SUMMARY:Mello Comedic
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Main Room.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/mello-comedic/
+URL:https://comedyatlas.app/comedy-atlas/event/mello-comedic/
+END:VEVENT
+END:VCALENDAR

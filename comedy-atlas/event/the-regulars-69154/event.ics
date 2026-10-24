@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-regulars-69154@comedyatlas.app
+DTSTAMP:20261118T050000Z
+DTSTART:20261118T050000Z
+DTEND:20261118T070000Z
+SUMMARY:The Regulars
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Original Room.\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/the-regulars-69154/
+URL:https://comedyatlas.app/comedy-atlas/event/the-regulars-69154/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sinbad@comedyatlas.app
+DTSTAMP:20261123T030000Z
+DTSTART:20261123T030000Z
+DTEND:20261123T050000Z
+SUMMARY:Sinbad
+LOCATION:Pasadena
+DESCRIPTION:At The Ice House\, Legendary Room\, 21 and Over.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/sinbad/
+URL:https://comedyatlas.app/comedy-atlas/event/sinbad/
+END:VEVENT
+END:VCALENDAR
