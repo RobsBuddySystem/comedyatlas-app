@@ -188,6 +188,10 @@
   },
   "PARTNER_DISCLOSURES": {
     "_comment": "Disclosure shown by go.html when, and only when, the money layer actually acts on that destination (a non-empty PARTNER_PARAMS block or a PARTNER_REDIRECTS wrap). Text is copied from affiliate_programs.disclosure_text for each approved programme -- that column is the source of truth and is CHECK-constrained to exist for any approved row. '*' is the fallback for an earning host with no host-specific text.",
-    "skiddle.com": "COMEDY ATLAS may earn a commission on tickets purchased through this Skiddle link, at no extra cost to you."
+    "skiddle.com": "COMEDY ATLAS may earn a commission on tickets purchased through this Skiddle link, at no extra cost to you.",
+    "billetreduc.com": "COMEDY ATLAS peut percevoir une commission sur les billets achet\u00e9s via ce lien BilletReduc, sans frais suppl\u00e9mentaires pour vous. / COMEDY ATLAS may earn a commission on tickets purchased through this BilletReduc link, at no extra cost to you."
+  },
+  "PARTNER_REDIRECTS": {
+    "billetreduc.com": "https://www.awin1.com/cread.php?awinmid=20796&awinaffid=3039909&ued={url}"
   }
 }
