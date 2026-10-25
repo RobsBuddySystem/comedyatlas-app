@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 175,
-      "unconfirmed": 53
+      "unconfirmed": 57
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 251
+      "unconfirmed": 252
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -266,7 +266,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 147,
+      "en": 148,
       "fr": 2601,
       "unconfirmed": 21
     },
@@ -829,7 +829,7 @@
     "id": 75,
     "language_counts": {
       "en": 14,
-      "unconfirmed": 102
+      "unconfirmed": 112
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -846,7 +846,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 535
+      "unconfirmed": 533
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -914,7 +914,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 106
+      "unconfirmed": 107
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -931,7 +931,7 @@
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 133
+      "unconfirmed": 134
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
@@ -949,7 +949,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 389
+      "unconfirmed": 390
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -4665,23 +4665,6 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Australia/Brisbane"
-  },
-  {
-    "country_id": 1,
-    "country_iso2": "AU",
-    "country_name": "Australia",
-    "id": 424,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": -37.825258,
-    "longitude": 144.951571,
-    "name": "South Wharf",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Australia/Melbourne"
   },
   {
     "country_id": 1,
@@ -11001,7 +10984,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 80
+      "unconfirmed": 85
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
