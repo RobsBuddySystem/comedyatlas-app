@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:made-in-turkey-comedy-with-ahmet-bilge@comedyatlas.app
+DTSTAMP:20270313T181500Z
+DTSTART:20270313T181500Z
+DTEND:20270313T193000Z
+SUMMARY:Made in Turkey: Comedy with Ahmet Bilge
+LOCATION:Z-Bar\, Bergstraße 2\, Berlin
+DESCRIPTION:After performing around the globe\, Ahmet's new show is about l
+ ife\, culture\, identity\, and the beautiful chaos of being Turkish in the 
+ world.\nMore info: https://comedyatlas.app/comedy-atlas/event/made-in-turke
+ y-comedy-with-ahmet-bilge/
+URL:https://comedyatlas.app/comedy-atlas/event/made-in-turkey-comedy-with-a
+ hmet-bilge/
+END:VEVENT
+END:VCALENDAR

@@ -134,7 +134,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         return finalUrl;  // malformed template -- never break the link
       }
       if (host !== networkHost) {
-        finalUrl = template.replace('{url}', encodeURIComponent(finalUrl));
+        // Drop the #fragment before wrapping: AWIN's 302 appends its own
+        // tracking query (?utm_source=awin...&awc=...) AFTER the merchant
+        // url, so a trailing #session=... swallows it into the fragment
+        // and awc never reaches the merchant (BilletReduc, verified live
+        // 2026-10-24). Unwrapped hosts keep their fragment.
+        u.hash = '';
+        finalUrl = template.replace('{url}', encodeURIComponent(u.toString()));
       }
     }
 
