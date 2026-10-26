@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 209,
+      "en": 210,
       "unconfirmed": 42
     },
     "latitude": 52.52,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 142,
-      "fr": 2486,
+      "fr": 2484,
       "unconfirmed": 22
     },
     "latitude": 48.8566,
@@ -621,7 +621,8 @@
     "country_name": "Slovakia",
     "id": 50,
     "language_counts": {
-      "en": 2
+      "en": 2,
+      "unconfirmed": 1
     },
     "latitude": 48.1486,
     "longitude": 17.1077,
