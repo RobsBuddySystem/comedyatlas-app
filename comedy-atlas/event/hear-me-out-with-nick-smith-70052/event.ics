@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hear-me-out-with-nick-smith-70052@comedyatlas.app
+DTSTAMP:20270311T003000Z
+DTSTART:20270311T003000Z
+DTEND:20270311T023000Z
+SUMMARY:Hear Me Out With Nick Smith
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hear-me-o
+ ut-with-nick-smith-70052/
+URL:https://comedyatlas.app/comedy-atlas/event/hear-me-out-with-nick-smith-
+ 70052/
+END:VEVENT
+END:VCALENDAR

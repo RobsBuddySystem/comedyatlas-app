@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:natasha-muse@comedyatlas.app
+DTSTAMP:20270224T033000Z
+DTSTART:20270224T033000Z
+DTEND:20270224T053000Z
+SUMMARY:Natasha Muse
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/natasha-m
+ use/
+URL:https://comedyatlas.app/comedy-atlas/event/natasha-muse/
+END:VEVENT
+END:VCALENDAR

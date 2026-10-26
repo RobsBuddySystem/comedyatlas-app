@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kenny-lee-friends@comedyatlas.app
+DTSTAMP:20270101T030000Z
+DTSTART:20270101T030000Z
+DTEND:20270101T050000Z
+SUMMARY:Kenny Lee & Friends
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kenny-lee
+ -friends/
+URL:https://comedyatlas.app/comedy-atlas/event/kenny-lee-friends/
+END:VEVENT
+END:VCALENDAR

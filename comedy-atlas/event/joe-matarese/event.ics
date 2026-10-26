@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-matarese@comedyatlas.app
+DTSTAMP:20270326T233000Z
+DTSTART:20270326T233000Z
+DTEND:20270327T013000Z
+SUMMARY:Joe Matarese
+LOCATION:The Studio at Mizner Park\, 201 W Plaza Real\, Boca Raton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-matar
+ ese/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-matarese/
+END:VEVENT
+END:VCALENDAR

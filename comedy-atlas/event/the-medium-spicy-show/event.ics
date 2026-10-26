@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-medium-spicy-show@comedyatlas.app
+DTSTAMP:20261221T010000Z
+DTSTART:20261221T010000Z
+DTEND:20261221T030000Z
+SUMMARY:The Medium Spicy Show
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-mediu
+ m-spicy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-medium-spicy-show/
+END:VEVENT
+END:VCALENDAR

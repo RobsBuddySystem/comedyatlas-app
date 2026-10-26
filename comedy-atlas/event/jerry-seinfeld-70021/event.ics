@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-70021@comedyatlas.app
+DTSTAMP:20270131T000000Z
+DTSTART:20270131T000000Z
+DTEND:20270131T020000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Fox Theatre Detroit\, 2211 Woodward Ave\, Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-70021/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-70021/
+END:VEVENT
+END:VCALENDAR

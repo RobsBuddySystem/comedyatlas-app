@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:8-crazy-sets-in-the-callback-bar@comedyatlas.app
+DTSTAMP:20261212T033000Z
+DTSTART:20261212T033000Z
+DTEND:20261212T053000Z
+SUMMARY:8 Crazy Sets - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/8-crazy-s
+ ets-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/8-crazy-sets-in-the-callback
+ -bar/
+END:VEVENT
+END:VCALENDAR

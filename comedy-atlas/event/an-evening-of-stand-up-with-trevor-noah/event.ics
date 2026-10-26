@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-of-stand-up-with-trevor-noah@comedyatlas.app
+DTSTAMP:20261216T003000Z
+DTSTART:20261216T003000Z
+DTEND:20261216T023000Z
+SUMMARY:An Evening of Stand Up with Trevor Noah
+LOCATION:Beacon Theatre\, 2124 Broadway @ 74th St\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-of-stand-up-with-trevor-noah/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-of-stand-up-with-
+ trevor-noah/
+END:VEVENT
+END:VCALENDAR

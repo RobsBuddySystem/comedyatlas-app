@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:especial-la-risa-halloween@comedyatlas.app
+DTSTAMP:20261101T170000Z
+DTSTART:20261101T170000Z
+DTEND:20261101T190000Z
+SUMMARY:Especial la Risa: HALLOWEEN
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:Showcase de Stand-up en ESPAÑOL\, con más risas que sustos\, 
+ y poco presupuesto para disfraces =P Cuando llega el frío y hasta las cala
+ bazas se deprimen\, hay un antídoto: comedia... […]\n\\n\nMore info: htt
+ ps://comedyatlas.app/comedy-atlas/event/especial-la-risa-halloween/
+URL:https://comedyatlas.app/comedy-atlas/event/especial-la-risa-halloween/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:johnny-taylor-s-storytelling-grad-show-in-the-callback-bar-70009@comedy
+ atlas.app
+DTSTAMP:20270129T030000Z
+DTSTART:20270129T030000Z
+DTEND:20270129T050000Z
+SUMMARY:Johnny Taylor's Storytelling Grad Show - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/johnny-ta
+ ylor-s-storytelling-grad-show-in-the-callback-bar-70009/
+URL:https://comedyatlas.app/comedy-atlas/event/johnny-taylor-s-storytelling
+ -grad-show-in-the-callback-bar-70009/
+END:VEVENT
+END:VCALENDAR

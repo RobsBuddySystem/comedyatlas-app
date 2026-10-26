@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dustin-ybarra@comedyatlas.app
+DTSTAMP:20261113T040000Z
+DTSTART:20261113T040000Z
+DTEND:20261113T060000Z
+SUMMARY:Dustin Ybarra
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dustin-yb
+ arra/
+URL:https://comedyatlas.app/comedy-atlas/event/dustin-ybarra/
+END:VEVENT
+END:VCALENDAR

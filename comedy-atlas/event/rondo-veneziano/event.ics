@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rondo-veneziano@comedyatlas.app
+DTSTAMP:20270307T170000Z
+DTSTART:20270307T170000Z
+DTEND:20270307T190000Z
+SUMMARY:Rondò Veneziano
+LOCATION:Stuttgart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rondo-ven
+ eziano/
+URL:https://comedyatlas.app/comedy-atlas/event/rondo-veneziano/
+END:VEVENT
+END:VCALENDAR

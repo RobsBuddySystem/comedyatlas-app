@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jess-hilarious-70064@comedyatlas.app
+DTSTAMP:20270604T230000Z
+DTSTART:20270604T230000Z
+DTEND:20270605T010000Z
+SUMMARY:Jess Hilarious
+LOCATION:Pittsburgh Improv\, 166 East Bridge St\, Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jess-hila
+ rious-70064/
+URL:https://comedyatlas.app/comedy-atlas/event/jess-hilarious-70064/
+END:VEVENT
+END:VCALENDAR

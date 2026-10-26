@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mandal@comedyatlas.app
+DTSTAMP:20270325T030000Z
+DTSTART:20270325T030000Z
+DTEND:20270325T050000Z
+SUMMARY:Mandal
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mandal/
+URL:https://comedyatlas.app/comedy-atlas/event/mandal/
+END:VEVENT
+END:VCALENDAR

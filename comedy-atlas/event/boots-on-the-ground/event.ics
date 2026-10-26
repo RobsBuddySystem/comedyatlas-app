@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boots-on-the-ground@comedyatlas.app
+DTSTAMP:20261128T230000Z
+DTSTART:20261128T230000Z
+DTEND:20261129T010000Z
+SUMMARY:Boots On The Ground
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/boots-on-
+ the-ground/
+URL:https://comedyatlas.app/comedy-atlas/event/boots-on-the-ground/
+END:VEVENT
+END:VCALENDAR

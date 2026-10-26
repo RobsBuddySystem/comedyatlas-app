@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-countdown-new-year-s-eve-countdown-show@comedyatlas.app
+DTSTAMP:20270101T060000Z
+DTSTART:20270101T060000Z
+DTEND:20270101T080000Z
+SUMMARY:Comedy Countdown - New Year's Eve Countdown Show
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-co
+ untdown-new-year-s-eve-countdown-show/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-countdown-new-year-s-
+ eve-countdown-show/
+END:VEVENT
+END:VCALENDAR
