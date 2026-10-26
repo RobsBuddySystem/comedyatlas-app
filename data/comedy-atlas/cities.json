@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 175,
-      "unconfirmed": 56
+      "unconfirmed": 57
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -145,7 +145,7 @@
     "country_name": "Singapore",
     "id": 17,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 1.3521,
     "longitude": 103.8198,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 142,
-      "fr": 2489,
+      "fr": 2486,
       "unconfirmed": 22
     },
     "latitude": 48.8566,
@@ -829,7 +829,7 @@
     "id": 75,
     "language_counts": {
       "en": 17,
-      "unconfirmed": 106
+      "unconfirmed": 112
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -914,7 +914,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 101
+      "unconfirmed": 100
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -2167,7 +2167,7 @@
     "country_name": "UK",
     "id": 168,
     "language_counts": {
-      "unconfirmed": 60
+      "unconfirmed": 61
     },
     "latitude": null,
     "longitude": null,
@@ -2274,6 +2274,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Hartford",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": null
+  },
+  {
+    "country_id": 3,
+    "country_iso2": "CA",
+    "country_name": "Canada",
+    "id": 180,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 43.546052,
+    "longitude": -80.249328,
+    "name": "Guelph",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -7477,7 +7494,7 @@
     "country_name": "UK",
     "id": 622,
     "language_counts": {
-      "unconfirmed": 44
+      "unconfirmed": 45
     },
     "latitude": 50.717544,
     "longitude": -1.875166,
@@ -7681,7 +7698,7 @@
     "country_name": "UK",
     "id": 635,
     "language_counts": {
-      "unconfirmed": 22
+      "unconfirmed": 23
     },
     "latitude": 51.24061,
     "longitude": -0.564086,
@@ -7732,7 +7749,7 @@
     "country_name": "UK",
     "id": 641,
     "language_counts": {
-      "unconfirmed": 15
+      "unconfirmed": 14
     },
     "latitude": 53.229791,
     "longitude": -0.537099,
@@ -8974,7 +8991,7 @@
     "country_name": "UK",
     "id": 721,
     "language_counts": {
-      "unconfirmed": 30
+      "unconfirmed": 29
     },
     "latitude": 54.898663,
     "longitude": -2.934584,
@@ -9365,7 +9382,7 @@
     "country_name": "UK",
     "id": 744,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 51.408206,
     "longitude": -0.307788,
@@ -10932,7 +10949,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 87
+      "unconfirmed": 88
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
