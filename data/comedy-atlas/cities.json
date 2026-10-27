@@ -39,7 +39,7 @@
     "country_name": "Belgium",
     "id": 3,
     "language_counts": {
-      "en": 17,
+      "en": 16,
       "unconfirmed": 52
     },
     "latitude": 50.8503,
@@ -57,7 +57,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 192
+      "unconfirmed": 191
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 219,
+      "en": 217,
       "unconfirmed": 43
     },
     "latitude": 52.52,
@@ -196,8 +196,8 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 113,
-      "unconfirmed": 107
+      "en": 112,
+      "unconfirmed": 106
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -285,7 +285,7 @@
     "country_name": "Portugal",
     "id": 26,
     "language_counts": {
-      "en": 19,
+      "en": 18,
       "unconfirmed": 4
     },
     "latitude": 38.7223,
@@ -811,7 +811,7 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 847,
+      "en": 841,
       "unconfirmed": 964
     },
     "latitude": 51.5074,
@@ -829,7 +829,7 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 20,
+      "en": 18,
       "unconfirmed": 112
     },
     "latitude": 40.7128,
@@ -1104,7 +1104,7 @@
     "id": 92,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 212
+      "unconfirmed": 211
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1172,7 +1172,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 213
+      "unconfirmed": 211
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -1689,7 +1689,7 @@
     "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 85
+      "unconfirmed": 84
     },
     "latitude": 38.254238,
     "longitude": -85.759407,
@@ -1724,7 +1724,7 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 155
+      "unconfirmed": 154
     },
     "latitude": 26.142198,
     "longitude": -81.794294,
@@ -1980,7 +1980,7 @@
     "id": 154,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 14
+      "unconfirmed": 13
     },
     "latitude": null,
     "longitude": null,
@@ -2647,7 +2647,7 @@
     "country_name": "France",
     "id": 209,
     "language_counts": {
-      "fr": 11
+      "fr": 12
     },
     "latitude": null,
     "longitude": null,
@@ -2885,7 +2885,7 @@
     "country_name": "France",
     "id": 233,
     "language_counts": {
-      "fr": 11
+      "fr": 12
     },
     "latitude": null,
     "longitude": null,
@@ -10472,7 +10472,7 @@
     "country_name": "United States",
     "id": 809,
     "language_counts": {
-      "unconfirmed": 43
+      "unconfirmed": 42
     },
     "latitude": 32.68074,
     "longitude": -97.107349,
@@ -10761,7 +10761,7 @@
     "country_name": "United States",
     "id": 829,
     "language_counts": {
-      "unconfirmed": 14
+      "unconfirmed": 13
     },
     "latitude": 35.048047,
     "longitude": -85.305659,
@@ -10779,7 +10779,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1305
+      "unconfirmed": 1304
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -10949,7 +10949,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 88
+      "unconfirmed": 86
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -15713,5 +15713,22 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/Istanbul"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1334,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Guilvinec",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
   }
 ]
