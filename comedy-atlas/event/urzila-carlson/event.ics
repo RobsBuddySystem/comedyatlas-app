@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:urzila-carlson@comedyatlas.app
+DTSTAMP:20270917T180000Z
+DTSTART:20270917T180000Z
+DTEND:20270917T200000Z
+SUMMARY:Urzila Carlson
+LOCATION:The Brighton Centre\, Kings Road\, Brighton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/urzila-ca
+ rlson/
+URL:https://comedyatlas.app/comedy-atlas/event/urzila-carlson/
+END:VEVENT
+END:VCALENDAR

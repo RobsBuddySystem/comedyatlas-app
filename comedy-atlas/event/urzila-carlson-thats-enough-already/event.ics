@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:urzila-carlson-thats-enough-already@comedyatlas.app
+DTSTAMP:20270914T180000Z
+DTSTART:20270914T180000Z
+DTEND:20270914T200000Z
+SUMMARY:Urzila Carlson - That’s Enough Already
+LOCATION:Theater Amsterdam\, Danzigerkade 5\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/urzila-ca
+ rlson-thats-enough-already/
+URL:https://comedyatlas.app/comedy-atlas/event/urzila-carlson-thats-enough-
+ already/
+END:VEVENT
+END:VCALENDAR

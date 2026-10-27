@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tipsy-tuesday-showcase-70255@comedyatlas.app
+DTSTAMP:20261104T010000Z
+DTSTART:20261104T010000Z
+DTEND:20261104T030000Z
+SUMMARY:Tipsy Tuesday Showcase
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tipsy-tue
+ sday-showcase-70255/
+URL:https://comedyatlas.app/comedy-atlas/event/tipsy-tuesday-showcase-70255
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:les-normales-se-font-des-films@comedyatlas.app
+DTSTAMP:20261128T193000Z
+DTSTART:20261128T193000Z
+DTEND:20261128T213000Z
+SUMMARY:Les Normales se font des films
+LOCATION:La Comédie de Toulouse\, 16 rue Saint Germier\, Toulouse
+DESCRIPTION:Avec des millions de vues sur les réseaux et à force de se fa
+ ire des films\, ils ont décidé d'en faire un spectacle.\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/les-normales-se-font-des-films/
+URL:https://comedyatlas.app/comedy-atlas/event/les-normales-se-font-des-fil
+ ms/
+END:VEVENT
+END:VCALENDAR

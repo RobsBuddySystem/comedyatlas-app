@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:burgers-comedy-nl-open-mic-met-beginnende-talenten-en-ervaren-comedians
+ @comedyatlas.app
+DTSTAMP:20261105T190000Z
+DTSTART:20261105T190000Z
+DTEND:20261105T210000Z
+SUMMARY:Burgers & Comedy (NL) Open mic met beginnende talenten en ervaren c
+ omedians
+LOCATION:ComedyCity The Hague\, Hofweg 1a\, Den Haag
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/burgers-c
+ omedy-nl-open-mic-met-beginnende-talenten-en-ervaren-comedians/
+URL:https://comedyatlas.app/comedy-atlas/event/burgers-comedy-nl-open-mic-m
+ et-beginnende-talenten-en-ervaren-comedians/
+END:VEVENT
+END:VCALENDAR

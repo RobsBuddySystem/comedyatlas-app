@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brunch-comedy-70601@comedyatlas.app
+DTSTAMP:20261108T100000Z
+DTSTART:20261108T100000Z
+DTEND:20261108T120000Z
+SUMMARY:Brunch Comedy
+LOCATION:La Relève\, 5 rue Octavio Mey\, Lyon
+DESCRIPTION:La Relève présente le Brunch Comedy !\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/brunch-comedy-70601/
+URL:https://comedyatlas.app/comedy-atlas/event/brunch-comedy-70601/
+END:VEVENT
+END:VCALENDAR

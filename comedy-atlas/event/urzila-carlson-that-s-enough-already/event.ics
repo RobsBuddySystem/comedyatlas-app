@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:urzila-carlson-that-s-enough-already@comedyatlas.app
+DTSTAMP:20270902T190000Z
+DTSTART:20270902T190000Z
+DTEND:20270902T210000Z
+SUMMARY:Urzila Carlson - That's Enough Already
+LOCATION:Bath Forum\, 1a Forum Buildings\, Bath
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/urzila-ca
+ rlson-that-s-enough-already/
+URL:https://comedyatlas.app/comedy-atlas/event/urzila-carlson-that-s-enough
+ -already/
+END:VEVENT
+END:VCALENDAR

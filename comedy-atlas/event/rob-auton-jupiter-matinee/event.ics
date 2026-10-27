@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-auton-jupiter-matinee@comedyatlas.app
+DTSTAMP:20270321T153000Z
+DTSTART:20270321T153000Z
+DTEND:20270321T173000Z
+SUMMARY:Rob Auton: JUPITER - Matinée
+LOCATION:The Crescent\, 8 The Crescent\, York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-auton
+ -jupiter-matinee/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-auton-jupiter-matinee/
+END:VEVENT
+END:VCALENDAR
