@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-hollywood-spectacular-comedy-show@comedyatlas.app
+DTSTAMP:20270129T033000Z
+DTSTART:20270129T033000Z
+DTEND:20270129T053000Z
+SUMMARY:The Hollywood Spectacular Comedy Show
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-holly
+ wood-spectacular-comedy-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-hollywood-spectacular-co
+ medy-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bushwick-news-network@comedyatlas.app
+DTSTAMP:20261218T030000Z
+DTSTART:20261218T030000Z
+DTEND:20261218T050000Z
+SUMMARY:Bushwick News Network
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bushwick-
+ news-network/
+URL:https://comedyatlas.app/comedy-atlas/event/bushwick-news-network/
+END:VEVENT
+END:VCALENDAR

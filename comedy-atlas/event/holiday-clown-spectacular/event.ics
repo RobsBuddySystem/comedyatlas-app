@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:holiday-clown-spectacular@comedyatlas.app
+DTSTAMP:20261215T040000Z
+DTSTART:20261215T040000Z
+DTEND:20261215T060000Z
+SUMMARY:Holiday Clown Spectacular
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/holiday-c
+ lown-spectacular/
+URL:https://comedyatlas.app/comedy-atlas/event/holiday-clown-spectacular/
+END:VEVENT
+END:VCALENDAR

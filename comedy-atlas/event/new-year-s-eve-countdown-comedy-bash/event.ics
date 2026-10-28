@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-countdown-comedy-bash@comedyatlas.app
+DTSTAMP:20270101T030000Z
+DTSTART:20270101T030000Z
+DTEND:20270101T050000Z
+SUMMARY:New Year's Eve Countdown Comedy Bash
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-year-
+ s-eve-countdown-comedy-bash/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-countdown-com
+ edy-bash/
+END:VEVENT
+END:VCALENDAR

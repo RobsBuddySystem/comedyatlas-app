@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spotlight-specials@comedyatlas.app
+DTSTAMP:20261229T040000Z
+DTSTART:20261229T040000Z
+DTEND:20261229T060000Z
+SUMMARY:Spotlight Specials
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/spotlight
+ -specials/
+URL:https://comedyatlas.app/comedy-atlas/event/spotlight-specials/
+END:VEVENT
+END:VCALENDAR

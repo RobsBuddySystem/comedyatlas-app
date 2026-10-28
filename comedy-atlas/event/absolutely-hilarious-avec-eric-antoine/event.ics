@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:absolutely-hilarious-avec-eric-antoine@comedyatlas.app
+DTSTAMP:20261208T190000Z
+DTSTART:20261208T190000Z
+DTEND:20261208T210000Z
+SUMMARY:Absolutely Hilarious avec Éric Antoine
+LOCATION:Théâtre Gaîté Rive Gauche\, 6 rue de la Gaîté\, Paris
+DESCRIPTION:Absolutely Hilarious revient à la Gaîté Rive Gauche pour une
+  9ème saison !\nMore info: https://comedyatlas.app/comedy-atlas/event/abso
+ lutely-hilarious-avec-eric-antoine/
+URL:https://comedyatlas.app/comedy-atlas/event/absolutely-hilarious-avec-er
+ ic-antoine/
+END:VEVENT
+END:VCALENDAR

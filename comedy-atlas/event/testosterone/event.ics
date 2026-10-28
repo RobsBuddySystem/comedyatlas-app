@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:testosterone@comedyatlas.app
+DTSTAMP:20261204T180000Z
+DTSTART:20261204T180000Z
+DTEND:20261204T200000Z
+SUMMARY:Testostérone
+LOCATION:Comédie de Grenoble\, 1 rue Pierre Dupont\, Grenoble
+DESCRIPTION:Un seule-en-scène qui interroge nos conditionnements sociaux a
+ vec humour et lucidité.\nMore info: https://comedyatlas.app/comedy-atlas/e
+ vent/testosterone/
+URL:https://comedyatlas.app/comedy-atlas/event/testosterone/
+END:VEVENT
+END:VCALENDAR

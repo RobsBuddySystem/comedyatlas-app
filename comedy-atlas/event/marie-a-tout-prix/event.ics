@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marie-a-tout-prix@comedyatlas.app
+DTSTAMP:20261204T104200Z
+DTSTART:20261204T104200Z
+DTEND:20261204T124200Z
+SUMMARY:Marié à tout prix
+LOCATION:We welcome\, 6 rue du Docteur Naudier\, Lagny sur Marne
+DESCRIPTION:S'il veut toucher l'héritage de son grand-père\, Antoine doit
+  trouver l'âme soeur et se marier en moins de dix jours.\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/marie-a-tout-prix/
+URL:https://comedyatlas.app/comedy-atlas/event/marie-a-tout-prix/
+END:VEVENT
+END:VCALENDAR

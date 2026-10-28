@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:morecambe-comedy-festival-best-of-morecambe-community-night@comedyatlas
+ .app
+DTSTAMP:20261127T180000Z
+DTSTART:20261127T180000Z
+DTEND:20261127T200000Z
+SUMMARY:Morecambe Comedy Festival: Best of Morecambe Community Night
+LOCATION:Morecambe Town Hall\, Marine Road East\, Lancaster
+DESCRIPTION:See what the stand-up scene in Morecambe currently has to offer
+ \, featuring local people who have been developing their craft at our free 
+ workshops.\nMore info: https://comedyatlas.app/comedy-atlas/event/morecambe
+ -comedy-festival-best-of-morecambe-community-night/
+URL:https://comedyatlas.app/comedy-atlas/event/morecambe-comedy-festival-be
+ st-of-morecambe-community-night/
+END:VEVENT
+END:VCALENDAR
