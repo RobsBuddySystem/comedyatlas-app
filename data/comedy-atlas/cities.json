@@ -1707,7 +1707,7 @@
     "id": 132,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 143
+      "unconfirmed": 144
     },
     "latitude": 33.306203,
     "longitude": -111.841185,
@@ -1826,7 +1826,7 @@
     "country_name": "United States",
     "id": 139,
     "language_counts": {
-      "unconfirmed": 65
+      "unconfirmed": 71
     },
     "latitude": 40.75962,
     "longitude": -111.886797,
@@ -4614,23 +4614,6 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Australia/Brisbane"
-  },
-  {
-    "country_id": 1,
-    "country_iso2": "AU",
-    "country_name": "Australia",
-    "id": 425,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": -41.481664,
-    "longitude": 147.11336,
-    "name": "Prospect Vale",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Australia/Hobart"
   },
   {
     "country_id": 1,
