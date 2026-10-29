@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-list-71628@comedyatlas.app
+DTSTAMP:20270503T020000Z
+DTSTART:20270503T020000Z
+DTEND:20270503T040000Z
+SUMMARY:Joe List
+LOCATION:Punch Line Comedy Club - Sacramento\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-list-
+ 71628/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-list-71628/
+END:VEVENT
+END:VCALENDAR

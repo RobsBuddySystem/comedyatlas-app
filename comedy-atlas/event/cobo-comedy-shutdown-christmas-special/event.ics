@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-christmas-special@comedyatlas.app
+DTSTAMP:20261213T200000Z
+DTSTART:20261213T200000Z
+DTEND:20261213T220000Z
+SUMMARY:COBO: Comedy Shutdown - Christmas Special
+LOCATION:The Wardrobe\, 6 St Peter&#39\;s Square\, Leeds
+DESCRIPTION:COBO: Comedy Shutdown proudly presents our Christmas Special\, 
+ bringing festive laughs to venues across the UK this December\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-christmas-sp
+ ecial/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-christm
+ as-special/
+END:VEVENT
+END:VCALENDAR

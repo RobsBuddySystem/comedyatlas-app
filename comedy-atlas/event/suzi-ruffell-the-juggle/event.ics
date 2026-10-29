@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:suzi-ruffell-the-juggle@comedyatlas.app
+DTSTAMP:20270413T110000Z
+DTSTART:20270413T110000Z
+DTEND:20270413T130000Z
+SUMMARY:Suzi Ruffell: The Juggle
+LOCATION:The Rechabite\, 224 William St\, Perth
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/suzi-ruff
+ ell-the-juggle/
+URL:https://comedyatlas.app/comedy-atlas/event/suzi-ruffell-the-juggle/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gene-pompa@comedyatlas.app
+DTSTAMP:20270104T020000Z
+DTSTART:20270104T020000Z
+DTEND:20270104T040000Z
+SUMMARY:Gene Pompa
+LOCATION:Corona Improv\, 2710 Lakeshore Dr\, Corona
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gene-pomp
+ a/
+URL:https://comedyatlas.app/comedy-atlas/event/gene-pompa/
+END:VEVENT
+END:VCALENDAR

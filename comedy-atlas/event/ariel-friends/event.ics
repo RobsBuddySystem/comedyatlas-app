@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ariel-friends@comedyatlas.app
+DTSTAMP:20261203T200000Z
+DTSTART:20261203T200000Z
+DTEND:20261203T220000Z
+SUMMARY:Ariel & Friends
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Après s'être fait un nom sur les réseaux sociaux en se filma
+ nt dans sa chambre\, Ariel Ephraimi passe enfin derrière le micro sur une 
+ vraie scène.\nMore info: https://comedyatlas.app/comedy-atlas/event/ariel-
+ friends/
+URL:https://comedyatlas.app/comedy-atlas/event/ariel-friends/
+END:VEVENT
+END:VCALENDAR

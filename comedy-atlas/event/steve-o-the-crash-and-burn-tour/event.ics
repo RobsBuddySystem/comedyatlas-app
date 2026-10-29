@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-o-the-crash-and-burn-tour@comedyatlas.app
+DTSTAMP:20270118T030000Z
+DTSTART:20270118T030000Z
+DTEND:20270118T050000Z
+SUMMARY:Steve-O: The Crash and Burn Tour
+LOCATION:Bob Hope Theatre\, 242 E Main St.\, Stockton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-o-t
+ he-crash-and-burn-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-o-the-crash-and-burn-t
+ our/
+END:VEVENT
+END:VCALENDAR

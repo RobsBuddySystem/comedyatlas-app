@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hood-comedy-club@comedyatlas.app
+DTSTAMP:20261119T170000Z
+DTSTART:20261119T170000Z
+DTEND:20261119T190000Z
+SUMMARY:Hood Comedy Club
+LOCATION:Hood Stokesley\, Unit 1\, Middlesbrough
+DESCRIPTION:Hood Comedy Club is BACK\n\nWe're bringing six comedians to Hoo
+ d for another night of live stand-up comedy\, and this time tickets are jus
+ t £5\nMore info: https://comedyatlas.app/comedy-atlas/event/hood-comedy-cl
+ ub/
+URL:https://comedyatlas.app/comedy-atlas/event/hood-comedy-club/
+END:VEVENT
+END:VCALENDAR

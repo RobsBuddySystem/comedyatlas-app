@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ross-noble@comedyatlas.app
+DTSTAMP:20271005T180000Z
+DTSTART:20271005T180000Z
+DTEND:20271005T200000Z
+SUMMARY:Ross Noble
+LOCATION:Divadlo U Hasičů\, Římská 45\, Praha 2
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ross-nobl
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/ross-noble/
+END:VEVENT
+END:VCALENDAR

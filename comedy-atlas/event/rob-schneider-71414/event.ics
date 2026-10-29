@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-schneider-71414@comedyatlas.app
+DTSTAMP:20261109T013000Z
+DTSTART:20261109T013000Z
+DTEND:20261109T033000Z
+SUMMARY:Rob Schneider
+LOCATION:Belle Mehus Auditorium\, 201 North 6th Street\, Bismarck
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-schne
+ ider-71414/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-schneider-71414/
+END:VEVENT
+END:VCALENDAR

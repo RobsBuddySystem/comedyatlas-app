@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:movember-comedy@comedyatlas.app
+DTSTAMP:20261101T230000Z
+DTSTART:20261101T230000Z
+DTEND:20261102T010000Z
+SUMMARY:Movember Comedy
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/movember-
+ comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/movember-comedy/
+END:VEVENT
+END:VCALENDAR

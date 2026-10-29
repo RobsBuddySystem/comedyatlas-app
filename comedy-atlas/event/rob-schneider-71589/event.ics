@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-schneider-71589@comedyatlas.app
+DTSTAMP:20270213T010000Z
+DTSTART:20270213T010000Z
+DTEND:20270213T030000Z
+SUMMARY:Rob Schneider
+LOCATION:Ruth Eckerd Hall\, 1111 N McMullen Booth Rd.\, Clearwater
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-schne
+ ider-71589/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-schneider-71589/
+END:VEVENT
+END:VCALENDAR

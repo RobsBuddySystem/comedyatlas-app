@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-jefferies@comedyatlas.app
+DTSTAMP:20270115T080000Z
+DTSTART:20270115T080000Z
+DTEND:20270115T100000Z
+SUMMARY:Jim Jefferies
+LOCATION:Crown Live\, Crown Entertainment Complex\, 8 Whiteman Street\, Sou
+ thbank
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-jeffe
+ ries/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-jefferies/
+END:VEVENT
+END:VCALENDAR

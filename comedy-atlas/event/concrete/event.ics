@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:concrete@comedyatlas.app
+DTSTAMP:20270307T040000Z
+DTSTART:20270307T040000Z
+DTEND:20270307T060000Z
+SUMMARY:Concrete
+LOCATION:Spotlight 29 Casino\, 46-200 Harrison Place\, Coachella
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/concrete/
+URL:https://comedyatlas.app/comedy-atlas/event/concrete/
+END:VEVENT
+END:VCALENDAR

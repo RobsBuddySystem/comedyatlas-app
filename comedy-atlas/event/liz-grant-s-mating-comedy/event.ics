@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liz-grant-s-mating-comedy@comedyatlas.app
+DTSTAMP:20270213T233000Z
+DTSTART:20270213T233000Z
+DTEND:20270214T013000Z
+SUMMARY:Liz Grant's Mating Comedy
+LOCATION:Punch Line Comedy Club - Sacramento\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liz-grant
+ -s-mating-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/liz-grant-s-mating-comedy/
+END:VEVENT
+END:VCALENDAR

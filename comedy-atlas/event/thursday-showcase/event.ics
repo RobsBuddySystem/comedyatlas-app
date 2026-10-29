@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thursday-showcase@comedyatlas.app
+DTSTAMP:20261106T010000Z
+DTSTART:20261106T010000Z
+DTEND:20261106T030000Z
+SUMMARY:Thursday Showcase
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thursday-
+ showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/thursday-showcase/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-christmas-special-manchester@comedyatlas.app
+DTSTAMP:20261213T170000Z
+DTSTART:20261213T170000Z
+DTEND:20261213T190000Z
+SUMMARY:COBO : Comedy Shutdown Christmas Special Manchester
+LOCATION:Frog and Bucket Comedy Club\, 102 Oldham Street\, Manchester
+DESCRIPTION:If you haven't experienced the magic of COBO before\, get ready
+  for an evening of rip-roaring\, back-slapping\, belly laughs.\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-christmas-s
+ pecial-manchester/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-christm
+ as-special-manchester/
+END:VEVENT
+END:VCALENDAR

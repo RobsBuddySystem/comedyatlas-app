@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:red-grant-new-year-s-eve@comedyatlas.app
+DTSTAMP:20270101T000000Z
+DTSTART:20270101T000000Z
+DTEND:20270101T020000Z
+SUMMARY:Red Grant New Year's Eve
+LOCATION:Raleigh Improv\, 1224 Parkside Main St\, Cary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/red-grant
+ -new-year-s-eve/
+URL:https://comedyatlas.app/comedy-atlas/event/red-grant-new-year-s-eve/
+END:VEVENT
+END:VCALENDAR

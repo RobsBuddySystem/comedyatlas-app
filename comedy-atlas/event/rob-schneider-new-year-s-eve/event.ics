@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-schneider-new-year-s-eve@comedyatlas.app
+DTSTAMP:20270101T010000Z
+DTSTART:20270101T010000Z
+DTEND:20270101T030000Z
+SUMMARY:Rob Schneider New Year's Eve
+LOCATION:Chicago Improv\, 5 Woodfield Mall K120B\, Schaumburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-schne
+ ider-new-year-s-eve/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-schneider-new-year-s-eve
+ /
+END:VEVENT
+END:VCALENDAR

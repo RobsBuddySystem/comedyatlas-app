@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:red-grant-71438@comedyatlas.app
+DTSTAMP:20270101T233000Z
+DTSTART:20270101T233000Z
+DTEND:20270102T013000Z
+SUMMARY:Red Grant
+LOCATION:Raleigh Improv\, 1224 Parkside Main St\, Cary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/red-grant
+ -71438/
+URL:https://comedyatlas.app/comedy-atlas/event/red-grant-71438/
+END:VEVENT
+END:VCALENDAR

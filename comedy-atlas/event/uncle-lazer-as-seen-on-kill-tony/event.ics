@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:uncle-lazer-as-seen-on-kill-tony@comedyatlas.app
+DTSTAMP:20270625T090000Z
+DTSTART:20270625T090000Z
+DTEND:20270625T110000Z
+SUMMARY:Uncle Lazer - As Seen On Kill Tony
+LOCATION:The Thornbury Theatre\, 859 High St\, Thornbury
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/uncle-laz
+ er-as-seen-on-kill-tony/
+URL:https://comedyatlas.app/comedy-atlas/event/uncle-lazer-as-seen-on-kill-
+ tony/
+END:VEVENT
+END:VCALENDAR

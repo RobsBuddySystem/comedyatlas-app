@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-byrne-71454@comedyatlas.app
+DTSTAMP:20270124T020000Z
+DTSTART:20270124T020000Z
+DTEND:20270124T040000Z
+SUMMARY:Steve Byrne
+LOCATION:Pittsburgh Improv\, 166 East Bridge St\, Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-byr
+ ne-71454/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-byrne-71454/
+END:VEVENT
+END:VCALENDAR

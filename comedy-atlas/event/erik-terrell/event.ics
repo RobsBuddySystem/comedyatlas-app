@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:erik-terrell@comedyatlas.app
+DTSTAMP:20270222T000000Z
+DTSTART:20270222T000000Z
+DTEND:20270222T020000Z
+SUMMARY:Erik Terrell
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/erik-terr
+ ell/
+URL:https://comedyatlas.app/comedy-atlas/event/erik-terrell/
+END:VEVENT
+END:VCALENDAR

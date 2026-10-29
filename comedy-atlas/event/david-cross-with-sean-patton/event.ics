@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-cross-with-sean-patton@comedyatlas.app
+DTSTAMP:20270214T020000Z
+DTSTART:20270214T020000Z
+DTEND:20270214T040000Z
+SUMMARY:DAVID CROSS with Sean Patton
+LOCATION:Chelsea’s Live\, 1010 Nicholson Dr\, Baton Rouge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-cro
+ ss-with-sean-patton/
+URL:https://comedyatlas.app/comedy-atlas/event/david-cross-with-sean-patton
+ /
+END:VEVENT
+END:VCALENDAR
