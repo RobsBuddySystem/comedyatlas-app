@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jesse-message-personnel@comedyatlas.app
+DTSTAMP:20280407T230000Z
+DTSTART:20280407T230000Z
+DTEND:20280408T010000Z
+SUMMARY:Jessé - Message Personnel
+LOCATION:L'Olympia\, 1004 Sainte-Catherine Street East\, Montreal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jesse-mes
+ sage-personnel/
+URL:https://comedyatlas.app/comedy-atlas/event/jesse-message-personnel/
+END:VEVENT
+END:VCALENDAR

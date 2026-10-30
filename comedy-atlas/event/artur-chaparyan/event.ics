@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:artur-chaparyan@comedyatlas.app
+DTSTAMP:20261103T180000Z
+DTSTART:20261103T180000Z
+DTEND:20261103T200000Z
+SUMMARY:Artur Chaparyan
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/artur-cha
+ paryan/
+URL:https://comedyatlas.app/comedy-atlas/event/artur-chaparyan/
+END:VEVENT
+END:VCALENDAR

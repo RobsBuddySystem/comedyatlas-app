@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:raised-by-therapy@comedyatlas.app
+DTSTAMP:20261115T180000Z
+DTSTART:20261115T180000Z
+DTEND:20261115T200000Z
+SUMMARY:Raised By Therapy
+LOCATION:Huis van Iemand Anders\, 2 Van Woustraat\, Amsterdam
+DESCRIPTION:Two comedians. Years of therapy. Absolutely no qualifications. 
+ Join Tamer Kattan and Daniel Yazbek for Raised by Therapy\, a monthly show.
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/raised-by-therapy/
+URL:https://comedyatlas.app/comedy-atlas/event/raised-by-therapy/
+END:VEVENT
+END:VCALENDAR
