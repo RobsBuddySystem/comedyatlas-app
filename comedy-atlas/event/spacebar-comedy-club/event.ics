@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spacebar-comedy-club@comedyatlas.app
+DTSTAMP:20261127T193000Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:Spacebar Comedy Club
+LOCATION:Sr1 3ht\, 21-23 Waterloo Place\, Sunderland
+DESCRIPTION:Sunderland Number 1 Comedy Club\nSPACEBAR COMEDY CLUB - FRIDAY 
+ 27TH November\n\nSunderland... get ready to LAUGH your head off - again\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/spacebar-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/spacebar-comedy-club/
+END:VEVENT
+END:VCALENDAR

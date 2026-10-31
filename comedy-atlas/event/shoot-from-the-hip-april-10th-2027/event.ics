@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shoot-from-the-hip-april-10th-2027@comedyatlas.app
+DTSTAMP:20270410T140000Z
+DTSTART:20270410T140000Z
+DTEND:20270410T160000Z
+SUMMARY:Shoot From The Hip - April 10th 2027
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shoot-fro
+ m-the-hip-april-10th-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/shoot-from-the-hip-april-10t
+ h-2027/
+END:VEVENT
+END:VCALENDAR

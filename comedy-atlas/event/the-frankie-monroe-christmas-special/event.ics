@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-frankie-monroe-christmas-special@comedyatlas.app
+DTSTAMP:20261207T193000Z
+DTSTART:20261207T193000Z
+DTEND:20261207T213000Z
+SUMMARY:The Frankie Monroe Christmas Special
+LOCATION:Wardrobe\, 6 St. Peters Square\, Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-frank
+ ie-monroe-christmas-special/
+URL:https://comedyatlas.app/comedy-atlas/event/the-frankie-monroe-christmas
+ -special/
+END:VEVENT
+END:VCALENDAR

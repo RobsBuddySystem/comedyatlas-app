@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aliocha@comedyatlas.app
+DTSTAMP:20261102T200000Z
+DTSTART:20261102T200000Z
+DTEND:20261102T220000Z
+SUMMARY:Aliocha
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:C'est bientôt la 3e guerre mondiale\, venez on en parle.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/aliocha/
+URL:https://comedyatlas.app/comedy-atlas/event/aliocha/
+END:VEVENT
+END:VCALENDAR

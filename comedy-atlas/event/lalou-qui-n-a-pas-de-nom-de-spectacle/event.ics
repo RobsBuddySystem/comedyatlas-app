@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lalou-qui-n-a-pas-de-nom-de-spectacle@comedyatlas.app
+DTSTAMP:20261213T160000Z
+DTSTART:20261213T160000Z
+DTEND:20261213T180000Z
+SUMMARY:Lalou qui n'a pas de nom de spectacle
+LOCATION:Le Corum - Salle Pasteur\, Esplanade Charles de Gaulle\, Montpelli
+ er
+DESCRIPTION:Après une tournée complète en France\, en Suisse\, en Belgiq
+ ue et au Luxembourg\, ainsi que deux Bataclan complets\, Lalou repart sur l
+ es routes en 2026.\nMore info: https://comedyatlas.app/comedy-atlas/event/l
+ alou-qui-n-a-pas-de-nom-de-spectacle/
+URL:https://comedyatlas.app/comedy-atlas/event/lalou-qui-n-a-pas-de-nom-de-
+ spectacle/
+END:VEVENT
+END:VCALENDAR

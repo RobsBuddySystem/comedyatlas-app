@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:justin-moorhouse@comedyatlas.app
+DTSTAMP:20270318T193000Z
+DTSTART:20270318T193000Z
+DTEND:20270318T213000Z
+SUMMARY:Justin Moorhouse
+LOCATION:Wardrobe\, 6 St. Peters Square\, Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/justin-mo
+ orhouse/
+URL:https://comedyatlas.app/comedy-atlas/event/justin-moorhouse/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-in-bradford-on-avon@comedyatlas.app
+DTSTAMP:20261212T200000Z
+DTSTART:20261212T200000Z
+DTEND:20261212T220000Z
+SUMMARY:Comedy in Bradford-on-Avon
+LOCATION:St Margaret's Hall Bradford Upon Avon\, St Margaret&#39\;s Hall\, 
+ Bath
+DESCRIPTION:Laughter Craft Comedy are very excited to be launching a comedy
+  night in Bradford on Avon\n\nWe are bringing a line up full of TV Comedian
+ s\nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-in-bradford
+ -on-avon/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-in-bradford-on-avon/
+END:VEVENT
+END:VCALENDAR

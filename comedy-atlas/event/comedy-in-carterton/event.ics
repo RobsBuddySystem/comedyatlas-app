@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-in-carterton@comedyatlas.app
+DTSTAMP:20261121T200000Z
+DTSTART:20261121T200000Z
+DTEND:20261121T220000Z
+SUMMARY:Comedy in Carterton
+LOCATION:Carterton Community Centre\, Community Building\, Oxford
+DESCRIPTION:Laughter Craft Comedy are very excited to be launching a comedy
+  night in Carterton\n\nWe are bringing a line up full of TV and Award Winni
+ ng Comedians p\nMore info: https://comedyatlas.app/comedy-atlas/event/comed
+ y-in-carterton/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-in-carterton/
+END:VEVENT
+END:VCALENDAR

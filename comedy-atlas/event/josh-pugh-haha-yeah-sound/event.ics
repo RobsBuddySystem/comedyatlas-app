@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-pugh-haha-yeah-sound@comedyatlas.app
+DTSTAMP:20270218T190000Z
+DTSTART:20270218T190000Z
+DTEND:20270218T210000Z
+SUMMARY:Josh Pugh: Haha\, Yeah Sound
+LOCATION:The Sugar Club\, 8 Lower Leeson Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-pugh
+ -haha-yeah-sound/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-pugh-haha-yeah-sound/
+END:VEVENT
+END:VCALENDAR

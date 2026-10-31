@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mathieu-triay@comedyatlas.app
+DTSTAMP:20261125T183000Z
+DTSTART:20261125T183000Z
+DTEND:20261125T203000Z
+SUMMARY:Mathieu Triay
+LOCATION:Marseille Comedy Club\, 59 rue de Rome\, Marseille
+DESCRIPTION:Comme cela arrive à beaucoup sur cette planète\, Mathieu a 30
+  ans...\nMore info: https://comedyatlas.app/comedy-atlas/event/mathieu-tria
+ y/
+URL:https://comedyatlas.app/comedy-atlas/event/mathieu-triay/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:craig-conant-live@comedyatlas.app
+DTSTAMP:20270214T033000Z
+DTSTART:20270214T033000Z
+DTEND:20270214T053000Z
+SUMMARY:Craig Conant Live!
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/craig-con
+ ant-live/
+URL:https://comedyatlas.app/comedy-atlas/event/craig-conant-live/
+END:VEVENT
+END:VCALENDAR

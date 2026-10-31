@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rob-auton-72012@comedyatlas.app
+DTSTAMP:20271119T190000Z
+DTSTART:20271119T190000Z
+DTEND:20271119T210000Z
+SUMMARY:Rob Auton
+LOCATION:The Limelight 2\, 17\, Ormeau Avenue\, Belfast
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rob-auton
+ -72012/
+URL:https://comedyatlas.app/comedy-atlas/event/rob-auton-72012/
+END:VEVENT
+END:VCALENDAR
