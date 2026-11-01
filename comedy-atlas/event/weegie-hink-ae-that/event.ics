@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:weegie-hink-ae-that@comedyatlas.app
+DTSTAMP:20270528T180000Z
+DTSTART:20270528T180000Z
+DTEND:20270528T200000Z
+SUMMARY:Weegie Hink Ae That?
+LOCATION:Paisley
+DESCRIPTION:The weegie boys are back\nMore info: https://comedyatlas.app/co
+ medy-atlas/event/weegie-hink-ae-that/
+URL:https://comedyatlas.app/comedy-atlas/event/weegie-hink-ae-that/
+END:VEVENT
+END:VCALENDAR
