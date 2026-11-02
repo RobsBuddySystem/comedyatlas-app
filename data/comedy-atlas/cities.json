@@ -214,7 +214,7 @@
     "country_name": "Spain",
     "id": 21,
     "language_counts": {
-      "en": 41,
+      "en": 40,
       "unconfirmed": 4
     },
     "latitude": 40.4168,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 137,
-      "fr": 1876,
+      "fr": 1875,
       "unconfirmed": 23
     },
     "latitude": 48.8566,
@@ -829,8 +829,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 14,
-      "unconfirmed": 116
+      "en": 11,
+      "unconfirmed": 115
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -864,7 +864,7 @@
     "country_name": "United States",
     "id": 77,
     "language_counts": {
-      "unconfirmed": 58
+      "unconfirmed": 57
     },
     "latitude": 41.8781,
     "longitude": -87.6298,
@@ -1103,8 +1103,7 @@
     "country_name": "United States",
     "id": 92,
     "language_counts": {
-      "en": 1,
-      "unconfirmed": 192
+      "unconfirmed": 189
     },
     "latitude": 45.5152,
     "longitude": -122.6784,
@@ -1172,7 +1171,7 @@
     "country_name": "United States",
     "id": 96,
     "language_counts": {
-      "unconfirmed": 201
+      "unconfirmed": 199
     },
     "latitude": 39.9526,
     "longitude": -75.1652,
@@ -1517,7 +1516,7 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 108
+      "unconfirmed": 107
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
@@ -1552,7 +1551,7 @@
     "id": 123,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 233
+      "unconfirmed": 231
     },
     "latitude": 38.895098,
     "longitude": -77.036385,
@@ -1672,7 +1671,7 @@
     "country_name": "United States",
     "id": 130,
     "language_counts": {
-      "unconfirmed": 59
+      "unconfirmed": 58
     },
     "latitude": 34.075596,
     "longitude": -84.294596,
@@ -1689,7 +1688,7 @@
     "country_name": "United States",
     "id": 131,
     "language_counts": {
-      "unconfirmed": 80
+      "unconfirmed": 79
     },
     "latitude": 38.254238,
     "longitude": -85.759407,
@@ -1724,7 +1723,7 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 149
+      "unconfirmed": 148
     },
     "latitude": 26.142198,
     "longitude": -81.794294,
@@ -1758,7 +1757,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 109
+      "unconfirmed": 108
     },
     "latitude": 47.657193,
     "longitude": -117.42351,
@@ -1775,7 +1774,7 @@
     "country_name": "United States",
     "id": 136,
     "language_counts": {
-      "unconfirmed": 50
+      "unconfirmed": 49
     },
     "latitude": 41.07999,
     "longitude": -85.138602,
@@ -10095,23 +10094,6 @@
     "country_id": 60,
     "country_iso2": "US",
     "country_name": "United States",
-    "id": 799,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 41.35003,
-    "longitude": -81.526611,
-    "name": "Northfield",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "America/New_York"
-  },
-  {
-    "country_id": 60,
-    "country_iso2": "US",
-    "country_name": "United States",
     "id": 800,
     "language_counts": {
       "unconfirmed": 32
@@ -10745,7 +10727,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 110
+      "unconfirmed": 106
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -13203,7 +13185,7 @@
     "id": 1019,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 6
+      "unconfirmed": 5
     },
     "latitude": 27.942743,
     "longitude": -82.451772,
@@ -14581,7 +14563,7 @@
     "country_name": "Mexico",
     "id": 1108,
     "language_counts": {
-      "unconfirmed": 47
+      "unconfirmed": 46
     },
     "latitude": 19.394672,
     "longitude": -99.16067,
