@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 196,
+      "en": 193,
       "unconfirmed": 49
     },
     "latitude": 52.52,
@@ -110,7 +110,7 @@
     "id": 14,
     "language_counts": {
       "en": 8,
-      "unconfirmed": 208
+      "unconfirmed": 207
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 167,
-      "unconfirmed": 59
+      "unconfirmed": 58
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -196,7 +196,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 106,
+      "en": 104,
       "unconfirmed": 102
     },
     "latitude": 41.3851,
@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 243
+      "unconfirmed": 240
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -267,8 +267,8 @@
     "id": 25,
     "language_counts": {
       "en": 137,
-      "fr": 1857,
-      "unconfirmed": 23
+      "fr": 1850,
+      "unconfirmed": 22
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -391,7 +391,7 @@
     "country_name": "UK",
     "id": 33,
     "language_counts": {
-      "unconfirmed": 363
+      "unconfirmed": 362
     },
     "latitude": 55.9533,
     "longitude": -3.1883,
@@ -445,7 +445,7 @@
     "id": 37,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 41.9028,
     "longitude": 12.4964,
@@ -704,6 +704,23 @@
     "timezone": "Europe/Vilnius"
   },
   {
+    "country_id": 42,
+    "country_iso2": "IS",
+    "country_name": "Iceland",
+    "id": 57,
+    "language_counts": {
+      "unconfirmed": 2
+    },
+    "latitude": 64.1466,
+    "longitude": -21.9426,
+    "name": "Reykjavik",
+    "region_code": "IS-1",
+    "region_id": 2120,
+    "region_name": "H\u00f6fu\u00f0borgarsv\u00e6\u00f0i",
+    "region_type": "Region",
+    "timezone": "Atlantic/Reykjavik"
+  },
+  {
     "country_id": 44,
     "country_iso2": "CY",
     "country_name": "Cyprus",
@@ -811,8 +828,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 765,
-      "unconfirmed": 1290
+      "en": 761,
+      "unconfirmed": 1288
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -1001,7 +1018,7 @@
     "country_name": "UK",
     "id": 85,
     "language_counts": {
-      "unconfirmed": 238
+      "unconfirmed": 237
     },
     "latitude": 50.8225,
     "longitude": -0.1372,
@@ -1533,7 +1550,7 @@
     "country_name": "United States",
     "id": 122,
     "language_counts": {
-      "unconfirmed": 65
+      "unconfirmed": 66
     },
     "latitude": 36.156312,
     "longitude": -95.992752,
@@ -3702,6 +3719,7 @@
     "country_name": "Czechia",
     "id": 366,
     "language_counts": {
+      "en": 1,
       "unconfirmed": 1
     },
     "latitude": 50.081985,
@@ -15537,6 +15555,40 @@
     "latitude": null,
     "longitude": null,
     "name": "Coulommiers",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1340,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "La Suze sur Sarthe",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1341,
+    "language_counts": {
+      "fr": 2
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Saint-Martin-en-Haut",
     "region_code": null,
     "region_id": null,
     "region_name": null,
