@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-73517@comedyatlas.app
+DTSTAMP:20270220T010000Z
+DTSTART:20270220T010000Z
+DTEND:20270220T030000Z
+SUMMARY:Tim Dillon
+LOCATION:Majestic Theatre Dallas\, 1925 Elm Street\, Dallas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-73517/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-73517/
+END:VEVENT
+END:VCALENDAR

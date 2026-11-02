@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:janine-harouni@comedyatlas.app
+DTSTAMP:20261221T000000Z
+DTSTART:20261221T000000Z
+DTEND:20261221T020000Z
+SUMMARY:Janine Harouni
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/janine-ha
+ rouni/
+URL:https://comedyatlas.app/comedy-atlas/event/janine-harouni/
+END:VEVENT
+END:VCALENDAR

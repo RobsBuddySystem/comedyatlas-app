@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-the-box-theater@comedyatlas.app
+DTSTAMP:20270115T020000Z
+DTSTART:20270115T020000Z
+DTEND:20270115T040000Z
+SUMMARY:Mike Epps - The Box Theater
+LOCATION:Payne Arena\, 2600 N. 10th Street (Hwy 336)\, Hidalgo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -the-box-theater/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-the-box-theater/
+END:VEVENT
+END:VCALENDAR

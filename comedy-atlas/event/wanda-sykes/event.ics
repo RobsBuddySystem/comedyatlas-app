@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wanda-sykes@comedyatlas.app
+DTSTAMP:20270312T033000Z
+DTSTART:20270312T033000Z
+DTEND:20270312T053000Z
+SUMMARY:Wanda Sykes
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/wanda-syk
+ es/
+URL:https://comedyatlas.app/comedy-atlas/event/wanda-sykes/
+END:VEVENT
+END:VCALENDAR

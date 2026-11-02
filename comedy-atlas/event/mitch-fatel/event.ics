@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mitch-fatel@comedyatlas.app
+DTSTAMP:20270228T230000Z
+DTSTART:20270228T230000Z
+DTEND:20270301T010000Z
+SUMMARY:Mitch Fatel
+LOCATION:Pittsburgh Improv\, 166 East Bridge St\, Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mitch-fat
+ el/
+URL:https://comedyatlas.app/comedy-atlas/event/mitch-fatel/
+END:VEVENT
+END:VCALENDAR

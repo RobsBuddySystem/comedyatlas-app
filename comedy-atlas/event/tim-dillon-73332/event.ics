@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-73332@comedyatlas.app
+DTSTAMP:20270116T030000Z
+DTSTART:20270116T030000Z
+DTEND:20270116T050000Z
+SUMMARY:Tim Dillon
+LOCATION:Balboa Theatre\, 868 Fourth Avenue\, San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-73332/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-73332/
+END:VEVENT
+END:VCALENDAR

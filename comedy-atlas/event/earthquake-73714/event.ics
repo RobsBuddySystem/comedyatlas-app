@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:earthquake-73714@comedyatlas.app
+DTSTAMP:20270508T023000Z
+DTSTART:20270508T023000Z
+DTEND:20270508T043000Z
+SUMMARY:Earthquake
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/earthquak
+ e-73714/
+URL:https://comedyatlas.app/comedy-atlas/event/earthquake-73714/
+END:VEVENT
+END:VCALENDAR

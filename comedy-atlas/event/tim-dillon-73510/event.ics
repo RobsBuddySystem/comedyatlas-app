@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-73510@comedyatlas.app
+DTSTAMP:20270131T010000Z
+DTSTART:20270131T010000Z
+DTEND:20270131T030000Z
+SUMMARY:Tim Dillon
+LOCATION:The Chicago Theatre\, 175 N State St\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-73510/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-73510/
+END:VEVENT
+END:VCALENDAR

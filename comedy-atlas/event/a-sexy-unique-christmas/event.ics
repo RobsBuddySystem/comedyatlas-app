@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-sexy-unique-christmas@comedyatlas.app
+DTSTAMP:20261129T010000Z
+DTSTART:20261129T010000Z
+DTEND:20261129T030000Z
+SUMMARY:A Sexy Unique Christmas
+LOCATION:The Bell House\, 149 7th Street\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/a-sexy-un
+ ique-christmas/
+URL:https://comedyatlas.app/comedy-atlas/event/a-sexy-unique-christmas/
+END:VEVENT
+END:VCALENDAR

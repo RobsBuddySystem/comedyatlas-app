@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-73624@comedyatlas.app
+DTSTAMP:20270125T020000Z
+DTSTART:20270125T020000Z
+DTEND:20270125T040000Z
+SUMMARY:Tim Dillon
+LOCATION:Orpheum Theatre\, 601 Smithe Street\, Vancouver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-73624/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-73624/
+END:VEVENT
+END:VCALENDAR

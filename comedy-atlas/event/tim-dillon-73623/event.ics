@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-73623@comedyatlas.app
+DTSTAMP:20270110T000000Z
+DTSTART:20270110T000000Z
+DTEND:20270110T020000Z
+SUMMARY:Tim Dillon
+LOCATION:Meridian Hall\, 1 Front Street East\, Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-dillo
+ n-73623/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-73623/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:moses-storm-presented-by-new-york-comedy-festival@comedyatlas.app
+DTSTAMP:20261113T003000Z
+DTSTART:20261113T003000Z
+DTEND:20261113T023000Z
+SUMMARY:Moses Storm presented by New York Comedy Festival
+LOCATION:Brooklyn Improv (The Main Room)\, 64 N 9th St\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/moses-sto
+ rm-presented-by-new-york-comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/moses-storm-presented-by-new
+ -york-comedy-festival/
+END:VEVENT
+END:VCALENDAR

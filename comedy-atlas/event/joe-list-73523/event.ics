@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-list-73523@comedyatlas.app
+DTSTAMP:20270306T010000Z
+DTSTART:20270306T010000Z
+DTEND:20270306T030000Z
+SUMMARY:Joe List
+LOCATION:The Wealthy Theatre\, 1130 Wealthy St. SE\, Grand Rapids
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-list-
+ 73523/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-list-73523/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-73511@comedyatlas.app
+DTSTAMP:20270212T040000Z
+DTSTART:20270212T040000Z
+DTEND:20270212T060000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Encore Theater at Wynn Las Vegas\, 3131 Las Vegas Boulevard South\
+ , Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-73511/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-73511/
+END:VEVENT
+END:VCALENDAR

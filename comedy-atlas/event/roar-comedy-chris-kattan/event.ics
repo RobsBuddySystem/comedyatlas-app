@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-chris-kattan@comedyatlas.app
+DTSTAMP:20270123T010000Z
+DTSTART:20270123T010000Z
+DTEND:20270123T030000Z
+SUMMARY:ROAR! Comedy: Chris Kattan
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-chris-kattan/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-chris-kattan/
+END:VEVENT
+END:VCALENDAR
