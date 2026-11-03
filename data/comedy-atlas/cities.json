@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 193,
+      "en": 194,
       "unconfirmed": 49
     },
     "latitude": 52.52,
@@ -197,7 +197,7 @@
     "id": 20,
     "language_counts": {
       "en": 104,
-      "unconfirmed": 102
+      "unconfirmed": 104
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -2816,7 +2816,7 @@
     "country_name": "France",
     "id": 229,
     "language_counts": {
-      "fr": 15
+      "fr": 16
     },
     "latitude": null,
     "longitude": null,
@@ -15589,6 +15589,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Saint-Martin-en-Haut",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1342,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Chennevi\u00e8res sur Marne",
     "region_code": null,
     "region_id": null,
     "region_name": null,
