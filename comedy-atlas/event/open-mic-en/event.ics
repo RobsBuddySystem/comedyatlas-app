@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-en@comedyatlas.app
+DTSTAMP:20261111T190000Z
+DTSTART:20261111T190000Z
+DTEND:20261111T210000Z
+SUMMARY:Open Mic (EN)
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:International comedians\, local comedians\, dreamers and tomorr
+ ow\\'s stars all line up for the greatest English open mic in town.\n\\n\nM
+ ore info: https://comedyatlas.app/comedy-atlas/event/open-mic-en/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-en/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-king@comedyatlas.app
+DTSTAMP:20270124T033000Z
+DTSTART:20270124T033000Z
+DTEND:20270124T053000Z
+SUMMARY:Simon King
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/simon-king/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-king/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gad-elmaleh@comedyatlas.app
+DTSTAMP:20261214T210000Z
+DTSTART:20261214T210000Z
+DTEND:20261214T230000Z
+SUMMARY:Gad Elmaleh
+LOCATION:Leicester Square Theatre\, 6 Leicester Place\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gad-elmal
+ eh/
+URL:https://comedyatlas.app/comedy-atlas/event/gad-elmaleh/
+END:VEVENT
+END:VCALENDAR

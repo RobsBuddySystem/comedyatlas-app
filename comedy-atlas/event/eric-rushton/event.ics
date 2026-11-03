@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-rushton@comedyatlas.app
+DTSTAMP:20270311T193000Z
+DTSTART:20270311T193000Z
+DTEND:20270311T213000Z
+SUMMARY:Eric Rushton
+LOCATION:Wardrobe\, 6 St. Peters Square\, Leeds
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-rush
+ ton/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-rushton/
+END:VEVENT
+END:VCALENDAR

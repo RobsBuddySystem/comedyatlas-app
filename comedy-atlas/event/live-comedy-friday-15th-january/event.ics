@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-comedy-friday-15th-january@comedyatlas.app
+DTSTAMP:20270115T194500Z
+DTSTART:20270115T194500Z
+DTEND:20270115T214500Z
+SUMMARY:Live Comedy - Friday 15th January
+LOCATION:Stockport Garrick Theatre\, Exchange Street\, Stockport
+DESCRIPTION:Hayley Ellis\nEli Hart\nStephen Bailey\nMC Kieran Lawless\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/live-comedy-friday-15th-j
+ anuary/
+URL:https://comedyatlas.app/comedy-atlas/event/live-comedy-friday-15th-janu
+ ary/
+END:VEVENT
+END:VCALENDAR

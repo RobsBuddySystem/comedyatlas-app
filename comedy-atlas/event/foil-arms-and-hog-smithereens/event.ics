@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:foil-arms-and-hog-smithereens@comedyatlas.app
+DTSTAMP:20270602T173000Z
+DTSTART:20270602T173000Z
+DTEND:20270602T193000Z
+SUMMARY:Foil Arms and Hog - Smithereens
+LOCATION:Klub Stodoła\, ul. Stefana Batorego 10\, Warsaw
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/foil-arms
+ -and-hog-smithereens/
+URL:https://comedyatlas.app/comedy-atlas/event/foil-arms-and-hog-smithereen
+ s/
+END:VEVENT
+END:VCALENDAR

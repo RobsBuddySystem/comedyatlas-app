@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:allstar-stand-up@comedyatlas.app
+DTSTAMP:20261124T170000Z
+DTSTART:20261124T170000Z
+DTEND:20261124T190000Z
+SUMMARY:Allstar Stand Up
+LOCATION:Sahne Dragos\, Cevizli Mah. Tugayyolu cad. Kurşunlu Sk. No:9 3479
+ 1 Cumhuriyet Parkı\, Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/allstar-s
+ tand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/allstar-stand-up/
+END:VEVENT
+END:VCALENDAR

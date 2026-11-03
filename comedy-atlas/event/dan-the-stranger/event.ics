@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dan-the-stranger@comedyatlas.app
+DTSTAMP:20261108T190000Z
+DTSTART:20261108T190000Z
+DTEND:20261108T210000Z
+SUMMARY:Dan The Stranger
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:Dan The Stranger is heading out on a brand-new stand-up tour! F
+ or the first time in his life\, he\\'s got enough notebooks and enough calm
+  days that the jokes are […]\n\\n\nMore info: https://comedyatlas.app/com
+ edy-atlas/event/dan-the-stranger/
+URL:https://comedyatlas.app/comedy-atlas/event/dan-the-stranger/
+END:VEVENT
+END:VCALENDAR

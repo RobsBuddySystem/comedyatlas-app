@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-freedman@comedyatlas.app
+DTSTAMP:20270123T040000Z
+DTSTART:20270123T040000Z
+DTEND:20270123T060000Z
+SUMMARY:Eric Freedman
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/eric-freedman/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-freedman/
+END:VEVENT
+END:VCALENDAR

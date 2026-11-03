@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paddy-mcguinness@comedyatlas.app
+DTSTAMP:20271112T184500Z
+DTSTART:20271112T184500Z
+DTEND:20271112T204500Z
+SUMMARY:Paddy McGuinness
+LOCATION:O2 City Hall Newcastle\, Northumberland Road\, Newcastle Upon Tyne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paddy-mcg
+ uinness/
+URL:https://comedyatlas.app/comedy-atlas/event/paddy-mcguinness/
+END:VEVENT
+END:VCALENDAR
