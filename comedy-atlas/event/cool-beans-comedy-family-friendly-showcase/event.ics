@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cool-beans-comedy-family-friendly-showcase@comedyatlas.app
+DTSTAMP:20261206T230000Z
+DTSTART:20261206T230000Z
+DTEND:20261207T010000Z
+SUMMARY:Cool Beans Comedy Family-Friendly Showcase
+LOCATION:The Ice House Comedy Club\, 24 N Mentor Ave\, Pasadena
+DESCRIPTION:At The Ice House\, Legendary Room\, All Ages.\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/cool-beans-comedy-family-friendly-sho
+ wcase/
+URL:https://comedyatlas.app/comedy-atlas/event/cool-beans-comedy-family-fri
+ endly-showcase/
+END:VEVENT
+END:VCALENDAR

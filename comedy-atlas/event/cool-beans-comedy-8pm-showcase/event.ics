@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cool-beans-comedy-8pm-showcase@comedyatlas.app
+DTSTAMP:20261207T040000Z
+DTSTART:20261207T040000Z
+DTEND:20261207T060000Z
+SUMMARY:Cool Beans Comedy 8pm Showcase
+LOCATION:The Ice House Comedy Club\, 24 N Mentor Ave\, Pasadena
+DESCRIPTION:At The Ice House\, Legendary Room\, 21 and Over.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/cool-beans-comedy-8pm-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/cool-beans-comedy-8pm-showca
+ se/
+END:VEVENT
+END:VCALENDAR

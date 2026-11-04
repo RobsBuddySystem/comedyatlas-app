@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:once-upon-a-time-wait-do-you-remember-the-next-line@comedyatlas.app
+DTSTAMP:20300105T140000Z
+DTSTART:20300105T140000Z
+DTEND:20300105T160000Z
+SUMMARY:Once Upon a Time... wait\, do you remember the next line?
+LOCATION:The Skiddle Hall\, Ashley Hall Farm\, Preston
+DESCRIPTION:A tale of carnage and chaos\, be prepared for belly laughs all 
+ night long.\nMore info: https://comedyatlas.app/comedy-atlas/event/once-upo
+ n-a-time-wait-do-you-remember-the-next-line/
+URL:https://comedyatlas.app/comedy-atlas/event/once-upon-a-time-wait-do-you
+ -remember-the-next-line/
+END:VEVENT
+END:VCALENDAR

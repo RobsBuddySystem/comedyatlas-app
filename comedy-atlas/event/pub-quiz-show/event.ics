@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pub-quiz-show@comedyatlas.app
+DTSTAMP:20261104T190000Z
+DTSTART:20261104T190000Z
+DTEND:20261104T204500Z
+SUMMARY:Pub Quiz Show
+LOCATION:The Clubhouse: Laietana\, Barcelona
+DESCRIPTION:A room full of teams and one comedian standing in your way.\nMo
+ re info: https://comedyatlas.app/comedy-atlas/event/pub-quiz-show/
+URL:https://comedyatlas.app/comedy-atlas/event/pub-quiz-show/
+END:VEVENT
+END:VCALENDAR

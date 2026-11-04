@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-frankie-monroe-christmas-show@comedyatlas.app
+DTSTAMP:20261216T190000Z
+DTSTART:20261216T190000Z
+DTEND:20261216T210000Z
+SUMMARY:The Frankie Monroe Christmas Show
+LOCATION:Content\, Cain&#39\;s Brewery Village\, Content\, Stanhope Street\
+ , Liverpool
+DESCRIPTION:MERRY CHRISTMAS YA FILTHY B*STARDS\nMore info: https://comedyat
+ las.app/comedy-atlas/event/the-frankie-monroe-christmas-show/
+URL:https://comedyatlas.app/comedy-atlas/event/the-frankie-monroe-christmas
+ -show/
+END:VEVENT
+END:VCALENDAR

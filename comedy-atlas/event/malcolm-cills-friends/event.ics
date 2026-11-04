@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:malcolm-cills-friends@comedyatlas.app
+DTSTAMP:20270121T054500Z
+DTSTART:20270121T054500Z
+DTEND:20270121T074500Z
+SUMMARY:Malcolm Cills & Friends
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/malcolm-c
+ ills-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/malcolm-cills-friends/
+END:VEVENT
+END:VCALENDAR

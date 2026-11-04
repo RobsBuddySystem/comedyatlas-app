@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-material-with-kevin-nealon@comedyatlas.app
+DTSTAMP:20261124T040000Z
+DTSTART:20261124T040000Z
+DTEND:20261124T060000Z
+SUMMARY:New Material with Kevin Nealon
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-mater
+ ial-with-kevin-nealon/
+URL:https://comedyatlas.app/comedy-atlas/event/new-material-with-kevin-neal
+ on/
+END:VEVENT
+END:VCALENDAR
