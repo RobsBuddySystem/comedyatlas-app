@@ -1,86 +1,6 @@
 [
   {
     "audience_payment_type": null,
-    "canonical_event_url": "https://www.billetreduc.com/spectacle/paname-comedy-brunch-312847#session=2026-11-04T12:30:00",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": "EUR",
-    "description": "Le Paname Art Caf\u00e9 vous propose son Comedy Brunch, un brunch et spectacle qui vous donne acc\u00e8s \u00e0 son Paname Comedy Club.",
-    "doors_at": null,
-    "ends_at": null,
-    "genre": "standup",
-    "id": 40513,
-    "is_festival": false,
-    "is_free": null,
-    "is_ongoing_run": false,
-    "language": "fr",
-    "organization_id": 199,
-    "organization_name": "France comedy sessions",
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": 38.0,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "paname-comedy-brunch-40513",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-04T12:30:00+01:00",
-    "status": "scheduled",
-    "timezone": "Europe/Paris",
-    "title": "Paname Comedy Brunch",
-    "venue_accessibility_notes": null,
-    "venue_address": "Paname Art Caf\u00e9, 14 rue de la Fontaine au Roi, 75011",
-    "venue_id": 74,
-    "venue_latitude": 48.868344,
-    "venue_longitude": 2.369975,
-    "venue_name": "Paname Art Caf\u00e9"
-  },
-  {
-    "audience_payment_type": null,
-    "canonical_event_url": "https://www.billetreduc.com/spectacle/paname-comedy-brunch-312847#session=2026-11-04T13:30:00",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": "EUR",
-    "description": "Le Paname Art Caf\u00e9 vous propose son Comedy Brunch, un brunch et spectacle qui vous donne acc\u00e8s \u00e0 son Paname Comedy Club.",
-    "doors_at": null,
-    "ends_at": null,
-    "genre": "standup",
-    "id": 40514,
-    "is_festival": false,
-    "is_free": null,
-    "is_ongoing_run": false,
-    "language": "fr",
-    "organization_id": 199,
-    "organization_name": "France comedy sessions",
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": 38.0,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "paname-comedy-brunch-40514",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-04T13:30:00+01:00",
-    "status": "scheduled",
-    "timezone": "Europe/Paris",
-    "title": "Paname Comedy Brunch",
-    "venue_accessibility_notes": null,
-    "venue_address": "Paname Art Caf\u00e9, 14 rue de la Fontaine au Roi, 75011",
-    "venue_id": 74,
-    "venue_latitude": 48.868344,
-    "venue_longitude": 2.369975,
-    "venue_name": "Paname Art Caf\u00e9"
-  },
-  {
-    "audience_payment_type": null,
     "canonical_event_url": "https://www.skiddle.com/whats-on/Southport/Southport-Market-/Comedy-Bingo-Winter-Social--Southport-Market/42803986/?sktag=15788",
     "city_id": 614,
     "city_name": "Southport",
@@ -91640,7 +91560,7 @@
     "venue_name": "Lausanne Palace"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744419498",
     "city_id": 25,
     "city_name": "Paris",
@@ -91652,7 +91572,7 @@
     "genre": "standup",
     "id": 67352,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -182840,7 +182760,7 @@
     "venue_name": "Le Point Virgule"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744427522",
     "city_id": 25,
     "city_name": "Paris",
@@ -182852,7 +182772,7 @@
     "genre": "standup",
     "id": 67353,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -241720,7 +241640,7 @@
     "venue_name": "West End Playhouse"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744431534",
     "city_id": 25,
     "city_name": "Paris",
@@ -241732,7 +241652,7 @@
     "genre": "standup",
     "id": 67354,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -286320,7 +286240,7 @@
     "venue_name": "Le Point Virgule"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744434543",
     "city_id": 25,
     "city_name": "Paris",
@@ -286332,7 +286252,7 @@
     "genre": "standup",
     "id": 67355,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -331240,7 +331160,7 @@
     "venue_name": "King Tuts Wah Wah Hut"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.billetreduc.com/spectacle/french-fried-comedy-night-stand-up-in-english-419014",
     "city_id": 25,
     "city_name": "Paris",
@@ -331252,7 +331172,7 @@
     "genre": "standup",
     "id": 74696,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -372880,7 +372800,7 @@
     "venue_name": null
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744452597",
     "city_id": 25,
     "city_name": "Paris",
@@ -372892,7 +372812,7 @@
     "genre": "standup",
     "id": 67356,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -408600,7 +408520,7 @@
     "venue_name": "Trixxo Theater Hasselt"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744453600",
     "city_id": 25,
     "city_name": "Paris",
@@ -408612,7 +408532,7 @@
     "genre": "standup",
     "id": 67357,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -428560,7 +428480,7 @@
     "venue_name": "Cafe Oscar"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744459618",
     "city_id": 25,
     "city_name": "Paris",
@@ -428572,7 +428492,7 @@
     "genre": "standup",
     "id": 67358,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -445440,7 +445360,7 @@
     "venue_name": "Cirque Royal - Koninklijk Circus"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744473660",
     "city_id": 25,
     "city_name": "Paris",
@@ -445452,7 +445372,7 @@
     "genre": "standup",
     "id": 67359,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -461000,7 +460920,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744478675",
     "city_id": 25,
     "city_name": "Paris",
@@ -461012,7 +460932,7 @@
     "genre": "standup",
     "id": 67360,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -478640,7 +478560,7 @@
     "venue_name": "Capitole Gent"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744484693",
     "city_id": 25,
     "city_name": "Paris",
@@ -478652,7 +478572,7 @@
     "genre": "standup",
     "id": 67361,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -497720,7 +497640,7 @@
     "venue_name": "Bristol Old Vic"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744487702",
     "city_id": 25,
     "city_name": "Paris",
@@ -497732,7 +497652,7 @@
     "genre": "standup",
     "id": 67362,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -515920,7 +515840,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744492717",
     "city_id": 25,
     "city_name": "Paris",
@@ -515932,7 +515852,7 @@
     "genre": "standup",
     "id": 67363,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -534040,7 +533960,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744494723",
     "city_id": 25,
     "city_name": "Paris",
@@ -534052,7 +533972,7 @@
     "genre": "standup",
     "id": 67364,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -551680,7 +551600,7 @@
     "venue_name": "Th\u00e9\u00e2tre Royal"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744502747",
     "city_id": 25,
     "city_name": "Paris",
@@ -551692,7 +551612,7 @@
     "genre": "standup",
     "id": 67365,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -569360,7 +569280,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744506759",
     "city_id": 25,
     "city_name": "Paris",
@@ -569372,7 +569292,7 @@
     "genre": "standup",
     "id": 67366,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -585840,7 +585760,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744510771",
     "city_id": 25,
     "city_name": "Paris",
@@ -585852,7 +585772,7 @@
     "genre": "standup",
     "id": 67367,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -602760,7 +602680,7 @@
     "venue_name": "W:Halll Auditorium"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744515786",
     "city_id": 25,
     "city_name": "Paris",
@@ -602772,7 +602692,7 @@
     "genre": "standup",
     "id": 67368,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -618640,7 +618560,7 @@
     "venue_name": "Town Hall Birmingham"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744518795",
     "city_id": 25,
     "city_name": "Paris",
@@ -618652,7 +618572,7 @@
     "genre": "standup",
     "id": 67369,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -632720,7 +632640,7 @@
     "venue_name": "Old Fire Station"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744522807",
     "city_id": 25,
     "city_name": "Paris",
@@ -632732,7 +632652,7 @@
     "genre": "standup",
     "id": 67370,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -643480,7 +643400,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744536849",
     "city_id": 25,
     "city_name": "Paris",
@@ -643492,7 +643412,7 @@
     "genre": "standup",
     "id": 67371,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -654800,7 +654720,7 @@
     "venue_name": "Karli Comedy Club"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744541864",
     "city_id": 25,
     "city_name": "Paris",
@@ -654812,7 +654732,7 @@
     "genre": "standup",
     "id": 67372,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -668960,7 +668880,7 @@
     "venue_name": "Scala"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744548885",
     "city_id": 25,
     "city_name": "Paris",
@@ -668972,7 +668892,7 @@
     "genre": "standup",
     "id": 67373,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -682360,7 +682280,7 @@
     "venue_name": "Gutmann am Dutzendteich"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744550891",
     "city_id": 25,
     "city_name": "Paris",
@@ -682372,7 +682292,7 @@
     "genre": "standup",
     "id": 67374,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -694160,7 +694080,7 @@
     "venue_name": "PUNCH L!NE Club Berlin"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744557912",
     "city_id": 25,
     "city_name": "Paris",
@@ -694172,7 +694092,7 @@
     "genre": "standup",
     "id": 67375,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -704640,7 +704560,7 @@
     "venue_name": "Wirtshaus im Schlachthof // Saal"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744596026",
     "city_id": 25,
     "city_name": "Paris",
@@ -704652,7 +704572,7 @@
     "genre": "standup",
     "id": 67376,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -714360,7 +714280,7 @@
     "venue_name": "Comedy Keller Darmstadt"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744608062",
     "city_id": 25,
     "city_name": "Paris",
@@ -714372,7 +714292,7 @@
     "genre": "standup",
     "id": 67377,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -724440,7 +724360,7 @@
     "venue_name": "Alte Kongresshalle"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744676266",
     "city_id": 25,
     "city_name": "Paris",
@@ -724452,7 +724372,7 @@
     "genre": "standup",
     "id": 67378,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -733760,7 +733680,7 @@
     "venue_name": "Mandela Hall"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744683287",
     "city_id": 25,
     "city_name": "Paris",
@@ -733772,7 +733692,7 @@
     "genre": "standup",
     "id": 67379,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -741880,7 +741800,7 @@
     "venue_name": "Capitole Gent"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744696326",
     "city_id": 25,
     "city_name": "Paris",
@@ -741892,7 +741812,7 @@
     "genre": "standup",
     "id": 67380,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -748000,7 +747920,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744700338",
     "city_id": 25,
     "city_name": "Paris",
@@ -748012,7 +747932,7 @@
     "genre": "standup",
     "id": 67381,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -753840,7 +753760,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744716386",
     "city_id": 25,
     "city_name": "Paris",
@@ -753852,7 +753772,7 @@
     "genre": "standup",
     "id": 67382,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -759360,7 +759280,7 @@
     "venue_name": "Columbia Theater"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744723407",
     "city_id": 25,
     "city_name": "Paris",
@@ -759372,7 +759292,7 @@
     "genre": "standup",
     "id": 67383,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
@@ -764120,7 +764040,7 @@
     "venue_name": "Artista Cafe And Gallery"
   },
   {
-    "audience_payment_type": null,
+    "audience_payment_type": "free",
     "canonical_event_url": "https://www.eventbrite.com/e/mama-comedy-club-in-english-stand-up-comedy-100-in-english-tickets-2003744731431",
     "city_id": 25,
     "city_name": "Paris",
@@ -764132,7 +764052,7 @@
     "genre": "standup",
     "id": 67384,
     "is_festival": false,
-    "is_free": null,
+    "is_free": true,
     "is_ongoing_run": false,
     "language": "en",
     "organization_id": null,
