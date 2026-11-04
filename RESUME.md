@@ -25,12 +25,13 @@ Budget: about $40 of cloud credit, expiring 2026-11-05 09:00 Paris time. Work in
 - All required CI is green. The optional full-suite job and pariscomedy.com `guard` were already red on base (explained in a comment on each PR).
 
 ## Steps (update status as you go)
-- [ ] S1 Skiddle on-page verification
-- [ ] S2 Theatre Tickets Direct / Awin 3039909 search
-- [ ] S3 Awin BilletReduc redirect check
-- [ ] S4 Ticketmaster plain-link count
-- [ ] S5 Write `docs/PARTNER_LINK_AUDIT_2026-11-04.md` and commit it here
-- [ ] S6 Next audit fixes (see "Next")
+- [x] S1 Skiddle: 2,306/2,306 tagged, 10/10 live clicks OK
+- [x] S2 TTD: 0 links anywhere (never built; needs feed from Robert)
+- [x] S3 BilletReduc: 2,572 wrapped; 10/10 clicks reach correct Awin URL; final hop unverifiable (awin1 blocked). pariscomedy.com links 2 BilletReduc shows RAW (no Awin)
+- [x] S4 Ticketmaster: 7,617 plain, unchanged; 10/10 clicks OK
+- [x] S5 docs/PARTNER_LINK_AUDIT_2026-11-04.md committed
+- [ ] S6 pariscomedy.com: wrap raw BilletReduc/Skiddle links with Atlas partner-config rules in js/pc-listings.js (branch claude/listings-from-atlas, PR #2)
+- [ ] S7 Report to Robert
 
 ## Next
 After S5: remaining audit fixes that need no input from Robert. The pariscomedy.com sitemap is generated on the Mac, so it's out of scope here.
