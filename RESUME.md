@@ -30,11 +30,16 @@ Budget: about $40 of cloud credit, expiring 2026-11-05 09:00 Paris time. Work in
 - [x] S3 BilletReduc: 2,572 wrapped; 10/10 clicks reach correct Awin URL; final hop unverifiable (awin1 blocked). pariscomedy.com links 2 BilletReduc shows RAW (no Awin)
 - [x] S4 Ticketmaster: 7,617 plain, unchanged; 10/10 clicks OK
 - [x] S5 docs/PARTNER_LINK_AUDIT_2026-11-04.md committed
-- [ ] S6 pariscomedy.com: wrap raw BilletReduc/Skiddle links with Atlas partner-config rules in js/pc-listings.js (branch claude/listings-from-atlas, PR #2)
-- [ ] S7 Report to Robert
+- [x] S6 pariscomedy.com partner wrap: commit 6cbf89b on claude/listings-from-atlas (PR #2); verified in Chromium (choumi -> Awin URL)
+- [x] S7 Reported to Robert (partner table in docs/PARTNER_LINK_AUDIT_2026-11-04.md)
 
 ## Next
-After S5: remaining audit fixes that need no input from Robert. The pariscomedy.com sitemap is generated on the Mac, so it's out of scope here.
+Nothing else codeable without Robert's input. Waiting on:
+- merges: comedy-network-db #14 (Velvet ticket, urgent), #11, #9, #15, #16, #17; pariscomedy.com #1 then #2; comedyatlas-app #1;
+- TTD: a feed/link format from Robert (0 links exist today);
+- Mac: verify the final Awin hop with `curl -sSIL` (command in the audit doc); the pre-migration data fixes from #16;
+- decisions: Julie Collas en/fr; Ticketmaster affiliate program.
+CI watch: PRs #16, #17, pariscomedy.com #2 have required checks green; the remaining red is pre-existing (explained on each PR).
 
 ## Environment notes for a fresh session
 - Allowed network: `*.pariscomedy.com`, `pariscomedy.com`, `*.comedyatlas.app`, `comedyatlas.app`, github.com, package managers. **`awin1.com` is NOT allowed**, so the final Awin hop can't be followed from the cloud.
