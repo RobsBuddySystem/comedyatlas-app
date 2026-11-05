@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-75300@comedyatlas.app
+DTSTAMP:20270423T230000Z
+DTSTART:20270423T230000Z
+DTEND:20270424T010000Z
+SUMMARY:Ron White
+LOCATION:Old National Centre\, 502 N. New Jersey\, Indianapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -75300/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-75300/
+END:VEVENT
+END:VCALENDAR

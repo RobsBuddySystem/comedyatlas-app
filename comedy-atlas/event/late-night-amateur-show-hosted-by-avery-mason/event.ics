@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:late-night-amateur-show-hosted-by-avery-mason@comedyatlas.app
+DTSTAMP:20261108T043000Z
+DTSTART:20261108T043000Z
+DTEND:20261108T063000Z
+SUMMARY:LATE NIGHT AMATEUR SHOW HOSTED BY AVERY MASON
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/late-nigh
+ t-amateur-show-hosted-by-avery-mason/
+URL:https://comedyatlas.app/comedy-atlas/event/late-night-amateur-show-host
+ ed-by-avery-mason/
+END:VEVENT
+END:VCALENDAR

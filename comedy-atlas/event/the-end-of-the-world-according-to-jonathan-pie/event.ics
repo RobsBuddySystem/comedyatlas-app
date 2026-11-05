@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-end-of-the-world-according-to-jonathan-pie@comedyatlas.app
+DTSTAMP:20270218T090000Z
+DTSTART:20270218T090000Z
+DTEND:20270218T110000Z
+SUMMARY:The End of the World According to Jonathan Pie
+LOCATION:The Tivoli\, 52 Costin St\, Brisbane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-end-o
+ f-the-world-according-to-jonathan-pie/
+URL:https://comedyatlas.app/comedy-atlas/event/the-end-of-the-world-accordi
+ ng-to-jonathan-pie/
+END:VEVENT
+END:VCALENDAR

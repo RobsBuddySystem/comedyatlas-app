@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drag-up-comedy-brunch@comedyatlas.app
+DTSTAMP:20270214T210000Z
+DTSTART:20270214T210000Z
+DTEND:20270214T230000Z
+SUMMARY:Drag-up Comedy Brunch
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/drag-up-c
+ omedy-brunch/
+URL:https://comedyatlas.app/comedy-atlas/event/drag-up-comedy-brunch/
+END:VEVENT
+END:VCALENDAR

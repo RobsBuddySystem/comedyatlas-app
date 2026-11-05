@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-attell-75232@comedyatlas.app
+DTSTAMP:20270221T030000Z
+DTSTART:20270221T030000Z
+DTEND:20270221T050000Z
+SUMMARY:Dave Attell
+LOCATION:Moore Theatre\, 1932 2nd Ave\, Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-atte
+ ll-75232/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-attell-75232/
+END:VEVENT
+END:VCALENDAR

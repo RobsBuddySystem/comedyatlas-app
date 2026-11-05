@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-mcgregor-goooood@comedyatlas.app
+DTSTAMP:20270604T083000Z
+DTSTART:20270604T083000Z
+DTEND:20270604T103000Z
+SUMMARY:Luke McGregor - Goooood
+LOCATION:Anita's Theatre\, 264-270 Lawrence Hargrave Dr\, Thirroul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-mcgr
+ egor-goooood/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-mcgregor-goooood/
+END:VEVENT
+END:VCALENDAR

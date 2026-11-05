@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-mcgregor-74747@comedyatlas.app
+DTSTAMP:20270522T081500Z
+DTSTART:20270522T081500Z
+DTEND:20270522T101500Z
+SUMMARY:Luke McGregor
+LOCATION:The Princess Theatre\, 8 Annerley Rd\, Brisbane
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-mcgr
+ egor-74747/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-mcgregor-74747/
+END:VEVENT
+END:VCALENDAR

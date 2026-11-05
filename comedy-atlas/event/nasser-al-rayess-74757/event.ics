@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nasser-al-rayess-74757@comedyatlas.app
+DTSTAMP:20270122T190000Z
+DTSTART:20270122T190000Z
+DTEND:20270122T210000Z
+SUMMARY:Nasser Al-Rayess
+LOCATION:Volkshaus Zürich\, Weisser Saal\, Stauffacherstrasse 60\, Zurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nasser-al
+ -rayess-74757/
+URL:https://comedyatlas.app/comedy-atlas/event/nasser-al-rayess-74757/
+END:VEVENT
+END:VCALENDAR

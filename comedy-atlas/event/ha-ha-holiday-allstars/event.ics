@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ha-ha-holiday-allstars@comedyatlas.app
+DTSTAMP:20261227T010000Z
+DTSTART:20261227T010000Z
+DTEND:20261227T030000Z
+SUMMARY:Ha Ha Holiday Allstars
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ha-ha-hol
+ iday-allstars/
+URL:https://comedyatlas.app/comedy-atlas/event/ha-ha-holiday-allstars/
+END:VEVENT
+END:VCALENDAR

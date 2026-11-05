@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-davidson-75282@comedyatlas.app
+DTSTAMP:20270328T000000Z
+DTSTART:20270328T000000Z
+DTEND:20270328T020000Z
+SUMMARY:Pete Davidson
+LOCATION:Hard Rock Live\, 1 Seminole Way\, Hollywood
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-davi
+ dson-75282/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-davidson-75282/
+END:VEVENT
+END:VCALENDAR

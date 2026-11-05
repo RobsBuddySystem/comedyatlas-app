@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-bajon-zen@comedyatlas.app
+DTSTAMP:20270224T190000Z
+DTSTART:20270224T190000Z
+DTEND:20270224T210000Z
+SUMMARY:La Bajon - ZEN
+LOCATION:Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/la-bajon-
+ zen/
+URL:https://comedyatlas.app/comedy-atlas/event/la-bajon-zen/
+END:VEVENT
+END:VCALENDAR

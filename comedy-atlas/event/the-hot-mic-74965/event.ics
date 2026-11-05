@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-hot-mic-74965@comedyatlas.app
+DTSTAMP:20261119T203000Z
+DTSTART:20261119T203000Z
+DTEND:20261119T223000Z
+SUMMARY:The Hot Mic
+LOCATION:Wings Edinburgh\, 21 Old Fishmarket Close\, Edinburgh
+DESCRIPTION:Edinburgh's hottest comedy show returns at Wings for capsaicin 
+ fueled comedy chaos\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ the-hot-mic-74965/
+URL:https://comedyatlas.app/comedy-atlas/event/the-hot-mic-74965/
+END:VEVENT
+END:VCALENDAR

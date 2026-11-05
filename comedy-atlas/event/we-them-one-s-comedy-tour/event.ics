@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:we-them-one-s-comedy-tour@comedyatlas.app
+DTSTAMP:20270206T020000Z
+DTSTART:20270206T020000Z
+DTEND:20270206T040000Z
+SUMMARY:We Them One's Comedy Tour
+LOCATION:Fiserv Forum\, 1111 Vel R. Phillips Ave\, Milwaukee
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/we-them-o
+ ne-s-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/we-them-one-s-comedy-tour/
+END:VEVENT
+END:VCALENDAR

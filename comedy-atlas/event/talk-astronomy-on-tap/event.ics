@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:talk-astronomy-on-tap@comedyatlas.app
+DTSTAMP:20261112T180000Z
+DTSTART:20261112T180000Z
+DTEND:20261112T200000Z
+SUMMARY:[TALK] Astronomy on Tap
+LOCATION:The Dissident Club\, 58 Rue Richer\, 75009 Paris\, Paris
+DESCRIPTION:Grab a drink and geek out about stars and space with fellow ast
+ ronomy fans in a chill\, fun setting.\nMore info: https://comedyatlas.app/c
+ omedy-atlas/event/talk-astronomy-on-tap/
+URL:https://comedyatlas.app/comedy-atlas/event/talk-astronomy-on-tap/
+END:VEVENT
+END:VCALENDAR

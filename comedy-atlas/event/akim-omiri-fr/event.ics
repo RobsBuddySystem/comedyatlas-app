@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:akim-omiri-fr@comedyatlas.app
+DTSTAMP:20270317T191500Z
+DTSTART:20270317T191500Z
+DTEND:20270317T211500Z
+SUMMARY:Akim Omiri (FR)
+LOCATION:Lausanne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/akim-omir
+ i-fr/
+URL:https://comedyatlas.app/comedy-atlas/event/akim-omiri-fr/
+END:VEVENT
+END:VCALENDAR

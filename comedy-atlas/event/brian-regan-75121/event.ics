@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brian-regan-75121@comedyatlas.app
+DTSTAMP:20270228T000000Z
+DTSTART:20270228T000000Z
+DTEND:20270228T020000Z
+SUMMARY:Brian Regan
+LOCATION:The Wilbur\, 246 Tremont St.\, Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/brian-reg
+ an-75121/
+URL:https://comedyatlas.app/comedy-atlas/event/brian-regan-75121/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-people-s-comedy@comedyatlas.app
+DTSTAMP:20261106T193000Z
+DTSTART:20261106T193000Z
+DTEND:20261106T213000Z
+SUMMARY:The People's Comedy
+LOCATION:SPACE At PRSC\, 17-25 Jamaica St\, Bristol
+DESCRIPTION:Award-winning stand-up comedy in the Soul of Stokes Croft\, Bri
+ stol\nMore info: https://comedyatlas.app/comedy-atlas/event/the-people-s-co
+ medy/
+URL:https://comedyatlas.app/comedy-atlas/event/the-people-s-comedy/
+END:VEVENT
+END:VCALENDAR

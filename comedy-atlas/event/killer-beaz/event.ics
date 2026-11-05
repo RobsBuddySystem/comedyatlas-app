@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:killer-beaz@comedyatlas.app
+DTSTAMP:20270307T010000Z
+DTSTART:20270307T010000Z
+DTEND:20270307T030000Z
+SUMMARY:Killer Beaz
+LOCATION:Crescent Theater\, 208 Dauphin St\, Mobile
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/killer-be
+ az/
+URL:https://comedyatlas.app/comedy-atlas/event/killer-beaz/
+END:VEVENT
+END:VCALENDAR

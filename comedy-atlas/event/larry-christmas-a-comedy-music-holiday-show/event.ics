@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:larry-christmas-a-comedy-music-holiday-show@comedyatlas.app
+DTSTAMP:20261210T003000Z
+DTSTART:20261210T003000Z
+DTEND:20261210T023000Z
+SUMMARY:LARRY CHRISTMAS! A COMEDY & MUSIC HOLIDAY SHOW
+LOCATION:The Bell House\, 149 7th Street\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/larry-chr
+ istmas-a-comedy-music-holiday-show/
+URL:https://comedyatlas.app/comedy-atlas/event/larry-christmas-a-comedy-mus
+ ic-holiday-show/
+END:VEVENT
+END:VCALENDAR

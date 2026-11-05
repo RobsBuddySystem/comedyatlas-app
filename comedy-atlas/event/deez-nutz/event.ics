@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:deez-nutz@comedyatlas.app
+DTSTAMP:20261122T010000Z
+DTSTART:20261122T010000Z
+DTEND:20261122T030000Z
+SUMMARY:Deez Nutz
+LOCATION:The Ice House Comedy Club\, 24 N Mentor Ave\, Pasadena
+DESCRIPTION:At The Ice House\, California Room\, 18 and Over.\nMore info: h
+ ttps://comedyatlas.app/comedy-atlas/event/deez-nutz/
+URL:https://comedyatlas.app/comedy-atlas/event/deez-nutz/
+END:VEVENT
+END:VCALENDAR
