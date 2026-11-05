@@ -8,7 +8,7 @@
     {
       "filename": "cities.json",
       "row_count": 921,
-      "sha256": "04fe3fc38984d700a6339159bb15d6a2ee3ec3502a0a306b69528c598d19ca07"
+      "sha256": "b175bacda12321c226bae0da651b2cff2ae26046ca6ce78817fc71bfc1c83c38"
     },
     {
       "filename": "organizations.json",
@@ -22,8 +22,8 @@
     },
     {
       "filename": "upcoming_events.json",
-      "row_count": 19680,
-      "sha256": "4ce807b5a31d5078944c985ebf41f3db45de9b5d56656d8abe580289bcefc2e5"
+      "row_count": 19678,
+      "sha256": "3ae2078bae3a645204262212a3c47f11abe39198f46b61ed64d0c2442fd8b9dc"
     },
     {
       "filename": "public_booking_methods.json",
@@ -46,5 +46,5 @@
       "sha256": "fffbc78e9b08094d3a6c475c8cbdfa293b58374c6ce9233b309dac816e942d8f"
     }
   ],
-  "generated_at": "2026-11-05T06:58:50.005260+00:00"
+  "generated_at": "2026-11-05T10:12:48.610046+00:00"
 }
