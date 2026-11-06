@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-kings-of-comedy-birmingham@comedyatlas.app
+DTSTAMP:20270101T190000Z
+DTSTART:20270101T190000Z
+DTEND:20270101T210000Z
+SUMMARY:COBO : Kings Of Comedy - Birmingham **
+LOCATION:Rosies\, 259-262 Broad St\, Birmingham
+DESCRIPTION:We're kicking off the year with a bang as COBO: Kings Of Comedy
+  returns to Birmingham for a massive Start Of Year Special\nMore info: http
+ s://comedyatlas.app/comedy-atlas/event/cobo-kings-of-comedy-birmingham/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-kings-of-comedy-birming
+ ham/
+END:VEVENT
+END:VCALENDAR

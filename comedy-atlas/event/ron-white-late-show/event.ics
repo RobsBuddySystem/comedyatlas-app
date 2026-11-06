@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-late-show@comedyatlas.app
+DTSTAMP:20270523T020000Z
+DTSTART:20270523T020000Z
+DTEND:20270523T040000Z
+SUMMARY:Ron White - Late Show
+LOCATION:Hard Rock Live Rockford\, 7801 E State Street\, Rockford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -late-show/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-late-show/
+END:VEVENT
+END:VCALENDAR

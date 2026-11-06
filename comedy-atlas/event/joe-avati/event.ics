@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-avati@comedyatlas.app
+DTSTAMP:20271002T000000Z
+DTSTART:20271002T000000Z
+DTEND:20271002T020000Z
+SUMMARY:Joe Avati
+LOCATION:Algonquin Commons Theatre\, 1385 Woodroffe Ave\, Algonquin College
+  - Bldg E\, Nepean
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-avati
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/joe-avati/
+END:VEVENT
+END:VCALENDAR

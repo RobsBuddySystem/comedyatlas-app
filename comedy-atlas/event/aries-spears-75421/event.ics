@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aries-spears-75421@comedyatlas.app
+DTSTAMP:20270511T180000Z
+DTSTART:20270511T180000Z
+DTEND:20270511T200000Z
+SUMMARY:Aries Spears
+LOCATION:Ambassador Theatre\, Oconnell Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aries-spe
+ ars-75421/
+URL:https://comedyatlas.app/comedy-atlas/event/aries-spears-75421/
+END:VEVENT
+END:VCALENDAR

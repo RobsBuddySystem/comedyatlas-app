@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dave-attell-75569@comedyatlas.app
+DTSTAMP:20270222T020000Z
+DTSTART:20270222T020000Z
+DTEND:20270222T040000Z
+SUMMARY:Dave Attell
+LOCATION:Vogue Theatre\, 918 Granville St.\, Vancouver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dave-atte
+ ll-75569/
+URL:https://comedyatlas.app/comedy-atlas/event/dave-attell-75569/
+END:VEVENT
+END:VCALENDAR

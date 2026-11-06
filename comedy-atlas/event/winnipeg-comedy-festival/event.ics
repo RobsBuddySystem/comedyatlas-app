@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:winnipeg-comedy-festival@comedyatlas.app
+DTSTAMP:20270430T003000Z
+DTSTART:20270430T003000Z
+DTEND:20270430T023000Z
+SUMMARY:Winnipeg Comedy Festival
+LOCATION:Burton Cummings Theatre\, 364 Smith St.\, Winnipeg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/winnipeg-
+ comedy-festival/
+URL:https://comedyatlas.app/comedy-atlas/event/winnipeg-comedy-festival/
+END:VEVENT
+END:VCALENDAR

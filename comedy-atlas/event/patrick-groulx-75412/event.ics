@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:patrick-groulx-75412@comedyatlas.app
+DTSTAMP:20270418T000000Z
+DTSTART:20270418T000000Z
+DTEND:20270418T020000Z
+SUMMARY:Patrick Groulx
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/patrick-g
+ roulx-75412/
+URL:https://comedyatlas.app/comedy-atlas/event/patrick-groulx-75412/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-white-early-show@comedyatlas.app
+DTSTAMP:20270522T220000Z
+DTSTART:20270522T220000Z
+DTEND:20270523T000000Z
+SUMMARY:Ron White - Early Show
+LOCATION:Hard Rock Live Rockford\, 7801 E State Street\, Rockford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-white
+ -early-show/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-white-early-show/
+END:VEVENT
+END:VCALENDAR

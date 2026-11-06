@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-houghton-how-the-mighty@comedyatlas.app
+DTSTAMP:20270902T190000Z
+DTSTART:20270902T190000Z
+DTEND:20270902T210000Z
+SUMMARY:Tom Houghton: How the Mighty
+LOCATION:The Castle Theatre\, 10 Castle Way\, Wellingborough
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-hough
+ ton-how-the-mighty/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-houghton-how-the-mighty/
+END:VEVENT
+END:VCALENDAR

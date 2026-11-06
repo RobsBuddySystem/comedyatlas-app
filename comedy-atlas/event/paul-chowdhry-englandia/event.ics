@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paul-chowdhry-englandia@comedyatlas.app
+DTSTAMP:20270124T190000Z
+DTSTART:20270124T190000Z
+DTEND:20270124T210000Z
+SUMMARY:Paul Chowdhry: Englandia
+LOCATION:Royal Festival Hall\, Belvedere Road\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paul-chow
+ dhry-englandia/
+URL:https://comedyatlas.app/comedy-atlas/event/paul-chowdhry-englandia/
+END:VEVENT
+END:VCALENDAR

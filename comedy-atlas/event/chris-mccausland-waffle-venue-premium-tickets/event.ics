@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chris-mccausland-waffle-venue-premium-tickets@comedyatlas.app
+DTSTAMP:20280506T170000Z
+DTSTART:20280506T170000Z
+DTEND:20280506T190000Z
+SUMMARY:Chris McCausland: Waffle - Venue Premium Tickets
+LOCATION:York Barbican\, Paragon Street\, York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/chris-mcc
+ ausland-waffle-venue-premium-tickets/
+URL:https://comedyatlas.app/comedy-atlas/event/chris-mccausland-waffle-venu
+ e-premium-tickets/
+END:VEVENT
+END:VCALENDAR

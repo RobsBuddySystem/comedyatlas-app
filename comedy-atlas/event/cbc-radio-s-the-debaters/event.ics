@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cbc-radio-s-the-debaters@comedyatlas.app
+DTSTAMP:20270308T224500Z
+DTSTART:20270308T224500Z
+DTEND:20270309T004500Z
+SUMMARY:CBC Radio's The Debaters
+LOCATION:The Danforth Music Hall\, 147 Danforth Ave.\, Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cbc-radio
+ -s-the-debaters/
+URL:https://comedyatlas.app/comedy-atlas/event/cbc-radio-s-the-debaters/
+END:VEVENT
+END:VCALENDAR

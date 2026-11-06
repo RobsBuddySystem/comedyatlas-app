@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-comedy-store-preston@comedyatlas.app
+DTSTAMP:20270227T200000Z
+DTSTART:20270227T200000Z
+DTEND:20270227T220000Z
+SUMMARY:The Comedy Store - Preston
+LOCATION:Preston Guild Hall\, Lancaster Road\, Preston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-comed
+ y-store-preston/
+URL:https://comedyatlas.app/comedy-atlas/event/the-comedy-store-preston/
+END:VEVENT
+END:VCALENDAR
