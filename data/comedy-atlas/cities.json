@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 160,
-      "unconfirmed": 60
+      "unconfirmed": 59
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -197,7 +197,7 @@
     "id": 20,
     "language_counts": {
       "en": 100,
-      "unconfirmed": 99
+      "unconfirmed": 98
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 132,
-      "fr": 1664,
+      "fr": 1657,
       "unconfirmed": 20
     },
     "latitude": 48.8566,
@@ -409,7 +409,7 @@
     "id": 34,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 41.1579,
     "longitude": -8.6291,
@@ -743,7 +743,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 65
+      "unconfirmed": 64
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -2713,7 +2713,7 @@
     "country_name": "France",
     "id": 217,
     "language_counts": {
-      "fr": 2
+      "fr": 3
     },
     "latitude": null,
     "longitude": null,
@@ -3036,7 +3036,7 @@
     "country_name": "France",
     "id": 248,
     "language_counts": {
-      "fr": 1
+      "fr": 2
     },
     "latitude": null,
     "longitude": null,
@@ -3122,7 +3122,7 @@
     "country_name": "France",
     "id": 257,
     "language_counts": {
-      "fr": 37
+      "fr": 36
     },
     "latitude": null,
     "longitude": null,
@@ -3140,7 +3140,7 @@
     "id": 258,
     "language_counts": {
       "en": 1,
-      "fr": 24
+      "fr": 23
     },
     "latitude": null,
     "longitude": null,
@@ -3395,7 +3395,7 @@
     "country_name": "France",
     "id": 286,
     "language_counts": {
-      "fr": 8
+      "fr": 7
     },
     "latitude": null,
     "longitude": null,
@@ -3736,7 +3736,7 @@
     "country_name": "UAE",
     "id": 370,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 24.46031,
     "longitude": 54.60183,
@@ -4773,7 +4773,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 443,
     "language_counts": {
-      "unconfirmed": 24
+      "unconfirmed": 23
     },
     "latitude": 39.906142,
     "longitude": 32.759674,
@@ -4807,7 +4807,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 445,
     "language_counts": {
-      "unconfirmed": 7
+      "unconfirmed": 6
     },
     "latitude": 36.986516,
     "longitude": 27.890948,
@@ -4875,7 +4875,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 450,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 36.993052,
     "longitude": 35.314784,
@@ -4926,7 +4926,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 454,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 1
     },
     "latitude": 37.778893,
     "longitude": 29.084433,
@@ -4994,7 +4994,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 458,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 1
     },
     "latitude": 37.864009,
     "longitude": 28.000278,
@@ -5062,7 +5062,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 467,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 41.411293,
     "longitude": 31.694483,
@@ -5079,7 +5079,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 469,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 5
     },
     "latitude": 40.851013,
     "longitude": 30.300454,
@@ -9315,7 +9315,7 @@
     "country_name": "UK",
     "id": 755,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 7
     },
     "latitude": 57.473094,
     "longitude": -4.230822,
@@ -15662,5 +15662,22 @@
     "region_name": null,
     "region_type": null,
     "timezone": "America/New_York"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1351,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Sanary sur Mer",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
   }
 ]
