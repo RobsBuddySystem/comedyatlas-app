@@ -117,7 +117,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <tr><td><code>date_to</code></td><td>date</td><td>ISO date, inclusive upper bound on <code>starts_at</code></td></tr>
       <tr><td><code>free_only</code></td><td>bool</td><td><code>true</code> to return only free shows</td></tr>
       <tr><td><code>org</code></td><td>string</td><td>organizer slug (see <code>/v1/orgs/{slug}</code>)</td></tr>
-      <tr><td><code>language</code></td><td>string</td><td>filter by language code (e.g. <code>en</code>, <code>fr</code>, <code>it</code>), or <code>unconfirmed</code> for shows whose language hasn't been confirmed yet. <strong>Default: no filter</strong> — every language publishes, since language is a label here, never a gate; the site's own default visitor experience applies <code>language=en</code> client-side, not this API</td></tr>
+      <tr><td><code>language</code></td><td>string</td><td>filter by language code (e.g. <code>en</code>, <code>fr</code>, <code>it</code>), or <code>unconfirmed</code> for shows whose language hasn't been confirmed yet. <strong>Default: no filter.</strong> Every language publishes and appears in the default Atlas experience; language is a label, not a gate.</td></tr>
       <tr><td><code>limit</code></td><td>int</td><td>default 50, max 200</td></tr>
       <tr><td><code>offset</code></td><td>int</td><td>default 0</td></tr>
     </table>

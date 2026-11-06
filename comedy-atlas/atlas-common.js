@@ -16,7 +16,7 @@
  * data here can (and does) include real non-English shows and unconfirmed
  * (`language: null`) ones. Nothing is hidden here in atlas-common.js either;
  * `matchesLanguage`/`languageLabel`/`languageTag` below give every page a
- * shared, English-DEFAULT filter with an explicit "all languages" opt-out,
+ * shared all-languages default with optional explicit language filters,
  * never a silent drop.
  */
 (function (global) {

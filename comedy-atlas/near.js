@@ -180,7 +180,7 @@
         var centre = cityCentre(cities, city);
         if (!centre) throw new Error("city has no coordinates");
         return fetch(API_BASE + "/shows/near?lat=" + encodeURIComponent(centre.lat) +
-          "&lon=" + encodeURIComponent(centre.lng) + "&radius_km=25&language=en")
+          "&lon=" + encodeURIComponent(centre.lng) + "&radius_km=25")
           .then(function (r3) {
             if (!r3.ok) throw new Error("bad status " + r3.status);
             return r3.json();
@@ -291,9 +291,8 @@
       (ev.venue_name ? ' · ' + escapeHtml(ev.venue_name) : '') +
       (ev.city ? ' · ' + escapeHtml(ev.city) : '') +
       (price ? ' · ' + price : '') +
-      // Language policy (2026-07-19): this widget requests language=en by
-      // default (see fetchNear), but degrades honestly rather than
-      // fabricating "English" if a future caller ever drops that param.
+      // Language is a label, not an inclusion gate. The nearby surface follows
+      // Atlas's catalogue rule and can show every language.
       (ev.language === undefined || ev.language ? '' : ' · Language not confirmed') +
       '</div></' + cardTag + '>';
   }
@@ -314,20 +313,10 @@
   }
 
   function fetchNear(lat, lon, panel) {
-    // Language policy (2026-07-19, option (b), docs/atlas-ops/
-    // LANGUAGE_POLICY_ANALYSIS_2026-07-19.md): /shows/near's own default is
-    // "no filter" (documented, matches /v1/events), so this widget -- which
-    // has no language toggle of its own -- asks explicitly for English,
-    // matching every other default-visitor surface (city.html, the
-    // homepage strip). Nothing is hidden from the underlying data; a
-    // future "all languages" control here would just drop this param.
-    // 2026-08-12: confirmed harmless post-fix -- the backend now matches
-    // language=NULL ("not confirmed") rows alongside language='en'
-    // (apps/atlas_api/main.py::shows_near), so this hardcoded param no
-    // longer excludes the "not confirmed" rows it used to before that fix;
-    // left unchanged.
+    // Atlas carries every show. /shows/near defaults to no language filter,
+    // matching the catalogue and including unconfirmed-language events.
     var url = API_BASE + "/shows/near?lat=" + encodeURIComponent(lat) +
-      "&lon=" + encodeURIComponent(lon) + "&radius_km=25&language=en";
+      "&lon=" + encodeURIComponent(lon) + "&radius_km=25";
     fetch(url).then(function (r) {
       if (!r.ok) throw new Error("bad status " + r.status);
       return r.json();
