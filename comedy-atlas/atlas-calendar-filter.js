@@ -115,6 +115,42 @@
     return bucket === filterValue;
   }
 
+  /* Language/price filters (2026-11-07). Same URL-param names city.html
+   * already uses ("lang", "price") so links are interchangeable. Defaults
+   * are "all" -- the Atlas catalogue rule is that every language shows by
+   * default; language is a label, never a gate. A null/empty language is
+   * "unconfirmed" and is only ever hidden when the visitor explicitly picks
+   * a specific language or "unconfirmed" themselves. */
+  function languageKey(lang) {
+    var l = (lang == null ? "" : String(lang)).trim().toLowerCase();
+    return l || "unconfirmed";
+  }
+
+  function matchesLanguageFilter(rowLang, filterValue) {
+    if (!filterValue || filterValue === "all") return true;
+    return languageKey(rowLang) === String(filterValue).toLowerCase();
+  }
+
+  /* "free" / "paid" / "unknown" -- mirrors atlas-common.js fmtPrice and
+   * generate_calendar_pages.price_kind: is_free is a declared fact; a 0
+   * price is free; no price fields at all is unknown (never guessed). */
+  function priceKind(ev) {
+    ev = ev || {};
+    if (ev.is_free === true) return "free";
+    var vals = [ev.price_min, ev.price_max].filter(function (v) {
+      return v !== null && v !== undefined && v !== "" && isFinite(Number(v));
+    }).map(Number);
+    if (!vals.length) return "unknown";
+    return Math.max.apply(null, vals) === 0 ? "free" : "paid";
+  }
+
+  function matchesPriceFilter(rowPrice, filterValue) {
+    if (!filterValue || filterValue === "all") return true;
+    return (rowPrice || "unknown") === filterValue;
+  }
+
+  var VALID_PRICE = ["all", "free", "paid", "unknown"];
+
   /* Builds "?city=X&time=Y" (time omitted when "any"/absent) -- the single
    * shared query-string shape every rewritten href on this page uses, so a
    * link built by one code path is always readable by another. */
@@ -123,6 +159,8 @@
     var qs = new URLSearchParams();
     if (filters.city) qs.set("city", filters.city);
     if (filters.time && filters.time !== "any") qs.set("time", filters.time);
+    if (filters.lang && filters.lang !== "all") qs.set("lang", filters.lang);
+    if (filters.price && filters.price !== "all") qs.set("price", filters.price);
     var s = qs.toString();
     return s ? "?" + s : "";
   }
@@ -145,7 +183,9 @@
     var qs = new URLSearchParams(search || "");
     return {
       city: qs.get("city") || "",
-      time: qs.get("time") || "any"
+      time: qs.get("time") || "any",
+      lang: (qs.get("lang") || "all").toLowerCase(),
+      price: VALID_PRICE.indexOf(qs.get("price")) === -1 ? "all" : qs.get("price")
     };
   }
 
@@ -154,6 +194,10 @@
     cityMatches: cityMatches,
     timeBucket: timeBucket,
     matchesTimeFilter: matchesTimeFilter,
+    languageKey: languageKey,
+    matchesLanguageFilter: matchesLanguageFilter,
+    priceKind: priceKind,
+    matchesPriceFilter: matchesPriceFilter,
     buildQueryString: buildQueryString,
     withFilters: withFilters,
     parseFilters: parseFilters
@@ -162,7 +206,7 @@
   // ---- DOM wiring (exercised by Playwright, not node --test) -------------
 
   if (typeof document !== "undefined") {
-    var state = { city: "", time: "any", activeIndex: -1, suggestions: [] };
+    var state = { city: "", time: "any", lang: "all", price: "all", activeIndex: -1, suggestions: [] };
     var allCitiesPromise = null;
 
     function fetchAllCityNames() {
@@ -201,6 +245,8 @@
       var cityClear = document.getElementById("cal-city-clear");
       var listbox = document.getElementById("cal-city-listbox");
       var timeSelect = document.getElementById("cal-time-select");
+      var langSelect = document.getElementById("cal-lang-select");
+      var priceSelect = document.getElementById("cal-price-select");
       var dateInput = document.getElementById("cal-date-input");
       var nomatch = document.getElementById("cal-nomatch");
       var clearFiltersBtn = document.getElementById("cal-clear-filters");
@@ -226,6 +272,24 @@
       var initial = parseFilters(window.location.search);
       state.city = isIndexPage ? initial.city : resolveCityCasing(initial.city);
       state.time = initial.time;
+      state.lang = initial.lang;
+      state.price = initial.price;
+      function ensureOption(sel, value) {
+        // A ?lang=de link must still reflect in the control (and filter),
+        // so add an option for an unlisted code instead of silently
+        // snapping back to "all".
+        if (!sel || !value) return;
+        for (var i = 0; i < sel.options.length; i++) if (sel.options[i].value === value) return;
+        var o = document.createElement("option");
+        o.value = value; o.textContent = value.toUpperCase();
+        sel.appendChild(o);
+      }
+      ensureOption(langSelect, state.lang);
+      if (langSelect) langSelect.value = state.lang;
+      if (priceSelect) priceSelect.value = state.price;
+      function curFilters() {
+        return { city: state.city, time: state.time, lang: state.lang, price: state.price };
+      }
       if (cityInput) cityInput.value = state.city;
       if (timeSelect) timeSelect.value = initial.time;
       updateCityClearVisibility();
@@ -241,7 +305,9 @@
           var sectionVisible = 0;
           rows.forEach(function (row) {
             var hour = row.getAttribute("data-start-hour");
-            var show = cityOk && matchesTimeFilter(hour === "" ? null : hour, state.time);
+            var show = cityOk && matchesTimeFilter(hour === "" ? null : hour, state.time) &&
+              matchesLanguageFilter(row.getAttribute("data-language"), state.lang) &&
+              matchesPriceFilter(row.getAttribute("data-price"), state.price);
             row.hidden = !show;
             if (show) sectionVisible += 1;
           });
@@ -259,7 +325,7 @@
       }
 
       function updateDateNavLinks() {
-        var filters = { city: state.city, time: state.time };
+        var filters = curFilters();
         var prev = document.getElementById("cal-prev-link");
         var next = document.getElementById("cal-next-link");
         if (prev) prev.href = withFilters(prev.getAttribute("href"), filters);
@@ -267,7 +333,7 @@
       }
 
       function applyIndexPageFilters() {
-        var filters = { city: state.city, time: state.time };
+        var filters = curFilters();
         document.querySelectorAll("[data-cal-index-link]").forEach(function (a) {
           a.href = withFilters(a.getAttribute("href"), filters);
         });
@@ -285,7 +351,7 @@
       }
 
       function syncUrl() {
-        var qs = buildQueryString({ city: state.city, time: state.time });
+        var qs = buildQueryString(curFilters());
         var newUrl = window.location.pathname + qs;
         if (window.history && window.history.replaceState) {
           window.history.replaceState(null, "", newUrl);
@@ -398,19 +464,33 @@
           applyFilters();
         });
       }
+      if (langSelect) {
+        langSelect.addEventListener("change", function () {
+          state.lang = langSelect.value || "all";
+          applyFilters();
+        });
+      }
+      if (priceSelect) {
+        priceSelect.addEventListener("change", function () {
+          state.price = priceSelect.value || "all";
+          applyFilters();
+        });
+      }
       if (dateInput) {
         dateInput.addEventListener("change", function () {
           var val = dateInput.value;
           if (!val) return;
-          var filters = { city: state.city, time: state.time };
+          var filters = curFilters();
           window.location.href = withFilters("/comedy-atlas/calendar/" + val + "/", filters);
         });
       }
       if (clearFiltersBtn) {
         clearFiltersBtn.addEventListener("click", function () {
-          state.city = ""; state.time = "any";
+          state.city = ""; state.time = "any"; state.lang = "all"; state.price = "all";
           if (cityInput) cityInput.value = "";
           if (timeSelect) timeSelect.value = "any";
+          if (langSelect) langSelect.value = "all";
+          if (priceSelect) priceSelect.value = "all";
           updateCityClearVisibility();
           applyFilters();
         });

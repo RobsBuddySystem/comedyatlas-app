@@ -165,12 +165,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .cal-filterbar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:14px 0 18px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
 .cal-filterbar label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
 .cal-city-combo{position:relative;min-width:180px;flex:1 1 200px}
-.cal-city-combo input,.cal-time-filter select,.cal-date-jump input{width:100%;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;box-sizing:border-box}
+.cal-city-combo input,.cal-time-filter select,.cal-lang-filter select,.cal-price-filter select,.cal-date-jump input{width:100%;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;box-sizing:border-box}
 #cal-city-listbox{position:absolute;left:0;right:0;top:100%;margin-top:4px;max-height:240px;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:8px;list-style:none;padding:4px;z-index:20}
 #cal-city-listbox li{padding:8px 10px;border-radius:6px;cursor:pointer;font-size:14px;min-height:32px}
 #cal-city-listbox li[aria-selected="true"],#cal-city-listbox li:hover{background:var(--purple-light);color:#fff}
 .cal-city-clear{min-height:44px;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;cursor:pointer}
-.cal-time-filter,.cal-date-jump{flex:1 1 160px;min-width:150px}
+.cal-time-filter,.cal-lang-filter,.cal-price-filter,.cal-date-jump{flex:1 1 160px;min-width:150px}
 .cal-nomatch{font-size:14px;color:var(--muted);margin:16px 0;padding:14px;border:1px dashed var(--border);border-radius:10px}
 .cal-nomatch button{background:none;border:none;color:var(--purple-light);text-decoration:underline;cursor:pointer;font:inherit;padding:0;min-height:44px}
 .cal-index-day-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
@@ -180,7 +180,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .cal-index-day-count{color:var(--muted);font-size:13px}
 @media(max-width:480px){
   .cal-filterbar{flex-direction:column;align-items:stretch}
-  .cal-city-combo,.cal-time-filter,.cal-date-jump{min-width:0}
+  .cal-city-combo,.cal-time-filter,.cal-lang-filter,.cal-price-filter,.cal-date-jump{min-width:0}
 }
 </style>
 </head>
@@ -212,7 +212,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
   <p class="atlas-promise">Every day COMEDY ATLAS knows about, filterable by city and time of day.</p>
 </header>
 <main id="main-content" tabindex="-1">
-<div class="cal-filterbar" id="cal-filterbar" data-cal-day="2026-11-06" hidden>
+<div class="cal-filterbar" id="cal-filterbar" data-cal-day="2026-11-07" hidden>
   <div class="cal-city-combo">
     <label id="cal-city-label" for="cal-city-input">Filter by city</label>
     <input id="cal-city-input" type="text" role="combobox" aria-expanded="false"
@@ -230,13 +230,32 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <option value="late">Late (21:00+)</option>
     </select>
   </div>
+  <div class="cal-lang-filter">
+    <label for="cal-lang-select">Language</label>
+    <select id="cal-lang-select">
+      <option value="all">All languages</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="unconfirmed">Not confirmed</option>
+    </select>
+  </div>
+  <div class="cal-price-filter">
+    <label for="cal-price-select">Price</label>
+    <select id="cal-price-select">
+      <option value="all">Free &amp; paid</option>
+      <option value="free">Free</option>
+      <option value="paid">Paid</option>
+      <option value="unknown">Price not listed</option>
+    </select>
+  </div>
   <div class="cal-date-jump">
     <label for="cal-date-input">Jump to date</label>
-    <input type="date" id="cal-date-input" value="2026-11-06">
+    <input type="date" id="cal-date-input" value="2026-11-07">
   </div>
 </div>
 
-<ul class="cal-index-day-list" id="cal-index-day-list"><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link id="cal-index-today-link" href="/comedy-atlas/calendar/2026-11-06/"><span class="cal-index-day-date">Fri 6 Nov · 2026-11-06</span><span class="cal-index-day-count">497 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-07/"><span class="cal-index-day-date">Sat 7 Nov · 2026-11-07</span><span class="cal-index-day-count">640 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-08/"><span class="cal-index-day-date">Sun 8 Nov · 2026-11-08</span><span class="cal-index-day-count">298 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-09/"><span class="cal-index-day-date">Mon 9 Nov · 2026-11-09</span><span class="cal-index-day-count">137 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-10/"><span class="cal-index-day-date">Tue 10 Nov · 2026-11-10</span><span class="cal-index-day-count">226 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-11/"><span class="cal-index-day-date">Wed 11 Nov · 2026-11-11</span><span class="cal-index-day-count">281 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-12/"><span class="cal-index-day-date">Thu 12 Nov · 2026-11-12</span><span class="cal-index-day-count">353 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-13/"><span class="cal-index-day-date">Fri 13 Nov · 2026-11-13</span><span class="cal-index-day-count">467 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-14/"><span class="cal-index-day-date">Sat 14 Nov · 2026-11-14</span><span class="cal-index-day-count">584 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-15/"><span class="cal-index-day-date">Sun 15 Nov · 2026-11-15</span><span class="cal-index-day-count">282 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-16/"><span class="cal-index-day-date">Mon 16 Nov · 2026-11-16</span><span class="cal-index-day-count">121 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-17/"><span class="cal-index-day-date">Tue 17 Nov · 2026-11-17</span><span class="cal-index-day-count">171 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-18/"><span class="cal-index-day-date">Wed 18 Nov · 2026-11-18</span><span class="cal-index-day-count">196 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-19/"><span class="cal-index-day-date">Thu 19 Nov · 2026-11-19</span><span class="cal-index-day-count">237 shows</span></a></li></ul>
+<ul class="cal-index-day-list" id="cal-index-day-list"><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link id="cal-index-today-link" href="/comedy-atlas/calendar/2026-11-07/"><span class="cal-index-day-date">Sat 7 Nov · 2026-11-07</span><span class="cal-index-day-count">648 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-08/"><span class="cal-index-day-date">Sun 8 Nov · 2026-11-08</span><span class="cal-index-day-count">298 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-09/"><span class="cal-index-day-date">Mon 9 Nov · 2026-11-09</span><span class="cal-index-day-count">137 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-10/"><span class="cal-index-day-date">Tue 10 Nov · 2026-11-10</span><span class="cal-index-day-count">227 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-11/"><span class="cal-index-day-date">Wed 11 Nov · 2026-11-11</span><span class="cal-index-day-count">282 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-12/"><span class="cal-index-day-date">Thu 12 Nov · 2026-11-12</span><span class="cal-index-day-count">355 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-13/"><span class="cal-index-day-date">Fri 13 Nov · 2026-11-13</span><span class="cal-index-day-count">469 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-14/"><span class="cal-index-day-date">Sat 14 Nov · 2026-11-14</span><span class="cal-index-day-count">585 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-15/"><span class="cal-index-day-date">Sun 15 Nov · 2026-11-15</span><span class="cal-index-day-count">283 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-16/"><span class="cal-index-day-date">Mon 16 Nov · 2026-11-16</span><span class="cal-index-day-count">121 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-17/"><span class="cal-index-day-date">Tue 17 Nov · 2026-11-17</span><span class="cal-index-day-count">171 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-18/"><span class="cal-index-day-date">Wed 18 Nov · 2026-11-18</span><span class="cal-index-day-count">197 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-19/"><span class="cal-index-day-date">Thu 19 Nov · 2026-11-19</span><span class="cal-index-day-count">239 shows</span></a></li><li class="cal-index-day"><a class="cal-index-day-link" data-cal-index-link href="/comedy-atlas/calendar/2026-11-20/"><span class="cal-index-day-date">Fri 20 Nov · 2026-11-20</span><span class="cal-index-day-count">295 shows</span></a></li></ul>
 </main>
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
@@ -247,6 +266,6 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
 <script src="/comedy-atlas/atlas-calendar-filter.js" defer></script>
-<!-- generated_at: 2026-11-06T06:37:04.975189+00:00 -->
+<!-- generated_at: 2026-11-07T07:22:08.442660+00:00 -->
 </body>
 </html>

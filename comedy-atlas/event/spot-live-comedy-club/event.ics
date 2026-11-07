@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spot-live-comedy-club@comedyatlas.app
+DTSTAMP:20261215T190000Z
+DTSTART:20261215T190000Z
+DTEND:20261215T210000Z
+SUMMARY:Spot'Live Comedy Club
+LOCATION:Aux Enfants Terribles\, 14 chemin de Wervicq\, Marquette-lez-Lille
+DESCRIPTION:Le Spot'Live Comedy Club\, c'est tout l'esprit du Spotlight che
+ z vous.\nMore info: https://comedyatlas.app/comedy-atlas/event/spot-live-co
+ medy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/spot-live-comedy-club/
+END:VEVENT
+END:VCALENDAR

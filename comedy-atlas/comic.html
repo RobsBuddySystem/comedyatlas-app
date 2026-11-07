@@ -357,6 +357,33 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="msg" id="invites-msg"></div>
     </div>
 
+    <div class="card" id="hide-page-card" hidden>
+      <h2>Hide my page</h2>
+      <div id="hide-state-live">
+        <p class="privacy" id="hide-intro" style="margin-bottom:10px">Don't want to be listed on Comedy Atlas?
+        You can take your public comic page down yourself. It disappears from the site at the next
+        update (the site is rebuilt daily, so within about 24 hours). <strong>This cannot be undone from this
+        portal</strong> &mdash; there is no "unhide" button; to come back you would have to contact us.</p>
+        <button type="button" id="hide-start" class="btn-decline" aria-expanded="false" aria-controls="hide-confirm">Hide my page from Comedy Atlas</button>
+        <div id="hide-confirm" role="group" aria-labelledby="hide-confirm-title" hidden
+             style="margin-top:14px;padding:14px;border:1px solid var(--red);border-radius:10px">
+          <p id="hide-confirm-title" style="font-weight:700;margin-bottom:8px">Step 2 of 2 &mdash; confirm</p>
+          <p class="privacy" style="margin-bottom:10px">Your page will be removed from search, city pages and the comics list at the next update.</p>
+          <label style="display:flex;gap:8px;align-items:flex-start;margin-bottom:12px">
+            <input type="checkbox" id="hide-ack" style="margin-top:3px">
+            <span>I understand my page will be hidden and I can't undo this myself.</span>
+          </label>
+          <button type="button" id="hide-confirm-btn" class="btn-decline" disabled>Yes, hide my page</button>
+          <button type="button" id="hide-cancel" class="btn-secondary">Cancel</button>
+        </div>
+      </div>
+      <div id="hide-state-hidden" hidden>
+        <p id="hide-hidden-msg" style="font-weight:700">Your page is hidden; it will disappear from the site at the next update (within about 24 hours).</p>
+        <p class="privacy">Want it back? Use "Send feedback" in the footer and we will help &mdash; it can't be reversed from here.</p>
+      </div>
+      <div class="msg" id="hide-msg" role="status" aria-live="polite"></div>
+    </div>
+
     <div class="card" id="twofa-section"></div>
   </div>
 </div>
@@ -956,6 +983,63 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     refreshInvites();
   }
 
+  // ---- Hide my page (CP-01 claim-to-unpublish) ------------------------
+  // Shown ONLY for a verified owner: the public status endpoint answers
+  // viewer_is_owner from the session (approved claim + consent), and the
+  // POST re-checks ownership server-side (403 for anyone else). Two in-page
+  // steps, no window.confirm (blocked in some in-app views). The backend is
+  // append-only by design -- there is no unsuppress route, so no Unhide here.
+  function initHidePage() {
+    var card = document.getElementById("hide-page-card");
+    if (!card) return;
+    var startBtn = document.getElementById("hide-start");
+    var confirmBox = document.getElementById("hide-confirm");
+    var ack = document.getElementById("hide-ack");
+    var goBtn = document.getElementById("hide-confirm-btn");
+    var cancelBtn = document.getElementById("hide-cancel");
+    var msg = document.getElementById("hide-msg");
+    var live = document.getElementById("hide-state-live");
+    var hiddenBox = document.getElementById("hide-state-hidden");
+    function showHidden() { live.hidden = true; hiddenBox.hidden = false; msg.textContent = ""; }
+    function closeConfirm() {
+      confirmBox.hidden = true; ack.checked = false; goBtn.disabled = true;
+      startBtn.setAttribute("aria-expanded", "false");
+    }
+    A.get("/claim/comic/" + meId + "/status").then(function (st) {
+      if (!st || !st.claimed || !st.viewer_is_owner) return;
+      card.hidden = false;
+      if (st.suppressed) showHidden();
+    }).catch(function () {});
+    startBtn.addEventListener("click", function () {
+      confirmBox.hidden = false;
+      startBtn.setAttribute("aria-expanded", "true");
+      ack.focus();
+    });
+    ack.addEventListener("change", function () { goBtn.disabled = !ack.checked; });
+    cancelBtn.addEventListener("click", function () { closeConfirm(); startBtn.focus(); });
+    confirmBox.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") { closeConfirm(); startBtn.focus(); }
+    });
+    goBtn.addEventListener("click", function () {
+      if (!ack.checked) return;
+      goBtn.disabled = true; cancelBtn.disabled = true;
+      msg.textContent = "Hiding your page…"; msg.className = "msg";
+      A.post("/claim/comic/" + meId + "/unpublish", {}).then(function () {
+        showHidden();
+        document.getElementById("hide-hidden-msg").setAttribute("tabindex", "-1");
+        document.getElementById("hide-hidden-msg").focus();
+      }).catch(function (e) {
+        cancelBtn.disabled = false;
+        ack.checked = false;
+        var forbidden = e && (e.status === 401 || e.status === 403);
+        msg.textContent = forbidden
+          ? "Only the verified owner of this page can hide it. Sign in as the owner, or verify your claim first."
+          : "Could not hide your page right now — nothing was changed. Try again later.";
+        msg.className = "msg error";
+      });
+    });
+  }
+
   (A.meIfSession ? A.meIfSession() : A.me()).then(function (r) {
     meId = r.person_id;
     document.getElementById("app").style.display = "block";
@@ -968,6 +1052,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       }).catch(function () {});
     } catch (e) {}
     loadCities().then(loadAll);
+    initHidePage();
     window.AtlasTwoFA.mount(document.getElementById("twofa-section"), r);
   }).catch(function () {
     document.getElementById("signed-out").style.display = "block";

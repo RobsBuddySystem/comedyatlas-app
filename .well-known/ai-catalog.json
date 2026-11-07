@@ -1,0 +1,76 @@
+{
+  "name": "Comedy Atlas",
+  "description": "Worldwide stand-up comedy listings: upcoming shows, venues, organizers, comics and city guides, with a free public read-only API.",
+  "url": "https://comedyatlas.app/",
+  "api": [
+    {
+      "name": "events",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/events",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "Upcoming stand-up shows, filterable (city, date_from, date_to, free_only, org, language), paged"
+    },
+    {
+      "name": "cities",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/cities",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "Cities covered"
+    },
+    {
+      "name": "venue",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/venues/{slug}",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "One venue"
+    },
+    {
+      "name": "organization",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/orgs/{slug}",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "One organizer"
+    },
+    {
+      "name": "show",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/shows/{slug}",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "One show"
+    },
+    {
+      "name": "organization-events-csv",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/orgs/{slug}/events.csv",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "Organizer events as CSV"
+    },
+    {
+      "name": "organization-events-ics",
+      "method": "GET",
+      "url": "https://api.comedyatlas.app/v1/orgs/{slug}/events.ics",
+      "docs": "https://comedyatlas.app/comedy-atlas/api.html",
+      "auth": "none",
+      "description": "Organizer events as an iCalendar feed"
+    }
+  ],
+  "sitemap": "https://comedyatlas.app/sitemap_index.xml",
+  "contact": "contact@comedyatlas.app",
+  "terms": "https://comedyatlas.app/comedy-atlas/terms.html",
+  "privacy": "https://comedyatlas.app/comedy-atlas/privacy.html",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "coverage": {
+    "cities": 908
+  },
+  "update_frequency": "daily",
+  "updated": "2026-11-07"
+}

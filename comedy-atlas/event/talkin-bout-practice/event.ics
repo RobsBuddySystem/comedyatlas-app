@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:talkin-bout-practice@comedyatlas.app
+DTSTAMP:20261113T030000Z
+DTSTART:20261113T030000Z
+DTEND:20261113T050000Z
+SUMMARY:"Talkin' Bout Practice"
+LOCATION:Brooklyn
+DESCRIPTION:A new material comedy show where franchise players work on thei
+ r game.Are you a real comedy fan? Come see how jokes are made as NYC's best
+  comedians workshop their newest material in a show that celebrates the pra
+ ctice makes perfect mindset.\nMore info: https://comedyatlas.app/comedy-atl
+ as/event/talkin-bout-practice/
+URL:https://comedyatlas.app/comedy-atlas/event/talkin-bout-practice/
+END:VEVENT
+END:VCALENDAR

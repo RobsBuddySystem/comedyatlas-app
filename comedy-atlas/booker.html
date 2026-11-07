@@ -505,6 +505,35 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </section>
 
     <section data-tab="lineups">
+    <div class="card" id="ics-card">
+      <h2>📅 Calendar feed</h2>
+      <p class="privacy" style="margin-bottom:10px">Subscribe in Google, Apple or Outlook calendar and your
+      upcoming nights appear there on their own. The link is private to you — <b>anyone who has it can see
+      your nights</b>, so don't post it. Read-only; nothing is sent.</p>
+      <button id="ics-get" type="button">Get my calendar link</button>
+      <div id="ics-out" style="display:none;margin-top:10px">
+        <label for="ics-url">Your private link</label>
+        <input id="ics-url" type="text" readonly>
+        <button id="ics-copy" class="secondary" type="button">Copy link</button>
+        <a id="ics-webcal" class="secondary" href="#" style="margin-left:8px">Open in calendar app</a>
+      </div>
+      <div class="msg" id="ics-msg"></div>
+    </div>
+    <div class="card">
+      <h2>📊 Status board</h2>
+      <p class="privacy" style="margin-bottom:10px">Every upcoming night of your shows at a glance:
+      slots filled, replies waiting, declines to replace. Offer counts are per show.</p>
+      <label for="bd-status">Show me</label>
+      <select id="bd-status">
+        <option value="">All nights</option>
+        <option value="open_spots">Open spots</option>
+        <option value="awaiting_replies">Awaiting replies</option>
+        <option value="needs_replacement">Needs a replacement</option>
+        <option value="full">Full</option>
+      </select>
+      <div class="msg" id="bd-msg"></div>
+      <div id="bd-list" style="overflow-x:auto"></div>
+    </div>
     <div class="card">
       <h2>🎬 Lineup builder</h2>
       <p class="privacy" style="margin-bottom:10px">Pick one of your shows,
@@ -525,7 +554,10 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <button id="lu-load">Load lineup</button>
       <button id="lu-make-flyer" class="secondary" type="button" disabled
         title="Opens the poster maker with this night's show, venue, ticket link and your lineup already filled in">🎨 Make flyer</button>
+      <button id="lu-callsheet" class="secondary" type="button" title="Arrival time, running order and stage times for this night">📋 Call sheet</button>
+      <button id="lu-mc" class="secondary" type="button" title="Printable running order for the host">🖨 MC sheet</button>
       <div class="msg" id="lu-msg"></div>
+      <div id="lu-callsheet-out" style="display:none;margin:10px 0;padding:10px;border:1px solid var(--border);overflow-x:auto"></div>
       <div id="lu-status" class="lineup-status"></div>
       <p class="privacy" id="lu-hint" style="display:none;margin:6px 0">
       Mobile / no drag-and-drop? Tap a comic card below, then tap the slot
@@ -2455,9 +2487,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     var body = filled
       ? A.escapeHtml(s.comic_stage_name || ("comic #" + s.comic_person_id)) +
         (s.unverified ? ' <span class="tier">unverified</span>' : '') +
-        ' <button class="clear-slot" type="button" data-i="' + s.slot_index + '">clear</button>'
+        ' <button class="clear-slot" type="button" data-i="' + s.slot_index + '">clear</button>' +
+        ' <button class="mv-slot secondary" type="button" data-i="' + s.slot_index + '" data-dir="up" title="Move up" aria-label="Move up" style="margin:0;padding:4px 10px">↑</button>' +
+        '<button class="mv-slot secondary" type="button" data-i="' + s.slot_index + '" data-dir="down" title="Move down" aria-label="Move down" style="margin:0;padding:4px 10px">↓</button>'
       : '<span class="slot-empty">empty — drag or tap a comic</span>';
-    return '<div class="slot' + (filled ? ' filled' : '') + '" data-i="' + s.slot_index + '">' +
+    return '<div class="slot' + (filled ? ' filled' : '') + '" data-i="' + s.slot_index + '"' + (filled ? ' draggable="true"' : '') + '>' +
       '<div class="slot-role">' + A.escapeHtml(s.slot_role || "") + '</div>' +
       '<div class="slot-body">' + body + '</div></div>';
   }
@@ -2507,12 +2541,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       });
     });
     document.querySelectorAll("#lu-slots .slot").forEach(function (slotEl) {
+      slotEl.addEventListener("dragstart", function (ev) {
+        if (slotEl.classList.contains("filled")) { ev.dataTransfer.setData("text/plain", "slot:" + slotEl.dataset.i); }
+      });
       slotEl.addEventListener("dragover", function (ev) { ev.preventDefault(); slotEl.classList.add("dragover"); });
       slotEl.addEventListener("dragleave", function () { slotEl.classList.remove("dragover"); });
       slotEl.addEventListener("drop", function (ev) {
         ev.preventDefault();
         slotEl.classList.remove("dragover");
-        var id = parseInt(ev.dataTransfer.getData("text/plain"), 10);
+        var raw = ev.dataTransfer.getData("text/plain") || "";
+        if (raw.indexOf("slot:") === 0) {   // a filled slot dragged onto another: move/swap
+          moveSlot({from_index: parseInt(raw.slice(5), 10), to_index: parseInt(slotEl.dataset.i, 10)});
+          return;
+        }
+        var id = parseInt(raw, 10);
         if (id) assignSlot(parseInt(slotEl.dataset.i, 10), id);
       });
       slotEl.addEventListener("click", function (ev) {
@@ -2523,11 +2565,31 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
         }
       });
     });
+    document.querySelectorAll("#lu-slots .mv-slot").forEach(function (btn) {
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        moveSlot({slot_index: parseInt(btn.dataset.i, 10), direction: btn.dataset.dir});
+      });
+    });
     document.querySelectorAll("#lu-slots .clear-slot").forEach(function (btn) {
       btn.addEventListener("click", function (ev) {
         ev.stopPropagation();
         assignSlot(parseInt(btn.dataset.i, 10), null);
       });
+    });
+  }
+
+  // Reorder filled slots (POST .../lineup/move): drag slot->slot or the up/down
+  // buttons (touch fallback). Saves as draft; nobody is notified.
+  function moveSlot(body) {
+    var msg = document.getElementById("lu-msg");
+    A.post("/booker/events/" + luEventId + "/lineup/move", body).then(function () {
+      msg.textContent = "Order saved (draft — not sent)."; msg.className = "msg ok";
+      return A.get("/booker/events/" + luEventId + "/lineup");
+    }).then(renderLineupBoard).catch(function (e) {
+      var d = e.body && e.body.detail;
+      msg.textContent = (typeof d === "string" && d) || "Couldn't move that slot.";
+      msg.className = "msg error";
     });
   }
 
@@ -2612,6 +2674,104 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     }).catch(function (e) {
       msg.textContent = e.body && e.body.detail ? e.body.detail : "Failed to load lineup.";
       msg.className = "msg error";
+    });
+  });
+
+  // Status board (GET /booker/board): read-only list; "Open" jumps to that night in the builder.
+  function bdLoad() {
+    var st = document.getElementById("bd-status").value;
+    var msg = document.getElementById("bd-msg"), list = document.getElementById("bd-list");
+    A.get("/booker/board" + (st ? "?status=" + encodeURIComponent(st) : "")).then(function (r) {
+      msg.textContent = ""; msg.className = "msg";
+      if (!r.nights.length) { list.innerHTML = '<p class="privacy">No nights match.</p>'; return; }
+      list.innerHTML = '<table style="width:100%"><tr><th>Night</th><th>Filled</th><th>Replies</th><th>Status</th><th></th></tr>' +
+        r.nights.map(function (n) {
+          return "<tr><td>" + A.escapeHtml((n.starts_at || "").slice(0, 10)) + " " + A.escapeHtml(n.show_name || "") +
+            (n.venue_name ? " @ " + A.escapeHtml(n.venue_name) : "") + "</td><td>" + n.slots_filled + "/" + n.slots_total +
+            "</td><td>" + n.offers_pending + " waiting · " + n.offers_declined + " declined</td><td>" +
+            A.escapeHtml(n.status.replace(/_/g, " ")) + '</td><td><button type="button" class="secondary bd-open" data-show="' +
+            n.show_series_id + '" data-ev="' + n.event_id + '" style="margin:0;padding:4px 10px">Open</button></td></tr>';
+        }).join("") + "</table>";
+      document.querySelectorAll("#bd-list .bd-open").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var showSel = document.getElementById("lu-show"), evSel = document.getElementById("lu-event");
+          showSel.value = b.dataset.show;
+          A.get("/booker/shows/" + b.dataset.show + "/events").then(function (rows) {
+            evSel.innerHTML = rows.map(function (x) {
+              return '<option value="' + x.event_id + '">' + A.escapeHtml((x.starts_at || "").slice(0, 10)) + " — " + A.escapeHtml(x.title || "") + "</option>";
+            }).join("");
+            evSel.value = b.dataset.ev;
+            document.getElementById("lu-load").click();
+          });
+        });
+      });
+    }).catch(function (e) {
+      var d = e.body && e.body.detail;
+      msg.textContent = (typeof d === "string" && d) || "Couldn't load the board."; msg.className = "msg error";
+    });
+  }
+  document.getElementById("bd-status").addEventListener("change", bdLoad);
+  bdLoad();
+
+  // Calendar feed (GET /booker/calendar/token -> private .ics URL). Works without migration 0174.
+  document.getElementById("ics-get").addEventListener("click", function () {
+    var msg = document.getElementById("ics-msg"), out = document.getElementById("ics-out");
+    msg.textContent = "Getting your link…"; msg.className = "msg";
+    A.get("/booker/calendar/token").then(function (r) {
+      var url = A.apiBase + r.path;
+      document.getElementById("ics-url").value = url;
+      document.getElementById("ics-webcal").href = url.replace(/^https?:/, "webcal:");
+      out.style.display = "block"; msg.textContent = ""; msg.className = "msg";
+    }).catch(function (e) {
+      out.style.display = "none";
+      msg.textContent = e.status === 503 ? "Calendar links aren't switched on yet. Try again later."
+        : (e.body && typeof e.body.detail === "string" && e.body.detail) || "Couldn't get your calendar link.";
+      msg.className = "msg error";
+    });
+  });
+  document.getElementById("ics-copy").addEventListener("click", function () {
+    var inp = document.getElementById("ics-url"), msg = document.getElementById("ics-msg");
+    function ok() { msg.textContent = "Link copied."; msg.className = "msg ok"; }
+    function fallback() { inp.select(); try { document.execCommand("copy"); ok(); } catch (x) { msg.textContent = "Select the link and copy it."; msg.className = "msg"; } }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(inp.value).then(ok, fallback); else fallback();
+  });
+
+  // Call sheet (GET .../callsheet) and printable MC sheet (GET .../callsheet/mc). Read-only.
+  function luNightId() {
+    var msg = document.getElementById("lu-msg");
+    var id = luEventId || document.getElementById("lu-event").value;
+    if (!id) { msg.textContent = "Pick a night first."; msg.className = "msg error"; }
+    return id;
+  }
+  document.getElementById("lu-callsheet").addEventListener("click", function () {
+    var id = luNightId(); if (!id) return;
+    var out = document.getElementById("lu-callsheet-out"), msg = document.getElementById("lu-msg");
+    A.get("/booker/events/" + id + "/callsheet").then(function (j) {
+      var rows = j.lineup.map(function (a) {
+        return "<tr><td>" + a.position + "</td><td>" + A.escapeHtml(a.stage_time) + "</td><td>" +
+          A.escapeHtml(a.act_name) + "</td><td>" + A.escapeHtml(a.note || "") + "</td></tr>";
+      }).join("") || '<tr><td colspan="4">No acts placed yet.</td></tr>';
+      out.innerHTML = "<b>" + A.escapeHtml(j.title) + "</b> · " + A.escapeHtml(j.date + " " + j.time) +
+        (j.venue.name ? " · " + A.escapeHtml(j.venue.name) : "") +
+        "<br>Acts arrive <b>" + A.escapeHtml(j.call_time) + "</b>" +
+        '<table style="width:100%;margin-top:8px"><tr><th>#</th><th>On stage</th><th>Act</th><th>Notes</th></tr>' + rows + "</table>";
+      out.style.display = "block"; msg.textContent = ""; msg.className = "msg";
+    }).catch(function (e) {
+      var d = e.body && e.body.detail;
+      msg.textContent = (typeof d === "string" && d) || "Couldn't load the call sheet."; msg.className = "msg error";
+    });
+  });
+  document.getElementById("lu-mc").addEventListener("click", function () {
+    var id = luNightId(); if (!id) return;
+    var msg = document.getElementById("lu-msg");
+    var w = window.open("", "_blank");   // opened in the click so popup blockers allow it
+    A.get("/booker/events/" + id + "/callsheet/mc").then(function (r) {
+      if (!w) { msg.textContent = "Allow pop-ups to print the MC sheet."; msg.className = "msg error"; return; }
+      w.document.open(); w.document.write(r.html); w.document.close(); w.focus();
+    }).catch(function (e) {
+      if (w) w.close();
+      var d = e.body && e.body.detail;
+      msg.textContent = (typeof d === "string" && d) || "Couldn't build the MC sheet."; msg.className = "msg error";
     });
   });
 

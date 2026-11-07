@@ -166,12 +166,12 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .cal-filterbar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:14px 0 18px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
 .cal-filterbar label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
 .cal-city-combo{position:relative;min-width:180px;flex:1 1 200px}
-.cal-city-combo input,.cal-time-filter select,.cal-date-jump input{width:100%;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;box-sizing:border-box}
+.cal-city-combo input,.cal-time-filter select,.cal-lang-filter select,.cal-price-filter select,.cal-date-jump input{width:100%;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;box-sizing:border-box}
 #cal-city-listbox{position:absolute;left:0;right:0;top:100%;margin-top:4px;max-height:240px;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:8px;list-style:none;padding:4px;z-index:20}
 #cal-city-listbox li{padding:8px 10px;border-radius:6px;cursor:pointer;font-size:14px;min-height:32px}
 #cal-city-listbox li[aria-selected="true"],#cal-city-listbox li:hover{background:var(--purple-light);color:#fff}
 .cal-city-clear{min-height:44px;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;cursor:pointer}
-.cal-time-filter,.cal-date-jump{flex:1 1 160px;min-width:150px}
+.cal-time-filter,.cal-lang-filter,.cal-price-filter,.cal-date-jump{flex:1 1 160px;min-width:150px}
 .cal-nomatch{font-size:14px;color:var(--muted);margin:16px 0;padding:14px;border:1px dashed var(--border);border-radius:10px}
 .cal-nomatch button{background:none;border:none;color:var(--purple-light);text-decoration:underline;cursor:pointer;font:inherit;padding:0;min-height:44px}
 .cal-index-day-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
@@ -181,7 +181,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 .cal-index-day-count{color:var(--muted);font-size:13px}
 @media(max-width:480px){
   .cal-filterbar{flex-direction:column;align-items:stretch}
-  .cal-city-combo,.cal-time-filter,.cal-date-jump{min-width:0}
+  .cal-city-combo,.cal-time-filter,.cal-lang-filter,.cal-price-filter,.cal-date-jump{min-width:0}
 }
 </style>
 </head>
@@ -232,13 +232,32 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
       <option value="late">Late (21:00+)</option>
     </select>
   </div>
+  <div class="cal-lang-filter">
+    <label for="cal-lang-select">Language</label>
+    <select id="cal-lang-select">
+      <option value="all">All languages</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="unconfirmed">Not confirmed</option>
+    </select>
+  </div>
+  <div class="cal-price-filter">
+    <label for="cal-price-select">Price</label>
+    <select id="cal-price-select">
+      <option value="all">Free &amp; paid</option>
+      <option value="free">Free</option>
+      <option value="paid">Paid</option>
+      <option value="unknown">Price not listed</option>
+    </select>
+  </div>
   <div class="cal-date-jump">
     <label for="cal-date-input">Jump to date</label>
     <input type="date" id="cal-date-input" value="2027-01-27">
   </div>
 </div>
 <p class="cal-nomatch" id="cal-nomatch" hidden>No shows match your filters — <button type="button" id="cal-clear-filters">Clear filters</button></p>
-<p class="cal-filter-note" id="cal-filter-note"></p><section data-cal-city="Amsterdam"><h2 class="cal-city-heading">Amsterdam — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<p class="cal-filter-note" id="cal-filter-note"></p><section data-cal-city="Amsterdam"><h2 class="cal-city-heading">Amsterdam — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="en" data-price="paid"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -252,7 +271,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Berlin"><h2 class="cal-city-heading">Berlin — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Berlin"><h2 class="cal-city-heading">Berlin — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="en" data-price="paid"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -266,7 +285,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Brighton"><h2 class="cal-city-heading">Brighton — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Brighton"><h2 class="cal-city-heading">Brighton — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -280,7 +299,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Brisbane"><h2 class="cal-city-heading">Brisbane — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Brisbane"><h2 class="cal-city-heading">Brisbane — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -294,7 +313,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Bristol"><h2 class="cal-city-heading">Bristol — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Bristol"><h2 class="cal-city-heading">Bristol — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -308,7 +327,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Cardiff"><h2 class="cal-city-heading">Cardiff — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Cardiff"><h2 class="cal-city-heading">Cardiff — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -322,7 +341,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Charleston"><h2 class="cal-city-heading">Charleston — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Charleston"><h2 class="cal-city-heading">Charleston — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -336,7 +355,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Coventry"><h2 class="cal-city-heading">Coventry — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Coventry"><h2 class="cal-city-heading">Coventry — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -350,7 +369,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Dublin"><h2 class="cal-city-heading">Dublin — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Dublin"><h2 class="cal-city-heading">Dublin — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -364,7 +383,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Edinburgh"><h2 class="cal-city-heading">Edinburgh — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Edinburgh"><h2 class="cal-city-heading">Edinburgh — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -378,7 +397,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Guildford"><h2 class="cal-city-heading">Guildford — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Guildford"><h2 class="cal-city-heading">Guildford — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -392,7 +411,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Houston"><h2 class="cal-city-heading">Houston — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Houston"><h2 class="cal-city-heading">Houston — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -406,7 +425,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Las Vegas"><h2 class="cal-city-heading">Las Vegas — 4 shows</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Las Vegas"><h2 class="cal-city-heading">Las Vegas — 4 shows</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -420,7 +439,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -434,7 +453,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<div class="cal-event-row" data-start-hour="20" data-language="en" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -448,7 +467,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="21"><div class="event-card">
+<div class="cal-event-row" data-start-hour="21" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -462,7 +481,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Leeds"><h2 class="cal-city-heading">Leeds — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Leeds"><h2 class="cal-city-heading">Leeds — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -476,7 +495,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Little Sheffield"><h2 class="cal-city-heading">Little Sheffield — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Little Sheffield"><h2 class="cal-city-heading">Little Sheffield — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -490,7 +509,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="London"><h2 class="cal-city-heading">London — 2 shows</h2><div class="cal-event-row" data-start-hour="15"><div class="event-card">
+<section data-cal-city="London"><h2 class="cal-city-heading">London — 2 shows</h2><div class="cal-event-row" data-start-hour="15" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -504,7 +523,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -518,7 +537,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Los Angeles"><h2 class="cal-city-heading">Los Angeles — 4 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Los Angeles"><h2 class="cal-city-heading">Los Angeles — 4 shows</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="paid"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -532,7 +551,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -546,7 +565,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -560,7 +579,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="21"><div class="event-card">
+<div class="cal-event-row" data-start-hour="21" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -574,7 +593,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Mons"><h2 class="cal-city-heading">Mons — 1 show</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Mons"><h2 class="cal-city-heading">Mons — 1 show</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -588,7 +607,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Montreal"><h2 class="cal-city-heading">Montreal — 2 shows</h2><div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<section data-cal-city="Montreal"><h2 class="cal-city-heading">Montreal — 2 shows</h2><div class="cal-event-row" data-start-hour="20" data-language="unconfirmed" data-price="paid"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -602,7 +621,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<div class="cal-event-row" data-start-hour="20" data-language="en" data-price="paid"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -616,7 +635,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Naples"><h2 class="cal-city-heading">Naples — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Naples"><h2 class="cal-city-heading">Naples — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -630,7 +649,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Paris"><h2 class="cal-city-heading">Paris — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Paris"><h2 class="cal-city-heading">Paris — 2 shows</h2><div class="cal-event-row" data-start-hour="19" data-language="fr" data-price="free"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -644,7 +663,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="20"><div class="event-card">
+<div class="cal-event-row" data-start-hour="20" data-language="fr" data-price="free"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -658,7 +677,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Philadelphia"><h2 class="cal-city-heading">Philadelphia — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Philadelphia"><h2 class="cal-city-heading">Philadelphia — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -672,7 +691,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Portland"><h2 class="cal-city-heading">Portland — 2 shows</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Portland"><h2 class="cal-city-heading">Portland — 2 shows</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -686,7 +705,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -700,7 +719,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Raleigh"><h2 class="cal-city-heading">Raleigh — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Raleigh"><h2 class="cal-city-heading">Raleigh — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -714,7 +733,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Sacramento"><h2 class="cal-city-heading">Sacramento — 2 shows</h2><div class="cal-event-row" data-start-hour="18"><div class="event-card">
+<section data-cal-city="Sacramento"><h2 class="cal-city-heading">Sacramento — 2 shows</h2><div class="cal-event-row" data-start-hour="18" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -728,7 +747,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div>
-<div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -742,7 +761,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Scottsdale"><h2 class="cal-city-heading">Scottsdale — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Scottsdale"><h2 class="cal-city-heading">Scottsdale — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -756,7 +775,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Swansea"><h2 class="cal-city-heading">Swansea — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Swansea"><h2 class="cal-city-heading">Swansea — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -770,7 +789,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Washington"><h2 class="cal-city-heading">Washington — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="Washington"><h2 class="cal-city-heading">Washington — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -784,7 +803,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="Wellington"><h2 class="cal-city-heading">Wellington — 1 show</h2><div class="cal-event-row" data-start-hour="17"><div class="event-card">
+<section data-cal-city="Wellington"><h2 class="cal-city-heading">Wellington — 1 show</h2><div class="cal-event-row" data-start-hour="17" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -798,7 +817,7 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
     </div>
   </div>
 </div></div></section>
-<section data-cal-city="York"><h2 class="cal-city-heading">York — 1 show</h2><div class="cal-event-row" data-start-hour="19"><div class="event-card">
+<section data-cal-city="York"><h2 class="cal-city-heading">York — 1 show</h2><div class="cal-event-row" data-start-hour="19" data-language="unconfirmed" data-price="unknown"><div class="event-card">
   <div class="event-card-inner">
     
     <div class="event-card-body">
@@ -822,6 +841,6 @@ main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
 <script src="/comedy-atlas/atlas-feedback.js"></script>
 <script defer src="/comedy-atlas/atlas-track.js"></script>
 <script src="/comedy-atlas/atlas-calendar-filter.js" defer></script>
-<!-- generated_at: 2026-11-06T06:37:03.998145+00:00 -->
+<!-- generated_at: 2026-11-07T07:22:06.696799+00:00 -->
 </body>
 </html>

@@ -57,6 +57,13 @@ h1{font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.5px;margin:24
    under 44px regardless of font metrics. */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;list-style:none}
 .tab{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;min-height:44px;box-sizing:border-box}
+.facets{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px}
+.facet label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.facet select{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:14px;font-family:inherit;min-height:44px;box-sizing:border-box;min-width:150px}
+.facet select:focus,.facet-reset:focus{outline:2px solid var(--purple-light);outline-offset:1px}
+.facet-reset{background:none;border:1px solid var(--border);color:var(--muted);border-radius:10px;min-height:44px;padding:8px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.facet-note{font-size:12px;color:var(--muted);margin:-8px 0 12px}
+@media (max-width:520px){.facet{flex:1 1 140px}.facet select{width:100%;min-width:0}}
 .tab[aria-selected="true"]{color:var(--text);border-color:var(--gold);background:rgba(201,168,76,.12)}
 .tab .tab-n{color:var(--muted);font-weight:500;margin-left:4px}
 #status-line{font-size:13px;color:var(--muted);margin-bottom:10px;min-height:1.2em}
@@ -133,6 +140,29 @@ noscript .result-meta{margin-top:2px}
            autocomplete="off" aria-describedby="status-line" aria-controls="results">
   </div>
   <div class="tabs" id="tabs" role="tablist" aria-label="Filter by type"></div>
+  <div class="facets" id="facets" role="group" aria-label="Filter shows by language and price">
+    <div class="facet">
+      <label for="f-lang">Language</label>
+      <select id="f-lang">
+        <option value="all">All languages</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="unconfirmed">Not confirmed</option>
+      </select>
+    </div>
+    <div class="facet">
+      <label for="f-price">Price</label>
+      <select id="f-price">
+        <option value="all">Free &amp; paid</option>
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+        <option value="unknown">Price not listed</option>
+      </select>
+    </div>
+    <button type="button" class="facet-reset" id="f-reset" hidden>Clear language &amp; price</button>
+  </div>
+  <p class="facet-note" id="facet-note" hidden>Language and price apply to shows only, so comics, venues and cities are hidden while a filter is on.</p>
   <div id="near-notice" class="empty-state" style="padding:12px;text-align:left" hidden></div>
   <div id="status-line" aria-live="polite"></div>
   <ul id="results" role="listbox" aria-label="Search results"></ul>
@@ -215,7 +245,8 @@ noscript .result-meta{margin-top:2px}
 
   var ALL_RECORDS = null;   // raw records, straight from search_index.json
   var HAYSTACKS = null;     // parallel array: precomputed lowercase match text
-  var state = { q: "", type: "", page: 1 };
+  var state = { q: "", type: "", page: 1, lang: "all", price: "all" };
+  var VALID_PRICE = ["all", "free", "paid", "unknown"];
   var currentResults = [];  // records matching state.q/state.type, ALL of them (pre-pagination)
   var selectedIndex = -1;   // keyboard-selected row within the current page's results
   var debounceTimer = null;
@@ -232,13 +263,19 @@ noscript .result-meta{margin-top:2px}
     if (VALID_TYPE_KEYS.indexOf(type) === -1) { type = ""; }
     var page = parseInt(params.get("page"), 10);
     if (!page || page < 1) { page = 1; }
-    return { q: q, type: type, page: page };
+    var lang = (params.get("lang") || "all").toLowerCase();
+    if (!/^[a-z]{2,12}$/.test(lang)) { lang = "all"; }
+    var price = params.get("price") || "all";
+    if (VALID_PRICE.indexOf(price) === -1) { price = "all"; }
+    return { q: q, type: type, page: page, lang: lang, price: price };
   }
 
   function urlFromState(s) {
     var params = new URLSearchParams();
     if (s.q) { params.set("q", s.q); }
     if (s.type) { params.set("type", s.type); }
+    if (s.lang && s.lang !== "all") { params.set("lang", s.lang); }
+    if (s.price && s.price !== "all") { params.set("price", s.price); }
     if (s.page && s.page > 1) { params.set("page", String(s.page)); }
     var qs = params.toString();
     return window.location.pathname + (qs ? "?" + qs : "");
@@ -400,8 +437,9 @@ noscript .result-meta{margin-top:2px}
   function renderTabCounts() {
     tabsEl.innerHTML = "";
     TYPES.forEach(function (t) {
-      var n = t.key ? ALL_RECORDS.filter(function (r) { return r.type === t.key; }).length
-                     : ALL_RECORDS.length;
+      var n = ALL_RECORDS.filter(function (r) {
+        return (!t.key || r.type === t.key) && passesFacets(r);
+      }).length;
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "tab";
@@ -560,11 +598,59 @@ noscript .result-meta{margin-top:2px}
   //      No geocoding, no distance math, no guessing: we only ever show
   //      records the surviving tokens genuinely match, and the banner
   //      never pretends the dropped tokens were found.
+  // LANGUAGE / PRICE FACETS (2026-11-07). Default "all" = every language,
+  // every price: language is a label, never a gate (Atlas catalogue rule).
+  // Only events carry these fields, so while a facet is explicitly on,
+  // non-event records are left out (and the page says so).
+  function facetsActive() { return state.lang !== "all" || state.price !== "all"; }
+  function passesFacets(rec) {
+    if (!facetsActive()) { return true; }
+    if (rec.type !== "event") { return false; }
+    if (state.lang !== "all" && (rec.language || "unconfirmed") !== state.lang) { return false; }
+    if (state.price !== "all" && (rec.price || "unknown") !== state.price) { return false; }
+    return true;
+  }
+
+  var langSel = document.getElementById("f-lang");
+  var priceSel = document.getElementById("f-price");
+  var resetBtn = document.getElementById("f-reset");
+  var facetNote = document.getElementById("facet-note");
+  function syncFacetControls() {
+    var have = false;
+    for (var i = 0; i < langSel.options.length; i++) { if (langSel.options[i].value === state.lang) { have = true; } }
+    if (!have) {
+      var o = document.createElement("option");
+      o.value = state.lang; o.textContent = state.lang.toUpperCase();
+      langSel.appendChild(o);
+    }
+    langSel.value = state.lang;
+    priceSel.value = state.price;
+    resetBtn.hidden = !facetsActive();
+    facetNote.hidden = !facetsActive();
+  }
+  function onFacetChange() {
+    state.lang = langSel.value || "all";
+    state.price = priceSel.value || "all";
+    state.page = 1;
+    syncFacetControls();
+    syncUrl(true);
+    renderTabCounts();
+    runSearch();
+  }
+  langSel.addEventListener("change", onFacetChange);
+  priceSel.addEventListener("change", onFacetChange);
+  resetBtn.addEventListener("click", function () {
+    langSel.value = "all"; priceSel.value = "all";
+    onFacetChange();
+    langSel.focus();
+  });
+
   function collectMatches(qTokens, typeFilter) {
     var out = [];
     for (var i = 0; i < ALL_RECORDS.length; i++) {
       var rec = ALL_RECORDS[i];
       if (typeFilter && rec.type !== typeFilter) { continue; }
+      if (!passesFacets(rec)) { continue; }
       if (qTokens.length && !matchesAllTokens(HAYSTACKS[i], qTokens)) { continue; }
       out.push(rec);
     }
@@ -1041,6 +1127,7 @@ noscript .result-meta{margin-top:2px}
   window.addEventListener("popstate", function () {
     state = stateFromUrl();
     qInput.value = state.q;
+    syncFacetControls();
     if (ALL_RECORDS) { renderTabCounts(); runSearch(); }
   });
 
@@ -1049,6 +1136,7 @@ noscript .result-meta{margin-top:2px}
   // -----------------------------------------------------------------------
   state = stateFromUrl();
   qInput.value = state.q;
+  syncFacetControls();
   loadIndex();
 })();
 </script>

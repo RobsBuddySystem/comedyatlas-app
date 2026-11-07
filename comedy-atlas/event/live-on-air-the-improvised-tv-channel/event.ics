@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-on-air-the-improvised-tv-channel@comedyatlas.app
+DTSTAMP:20261120T191500Z
+DTSTART:20261120T191500Z
+DTEND:20261120T211500Z
+SUMMARY:Live On Air: The Improvised TV Channel
+LOCATION:Shoreditch Balls\, 333 Old Street\, London
+DESCRIPTION:Tune in to Live OnAir\, the Improvised TV Channel: all your fav
+ ourite TV shows\, none of your favourite scripts.\nMore info: https://comed
+ yatlas.app/comedy-atlas/event/live-on-air-the-improvised-tv-channel/
+URL:https://comedyatlas.app/comedy-atlas/event/live-on-air-the-improvised-t
+ v-channel/
+END:VEVENT
+END:VCALENDAR
