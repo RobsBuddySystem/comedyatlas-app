@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 200,
+      "en": 199,
       "unconfirmed": 45
     },
     "latitude": 52.52,
@@ -110,7 +110,7 @@
     "id": 14,
     "language_counts": {
       "en": 7,
-      "unconfirmed": 197
+      "unconfirmed": 196
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -196,7 +196,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 98,
+      "en": 97,
       "unconfirmed": 104
     },
     "latitude": 41.3851,
@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 232
+      "unconfirmed": 231
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 131,
-      "fr": 1528,
+      "fr": 1473,
       "unconfirmed": 19
     },
     "latitude": 48.8566,
@@ -339,7 +339,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 177
+      "fr": 167
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -743,7 +743,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 63
+      "unconfirmed": 60
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -845,8 +845,8 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 718,
-      "unconfirmed": 1256
+      "en": 708,
+      "unconfirmed": 1251
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -966,7 +966,7 @@
     "country_name": "UK",
     "id": 81,
     "language_counts": {
-      "unconfirmed": 133
+      "unconfirmed": 132
     },
     "latitude": 53.8008,
     "longitude": -1.5491,
@@ -1532,7 +1532,7 @@
     "country_name": "Germany",
     "id": 120,
     "language_counts": {
-      "unconfirmed": 29
+      "unconfirmed": 24
     },
     "latitude": 50.9375,
     "longitude": 6.9603,
@@ -2098,7 +2098,7 @@
     "country_name": "UK",
     "id": 160,
     "language_counts": {
-      "unconfirmed": 42
+      "unconfirmed": 38
     },
     "latitude": 57.148243,
     "longitude": -2.09281,
@@ -2115,7 +2115,7 @@
     "country_name": "Ireland",
     "id": 161,
     "language_counts": {
-      "unconfirmed": 4
+      "unconfirmed": 2
     },
     "latitude": null,
     "longitude": null,
@@ -2389,7 +2389,7 @@
     "id": 189,
     "language_counts": {
       "en": 1,
-      "fr": 33
+      "fr": 29
     },
     "latitude": 50.6292,
     "longitude": 3.0573,
@@ -2576,7 +2576,7 @@
     "country_name": "France",
     "id": 201,
     "language_counts": {
-      "fr": 12
+      "fr": 11
     },
     "latitude": null,
     "longitude": null,
@@ -2593,7 +2593,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 86,
+      "fr": 81,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2662,7 +2662,7 @@
     "country_name": "France",
     "id": 209,
     "language_counts": {
-      "fr": 8
+      "fr": 7
     },
     "latitude": null,
     "longitude": null,
@@ -2815,7 +2815,7 @@
     "country_name": "France",
     "id": 229,
     "language_counts": {
-      "fr": 10
+      "fr": 9
     },
     "latitude": null,
     "longitude": null,
@@ -3003,7 +3003,7 @@
     "id": 249,
     "language_counts": {
       "en": 1,
-      "fr": 57
+      "fr": 54
     },
     "latitude": null,
     "longitude": null,
@@ -3071,7 +3071,7 @@
     "country_name": "France",
     "id": 257,
     "language_counts": {
-      "fr": 32
+      "fr": 31
     },
     "latitude": null,
     "longitude": null,
@@ -3089,7 +3089,7 @@
     "id": 258,
     "language_counts": {
       "en": 1,
-      "fr": 21
+      "fr": 19
     },
     "latitude": null,
     "longitude": null,
@@ -3310,7 +3310,7 @@
     "country_name": "France",
     "id": 286,
     "language_counts": {
-      "fr": 6
+      "fr": 5
     },
     "latitude": null,
     "longitude": null,
@@ -3429,7 +3429,7 @@
     "country_name": "France",
     "id": 300,
     "language_counts": {
-      "fr": 38
+      "fr": 37
     },
     "latitude": null,
     "longitude": null,
@@ -4653,7 +4653,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 442,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 40.228159,
     "longitude": 28.984566,
@@ -4670,7 +4670,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 443,
     "language_counts": {
-      "unconfirmed": 23
+      "unconfirmed": 21
     },
     "latitude": 39.906142,
     "longitude": 32.759674,
@@ -4787,23 +4787,6 @@
     "country_id": 45,
     "country_iso2": "TR",
     "country_name": "T\u00fcrkiye",
-    "id": 451,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 39.39481,
-    "longitude": 30.033662,
-    "name": "K\u00fctahya",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Istanbul"
-  },
-  {
-    "country_id": 45,
-    "country_iso2": "TR",
-    "country_name": "T\u00fcrkiye",
     "id": 453,
     "language_counts": {
       "unconfirmed": 7
@@ -4840,7 +4823,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 455,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 7
     },
     "latitude": 38.437311,
     "longitude": 27.103398,
@@ -4874,7 +4857,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 457,
     "language_counts": {
-      "unconfirmed": 7
+      "unconfirmed": 6
     },
     "latitude": 39.97308,
     "longitude": 27.492809,
@@ -6950,7 +6933,7 @@
     "country_name": "UK",
     "id": 613,
     "language_counts": {
-      "unconfirmed": 79
+      "unconfirmed": 78
     },
     "latitude": 53.38118,
     "longitude": -1.471079,
