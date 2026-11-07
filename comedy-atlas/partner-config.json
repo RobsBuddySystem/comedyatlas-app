@@ -75,6 +75,7 @@
     "kravis.org",
     "lensic.org",
     "librarymusichall.tixtrack.com",
+    "londonboxoffice.co.uk",
     "louisvillecomedy.com",
     "mauiarts.org",
     "meetup.com",
@@ -102,6 +103,7 @@
     "secure.foxtheaterspokane.org",
     "secure.proctorscollaborative.org",
     "secure1.tixhub.com",
+    "seetickets.com",
     "showpass.com",
     "sixthandi.org",
     "skiddle.com",
@@ -125,6 +127,7 @@
     "texasperformingarts.evenue.net",
     "texasperformingarts.org",
     "theatre.ticketmaster.co.uk",
+    "theatreticketsdirect.co.uk",
     "theboxoffice.ca",
     "thecomedyclubhouse.es",
     "thecomedyclubkc.com",
@@ -194,9 +197,15 @@
   "PARTNER_DISCLOSURES": {
     "_comment": "Disclosure shown by go.html when, and only when, the money layer actually acts on that destination (a non-empty PARTNER_PARAMS block or a PARTNER_REDIRECTS wrap). Text is copied from affiliate_programs.disclosure_text for each approved programme -- that column is the source of truth and is CHECK-constrained to exist for any approved row. '*' is the fallback for an earning host with no host-specific text.",
     "skiddle.com": "COMEDY ATLAS may earn a commission on tickets purchased through this Skiddle link, at no extra cost to you.",
-    "billetreduc.com": "COMEDY ATLAS peut percevoir une commission sur les billets achet\u00e9s via ce lien BilletReduc, sans frais suppl\u00e9mentaires pour vous. / COMEDY ATLAS may earn a commission on tickets purchased through this BilletReduc link, at no extra cost to you."
+    "billetreduc.com": "COMEDY ATLAS peut percevoir une commission sur les billets achet\u00e9s via ce lien BilletReduc, sans frais suppl\u00e9mentaires pour vous. / COMEDY ATLAS may earn a commission on tickets purchased through this BilletReduc link, at no extra cost to you.",
+    "theatreticketsdirect.co.uk": "COMEDY ATLAS may earn a commission on tickets purchased through this Theatre Tickets Direct link, at no extra cost to you.",
+    "seetickets.com": "COMEDY ATLAS may earn a commission on tickets purchased through this See Tickets link, at no extra cost to you.",
+    "londonboxoffice.co.uk": "COMEDY ATLAS may earn a commission on tickets purchased through this London Box Office link, at no extra cost to you."
   },
   "PARTNER_REDIRECTS": {
-    "billetreduc.com": "https://www.awin1.com/cread.php?awinmid=20796&awinaffid=3039909&ued={url}"
+    "billetreduc.com": "https://www.awin1.com/cread.php?awinmid=20796&awinaffid=3039909&ued={url}",
+    "londonboxoffice.co.uk": "https://www.awin1.com/cread.php?awinmid=126461&awinaffid=3039909&ued={url}",
+    "seetickets.com": "https://www.awin1.com/cread.php?awinmid=7816&awinaffid=3039909&ued={url}",
+    "theatreticketsdirect.co.uk": "https://www.awin1.com/cread.php?awinmid=1936&awinaffid=3039909&ued={url}"
   }
 }
