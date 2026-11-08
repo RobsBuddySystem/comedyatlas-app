@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data deletion — COMEDY ATLAS</title>
+<meta name="description" content="How to delete your data from COMEDY ATLAS and remove the Facebook / Instagram connection.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/data-deletion.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#e34b64;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
+a{color:var(--purple-light);text-decoration:none}
+a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:28px;font-weight:800;letter-spacing:-.5px}
+h1 .dot{color:var(--gold)}
+p.sub{color:var(--muted);font-size:14px;margin:8px 0 28px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:10px}
+.card p{font-size:14.5px;margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+.card ul{padding-left:20px;font-size:14.5px}
+.card li{margin-bottom:8px}
+.never{color:var(--green);font-weight:700}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/comedy-atlas/search/">Explore</a>
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/venues/">Venues</a>
+    <a href="/comedy-atlas/festival/">Festivals</a>
+    <a href="/comedy-atlas/history/">History</a>
+    <a href="/comedy-atlas/guide/">Learn</a>
+    <a href="/comedy-atlas/blog/">News</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
+</nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
+
+<div class="container" id="main-content" tabindex="-1">
+  <h1>Data deletion<span class="dot">.</span></h1>
+  <p class="sub">Instructions for removing your data and the Facebook / Instagram connection. Last updated 8 November 2026.</p>
+
+  <div class="card">
+    <h2>Option 1: remove the app in Facebook or Instagram</h2>
+    <ol>
+      <li><strong>Facebook:</strong> Settings &amp; privacy &rarr; Settings &rarr; Apps and websites (or Business integrations), select "Comedy Atlas Social", then Remove.</li>
+      <li><strong>Instagram:</strong> Settings &rarr; Website permissions &rarr; Apps and websites (or Accounts Center &rarr; Apps and websites), select "Comedy Atlas Social", then Remove.</li>
+      <li>Removing the app revokes our access immediately. We then delete your access token and the data linked to the connection within 30 days.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Option 2: ask us by email</h2>
+    <p>Email <a href="mailto:booking@pariscomedy.com?subject=Data%20deletion">booking@pariscomedy.com</a>
+      with the subject <strong>"Data deletion"</strong>. Include the email address of your
+      account and, if relevant, your Instagram or Facebook username so we can find your records.
+      We reply with a confirmation code.</p>
+  </div>
+
+  <div class="card">
+    <h2>What gets deleted</h2>
+    <ul>
+      <li>Your account profile and sign-in data.</li>
+      <li>Your Facebook / Instagram connection: account id, username, access tokens, and any insights or media metadata stored for you.</li>
+      <li>Scheduled posts and drafts you created with our tools.</li>
+      <li>Messages and form submissions you sent us, unless the law requires us to keep a record.</li>
+    </ul>
+    <p>Anonymous aggregate statistics cannot identify you and may be kept. Security logs rotate automatically.</p>
+  </div>
+
+  <div class="card">
+    <h2>How long it takes</h2>
+    <p>We complete deletion within <strong>30 days</strong> of your request, or of you removing the app, and confirm by email.</p>
+  </div>
+
+  <div class="card">
+    <h2>Check the status</h2>
+    <p>Reply to our message quoting your confirmation code, or email
+      <a href="mailto:booking@pariscomedy.com?subject=Data%20deletion%20status">booking@pariscomedy.com</a>
+      with the code, and we will tell you the current status of your request.</p>
+    <p>See also the <a href="/comedy-atlas/privacy.html">Privacy policy</a> and <a href="/comedy-atlas/terms.html">Terms</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a> &middot; <a href="/comedy-atlas/data-deletion.html">Data deletion</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+
+<script src="atlas-track.js"></script>
+</body>
+</html>

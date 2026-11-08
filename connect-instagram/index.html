@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connect Instagram — COMEDY ATLAS</title>
+<meta name="description" content="How show runners connect Instagram to COMEDY ATLAS to schedule posts, invite collaborators and see reach.">
+<link rel="canonical" href="https://comedyatlas.app/connect-instagram">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="apple-touch-icon" href="/comedy-atlas/icons/apple-touch-icon.png">
+<link rel="icon" href="/comedy-atlas/favicon.ico" sizes="32x32">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7c3aed;--purple-light:#9d5ff5;--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa;--gold:#c9a84c;--gold-light:#e8c96a;--red:#e34b64;--green:#3fb950}
+@media (prefers-color-scheme: light){:root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--purple-light:#8b42f3;--red:#c41e3a;--green:#2b7e37}}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.6}
+a{color:var(--purple-light);text-decoration:none}
+a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}
+.skip-link:focus{left:0}
+.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative;min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:28px;font-weight:800;letter-spacing:-.5px}
+h1 .dot{color:var(--gold)}
+p.sub{color:var(--muted);font-size:14px;margin:8px 0 28px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px}
+.card h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:10px}
+.card p{font-size:14.5px;margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+.card ul{padding-left:20px;font-size:14.5px}
+.card li{margin-bottom:8px}
+.never{color:var(--green);font-weight:700}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links .sep{margin:0 8px;opacity:.5}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
+  <div class="nav-links">
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/about.html">About</a>
+  </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
+</nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
+
+<div class="container" id="main-content" tabindex="-1">
+  <h1>Connect Instagram<span class="dot">.</span></h1>
+  <p class="sub">A guide for show runners. Last updated 8 November 2026.</p>
+
+  <div class="card">
+    <h2>What the integration does</h2>
+    <ul>
+      <li>Schedule feed posts and stories for your shows from Comedy Atlas.</li>
+      <li>Automatically invite the venue and the comics on the bill as Instagram Collaborators, and add tags.</li>
+      <li>Show you reach and click stats for the posts we publish for you.</li>
+    </ul>
+    <p><strong>Status:</strong> the connection is in Meta app review. Until it is approved, you can prepare your account using the steps below.</p>
+  </div>
+
+  <div class="card">
+    <h2>Step by step</h2>
+    <ol>
+      <li><strong>Switch Instagram to a Professional account.</strong> In the Instagram app: Settings and privacy &rarr; Account type and tools &rarr; Switch to professional account. Choose Creator or Business (either works).</li>
+      <li><strong>Optional: link a Facebook Page.</strong> In Instagram: Edit profile &rarr; Links / Page &rarr; Connect or create a Facebook Page. Some features need the Page link; we will tell you if yours does.</li>
+      <li><strong>Make sure you can approve collaborations.</strong> In Instagram settings, allow tags and collaborator invitations from the venue and comics you work with.</li>
+      <li><strong>Connect Instagram on Comedy Atlas.</strong> Sign in to your show-runner account and press the button below. You will approve the permissions on Meta's own screen; we never see your Instagram password.</li>
+      <li><strong>Schedule a post.</strong> Pick a show, write or generate the caption, choose the venue and comics to invite as collaborators, and set the time.</li>
+    </ol>
+    <p><button type="button" disabled aria-disabled="true" style="background:var(--purple);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-size:14px;font-weight:700;opacity:.6;cursor:not-allowed;min-height:44px">Connect Instagram &mdash; Coming soon, in Meta review</button></p>
+  </div>
+
+  <div class="card">
+    <h2>What data we access</h2>
+    <ul>
+      <li>Your account id and username, an access token, the media we publish for you, and insights for your own posts.</li>
+      <li>Used only to provide this service to you; never sold and never used for other clients. Tokens are stored encrypted.</li>
+    </ul>
+    <p>Details: <a href="/comedy-atlas/privacy.html">Privacy policy</a>.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to disconnect</h2>
+    <p>Remove "Comedy Atlas Social" in your Instagram or Facebook settings, or email us.
+      Step-by-step instructions are on the <a href="/comedy-atlas/data-deletion.html">Data deletion</a> page.
+      We delete your token and connection data within 30 days.</p>
+  </div>
+</div>
+
+<footer>
+  <div>COMEDY ATLAS is part of Paris Comedy — worldwide comedy booking, one city at a time.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a> &middot; <a href="/comedy-atlas/data-deletion.html">Data deletion</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+
+<script src="atlas-track.js"></script>
+</body>
+</html>
