@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ed-matsaberidze@comedyatlas.app
+DTSTAMP:20261114T170000Z
+DTSTART:20261114T170000Z
+DTEND:20261114T190000Z
+SUMMARY:ED MATSABERIDZE
+LOCATION:Southend Comedy Club\, 45 IJsbaanpad\, Amsterdam
+DESCRIPTION:Новый большой сольный Stand Up тур Эд
+ а Мацаберидзе\, узнаваемого актера\, блог
+ ера миллионника\, ведущего и юмориста! Из
+ вестного нам по таким передачам\, как "Оре
+ л и Решка"\, "Еда\, я люблю тебя!"\, "Убойная л
+ ига" и […]\n\\n\nMore info: https://comedyatlas.app/comedy-atlas/even
+ t/ed-matsaberidze/
+URL:https://comedyatlas.app/comedy-atlas/event/ed-matsaberidze/
+END:VEVENT
+END:VCALENDAR

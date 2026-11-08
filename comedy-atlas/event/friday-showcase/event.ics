@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:friday-showcase@comedyatlas.app
+DTSTAMP:20261114T030000Z
+DTSTART:20261114T030000Z
+DTEND:20261114T050000Z
+SUMMARY:Friday Showcase
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/friday-sh
+ owcase/
+URL:https://comedyatlas.app/comedy-atlas/event/friday-showcase/
+END:VEVENT
+END:VCALENDAR

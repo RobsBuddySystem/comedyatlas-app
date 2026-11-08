@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bron-lewis@comedyatlas.app
+DTSTAMP:20270324T083000Z
+DTSTART:20270324T083000Z
+DTEND:20270324T103000Z
+SUMMARY:BRON LEWIS
+LOCATION:Athenaeum Theatre One\, 188 Collins Street\, Melbourne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bron-lewi
+ s/
+URL:https://comedyatlas.app/comedy-atlas/event/bron-lewis/
+END:VEVENT
+END:VCALENDAR

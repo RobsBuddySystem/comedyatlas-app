@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:blind-dates-by-emmvee@comedyatlas.app
+DTSTAMP:20270222T183000Z
+DTSTART:20270222T183000Z
+DTEND:20270222T203000Z
+SUMMARY:Blind Dates by EMMVEE
+LOCATION:PUNCH L!NE Club Berlin\, Marlene-Dietrich-Platz 1\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/blind-dat
+ es-by-emmvee/
+URL:https://comedyatlas.app/comedy-atlas/event/blind-dates-by-emmvee/
+END:VEVENT
+END:VCALENDAR

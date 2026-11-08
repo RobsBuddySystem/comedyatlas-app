@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:booder-ah-lecole-76357@comedyatlas.app
+DTSTAMP:20280415T180000Z
+DTSTART:20280415T180000Z
+DTEND:20280415T200000Z
+SUMMARY:Booder - Ah… L’Ecole !
+LOCATION:Arena Genève\, Route des Batailleux\, Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/booder-ah
+ -lecole-76357/
+URL:https://comedyatlas.app/comedy-atlas/event/booder-ah-lecole-76357/
+END:VEVENT
+END:VCALENDAR

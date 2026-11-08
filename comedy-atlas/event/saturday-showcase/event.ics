@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-showcase@comedyatlas.app
+DTSTAMP:20261114T230000Z
+DTSTART:20261114T230000Z
+DTEND:20261115T010000Z
+SUMMARY:Saturday Showcase
+LOCATION:Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/saturday-
+ showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/saturday-showcase/
+END:VEVENT
+END:VCALENDAR
