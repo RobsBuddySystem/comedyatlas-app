@@ -1,0 +1,45 @@
+# Deploy the static site to GitHub Pages with a patient deploy step.
+# Herk, 2026-11-10 (ATLAS stale-alert mission) — replaces the LEGACY Pages
+# builder, whose deploy phase has a fixed 10-minute timeout that big
+# releases (mass page rewrites / prunes on this 1.8 GB site) kept hitting:
+# four consecutive "Timeout reached, aborting!" failures on 2026-11-10.
+# Same deployment backend, 45-minute timeout. The site is plain static
+# (no _config.yml, no Jekyll features), so the raw upload serves every
+# previously-published URL identically.
+# Rollback: gh api -X PUT repos/RobsBuddySystem/comedyatlas-app/pages \
+#   -f build_type=legacy   (and delete this file).
+name: pages-deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 2700000        # 45 min; legacy's fixed 600000 was the failure
+          error_count: 20
+          reporting_interval: 30000
