@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 127,
-      "fr": 1266,
+      "fr": 1276,
       "unconfirmed": 17
     },
     "latitude": 48.8566,
@@ -846,7 +846,7 @@
     "id": 74,
     "language_counts": {
       "en": 674,
-      "unconfirmed": 1230
+      "unconfirmed": 1231
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -15365,6 +15365,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Alfortville",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1361,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Beaumont sur Oise",
     "region_code": null,
     "region_id": null,
     "region_name": null,
