@@ -40,7 +40,7 @@
     "id": 3,
     "language_counts": {
       "en": 12,
-      "unconfirmed": 52
+      "unconfirmed": 53
     },
     "latitude": 50.8503,
     "longitude": 4.3517,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 124,
-      "fr": 1219,
+      "fr": 1250,
       "unconfirmed": 17
     },
     "latitude": 48.8566,
@@ -339,7 +339,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 131
+      "fr": 134
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -863,8 +863,8 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 11,
-      "unconfirmed": 161
+      "en": 98,
+      "unconfirmed": 95
     },
     "latitude": 40.7128,
     "longitude": -74.006,
@@ -881,7 +881,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 606
+      "unconfirmed": 601
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -2336,7 +2336,8 @@
     "country_name": "Netherlands",
     "id": 186,
     "language_counts": {
-      "unconfirmed": 27
+      "en": 1,
+      "unconfirmed": 26
     },
     "latitude": 51.924442,
     "longitude": 4.47775,
@@ -2778,6 +2779,23 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
+    "id": 231,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Enghien Les Bains",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
     "id": 233,
     "language_counts": {
       "fr": 6
@@ -3002,7 +3020,7 @@
     "country_name": "France",
     "id": 257,
     "language_counts": {
-      "fr": 39
+      "fr": 40
     },
     "latitude": null,
     "longitude": null,
@@ -3343,7 +3361,7 @@
     "country_name": "France",
     "id": 301,
     "language_counts": {
-      "fr": 7
+      "fr": 9
     },
     "latitude": null,
     "longitude": null,
@@ -3700,7 +3718,7 @@
     "country_name": "New Zealand",
     "id": 381,
     "language_counts": {
-      "unconfirmed": 17
+      "unconfirmed": 16
     },
     "latitude": -36.848935,
     "longitude": 174.770424,
@@ -3887,7 +3905,7 @@
     "country_name": "Denmark",
     "id": 398,
     "language_counts": {
-      "unconfirmed": 17
+      "unconfirmed": 15
     },
     "latitude": null,
     "longitude": null,
@@ -3921,7 +3939,7 @@
     "country_name": "Denmark",
     "id": 400,
     "language_counts": {
-      "unconfirmed": 74
+      "unconfirmed": 62
     },
     "latitude": null,
     "longitude": null,
@@ -3938,7 +3956,7 @@
     "country_name": "Denmark",
     "id": 401,
     "language_counts": {
-      "unconfirmed": 55
+      "unconfirmed": 51
     },
     "latitude": null,
     "longitude": null,
@@ -4040,7 +4058,7 @@
     "country_name": "Denmark",
     "id": 407,
     "language_counts": {
-      "unconfirmed": 26
+      "unconfirmed": 24
     },
     "latitude": null,
     "longitude": null,
@@ -10351,7 +10369,7 @@
     "country_name": "United States",
     "id": 822,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 9
     },
     "latitude": 37.807718,
     "longitude": -122.27006,
@@ -10471,7 +10489,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1266
+      "unconfirmed": 1259
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -10641,7 +10659,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 106
+      "unconfirmed": 105
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -15174,7 +15192,7 @@
     "country_name": "United States",
     "id": 1330,
     "language_counts": {
-      "unconfirmed": 58
+      "unconfirmed": 57
     },
     "latitude": 34.1478,
     "longitude": -118.1445,
@@ -16891,7 +16909,7 @@
     "country_name": "Denmark",
     "id": 1445,
     "language_counts": {
-      "unconfirmed": 27
+      "unconfirmed": 26
     },
     "latitude": 57.043502,
     "longitude": 9.913176,
@@ -16925,7 +16943,7 @@
     "country_name": "Denmark",
     "id": 1447,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 55.88069,
     "longitude": 12.49735,
@@ -17112,7 +17130,7 @@
     "country_name": "Denmark",
     "id": 1458,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 55.760725,
     "longitude": 11.233135,
@@ -17129,7 +17147,7 @@
     "country_name": "Denmark",
     "id": 1459,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 1
     },
     "latitude": 54.77456,
     "longitude": 11.51598,
@@ -17316,7 +17334,7 @@
     "country_name": "Finland",
     "id": 1470,
     "language_counts": {
-      "unconfirmed": 18
+      "unconfirmed": 17
     },
     "latitude": 65.010358,
     "longitude": 25.471386,
@@ -17411,5 +17429,22 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/Helsinki"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1476,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Saint Chamond",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
   }
 ]
