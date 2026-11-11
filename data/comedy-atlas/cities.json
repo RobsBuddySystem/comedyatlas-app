@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 523
+      "unconfirmed": 541
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 125,
-      "fr": 1249,
+      "fr": 1248,
       "unconfirmed": 17
     },
     "latitude": 48.8566,
@@ -3128,23 +3128,6 @@
     "latitude": null,
     "longitude": null,
     "name": "Roissy-en-Brie",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Paris"
-  },
-  {
-    "country_id": 20,
-    "country_iso2": "FR",
-    "country_name": "France",
-    "id": 277,
-    "language_counts": {
-      "fr": 1
-    },
-    "latitude": null,
-    "longitude": null,
-    "name": "Roubaix",
     "region_code": null,
     "region_id": null,
     "region_name": null,
