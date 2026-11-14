@@ -197,7 +197,7 @@
     "id": 20,
     "language_counts": {
       "en": 87,
-      "unconfirmed": 98
+      "unconfirmed": 99
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -266,7 +266,7 @@
     "country_name": "France",
     "id": 25,
     "language_counts": {
-      "en": 121,
+      "en": 122,
       "fr": 1243,
       "unconfirmed": 17
     },
@@ -2536,7 +2536,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 49,
+      "fr": 50,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2588,7 +2588,7 @@
     "country_name": "France",
     "id": 208,
     "language_counts": {
-      "fr": 1
+      "fr": 2
     },
     "latitude": null,
     "longitude": null,
@@ -2690,7 +2690,7 @@
     "country_name": "France",
     "id": 229,
     "language_counts": {
-      "fr": 6
+      "fr": 7
     },
     "latitude": null,
     "longitude": null,
@@ -2844,7 +2844,7 @@
     "id": 249,
     "language_counts": {
       "en": 1,
-      "fr": 46
+      "fr": 47
     },
     "latitude": null,
     "longitude": null,
@@ -7881,7 +7881,7 @@
     "country_name": "UK",
     "id": 682,
     "language_counts": {
-      "unconfirmed": 15
+      "unconfirmed": 14
     },
     "latitude": 51.627965,
     "longitude": -0.749797,
@@ -18457,6 +18457,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Mandres les Roses",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1554,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Montferrier-sur-Lez",
     "region_code": null,
     "region_id": null,
     "region_name": null,
