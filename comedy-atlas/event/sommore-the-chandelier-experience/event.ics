@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sommore-the-chandelier-experience@comedyatlas.app
+DTSTAMP:20270619T023000Z
+DTSTART:20270619T023000Z
+DTEND:20270619T043000Z
+SUMMARY:SOMMORE: The Chandelier Experience
+LOCATION:Ontario Improv\, 4555 Mills Cir\, Ontario
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sommore-t
+ he-chandelier-experience/
+URL:https://comedyatlas.app/comedy-atlas/event/sommore-the-chandelier-exper
+ ience/
+END:VEVENT
+END:VCALENDAR

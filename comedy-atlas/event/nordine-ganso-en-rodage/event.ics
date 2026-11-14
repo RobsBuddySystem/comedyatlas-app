@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nordine-ganso-en-rodage@comedyatlas.app
+DTSTAMP:20261215T193000Z
+DTSTART:20261215T193000Z
+DTEND:20261215T213000Z
+SUMMARY:Nordine Ganso en rodage
+LOCATION:Royale Factory\, 2 rue Jean Houdon\, Versailles
+DESCRIPTION:Je prépare mon nouveau spectacle et j'ai besoin de toi pour le
+  construire.\nMore info: https://comedyatlas.app/comedy-atlas/event/nordine
+ -ganso-en-rodage/
+URL:https://comedyatlas.app/comedy-atlas/event/nordine-ganso-en-rodage/
+END:VEVENT
+END:VCALENDAR

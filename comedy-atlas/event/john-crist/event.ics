@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist@comedyatlas.app
+DTSTAMP:20270206T010000Z
+DTSTART:20270206T010000Z
+DTEND:20270206T030000Z
+SUMMARY:John Crist
+LOCATION:Huntsville Levity Live\, 2012 Memorial Pkwy SW\, Huntsville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist/
+END:VEVENT
+END:VCALENDAR

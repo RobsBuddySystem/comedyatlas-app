@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-allen-totally-81909@comedyatlas.app
+DTSTAMP:20280519T183000Z
+DTSTART:20280519T183000Z
+DTEND:20280519T203000Z
+SUMMARY:Tom Allen: Totally
+LOCATION:Warwick Arts Centre\, Coventry\, University of Warwick\, Coventry
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-allen
+ -totally-81909/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-allen-totally-81909/
+END:VEVENT
+END:VCALENDAR

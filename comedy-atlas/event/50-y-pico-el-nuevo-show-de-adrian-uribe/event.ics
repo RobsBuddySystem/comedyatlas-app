@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:50-y-pico-el-nuevo-show-de-adrian-uribe@comedyatlas.app
+DTSTAMP:20270130T030000Z
+DTSTART:20270130T030000Z
+DTEND:20270130T050000Z
+SUMMARY:50 y pico El Nuevo Show de Adrián Uribe
+LOCATION:Escenario GNP Seguros\, Av. Benito Juárez No. 1002\, Monterrey
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/50-y-pico
+ -el-nuevo-show-de-adrian-uribe/
+URL:https://comedyatlas.app/comedy-atlas/event/50-y-pico-el-nuevo-show-de-a
+ drian-uribe/
+END:VEVENT
+END:VCALENDAR

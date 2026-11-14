@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:henrik-jrgen-jrgen-henrik-show@comedyatlas.app
+DTSTAMP:20261208T193000Z
+DTSTART:20261208T193000Z
+DTEND:20261208T213000Z
+SUMMARY:Henrik & Jørgen\, Jørgen & Henrik Show
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/henrik-jr
+ gen-jrgen-henrik-show/
+URL:https://comedyatlas.app/comedy-atlas/event/henrik-jrgen-jrgen-henrik-sh
+ ow/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:zucchini-sistaz@comedyatlas.app
+DTSTAMP:20271211T180000Z
+DTSTART:20271211T180000Z
+DTEND:20271211T200000Z
+SUMMARY:ZUCCHINI SISTAZ
+LOCATION:Martinikirche Buer\, Kirchplatz\, Melle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/zucchini-
+ sistaz/
+URL:https://comedyatlas.app/comedy-atlas/event/zucchini-sistaz/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ilta-kummelin-kanssa@comedyatlas.app
+DTSTAMP:20270427T160000Z
+DTSTART:20270427T160000Z
+DTEND:20270427T180000Z
+SUMMARY:Ilta Kummelin kanssa
+LOCATION:Kulttuuritalo Virta\,Karelia-sali\, Virastokatu 1\, Imatra
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ilta-kumm
+ elin-kanssa/
+URL:https://comedyatlas.app/comedy-atlas/event/ilta-kummelin-kanssa/
+END:VEVENT
+END:VCALENDAR

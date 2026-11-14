@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-london@comedyatlas.app
+DTSTAMP:20270107T180000Z
+DTSTART:20270107T180000Z
+DTEND:20270107T200000Z
+SUMMARY:COBO : Comedy Shutdown London
+LOCATION:The Top Secret Comedy Club\, 170a Drury Lane\, London\, London
+DESCRIPTION:Bring your friends\, family or crew and get ready for an unforg
+ ettable evening powered by some of the sharpest comedians in the game\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-lond
+ on/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-london/
+END:VEVENT
+END:VCALENDAR

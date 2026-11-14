@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-prverret@comedyatlas.app
+DTSTAMP:20261118T190000Z
+DTSTART:20261118T190000Z
+DTEND:20261118T210000Z
+SUMMARY:Standup Prøverøret
+LOCATION:Dattera Til Hagen\, Grønland 10\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-p
+ rverret/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-prverret/
+END:VEVENT
+END:VCALENDAR

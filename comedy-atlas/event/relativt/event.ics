@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:relativt@comedyatlas.app
+DTSTAMP:20270205T190000Z
+DTSTART:20270205T190000Z
+DTEND:20270205T210000Z
+SUMMARY:Relativt
+LOCATION:Turid's Pub\, Industrigata 5\, Brumunddal
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/relativt/
+URL:https://comedyatlas.app/comedy-atlas/event/relativt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-nihill-taking-tangents-sydney@comedyatlas.app
+DTSTAMP:20261122T080000Z
+DTSTART:20261122T080000Z
+DTEND:20261122T100000Z
+SUMMARY:David Nihill: Taking Tangents - Sydney
+LOCATION:Sydney
+DESCRIPTION:After a sold-out world tour\, comedian and author David Nihill 
+ is back with his brand-new show Taking Tangents\, which promises to do exac
+ tly that.\nMore info: https://comedyatlas.app/comedy-atlas/event/david-nihi
+ ll-taking-tangents-sydney/
+URL:https://comedyatlas.app/comedy-atlas/event/david-nihill-taking-tangents
+ -sydney/
+END:VEVENT
+END:VCALENDAR

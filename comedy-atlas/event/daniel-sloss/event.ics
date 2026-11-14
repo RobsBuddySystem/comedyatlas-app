@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-sloss@comedyatlas.app
+DTSTAMP:20270215T183000Z
+DTSTART:20270215T183000Z
+DTEND:20270215T203000Z
+SUMMARY:Daniel Sloss
+LOCATION:Grieghallen\, Griegsalen\, Edvard Griegs plass 1\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daniel-sl
+ oss/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-sloss/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-holmes-81785@comedyatlas.app
+DTSTAMP:20270321T000000Z
+DTSTART:20270321T000000Z
+DTEND:20270321T020000Z
+SUMMARY:Pete Holmes
+LOCATION:Aria Ballroom at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-holm
+ es-81785/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-holmes-81785/
+END:VEVENT
+END:VCALENDAR

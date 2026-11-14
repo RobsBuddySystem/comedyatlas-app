@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lalelu-a-cappella-comedy@comedyatlas.app
+DTSTAMP:20270218T190000Z
+DTSTART:20270218T190000Z
+DTEND:20270218T210000Z
+SUMMARY:LaLeLu – a cappella comedy
+LOCATION:Kulturetage\, Bahnhofstraße 11\, Oldenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lalelu-a-
+ cappella-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/lalelu-a-cappella-comedy/
+END:VEVENT
+END:VCALENDAR

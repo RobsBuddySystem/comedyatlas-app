@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jan-hellese-hvem-er-du@comedyatlas.app
+DTSTAMP:20280303T190000Z
+DTSTART:20280303T190000Z
+DTEND:20280303T210000Z
+SUMMARY:Jan Hellesøe – Hvem er du?
+LOCATION:Royal Stage\, Milnersvej 39\, Hillerød
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jan-helle
+ se-hvem-er-du/
+URL:https://comedyatlas.app/comedy-atlas/event/jan-hellese-hvem-er-du/
+END:VEVENT
+END:VCALENDAR

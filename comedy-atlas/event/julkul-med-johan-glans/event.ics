@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julkul-med-johan-glans@comedyatlas.app
+DTSTAMP:20261204T203000Z
+DTSTART:20261204T203000Z
+DTEND:20261204T223000Z
+SUMMARY:Julkul med Johan Glans
+LOCATION:Djurönäset\, Seregårdsvägen 1\, Värmdö
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julkul-me
+ d-johan-glans/
+URL:https://comedyatlas.app/comedy-atlas/event/julkul-med-johan-glans/
+END:VEVENT
+END:VCALENDAR

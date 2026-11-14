@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-ilta-funfaari@comedyatlas.app
+DTSTAMP:20261128T170000Z
+DTSTART:20261128T170000Z
+DTEND:20261128T190000Z
+SUMMARY:Stand up -ilta Funfaari
+LOCATION:SIBELIUSTALO\, Ankkurikatu 7\, Lahti
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stand-up-
+ ilta-funfaari/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-ilta-funfaari/
+END:VEVENT
+END:VCALENDAR

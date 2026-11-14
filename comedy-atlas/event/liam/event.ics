@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liam@comedyatlas.app
+DTSTAMP:20270318T190000Z
+DTSTART:20270318T190000Z
+DTEND:20270318T210000Z
+SUMMARY:LIAM
+LOCATION:Portalen\, Portalen 1\, Greve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liam/
+URL:https://comedyatlas.app/comedy-atlas/event/liam/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sold-out-kyle-kinane@comedyatlas.app
+DTSTAMP:20261125T020000Z
+DTSTART:20261125T020000Z
+DTEND:20261125T040000Z
+SUMMARY:*SOLD OUT* Kyle Kinane
+LOCATION:Thalia Hall\, 1807 S Allport St\, Chicago
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sold-out-
+ kyle-kinane/
+URL:https://comedyatlas.app/comedy-atlas/event/sold-out-kyle-kinane/
+END:VEVENT
+END:VCALENDAR

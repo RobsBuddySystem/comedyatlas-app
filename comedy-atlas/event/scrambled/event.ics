@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:scrambled@comedyatlas.app
+DTSTAMP:20261115T184500Z
+DTSTART:20261115T184500Z
+DTEND:20261115T204500Z
+SUMMARY:Scrambled
+LOCATION:New York
+DESCRIPTION:Scrambled.\nMore info: https://comedyatlas.app/comedy-atlas/eve
+ nt/scrambled/
+URL:https://comedyatlas.app/comedy-atlas/event/scrambled/
+END:VEVENT
+END:VCALENDAR

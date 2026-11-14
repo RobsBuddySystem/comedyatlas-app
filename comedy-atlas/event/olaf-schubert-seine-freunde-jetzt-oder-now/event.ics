@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:olaf-schubert-seine-freunde-jetzt-oder-now@comedyatlas.app
+DTSTAMP:20270409T180000Z
+DTSTART:20270409T180000Z
+DTEND:20270409T200000Z
+SUMMARY:Olaf Schubert & seine Freunde - Jetzt oder now!
+LOCATION:Halle 7\, Findorffstr. 101\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/olaf-schu
+ bert-seine-freunde-jetzt-oder-now/
+URL:https://comedyatlas.app/comedy-atlas/event/olaf-schubert-seine-freunde-
+ jetzt-oder-now/
+END:VEVENT
+END:VCALENDAR

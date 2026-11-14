@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:florian-schroeder-schluss-jetzt@comedyatlas.app
+DTSTAMP:20270126T190000Z
+DTSTART:20270126T190000Z
+DTEND:20270126T210000Z
+SUMMARY:Florian Schroeder - Schluss jetzt!
+LOCATION:Theater am Marientor\, Plessingstraße 20\, Duisburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/florian-s
+ chroeder-schluss-jetzt/
+URL:https://comedyatlas.app/comedy-atlas/event/florian-schroeder-schluss-je
+ tzt/
+END:VEVENT
+END:VCALENDAR

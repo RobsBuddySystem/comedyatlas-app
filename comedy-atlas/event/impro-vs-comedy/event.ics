@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:impro-vs-comedy@comedyatlas.app
+DTSTAMP:20270211T190000Z
+DTSTART:20270211T190000Z
+DTEND:20270211T210000Z
+SUMMARY:IMPRO VS. COMEDY
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/impro-vs-
+ comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/impro-vs-comedy/
+END:VEVENT
+END:VCALENDAR

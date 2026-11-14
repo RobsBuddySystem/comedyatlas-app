@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heavy-symphony@comedyatlas.app
+DTSTAMP:20270421T170000Z
+DTSTART:20270421T170000Z
+DTEND:20270421T190000Z
+SUMMARY:Heavy Symphony
+LOCATION:Maihaugsalen\, Maihaugvegen 1\, Lillehammer
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heavy-sym
+ phony/
+URL:https://comedyatlas.app/comedy-atlas/event/heavy-symphony/
+END:VEVENT
+END:VCALENDAR

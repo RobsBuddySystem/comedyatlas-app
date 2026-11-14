@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rickey-smiley-adhd-tour@comedyatlas.app
+DTSTAMP:20270228T020000Z
+DTSTART:20270228T020000Z
+DTEND:20270228T040000Z
+SUMMARY:Rickey Smiley: ADHD Tour
+LOCATION:Beau Rivage Theatre\, 875 Beach Blvd\, Biloxi
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rickey-sm
+ iley-adhd-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/rickey-smiley-adhd-tour/
+END:VEVENT
+END:VCALENDAR

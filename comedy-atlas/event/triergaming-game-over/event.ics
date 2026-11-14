@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:triergaming-game-over@comedyatlas.app
+DTSTAMP:20270925T120000Z
+DTSTART:20270925T120000Z
+DTEND:20270925T140000Z
+SUMMARY:TrierGaming - Game Over
+LOCATION:MCH Herning Kongrescenter\, Østergade 37\, Herning
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/triergami
+ ng-game-over/
+URL:https://comedyatlas.app/comedy-atlas/event/triergaming-game-over/
+END:VEVENT
+END:VCALENDAR

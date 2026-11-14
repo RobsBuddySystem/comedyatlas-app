@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:suspekt-9-liv-tour@comedyatlas.app
+DTSTAMP:20270409T200000Z
+DTSTART:20270409T200000Z
+DTEND:20270409T220000Z
+SUMMARY:Suspekt - 9 Liv Tour
+LOCATION:Arena Næstved\, Ved Stadion 11\, Næstved
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/suspekt-9
+ -liv-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/suspekt-9-liv-tour/
+END:VEVENT
+END:VCALENDAR

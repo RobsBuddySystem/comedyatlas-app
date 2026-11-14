@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rjan-bure-greatest-vits@comedyatlas.app
+DTSTAMP:20261212T190000Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:Ørjan Burøe - Greatest Vits
+LOCATION:Chat Noir\, Klingenberggate 5\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rjan-bure
+ -greatest-vits/
+URL:https://comedyatlas.app/comedy-atlas/event/rjan-bure-greatest-vits/
+END:VEVENT
+END:VCALENDAR

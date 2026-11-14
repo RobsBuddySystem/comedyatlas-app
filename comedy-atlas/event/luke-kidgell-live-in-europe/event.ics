@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-kidgell-live-in-europe@comedyatlas.app
+DTSTAMP:20270917T170000Z
+DTSTART:20270917T170000Z
+DTEND:20270917T190000Z
+SUMMARY:Luke Kidgell: Live in Europe
+LOCATION:Oude Luxor Theater\, Kruiskade 10\, Rotterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-kidg
+ ell-live-in-europe/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-kidgell-live-in-europe/
+END:VEVENT
+END:VCALENDAR

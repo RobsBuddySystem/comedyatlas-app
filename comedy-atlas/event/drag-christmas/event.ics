@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:drag-christmas@comedyatlas.app
+DTSTAMP:20261218T200000Z
+DTSTART:20261218T200000Z
+DTEND:20261218T220000Z
+SUMMARY:Drag Christmas
+LOCATION:YNG Bar & Social\, Youngstorget 3\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/drag-chri
+ stmas/
+URL:https://comedyatlas.app/comedy-atlas/event/drag-christmas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-allen-totally-81908@comedyatlas.app
+DTSTAMP:20280225T193000Z
+DTSTART:20280225T193000Z
+DTEND:20280225T213000Z
+SUMMARY:Tom Allen: Totally
+LOCATION:G Live Guildford\, London Road\, Guildford
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-allen
+ -totally-81908/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-allen-totally-81908/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laurent-febvay-lodeur-du-basilic@comedyatlas.app
+DTSTAMP:20270225T190000Z
+DTSTART:20270225T190000Z
+DTEND:20270225T210000Z
+SUMMARY:Laurent Febvay - L’odeur du basilic
+LOCATION:Le Maxime\, Rue Sigismond-Thalberg 2\, Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/laurent-f
+ ebvay-lodeur-du-basilic/
+URL:https://comedyatlas.app/comedy-atlas/event/laurent-febvay-lodeur-du-bas
+ ilic/
+END:VEVENT
+END:VCALENDAR

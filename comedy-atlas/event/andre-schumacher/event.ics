@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andre-schumacher@comedyatlas.app
+DTSTAMP:20270121T190000Z
+DTSTART:20270121T190000Z
+DTEND:20270121T210000Z
+SUMMARY:André Schumacher
+LOCATION:Kulturzentrum Pumpwerk\, Banter Deich 1A\, Wilhelmshaven
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andre-sch
+ umacher/
+URL:https://comedyatlas.app/comedy-atlas/event/andre-schumacher/
+END:VEVENT
+END:VCALENDAR

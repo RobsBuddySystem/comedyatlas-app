@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wigald-boning@comedyatlas.app
+DTSTAMP:20270321T160000Z
+DTSTART:20270321T160000Z
+DTEND:20270321T180000Z
+SUMMARY:Wigald Boning
+LOCATION:Kulturzentrum Pumpwerk\, Banter Deich 1A\, Wilhelmshaven
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/wigald-bo
+ ning/
+URL:https://comedyatlas.app/comedy-atlas/event/wigald-boning/
+END:VEVENT
+END:VCALENDAR

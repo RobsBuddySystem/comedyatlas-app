@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:den-store-humorkvelden@comedyatlas.app
+DTSTAMP:20270507T190000Z
+DTSTART:20270507T190000Z
+DTEND:20270507T210000Z
+SUMMARY:DEN STORE HUMORKVELDEN
+LOCATION:KRS LIVE\, Elvegata 11a\, Kristiansand S
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/den-store
+ -humorkvelden/
+URL:https://comedyatlas.app/comedy-atlas/event/den-store-humorkvelden/
+END:VEVENT
+END:VCALENDAR

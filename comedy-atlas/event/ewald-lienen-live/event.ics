@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ewald-lienen-live@comedyatlas.app
+DTSTAMP:20270308T190000Z
+DTSTART:20270308T190000Z
+DTEND:20270308T210000Z
+SUMMARY:Ewald Lienen live
+LOCATION:Im Schützenhof\, Schützenhofstraße 47\, Jever
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ewald-lie
+ nen-live/
+URL:https://comedyatlas.app/comedy-atlas/event/ewald-lienen-live/
+END:VEVENT
+END:VCALENDAR

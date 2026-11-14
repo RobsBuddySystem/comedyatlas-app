@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:den-store-nissefesten@comedyatlas.app
+DTSTAMP:20261220T130000Z
+DTSTART:20261220T130000Z
+DTEND:20261220T150000Z
+SUMMARY:Den Store Nissefesten
+LOCATION:Ullensaker Kulturhus\, Kong Rakne\, Furusethgaten 12\, Jessheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/den-store
+ -nissefesten/
+URL:https://comedyatlas.app/comedy-atlas/event/den-store-nissefesten/
+END:VEVENT
+END:VCALENDAR

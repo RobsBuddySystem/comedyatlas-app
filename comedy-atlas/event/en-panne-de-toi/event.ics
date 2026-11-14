@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:en-panne-de-toi@comedyatlas.app
+DTSTAMP:20270116T190000Z
+DTSTART:20270116T190000Z
+DTEND:20270116T210000Z
+SUMMARY:En panne de toi
+LOCATION:THEATRE MARIGNAN\, 53 BOULEVARD JOSEPH TIROU\, Charleroi
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/en-panne-
+ de-toi/
+URL:https://comedyatlas.app/comedy-atlas/event/en-panne-de-toi/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:veslevoksen@comedyatlas.app
+DTSTAMP:20270128T180000Z
+DTSTART:20270128T180000Z
+DTEND:20270128T200000Z
+SUMMARY:Veslevoksen
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/veslevoks
+ en/
+URL:https://comedyatlas.app/comedy-atlas/event/veslevoksen/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78918@comedyatlas.app
+DTSTAMP:20270304T190000Z
+DTSTART:20270304T190000Z
+DTEND:20270304T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Hot Jazz Club\, Hafenweg 26b\, Münster
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78918/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78918/
+END:VEVENT
+END:VCALENDAR

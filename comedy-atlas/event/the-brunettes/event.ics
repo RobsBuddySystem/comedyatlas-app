@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-brunettes@comedyatlas.app
+DTSTAMP:20261114T170000Z
+DTSTART:20261114T170000Z
+DTEND:20261114T190000Z
+SUMMARY:The Brunettes
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-brune
+ ttes/
+URL:https://comedyatlas.app/comedy-atlas/event/the-brunettes/
+END:VEVENT
+END:VCALENDAR

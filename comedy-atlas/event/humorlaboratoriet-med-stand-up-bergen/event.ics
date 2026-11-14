@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:humorlaboratoriet-med-stand-up-bergen@comedyatlas.app
+DTSTAMP:20261117T180000Z
+DTSTART:20261117T180000Z
+DTEND:20261117T200000Z
+SUMMARY:Humorlaboratoriet med Stand Up Bergen
+LOCATION:Børskjelleren\, Vågsallmeningen 1\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/humorlabo
+ ratoriet-med-stand-up-bergen/
+URL:https://comedyatlas.app/comedy-atlas/event/humorlaboratoriet-med-stand-
+ up-bergen/
+END:VEVENT
+END:VCALENDAR

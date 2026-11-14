@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ben-knight-show-tell@comedyatlas.app
+DTSTAMP:20270320T083000Z
+DTSTART:20270320T083000Z
+DTEND:20270320T103000Z
+SUMMARY:Ben Knight - Show & Tell
+LOCATION:Odeon Theatre\, 167 Liverpool St\, Hobart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ben-knigh
+ t-show-tell/
+URL:https://comedyatlas.app/comedy-atlas/event/ben-knight-show-tell/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paskestandup-med-stand-up-bergen-80790@comedyatlas.app
+DTSTAMP:20270326T190000Z
+DTSTART:20270326T190000Z
+DTEND:20270326T210000Z
+SUMMARY:Påskestandup med Stand Up Bergen
+LOCATION:Lille Ole Bull\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paskestan
+ dup-med-stand-up-bergen-80790/
+URL:https://comedyatlas.app/comedy-atlas/event/paskestandup-med-stand-up-be
+ rgen-80790/
+END:VEVENT
+END:VCALENDAR

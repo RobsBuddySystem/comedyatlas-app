@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:niko-kivela-sananvapaus@comedyatlas.app
+DTSTAMP:20270213T170000Z
+DTSTART:20270213T170000Z
+DTEND:20270213T190000Z
+SUMMARY:Niko Kivelä - SANANVAPAUS
+LOCATION:SIBELIUSTALO\, Ankkurikatu 7\, Lahti
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/niko-kive
+ la-sananvapaus/
+URL:https://comedyatlas.app/comedy-atlas/event/niko-kivela-sananvapaus/
+END:VEVENT
+END:VCALENDAR

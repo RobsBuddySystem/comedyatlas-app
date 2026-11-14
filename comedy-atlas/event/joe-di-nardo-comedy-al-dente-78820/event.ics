@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-di-nardo-comedy-al-dente-78820@comedyatlas.app
+DTSTAMP:20270108T190000Z
+DTSTART:20270108T190000Z
+DTEND:20270108T210000Z
+SUMMARY:Joe Di Nardo - COMEDY al dente
+LOCATION:TiG - Theater im Gründungshaus\, Eickener Str. 88\, Mönchengladb
+ ach
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-di-na
+ rdo-comedy-al-dente-78820/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-di-nardo-comedy-al-dente
+ -78820/
+END:VEVENT
+END:VCALENDAR

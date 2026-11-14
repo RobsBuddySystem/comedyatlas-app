@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kat-bird-76776@comedyatlas.app
+DTSTAMP:20270131T010000Z
+DTSTART:20270131T010000Z
+DTEND:20270131T030000Z
+SUMMARY:Kat Bird
+LOCATION:Acme Comedy Company\, 708 North First Street\, Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kat-bird-
+ 76776/
+URL:https://comedyatlas.app/comedy-atlas/event/kat-bird-76776/
+END:VEVENT
+END:VCALENDAR

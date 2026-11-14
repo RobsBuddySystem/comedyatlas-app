@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crystal-marie-call-me-mommy@comedyatlas.app
+DTSTAMP:20270401T230000Z
+DTSTART:20270401T230000Z
+DTEND:20270402T010000Z
+SUMMARY:Crystal Marie: Call Me Mommy
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/crystal-m
+ arie-call-me-mommy/
+URL:https://comedyatlas.app/comedy-atlas/event/crystal-marie-call-me-mommy/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-tunes-comedy-night-80069@comedyatlas.app
+DTSTAMP:20270211T193000Z
+DTSTART:20270211T193000Z
+DTEND:20270211T213000Z
+SUMMARY:Comedy Tunes Comedy Night
+LOCATION:Metropool Hengelo\, Industrieplein 10\, Hengelo OV
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-tu
+ nes-comedy-night-80069/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-tunes-comedy-night-80
+ 069/
+END:VEVENT
+END:VCALENDAR

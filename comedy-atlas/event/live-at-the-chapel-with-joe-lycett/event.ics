@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-at-the-chapel-with-joe-lycett@comedyatlas.app
+DTSTAMP:20270206T193000Z
+DTSTART:20270206T193000Z
+DTEND:20270206T213000Z
+SUMMARY:Live At the Chapel with Joe Lycett
+LOCATION:Union Chapel\, Compton Terrace\, Off Upper ST\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/live-at-t
+ he-chapel-with-joe-lycett/
+URL:https://comedyatlas.app/comedy-atlas/event/live-at-the-chapel-with-joe-
+ lycett/
+END:VEVENT
+END:VCALENDAR

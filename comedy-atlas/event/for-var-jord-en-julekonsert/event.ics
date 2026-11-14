@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:for-var-jord-en-julekonsert@comedyatlas.app
+DTSTAMP:20261215T180000Z
+DTSTART:20261215T180000Z
+DTEND:20261215T200000Z
+SUMMARY:For Vår Jord - En Julekonsert
+LOCATION:Ullensaker Kulturhus\, Kong Rakne\, Furusethgaten 12\, Jessheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/for-var-j
+ ord-en-julekonsert/
+URL:https://comedyatlas.app/comedy-atlas/event/for-var-jord-en-julekonsert/
+END:VEVENT
+END:VCALENDAR

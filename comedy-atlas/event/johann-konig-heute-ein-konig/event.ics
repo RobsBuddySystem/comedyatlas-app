@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:johann-konig-heute-ein-konig@comedyatlas.app
+DTSTAMP:20270918T180000Z
+DTSTART:20270918T180000Z
+DTEND:20270918T200000Z
+SUMMARY:Johann König - Heute ein König
+LOCATION:Halle 7\, Findorffstr. 101\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/johann-ko
+ nig-heute-ein-konig/
+URL:https://comedyatlas.app/comedy-atlas/event/johann-konig-heute-ein-konig
+ /
+END:VEVENT
+END:VCALENDAR

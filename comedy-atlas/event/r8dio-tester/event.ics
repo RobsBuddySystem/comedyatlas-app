@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:r8dio-tester@comedyatlas.app
+DTSTAMP:20270119T193000Z
+DTSTART:20270119T193000Z
+DTEND:20270119T213000Z
+SUMMARY:R8dio Tester
+LOCATION:Hanstholm Madbar\, Helshagevej 98\, Hanstholm
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/r8dio-tes
+ ter/
+URL:https://comedyatlas.app/comedy-atlas/event/r8dio-tester/
+END:VEVENT
+END:VCALENDAR

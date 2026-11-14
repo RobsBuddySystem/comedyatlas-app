@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tom-allen-totally-81918@comedyatlas.app
+DTSTAMP:20280120T193000Z
+DTSTART:20280120T193000Z
+DTEND:20280120T213000Z
+SUMMARY:Tom Allen: Totally
+LOCATION:Fareham Live\, 34 OSBORNE ROAD\, Fareham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tom-allen
+ -totally-81918/
+URL:https://comedyatlas.app/comedy-atlas/event/tom-allen-totally-81918/
+END:VEVENT
+END:VCALENDAR

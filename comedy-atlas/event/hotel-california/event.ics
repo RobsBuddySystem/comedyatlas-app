@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hotel-california@comedyatlas.app
+DTSTAMP:20280226T190000Z
+DTSTART:20280226T190000Z
+DTEND:20280226T210000Z
+SUMMARY:Hotel California
+LOCATION:Théâtre Royal\, Grand Place\, Mons
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hotel-cal
+ ifornia/
+URL:https://comedyatlas.app/comedy-atlas/event/hotel-california/
+END:VEVENT
+END:VCALENDAR

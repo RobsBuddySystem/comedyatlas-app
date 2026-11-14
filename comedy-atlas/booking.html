@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booking — COMEDY ATLAS</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/booking.html">
+<link rel="manifest" href="/comedy-atlas/manifest.webmanifest">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="stylesheet" href="booking.css?v=20261114b">
+</head>
+<body>
+<div id="bk-signed-out" class="bk-signedout" style="display:none">
+  <p>Sign in to open the booking app.</p>
+  <p><a href="/comedy-atlas/login.html?role=booker&amp;next=/comedy-atlas/booking.html">Sign in / create account →</a></p>
+</div>
+<div id="bk-app" class="bk-app" style="display:none">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header class="bk-topbar"><button type="button" id="bk-burger" aria-label="Open menu">☰</button><span class="bk-wordmark">COMEDY <span>ATLAS</span></span></header>
+  <aside class="bk-side" id="bk-side" aria-label="Booking navigation">
+    <div class="bk-brand"><span class="bk-wordmark">COMEDY <span>ATLAS</span></span><small>Booking</small></div>
+    <nav id="bk-nav" class="bk-nav"><a class="bk-navitem" href="#shows">Shows</a><a class="bk-navitem" href="#surveys">Surveys</a><a class="bk-navitem" href="#offers">Offers</a><a class="bk-navitem" href="#settlements">Settlements</a><a class="bk-navitem" href="#venues">Venues</a><a class="bk-navitem" href="#acts">Acts &amp; Contacts</a><a class="bk-navitem" href="#festivals">Festivals</a><a class="bk-navitem" href="#settings">Settings</a></nav>
+    <div class="bk-sechead">Shows By Type</div>
+    <nav id="bk-types" class="bk-types"></nav>
+    <div class="bk-sidefoot">
+      <a class="bk-navitem" href="https://confirmed.show" rel="noopener" target="_blank"><span class="bk-ico">?</span>Help &amp; Support</a>
+      <div class="bk-user"><span class="bk-av" id="bk-uav">?</span><span class="bk-uname" id="bk-uname"></span><span class="bk-udots">⋮</span></div>
+      <a class="confirmed-credit" href="https://confirmed.show" rel="noopener" target="_blank"><span class="confirmed-credit-logo" aria-hidden="true"></span>Powered by confirmed.show</a>
+    </div>
+  </aside>
+  <div class="bk-scrim" id="bk-scrim"></div>
+  <div id="main-content" class="bk-skip-target" tabindex="-1"></div>
+  <main class="bk-main" id="bk-main"><div class="bk-muted">Loading…</div></main>
+</div>
+<footer class="bk-footer">
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a> &middot; <a href="/comedy-atlas/data-deletion.html">Data deletion</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+</footer>
+<div id="bk-modal" class="bk-modal" hidden><div class="bk-panel" role="dialog" aria-modal="true" aria-label="Show" tabindex="-1"></div></div>
+<div id="bk-drawer" class="bk-drawer" hidden><div class="bk-dpanel" role="dialog" aria-modal="true" tabindex="-1"></div></div>
+<script src="atlas-auth.js"></script>
+<script src="booking.js?v=20261110g"></script>
+</body>
+</html>

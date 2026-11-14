@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dr-bergland-pa-dd-og-liv@comedyatlas.app
+DTSTAMP:20261202T200000Z
+DTSTART:20261202T200000Z
+DTEND:20261202T220000Z
+SUMMARY:Dr. Bergland på Død og Liv
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dr-bergla
+ nd-pa-dd-og-liv/
+URL:https://comedyatlas.app/comedy-atlas/event/dr-bergland-pa-dd-og-liv/
+END:VEVENT
+END:VCALENDAR

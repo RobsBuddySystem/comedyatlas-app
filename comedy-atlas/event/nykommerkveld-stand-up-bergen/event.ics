@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nykommerkveld-stand-up-bergen@comedyatlas.app
+DTSTAMP:20270320T200000Z
+DTSTART:20270320T200000Z
+DTEND:20270320T220000Z
+SUMMARY:Nykommerkveld - Stand Up Bergen
+LOCATION:Lille Ole Bull\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nykommerk
+ veld-stand-up-bergen/
+URL:https://comedyatlas.app/comedy-atlas/event/nykommerkveld-stand-up-berge
+ n/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nurse-john-81839@comedyatlas.app
+DTSTAMP:20270418T000000Z
+DTSTART:20270418T000000Z
+DTEND:20270418T020000Z
+SUMMARY:Nurse John
+LOCATION:Majestic Theatre San Antonio\, 226 East Houston Street\, San Anton
+ io
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nurse-joh
+ n-81839/
+URL:https://comedyatlas.app/comedy-atlas/event/nurse-john-81839/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:something-got-wrong-et-soloshow-av-vegar-tryggeseid-80705@comedyatlas.a
+ pp
+DTSTAMP:20270225T180000Z
+DTSTART:20270225T180000Z
+DTEND:20270225T200000Z
+SUMMARY:Something Got Wrong – Et soloshow av Vegar Tryggeseid
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/something
+ -got-wrong-et-soloshow-av-vegar-tryggeseid-80705/
+URL:https://comedyatlas.app/comedy-atlas/event/something-got-wrong-et-solos
+ how-av-vegar-tryggeseid-80705/
+END:VEVENT
+END:VCALENDAR

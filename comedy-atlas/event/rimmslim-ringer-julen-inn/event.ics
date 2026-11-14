@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rimmslim-ringer-julen-inn@comedyatlas.app
+DTSTAMP:20261211T180000Z
+DTSTART:20261211T180000Z
+DTEND:20261211T200000Z
+SUMMARY:Rimmslim ringer julen inn
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rimmslim-
+ ringer-julen-inn/
+URL:https://comedyatlas.app/comedy-atlas/event/rimmslim-ringer-julen-inn/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lounge-comedy-4@comedyatlas.app
+DTSTAMP:20261202T184500Z
+DTSTART:20261202T184500Z
+DTEND:20261202T204500Z
+SUMMARY:Lounge Comedy 4
+LOCATION:Liverpool Olympia\, West Derby Road\, Liverpool
+DESCRIPTION:Monthly comedy night with local acts\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/lounge-comedy-4/
+URL:https://comedyatlas.app/comedy-atlas/event/lounge-comedy-4/
+END:VEVENT
+END:VCALENDAR

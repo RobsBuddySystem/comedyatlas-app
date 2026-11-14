@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:homo-for-the-holigays@comedyatlas.app
+DTSTAMP:20261218T003000Z
+DTSTART:20261218T003000Z
+DTEND:20261218T023000Z
+SUMMARY:Homo For The Holigays
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/homo-for-
+ the-holigays/
+URL:https://comedyatlas.app/comedy-atlas/event/homo-for-the-holigays/
+END:VEVENT
+END:VCALENDAR

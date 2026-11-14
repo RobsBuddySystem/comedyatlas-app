@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78869@comedyatlas.app
+DTSTAMP:20270211T190000Z
+DTSTART:20270211T190000Z
+DTEND:20270211T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Werk 2 (Halle D)\, Kochstraße 132\, Leipzig
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78869/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78869/
+END:VEVENT
+END:VCALENDAR

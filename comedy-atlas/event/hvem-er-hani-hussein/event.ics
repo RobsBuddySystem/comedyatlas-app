@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hvem-er-hani-hussein@comedyatlas.app
+DTSTAMP:20270121T180000Z
+DTSTART:20270121T180000Z
+DTEND:20270121T200000Z
+SUMMARY:Hvem er Hani Hussein?
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hvem-er-h
+ ani-hussein/
+URL:https://comedyatlas.app/comedy-atlas/event/hvem-er-hani-hussein/
+END:VEVENT
+END:VCALENDAR

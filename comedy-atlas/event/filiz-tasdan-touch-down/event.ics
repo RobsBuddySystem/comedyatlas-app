@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:filiz-tasdan-touch-down@comedyatlas.app
+DTSTAMP:20280423T170000Z
+DTSTART:20280423T170000Z
+DTEND:20280423T190000Z
+SUMMARY:FILIZ TASDAN - TOUCH DOWN
+LOCATION:Metropol Theater Bremen\, Richtweg 7-13\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/filiz-tas
+ dan-touch-down/
+URL:https://comedyatlas.app/comedy-atlas/event/filiz-tasdan-touch-down/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81772@comedyatlas.app
+DTSTAMP:20270313T040000Z
+DTSTART:20270313T040000Z
+DTEND:20270313T060000Z
+SUMMARY:John Crist: Live!
+LOCATION:Encore Theater at Wynn Las Vegas\, 3131 Las Vegas Boulevard South\
+ , Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81772/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81772/
+END:VEVENT
+END:VCALENDAR

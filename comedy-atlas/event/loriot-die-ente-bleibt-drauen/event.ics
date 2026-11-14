@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:loriot-die-ente-bleibt-drauen@comedyatlas.app
+DTSTAMP:20270130T140000Z
+DTSTART:20270130T140000Z
+DTEND:20270130T160000Z
+SUMMARY:LORIOT - Die Ente bleibt draußen
+LOCATION:Theater am Marientor\, Plessingstraße 20\, Duisburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/loriot-di
+ e-ente-bleibt-drauen/
+URL:https://comedyatlas.app/comedy-atlas/event/loriot-die-ente-bleibt-draue
+ n/
+END:VEVENT
+END:VCALENDAR

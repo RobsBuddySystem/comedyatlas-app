@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:der-storb-triggerwarnung@comedyatlas.app
+DTSTAMP:20270219T190000Z
+DTSTART:20270219T190000Z
+DTEND:20270219T210000Z
+SUMMARY:Der Storb - "TRIGGERWARNUNG"
+LOCATION:Fehntjer Forum\, Untenende 4\, Rhauderfehn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/der-storb
+ -triggerwarnung/
+URL:https://comedyatlas.app/comedy-atlas/event/der-storb-triggerwarnung/
+END:VEVENT
+END:VCALENDAR

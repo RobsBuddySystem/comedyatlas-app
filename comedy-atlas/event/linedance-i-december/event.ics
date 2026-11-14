@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:linedance-i-december@comedyatlas.app
+DTSTAMP:20261204T180000Z
+DTSTART:20261204T180000Z
+DTEND:20261204T200000Z
+SUMMARY:Linedance i december
+LOCATION:Teaterbygningen\, Bag Haverne 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/linedance
+ -i-december/
+URL:https://comedyatlas.app/comedy-atlas/event/linedance-i-december/
+END:VEVENT
+END:VCALENDAR

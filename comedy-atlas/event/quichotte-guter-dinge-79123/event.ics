@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-79123@comedyatlas.app
+DTSTAMP:20280115T190000Z
+DTSTART:20280115T190000Z
+DTEND:20280115T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Universum\, Hauptstraße 9\, Bünde
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-79123/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-79123/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-gaffigan@comedyatlas.app
+DTSTAMP:20270123T040000Z
+DTSTART:20270123T040000Z
+DTEND:20270123T060000Z
+SUMMARY:Jim Gaffigan
+LOCATION:Muckleshoot Casino Events Center\, 2402 Auburn Way S\, Auburn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-gaffi
+ gan/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-gaffigan/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:de-kalder-mig-heino-79499@comedyatlas.app
+DTSTAMP:20271118T183000Z
+DTSTART:20271118T183000Z
+DTEND:20271118T203000Z
+SUMMARY:DE KALDER MIG HEINO
+LOCATION:Portalen\, Portalen 1\, Greve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/de-kalder
+ -mig-heino-79499/
+URL:https://comedyatlas.app/comedy-atlas/event/de-kalder-mig-heino-79499/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shapel-lacey-live@comedyatlas.app
+DTSTAMP:20270416T230000Z
+DTSTART:20270416T230000Z
+DTEND:20270417T010000Z
+SUMMARY:Shapel Lacey Live
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/shapel-la
+ cey-live/
+URL:https://comedyatlas.app/comedy-atlas/event/shapel-lacey-live/
+END:VEVENT
+END:VCALENDAR

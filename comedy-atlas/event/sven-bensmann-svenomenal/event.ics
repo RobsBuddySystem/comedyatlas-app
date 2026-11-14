@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sven-bensmann-svenomenal@comedyatlas.app
+DTSTAMP:20261203T190000Z
+DTSTART:20261203T190000Z
+DTEND:20261203T210000Z
+SUMMARY:SVEN BENSMANN - SVENOMENAL
+LOCATION:Aurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sven-bens
+ mann-svenomenal/
+URL:https://comedyatlas.app/comedy-atlas/event/sven-bensmann-svenomenal/
+END:VEVENT
+END:VCALENDAR

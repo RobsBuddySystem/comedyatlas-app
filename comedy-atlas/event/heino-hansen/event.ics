@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heino-hansen@comedyatlas.app
+DTSTAMP:20280310T183000Z
+DTSTART:20280310T183000Z
+DTEND:20280310T203000Z
+SUMMARY:Heino Hansen
+LOCATION:Teaterbygningen\, Bag Haverne 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heino-han
+ sen/
+URL:https://comedyatlas.app/comedy-atlas/event/heino-hansen/
+END:VEVENT
+END:VCALENDAR

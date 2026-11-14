@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:restefest@comedyatlas.app
+DTSTAMP:20270306T180000Z
+DTSTART:20270306T180000Z
+DTEND:20270306T200000Z
+SUMMARY:Restefest
+LOCATION:Edderkoppen Scene\, St.Olavs plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/restefest
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/restefest/
+END:VEVENT
+END:VCALENDAR

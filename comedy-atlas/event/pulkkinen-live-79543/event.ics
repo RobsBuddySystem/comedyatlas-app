@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pulkkinen-live-79543@comedyatlas.app
+DTSTAMP:20261121T160018Z
+DTSTART:20261121T160018Z
+DTEND:20261121T180018Z
+SUMMARY:Pulkkinen Live
+LOCATION:RioLive\, Hallituskatu 11\, Oulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pulkkinen
+ -live-79543/
+URL:https://comedyatlas.app/comedy-atlas/event/pulkkinen-live-79543/
+END:VEVENT
+END:VCALENDAR

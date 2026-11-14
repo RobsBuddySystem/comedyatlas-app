@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:impro-comedy-vs-poetry-slam@comedyatlas.app
+DTSTAMP:20261203T190000Z
+DTSTART:20261203T190000Z
+DTEND:20261203T210000Z
+SUMMARY:IMPRO COMEDY VS. POETRY SLAM
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/impro-com
+ edy-vs-poetry-slam/
+URL:https://comedyatlas.app/comedy-atlas/event/impro-comedy-vs-poetry-slam/
+END:VEVENT
+END:VCALENDAR

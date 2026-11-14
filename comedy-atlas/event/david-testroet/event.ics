@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-testroet@comedyatlas.app
+DTSTAMP:20270404T020000Z
+DTSTART:20270404T020000Z
+DTEND:20270404T040000Z
+SUMMARY:David Testroet
+LOCATION:Admiral Theatre - WA\, 515 Pacific Ave\, Bremerton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-tes
+ troet/
+URL:https://comedyatlas.app/comedy-atlas/event/david-testroet/
+END:VEVENT
+END:VCALENDAR

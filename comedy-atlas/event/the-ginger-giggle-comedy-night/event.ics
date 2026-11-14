@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-ginger-giggle-comedy-night@comedyatlas.app
+DTSTAMP:20270220T183000Z
+DTSTART:20270220T183000Z
+DTEND:20270220T203000Z
+SUMMARY:The Ginger Giggle Comedy Night
+LOCATION:Circus Tavern\, Mead Corner\, London Road\, Romford
+DESCRIPTION:The Ginger Giggle Club is coming to the Circus Tavern this comi
+ ng Feb\nMore info: https://comedyatlas.app/comedy-atlas/event/the-ginger-gi
+ ggle-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/the-ginger-giggle-comedy-nig
+ ht/
+END:VEVENT
+END:VCALENDAR

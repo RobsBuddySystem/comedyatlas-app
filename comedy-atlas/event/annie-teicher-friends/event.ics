@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:annie-teicher-friends@comedyatlas.app
+DTSTAMP:20270118T010000Z
+DTSTART:20270118T010000Z
+DTEND:20270118T030000Z
+SUMMARY:Annie Teicher & Friends
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/annie-tei
+ cher-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/annie-teicher-friends/
+END:VEVENT
+END:VCALENDAR

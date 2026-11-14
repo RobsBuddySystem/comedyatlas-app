@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:meute@comedyatlas.app
+DTSTAMP:20270508T170000Z
+DTSTART:20270508T170000Z
+DTEND:20270508T190000Z
+SUMMARY:MEUTE
+LOCATION:Sentrum Scene\, Arbeidersamfunnets plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/meute/
+URL:https://comedyatlas.app/comedy-atlas/event/meute/
+END:VEVENT
+END:VCALENDAR

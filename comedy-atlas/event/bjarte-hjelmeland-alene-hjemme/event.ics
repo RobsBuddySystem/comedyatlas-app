@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bjarte-hjelmeland-alene-hjemme@comedyatlas.app
+DTSTAMP:20270414T170000Z
+DTSTART:20270414T170000Z
+DTEND:20270414T190000Z
+SUMMARY:Bjarte Hjelmeland - Alene hjemme
+LOCATION:Ole Bull Scene\, Bergen\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bjarte-hj
+ elmeland-alene-hjemme/
+URL:https://comedyatlas.app/comedy-atlas/event/bjarte-hjelmeland-alene-hjem
+ me/
+END:VEVENT
+END:VCALENDAR

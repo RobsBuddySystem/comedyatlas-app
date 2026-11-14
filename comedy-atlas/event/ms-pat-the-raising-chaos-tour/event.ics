@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-the-raising-chaos-tour@comedyatlas.app
+DTSTAMP:20270220T003000Z
+DTSTART:20270220T003000Z
+DTEND:20270220T023000Z
+SUMMARY:Ms. Pat: The Raising Chaos Tour
+LOCATION:The Wilbur\, 246 Tremont St.\, Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-th
+ e-raising-chaos-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-the-raising-chaos-tou
+ r/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-eve-comedy-jam@comedyatlas.app
+DTSTAMP:20270101T000000Z
+DTSTART:20270101T000000Z
+DTEND:20270101T020000Z
+SUMMARY:New Year's Eve Comedy Jam
+LOCATION:Fox Theatre Detroit\, 2211 Woodward Ave\, Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-year-
+ s-eve-comedy-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-eve-comedy-jam/
+END:VEVENT
+END:VCALENDAR

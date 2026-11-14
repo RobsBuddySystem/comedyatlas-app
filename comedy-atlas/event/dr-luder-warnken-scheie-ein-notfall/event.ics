@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dr-luder-warnken-scheie-ein-notfall@comedyatlas.app
+DTSTAMP:20270311T190000Z
+DTSTART:20270311T190000Z
+DTEND:20270311T210000Z
+SUMMARY:Dr. Lüder Warnken - "Scheiße\, ein Notfall!"
+LOCATION:Packhaustheater\, Wüste Stätte 11\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dr-luder-
+ warnken-scheie-ein-notfall/
+URL:https://comedyatlas.app/comedy-atlas/event/dr-luder-warnken-scheie-ein-
+ notfall/
+END:VEVENT
+END:VCALENDAR

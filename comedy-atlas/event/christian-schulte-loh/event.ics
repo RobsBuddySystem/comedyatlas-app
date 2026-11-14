@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christian-schulte-loh@comedyatlas.app
+DTSTAMP:20270212T190000Z
+DTSTART:20270212T190000Z
+DTEND:20270212T210000Z
+SUMMARY:Christian Schulte - Loh
+LOCATION:Markthalle Delmenhorst\, Rathausplatz 2\, Delmenhorst
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/christian
+ -schulte-loh/
+URL:https://comedyatlas.app/comedy-atlas/event/christian-schulte-loh/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sandra-bernhard@comedyatlas.app
+DTSTAMP:20270411T000000Z
+DTSTART:20270411T000000Z
+DTEND:20270411T020000Z
+SUMMARY:Sandra Bernhard
+LOCATION:Howard Theatre\, 620 T Street NW\, Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sandra-be
+ rnhard/
+URL:https://comedyatlas.app/comedy-atlas/event/sandra-bernhard/
+END:VEVENT
+END:VCALENDAR

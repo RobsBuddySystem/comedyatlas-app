@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:keikarit-ensimmainen-jaahyvaiskiertue@comedyatlas.app
+DTSTAMP:20261125T170000Z
+DTSTART:20261125T170000Z
+DTEND:20261125T190000Z
+SUMMARY:Keikarit - ensimmäinen jäähyväiskiertue
+LOCATION:Tullisali\, Tyrnäväntie 16\, Oulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/keikarit-
+ ensimmainen-jaahyvaiskiertue/
+URL:https://comedyatlas.app/comedy-atlas/event/keikarit-ensimmainen-jaahyva
+ iskiertue/
+END:VEVENT
+END:VCALENDAR

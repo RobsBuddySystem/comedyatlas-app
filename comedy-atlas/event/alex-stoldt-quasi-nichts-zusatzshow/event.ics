@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alex-stoldt-quasi-nichts-zusatzshow@comedyatlas.app
+DTSTAMP:20270220T190000Z
+DTSTART:20270220T190000Z
+DTEND:20270220T210000Z
+SUMMARY:ALEX STOLDT - QUASI NICHTS (Zusatzshow)
+LOCATION:Schlachthof (Kesselhalle)\, Findorffstraße 51\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alex-stol
+ dt-quasi-nichts-zusatzshow/
+URL:https://comedyatlas.app/comedy-atlas/event/alex-stoldt-quasi-nichts-zus
+ atzshow/
+END:VEVENT
+END:VCALENDAR

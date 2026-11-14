@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-torry-81646@comedyatlas.app
+DTSTAMP:20261126T033000Z
+DTSTART:20261126T033000Z
+DTEND:20261126T053000Z
+SUMMARY:Joe Torry
+LOCATION:Corona Improv\, 2710 Lakeshore Dr\, Corona
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-torry
+ -81646/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-torry-81646/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kristian-valen-bare-visvas@comedyatlas.app
+DTSTAMP:20270213T180000Z
+DTSTART:20270213T180000Z
+DTEND:20270213T200000Z
+SUMMARY:Kristian Valen - Bare VisVas
+LOCATION:Maihaugsalen\, Maihaugvegen 1\, Lillehammer
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kristian-
+ valen-bare-visvas/
+URL:https://comedyatlas.app/comedy-atlas/event/kristian-valen-bare-visvas/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liam-standup-tour-2027@comedyatlas.app
+DTSTAMP:20270416T183000Z
+DTSTART:20270416T183000Z
+DTEND:20270416T203000Z
+SUMMARY:LIAM - STANDUP TOUR 2027
+LOCATION:Tråden\, Gl. Banegårdsvej 29\, Middelfart
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liam-stan
+ dup-tour-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/liam-standup-tour-2027/
+END:VEVENT
+END:VCALENDAR

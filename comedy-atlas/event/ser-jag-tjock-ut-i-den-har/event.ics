@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ser-jag-tjock-ut-i-den-har@comedyatlas.app
+DTSTAMP:20270128T180000Z
+DTSTART:20270128T180000Z
+DTEND:20270128T200000Z
+SUMMARY:Ser jag tjock ut i den här?
+LOCATION:Gävle Teater\, Teaterplan 1\, Gävle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ser-jag-t
+ jock-ut-i-den-har/
+URL:https://comedyatlas.app/comedy-atlas/event/ser-jag-tjock-ut-i-den-har/
+END:VEVENT
+END:VCALENDAR

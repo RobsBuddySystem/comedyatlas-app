@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:zeiglers-wunderbare-welt-des-fuballs@comedyatlas.app
+DTSTAMP:20270211T190000Z
+DTSTART:20270211T190000Z
+DTEND:20270211T210000Z
+SUMMARY:Zeiglers wunderbare Welt des Fußballs!
+LOCATION:Kulturzentrum Pumpwerk\, Banter Deich 1A\, Wilhelmshaven
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/zeiglers-
+ wunderbare-welt-des-fuballs/
+URL:https://comedyatlas.app/comedy-atlas/event/zeiglers-wunderbare-welt-des
+ -fuballs/
+END:VEVENT
+END:VCALENDAR

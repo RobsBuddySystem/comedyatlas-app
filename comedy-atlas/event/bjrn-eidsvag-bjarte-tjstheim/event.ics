@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bjrn-eidsvag-bjarte-tjstheim@comedyatlas.app
+DTSTAMP:20261122T170000Z
+DTSTART:20261122T170000Z
+DTEND:20261122T190000Z
+SUMMARY:Bjørn Eidsvåg & Bjarte Tjøstheim
+LOCATION:Grieghallen\, Griegsalen\, Edvard Griegs plass 1\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bjrn-eids
+ vag-bjarte-tjstheim/
+URL:https://comedyatlas.app/comedy-atlas/event/bjrn-eidsvag-bjarte-tjstheim
+ /
+END:VEVENT
+END:VCALENDAR

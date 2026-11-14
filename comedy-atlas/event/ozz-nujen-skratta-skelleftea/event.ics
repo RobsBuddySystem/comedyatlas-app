@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ozz-nujen-skratta-skelleftea@comedyatlas.app
+DTSTAMP:20270210T183000Z
+DTSTART:20270210T183000Z
+DTEND:20270210T203000Z
+SUMMARY:Özz Nûjen - Skratta Skellefteå!
+LOCATION:Sara Kulturhus Hjortronet\, Kanalgatan 43b\, Skellefteå
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ozz-nujen
+ -skratta-skelleftea/
+URL:https://comedyatlas.app/comedy-atlas/event/ozz-nujen-skratta-skelleftea
+ /
+END:VEVENT
+END:VCALENDAR

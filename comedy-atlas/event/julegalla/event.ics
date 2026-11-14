@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julegalla@comedyatlas.app
+DTSTAMP:20261120T200000Z
+DTSTART:20261120T200000Z
+DTEND:20261120T220000Z
+SUMMARY:Julegalla
+LOCATION:Teigen Scene\, Ollebukta 3\, Tønsberg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julegalla
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/julegalla/
+END:VEVENT
+END:VCALENDAR

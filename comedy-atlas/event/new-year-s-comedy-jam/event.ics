@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:new-year-s-comedy-jam@comedyatlas.app
+DTSTAMP:20270102T010000Z
+DTSTART:20270102T010000Z
+DTEND:20270102T030000Z
+SUMMARY:New Year's Comedy Jam
+LOCATION:DAR Constitution Hall\, 1776 D Street NW\, Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/new-year-
+ s-comedy-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/new-year-s-comedy-jam/
+END:VEVENT
+END:VCALENDAR

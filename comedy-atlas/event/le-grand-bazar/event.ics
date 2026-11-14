@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-grand-bazar@comedyatlas.app
+DTSTAMP:20261222T200000Z
+DTSTART:20261222T200000Z
+DTEND:20261222T220000Z
+SUMMARY:Le grand bazar
+LOCATION:Théâtre Le Bout\, 6 rue Frochot\, Paris
+DESCRIPTION:Vous étiez fan des Inconnus\, des Robins des Bois ou encore de
+ s Monty Python ? Alors vous allez adorer Le Grand Bazar !\nMore info: https
+ ://comedyatlas.app/comedy-atlas/event/le-grand-bazar/
+URL:https://comedyatlas.app/comedy-atlas/event/le-grand-bazar/
+END:VEVENT
+END:VCALENDAR

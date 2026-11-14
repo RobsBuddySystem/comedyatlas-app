@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jonas-mogensen-sat-comedy-tour@comedyatlas.app
+DTSTAMP:20280126T170000Z
+DTSTART:20280126T170000Z
+DTEND:20280126T190000Z
+SUMMARY:Jonas Mogensen - SAT Comedy Tour
+LOCATION:Pavillonen Centersalen\, Kærvej 11\, Grenaa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jonas-mog
+ ensen-sat-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/jonas-mogensen-sat-comedy-to
+ ur/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emmi-und-willnowsky@comedyatlas.app
+DTSTAMP:20271111T190000Z
+DTSTART:20271111T190000Z
+DTEND:20271111T210000Z
+SUMMARY:Emmi und Willnowsky
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emmi-und-
+ willnowsky/
+URL:https://comedyatlas.app/comedy-atlas/event/emmi-und-willnowsky/
+END:VEVENT
+END:VCALENDAR

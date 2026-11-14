@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mackefisch-komplizirkus@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:MACKEFISCH | KOMPLIZIRKUS
+LOCATION:Lutterbeker\, Dorfstraße 11\, Lutterbek
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mackefisc
+ h-komplizirkus/
+URL:https://comedyatlas.app/comedy-atlas/event/mackefisch-komplizirkus/
+END:VEVENT
+END:VCALENDAR

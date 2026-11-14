@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-di-nardo-comedy-al-dente@comedyatlas.app
+DTSTAMP:20261118T183000Z
+DTSTART:20261118T183000Z
+DTEND:20261118T203000Z
+SUMMARY:Joe Di Nardo - COMEDY al dente
+LOCATION:Volksbühne am Rudolfplatz\, Aachener Straße 5\, Cologne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-di-na
+ rdo-comedy-al-dente/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-di-nardo-comedy-al-dente
+ /
+END:VEVENT
+END:VCALENDAR

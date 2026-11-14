@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jon-lovitz@comedyatlas.app
+DTSTAMP:20270418T000000Z
+DTSTART:20270418T000000Z
+DTEND:20270418T020000Z
+SUMMARY:Jon Lovitz
+LOCATION:The Paramount in concert with Northwell\, 370 New York Ave\, Hunti
+ ngton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jon-lovit
+ z/
+URL:https://comedyatlas.app/comedy-atlas/event/jon-lovitz/
+END:VEVENT
+END:VCALENDAR

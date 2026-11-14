@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81872@comedyatlas.app
+DTSTAMP:20270507T020000Z
+DTSTART:20270507T020000Z
+DTEND:20270507T040000Z
+SUMMARY:John Crist Live!
+LOCATION:Balboa Theatre\, 868 Fourth Avenue\, San Diego
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81872/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81872/
+END:VEVENT
+END:VCALENDAR

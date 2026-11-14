@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hagen-rether-liebe@comedyatlas.app
+DTSTAMP:20270123T183000Z
+DTSTART:20270123T183000Z
+DTEND:20270123T203000Z
+SUMMARY:Hagen Rether - LIEBE
+LOCATION:Stadthalle Verden\, Holzmarkt 15\, Verden
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hagen-ret
+ her-liebe/
+URL:https://comedyatlas.app/comedy-atlas/event/hagen-rether-liebe/
+END:VEVENT
+END:VCALENDAR

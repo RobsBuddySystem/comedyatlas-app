@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hans-magne-skard-skruball@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Hans Magne Skard - Skruball
+LOCATION:Malm hotell\, Kjerkbakken 2\, Malm
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hans-magn
+ e-skard-skruball/
+URL:https://comedyatlas.app/comedy-atlas/event/hans-magne-skard-skruball/
+END:VEVENT
+END:VCALENDAR

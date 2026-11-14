@@ -117,22 +117,57 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .footer-links a{color:var(--muted)}
 .footer-links a:hover{color:var(--text)}
 .footer-links .sep{margin:0 8px;opacity:.5}
+/* Comic workspace — same full-height shell and visual language as booking.html. */
+.comic-side{width:240px;position:fixed;inset:0 auto 0 0;z-index:220;background:var(--card);border-right:1px solid var(--border);padding:14px 10px;display:flex;flex-direction:column;overflow-y:auto}
+.comic-brand{padding:4px 8px 18px}.comic-brand small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.comic-wordmark{font-weight:800;font-size:18px;letter-spacing:.02em}.comic-wordmark span{color:var(--gold)}
+.comic-main-nav{display:flex;flex-direction:column;align-items:stretch;padding:0;border:0;position:static;background:none;gap:2px}
+.comic-main-nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;color:var(--text);font-weight:650;font-size:14px;min-height:40px}.comic-main-nav a:hover,.comic-main-nav a.active{background:rgba(124,58,237,.14);color:#fff}.comic-main-nav a.active{background:var(--purple)}.comic-main-nav a span{width:20px;text-align:center;color:var(--muted)}
+.comic-side-section{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:20px 10px 6px}
+.comic-side-foot{margin-top:auto;border-top:1px solid var(--border);padding:12px 8px 2px;display:flex;align-items:center;gap:9px;font-size:13px;font-weight:650;overflow:hidden}.comic-avatar{width:30px;height:30px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;background:var(--purple);color:#fff;font-size:12px;font-weight:800}
+.comic-topbar{display:none}.comic-scrim{display:none}.legacy-nav{display:none}
+.container{max-width:1180px;margin:0 0 0 240px;padding:24px 28px 60px}.logo{font-size:24px}.badge{margin-bottom:14px}.card{border-radius:12px;padding:22px;box-shadow:0 8px 26px rgba(0,0,0,.10)}
+#app{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.82fr);gap:18px;align-items:start}#app>.card{margin:0}#profile,#availability,#invites{grid-column:1/-1}.card h2{font-size:12px;letter-spacing:.08em}.invite-item,.show-item,.avail-item{padding:13px 4px}.invite-actions button{min-height:38px}
+footer{margin-left:240px}
+@media(max-width:900px){
+ .comic-topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:210;background:var(--card);border-bottom:1px solid var(--border);padding:9px 12px}.comic-topbar button{margin:0;padding:6px 11px;font-size:18px}.comic-top-label{margin-left:auto;color:var(--muted);font-size:12px}
+ .comic-side{transform:translateX(-100%);transition:transform .2s ease}.comic-shell.open .comic-side{transform:none}.comic-shell.open .comic-scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:215}
+ .container{margin:0;padding:18px 14px 60px;max-width:none}footer{margin-left:0}#app{grid-template-columns:1fr}.card{padding:18px}
+}
+@media(max-width:520px){.logo{font-size:20px}.comic-top-label{display:none}.row{display:block}.row>*{margin-bottom:8px}.card{border-radius:10px;padding:15px}.invite-actions{flex-wrap:wrap}.dispo-grid{gap:3px}}
 </style>
 </head>
-<body>
+<body class="comic-shell">
 <a href="#main-content" class="skip-link">Skip to content</a>
-<nav>
-  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+<header class="comic-topbar"><button type="button" id="comic-menu" aria-label="Open menu">☰</button><span class="comic-wordmark">COMEDY <span>ATLAS</span></span><span class="comic-top-label">Comic workspace</span></header>
+<aside class="comic-side" aria-label="Comic workspace navigation">
+  <div class="comic-brand"><span class="comic-wordmark">COMEDY <span>ATLAS</span></span><small>Comic workspace</small></div>
+  <nav class="comic-main-nav">
+    <a href="#invites"><span>✉</span>Offers</a>
+    <a href="#availability"><span>✓</span>Availability</a>
+    <a href="#shows-city"><span>◉</span>Shows near me</a>
+    <a href="#profile"><span>♙</span>My profile</a>
+    <a href="#public-page"><span>↗</span>Public page</a>
+  </nav>
+  <div class="comic-side-section">Account</div>
+  <nav class="comic-main-nav">
+    <a href="notification-settings.html"><span>⚙</span>Notifications</a>
+    <a href="booker.html"><span>⇄</span>Booker portal</a>
+    <a href="#" id="comic-side-signout"><span>←</span>Sign out</a>
+  </nav>
+  <div class="comic-side-foot">
+    <span class="comic-avatar" id="comic-avatar">?</span>
+    <span id="comic-side-name">Your account</span>
+  </div>
+</aside>
+<div class="comic-scrim" id="comic-scrim"></div>
+<nav class="legacy-nav">
+  <a href="/" class="nav-logo"><span class="site-name">Paris Comedy</span></a>
   <div class="nav-links">
-    <a href="/comedy-atlas/search/">Explore</a>
     <a href="/shows.html">Shows</a>
-    <a href="/comedy-atlas/comics/">Comics</a>
-    <a href="/comedy-atlas/venues/">Venues</a>
-    <a href="/comedy-atlas/festival/">Festivals</a>
-    <a href="/comedy-atlas/history/">History</a>
-    <a href="/comedy-atlas/guide/">Learn</a>
-    <a href="/comedy-atlas/blog/">News</a>
-    <a href="/comedy-atlas/login.html">Log in</a>
+    <a href="/comedy-atlas/" style="color:var(--gold);font-weight:700">COMEDY ATLAS</a>
+    <a href="/comedy-atlas/blog/">Blog</a>
+    <a href="/about.html">About</a>
   </div>
   <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
     <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
@@ -169,7 +204,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
   </div>
 
   <div id="app" style="display:none">
-    <div class="card">
+    <div class="card" id="profile">
       <h2>My profile</h2>
       <p class="privacy" style="margin-bottom:6px">Everything below is
       <strong>private by default</strong>. Check "Show on my public page"
@@ -224,7 +259,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
     <datalist id="cities-list"></datalist>
 
-    <div class="card">
+    <div class="card" id="public-page">
       <h2>Your public page</h2>
       <p class="privacy" style="margin-bottom:10px">Only fields you've
       checked "Show on my public page" above (plus availability, below)
@@ -248,7 +283,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       <div class="msg" id="publish-msg"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="availability">
       <h2>My availability</h2>
       <div class="field-label-row">
         <span style="font-size:13px;color:var(--muted)">Let strangers see that you have open dates (never the exact dates unless a date itself is public)</span>
@@ -325,7 +360,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       </details>
     </div>
 
-    <div class="card">
+    <div class="card" id="shows-city">
       <h2>🎤 Shows in my city</h2>
       <p class="privacy" style="margin-bottom:10px">Tap ✓ to say you're
       available for a show — one click, saved instantly.</p>
@@ -349,7 +384,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     useful. Re-add this card (and renderOpportunities/the /opportunities
     fetch below) once the matcher is real; until then it's dead weight. -->
 
-    <div class="card">
+    <div class="card" id="invites">
       <h2>My invites</h2>
       <p class="privacy" style="margin-bottom:10px">Private messages from show-runners.
       Their contact stays internal — respond here and it relays back to them.</p>
@@ -405,6 +440,18 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 (function () {
   "use strict";
   var A = window.AtlasAuth;
+  var shell = document.body;
+  var menuBtn = document.getElementById("comic-menu");
+  var scrim = document.getElementById("comic-scrim");
+  function closeComicMenu() { shell.classList.remove("open"); }
+  if (menuBtn) menuBtn.addEventListener("click", function () { shell.classList.toggle("open"); });
+  if (scrim) scrim.addEventListener("click", closeComicMenu);
+  document.querySelectorAll(".comic-main-nav a").forEach(function (link) {
+    link.addEventListener("click", function () { if (link.hash) closeComicMenu(); });
+  });
+  document.getElementById("comic-side-signout").addEventListener("click", function (ev) {
+    ev.preventDefault(); document.getElementById("atlas-signout").click();
+  });
   // P1.1: logged-out visitors make no /auth/me or /booker|/comic requests.
   if (A.quietLoggedOut) A.quietLoggedOut();   // guarded: a cached older atlas-auth.js lacks it
   var meId = null;
@@ -955,6 +1002,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
       if (p.stage_name) {
         document.getElementById("signed-in-name").textContent = p.stage_name;
         document.getElementById("signed-in-as").style.display = "";
+        document.getElementById("comic-side-name").textContent = p.stage_name;
+        document.getElementById("comic-avatar").textContent = p.stage_name.split(/\s+/).map(function (part) { return part.charAt(0); }).join("").slice(0, 2).toUpperCase();
       }
       document.getElementById("bio").value = p.bio || "";
       document.getElementById("home_market").value = p.home_market || "";

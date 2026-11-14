@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:det-betales-best-of-the-beatles@comedyatlas.app
+DTSTAMP:20270121T180000Z
+DTSTART:20270121T180000Z
+DTEND:20270121T200000Z
+SUMMARY:Det Betales - Best of the Beatles
+LOCATION:Ullensaker Kulturhus\, Kong Rakne\, Furusethgaten 12\, Jessheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/det-betal
+ es-best-of-the-beatles/
+URL:https://comedyatlas.app/comedy-atlas/event/det-betales-best-of-the-beat
+ les/
+END:VEVENT
+END:VCALENDAR

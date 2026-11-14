@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sh-t-show-hosted-by-jordan-klepper@comedyatlas.app
+DTSTAMP:20261114T180000Z
+DTSTART:20261114T180000Z
+DTEND:20261114T200000Z
+SUMMARY:Sh&t Show hosted by Jordan Klepper
+LOCATION:Town Hall\, 123 West 43rd Street\, New York
+DESCRIPTION:Featuring: Lewis Black\, Nicole Conlan\, Jon Glaser\, John Hodg
+ man\, and Asher Perlman.\nMore info: https://comedyatlas.app/comedy-atlas/e
+ vent/sh-t-show-hosted-by-jordan-klepper/
+URL:https://comedyatlas.app/comedy-atlas/event/sh-t-show-hosted-by-jordan-k
+ lepper/
+END:VEVENT
+END:VCALENDAR

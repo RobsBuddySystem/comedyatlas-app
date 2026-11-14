@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-scene@comedyatlas.app
+DTSTAMP:20261129T190000Z
+DTSTART:20261129T190000Z
+DTEND:20261129T210000Z
+SUMMARY:The Scene
+LOCATION:SPOT De Oosterpoort\, Trompsingel 27\, Groningen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-scene
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/the-scene/
+END:VEVENT
+END:VCALENDAR

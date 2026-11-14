@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:moen-a-le-av@comedyatlas.app
+DTSTAMP:20270522T163000Z
+DTSTART:20270522T163000Z
+DTEND:20270522T183000Z
+SUMMARY:Moen å le av
+LOCATION:Lille Ole Bull\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/moen-a-le
+ -av/
+URL:https://comedyatlas.app/comedy-atlas/event/moen-a-le-av/
+END:VEVENT
+END:VCALENDAR

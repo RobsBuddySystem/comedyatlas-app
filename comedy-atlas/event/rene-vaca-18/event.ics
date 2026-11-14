@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rene-vaca-18@comedyatlas.app
+DTSTAMP:20261114T230000Z
+DTSTART:20261114T230000Z
+DTEND:20261115T010000Z
+SUMMARY:Rene Vaca - 18+
+LOCATION:The Senate\, 1022 Senate Street\, Columbia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rene-vaca
+ -18/
+URL:https://comedyatlas.app/comedy-atlas/event/rene-vaca-18/
+END:VEVENT
+END:VCALENDAR

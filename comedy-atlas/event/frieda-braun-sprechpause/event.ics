@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:frieda-braun-sprechpause@comedyatlas.app
+DTSTAMP:20270520T180000Z
+DTSTART:20270520T180000Z
+DTEND:20270520T200000Z
+SUMMARY:Frieda Braun - Sprechpause
+LOCATION:Theater an der Blinke\, Blinke 39\, Leer
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/frieda-br
+ aun-sprechpause/
+URL:https://comedyatlas.app/comedy-atlas/event/frieda-braun-sprechpause/
+END:VEVENT
+END:VCALENDAR

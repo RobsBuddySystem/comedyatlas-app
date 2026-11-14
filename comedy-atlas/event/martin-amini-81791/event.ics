@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-81791@comedyatlas.app
+DTSTAMP:20270325T023000Z
+DTSTART:20270325T023000Z
+DTEND:20270325T043000Z
+SUMMARY:Martin Amini
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-81791/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-81791/
+END:VEVENT
+END:VCALENDAR

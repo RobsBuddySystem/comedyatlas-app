@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:psykodrama-the-experience@comedyatlas.app
+DTSTAMP:20270604T173000Z
+DTSTART:20270604T173000Z
+DTEND:20270604T193000Z
+SUMMARY:Psykodrama - The Experience
+LOCATION:DNB Arena\, Ishockeyveien 1\, Stavanger
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/psykodram
+ a-the-experience/
+URL:https://comedyatlas.app/comedy-atlas/event/psykodrama-the-experience/
+END:VEVENT
+END:VCALENDAR

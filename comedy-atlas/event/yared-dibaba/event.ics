@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yared-dibaba@comedyatlas.app
+DTSTAMP:20270227T180000Z
+DTSTART:20270227T180000Z
+DTEND:20270227T200000Z
+SUMMARY:Yared Dibaba
+LOCATION:Martinikirche Buer\, Kirchplatz\, Melle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/yared-dib
+ aba/
+URL:https://comedyatlas.app/comedy-atlas/event/yared-dibaba/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:blas-i-jula-av-knut-nrum@comedyatlas.app
+DTSTAMP:20261206T180000Z
+DTSTART:20261206T180000Z
+DTEND:20261206T200000Z
+SUMMARY:BLÅS I JULA av Knut Nærum
+LOCATION:Edderkoppen Scene\, St.Olavs plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/blas-i-ju
+ la-av-knut-nrum/
+URL:https://comedyatlas.app/comedy-atlas/event/blas-i-jula-av-knut-nrum/
+END:VEVENT
+END:VCALENDAR

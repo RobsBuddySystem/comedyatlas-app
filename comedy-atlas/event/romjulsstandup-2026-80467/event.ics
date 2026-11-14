@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:romjulsstandup-2026-80467@comedyatlas.app
+DTSTAMP:20261230T180000Z
+DTSTART:20261230T180000Z
+DTEND:20261230T200000Z
+SUMMARY:Romjulsstandup 2026
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/romjulsst
+ andup-2026-80467/
+URL:https://comedyatlas.app/comedy-atlas/event/romjulsstandup-2026-80467/
+END:VEVENT
+END:VCALENDAR

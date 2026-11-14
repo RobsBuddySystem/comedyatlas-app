@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81854@comedyatlas.app
+DTSTAMP:20270426T000000Z
+DTSTART:20270426T000000Z
+DTEND:20270426T020000Z
+SUMMARY:John Crist Live!
+LOCATION:Pensacola Saenger Theatre\, 118 S Palafox\, Pensacola
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81854/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81854/
+END:VEVENT
+END:VCALENDAR

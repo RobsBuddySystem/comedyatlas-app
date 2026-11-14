@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tore-kastad-alltid-pa-etterskudd@comedyatlas.app
+DTSTAMP:20261212T200000Z
+DTSTART:20261212T200000Z
+DTEND:20261212T220000Z
+SUMMARY:Tore Kåstad - Alltid på etterskudd
+LOCATION:Humorhuset Stavangeren\, Vaisenhusgaten 37\, Stavanger
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tore-kast
+ ad-alltid-pa-etterskudd/
+URL:https://comedyatlas.app/comedy-atlas/event/tore-kastad-alltid-pa-etters
+ kudd/
+END:VEVENT
+END:VCALENDAR

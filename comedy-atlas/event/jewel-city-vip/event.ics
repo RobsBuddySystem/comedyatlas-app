@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jewel-city-vip@comedyatlas.app
+DTSTAMP:20270516T230000Z
+DTSTART:20270516T230000Z
+DTEND:20270517T010000Z
+SUMMARY:Jewel City VIP
+LOCATION:Marshall Health Network Arena (formerly Mountain Health Arena)\, 1
+  Civic Center Plaza\, Huntington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jewel-cit
+ y-vip/
+URL:https://comedyatlas.app/comedy-atlas/event/jewel-city-vip/
+END:VEVENT
+END:VCALENDAR

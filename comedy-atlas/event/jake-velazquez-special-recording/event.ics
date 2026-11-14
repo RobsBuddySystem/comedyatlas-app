@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jake-velazquez-special-recording@comedyatlas.app
+DTSTAMP:20261115T160000Z
+DTSTART:20261115T160000Z
+DTEND:20261115T180000Z
+SUMMARY:Jake Velazquez Special Recording
+LOCATION:New York Comedy Club\, 241 East 24th Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jake-vela
+ zquez-special-recording/
+URL:https://comedyatlas.app/comedy-atlas/event/jake-velazquez-special-recor
+ ding/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eure-mutter@comedyatlas.app
+DTSTAMP:20261219T190000Z
+DTSTART:20261219T190000Z
+DTEND:20261219T210000Z
+SUMMARY:Eure Mütter
+LOCATION:Stadthalle Cloppenburg\, Mühlenstraße 20-22\, Cloppenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eure-mutt
+ er/
+URL:https://comedyatlas.app/comedy-atlas/event/eure-mutter/
+END:VEVENT
+END:VCALENDAR

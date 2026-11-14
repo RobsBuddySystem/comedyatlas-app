@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:desi-comedy-fest-in-the-callback-bar@comedyatlas.app
+DTSTAMP:20270116T033000Z
+DTSTART:20270116T033000Z
+DTEND:20270116T053000Z
+SUMMARY:Desi Comedy Fest - in the Callback Bar
+LOCATION:Punch Line Sacramento Callback Bar\, 2100 Arden Way\, Sacramento
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/desi-come
+ dy-fest-in-the-callback-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/desi-comedy-fest-in-the-call
+ back-bar/
+END:VEVENT
+END:VCALENDAR

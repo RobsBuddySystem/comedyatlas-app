@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dmitry-romanov@comedyatlas.app
+DTSTAMP:20261117T180000Z
+DTSTART:20261117T180000Z
+DTEND:20261117T200000Z
+SUMMARY:Dmitry Romanov – “Новые главы”
+LOCATION:Comedy Cafe Amsterdam\, Amsterdam
+DESCRIPTION:Дмитрий Романов — один из самых уз
+ наваемых русскоязычных стендап-комиков 
+ и один из первых участников Stand Up на ТНТ. Е
+ го также знают по проектам «Смех без прав
+ ил»\, «Убойная лига» и сольным […]\n\\n\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/dmitry-romanov/
+URL:https://comedyatlas.app/comedy-atlas/event/dmitry-romanov/
+END:VEVENT
+END:VCALENDAR

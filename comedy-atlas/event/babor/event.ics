@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:babor@comedyatlas.app
+DTSTAMP:20261118T190000Z
+DTSTART:20261118T190000Z
+DTEND:20261118T210000Z
+SUMMARY:Babor
+LOCATION:Le Petit République\, 1 boulevard saint martin\, Paris
+DESCRIPTION:1h de bonheur\, qui n'en a jamais rêvé ?\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/babor/
+URL:https://comedyatlas.app/comedy-atlas/event/babor/
+END:VEVENT
+END:VCALENDAR

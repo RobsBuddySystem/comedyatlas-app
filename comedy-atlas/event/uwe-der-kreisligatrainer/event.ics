@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:uwe-der-kreisligatrainer@comedyatlas.app
+DTSTAMP:20270306T190000Z
+DTSTART:20270306T190000Z
+DTEND:20270306T210000Z
+SUMMARY:UWE! Der Kreisligatrainer
+LOCATION:Aurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/uwe-der-k
+ reisligatrainer/
+URL:https://comedyatlas.app/comedy-atlas/event/uwe-der-kreisligatrainer/
+END:VEVENT
+END:VCALENDAR

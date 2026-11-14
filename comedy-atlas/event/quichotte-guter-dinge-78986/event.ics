@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78986@comedyatlas.app
+DTSTAMP:20270422T180000Z
+DTSTART:20270422T180000Z
+DTEND:20270422T200000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Talbahnhof\, Raiffeisenplatz 1-3\, Eschweiler
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78986/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78986/
+END:VEVENT
+END:VCALENDAR

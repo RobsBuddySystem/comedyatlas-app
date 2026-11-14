@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julekalas-et-improvisert-familiejulehelvete@comedyatlas.app
+DTSTAMP:20261211T170000Z
+DTSTART:20261211T170000Z
+DTEND:20261211T190000Z
+SUMMARY:JULEKALÁS: Et improvisert familiejulehelvete!
+LOCATION:Carls - Storstua\, Trondheimsveien 113\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julekalas
+ -et-improvisert-familiejulehelvete/
+URL:https://comedyatlas.app/comedy-atlas/event/julekalas-et-improvisert-fam
+ iliejulehelvete/
+END:VEVENT
+END:VCALENDAR

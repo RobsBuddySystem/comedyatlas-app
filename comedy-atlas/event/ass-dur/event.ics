@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ass-dur@comedyatlas.app
+DTSTAMP:20271023T180000Z
+DTSTART:20271023T180000Z
+DTEND:20271023T200000Z
+SUMMARY:Ass-Dur
+LOCATION:Kulturetage\, Bahnhofstraße 11\, Oldenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ass-dur/
+URL:https://comedyatlas.app/comedy-atlas/event/ass-dur/
+END:VEVENT
+END:VCALENDAR

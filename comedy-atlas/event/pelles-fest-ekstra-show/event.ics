@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pelles-fest-ekstra-show@comedyatlas.app
+DTSTAMP:20270317T180000Z
+DTSTART:20270317T180000Z
+DTEND:20270317T200000Z
+SUMMARY:Pelles Fest - EKSTRA SHOW
+LOCATION:Pavillonen Centersalen\, Kærvej 11\, Grenaa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pelles-fe
+ st-ekstra-show/
+URL:https://comedyatlas.app/comedy-atlas/event/pelles-fest-ekstra-show/
+END:VEVENT
+END:VCALENDAR

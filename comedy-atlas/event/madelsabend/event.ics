@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:madelsabend@comedyatlas.app
+DTSTAMP:20270911T180000Z
+DTSTART:20270911T180000Z
+DTEND:20270911T200000Z
+SUMMARY:Mädelsabend
+LOCATION:Hamme Forum Ritterhude\, Riesstr. 11\, Ritterhude
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/madelsabe
+ nd/
+URL:https://comedyatlas.app/comedy-atlas/event/madelsabend/
+END:VEVENT
+END:VCALENDAR

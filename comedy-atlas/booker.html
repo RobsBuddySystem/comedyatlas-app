@@ -136,7 +136,20 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 .footer-links a{color:var(--muted)}
 .footer-links a:hover{color:var(--text)}
 .footer-links .sep{margin:0 8px;opacity:.5}
+.cf-show{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.cf-show.open{border-color:var(--gold)}
+.cf-head{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;width:100%;margin:0;padding:12px 14px;background:transparent;color:var(--text);text-align:left;border-radius:0;font-weight:600;min-height:44px}
+.cf-date{color:var(--gold)}.cf-title{flex:1;min-width:140px}.cf-fill{color:var(--muted);font-size:12px;font-weight:500}
+.cf-badge{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.cf-badge.cf-live{border-color:var(--green);color:var(--green)}
+.cf-body{padding:4px 14px 14px;border-top:1px solid var(--border)}.cf-body h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 6px}
+.cf-spot{display:flex;gap:10px;align-items:center;margin-bottom:6px}.cf-spot-l{flex:0 0 96px;font-size:12.5px;color:var(--muted)}.cf-spot select{flex:1;min-height:40px}
+.cf-actions{display:flex;gap:10px;flex-wrap:wrap}
+.confirmed-credit{display:inline-flex;align-items:center;gap:6px;color:var(--gold)!important;font-weight:600;letter-spacing:.02em}
+.confirmed-credit:hover{color:var(--gold-light)!important;text-decoration:underline}
+.confirmed-credit-logo{display:inline-block;width:14px;height:14px;background:url(https://confirmed.show/favicon.svg) center/contain no-repeat;border-radius:3px;opacity:.9}
 </style>
+<link rel="stylesheet" href="booker-workspace.css?v=20261110e">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -263,6 +276,36 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </section>
 
     <section data-tab="shows">
+    <div class="card" id="cfw-card">
+      <div class="cfw-head">
+        <h2>🎤 Programme your shows</h2>
+        <a class="confirmed-credit" href="https://confirmed.show" rel="noopener" target="_blank"><span class="confirmed-credit-logo" aria-hidden="true"></span>Powered by confirmed.show</a>
+        <a class="badge" href="booking.html" style="text-decoration:none">Open booking app →</a>
+      </div>
+      <div class="cfw-tools">
+        <input id="cfw-filter" type="search" placeholder="Filter shows by show, act, venue, date…" aria-label="Filter shows" autocomplete="off">
+        <select id="cfw-type" aria-label="Show type"><option value="">All show types</option></select>
+        <button id="cfw-past" class="secondary" type="button" aria-pressed="false">Past shows</button>
+        <button id="cfw-new" type="button">+ New show</button>
+      </div>
+      <div id="cfw-create" hidden>
+        <div class="row">
+          <div><label for="cf-date">Date</label><input id="cf-date" type="date"></div>
+          <div><label for="cf-time">Start</label><input id="cf-time" type="time" value="20:00"></div>
+          <div><label for="cf-hosts">Hosts</label><input id="cf-hosts" type="number" min="0" max="3" value="1"></div>
+          <div><label for="cf-acts">Acts</label><input id="cf-acts" type="number" min="1" max="12" value="3"></div>
+        </div>
+        <div class="row">
+          <div><label for="cf-type">Show type</label><select id="cf-type"></select></div>
+          <div><label for="cf-venue">Venue</label><select id="cf-venue"></select></div>
+        </div>
+        <label for="cf-desc">Description</label><textarea id="cf-desc" rows="2"></textarea>
+        <button id="cf-create" type="button">Create show</button>
+        <div class="msg" id="cf-new-msg"></div>
+      </div>
+      <div id="cfw-list"></div>
+      <p class="privacy">Show programming powered by <a href="https://confirmed.show" rel="noopener" target="_blank">confirmed.show</a>. Comics are never contacted from here.</p>
+    </div>
     <div class="card" id="dt-card">
       <h2>💶 Your deal with the venue</h2>
       <p class="privacy" style="margin-bottom:10px">Tell us how it works at
@@ -505,6 +548,8 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </section>
 
     <section data-tab="lineups">
+    <div class="card"><h2>🎤 Shows programmed with confirmed.show</h2>
+      <p class="privacy">Fill the spots of a night in <a href="#" id="cf-goto">My shows</a>. Show programming powered by <a href="https://confirmed.show" rel="noopener" target="_blank">confirmed.show</a>.</p></div>
     <div class="card" id="ics-card">
       <h2>📅 Calendar feed</h2>
       <p class="privacy" style="margin-bottom:10px">Subscribe in Google, Apple or Outlook calendar and your
@@ -1050,6 +1095,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <footer>
   <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
   <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a> &middot; <a href="/comedy-atlas/data-deletion.html">Data deletion</a></div>
+  <div class="footer-links"><a class="confirmed-credit" href="https://confirmed.show" rel="noopener" target="_blank"><span class="confirmed-credit-logo" aria-hidden="true"></span>Powered by confirmed.show</a></div>
   <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
   <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
 </footer>
@@ -1106,6 +1152,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
 <script src="atlas-auth.js"></script>
 <script src="atlas-nav.js"></script>
 <script src="atlas-2fa.js"></script>
+<script src="booker-workspace.js?v=20261110e" defer></script>
 <script>
 (function () {
   "use strict";

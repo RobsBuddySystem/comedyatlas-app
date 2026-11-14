@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fullt-ozz@comedyatlas.app
+DTSTAMP:20270320T180000Z
+DTSTART:20270320T180000Z
+DTEND:20270320T200000Z
+SUMMARY:Fullt Özz!
+LOCATION:Nordanåteatern\, Skellefteå
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fullt-ozz
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/fullt-ozz/
+END:VEVENT
+END:VCALENDAR

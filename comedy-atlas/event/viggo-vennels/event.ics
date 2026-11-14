@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:viggo-vennels@comedyatlas.app
+DTSTAMP:20261115T193000Z
+DTSTART:20261115T193000Z
+DTEND:20261115T213000Z
+SUMMARY:Viggo Venneløs
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/viggo-ven
+ nels/
+URL:https://comedyatlas.app/comedy-atlas/event/viggo-vennels/
+END:VEVENT
+END:VCALENDAR

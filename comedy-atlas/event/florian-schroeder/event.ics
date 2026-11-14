@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:florian-schroeder@comedyatlas.app
+DTSTAMP:20270116T190000Z
+DTSTART:20270116T190000Z
+DTEND:20270116T210000Z
+SUMMARY:Florian Schroeder
+LOCATION:Die Glocke (Großer Saal)\, Domsheide 6-8\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/florian-s
+ chroeder/
+URL:https://comedyatlas.app/comedy-atlas/event/florian-schroeder/
+END:VEVENT
+END:VCALENDAR

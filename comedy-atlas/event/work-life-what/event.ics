@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:work-life-what@comedyatlas.app
+DTSTAMP:20270207T183000Z
+DTSTART:20270207T183000Z
+DTEND:20270207T203000Z
+SUMMARY:WORK LIFE WHAT?
+LOCATION:FRITZ Theater\, Herdentorsteinweg 39\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/work-life
+ -what/
+URL:https://comedyatlas.app/comedy-atlas/event/work-life-what/
+END:VEVENT
+END:VCALENDAR

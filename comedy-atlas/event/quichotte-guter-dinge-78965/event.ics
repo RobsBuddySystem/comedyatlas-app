@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78965@comedyatlas.app
+DTSTAMP:20270408T180000Z
+DTSTART:20270408T180000Z
+DTEND:20270408T200000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Karlstorbahnhof\, Marlene-Dietrich-Platz 3\, Heidelberg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78965/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78965/
+END:VEVENT
+END:VCALENDAR

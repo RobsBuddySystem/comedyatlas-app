@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:3-wilhelmshavener-lachnacht@comedyatlas.app
+DTSTAMP:20270117T170000Z
+DTSTART:20270117T170000Z
+DTEND:20270117T190000Z
+SUMMARY:3. Wilhelmshavener Lachnacht
+LOCATION:Kulturzentrum Pumpwerk\, Banter Deich 1A\, Wilhelmshaven
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/3-wilhelm
+ shavener-lachnacht/
+URL:https://comedyatlas.app/comedy-atlas/event/3-wilhelmshavener-lachnacht/
+END:VEVENT
+END:VCALENDAR

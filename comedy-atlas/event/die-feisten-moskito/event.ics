@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:die-feisten-moskito@comedyatlas.app
+DTSTAMP:20270917T180000Z
+DTSTART:20270917T180000Z
+DTEND:20270917T200000Z
+SUMMARY:die feisten - Moskito
+LOCATION:Stadthalle OHZ\, Jacob-Frerichs-Straße 1\, Osterholz-Scharmbeck
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/die-feist
+ en-moskito/
+URL:https://comedyatlas.app/comedy-atlas/event/die-feisten-moskito/
+END:VEVENT
+END:VCALENDAR

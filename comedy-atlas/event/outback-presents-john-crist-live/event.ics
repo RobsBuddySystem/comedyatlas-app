@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:outback-presents-john-crist-live@comedyatlas.app
+DTSTAMP:20270604T000000Z
+DTSTART:20270604T000000Z
+DTEND:20270604T020000Z
+SUMMARY:Outback Presents: John Crist Live!
+LOCATION:RiverPark Center\, 101 Daviess Street\, Owensboro
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/outback-p
+ resents-john-crist-live/
+URL:https://comedyatlas.app/comedy-atlas/event/outback-presents-john-crist-
+ live/
+END:VEVENT
+END:VCALENDAR

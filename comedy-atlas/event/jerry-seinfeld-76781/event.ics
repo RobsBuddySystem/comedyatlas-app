@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-76781@comedyatlas.app
+DTSTAMP:20270220T020000Z
+DTSTART:20270220T020000Z
+DTEND:20270220T040000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Kiva Auditorium at the Albuquerque Convention Center\, 401 2ND STR
+ EET NW\, Albuquerque
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-76781/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-76781/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tomten-ar-far-till-alla-barnen-80958@comedyatlas.app
+DTSTAMP:20261211T183000Z
+DTSTART:20261211T183000Z
+DTEND:20261211T203000Z
+SUMMARY:Tomten är far till alla barnen
+LOCATION:Malmö Arena\, Hyllie Stationstorg 4\, Malmö
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tomten-ar
+ -far-till-alla-barnen-80958/
+URL:https://comedyatlas.app/comedy-atlas/event/tomten-ar-far-till-alla-barn
+ en-80958/
+END:VEVENT
+END:VCALENDAR

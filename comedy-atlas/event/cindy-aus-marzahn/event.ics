@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cindy-aus-marzahn@comedyatlas.app
+DTSTAMP:20270507T180000Z
+DTSTART:20270507T180000Z
+DTEND:20270507T200000Z
+SUMMARY:CINDY AUS MARZAHN
+LOCATION:Theater am Marientor\, Plessingstraße 20\, Duisburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cindy-aus
+ -marzahn/
+URL:https://comedyatlas.app/comedy-atlas/event/cindy-aus-marzahn/
+END:VEVENT
+END:VCALENDAR

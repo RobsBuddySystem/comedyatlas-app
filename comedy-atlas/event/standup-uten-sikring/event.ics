@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-uten-sikring@comedyatlas.app
+DTSTAMP:20261114T180000Z
+DTSTART:20261114T180000Z
+DTEND:20261114T200000Z
+SUMMARY:Standup uten sikring
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-u
+ ten-sikring/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-uten-sikring/
+END:VEVENT
+END:VCALENDAR

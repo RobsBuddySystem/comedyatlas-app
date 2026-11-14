@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81818@comedyatlas.app
+DTSTAMP:20270410T230000Z
+DTSTART:20270410T230000Z
+DTEND:20270411T010000Z
+SUMMARY:John Crist Live!
+LOCATION:Steven Tanger Center for the Performing Arts\, 300 North Elm Stree
+ t\, Greensboro
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81818/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81818/
+END:VEVENT
+END:VCALENDAR

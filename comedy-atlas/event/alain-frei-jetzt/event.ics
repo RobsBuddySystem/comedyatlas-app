@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alain-frei-jetzt@comedyatlas.app
+DTSTAMP:20270312T190000Z
+DTSTART:20270312T190000Z
+DTEND:20270312T210000Z
+SUMMARY:Alain Frei - JETZT!
+LOCATION:Metropol Theater Bremen\, Richtweg 7-13\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alain-fre
+ i-jetzt/
+URL:https://comedyatlas.app/comedy-atlas/event/alain-frei-jetzt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:morten-wichmann@comedyatlas.app
+DTSTAMP:20270520T170000Z
+DTSTART:20270520T170000Z
+DTEND:20270520T190000Z
+SUMMARY:Morten Wichmann
+LOCATION:Tapperiet\, Søndre Badevej 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/morten-wi
+ chmann/
+URL:https://comedyatlas.app/comedy-atlas/event/morten-wichmann/
+END:VEVENT
+END:VCALENDAR

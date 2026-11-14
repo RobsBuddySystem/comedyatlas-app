@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:suomi-nauraa-stand-up-show@comedyatlas.app
+DTSTAMP:20261211T180000Z
+DTSTART:20261211T180000Z
+DTEND:20261211T200000Z
+SUMMARY:Suomi Nauraa - stand up Show
+LOCATION:SIBELIUSTALO\, Ankkurikatu 7\, Lahti
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/suomi-nau
+ raa-stand-up-show/
+URL:https://comedyatlas.app/comedy-atlas/event/suomi-nauraa-stand-up-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gayle-tufts@comedyatlas.app
+DTSTAMP:20271216T190000Z
+DTSTART:20271216T190000Z
+DTEND:20271216T210000Z
+SUMMARY:Gayle Tufts
+LOCATION:Kulturetage\, Bahnhofstraße 11\, Oldenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gayle-tuf
+ ts/
+URL:https://comedyatlas.app/comedy-atlas/event/gayle-tufts/
+END:VEVENT
+END:VCALENDAR

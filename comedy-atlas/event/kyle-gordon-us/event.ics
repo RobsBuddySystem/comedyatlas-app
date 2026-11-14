@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kyle-gordon-us@comedyatlas.app
+DTSTAMP:20270526T180000Z
+DTSTART:20270526T180000Z
+DTEND:20270526T200000Z
+SUMMARY:Kyle Gordon (US)
+LOCATION:Rust\, Guldbergsgade 8\, København N
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kyle-gord
+ on-us/
+URL:https://comedyatlas.app/comedy-atlas/event/kyle-gordon-us/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:red-bastard@comedyatlas.app
+DTSTAMP:20261114T183000Z
+DTSTART:20261114T183000Z
+DTEND:20261114T203000Z
+SUMMARY:Red Bastard
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/red-basta
+ rd/
+URL:https://comedyatlas.app/comedy-atlas/event/red-bastard/
+END:VEVENT
+END:VCALENDAR

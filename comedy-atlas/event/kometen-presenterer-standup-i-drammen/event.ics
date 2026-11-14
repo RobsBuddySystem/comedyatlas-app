@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kometen-presenterer-standup-i-drammen@comedyatlas.app
+DTSTAMP:20261127T180000Z
+DTSTART:20261127T180000Z
+DTEND:20261127T200000Z
+SUMMARY:Kometen presenterer: Standup i Drammen
+LOCATION:Kometen\, Strømsø torg 4\, Drammen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kometen-p
+ resenterer-standup-i-drammen/
+URL:https://comedyatlas.app/comedy-atlas/event/kometen-presenterer-standup-
+ i-drammen/
+END:VEVENT
+END:VCALENDAR

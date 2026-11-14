@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pourquoi-personne-rit@comedyatlas.app
+DTSTAMP:20261126T200000Z
+DTSTART:20261126T200000Z
+DTEND:20261126T220000Z
+SUMMARY:Pourquoi personne rit ?
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Arthur Ravix au Solo.\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/pourquoi-personne-rit/
+URL:https://comedyatlas.app/comedy-atlas/event/pourquoi-personne-rit/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-nrgaard-skgt@comedyatlas.app
+DTSTAMP:20261128T170000Z
+DTSTART:20261128T170000Z
+DTEND:20261128T190000Z
+SUMMARY:Martin Nørgaard - SKÆGT
+LOCATION:Teaterbygningen\, Bag Haverne 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-nr
+ gaard-skgt/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-nrgaard-skgt/
+END:VEVENT
+END:VCALENDAR

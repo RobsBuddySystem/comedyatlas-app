@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jonah-blacksmith-filmkoncert@comedyatlas.app
+DTSTAMP:20270205T200000Z
+DTSTART:20270205T200000Z
+DTEND:20270205T220000Z
+SUMMARY:Jonah Blacksmith Filmkoncert
+LOCATION:Thy-Hallen\, Lerpyttervej 50\, Thisted
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jonah-bla
+ cksmith-filmkoncert/
+URL:https://comedyatlas.app/comedy-atlas/event/jonah-blacksmith-filmkoncert
+ /
+END:VEVENT
+END:VCALENDAR

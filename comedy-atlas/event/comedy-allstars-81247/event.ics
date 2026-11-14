@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-allstars-81247@comedyatlas.app
+DTSTAMP:20261231T003000Z
+DTSTART:20261231T003000Z
+DTEND:20261231T023000Z
+SUMMARY:Comedy Allstars
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-al
+ lstars-81247/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-allstars-81247/
+END:VEVENT
+END:VCALENDAR

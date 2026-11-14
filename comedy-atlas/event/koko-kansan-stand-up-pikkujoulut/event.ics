@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:koko-kansan-stand-up-pikkujoulut@comedyatlas.app
+DTSTAMP:20261127T160000Z
+DTSTART:20261127T160000Z
+DTEND:20261127T180000Z
+SUMMARY:Koko kansan Stand Up -pikkujoulut
+LOCATION:Voimala 1889\, Kasarmintie 1\, Oulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/koko-kans
+ an-stand-up-pikkujoulut/
+URL:https://comedyatlas.app/comedy-atlas/event/koko-kansan-stand-up-pikkujo
+ ulut/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comkean-vercinger-forbudt@comedyatlas.app
+DTSTAMP:20271017T090000Z
+DTSTART:20271017T090000Z
+DTEND:20271017T110000Z
+SUMMARY:ComKean & Vercinger - FORBUDT!
+LOCATION:Trommen\, Bibliotekstorvet 1\, Hørsholm
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comkean-v
+ ercinger-forbudt/
+URL:https://comedyatlas.app/comedy-atlas/event/comkean-vercinger-forbudt/
+END:VEVENT
+END:VCALENDAR

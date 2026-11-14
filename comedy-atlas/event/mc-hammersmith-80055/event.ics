@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mc-hammersmith-80055@comedyatlas.app
+DTSTAMP:20280421T180000Z
+DTSTART:20280421T180000Z
+DTEND:20280421T200000Z
+SUMMARY:MC Hammersmith
+LOCATION:Ambassador Theatre\, Oconnell Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mc-hammer
+ smith-80055/
+URL:https://comedyatlas.app/comedy-atlas/event/mc-hammersmith-80055/
+END:VEVENT
+END:VCALENDAR

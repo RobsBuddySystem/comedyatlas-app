@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-kildal-heime-aleina@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:Kevin Kildal | Heime Aleina
+LOCATION:Havet\, Djupet\, Strandveien 104\, Trondheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-kil
+ dal-heime-aleina/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-kildal-heime-aleina/
+END:VEVENT
+END:VCALENDAR

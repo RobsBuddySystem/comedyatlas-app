@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heldigvis-mitt-siste-soloshow@comedyatlas.app
+DTSTAMP:20261218T180000Z
+DTSTART:20261218T180000Z
+DTEND:20261218T200000Z
+SUMMARY:HELDIGvis mitt siste soloshow
+LOCATION:Grand Hotell Egersund\, Johan Feyers gate 3\, Egersund
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heldigvis
+ -mitt-siste-soloshow/
+URL:https://comedyatlas.app/comedy-atlas/event/heldigvis-mitt-siste-solosho
+ w/
+END:VEVENT
+END:VCALENDAR

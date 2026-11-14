@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rasmus-wallbridge@comedyatlas.app
+DTSTAMP:20270909T173000Z
+DTSTART:20270909T173000Z
+DTEND:20270909T193000Z
+SUMMARY:Rasmus Wallbridge
+LOCATION:Portalen\, Portalen 1\, Greve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rasmus-wa
+ llbridge/
+URL:https://comedyatlas.app/comedy-atlas/event/rasmus-wallbridge/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tomten-ar-far-till-alla-barnen-80966@comedyatlas.app
+DTSTAMP:20261218T183000Z
+DTSTART:20261218T183000Z
+DTEND:20261218T203000Z
+SUMMARY:Tomten är far till alla barnen
+LOCATION:Scandinavium\, Valhallagatan 1\, Göteborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tomten-ar
+ -far-till-alla-barnen-80966/
+URL:https://comedyatlas.app/comedy-atlas/event/tomten-ar-far-till-alla-barn
+ en-80966/
+END:VEVENT
+END:VCALENDAR

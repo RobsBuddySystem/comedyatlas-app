@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halvor-johansson-verdens-verste-menneske@comedyatlas.app
+DTSTAMP:20270122T180000Z
+DTSTART:20270122T180000Z
+DTEND:20270122T200000Z
+SUMMARY:Halvor Johansson: Verdens verste menneske?
+LOCATION:Festiviteten Bar & Scene\, Strandgata 23\, Hamar
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/halvor-jo
+ hansson-verdens-verste-menneske/
+URL:https://comedyatlas.app/comedy-atlas/event/halvor-johansson-verdens-ver
+ ste-menneske/
+END:VEVENT
+END:VCALENDAR

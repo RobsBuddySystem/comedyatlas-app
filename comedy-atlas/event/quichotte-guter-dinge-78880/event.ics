@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78880@comedyatlas.app
+DTSTAMP:20270217T190000Z
+DTSTART:20270217T190000Z
+DTEND:20270217T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Theaterschiff Lübeck\, Willy-Brandt-Allee 10k\, Lübeck
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78880/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78880/
+END:VEVENT
+END:VCALENDAR

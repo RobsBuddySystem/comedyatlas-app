@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lukas-mccrary-comedy-spectacular@comedyatlas.app
+DTSTAMP:20261114T160000Z
+DTSTART:20261114T160000Z
+DTEND:20261114T180000Z
+SUMMARY:Lukas McCrary Comedy Spectacular
+LOCATION:New York
+DESCRIPTION:Lukas McCrary does a standup comedy show in like a really cool\
+ , funny way.\nMore info: https://comedyatlas.app/comedy-atlas/event/lukas-m
+ ccrary-comedy-spectacular/
+URL:https://comedyatlas.app/comedy-atlas/event/lukas-mccrary-comedy-spectac
+ ular/
+END:VEVENT
+END:VCALENDAR

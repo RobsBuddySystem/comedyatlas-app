@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:romjulsstandup-med-stand-up-bergen@comedyatlas.app
+DTSTAMP:20261227T190000Z
+DTSTART:20261227T190000Z
+DTEND:20261227T210000Z
+SUMMARY:Romjulsstandup med Stand Up Bergen
+LOCATION:Lille Ole Bull\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/romjulsst
+ andup-med-stand-up-bergen/
+URL:https://comedyatlas.app/comedy-atlas/event/romjulsstandup-med-stand-up-
+ bergen/
+END:VEVENT
+END:VCALENDAR

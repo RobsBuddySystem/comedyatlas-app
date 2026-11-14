@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dramatisk-et-standupshow-av-og-med-martin-lepperd@comedyatlas.app
+DTSTAMP:20270408T180000Z
+DTSTART:20270408T180000Z
+DTEND:20270408T200000Z
+SUMMARY:Dramatisk - Et standupshow av og med Martin Lepperød
+LOCATION:Christiania Teater\, Oslo\, Stortingsgaten 16\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dramatisk
+ -et-standupshow-av-og-med-martin-lepperd/
+URL:https://comedyatlas.app/comedy-atlas/event/dramatisk-et-standupshow-av-
+ og-med-martin-lepperd/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rosa-schlupfer-die-show@comedyatlas.app
+DTSTAMP:20270424T180000Z
+DTSTART:20270424T180000Z
+DTEND:20270424T200000Z
+SUMMARY:Rosa Schlüpfer - Die Show
+LOCATION:Großer Kuppelsaal\, Rathausstraße 1\, Merchweiler
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rosa-schl
+ upfer-die-show/
+URL:https://comedyatlas.app/comedy-atlas/event/rosa-schlupfer-die-show/
+END:VEVENT
+END:VCALENDAR

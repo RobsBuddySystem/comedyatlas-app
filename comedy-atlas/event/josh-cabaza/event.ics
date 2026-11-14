@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:josh-cabaza@comedyatlas.app
+DTSTAMP:20261126T013000Z
+DTSTART:20261126T013000Z
+DTEND:20261126T033000Z
+SUMMARY:Josh Cabaza
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/josh-caba
+ za/
+URL:https://comedyatlas.app/comedy-atlas/event/josh-cabaza/
+END:VEVENT
+END:VCALENDAR

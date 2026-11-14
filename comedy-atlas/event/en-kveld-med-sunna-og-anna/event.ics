@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:en-kveld-med-sunna-og-anna@comedyatlas.app
+DTSTAMP:20261119T183000Z
+DTSTART:20261119T183000Z
+DTEND:20261119T203000Z
+SUMMARY:EN KVELD med Sunna og Anna
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/en-kveld-
+ med-sunna-og-anna/
+URL:https://comedyatlas.app/comedy-atlas/event/en-kveld-med-sunna-og-anna/
+END:VEVENT
+END:VCALENDAR

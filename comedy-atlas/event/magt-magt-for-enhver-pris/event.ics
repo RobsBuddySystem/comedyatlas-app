@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:magt-magt-for-enhver-pris@comedyatlas.app
+DTSTAMP:20270121T183000Z
+DTSTART:20270121T183000Z
+DTEND:20270121T203000Z
+SUMMARY:MAGT - MAGT FOR ENHVER PRIS
+LOCATION:Aalborghallen\, Europa Plads 4\, Aalborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/magt-magt
+ -for-enhver-pris/
+URL:https://comedyatlas.app/comedy-atlas/event/magt-magt-for-enhver-pris/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:platt-form-julekoncertshow@comedyatlas.app
+DTSTAMP:20261205T150000Z
+DTSTART:20261205T150000Z
+DTEND:20261205T170000Z
+SUMMARY:PLATT-FORM - Julekoncertshow
+LOCATION:Fakultetet\, Europa Plads 4\, Aalborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/platt-for
+ m-julekoncertshow/
+URL:https://comedyatlas.app/comedy-atlas/event/platt-form-julekoncertshow/
+END:VEVENT
+END:VCALENDAR

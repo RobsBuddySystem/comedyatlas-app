@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78989@comedyatlas.app
+DTSTAMP:20270423T180000Z
+DTSTART:20270423T180000Z
+DTEND:20270423T200000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Kattwinkelsche Fabrik\, Kattwinkelstraße 3\, Wermelskirchen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78989/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78989/
+END:VEVENT
+END:VCALENDAR

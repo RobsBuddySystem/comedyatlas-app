@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:borderline@comedyatlas.app
+DTSTAMP:20261211T193000Z
+DTSTART:20261211T193000Z
+DTEND:20261211T213000Z
+SUMMARY:Borderline
+LOCATION:Salle Roger Legrand\, Square Maréchal Liautey\, Puget sur Argens
+DESCRIPTION:Borderline\, c'est une comédie mordante où l'on rit beaucoup.
+ .. Et où l'on se demande soudain : Qui soigne qui ?\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/borderline/
+URL:https://comedyatlas.app/comedy-atlas/event/borderline/
+END:VEVENT
+END:VCALENDAR

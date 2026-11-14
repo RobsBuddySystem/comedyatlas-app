@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:grin-i-mrket@comedyatlas.app
+DTSTAMP:20270211T190000Z
+DTSTART:20270211T190000Z
+DTEND:20270211T210000Z
+SUMMARY:Grin i mørket
+LOCATION:Fakultetet\, Europa Plads 4\, Aalborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/grin-i-mr
+ ket/
+URL:https://comedyatlas.app/comedy-atlas/event/grin-i-mrket/
+END:VEVENT
+END:VCALENDAR

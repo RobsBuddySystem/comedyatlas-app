@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mat-kropp-helse-og-sann@comedyatlas.app
+DTSTAMP:20270127T180000Z
+DTSTART:20270127T180000Z
+DTEND:20270127T200000Z
+SUMMARY:Mat\, kropp\, helse og sånn
+LOCATION:Ullensaker Kulturhus\, Kong Rakne\, Furusethgaten 12\, Jessheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mat-kropp
+ -helse-og-sann/
+URL:https://comedyatlas.app/comedy-atlas/event/mat-kropp-helse-og-sann/
+END:VEVENT
+END:VCALENDAR

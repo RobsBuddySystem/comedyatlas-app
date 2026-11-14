@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emily-catalano-81659@comedyatlas.app
+DTSTAMP:20261221T020000Z
+DTSTART:20261221T020000Z
+DTEND:20261221T040000Z
+SUMMARY:Emily Catalano
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emily-cat
+ alano-81659/
+URL:https://comedyatlas.app/comedy-atlas/event/emily-catalano-81659/
+END:VEVENT
+END:VCALENDAR

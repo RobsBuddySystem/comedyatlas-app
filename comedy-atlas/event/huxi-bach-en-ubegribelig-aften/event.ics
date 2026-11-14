@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:huxi-bach-en-ubegribelig-aften@comedyatlas.app
+DTSTAMP:20261209T180000Z
+DTSTART:20261209T180000Z
+DTEND:20261209T200000Z
+SUMMARY:Huxi Bach - En Ubegribelig Aften
+LOCATION:Europahallen\, Europa Plads 4\, Aalborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/huxi-bach
+ -en-ubegribelig-aften/
+URL:https://comedyatlas.app/comedy-atlas/event/huxi-bach-en-ubegribelig-aft
+ en/
+END:VEVENT
+END:VCALENDAR

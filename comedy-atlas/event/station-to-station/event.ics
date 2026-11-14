@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:station-to-station@comedyatlas.app
+DTSTAMP:20270131T140000Z
+DTSTART:20270131T140000Z
+DTEND:20270131T160000Z
+SUMMARY:Station To Station
+LOCATION:Patronaat\, Zijlsingel 2\, Haarlem
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/station-t
+ o-station/
+URL:https://comedyatlas.app/comedy-atlas/event/station-to-station/
+END:VEVENT
+END:VCALENDAR

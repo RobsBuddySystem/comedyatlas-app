@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jonah-blacksmith-filmkoncert-79246@comedyatlas.app
+DTSTAMP:20270206T200000Z
+DTSTART:20270206T200000Z
+DTEND:20270206T220000Z
+SUMMARY:Jonah Blacksmith Filmkoncert
+LOCATION:Arena Næstved\, Ved Stadion 11\, Næstved
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jonah-bla
+ cksmith-filmkoncert-79246/
+URL:https://comedyatlas.app/comedy-atlas/event/jonah-blacksmith-filmkoncert
+ -79246/
+END:VEVENT
+END:VCALENDAR

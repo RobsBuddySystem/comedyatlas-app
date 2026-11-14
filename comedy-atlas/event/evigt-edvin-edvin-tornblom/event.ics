@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:evigt-edvin-edvin-tornblom@comedyatlas.app
+DTSTAMP:20261205T200000Z
+DTSTART:20261205T200000Z
+DTEND:20261205T220000Z
+SUMMARY:Evigt Edvin - Edvin Törnblom
+LOCATION:Stockholm Waterfront\, Nils Ericsons Plan 4\, Stockholm
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/evigt-edv
+ in-edvin-tornblom/
+URL:https://comedyatlas.app/comedy-atlas/event/evigt-edvin-edvin-tornblom/
+END:VEVENT
+END:VCALENDAR

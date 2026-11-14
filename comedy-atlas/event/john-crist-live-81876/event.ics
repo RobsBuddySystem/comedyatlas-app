@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81876@comedyatlas.app
+DTSTAMP:20270508T020000Z
+DTSTART:20270508T020000Z
+DTEND:20270508T040000Z
+SUMMARY:John Crist Live!
+LOCATION:San Jose Civic\, 135 San Carlos St.\, San Jose
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81876/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81876/
+END:VEVENT
+END:VCALENDAR

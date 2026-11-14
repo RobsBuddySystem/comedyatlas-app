@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:8-bergedorfer-comedy-nacht@comedyatlas.app
+DTSTAMP:20270226T190000Z
+DTSTART:20270226T190000Z
+DTEND:20270226T210000Z
+SUMMARY:8. BERGEDORFER COMEDY NACHT
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/8-bergedo
+ rfer-comedy-nacht/
+URL:https://comedyatlas.app/comedy-atlas/event/8-bergedorfer-comedy-nacht/
+END:VEVENT
+END:VCALENDAR

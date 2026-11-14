@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-originals-76929@comedyatlas.app
+DTSTAMP:20270115T050000Z
+DTSTART:20270115T050000Z
+DTEND:20270115T070000Z
+SUMMARY:The Originals
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Original Room.\nMore info: https://comedy
+ atlas.app/comedy-atlas/event/the-originals-76929/
+URL:https://comedyatlas.app/comedy-atlas/event/the-originals-76929/
+END:VEVENT
+END:VCALENDAR

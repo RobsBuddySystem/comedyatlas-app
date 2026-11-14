@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jan-eggum-ny-dato@comedyatlas.app
+DTSTAMP:20271105T183000Z
+DTSTART:20271105T183000Z
+DTEND:20271105T203000Z
+SUMMARY:Jan Eggum *NY DATO*
+LOCATION:City Scene\, Nygaardsgata 44-46\, Fredrikstad
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jan-eggum
+ -ny-dato/
+URL:https://comedyatlas.app/comedy-atlas/event/jan-eggum-ny-dato/
+END:VEVENT
+END:VCALENDAR

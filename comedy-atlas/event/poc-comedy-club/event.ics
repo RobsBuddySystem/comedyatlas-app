@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:poc-comedy-club@comedyatlas.app
+DTSTAMP:20261128T193000Z
+DTSTART:20261128T193000Z
+DTEND:20261128T213000Z
+SUMMARY:POC Comedy Club
+LOCATION:Le POC\, 82 rue Marcel Bourdarias\, Alfortville
+DESCRIPTION:Après une première édition qui a mis tout le monde d'accord\
+ ,\nle POC Comedy Club est de retour pour une 2ème soirée\nencore plus fol
+ le.\nMore info: https://comedyatlas.app/comedy-atlas/event/poc-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/poc-comedy-club/
+END:VEVENT
+END:VCALENDAR

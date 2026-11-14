@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-nykommerkveld-80280@comedyatlas.app
+DTSTAMP:20261130T190000Z
+DTSTART:20261130T190000Z
+DTEND:20261130T210000Z
+SUMMARY:Standup Nykommerkveld
+LOCATION:Josefine Vertshus\, Josefines gate 16\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-n
+ ykommerkveld-80280/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-nykommerkveld-80280/
+END:VEVENT
+END:VCALENDAR

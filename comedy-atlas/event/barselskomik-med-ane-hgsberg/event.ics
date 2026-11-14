@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:barselskomik-med-ane-hgsberg@comedyatlas.app
+DTSTAMP:20270216T090000Z
+DTSTART:20270216T090000Z
+DTEND:20270216T110000Z
+SUMMARY:Barselskomik med Ane Høgsberg
+LOCATION:Europahallen\, Europa Plads 4\, Aalborg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/barselsko
+ mik-med-ane-hgsberg/
+URL:https://comedyatlas.app/comedy-atlas/event/barselskomik-med-ane-hgsberg
+ /
+END:VEVENT
+END:VCALENDAR

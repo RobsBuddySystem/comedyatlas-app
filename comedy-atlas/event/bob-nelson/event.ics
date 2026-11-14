@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bob-nelson@comedyatlas.app
+DTSTAMP:20261212T010000Z
+DTSTART:20261212T010000Z
+DTEND:20261212T030000Z
+SUMMARY:Bob Nelson
+LOCATION:Hyatt Regency Princeton\, 102 Carnegie Center\, Princeton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bob-nelso
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/bob-nelson/
+END:VEVENT
+END:VCALENDAR

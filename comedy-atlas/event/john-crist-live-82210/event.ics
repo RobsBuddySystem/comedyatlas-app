@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-82210@comedyatlas.app
+DTSTAMP:20270613T230000Z
+DTSTART:20270613T230000Z
+DTEND:20270614T010000Z
+SUMMARY:John Crist Live!
+LOCATION:Clowes Memorial Hall\, 4602 Sunset Avenue\, Indianapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-82210/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-82210/
+END:VEVENT
+END:VCALENDAR

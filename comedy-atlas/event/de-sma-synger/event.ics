@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:de-sma-synger@comedyatlas.app
+DTSTAMP:20270130T083000Z
+DTSTART:20270130T083000Z
+DTEND:20270130T103000Z
+SUMMARY:De små synger!
+LOCATION:Teaterbygningen\, Bag Haverne 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/de-sma-sy
+ nger/
+URL:https://comedyatlas.app/comedy-atlas/event/de-sma-synger/
+END:VEVENT
+END:VCALENDAR

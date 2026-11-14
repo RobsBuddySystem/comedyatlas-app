@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78789@comedyatlas.app
+DTSTAMP:20261211T190000Z
+DTSTART:20261211T190000Z
+DTEND:20261211T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:Faust (Warenannahme)\, Zur Bettfedernfabrik 3\, Hannover
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78789/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78789/
+END:VEVENT
+END:VCALENDAR

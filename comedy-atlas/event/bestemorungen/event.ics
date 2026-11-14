@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bestemorungen@comedyatlas.app
+DTSTAMP:20270128T170000Z
+DTSTART:20270128T170000Z
+DTEND:20270128T190000Z
+SUMMARY:BESTEMORUNGEN
+LOCATION:Oslo Nye Teaterkjelleren\, Akersgata 38\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bestemoru
+ ngen/
+URL:https://comedyatlas.app/comedy-atlas/event/bestemorungen/
+END:VEVENT
+END:VCALENDAR

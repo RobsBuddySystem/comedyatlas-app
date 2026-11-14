@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sureni-does-an-hour-of-comedy@comedyatlas.app
+DTSTAMP:20261114T183000Z
+DTSTART:20261114T183000Z
+DTEND:20261114T203000Z
+SUMMARY:Sureni Does an Hour of Comedy
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sureni-do
+ es-an-hour-of-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/sureni-does-an-hour-of-comed
+ y/
+END:VEVENT
+END:VCALENDAR

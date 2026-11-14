@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:heldigvis@comedyatlas.app
+DTSTAMP:20270219T180000Z
+DTSTART:20270219T180000Z
+DTEND:20270219T200000Z
+SUMMARY:HELDIGvis
+LOCATION:Ole Bull Scene\, Bergen\, Øvre Ole Bullsplass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/heldigvis
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/heldigvis/
+END:VEVENT
+END:VCALENDAR

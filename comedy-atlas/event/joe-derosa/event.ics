@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-derosa@comedyatlas.app
+DTSTAMP:20270206T230000Z
+DTSTART:20270206T230000Z
+DTEND:20270207T010000Z
+SUMMARY:Joe DeRosa
+LOCATION:Saint Andrew's Hall\, 431 E Congress St\, Detroit
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-deros
+ a/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-derosa/
+END:VEVENT
+END:VCALENDAR

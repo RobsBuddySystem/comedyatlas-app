@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:humor-over-oslo-2027@comedyatlas.app
+DTSTAMP:20270612T120000Z
+DTSTART:20270612T120000Z
+DTEND:20270612T140000Z
+SUMMARY:Humor Over Oslo 2027
+LOCATION:Grefsenkollen\, Grefsenkollveien 100\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/humor-ove
+ r-oslo-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/humor-over-oslo-2027/
+END:VEVENT
+END:VCALENDAR

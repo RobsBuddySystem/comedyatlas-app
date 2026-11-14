@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:simon-stablein@comedyatlas.app
+DTSTAMP:20271016T180000Z
+DTSTART:20271016T180000Z
+DTEND:20271016T200000Z
+SUMMARY:Simon Stäblein
+LOCATION:Kulturetage\, Bahnhofstraße 11\, Oldenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/simon-sta
+ blein/
+URL:https://comedyatlas.app/comedy-atlas/event/simon-stablein/
+END:VEVENT
+END:VCALENDAR

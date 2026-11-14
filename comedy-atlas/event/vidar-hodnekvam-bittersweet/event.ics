@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vidar-hodnekvam-bittersweet@comedyatlas.app
+DTSTAMP:20270204T173000Z
+DTSTART:20270204T173000Z
+DTEND:20270204T193000Z
+SUMMARY:Vidar Hodnekvam – BitterSweet
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vidar-hod
+ nekvam-bittersweet/
+URL:https://comedyatlas.app/comedy-atlas/event/vidar-hodnekvam-bittersweet/
+END:VEVENT
+END:VCALENDAR

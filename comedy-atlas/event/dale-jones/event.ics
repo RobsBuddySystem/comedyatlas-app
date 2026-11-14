@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dale-jones@comedyatlas.app
+DTSTAMP:20270208T010000Z
+DTSTART:20270208T010000Z
+DTEND:20270208T030000Z
+SUMMARY:Dale Jones
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dale-jone
+ s/
+URL:https://comedyatlas.app/comedy-atlas/event/dale-jones/
+END:VEVENT
+END:VCALENDAR

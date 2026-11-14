@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:emmi-willnowsky-das-best-of@comedyatlas.app
+DTSTAMP:20261120T190000Z
+DTSTART:20261120T190000Z
+DTEND:20261120T210000Z
+SUMMARY:Emmi & Willnowsky DAS BEST - OF
+LOCATION:KGS Aula Rastede\, Thoradestraße\, Rastede
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/emmi-will
+ nowsky-das-best-of/
+URL:https://comedyatlas.app/comedy-atlas/event/emmi-willnowsky-das-best-of/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:verdens-beste-jenter@comedyatlas.app
+DTSTAMP:20261118T193000Z
+DTSTART:20261118T193000Z
+DTEND:20261118T213000Z
+SUMMARY:Verdens beste jenter
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/verdens-b
+ este-jenter/
+URL:https://comedyatlas.app/comedy-atlas/event/verdens-beste-jenter/
+END:VEVENT
+END:VCALENDAR

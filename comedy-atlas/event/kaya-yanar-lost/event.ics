@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kaya-yanar-lost@comedyatlas.app
+DTSTAMP:20261128T190000Z
+DTSTART:20261128T190000Z
+DTEND:20261128T210000Z
+SUMMARY:Kaya Yanar - Lost!
+LOCATION:Metropol Theater Bremen\, Richtweg 7-13\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kaya-yana
+ r-lost/
+URL:https://comedyatlas.app/comedy-atlas/event/kaya-yanar-lost/
+END:VEVENT
+END:VCALENDAR

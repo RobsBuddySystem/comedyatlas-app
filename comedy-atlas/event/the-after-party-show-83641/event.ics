@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-after-party-show-83641@comedyatlas.app
+DTSTAMP:20261117T060000Z
+DTSTART:20261117T060000Z
+DTEND:20261117T080000Z
+SUMMARY:The After Party Show
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-after
+ -party-show-83641/
+URL:https://comedyatlas.app/comedy-atlas/event/the-after-party-show-83641/
+END:VEVENT
+END:VCALENDAR

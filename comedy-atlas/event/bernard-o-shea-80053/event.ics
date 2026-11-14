@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bernard-o-shea-80053@comedyatlas.app
+DTSTAMP:20270402T183000Z
+DTSTART:20270402T183000Z
+DTEND:20270402T203000Z
+SUMMARY:Bernard O'Shea
+LOCATION:Limerick City
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bernard-o
+ -shea-80053/
+URL:https://comedyatlas.app/comedy-atlas/event/bernard-o-shea-80053/
+END:VEVENT
+END:VCALENDAR

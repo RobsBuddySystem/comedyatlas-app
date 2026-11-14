@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luenell-live@comedyatlas.app
+DTSTAMP:20261211T030000Z
+DTSTART:20261211T030000Z
+DTEND:20261211T050000Z
+SUMMARY:Luenell Live!
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luenell-l
+ ive/
+URL:https://comedyatlas.app/comedy-atlas/event/luenell-live/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrew-ryan-live-in-europe@comedyatlas.app
+DTSTAMP:20270428T183000Z
+DTSTART:20270428T183000Z
+DTEND:20270428T203000Z
+SUMMARY:Andrew Ryan – Live in Europe
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andrew-ry
+ an-live-in-europe/
+URL:https://comedyatlas.app/comedy-atlas/event/andrew-ryan-live-in-europe/
+END:VEVENT
+END:VCALENDAR

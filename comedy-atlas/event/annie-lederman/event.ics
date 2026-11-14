@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:annie-lederman@comedyatlas.app
+DTSTAMP:20261120T013000Z
+DTSTART:20261120T013000Z
+DTEND:20261120T033000Z
+SUMMARY:Annie Lederman
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/annie-led
+ erman/
+URL:https://comedyatlas.app/comedy-atlas/event/annie-lederman/
+END:VEVENT
+END:VCALENDAR

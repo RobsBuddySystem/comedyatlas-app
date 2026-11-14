@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rebellcomedy-zeig-zahne@comedyatlas.app
+DTSTAMP:20270320T190000Z
+DTSTART:20270320T190000Z
+DTEND:20270320T210000Z
+SUMMARY:RebellComedy - ZEIG ZÄHNE
+LOCATION:NEW Box\, Am Nordpark 299\, Mönchengladbach
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rebellcom
+ edy-zeig-zahne/
+URL:https://comedyatlas.app/comedy-atlas/event/rebellcomedy-zeig-zahne/
+END:VEVENT
+END:VCALENDAR

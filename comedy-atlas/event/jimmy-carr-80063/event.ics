@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimmy-carr-80063@comedyatlas.app
+DTSTAMP:20261209T180000Z
+DTSTART:20261209T180000Z
+DTEND:20261209T200000Z
+SUMMARY:Jimmy Carr
+LOCATION:Muziekgebouw Eindhoven\, Heuvel 140\, Eindhoven
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimmy-car
+ r-80063/
+URL:https://comedyatlas.app/comedy-atlas/event/jimmy-carr-80063/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hangover-med-mert-arslan@comedyatlas.app
+DTSTAMP:20261122T183000Z
+DTSTART:20261122T183000Z
+DTEND:20261122T203000Z
+SUMMARY:Hangover med Mert Arslan
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hangover-
+ med-mert-arslan/
+URL:https://comedyatlas.app/comedy-atlas/event/hangover-med-mert-arslan/
+END:VEVENT
+END:VCALENDAR

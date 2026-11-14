@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hype-stand-up-pikkujoulut@comedyatlas.app
+DTSTAMP:20261121T170000Z
+DTSTART:20261121T170000Z
+DTEND:20261121T190000Z
+SUMMARY:Hype Stand Up pikkujoulut
+LOCATION:Espoon Hybridiarena Hype\, Vanha Jorvaksentie 3\, Espoo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hype-stan
+ d-up-pikkujoulut/
+URL:https://comedyatlas.app/comedy-atlas/event/hype-stand-up-pikkujoulut/
+END:VEVENT
+END:VCALENDAR

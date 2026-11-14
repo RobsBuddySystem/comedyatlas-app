@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:quichotte-guter-dinge-78872@comedyatlas.app
+DTSTAMP:20270212T190000Z
+DTSTART:20270212T190000Z
+DTEND:20270212T210000Z
+SUMMARY:Quichotte - Guter Dinge
+LOCATION:scheune\, Alaunstraße 36\, Dresden
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/quichotte
+ -guter-dinge-78872/
+URL:https://comedyatlas.app/comedy-atlas/event/quichotte-guter-dinge-78872/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:westerton-comedy-gala@comedyatlas.app
+DTSTAMP:20270206T190000Z
+DTSTART:20270206T190000Z
+DTEND:20270206T210000Z
+SUMMARY:Westerton Comedy Gala
+LOCATION:Westerton Hall\, 84 Maxwell Avenue\, Glasgow
+DESCRIPTION:Westerton Comedy Gala is back for a fifth time. Come see some f
+ aces you'll recognise from the telly on your doorstep.\nMore info: https://
+ comedyatlas.app/comedy-atlas/event/westerton-comedy-gala/
+URL:https://comedyatlas.app/comedy-atlas/event/westerton-comedy-gala/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maffia-comedy-superweekend@comedyatlas.app
+DTSTAMP:20270108T190000Z
+DTSTART:20270108T190000Z
+DTEND:20270108T210000Z
+SUMMARY:MAFFIA COMEDY SUPERWEEKEND
+LOCATION:Clarion Hotel Sign\, Östra Järnvägsgatan 35\, Stockholm
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maffia-co
+ medy-superweekend/
+URL:https://comedyatlas.app/comedy-atlas/event/maffia-comedy-superweekend/
+END:VEVENT
+END:VCALENDAR

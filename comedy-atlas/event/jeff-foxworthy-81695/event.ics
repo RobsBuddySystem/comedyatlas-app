@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-foxworthy-81695@comedyatlas.app
+DTSTAMP:20270130T010000Z
+DTSTART:20270130T010000Z
+DTEND:20270130T030000Z
+SUMMARY:Jeff Foxworthy
+LOCATION:Premier Theater at Foxwoods Resort Casino\, 39 Norwich Westerly Ro
+ ad\, Mashantucket
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-foxw
+ orthy-81695/
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-foxworthy-81695/
+END:VEVENT
+END:VCALENDAR

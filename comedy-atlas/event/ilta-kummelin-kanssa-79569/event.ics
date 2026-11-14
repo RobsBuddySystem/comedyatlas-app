@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ilta-kummelin-kanssa-79569@comedyatlas.app
+DTSTAMP:20270504T160000Z
+DTSTART:20270504T160000Z
+DTEND:20270504T180000Z
+SUMMARY:Ilta Kummelin kanssa
+LOCATION:SIBELIUSTALO\, Ankkurikatu 7\, Lahti
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ilta-kumm
+ elin-kanssa-79569/
+URL:https://comedyatlas.app/comedy-atlas/event/ilta-kummelin-kanssa-79569/
+END:VEVENT
+END:VCALENDAR

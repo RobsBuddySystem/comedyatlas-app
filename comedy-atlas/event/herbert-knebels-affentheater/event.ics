@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:herbert-knebels-affentheater@comedyatlas.app
+DTSTAMP:20270429T180000Z
+DTSTART:20270429T180000Z
+DTEND:20270429T200000Z
+SUMMARY:Herbert Knebels Affentheater
+LOCATION:Gustav-Heinemann-Bürgerhaus\, Kirchheide 49\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/herbert-k
+ nebels-affentheater/
+URL:https://comedyatlas.app/comedy-atlas/event/herbert-knebels-affentheater
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mixtape-comedy-show@comedyatlas.app
+DTSTAMP:20261115T180000Z
+DTSTART:20261115T180000Z
+DTEND:20261115T200000Z
+SUMMARY:Mixtape Comedy Show
+LOCATION:New York
+DESCRIPTION:Hosted by comedy vet Royale Watkins\, The Mixtape Comedy Show s
+ tands as New York City's LIVEST Comedy and Music showcase. Far more than a 
+ traditional stand-up showcase\, Mixtape seamlessly fuses razor-sharp sets f
+ rom comedy heavyweights\, a live DJ\, and a The Mixtape All-Star Band. Fame
+ d for its electric atmosphere and unpredictable vibe\, the monthly residenc
+ y regularly draws major surprise drop-ins from stand up icons\, ranging fro
+ m comedy legends like Chris Rock\, Kevin Hart\, and Jerry Seinfeld to name 
+ a few.\nMore info: https://comedyatlas.app/comedy-atlas/event/mixtape-comed
+ y-show/
+URL:https://comedyatlas.app/comedy-atlas/event/mixtape-comedy-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pantomime-for-blinde-80771@comedyatlas.app
+DTSTAMP:20270313T203000Z
+DTSTART:20270313T203000Z
+DTEND:20270313T223000Z
+SUMMARY:Pantomime for blinde
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pantomime
+ -for-blinde-80771/
+URL:https://comedyatlas.app/comedy-atlas/event/pantomime-for-blinde-80771/
+END:VEVENT
+END:VCALENDAR

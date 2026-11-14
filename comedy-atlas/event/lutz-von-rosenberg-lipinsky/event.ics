@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lutz-von-rosenberg-lipinsky@comedyatlas.app
+DTSTAMP:20270429T180000Z
+DTSTART:20270429T180000Z
+DTEND:20270429T200000Z
+SUMMARY:Lutz Von Rosenberg Lipinsky
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lutz-von-
+ rosenberg-lipinsky/
+URL:https://comedyatlas.app/comedy-atlas/event/lutz-von-rosenberg-lipinsky/
+END:VEVENT
+END:VCALENDAR

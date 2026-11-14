@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hangover-med-alon-fellus@comedyatlas.app
+DTSTAMP:20261129T183000Z
+DTSTART:20261129T183000Z
+DTEND:20261129T203000Z
+SUMMARY:Hangover med Alon Fellus
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hangover-
+ med-alon-fellus/
+URL:https://comedyatlas.app/comedy-atlas/event/hangover-med-alon-fellus/
+END:VEVENT
+END:VCALENDAR

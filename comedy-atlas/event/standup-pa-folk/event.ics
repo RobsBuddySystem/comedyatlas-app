@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-pa-folk@comedyatlas.app
+DTSTAMP:20261119T190000Z
+DTSTART:20261119T190000Z
+DTEND:20261119T210000Z
+SUMMARY:Standup på Folk
+LOCATION:Folk i Storgata\, Storgata 36J\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-p
+ a-folk/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-pa-folk/
+END:VEVENT
+END:VCALENDAR

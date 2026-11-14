@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vanvittig-verdenshistorie-79325@comedyatlas.app
+DTSTAMP:20270327T180000Z
+DTSTART:20270327T180000Z
+DTEND:20270327T200000Z
+SUMMARY:Vanvittig Verdenshistorie
+LOCATION:Bremen Teater\, Nyropsgade 39-41\, København V
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/vanvittig
+ -verdenshistorie-79325/
+URL:https://comedyatlas.app/comedy-atlas/event/vanvittig-verdenshistorie-79
+ 325/
+END:VEVENT
+END:VCALENDAR

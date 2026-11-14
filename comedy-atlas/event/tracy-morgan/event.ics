@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tracy-morgan@comedyatlas.app
+DTSTAMP:20270207T010000Z
+DTSTART:20270207T010000Z
+DTEND:20270207T030000Z
+SUMMARY:Tracy Morgan
+LOCATION:Hackensack Meridian Health Theatre at the Count Basie Center\, 99 
+ Monmouth St\, Red Bank
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tracy-mor
+ gan/
+URL:https://comedyatlas.app/comedy-atlas/event/tracy-morgan/
+END:VEVENT
+END:VCALENDAR

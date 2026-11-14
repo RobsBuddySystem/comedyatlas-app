@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adam-ray-live@comedyatlas.app
+DTSTAMP:20270321T043000Z
+DTSTART:20270321T043000Z
+DTEND:20270321T063000Z
+SUMMARY:Adam Ray Live
+LOCATION:The Palazzo Theatre at The Venetian Resort\, 3355 S Las Vegas Blvd
+ \, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/adam-ray-
+ live/
+URL:https://comedyatlas.app/comedy-atlas/event/adam-ray-live/
+END:VEVENT
+END:VCALENDAR

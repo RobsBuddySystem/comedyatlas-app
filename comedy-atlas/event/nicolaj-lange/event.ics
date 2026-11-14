@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nicolaj-lange@comedyatlas.app
+DTSTAMP:20270205T190000Z
+DTSTART:20270205T190000Z
+DTEND:20270205T210000Z
+SUMMARY:Nicolaj Lange
+LOCATION:Jerlev Kulturhus\, Smedevej 18\, Jerlev\, Vejle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nicolaj-l
+ ange/
+URL:https://comedyatlas.app/comedy-atlas/event/nicolaj-lange/
+END:VEVENT
+END:VCALENDAR

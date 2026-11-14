@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81798@comedyatlas.app
+DTSTAMP:20270401T230000Z
+DTSTART:20270401T230000Z
+DTEND:20270402T010000Z
+SUMMARY:John Crist Live!
+LOCATION:Stambaugh Auditorium\, 1000 5th Ave\, Youngstown
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81798/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81798/
+END:VEVENT
+END:VCALENDAR

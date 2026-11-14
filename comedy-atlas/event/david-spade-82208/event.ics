@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-spade-82208@comedyatlas.app
+DTSTAMP:20270606T030000Z
+DTSTART:20270606T030000Z
+DTEND:20270606T050000Z
+SUMMARY:David Spade
+LOCATION:Grand Sierra Resort and Casino\, 2500 East Second Street\, Reno
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/david-spa
+ de-82208/
+URL:https://comedyatlas.app/comedy-atlas/event/david-spade-82208/
+END:VEVENT
+END:VCALENDAR

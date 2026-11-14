@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fabian-lampert-einer-dieser-abende@comedyatlas.app
+DTSTAMP:20270219T191500Z
+DTSTART:20270219T191500Z
+DTEND:20270219T211500Z
+SUMMARY:Fabian Lampert: Einer dieser Abende
+LOCATION:Cloppenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fabian-la
+ mpert-einer-dieser-abende/
+URL:https://comedyatlas.app/comedy-atlas/event/fabian-lampert-einer-dieser-
+ abende/
+END:VEVENT
+END:VCALENDAR

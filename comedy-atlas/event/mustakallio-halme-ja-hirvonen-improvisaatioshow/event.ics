@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mustakallio-halme-ja-hirvonen-improvisaatioshow@comedyatlas.app
+DTSTAMP:20270115T170019Z
+DTSTART:20270115T170019Z
+DTEND:20270115T190019Z
+SUMMARY:Mustakallio\, Halme ja Hirvonen -Improvisaatioshow!
+LOCATION:RioLive\, Hallituskatu 11\, Oulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mustakall
+ io-halme-ja-hirvonen-improvisaatioshow/
+URL:https://comedyatlas.app/comedy-atlas/event/mustakallio-halme-ja-hirvone
+ n-improvisaatioshow/
+END:VEVENT
+END:VCALENDAR

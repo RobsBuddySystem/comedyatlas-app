@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:snekker-andersen-og-julenissen@comedyatlas.app
+DTSTAMP:20261128T130000Z
+DTSTART:20261128T130000Z
+DTEND:20261128T150000Z
+SUMMARY:Snekker Andersen og julenissen
+LOCATION:Ullensaker Kulturhus\, Kong Rakne\, Furusethgaten 12\, Jessheim
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/snekker-a
+ ndersen-og-julenissen/
+URL:https://comedyatlas.app/comedy-atlas/event/snekker-andersen-og-juleniss
+ en/
+END:VEVENT
+END:VCALENDAR

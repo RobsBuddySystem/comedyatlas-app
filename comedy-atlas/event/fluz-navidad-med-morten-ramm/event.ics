@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fluz-navidad-med-morten-ramm@comedyatlas.app
+DTSTAMP:20261203T180000Z
+DTSTART:20261203T180000Z
+DTEND:20261203T200000Z
+SUMMARY:Fluz Navidad med Morten Ramm
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fluz-navi
+ dad-med-morten-ramm/
+URL:https://comedyatlas.app/comedy-atlas/event/fluz-navidad-med-morten-ramm
+ /
+END:VEVENT
+END:VCALENDAR

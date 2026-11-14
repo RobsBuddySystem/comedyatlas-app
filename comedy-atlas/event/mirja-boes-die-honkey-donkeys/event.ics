@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mirja-boes-die-honkey-donkeys@comedyatlas.app
+DTSTAMP:20271015T180000Z
+DTSTART:20271015T180000Z
+DTEND:20271015T200000Z
+SUMMARY:Mirja Boes & Die Honkey Donkeys
+LOCATION:Hamme Forum Ritterhude\, Riesstr. 11\, Ritterhude
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mirja-boe
+ s-die-honkey-donkeys/
+URL:https://comedyatlas.app/comedy-atlas/event/mirja-boes-die-honkey-donkey
+ s/
+END:VEVENT
+END:VCALENDAR

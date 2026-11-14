@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:espen-abrahamsen-avantgarde@comedyatlas.app
+DTSTAMP:20270108T180000Z
+DTSTART:20270108T180000Z
+DTEND:20270108T200000Z
+SUMMARY:Espen Abrahamsen - Avantgarde
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/espen-abr
+ ahamsen-avantgarde/
+URL:https://comedyatlas.app/comedy-atlas/event/espen-abrahamsen-avantgarde/
+END:VEVENT
+END:VCALENDAR

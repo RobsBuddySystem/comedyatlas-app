@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hasse-bronten-daddy-deluxe@comedyatlas.app
+DTSTAMP:20270320T180000Z
+DTSTART:20270320T180000Z
+DTEND:20270320T200000Z
+SUMMARY:Hasse Brontén - Daddy Deluxe
+LOCATION:Centralteatern - Hantverkarsalen\, Södra Centralgatan 10\, Gävle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hasse-bro
+ nten-daddy-deluxe/
+URL:https://comedyatlas.app/comedy-atlas/event/hasse-bronten-daddy-deluxe/
+END:VEVENT
+END:VCALENDAR

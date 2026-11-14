@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:harlem-globetrotters@comedyatlas.app
+DTSTAMP:20270417T173000Z
+DTSTART:20270417T173000Z
+DTEND:20270417T193000Z
+SUMMARY:Harlem Globetrotters
+LOCATION:Arena Næstved\, Ved Stadion 11\, Næstved
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/harlem-gl
+ obetrotters/
+URL:https://comedyatlas.app/comedy-atlas/event/harlem-globetrotters/
+END:VEVENT
+END:VCALENDAR

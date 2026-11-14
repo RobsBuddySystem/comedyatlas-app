@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:manuel-rubey-simon-schwarz@comedyatlas.app
+DTSTAMP:20270217T190000Z
+DTSTART:20270217T190000Z
+DTEND:20270217T210000Z
+SUMMARY:MANUEL RUBEY & SIMON SCHWARZ
+LOCATION:Kulturbahnhof Vegesack\, Hermann-Fortmann-Str.32\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/manuel-ru
+ bey-simon-schwarz/
+URL:https://comedyatlas.app/comedy-atlas/event/manuel-rubey-simon-schwarz/
+END:VEVENT
+END:VCALENDAR

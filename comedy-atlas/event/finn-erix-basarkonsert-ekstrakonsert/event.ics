@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:finn-erix-basarkonsert-ekstrakonsert@comedyatlas.app
+DTSTAMP:20261118T180000Z
+DTSTART:20261118T180000Z
+DTEND:20261118T200000Z
+SUMMARY:Finn-Erix Basarkonsert – Ekstrakonsert
+LOCATION:Forum Scene\, Fjøsangerveien 28\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/finn-erix
+ -basarkonsert-ekstrakonsert/
+URL:https://comedyatlas.app/comedy-atlas/event/finn-erix-basarkonsert-ekstr
+ akonsert/
+END:VEVENT
+END:VCALENDAR

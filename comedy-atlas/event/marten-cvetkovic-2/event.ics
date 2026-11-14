@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marten-cvetkovic-2@comedyatlas.app
+DTSTAMP:20270429T173000Z
+DTSTART:20270429T173000Z
+DTEND:20270429T193000Z
+SUMMARY:Mårten Cvetkovic 2
+LOCATION:Halmstads Teater\, Fredsgatan 5\, Halmstad
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marten-cv
+ etkovic-2/
+URL:https://comedyatlas.app/comedy-atlas/event/marten-cvetkovic-2/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:finn-nrbygaard@comedyatlas.app
+DTSTAMP:20270320T190000Z
+DTSTART:20270320T190000Z
+DTEND:20270320T210000Z
+SUMMARY:Finn Nørbygaard
+LOCATION:Portalen\, Portalen 1\, Greve
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/finn-nrby
+ gaard/
+URL:https://comedyatlas.app/comedy-atlas/event/finn-nrbygaard/
+END:VEVENT
+END:VCALENDAR

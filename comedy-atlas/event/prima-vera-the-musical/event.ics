@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:prima-vera-the-musical@comedyatlas.app
+DTSTAMP:20270402T180000Z
+DTSTART:20270402T180000Z
+DTEND:20270402T200000Z
+SUMMARY:Prima Vera - The Musical
+LOCATION:City Scene\, Nygaardsgata 44-46\, Fredrikstad
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/prima-ver
+ a-the-musical/
+URL:https://comedyatlas.app/comedy-atlas/event/prima-vera-the-musical/
+END:VEVENT
+END:VCALENDAR

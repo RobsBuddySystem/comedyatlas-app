@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marco-tschirpke@comedyatlas.app
+DTSTAMP:20270429T181500Z
+DTSTART:20270429T181500Z
+DTEND:20270429T201500Z
+SUMMARY:Marco Tschirpke
+LOCATION:Cloppenburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marco-tsc
+ hirpke/
+URL:https://comedyatlas.app/comedy-atlas/event/marco-tschirpke/
+END:VEVENT
+END:VCALENDAR

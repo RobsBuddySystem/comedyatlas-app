@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sa-syng-da-kge@comedyatlas.app
+DTSTAMP:20261122T120000Z
+DTSTART:20261122T120000Z
+DTEND:20261122T140000Z
+SUMMARY:SÅ SYNG DA\, KØGE!
+LOCATION:Teaterbygningen\, Bag Haverne 1\, Køge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sa-syng-d
+ a-kge/
+URL:https://comedyatlas.app/comedy-atlas/event/sa-syng-da-kge/
+END:VEVENT
+END:VCALENDAR

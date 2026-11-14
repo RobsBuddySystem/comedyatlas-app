@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bodo-wartke-wunderpunkt@comedyatlas.app
+DTSTAMP:20271106T190000Z
+DTSTART:20271106T190000Z
+DTEND:20271106T210000Z
+SUMMARY:Bodo Wartke - Wunderpunkt
+LOCATION:Aurich
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bodo-wart
+ ke-wunderpunkt/
+URL:https://comedyatlas.app/comedy-atlas/event/bodo-wartke-wunderpunkt/
+END:VEVENT
+END:VCALENDAR

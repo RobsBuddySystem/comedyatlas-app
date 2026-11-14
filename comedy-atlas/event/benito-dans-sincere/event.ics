@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:benito-dans-sincere@comedyatlas.app
+DTSTAMP:20261115T163000Z
+DTSTART:20261115T163000Z
+DTEND:20261115T183000Z
+SUMMARY:Benito dans Sincère
+LOCATION:Le Petit République\, 1 boulevard saint martin\, Paris
+DESCRIPTION:Après des millions de vues sur les réseaux\, Benito débarque
+  sur scène.\nMore info: https://comedyatlas.app/comedy-atlas/event/benito-
+ dans-sincere/
+URL:https://comedyatlas.app/comedy-atlas/event/benito-dans-sincere/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:naurua-kiitos@comedyatlas.app
+DTSTAMP:20261218T170019Z
+DTSTART:20261218T170019Z
+DTEND:20261218T190019Z
+SUMMARY:NAURUA\, KIITOS!
+LOCATION:RioLive\, Hallituskatu 11\, Oulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/naurua-ki
+ itos/
+URL:https://comedyatlas.app/comedy-atlas/event/naurua-kiitos/
+END:VEVENT
+END:VCALENDAR

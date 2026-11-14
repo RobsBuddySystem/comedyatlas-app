@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-aid-2027@comedyatlas.app
+DTSTAMP:20270504T170000Z
+DTSTART:20270504T170000Z
+DTEND:20270504T190000Z
+SUMMARY:Standup Aid 2027
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-a
+ id-2027/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-aid-2027/
+END:VEVENT
+END:VCALENDAR

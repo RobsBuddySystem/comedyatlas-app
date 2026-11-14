@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:blackout@comedyatlas.app
+DTSTAMP:20270507T180000Z
+DTSTART:20270507T180000Z
+DTEND:20270507T200000Z
+SUMMARY:Blackout
+LOCATION:Kulturcafe Ludvig\, Ingemannsvej 5\, Sorø
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/blackout/
+URL:https://comedyatlas.app/comedy-atlas/event/blackout/
+END:VEVENT
+END:VCALENDAR

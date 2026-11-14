@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tipsy-ibsen-80395@comedyatlas.app
+DTSTAMP:20261212T190000Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:Tipsy Ibsen
+LOCATION:Oslo Nye Teaterkjelleren\, Akersgata 38\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tipsy-ibs
+ en-80395/
+URL:https://comedyatlas.app/comedy-atlas/event/tipsy-ibsen-80395/
+END:VEVENT
+END:VCALENDAR

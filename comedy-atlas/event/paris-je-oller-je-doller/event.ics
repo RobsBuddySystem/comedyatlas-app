@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:paris-je-oller-je-doller@comedyatlas.app
+DTSTAMP:20270207T140000Z
+DTSTART:20270207T140000Z
+DTEND:20270207T160000Z
+SUMMARY:Paris - Je Oller\, Je Doller
+LOCATION:Bürgerhaus Mahndorf\, Mahndorfer Bahnhof 10\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/paris-je-
+ oller-je-doller/
+URL:https://comedyatlas.app/comedy-atlas/event/paris-je-oller-je-doller/
+END:VEVENT
+END:VCALENDAR

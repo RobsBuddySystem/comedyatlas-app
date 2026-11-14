@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ismo-leikola-omasta-mielesta@comedyatlas.app
+DTSTAMP:20270126T170000Z
+DTSTART:20270126T170000Z
+DTEND:20270126T190000Z
+SUMMARY:Ismo Leikola - Omasta mielestä
+LOCATION:SIBELIUSTALO\, Ankkurikatu 7\, Lahti
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ismo-leik
+ ola-omasta-mielesta/
+URL:https://comedyatlas.app/comedy-atlas/event/ismo-leikola-omasta-mielesta
+ /
+END:VEVENT
+END:VCALENDAR

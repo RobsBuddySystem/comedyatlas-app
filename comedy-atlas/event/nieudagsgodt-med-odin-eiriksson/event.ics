@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nieudagsgodt-med-odin-eiriksson@comedyatlas.app
+DTSTAMP:20261121T183000Z
+DTSTART:20261121T183000Z
+DTEND:20261121T203000Z
+SUMMARY:nieudagsgodt med Odin Eiriksson
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nieudagsg
+ odt-med-odin-eiriksson/
+URL:https://comedyatlas.app/comedy-atlas/event/nieudagsgodt-med-odin-eiriks
+ son/
+END:VEVENT
+END:VCALENDAR

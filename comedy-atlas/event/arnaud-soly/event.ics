@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:arnaud-soly@comedyatlas.app
+DTSTAMP:20270502T190000Z
+DTSTART:20270502T190000Z
+DTEND:20270502T210000Z
+SUMMARY:Arnaud Soly
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/arnaud-so
+ ly/
+URL:https://comedyatlas.app/comedy-atlas/event/arnaud-soly/
+END:VEVENT
+END:VCALENDAR

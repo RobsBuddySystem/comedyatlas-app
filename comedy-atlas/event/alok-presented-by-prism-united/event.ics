@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alok-presented-by-prism-united@comedyatlas.app
+DTSTAMP:20261119T010000Z
+DTSTART:20261119T010000Z
+DTEND:20261119T030000Z
+SUMMARY:Alok presented by Prism United
+LOCATION:Crescent Theater\, 208 Dauphin St\, Mobile
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/alok-pres
+ ented-by-prism-united/
+URL:https://comedyatlas.app/comedy-atlas/event/alok-presented-by-prism-unit
+ ed/
+END:VEVENT
+END:VCALENDAR

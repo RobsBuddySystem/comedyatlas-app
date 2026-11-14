@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:e-du-solten@comedyatlas.app
+DTSTAMP:20261204T200000Z
+DTSTART:20261204T200000Z
+DTEND:20261204T220000Z
+SUMMARY:E’ du solten
+LOCATION:Edderkoppen Scene\, St.Olavs plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/e-du-solt
+ en/
+URL:https://comedyatlas.app/comedy-atlas/event/e-du-solten/
+END:VEVENT
+END:VCALENDAR

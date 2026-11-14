@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lola-slam@comedyatlas.app
+DTSTAMP:20261121T190000Z
+DTSTART:20261121T190000Z
+DTEND:20261121T210000Z
+SUMMARY:LOLA Slam
+LOCATION:LOLA Kulturzentrum\, Lohbrügger Landstraße 8\, Hamburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lola-slam
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/lola-slam/
+END:VEVENT
+END:VCALENDAR

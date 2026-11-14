@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:riff-city@comedyatlas.app
+DTSTAMP:20261114T210000Z
+DTSTART:20261114T210000Z
+DTEND:20261114T230000Z
+SUMMARY:Riff City
+LOCATION:New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/riff-city
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/riff-city/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:trennung-fur-feiglinge@comedyatlas.app
+DTSTAMP:20261129T190000Z
+DTSTART:20261129T190000Z
+DTEND:20261129T210000Z
+SUMMARY:"Trennung für Feiglinge"
+LOCATION:Theater der Stadt Diepholz\, Schlesierstraße 13\, Diepholz
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/trennung-
+ fur-feiglinge/
+URL:https://comedyatlas.app/comedy-atlas/event/trennung-fur-feiglinge/
+END:VEVENT
+END:VCALENDAR

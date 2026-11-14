@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mor-therese-restefest@comedyatlas.app
+DTSTAMP:20270122T180000Z
+DTSTART:20270122T180000Z
+DTEND:20270122T200000Z
+SUMMARY:Mor Therese - Restefest
+LOCATION:Humorhuset Stavangeren\, Vaisenhusgaten 37\, Stavanger
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mor-there
+ se-restefest/
+URL:https://comedyatlas.app/comedy-atlas/event/mor-therese-restefest/
+END:VEVENT
+END:VCALENDAR

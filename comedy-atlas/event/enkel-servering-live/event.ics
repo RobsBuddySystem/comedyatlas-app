@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:enkel-servering-live@comedyatlas.app
+DTSTAMP:20261208T173000Z
+DTSTART:20261208T173000Z
+DTEND:20261208T193000Z
+SUMMARY:Enkel Servering LIVE
+LOCATION:nieu grünerløkka\, Christian Kroghs Gate 60\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/enkel-ser
+ vering-live/
+URL:https://comedyatlas.app/comedy-atlas/event/enkel-servering-live/
+END:VEVENT
+END:VCALENDAR

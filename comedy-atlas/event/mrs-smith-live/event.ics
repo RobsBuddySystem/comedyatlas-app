@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mrs-smith-live@comedyatlas.app
+DTSTAMP:20270306T183000Z
+DTSTART:20270306T183000Z
+DTEND:20270306T203000Z
+SUMMARY:Mrs Smith Live
+LOCATION:Canvas Mansfield\, 62 leeming street mansfield\, Nottingham
+DESCRIPTION:SHE’S BACK Ever wondered what your teacher was thinking? Let 
+ Mrs Smith enlighten you\nMore info: https://comedyatlas.app/comedy-atlas/ev
+ ent/mrs-smith-live/
+URL:https://comedyatlas.app/comedy-atlas/event/mrs-smith-live/
+END:VEVENT
+END:VCALENDAR

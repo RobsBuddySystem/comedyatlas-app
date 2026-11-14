@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ass-dur-bruderliebe@comedyatlas.app
+DTSTAMP:20270225T190000Z
+DTSTART:20270225T190000Z
+DTEND:20270225T210000Z
+SUMMARY:Ass-Dur - Bruderliebe
+LOCATION:Metropol Theater Bremen\, Richtweg 7-13\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ass-dur-b
+ ruderliebe/
+URL:https://comedyatlas.app/comedy-atlas/event/ass-dur-bruderliebe/
+END:VEVENT
+END:VCALENDAR

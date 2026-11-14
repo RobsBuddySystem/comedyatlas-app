@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-allen-81762@comedyatlas.app
+DTSTAMP:20270307T040000Z
+DTSTART:20270307T040000Z
+DTEND:20270307T060000Z
+SUMMARY:Tim Allen
+LOCATION:Ilani Cowlitz Ballroom\, 1 Cowlitz Way\, Ridgefield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-allen
+ -81762/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-allen-81762/
+END:VEVENT
+END:VCALENDAR

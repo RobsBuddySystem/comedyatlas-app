@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jim-gaffigan-still-fighting-it@comedyatlas.app
+DTSTAMP:20270402T230000Z
+DTSTART:20270402T230000Z
+DTEND:20270403T010000Z
+SUMMARY:Jim Gaffigan: Still Fighting It
+LOCATION:Canada Life Place\, 99 Dundas Street\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jim-gaffi
+ gan-still-fighting-it/
+URL:https://comedyatlas.app/comedy-atlas/event/jim-gaffigan-still-fighting-
+ it/
+END:VEVENT
+END:VCALENDAR

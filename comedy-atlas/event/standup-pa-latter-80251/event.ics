@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-pa-latter-80251@comedyatlas.app
+DTSTAMP:20261127T193000Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:Standup på Latter
+LOCATION:Latter\, latter.no - Aker Brygge\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-p
+ a-latter-80251/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-pa-latter-80251/
+END:VEVENT
+END:VCALENDAR

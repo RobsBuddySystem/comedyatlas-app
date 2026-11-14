@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roar-comedy-luis-gomez@comedyatlas.app
+DTSTAMP:20270207T010000Z
+DTSTART:20270207T010000Z
+DTEND:20270207T030000Z
+SUMMARY:ROAR! Comedy: Luis Gomez
+LOCATION:The Armory at MGM Springfield\, One MGM Way\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roar-come
+ dy-luis-gomez/
+URL:https://comedyatlas.app/comedy-atlas/event/roar-comedy-luis-gomez/
+END:VEVENT
+END:VCALENDAR

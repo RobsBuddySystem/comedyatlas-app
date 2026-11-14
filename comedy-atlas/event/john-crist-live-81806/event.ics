@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:john-crist-live-81806@comedyatlas.app
+DTSTAMP:20270403T230000Z
+DTSTART:20270403T230000Z
+DTEND:20270404T010000Z
+SUMMARY:John Crist Live!
+LOCATION:Mershon Auditorium\, 1871 N High St\, Columbus
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/john-cris
+ t-live-81806/
+URL:https://comedyatlas.app/comedy-atlas/event/john-crist-live-81806/
+END:VEVENT
+END:VCALENDAR

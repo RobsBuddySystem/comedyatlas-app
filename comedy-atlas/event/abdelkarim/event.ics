@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abdelkarim@comedyatlas.app
+DTSTAMP:20261118T183000Z
+DTSTART:20261118T183000Z
+DTEND:20261118T203000Z
+SUMMARY:ABDELKARIM
+LOCATION:FRITZ Theater\, Herdentorsteinweg 39\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/abdelkari
+ m/
+URL:https://comedyatlas.app/comedy-atlas/event/abdelkarim/
+END:VEVENT
+END:VCALENDAR

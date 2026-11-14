@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nightwash-live-comedy-at-its-best@comedyatlas.app
+DTSTAMP:20270220T190000Z
+DTSTART:20270220T190000Z
+DTEND:20270220T210000Z
+SUMMARY:Nightwash LIVE - Comedy at its best
+LOCATION:Theater am Marientor\, Plessingstraße 20\, Duisburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nightwash
+ -live-comedy-at-its-best/
+URL:https://comedyatlas.app/comedy-atlas/event/nightwash-live-comedy-at-its
+ -best/
+END:VEVENT
+END:VCALENDAR

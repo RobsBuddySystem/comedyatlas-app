@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kultur-am-haltepunkt-nils-brunschede@comedyatlas.app
+DTSTAMP:20270211T190000Z
+DTSTART:20270211T190000Z
+DTEND:20270211T210000Z
+SUMMARY:Kultur am Haltepunkt: Nils Brunschede
+LOCATION:Jupp Eventhaus\, Mühlenstraße 5\, Varel
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kultur-am
+ -haltepunkt-nils-brunschede/
+URL:https://comedyatlas.app/comedy-atlas/event/kultur-am-haltepunkt-nils-br
+ unschede/
+END:VEVENT
+END:VCALENDAR

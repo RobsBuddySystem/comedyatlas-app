@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bright-club-49-chill@comedyatlas.app
+DTSTAMP:20261208T190000Z
+DTSTART:20261208T190000Z
+DTEND:20261208T210000Z
+SUMMARY:Bright Club #49 Chill
+LOCATION:The Ducie Arms\, 52 Devas Street\, Manchester
+DESCRIPTION:Bright Club Manchester presents show #49: Chill. Join us for an
+  evening of clever comedy brought to you by the coolest geeks around.\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/bright-club-49-chill/
+URL:https://comedyatlas.app/comedy-atlas/event/bright-club-49-chill/
+END:VEVENT
+END:VCALENDAR

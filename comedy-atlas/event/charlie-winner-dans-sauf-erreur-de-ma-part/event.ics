@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:charlie-winner-dans-sauf-erreur-de-ma-part@comedyatlas.app
+DTSTAMP:20261210T191000Z
+DTSTART:20261210T191000Z
+DTEND:20261210T211000Z
+SUMMARY:Charlie Winner dans Sauf erreur de ma part
+LOCATION:Le Métropole\, 39 rue du sentier\, Paris
+DESCRIPTION:Charlie Winner décode le monde du travail à des gens qui ont 
+ envie de se changer les idées après le boulot\nMore info: https://comedya
+ tlas.app/comedy-atlas/event/charlie-winner-dans-sauf-erreur-de-ma-part/
+URL:https://comedyatlas.app/comedy-atlas/event/charlie-winner-dans-sauf-err
+ eur-de-ma-part/
+END:VEVENT
+END:VCALENDAR

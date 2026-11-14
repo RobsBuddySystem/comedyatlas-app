@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nieu-show-80180@comedyatlas.app
+DTSTAMP:20261120T200000Z
+DTSTART:20261120T200000Z
+DTEND:20261120T220000Z
+SUMMARY:nieu show
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nieu-show
+ -80180/
+URL:https://comedyatlas.app/comedy-atlas/event/nieu-show-80180/
+END:VEVENT
+END:VCALENDAR

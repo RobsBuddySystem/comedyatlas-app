@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ms-pat-81808@comedyatlas.app
+DTSTAMP:20270404T000000Z
+DTSTART:20270404T000000Z
+DTEND:20270404T020000Z
+SUMMARY:Ms. Pat
+LOCATION:The Theater at MGM National Harbor\, 101 MGM National Ave\, Nation
+ al Harbor
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ms-pat-81
+ 808/
+URL:https://comedyatlas.app/comedy-atlas/event/ms-pat-81808/
+END:VEVENT
+END:VCALENDAR

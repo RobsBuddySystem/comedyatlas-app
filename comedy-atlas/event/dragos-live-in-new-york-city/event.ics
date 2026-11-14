@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dragos-live-in-new-york-city@comedyatlas.app
+DTSTAMP:20261114T180000Z
+DTSTART:20261114T180000Z
+DTEND:20261114T200000Z
+SUMMARY:Dragos Live in New York City
+LOCATION:Broadway Comedy Club\, 318 West 53rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dragos-li
+ ve-in-new-york-city/
+URL:https://comedyatlas.app/comedy-atlas/event/dragos-live-in-new-york-city
+ /
+END:VEVENT
+END:VCALENDAR

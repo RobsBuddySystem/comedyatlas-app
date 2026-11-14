@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tomi-haustola-tyyppivika-stand-up-show@comedyatlas.app
+DTSTAMP:20270313T170000Z
+DTSTART:20270313T170000Z
+DTEND:20270313T190000Z
+SUMMARY:Tomi Haustola: Tyyppivika - stand up show
+LOCATION:Porin Ravirata\, Ravintie 1\, Pori
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tomi-haus
+ tola-tyyppivika-stand-up-show/
+URL:https://comedyatlas.app/comedy-atlas/event/tomi-haustola-tyyppivika-sta
+ nd-up-show/
+END:VEVENT
+END:VCALENDAR

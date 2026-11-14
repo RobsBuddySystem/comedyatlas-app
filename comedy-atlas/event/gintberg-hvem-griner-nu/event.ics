@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gintberg-hvem-griner-nu@comedyatlas.app
+DTSTAMP:20270917T180000Z
+DTSTART:20270917T180000Z
+DTEND:20270917T200000Z
+SUMMARY:Gintberg - Hvem griner nu?
+LOCATION:Pavillonen Centersalen\, Kærvej 11\, Grenaa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gintberg-
+ hvem-griner-nu/
+URL:https://comedyatlas.app/comedy-atlas/event/gintberg-hvem-griner-nu/
+END:VEVENT
+END:VCALENDAR

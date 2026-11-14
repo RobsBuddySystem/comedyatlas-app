@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jonas-mogensen-sat-79522@comedyatlas.app
+DTSTAMP:20280302T170000Z
+DTSTART:20280302T170000Z
+DTEND:20280302T190000Z
+SUMMARY:Jonas Mogensen - SAT
+LOCATION:Nykøbing F. Teater\, Østergågade 2\, Nykøbing F
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jonas-mog
+ ensen-sat-79522/
+URL:https://comedyatlas.app/comedy-atlas/event/jonas-mogensen-sat-79522/
+END:VEVENT
+END:VCALENDAR

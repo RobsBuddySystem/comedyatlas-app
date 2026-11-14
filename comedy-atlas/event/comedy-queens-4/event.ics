@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-queens-4@comedyatlas.app
+DTSTAMP:20261214T170000Z
+DTSTART:20261214T170000Z
+DTEND:20261214T190000Z
+SUMMARY:Comedy Queens 4
+LOCATION:Troxy\, 490 Commercial Road\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-qu
+ eens-4/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-queens-4/
+END:VEVENT
+END:VCALENDAR

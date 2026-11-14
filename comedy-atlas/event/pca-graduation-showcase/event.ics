@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pca-graduation-showcase@comedyatlas.app
+DTSTAMP:20270206T203000Z
+DTSTART:20270206T203000Z
+DTEND:20270206T223000Z
+SUMMARY:PCA Graduation Showcase
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pca-gradu
+ ation-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/pca-graduation-showcase/
+END:VEVENT
+END:VCALENDAR
