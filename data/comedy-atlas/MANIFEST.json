@@ -7,13 +7,13 @@
     },
     {
       "filename": "cities.json",
-      "row_count": 1083,
-      "sha256": "195c821a1f8fc0d0178170cb5b293975a1f931b47401eea1d91298ac647ab20c"
+      "row_count": 1080,
+      "sha256": "1d3cd891aee792859c51a1be4cd55e4e259e8eab3af4ac87324ea9cb676f025e"
     },
     {
       "filename": "organizations.json",
-      "row_count": 164,
-      "sha256": "40cf5c701405779af88b4fce7391f172b457f5b053584c910ce0e50fe6abb8ef"
+      "row_count": 166,
+      "sha256": "1c8861d14c2ba24259e87cef0599096ea3366c3c3967302850de1a64fa16d091"
     },
     {
       "filename": "show_series.json",
@@ -22,8 +22,8 @@
     },
     {
       "filename": "upcoming_events.json",
-      "row_count": 20541,
-      "sha256": "66ac85ab259b19354c6dea167cc16b278e7354bcdf74213dc4494f90868ef6ab"
+      "row_count": 20523,
+      "sha256": "14aec3b908efaccf68c4fc88350eb59938130c9f035d8bfa67393562125b9495"
     },
     {
       "filename": "public_booking_methods.json",
@@ -32,8 +32,8 @@
     },
     {
       "filename": "festivals.json",
-      "row_count": 79,
-      "sha256": "b0fb51f16617e823fa0c942cf348db632da2c8f424638b54ca68465f36da0967"
+      "row_count": 80,
+      "sha256": "6b3b9200f5a28969f0ec0790e3961e63cb3bad4dc83621e2f1a1c8a85a07f6a6"
     },
     {
       "filename": "tours.json",
@@ -46,5 +46,5 @@
       "sha256": "11ba98285c492446f5fe3d4bc445819842cdaade1ff1e2beae9ff3bac2c05266"
     }
   ],
-  "generated_at": "2026-11-13T21:13:26.890178+00:00"
+  "generated_at": "2026-11-14T02:25:35.534369+00:00"
 }

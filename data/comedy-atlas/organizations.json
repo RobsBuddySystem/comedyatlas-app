@@ -2294,5 +2294,33 @@
     "name": "The Ice House Comedy Club",
     "organization_type": "production_company",
     "website_url": null
+  },
+  {
+    "active_status": "active",
+    "city_id": 25,
+    "city_name": "Paris",
+    "country_iso2": "FR",
+    "country_name": "France",
+    "description": "Organiser of the Festival de Nouvelle Com\u00e9die, a Paris festival pairing stand-up with comedy short films.",
+    "id": 221,
+    "instagram_handle": null,
+    "instagram_url": null,
+    "name": "Nouvelle Com\u00e9die",
+    "organization_type": "festival_organization",
+    "website_url": "https://www.nouvellecomedie.fr/"
+  },
+  {
+    "active_status": "active",
+    "city_id": 53,
+    "city_name": "Tallinn",
+    "country_iso2": "EE",
+    "country_name": "Estonia",
+    "description": null,
+    "id": 222,
+    "instagram_handle": null,
+    "instagram_url": null,
+    "name": "Comedy Estonia",
+    "organization_type": "production_company",
+    "website_url": null
   }
 ]
