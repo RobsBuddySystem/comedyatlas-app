@@ -75,7 +75,7 @@
     "id": 8,
     "language_counts": {
       "en": 167,
-      "unconfirmed": 60
+      "unconfirmed": 59
     },
     "latitude": 52.52,
     "longitude": 13.405,
@@ -110,7 +110,7 @@
     "id": 14,
     "language_counts": {
       "en": 6,
-      "unconfirmed": 192
+      "unconfirmed": 191
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 148,
-      "unconfirmed": 55
+      "unconfirmed": 53
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -249,7 +249,7 @@
     "country_name": "UK",
     "id": 24,
     "language_counts": {
-      "unconfirmed": 532
+      "unconfirmed": 529
     },
     "latitude": 53.4808,
     "longitude": -2.2426,
@@ -267,8 +267,8 @@
     "id": 25,
     "language_counts": {
       "en": 122,
-      "fr": 1038,
-      "unconfirmed": 17
+      "fr": 995,
+      "unconfirmed": 16
     },
     "latitude": 48.8566,
     "longitude": 2.3522,
@@ -530,7 +530,7 @@
     "id": 43,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 455
+      "unconfirmed": 451
     },
     "latitude": 59.9139,
     "longitude": 10.7522,
@@ -739,7 +739,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 51
+      "unconfirmed": 50
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -842,7 +842,7 @@
     "id": 74,
     "language_counts": {
       "en": 600,
-      "unconfirmed": 1260
+      "unconfirmed": 1253
     },
     "latitude": 51.5074,
     "longitude": -0.1278,
@@ -859,7 +859,7 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 19,
+      "en": 12,
       "unconfirmed": 91
     },
     "latitude": 40.7128,
@@ -877,7 +877,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 581
+      "unconfirmed": 583
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -911,7 +911,7 @@
     "country_name": "UK",
     "id": 78,
     "language_counts": {
-      "unconfirmed": 120
+      "unconfirmed": 119
     },
     "latitude": 55.8642,
     "longitude": -4.2518,
@@ -980,7 +980,7 @@
     "id": 82,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 361
+      "unconfirmed": 359
     },
     "latitude": 53.4084,
     "longitude": -2.9916,
@@ -997,7 +997,7 @@
     "country_name": "UK",
     "id": 83,
     "language_counts": {
-      "unconfirmed": 49
+      "unconfirmed": 48
     },
     "latitude": 51.4816,
     "longitude": -3.1791,
@@ -2381,7 +2381,7 @@
     "country_name": "France",
     "id": 189,
     "language_counts": {
-      "fr": 17
+      "fr": 16
     },
     "latitude": 50.6292,
     "longitude": 3.0573,
@@ -2420,23 +2420,6 @@
     "latitude": null,
     "longitude": null,
     "name": "Albert",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Paris"
-  },
-  {
-    "country_id": 20,
-    "country_iso2": "FR",
-    "country_name": "France",
-    "id": 194,
-    "language_counts": {
-      "fr": 1
-    },
-    "latitude": null,
-    "longitude": null,
-    "name": "Angers",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -2534,7 +2517,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 37,
+      "fr": 34,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2637,7 +2620,7 @@
     "country_name": "France",
     "id": 217,
     "language_counts": {
-      "fr": 4
+      "fr": 3
     },
     "latitude": null,
     "longitude": null,
@@ -2705,7 +2688,7 @@
     "country_name": "France",
     "id": 233,
     "language_counts": {
-      "fr": 7
+      "fr": 6
     },
     "latitude": null,
     "longitude": null,
@@ -2739,7 +2722,7 @@
     "country_name": "France",
     "id": 238,
     "language_counts": {
-      "fr": 4
+      "fr": 3
     },
     "latitude": null,
     "longitude": null,
@@ -2825,7 +2808,7 @@
     "id": 249,
     "language_counts": {
       "en": 1,
-      "fr": 41
+      "fr": 39
     },
     "latitude": null,
     "longitude": null,
@@ -2859,7 +2842,7 @@
     "country_name": "France",
     "id": 255,
     "language_counts": {
-      "fr": 7
+      "fr": 6
     },
     "latitude": null,
     "longitude": null,
@@ -2893,7 +2876,7 @@
     "country_name": "France",
     "id": 257,
     "language_counts": {
-      "fr": 34
+      "fr": 33
     },
     "latitude": null,
     "longitude": null,
@@ -2966,23 +2949,6 @@
     "latitude": null,
     "longitude": null,
     "name": "Rennes",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Paris"
-  },
-  {
-    "country_id": 20,
-    "country_iso2": "FR",
-    "country_name": "France",
-    "id": 275,
-    "language_counts": {
-      "fr": 1
-    },
-    "latitude": null,
-    "longitude": null,
-    "name": "Roissy-en-Brie",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -3370,7 +3336,7 @@
     "id": 375,
     "language_counts": {
       "fr": 5,
-      "unconfirmed": 4
+      "unconfirmed": 3
     },
     "latitude": 46.52951,
     "longitude": 6.62326,
@@ -4497,23 +4463,6 @@
     "latitude": 39.97308,
     "longitude": 27.492809,
     "name": "Bal\u0131kesir",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Istanbul"
-  },
-  {
-    "country_id": 45,
-    "country_iso2": "TR",
-    "country_name": "T\u00fcrkiye",
-    "id": 458,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 37.864009,
-    "longitude": 28.000278,
-    "name": "Ayd\u0131n",
     "region_code": null,
     "region_id": null,
     "region_name": null,
