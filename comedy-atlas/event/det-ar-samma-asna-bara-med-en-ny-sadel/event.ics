@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:det-ar-samma-asna-bara-med-en-ny-sadel@comedyatlas.app
+DTSTAMP:20270128T180000Z
+DTSTART:20270128T180000Z
+DTEND:20270128T200000Z
+SUMMARY:Det är samma åsna\, bara med en ny sadel
+LOCATION:Eskilstuna teater\, Eskilstuna
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/det-ar-sa
+ mma-asna-bara-med-en-ny-sadel/
+URL:https://comedyatlas.app/comedy-atlas/event/det-ar-samma-asna-bara-med-e
+ n-ny-sadel/
+END:VEVENT
+END:VCALENDAR

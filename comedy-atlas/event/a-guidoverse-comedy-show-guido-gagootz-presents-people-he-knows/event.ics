@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:a-guidoverse-comedy-show-guido-gagootz-presents-people-he-knows@comedya
+ tlas.app
+DTSTAMP:20261209T033000Z
+DTSTART:20261209T033000Z
+DTEND:20261209T053000Z
+SUMMARY:A Guidoverse Comedy Show: Guido Gagootz Presents People He Knows
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Belly Room.\nMore info: https://comedyatl
+ as.app/comedy-atlas/event/a-guidoverse-comedy-show-guido-gagootz-presents-p
+ eople-he-knows/
+URL:https://comedyatlas.app/comedy-atlas/event/a-guidoverse-comedy-show-gui
+ do-gagootz-presents-people-he-knows/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crap-comedy-late-night-stand-up@comedyatlas.app
+DTSTAMP:20270129T210000Z
+DTSTART:20270129T210000Z
+DTEND:20270129T230000Z
+SUMMARY:Crap comedy: Late Night Stand Up
+LOCATION:Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/crap-come
+ dy-late-night-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/crap-comedy-late-night-stand
+ -up/
+END:VEVENT
+END:VCALENDAR

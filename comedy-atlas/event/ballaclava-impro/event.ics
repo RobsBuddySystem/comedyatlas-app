@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ballaclava-impro@comedyatlas.app
+DTSTAMP:20261203T183000Z
+DTSTART:20261203T183000Z
+DTEND:20261203T203000Z
+SUMMARY:Ballaclava impro
+LOCATION:nieu torshov\, Vogts gate 64\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ballaclav
+ a-impro/
+URL:https://comedyatlas.app/comedy-atlas/event/ballaclava-impro/
+END:VEVENT
+END:VCALENDAR

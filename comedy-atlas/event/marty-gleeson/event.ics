@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:marty-gleeson@comedyatlas.app
+DTSTAMP:20270301T203000Z
+DTSTART:20270301T203000Z
+DTEND:20270301T223000Z
+SUMMARY:Marty Gleeson
+LOCATION:The Sugar Club\, 8 Lower Leeson Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/marty-gle
+ eson/
+URL:https://comedyatlas.app/comedy-atlas/event/marty-gleeson/
+END:VEVENT
+END:VCALENDAR

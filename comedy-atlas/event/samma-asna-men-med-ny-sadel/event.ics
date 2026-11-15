@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:samma-asna-men-med-ny-sadel@comedyatlas.app
+DTSTAMP:20270206T183000Z
+DTSTART:20270206T183000Z
+DTEND:20270206T203000Z
+SUMMARY:Samma åsna men med ny sadel
+LOCATION:Linköping Konsert & Kongress\, Konsistoriegatan 7\, Linköping
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/samma-asn
+ a-men-med-ny-sadel/
+URL:https://comedyatlas.app/comedy-atlas/event/samma-asna-men-med-ny-sadel/
+END:VEVENT
+END:VCALENDAR

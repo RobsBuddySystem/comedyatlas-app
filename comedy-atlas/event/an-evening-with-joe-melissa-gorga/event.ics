@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:an-evening-with-joe-melissa-gorga@comedyatlas.app
+DTSTAMP:20270131T003000Z
+DTSTART:20270131T003000Z
+DTEND:20270131T023000Z
+SUMMARY:An Evening with Joe & Melissa Gorga
+LOCATION:The Elgin & Winter Garden Theatres\, 189 Yonge St.\, Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/an-evenin
+ g-with-joe-melissa-gorga/
+URL:https://comedyatlas.app/comedy-atlas/event/an-evening-with-joe-melissa-
+ gorga/
+END:VEVENT
+END:VCALENDAR
