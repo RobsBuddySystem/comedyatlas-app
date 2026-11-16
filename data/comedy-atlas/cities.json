@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 148,
-      "unconfirmed": 51
+      "unconfirmed": 55
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 120,
-      "fr": 972,
+      "fr": 975,
       "unconfirmed": 16
     },
     "latitude": 48.8566,
@@ -859,7 +859,7 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 6,
+      "en": 12,
       "unconfirmed": 89
     },
     "latitude": 40.7128,
@@ -877,7 +877,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 582
+      "unconfirmed": 575
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -1235,7 +1235,7 @@
     "country_name": "United States",
     "id": 99,
     "language_counts": {
-      "unconfirmed": 31
+      "unconfirmed": 29
     },
     "latitude": 32.7157,
     "longitude": -117.1611,
@@ -1373,7 +1373,7 @@
     "country_name": "Canada",
     "id": 107,
     "language_counts": {
-      "unconfirmed": 16
+      "unconfirmed": 15
     },
     "latitude": 49.2827,
     "longitude": -123.1207,
@@ -1783,7 +1783,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 109
+      "unconfirmed": 108
     },
     "latitude": 47.657193,
     "longitude": -117.42351,
@@ -1817,7 +1817,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 217
+      "unconfirmed": 216
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1919,7 +1919,7 @@
     "country_name": "United States",
     "id": 146,
     "language_counts": {
-      "unconfirmed": 269
+      "unconfirmed": 268
     },
     "latitude": 37.787936,
     "longitude": -122.40752,
@@ -2381,7 +2381,7 @@
     "country_name": "France",
     "id": 189,
     "language_counts": {
-      "fr": 16
+      "fr": 23
     },
     "latitude": 50.6292,
     "longitude": 3.0573,
@@ -2517,7 +2517,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 34,
+      "fr": 36,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2722,7 +2722,7 @@
     "country_name": "France",
     "id": 238,
     "language_counts": {
-      "fr": 3
+      "fr": 5
     },
     "latitude": null,
     "longitude": null,
@@ -2813,6 +2813,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Marseille",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 252,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Mers Les Bains",
     "region_code": null,
     "region_id": null,
     "region_name": null,
@@ -3029,7 +3046,7 @@
     "country_name": "France",
     "id": 289,
     "language_counts": {
-      "fr": 5
+      "fr": 6
     },
     "latitude": null,
     "longitude": null,
@@ -10023,7 +10040,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1466
+      "unconfirmed": 1458
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -10040,7 +10057,7 @@
     "country_name": "United States",
     "id": 831,
     "language_counts": {
-      "unconfirmed": 151
+      "unconfirmed": 150
     },
     "latitude": 38.595283,
     "longitude": -121.417411,
@@ -10108,7 +10125,7 @@
     "country_name": "United States",
     "id": 835,
     "language_counts": {
-      "unconfirmed": 153
+      "unconfirmed": 152
     },
     "latitude": 39.530692,
     "longitude": -119.815314,
@@ -10193,7 +10210,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 79
+      "unconfirmed": 82
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -11373,7 +11390,7 @@
     "country_name": "United States",
     "id": 926,
     "language_counts": {
-      "unconfirmed": 23
+      "unconfirmed": 22
     },
     "latitude": 38.960308,
     "longitude": -119.942696,
@@ -18216,6 +18233,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Valbonne",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1556,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Quincy sous S\u00e9nart",
     "region_code": null,
     "region_id": null,
     "region_name": null,
