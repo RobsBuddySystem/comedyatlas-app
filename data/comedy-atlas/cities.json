@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 120,
-      "fr": 977,
+      "fr": 996,
       "unconfirmed": 16
     },
     "latitude": 48.8566,
@@ -337,7 +337,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 357
+      "fr": 362
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -945,7 +945,7 @@
     "country_name": "UK",
     "id": 80,
     "language_counts": {
-      "unconfirmed": 110
+      "unconfirmed": 113
     },
     "latitude": 52.4862,
     "longitude": -1.8904,
@@ -2669,6 +2669,23 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
+    "id": 230,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "D\u00e9cines Charpieu",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
     "id": 231,
     "language_counts": {
       "fr": 1
@@ -3528,6 +3545,23 @@
     "latitude": 45.81535,
     "longitude": 8.828545,
     "name": "Varese",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Rome"
+  },
+  {
+    "country_id": 26,
+    "country_iso2": "IT",
+    "country_name": "Italy",
+    "id": 388,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 44.488712,
+    "longitude": 11.348266,
+    "name": "Bologna",
     "region_code": null,
     "region_id": null,
     "region_name": null,
