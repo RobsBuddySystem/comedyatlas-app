@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-facial-recognition-comedy@comedyatlas.app
+DTSTAMP:20270115T033000Z
+DTSTART:20270115T033000Z
+DTEND:20270115T053000Z
+SUMMARY:SF Sketchfest Presents: Facial Recognition Comedy
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-facial-recognition-comedy/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-facia
+ l-recognition-comedy/
+END:VEVENT
+END:VCALENDAR

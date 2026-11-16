@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:betty-comedie-aix-85061@comedyatlas.app
+DTSTAMP:20261215T193000Z
+DTSTART:20261215T193000Z
+DTEND:20261215T213000Z
+SUMMARY:Betty Comédie Aix
+LOCATION:Betty's Resto by House Cookies\, 8 Rue Boulegon\, Aix en Provence
+DESCRIPTION:Betty Comédie Aix est un plateau d'humoristes en stand-up à A
+ ix en Provence au Bar des Oiseaux.\nMore info: https://comedyatlas.app/come
+ dy-atlas/event/betty-comedie-aix-85061/
+URL:https://comedyatlas.app/comedy-atlas/event/betty-comedie-aix-85061/
+END:VEVENT
+END:VCALENDAR

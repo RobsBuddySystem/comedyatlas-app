@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-fake-ted-talks@comedyatlas.app
+DTSTAMP:20270123T030000Z
+DTSTART:20270123T030000Z
+DTEND:20270123T050000Z
+SUMMARY:SF Sketchfest Presents: Fake TED Talks
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-fake-ted-talks/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-fake-
+ ted-talks/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-the-george-lucas-talk-show@comedyatlas.app
+DTSTAMP:20270130T053000Z
+DTSTART:20270130T053000Z
+DTEND:20270130T073000Z
+SUMMARY:SF Sketchfest: The George Lucas Talk Show
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-the-george-lucas-talk-show/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-the-george-luc
+ as-talk-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-the-flop-house-a-podcast-about-bad-movies@comedy
+ atlas.app
+DTSTAMP:20270125T000000Z
+DTSTART:20270125T000000Z
+DTEND:20270125T020000Z
+SUMMARY:SF Sketchfest Presents: The Flop House: A Podcast About Bad Movies
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-the-flop-house-a-podcast-about-bad-movies/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-the-f
+ lop-house-a-podcast-about-bad-movies/
+END:VEVENT
+END:VCALENDAR

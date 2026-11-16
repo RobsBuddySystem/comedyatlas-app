@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-derosa-84494@comedyatlas.app
+DTSTAMP:20270221T000000Z
+DTSTART:20270221T000000Z
+DTEND:20270221T020000Z
+SUMMARY:Joe DeRosa
+LOCATION:Gramercy Theatre\, 127 East 23rd Street\, New York
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-deros
+ a-84494/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-derosa-84494/
+END:VEVENT
+END:VCALENDAR

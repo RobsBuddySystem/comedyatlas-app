@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-desi-comedy-fest@comedyatlas.app
+DTSTAMP:20270120T033000Z
+DTSTART:20270120T033000Z
+DTEND:20270120T053000Z
+SUMMARY:SF Sketchfest Presents: Desi Comedy Fest
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-desi-comedy-fest/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-desi-
+ comedy-fest/
+END:VEVENT
+END:VCALENDAR

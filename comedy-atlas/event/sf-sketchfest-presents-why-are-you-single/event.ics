@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-why-are-you-single@comedyatlas.app
+DTSTAMP:20270130T030000Z
+DTSTART:20270130T030000Z
+DTEND:20270130T050000Z
+SUMMARY:SF Sketchfest Presents: Why Are You Single?
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-why-are-you-single/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-why-a
+ re-you-single/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-scam-goddess@comedyatlas.app
+DTSTAMP:20270118T000000Z
+DTSTART:20270118T000000Z
+DTEND:20270118T020000Z
+SUMMARY:SF Sketchfest Presents: Scam Goddess
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-scam-goddess/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-scam-
+ goddess/
+END:VEVENT
+END:VCALENDAR

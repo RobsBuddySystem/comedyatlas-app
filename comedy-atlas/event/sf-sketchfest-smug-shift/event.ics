@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-smug-shift@comedyatlas.app
+DTSTAMP:20270116T053000Z
+DTSTART:20270116T053000Z
+DTEND:20270116T073000Z
+SUMMARY:SF Sketchfest: Smug Shift
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-smug-shift/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-smug-shift/
+END:VEVENT
+END:VCALENDAR

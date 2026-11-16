@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-sup-bro@comedyatlas.app
+DTSTAMP:20270117T054500Z
+DTSTART:20270117T054500Z
+DTEND:20270117T074500Z
+SUMMARY:SF Sketchfest Presents: Sup\, Bro?
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-sup-bro/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-sup-b
+ ro/
+END:VEVENT
+END:VCALENDAR

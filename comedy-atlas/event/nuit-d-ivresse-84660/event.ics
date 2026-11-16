@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nuit-d-ivresse-84660@comedyatlas.app
+DTSTAMP:20261212T200000Z
+DTSTART:20261212T200000Z
+DTEND:20261212T220000Z
+SUMMARY:Nuit d'Ivresse
+LOCATION:L'Azile La Rochelle\, 29 rue Debussy\, La Rochelle
+DESCRIPTION:Tout oppose Simone et Jacques qui se rencontrent par hasard en 
+ fin de soirée dans un bar désert de la Gare de l'Est.\nMore info: https:/
+ /comedyatlas.app/comedy-atlas/event/nuit-d-ivresse-84660/
+URL:https://comedyatlas.app/comedy-atlas/event/nuit-d-ivresse-84660/
+END:VEVENT
+END:VCALENDAR

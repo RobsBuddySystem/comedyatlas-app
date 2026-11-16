@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:venance-jappe-dans-obscur@comedyatlas.app
+DTSTAMP:20261129T193000Z
+DTSTART:20261129T193000Z
+DTEND:20261129T213000Z
+SUMMARY:Venance Jappe dans Obscur
+LOCATION:Black Cat Comedy Club\, 37 Cr Aristide Briand\, Bordeaux
+DESCRIPTION:Dans "Obscur"\, Venance Jappe vous embarque dans son univers.\n
+ More info: https://comedyatlas.app/comedy-atlas/event/venance-jappe-dans-ob
+ scur/
+URL:https://comedyatlas.app/comedy-atlas/event/venance-jappe-dans-obscur/
+END:VEVENT
+END:VCALENDAR

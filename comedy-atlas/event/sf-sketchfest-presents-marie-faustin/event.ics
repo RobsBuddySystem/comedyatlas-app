@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-marie-faustin@comedyatlas.app
+DTSTAMP:20270129T033000Z
+DTSTART:20270129T033000Z
+DTEND:20270129T053000Z
+SUMMARY:SF Sketchfest Presents: Marie Faustin
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-marie-faustin/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-marie
+ -faustin/
+END:VEVENT
+END:VCALENDAR

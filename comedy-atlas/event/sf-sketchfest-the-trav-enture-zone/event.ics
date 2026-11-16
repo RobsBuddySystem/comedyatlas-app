@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-the-trav-enture-zone@comedyatlas.app
+DTSTAMP:20270131T210000Z
+DTSTART:20270131T210000Z
+DTEND:20270131T230000Z
+SUMMARY:SF Sketchfest: The Trav-enture Zone
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-the-trav-enture-zone/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-the-trav-entur
+ e-zone/
+END:VEVENT
+END:VCALENDAR

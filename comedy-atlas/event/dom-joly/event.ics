@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dom-joly@comedyatlas.app
+DTSTAMP:20271125T190000Z
+DTSTART:20271125T190000Z
+DTEND:20271125T210000Z
+SUMMARY:Dom Joly
+LOCATION:Southampton 1865\, Brunswick Square\, Southampton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dom-joly/
+URL:https://comedyatlas.app/comedy-atlas/event/dom-joly/
+END:VEVENT
+END:VCALENDAR

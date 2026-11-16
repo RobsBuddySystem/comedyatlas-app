@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gregory-gilles@comedyatlas.app
+DTSTAMP:20261212T183000Z
+DTSTART:20261212T183000Z
+DTEND:20261212T203000Z
+SUMMARY:Grégory Gilles
+LOCATION:Théâtre de l'Observance - salle 1\, 10 rue de l'observance\, Avi
+ gnon
+DESCRIPTION:1 heure de blagues pour prouver à mes amis et à ma famille qu
+ e les 18 200 Euros n'ont pas servi à rien !\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/gregory-gilles/
+URL:https://comedyatlas.app/comedy-atlas/event/gregory-gilles/
+END:VEVENT
+END:VCALENDAR

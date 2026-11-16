@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-janeane-garofalo@comedyatlas.app
+DTSTAMP:20270124T054500Z
+DTSTART:20270124T054500Z
+DTEND:20270124T074500Z
+SUMMARY:SF Sketchfest Presents: Janeane Garofalo
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-janeane-garofalo/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-janea
+ ne-garofalo/
+END:VEVENT
+END:VCALENDAR

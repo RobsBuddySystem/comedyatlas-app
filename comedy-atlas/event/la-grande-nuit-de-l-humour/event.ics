@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-grande-nuit-de-l-humour@comedyatlas.app
+DTSTAMP:20261128T193000Z
+DTSTART:20261128T193000Z
+DTEND:20261128T213000Z
+SUMMARY:La Grande Nuit de L'Humour
+LOCATION:Salle Mère Marie Pia\, 4 Rue de Combs la Ville\, Quincy sous Sén
+ art
+DESCRIPTION:4 artistes\, 4 styles d'humour\, 4 univers différents\, 2 heur
+ es de fous rires !\nMore info: https://comedyatlas.app/comedy-atlas/event/l
+ a-grande-nuit-de-l-humour/
+URL:https://comedyatlas.app/comedy-atlas/event/la-grande-nuit-de-l-humour/
+END:VEVENT
+END:VCALENDAR

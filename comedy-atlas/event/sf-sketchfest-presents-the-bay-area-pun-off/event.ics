@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-the-bay-area-pun-off@comedyatlas.app
+DTSTAMP:20270128T033000Z
+DTSTART:20270128T033000Z
+DTEND:20270128T053000Z
+SUMMARY:SF Sketchfest Presents: The Bay Area Pun-Off
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-the-bay-area-pun-off/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-the-b
+ ay-area-pun-off/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:basta@comedyatlas.app
+DTSTAMP:20270618T180000Z
+DTSTART:20270618T180000Z
+DTEND:20270618T200000Z
+SUMMARY:Basta
+LOCATION:KüçükÇiftlik Park\, Harbiye\, Kadırgalar Cd. No:4\, 34367\, I
+ stanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/basta/
+URL:https://comedyatlas.app/comedy-atlas/event/basta/
+END:VEVENT
+END:VCALENDAR

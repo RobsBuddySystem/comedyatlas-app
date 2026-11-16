@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:open-mic-84615@comedyatlas.app
+DTSTAMP:20270219T033000Z
+DTSTART:20270219T033000Z
+DTEND:20270219T053000Z
+SUMMARY:Open Mic
+LOCATION:The Comedy Club of Kansas City\, 1130 W 103rd St\, Kansas City
+DESCRIPTION:Sign up between 8:00pm and 8:45pm.  3 minute sets.  Bucket dr
+ aw.  If you are a first timer\, please indicate so on your slip when you s
+ ign up.  Pre-show meeting at 9:00pm for all comics participating on the Op
+ en Mic.\nMore info: https://comedyatlas.app/comedy-atlas/event/open-mic-84
+ 615/
+URL:https://comedyatlas.app/comedy-atlas/event/open-mic-84615/
+END:VEVENT
+END:VCALENDAR

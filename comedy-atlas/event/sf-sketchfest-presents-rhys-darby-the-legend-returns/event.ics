@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-rhys-darby-the-legend-returns@comedyatlas.app
+DTSTAMP:20270117T030000Z
+DTSTART:20270117T030000Z
+DTEND:20270117T050000Z
+SUMMARY:SF Sketchfest Presents: Rhys Darby: The Legend Returns
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-rhys-darby-the-legend-returns/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-rhys-
+ darby-the-legend-returns/
+END:VEVENT
+END:VCALENDAR

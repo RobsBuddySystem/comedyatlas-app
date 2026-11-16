@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-celebrity-autobiography@comedyatlas.app
+DTSTAMP:20270124T000000Z
+DTSTART:20270124T000000Z
+DTEND:20270124T020000Z
+SUMMARY:SF Sketchfest Presents: Celebrity Autobiography
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-celebrity-autobiography/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-celeb
+ rity-autobiography/
+END:VEVENT
+END:VCALENDAR

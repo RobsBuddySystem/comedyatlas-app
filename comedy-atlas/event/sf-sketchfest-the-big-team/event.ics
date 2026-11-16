@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-the-big-team@comedyatlas.app
+DTSTAMP:20270117T030000Z
+DTSTART:20270117T030000Z
+DTEND:20270117T050000Z
+SUMMARY:SF Sketchfest: The Big Team
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-the-big-team/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-the-big-team/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-invite-them-up-with-eugene-mirman-bobby-tisdale@comedyatl
+ as.app
+DTSTAMP:20270116T030000Z
+DTSTART:20270116T030000Z
+DTEND:20270116T050000Z
+SUMMARY:SF Sketchfest: Invite Them Up with Eugene Mirman & Bobby Tisdale
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-invite-them-up-with-eugene-mirman-bobby-tisdale/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-invite-them-up
+ -with-eugene-mirman-bobby-tisdale/
+END:VEVENT
+END:VCALENDAR

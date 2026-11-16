@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-fm-presents-josh-wolf@comedyatlas.app
+DTSTAMP:20261204T013000Z
+DTSTART:20261204T013000Z
+DTEND:20261204T033000Z
+SUMMARY:JACK-FM Presents: Josh Wolf
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-fm-p
+ resents-josh-wolf/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-fm-presents-josh-wolf/
+END:VEVENT
+END:VCALENDAR

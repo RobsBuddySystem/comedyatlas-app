@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:madame-marguerite-84520@comedyatlas.app
+DTSTAMP:20261219T200000Z
+DTSTART:20261219T200000Z
+DTEND:20261219T220000Z
+SUMMARY:Madame Marguerite
+LOCATION:Le petit Théâtre de Valbonne\, Place de Arcades\, Valbonne
+DESCRIPTION:Qui n'a pas\, face au personnage de Madame Marguerite\, retrouv
+ é le souvenir d'un professeur ?\nMore info: https://comedyatlas.app/comedy
+ -atlas/event/madame-marguerite-84520/
+URL:https://comedyatlas.app/comedy-atlas/event/madame-marguerite-84520/
+END:VEVENT
+END:VCALENDAR

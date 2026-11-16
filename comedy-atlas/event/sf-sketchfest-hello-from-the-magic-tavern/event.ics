@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-hello-from-the-magic-tavern@comedyatlas.app
+DTSTAMP:20270201T030000Z
+DTSTART:20270201T030000Z
+DTEND:20270201T050000Z
+SUMMARY:SF Sketchfest: Hello From the Magic Tavern
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-hello-from-the-magic-tavern/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-hello-from-the
+ -magic-tavern/
+END:VEVENT
+END:VCALENDAR

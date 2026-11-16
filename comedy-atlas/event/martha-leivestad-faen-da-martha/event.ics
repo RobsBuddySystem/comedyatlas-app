@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martha-leivestad-faen-da-martha@comedyatlas.app
+DTSTAMP:20270305T170000Z
+DTSTART:20270305T170000Z
+DTEND:20270305T190000Z
+SUMMARY:Martha Leivestad - «Faen då\, Martha!»
+LOCATION:Sentrum Scene\, Arbeidersamfunnets plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martha-le
+ ivestad-faen-da-martha/
+URL:https://comedyatlas.app/comedy-atlas/event/martha-leivestad-faen-da-mar
+ tha/
+END:VEVENT
+END:VCALENDAR

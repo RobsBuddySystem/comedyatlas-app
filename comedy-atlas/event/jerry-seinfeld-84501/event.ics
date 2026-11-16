@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-84501@comedyatlas.app
+DTSTAMP:20270423T230000Z
+DTSTART:20270423T230000Z
+DTEND:20270424T010000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Springfield Symphony Hall\, 34 Court Street\, Springfield
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-84501/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-84501/
+END:VEVENT
+END:VCALENDAR

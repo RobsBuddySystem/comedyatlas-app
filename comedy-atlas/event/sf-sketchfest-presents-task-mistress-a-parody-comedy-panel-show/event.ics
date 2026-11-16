@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-task-mistress-a-parody-comedy-panel-show@comedya
+ tlas.app
+DTSTAMP:20270201T030000Z
+DTSTART:20270201T030000Z
+DTEND:20270201T050000Z
+SUMMARY:SF Sketchfest Presents: Task Mistress: A (Parody) Comedy Panel Show
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-task-mistress-a-parody-comedy-panel-show/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-task-
+ mistress-a-parody-comedy-panel-show/
+END:VEVENT
+END:VCALENDAR

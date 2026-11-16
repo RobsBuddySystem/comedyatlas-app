@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-sasquatch-presents-mountain-time-live@comedyatlas.app
+DTSTAMP:20270130T030000Z
+DTSTART:20270130T030000Z
+DTEND:20270130T050000Z
+SUMMARY:SF Sketchfest: Sasquatch presents Mountain Time Live!
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-sasquatch-presents-mountain-time-live/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-sasquatch-pres
+ ents-mountain-time-live/
+END:VEVENT
+END:VCALENDAR

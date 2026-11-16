@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-84503@comedyatlas.app
+DTSTAMP:20270508T230000Z
+DTSTART:20270508T230000Z
+DTEND:20270509T010000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Steven Tanger Center for the Performing Arts\, 300 North Elm Stree
+ t\, Greensboro
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-84503/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-84503/
+END:VEVENT
+END:VCALENDAR

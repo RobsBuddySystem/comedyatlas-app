@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:majah-hype@comedyatlas.app
+DTSTAMP:20270109T010000Z
+DTSTART:20270109T010000Z
+DTEND:20270109T030000Z
+SUMMARY:Majah Hype
+LOCATION:Howard Theatre\, 620 T Street NW\, Washington
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/majah-hyp
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/majah-hype/
+END:VEVENT
+END:VCALENDAR

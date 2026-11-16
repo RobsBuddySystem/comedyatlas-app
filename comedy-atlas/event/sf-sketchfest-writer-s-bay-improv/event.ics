@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-writer-s-bay-improv@comedyatlas.app
+DTSTAMP:20270131T053000Z
+DTSTART:20270131T053000Z
+DTEND:20270131T073000Z
+SUMMARY:SF Sketchfest: Writer's Bay Improv
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-writer-s-bay-improv/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-writer-s-bay-i
+ mprov/
+END:VEVENT
+END:VCALENDAR

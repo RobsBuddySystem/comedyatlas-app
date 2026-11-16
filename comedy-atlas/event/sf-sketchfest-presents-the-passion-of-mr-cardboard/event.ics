@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-presents-the-passion-of-mr-cardboard@comedyatlas.app
+DTSTAMP:20270130T210000Z
+DTSTART:20270130T210000Z
+DTEND:20270130T230000Z
+SUMMARY:Sf Sketchfest Presents: The Passion of Mr. Cardboard
+LOCATION:Punch Line Comedy Club - San Francisco\, 444 Battery Street\, San 
+ Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-presents-the-passion-of-mr-cardboard/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-presents-the-p
+ assion-of-mr-cardboard/
+END:VEVENT
+END:VCALENDAR

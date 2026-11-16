@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sf-sketchfest-drunk-shrek@comedyatlas.app
+DTSTAMP:20270118T030000Z
+DTSTART:20270118T030000Z
+DTEND:20270118T050000Z
+SUMMARY:SF Sketchfest: Drunk Shrek
+LOCATION:August Hall\, 420 Mason St\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sf-sketch
+ fest-drunk-shrek/
+URL:https://comedyatlas.app/comedy-atlas/event/sf-sketchfest-drunk-shrek/
+END:VEVENT
+END:VCALENDAR
