@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:running-crossfit-mojito@comedyatlas.app
+DTSTAMP:20261204T170000Z
+DTSTART:20261204T170000Z
+DTEND:20261204T190000Z
+SUMMARY:Running Crossfit & Mojito
+LOCATION:Bibi Comedia\, 35 Place Chateaudun\, Saint Raphaël
+DESCRIPTION:La comédie qui vous reconcilie avec le sport ! Ou pas...\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/running-crossfit-mojito/
+URL:https://comedyatlas.app/comedy-atlas/event/running-crossfit-mojito/
+END:VEVENT
+END:VCALENDAR

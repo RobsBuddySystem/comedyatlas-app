@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:christine-berrou@comedyatlas.app
+DTSTAMP:20261129T140000Z
+DTSTART:20261129T140000Z
+DTEND:20261129T160000Z
+SUMMARY:Christine Berrou
+LOCATION:Cartel Comedy Club\, 6 rue de la Tacherie\, Paris
+DESCRIPTION:J'ai testé pour vous\, la confiance en soi.\nMore info: https:
+ //comedyatlas.app/comedy-atlas/event/christine-berrou/
+URL:https://comedyatlas.app/comedy-atlas/event/christine-berrou/
+END:VEVENT
+END:VCALENDAR

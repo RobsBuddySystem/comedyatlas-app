@@ -48,6 +48,8 @@ button.danger{background:transparent;border:1px solid var(--red);color:var(--red
 .tab2{padding:6px 12px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:12.5px;color:var(--muted)}
 .tab2.active{border-color:var(--gold);color:var(--text);font-weight:700}
 .signed-out{padding:40px 0;text-align:center;color:var(--muted)}
+.open-booking-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 22px;border-radius:8px;background:var(--gold-btn);color:#100c00;font-weight:700;font-size:15px;text-decoration:none;margin-top:6px}
+.open-booking-cta:hover,.open-booking-cta:focus-visible{filter:brightness(1.08);outline:2px solid var(--gold);outline-offset:2px}
 .privacy{font-size:12px;color:var(--muted);margin-top:8px}
 .comic-card{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
 .comic-card input[type=checkbox]{width:auto;flex:0 0 auto;margin-top:2px}
@@ -216,6 +218,11 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;co
     </div>
 
     <section data-tab="home">
+    <div class="card" id="open-booking-card" style="border:1px solid var(--gold)">
+      <h2>🎤 Your bookings</h2>
+      <p class="privacy" style="margin-bottom:6px">Your upcoming shows, lineups and offers live in the booking app — one tap away.</p>
+      <a class="open-booking-cta" id="open-booking-app" href="booking.html#shows">Open booking app →</a>
+    </div>
     <div class="card" id="no-shows-banner" style="display:none;border:1px solid var(--gold)">
       <h2>👋 You don't have a show on ATLAS yet</h2>
       <p class="privacy" style="margin-bottom:10px">Create it in 30 seconds —

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News | COMEDY ATLAS</title>
+<meta name="description" content="Weekly comedy news by city -- new venues, new shows and freshly listed dates, read straight from COMEDY ATLAS&#x27;s live listings.">
+<link rel="canonical" href="https://comedyatlas.app/comedy-atlas/news/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="News | COMEDY ATLAS">
+<meta property="og:description" content="Weekly comedy news by city -- new venues, new shows and freshly listed dates, read straight from COMEDY ATLAS&#x27;s live listings.">
+<meta property="og:url" content="https://comedyatlas.app/comedy-atlas/news/">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;--purple-light:#9d5ff5;
+  --bg:#0a0e1a;--card:#111827;--border:#1e2a3a;
+  --text:#f0f0f0;--muted:#8899aa;
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-btn:#c9a84c;
+  --red:#c41e3a;--green:#3fb950;
+}
+@media (prefers-color-scheme: light){
+  /* P1-2 (2026-08-02, WCAG 2.1 AA pass): the light-mode override below used
+     to redefine --bg/--card/--border/--text/--muted but NOT --gold/--gold-
+     light, so every gold-on-light-background text node (headings, event
+     times, milestone dates, save-button label, .reliable-badge, and every
+     page/generator that imports this CSS constant -- city pages, comics
+     index, cities index, blog, guide, newsletter -- see the import sites
+     grepped for this fix) silently kept the DARK-mode gold #c9a84c, which
+     measures 2.10:1 against --bg #f7f5f0 and 2.29:1 against --card #ffffff
+     -- both well under the 4.5:1 WCAG 2.1 AA text-contrast minimum (axe-
+     core's "color-contrast" rule, the dominant finding across every
+     audited page: 66 nodes on Paris city, 58 on Comics, 8 on a
+     representative event page). Darkened gold (#766024 / #796013) keeps
+     the same hue/brand identity, verified >=5.5:1 against BOTH light
+     backgrounds (contrast math run 2026-08-02, WCAG relative-luminance
+     formula) -- dark mode is completely untouched.*/
+  :root{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
+}
+:root[data-theme="dark"]{--bg:#0a0e1a;--card:#111827;--border:#1e2a3a;--text:#f0f0f0;--muted:#8899aa}
+:root[data-theme="light"]{--bg:#f7f5f0;--card:#ffffff;--border:#e2ddd2;--text:#171512;--muted:#5a5348;--gold:#766024;--gold-light:#796013;--green:#2b7e37;--purple-light:#8b42f3}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;flex-wrap:wrap;gap:8px}.skip-link{position:absolute;left:-9999px;top:0;background:var(--card);color:var(--text);padding:10px 16px;z-index:1000;border-radius:0 0 8px 0;font-size:13px;font-weight:700}.skip-link:focus{left:0}.nav-links a.nav-active{color:var(--text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.nav-logo{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;position:relative}
+.nav-logo .site-name{color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.nav-links a:hover{color:var(--text)}
+footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:12px}
+.footer-links{margin-top:8px}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+.nav-logo{min-height:44px;box-sizing:border-box}
+.footer-feedback-cta button{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:12px 4px!important;box-sizing:border-box}
+@media(max-width:600px){
+  .nav-links{font-size:13px;gap:14px}
+}
+
+.atlas-header{max-width:900px;margin:0 auto;padding:32px 20px 16px}
+.back-link{font-size:13px;color:var(--muted);margin-bottom:10px;display:inline-block}
+.back-link:hover{color:var(--text)}
+.atlas-wordmark{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;word-break:break-word}
+.atlas-wordmark .dot{color:var(--gold)}
+.atlas-subtitle{color:var(--muted);font-size:14px;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.comic-header-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.comic-header-row img{flex-shrink:0}
+.comic-header-text{flex:1;min-width:200px}
+.atlas-promise{color:var(--muted);font-size:15px;margin-top:8px;max-width:620px}
+.bio-source-note{font-size:0.85em;opacity:0.75;margin-top:6px}
+main{max-width:900px;margin:0 auto;padding:8px 20px 80px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.field-row{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);margin-bottom:4px}
+.field-row .sep{opacity:.5}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text)}
+.chip:hover{border-color:var(--purple)}
+.milestone-item{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border)}
+.milestone-item:last-child{border-bottom:none}
+.milestone-date{color:var(--gold);font-weight:700;margin-right:6px}
+.section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.event-card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.event-card-inner{display:flex;gap:12px;align-items:flex-start}
+.event-card-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.event-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.event-photo-credit{font-size:11px;color:var(--muted);margin-top:2px}
+.event-hero{width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin:14px 0}
+.event-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.event-title{font-size:16px;font-weight:700;line-height:1.3}
+.event-time{font-size:13px;color:var(--gold);font-weight:700;white-space:nowrap}
+.event-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 10px}
+.ticket-link{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--purple);padding:8px 16px;border-radius:8px;margin-top:4px}
+.ticket-link:hover{opacity:.9}
+.empty-state{color:var(--muted);font-size:14px;padding:12px 0}
+.follow-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.follow-btn{background:var(--purple);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.follow-btn:hover{opacity:.9}
+.follow-btn:disabled{opacity:.6;cursor:default}
+#follow-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;margin-right:8px;min-width:220px}
+.follow-status{font-size:13px;color:var(--muted);margin-top:8px}
+.save-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.save-btn{background:var(--gold-btn);color:#171512;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-btn:hover{opacity:.9}
+.save-btn:disabled{opacity:.7;cursor:default}
+.save-email-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+#save-email{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit;min-width:220px}
+.save-email-btn{background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.save-status{font-size:13px;color:var(--muted);margin-top:8px}
+.venue-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.venue-map-locate-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.venue-map-locate-btn:hover{border-color:var(--purple-light)}
+.venue-map-count{font-size:13px;color:var(--muted)}
+.venue-map-status{font-size:12.5px;color:var(--muted);margin-top:6px;min-height:1em}
+.venue-map-empty{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--muted);font-size:13.5px}
+.venue-map-popup strong{display:block;margin-bottom:4px}
+.venue-map-popup-row{font-size:13px;padding:2px 0}
+.venue-map-popup-row a{color:var(--purple-light);font-weight:700}
+.directions-btn{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--gold-btn);color:#171512;padding:8px 16px;border-radius:8px;margin-top:10px}
+.directions-btn:hover{opacity:.9}
+.privacy-note{max-width:900px;margin:0 auto;padding:0 20px 40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
+.privacy-note strong{color:var(--text)}
+.atlas-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(0);max-width:min(92vw,420px);background:#3a1620;color:#ffd9df;border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:2000;opacity:0;transition:opacity .2s ease}
+.atlas-toast.atlas-toast-visible{opacity:1}
+.add-to-calendar-link{display:inline-block;font-size:13px;font-weight:700;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:9px 16px;border-radius:8px}
+.add-to-calendar-link:hover{border-color:var(--purple-light)}
+.share-btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.share-btn:hover{border-color:var(--purple-light)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.trust-badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--border)}
+.claimed-badge{color:var(--green);border-color:var(--green);background:rgba(63,185,80,.1)}
+.reliable-badge{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1)}
+.legacy-badge{color:var(--muted);border-color:var(--muted);background:rgba(136,153,170,.1)}
+.tour-summary{color:var(--muted);font-size:14px;margin-bottom:10px}
+.book-box{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.book-box summary{cursor:pointer;font-weight:700}
+.book-fields{margin-top:12px;display:flex;flex-direction:column;gap:10px;max-width:420px}
+.book-fields label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.book-fields input,.book-fields textarea{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit}
+.book-fields textarea{resize:vertical;min-height:70px}
+.book-btn{background:var(--purple);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;align-self:flex-start}
+.book-btn:hover{opacity:.9}
+.book-btn:disabled{opacity:.6;cursor:default}
+.book-status{font-size:13px;color:var(--muted);margin-top:2px}
+@media(max-width:600px){
+  .event-top{flex-direction:column;gap:2px}
+}
+
+.post-byline{color:var(--muted);font-size:13px;margin-top:6px}
+.news-city h2{font-size:19px;margin:26px 0 10px}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav>
+  <a href="/" class="nav-logo"><span class="site-name">COMEDY ATLAS</span></a>
+  <div class="nav-links">
+    <a href="/comedy-atlas/search/">Explore</a>
+    <a href="/shows.html">Shows</a>
+    <a href="/comedy-atlas/comics/">Comics</a>
+    <a href="/comedy-atlas/venues/">Venues</a>
+    <a href="/comedy-atlas/festival/">Festivals</a>
+    <a href="/comedy-atlas/history/">History</a>
+    <a href="/comedy-atlas/guide/">Learn</a>
+    <a href="/comedy-atlas/blog/" class="nav-active" aria-current="page">News</a>
+    <a href="/comedy-atlas/login.html">Log in</a>
+  </div>
+  <form class="atlas-nav-search" role="search" action="/comedy-atlas/search/" method="get">
+    <label class="atlas-nav-search-label" for="atlas-nav-q">Search shows, comics, venues, festivals, cities</label>
+    <input id="atlas-nav-q" name="q" type="search" autocomplete="off" placeholder="Search…">
+    <div id="atlas-nav-q-suggest" role="listbox" aria-label="Search results" hidden></div>
+  </form>
+</nav>
+<script type="module" defer src="/comedy-atlas/atlas-search-suggest.js"></script>
+<header class="atlas-header">
+  <a href="/" class="back-link">&larr; COMEDY ATLAS</a>
+  <h1 class="atlas-wordmark">News<span class="dot">.</span></h1>
+  <p class="atlas-promise">Weekly comedy news by city -- new venues, new shows and freshly listed dates, read straight from COMEDY ATLAS&#x27;s live listings. More stories: <a href="/comedy-atlas/blog/">the COMEDY ATLAS blog</a>.</p>
+</header>
+<main id="main-content" tabindex="-1">
+<section class="news-city" id="raleigh">
+<h2>Raleigh</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-raleigh-this-week-2-new-dates-nov-9-nov-16-2026/">Comedy Show Raleigh This Week: 2 New Dates (Nov 9-Nov 16, 2026)</a></div>
+  <div class="post-byline">2026-11-16 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Raleigh this week: 2 new dates since Nov 9, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-raleigh-this-week-1-new-date-oct-6-oct-13-2026/">Comedy Show Raleigh This Week: 1 New Date (Oct 6-Oct 13, 2026)</a></div>
+  <div class="post-byline">2026-10-13 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Raleigh this week: 1 new date since Oct 6, 2 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-raleigh-comedy-aug-13-aug-20-2026/">What&#x27;s New This Week in Raleigh Comedy (Aug 13-Aug 20, 2026)</a></div>
+  <div class="post-byline">2026-08-20 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">16 new dates went up in Raleigh between Aug 13 and Aug 20, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="madrid">
+<h2>Madrid</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-madrid-this-week-1-new-date-nov-8-nov-15-2026/">Comedy Club Madrid This Week: 1 New Date (Nov 8-Nov 15, 2026)</a></div>
+  <div class="post-byline">2026-11-15 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Madrid this week: 1 new date since Nov 8, 2 rooms with dates in the next two weeks, tickets from €14.5.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/stand-up-comedy-madrid-this-week-10-new-dates-oct-1-oct-8-2026/">Stand Up Comedy Madrid This Week: 10 New Dates (Oct 1-Oct 8, 2026)</a></div>
+  <div class="post-byline">2026-10-08 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Stand-up comedy in Madrid this week: 10 new dates since Oct 1, 2 rooms with dates in the next two weeks, tickets from €12.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-madrid-comedy-jul-21-jul-28-2026/">What&#x27;s New This Week in Madrid Comedy (Jul 21-Jul 28, 2026)</a></div>
+  <div class="post-byline">2026-07-28 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">2 newly listed dates went up in Madrid between Jul 21 and Jul 28, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="portland">
+<h2>Portland</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-portland-brett-goldstein-and-19-more-dates-this-week-nov-14-20-2026/">Comedy Show Portland: Brett Goldstein and 19 More Dates This Week (Nov 14-20, 2026)</a></div>
+  <div class="post-byline">2026-11-14 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Portland this week: 7 new dates since Nov 7, with Brett Goldstein, 5 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-portland-christopher-titus-and-36-more-dates-this-week-oct-12-18-2026/">Comedy Club Portland: Christopher Titus and 36 More Dates This Week (Oct 12-18, 2026)</a></div>
+  <div class="post-byline">2026-10-12 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Portland this week: 5 new dates since Oct 5, with Christopher Titus and Emma Willmann, 6 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-portland-comedy-aug-12-aug-19-2026/">What&#x27;s New This Week in Portland Comedy (Aug 12-Aug 19, 2026)</a></div>
+  <div class="post-byline">2026-08-19 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">8 new dates went up in Portland between Aug 12 and Aug 19, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="barcelona">
+<h2>Barcelona</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-barcelona-this-week-7-new-dates-nov-6-nov-13-2026/">Comedy Club Barcelona This Week: 7 New Dates (Nov 6-Nov 13, 2026)</a></div>
+  <div class="post-byline">2026-11-13 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Barcelona this week: 7 new dates since Nov 6, 6 rooms with dates in the next two weeks, tickets from €5, 16 free.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-barcelona-this-week-19-new-dates-sep-30-oct-7-2026/">Comedy Club Barcelona This Week: 19 New Dates (Sep 30-Oct 7, 2026)</a></div>
+  <div class="post-byline">2026-10-07 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Barcelona this week: 19 new dates since Sep 30, 5 rooms with dates in the next two weeks, tickets from €3, 14 free.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-barcelona-comedy-jul-20-jul-27-2026/">What&#x27;s New This Week in Barcelona Comedy (Jul 20-Jul 27, 2026)</a></div>
+  <div class="post-byline">2026-07-27 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">2 newly listed dates went up in Barcelona between Jul 20 and Jul 27, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-barcelona-comedy-jul-19-jul-26-2026/">What&#x27;s New This Week in Barcelona Comedy (Jul 19-Jul 26, 2026)</a></div>
+  <div class="post-byline">2026-07-26 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">259 newly listed dates went up in Barcelona between Jul 19 and Jul 26, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="hamburg">
+<h2>Hamburg</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-hamburg-this-week-34-new-dates-nov-5-nov-12-2026/">Comedy Club Hamburg This Week: 34 New Dates (Nov 5-Nov 12, 2026)</a></div>
+  <div class="post-byline">2026-11-12 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Hamburg this week: 34 new dates since Nov 5, 3 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-hamburg-this-week-3-new-dates-oct-4-oct-11-2026/">Comedy Club Hamburg This Week: 3 New Dates (Oct 4-Oct 11, 2026)</a></div>
+  <div class="post-byline">2026-10-11 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Hamburg this week: 3 new dates since Oct 4, 2 rooms with dates in the next two weeks, tickets from €20.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-hamburg-comedy-aug-6-aug-13-2026/">What&#x27;s New This Week in Hamburg Comedy (Aug 6-Aug 13, 2026)</a></div>
+  <div class="post-byline">2026-08-13 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new recurring show went up in Hamburg between Aug 6 and Aug 13, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="bloomington">
+<h2>Bloomington</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-bloomington-this-week-4-new-dates-nov-4-nov-11-2026/">Comedy Club Bloomington This Week: 4 New Dates (Nov 4-Nov 11, 2026)</a></div>
+  <div class="post-byline">2026-11-11 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Bloomington this week: 4 new dates since Nov 4, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-bloomington-comedy-sep-25-oct-2-2026/">What&#x27;s New This Week in Bloomington Comedy (Sep 25-Oct 2, 2026)</a></div>
+  <div class="post-byline">2026-10-02 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 new dates went up in Bloomington between Sep 25 and Oct 2, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-bloomington-comedy-jul-29-aug-5-2026/">What&#x27;s New This Week in Bloomington Comedy (Jul 29-Aug 5, 2026)</a></div>
+  <div class="post-byline">2026-08-05 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 newly listed dates went up in Bloomington between Jul 29 and Aug 5, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-bloomington-comedy-jul-28-aug-4-2026/">What&#x27;s New This Week in Bloomington Comedy (Jul 28-Aug 4, 2026)</a></div>
+  <div class="post-byline">2026-08-04 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 46 newly listed dates went up in Bloomington between Jul 28 and Aug 4, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-bloomington-comedy-jul-27-aug-3-2026/">What&#x27;s New This Week in Bloomington Comedy (Jul 27-Aug 3, 2026)</a></div>
+  <div class="post-byline">2026-08-03 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 46 newly listed dates went up in Bloomington between Jul 27 and Aug 3, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="kansas-city">
+<h2>Kansas City</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-kansas-city-this-week-4-new-dates-nov-3-nov-10-2026/">Comedy Club Kansas City This Week: 4 New Dates (Nov 3-Nov 10, 2026)</a></div>
+  <div class="post-byline">2026-11-10 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Kansas City this week: 4 new dates since Nov 3, 3 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-kansas-city-this-week-11-new-dates-oct-2-oct-9-2026/">Comedy Show Kansas City This Week: 11 New Dates (Oct 2-Oct 9, 2026)</a></div>
+  <div class="post-byline">2026-10-09 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Kansas City this week: 11 new dates since Oct 2, 2 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-kansas-city-comedy-aug-9-aug-16-2026/">What&#x27;s New This Week in Kansas City Comedy (Aug 9-Aug 16, 2026)</a></div>
+  <div class="post-byline">2026-08-16 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 newly listed dates went up in Kansas City between Aug 9 and Aug 16, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="brussels">
+<h2>Brussels</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-brussels-this-week-1-new-date-nov-2-nov-9-2026/">Comedy Club Brussels This Week: 1 New Date (Nov 2-Nov 9, 2026)</a></div>
+  <div class="post-byline">2026-11-09 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Brussels this week: 1 new date since Nov 2, 5 rooms with dates in the next two weeks, tickets from €5, 3 free.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-brussels-comedy-sep-28-oct-5-2026/">What&#x27;s New This Week in Brussels Comedy (Sep 28-Oct 5, 2026)</a></div>
+  <div class="post-byline">2026-10-05 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">77 new dates went up in Brussels between Sep 28 and Oct 5, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-brussels-comedy-sep-5-sep-12-2026/">What&#x27;s New This Week in Brussels Comedy (Sep 5-Sep 12, 2026)</a></div>
+  <div class="post-byline">2026-09-12 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">9 new venues went up in Brussels between Sep 5 and Sep 12, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="phoenix">
+<h2>Phoenix</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-phoenix-comedy-nov-1-nov-8-2026/">What&#x27;s New This Week in Phoenix Comedy (Nov 1-Nov 8, 2026)</a></div>
+  <div class="post-byline">2026-11-08 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Phoenix between Nov 1 and Nov 8, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-phoenix-comedy-aug-11-aug-18-2026/">What&#x27;s New This Week in Phoenix Comedy (Aug 11-Aug 18, 2026)</a></div>
+  <div class="post-byline">2026-08-18 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue went up in Phoenix between Aug 11 and Aug 18, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="berlin">
+<h2>Berlin</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-berlin-this-week-22-new-dates-oct-31-nov-7-2026/">Comedy Club Berlin This Week: 22 New Dates (Oct 31-Nov 7, 2026)</a></div>
+  <div class="post-byline">2026-11-07 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Berlin this week: 22 new dates since Oct 31, 16 rooms with dates in the next two weeks, tickets from €3, 7 free.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-berlin-this-week-262-shows-on-sale-sep-29-oct-6-2026/">Comedy Club Berlin This Week: 262 Shows on Sale (Sep 29-Oct 6, 2026)</a></div>
+  <div class="post-byline">2026-10-06 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Berlin this week: 262 shows on sale, 13 rooms with dates in the next two weeks, tickets from €3, 8 free.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-berlin-comedy-jul-23-jul-30-2026/">What&#x27;s New This Week in Berlin Comedy (Jul 23-Jul 30, 2026)</a></div>
+  <div class="post-byline">2026-07-30 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">6 newly listed dates went up in Berlin between Jul 23 and Jul 30, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="appleton">
+<h2>Appleton</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-appleton-ron-taylor-and-3-more-dates-this-week-nov-6-12-2026/">Comedy Club Appleton: Ron Taylor and 3 More Dates This Week (Nov 6-12, 2026)</a></div>
+  <div class="post-byline">2026-11-06 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Appleton this week: 1 new date since Oct 30, with Ron Taylor, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-appleton-comedy-sep-23-sep-30-2026/">What&#x27;s New This Week in Appleton Comedy (Sep 23-Sep 30, 2026)</a></div>
+  <div class="post-byline">2026-09-30 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">15 new dates went up in Appleton between Sep 23 and Sep 30, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-appleton-comedy-aug-22-aug-29-2026/">What&#x27;s New This Week in Appleton Comedy (Aug 22-Aug 29, 2026)</a></div>
+  <div class="post-byline">2026-08-29 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">10 new dates went up in Appleton between Aug 22 and Aug 29, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-appleton-comedy-jul-26-aug-2-2026/">What&#x27;s New This Week in Appleton Comedy (Jul 26-Aug 2, 2026)</a></div>
+  <div class="post-byline">2026-08-02 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 114 newly listed dates went up in Appleton between Jul 26 and Aug 2, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="cologne">
+<h2>Cologne</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/stand-up-comedy-cologne-fatih-cevikkollu-dr-pop-and-32-more-dates-this-week-nov-5-11-2026/">Stand Up Comedy Cologne: Fatih Çevikkollu, Dr. Pop and 32 More Dates This Week (Nov 5-11, 2026)</a></div>
+  <div class="post-byline">2026-11-05 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Stand-up comedy in Cologne this week: 1 new date since Oct 29, with Fatih Çevikkollu and Dr. Pop, 14 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-cologne-comedy-aug-31-sep-7-2026/">What&#x27;s New This Week in Cologne Comedy (Aug 31-Sep 7, 2026)</a></div>
+  <div class="post-byline">2026-09-07 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">5 new dates went up in Cologne between Aug 31 and Sep 7, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-cologne-comedy-aug-24-aug-31-2026/">What&#x27;s New This Week in Cologne Comedy (Aug 24-Aug 31, 2026)</a></div>
+  <div class="post-byline">2026-08-31 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Cologne between Aug 24 and Aug 31, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-cologne-comedy-jul-31-aug-7-2026/">What&#x27;s New This Week in Cologne Comedy (Jul 31-Aug 7, 2026)</a></div>
+  <div class="post-byline">2026-08-07 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">7 newly listed dates went up in Cologne between Jul 31 and Aug 7, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="bristol">
+<h2>Bristol</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-bristol-this-week-6-new-dates-oct-28-nov-4-2026/">Comedy Club Bristol This Week: 6 New Dates (Oct 28-Nov 4, 2026)</a></div>
+  <div class="post-byline">2026-11-04 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Bristol this week: 6 new dates since Oct 28, 3 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-bristol-comedy-sep-27-oct-4-2026/">What&#x27;s New This Week in Bristol Comedy (Sep 27-Oct 4, 2026)</a></div>
+  <div class="post-byline">2026-10-04 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">51 new dates went up in Bristol between Sep 27 and Oct 4, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="brighton">
+<h2>Brighton</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-brighton-simon-brodkin-and-9-more-dates-this-week-nov-3-9-2026/">Comedy Club Brighton: Simon Brodkin and 9 More Dates This Week (Nov 3-9, 2026)</a></div>
+  <div class="post-byline">2026-11-03 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Brighton this week: 5 new dates since Oct 27, with Simon Brodkin, 10 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-brighton-comedy-sep-26-oct-3-2026/">What&#x27;s New This Week in Brighton Comedy (Sep 26-Oct 3, 2026)</a></div>
+  <div class="post-byline">2026-10-03 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">154 new dates went up in Brighton between Sep 26 and Oct 3, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="birmingham">
+<h2>Birmingham</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-birmingham-this-week-15-new-dates-oct-26-nov-2-2026/">Comedy Club Birmingham This Week: 15 New Dates (Oct 26-Nov 2, 2026)</a></div>
+  <div class="post-byline">2026-11-02 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Birmingham this week: 15 new dates since Oct 26, 10 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-birmingham-comedy-sep-24-oct-1-2026/">What&#x27;s New This Week in Birmingham Comedy (Sep 24-Oct 1, 2026)</a></div>
+  <div class="post-byline">2026-10-01 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">16 new dates went up in Birmingham between Sep 24 and Oct 1, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="washington">
+<h2>Washington</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-washington-brian-regan-nicole-byer-and-13-more-dates-this-week-nov-1-7-2026/">Comedy Club Washington: Brian Regan, Nicole Byer and 13 More Dates This Week (Nov 1-7, 2026)</a></div>
+  <div class="post-byline">2026-11-01 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Washington this week: 5 new dates since Oct 25, with Brian Regan and Nicole Byer, 5 rooms with dates in the next two weeks, tickets from $44.61.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-washington-comedy-sep-17-sep-24-2026/">What&#x27;s New This Week in Washington Comedy (Sep 17-Sep 24, 2026)</a></div>
+  <div class="post-byline">2026-09-24 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">28 new dates went up in Washington between Sep 17 and Sep 24, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-washington-comedy-aug-19-aug-26-2026/">What&#x27;s New This Week in Washington Comedy (Aug 19-Aug 26, 2026)</a></div>
+  <div class="post-byline">2026-08-26 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">7 new dates went up in Washington between Aug 19 and Aug 26, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="amsterdam">
+<h2>Amsterdam</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-amsterdam-ali-siddiq-chad-daniels-and-21-more-dates-this-week-oct-31-nov-6-2026/">Comedy Show Amsterdam: Ali Siddiq, Chad Daniels and 21 More Dates This Week (Oct 31-Nov 6, 2026)</a></div>
+  <div class="post-byline">2026-10-31 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Amsterdam this week: 18 new dates since Oct 24, with Ali Siddiq and Chad Daniels, 8 rooms with dates in the next two weeks, tickets from €5.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-amsterdam-comedy-sep-20-sep-27-2026/">What&#x27;s New This Week in Amsterdam Comedy (Sep 20-Sep 27, 2026)</a></div>
+  <div class="post-byline">2026-09-27 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">9 new dates went up in Amsterdam between Sep 20 and Sep 27, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-amsterdam-comedy-sep-4-sep-11-2026/">What&#x27;s New This Week in Amsterdam Comedy (Sep 4-Sep 11, 2026)</a></div>
+  <div class="post-byline">2026-09-11 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">8 new dates went up in Amsterdam between Sep 4 and Sep 11, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-amsterdam-comedy-aug-30-sep-6-2026/">What&#x27;s New This Week in Amsterdam Comedy (Aug 30-Sep 6, 2026)</a></div>
+  <div class="post-byline">2026-09-06 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">8 new dates went up in Amsterdam between Aug 30 and Sep 6, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-amsterdam-comedy-aug-20-aug-27-2026/">What&#x27;s New This Week in Amsterdam Comedy (Aug 20-Aug 27, 2026)</a></div>
+  <div class="post-byline">2026-08-27 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">7 new dates went up in Amsterdam between Aug 20 and Aug 27, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-amsterdam-comedy-jul-22-jul-29-2026/">What&#x27;s New This Week in Amsterdam Comedy (Jul 22-Jul 29, 2026)</a></div>
+  <div class="post-byline">2026-07-29 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 newly listed dates went up in Amsterdam between Jul 22 and Jul 29, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="edinburgh">
+<h2>Edinburgh</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-edinburgh-fin-taylor-and-14-more-dates-this-week-oct-30-nov-5-2026/">Comedy Club Edinburgh: Fin Taylor and 14 More Dates This Week (Oct 30-Nov 5, 2026)</a></div>
+  <div class="post-byline">2026-10-30 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Edinburgh this week: 4 new dates since Oct 23, with Fin Taylor, 5 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-edinburgh-comedy-sep-19-sep-26-2026/">What&#x27;s New This Week in Edinburgh Comedy (Sep 19-Sep 26, 2026)</a></div>
+  <div class="post-byline">2026-09-26 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">295 new dates went up in Edinburgh between Sep 19 and Sep 26, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-edinburgh-comedy-jul-18-jul-25-2026/">What&#x27;s New This Week in Edinburgh Comedy (Jul 18-Jul 25, 2026)</a></div>
+  <div class="post-byline">2026-07-25 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">576 new recurring shows and 69 newly listed dates went up in Edinburgh between Jul 18 and Jul 25, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="louisville">
+<h2>Louisville</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-louisville-this-week-1-new-date-oct-22-oct-29-2026/">Comedy Club Louisville This Week: 1 New Date (Oct 22-Oct 29, 2026)</a></div>
+  <div class="post-byline">2026-10-29 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Louisville this week: 1 new date since Oct 22, 2 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-louisville-comedy-sep-7-sep-14-2026/">What&#x27;s New This Week in Louisville Comedy (Sep 7-Sep 14, 2026)</a></div>
+  <div class="post-byline">2026-09-14 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">4 new dates went up in Louisville between Sep 7 and Sep 14, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-louisville-comedy-aug-10-aug-17-2026/">What&#x27;s New This Week in Louisville Comedy (Aug 10-Aug 17, 2026)</a></div>
+  <div class="post-byline">2026-08-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">2 newly listed dates went up in Louisville between Aug 10 and Aug 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="paris">
+<h2>Paris</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-paris-marc-rouge-maddie-storm-and-739-more-dates-this-week-oct-28-nov-3-2026/">Comedy Club Paris: Marc Rougé, Maddie Storm and 739 More Dates This Week (Oct 28-Nov 3, 2026)</a></div>
+  <div class="post-byline">2026-10-28 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Paris this week: 148 new dates since Oct 21, with Marc Rougé and Maddie Storm, 97 rooms with dates in the next two weeks, tickets from €4.95.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-paris-comedy-sep-21-sep-28-2026/">What&#x27;s New This Week in Paris Comedy (Sep 21-Sep 28, 2026)</a></div>
+  <div class="post-byline">2026-09-28 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new recurring show and 39 new dates went up in Paris between Sep 21 and Sep 28, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-paris-comedy-jul-24-jul-31-2026/">What&#x27;s New This Week in Paris Comedy (Jul 24-Jul 31, 2026)</a></div>
+  <div class="post-byline">2026-07-31 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 6 newly listed dates went up in Paris between Jul 24 and Jul 31, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="tulsa">
+<h2>Tulsa</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-tulsa-this-week-7-new-dates-oct-20-oct-27-2026/">Comedy Show Tulsa This Week: 7 New Dates (Oct 20-Oct 27, 2026)</a></div>
+  <div class="post-byline">2026-10-27 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Tulsa this week: 7 new dates since Oct 20, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-tulsa-comedy-sep-16-sep-23-2026/">What&#x27;s New This Week in Tulsa Comedy (Sep 16-Sep 23, 2026)</a></div>
+  <div class="post-byline">2026-09-23 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">5 new dates went up in Tulsa between Sep 16 and Sep 23, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-tulsa-comedy-aug-18-aug-25-2026/">What&#x27;s New This Week in Tulsa Comedy (Aug 18-Aug 25, 2026)</a></div>
+  <div class="post-byline">2026-08-25 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">5 new dates went up in Tulsa between Aug 18 and Aug 25, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="london">
+<h2>London</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-london-fern-brady-lou-sanders-and-179-more-dates-this-week-oct-26-nov-1-2026/">Comedy Show London: Fern Brady, Lou Sanders and 179 More Dates This Week (Oct 26-Nov 1, 2026)</a></div>
+  <div class="post-byline">2026-10-26 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in London this week: 97 new dates since Oct 19, with Fern Brady and Lou Sanders, 42 rooms with dates in the next two weeks, tickets from £7.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-london-comedy-sep-18-sep-25-2026/">What&#x27;s New This Week in London Comedy (Sep 18-Sep 25, 2026)</a></div>
+  <div class="post-byline">2026-09-25 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">173 new dates went up in London between Sep 18 and Sep 25, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-london-comedy-jul-18-jul-25-2026/">What&#x27;s New This Week in London Comedy (Jul 18-Jul 25, 2026)</a></div>
+  <div class="post-byline">2026-07-25 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">45 new recurring shows and 354 newly listed dates went up in London between Jul 18 and Jul 25, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="salt-lake-city">
+<h2>Salt Lake City</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-salt-lake-city-this-week-3-new-dates-oct-18-oct-25-2026/">Comedy Show Salt Lake City This Week: 3 New Dates (Oct 18-Oct 25, 2026)</a></div>
+  <div class="post-byline">2026-10-25 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Salt Lake City this week: 3 new dates since Oct 18, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-salt-lake-city-comedy-sep-13-sep-20-2026/">What&#x27;s New This Week in Salt Lake City Comedy (Sep 13-Sep 20, 2026)</a></div>
+  <div class="post-byline">2026-09-20 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">9 new dates went up in Salt Lake City between Sep 13 and Sep 20, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-salt-lake-city-comedy-aug-14-aug-21-2026/">What&#x27;s New This Week in Salt Lake City Comedy (Aug 14-Aug 21, 2026)</a></div>
+  <div class="post-byline">2026-08-21 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 9 new dates went up in Salt Lake City between Aug 14 and Aug 21, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="oklahoma-city">
+<h2>Oklahoma City</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-oklahoma-city-drew-lynch-kevin-james-and-5-more-dates-this-week-oct-24-30-2026/">Comedy Club Oklahoma City: Drew Lynch, Kevin James and 5 More Dates This Week (Oct 24-30, 2026)</a></div>
+  <div class="post-byline">2026-10-24 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Oklahoma City this week: 9 new dates since Oct 17, with Drew Lynch and Kevin James, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-oklahoma-city-comedy-sep-11-sep-18-2026/">What&#x27;s New This Week in Oklahoma City Comedy (Sep 11-Sep 18, 2026)</a></div>
+  <div class="post-byline">2026-09-18 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">10 new dates went up in Oklahoma City between Sep 11 and Sep 18, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-oklahoma-city-comedy-aug-10-aug-17-2026/">What&#x27;s New This Week in Oklahoma City Comedy (Aug 10-Aug 17, 2026)</a></div>
+  <div class="post-byline">2026-08-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">5 newly listed dates went up in Oklahoma City between Aug 10 and Aug 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="tacoma">
+<h2>Tacoma</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-tacoma-damon-wayans-moshe-kasher-and-14-more-dates-this-week-oct-23-29-2026/">Comedy Show Tacoma: Damon Wayans, Moshe Kasher and 14 More Dates This Week (Oct 23-29, 2026)</a></div>
+  <div class="post-byline">2026-10-23 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Tacoma this week: 13 new dates since Oct 16, with Damon Wayans and Moshe Kasher, 2 rooms with dates in the next two weeks, tickets from $25.96.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-tacoma-comedy-sep-15-sep-22-2026/">What&#x27;s New This Week in Tacoma Comedy (Sep 15-Sep 22, 2026)</a></div>
+  <div class="post-byline">2026-09-22 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">19 new dates went up in Tacoma between Sep 15 and Sep 22, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-tacoma-comedy-aug-16-aug-23-2026/">What&#x27;s New This Week in Tacoma Comedy (Aug 16-Aug 23, 2026)</a></div>
+  <div class="post-byline">2026-08-23 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">66 new dates went up in Tacoma between Aug 16 and Aug 23, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="spokane">
+<h2>Spokane</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-spokane-this-week-17-new-dates-oct-15-oct-22-2026/">Comedy Show Spokane This Week: 17 New Dates (Oct 15-Oct 22, 2026)</a></div>
+  <div class="post-byline">2026-10-22 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Spokane this week: 17 new dates since Oct 15, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-spokane-comedy-sep-14-sep-21-2026/">What&#x27;s New This Week in Spokane Comedy (Sep 14-Sep 21, 2026)</a></div>
+  <div class="post-byline">2026-09-21 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">19 new dates went up in Spokane between Sep 14 and Sep 21, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-spokane-comedy-aug-15-aug-22-2026/">What&#x27;s New This Week in Spokane Comedy (Aug 15-Aug 22, 2026)</a></div>
+  <div class="post-byline">2026-08-22 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">11 new dates went up in Spokane between Aug 15 and Aug 22, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="fort-wayne">
+<h2>Fort Wayne</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-fort-wayne-this-week-1-new-date-oct-14-oct-21-2026/">Comedy Club Fort Wayne This Week: 1 New Date (Oct 14-Oct 21, 2026)</a></div>
+  <div class="post-byline">2026-10-21 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Fort Wayne this week: 1 new date since Oct 14, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-fort-wayne-comedy-aug-25-sep-1-2026/">What&#x27;s New This Week in Fort Wayne Comedy (Aug 25-Sep 1, 2026)</a></div>
+  <div class="post-byline">2026-09-01 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 new dates went up in Fort Wayne between Aug 25 and Sep 1, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-fort-wayne-comedy-aug-2-aug-9-2026/">What&#x27;s New This Week in Fort Wayne Comedy (Aug 2-Aug 9, 2026)</a></div>
+  <div class="post-byline">2026-08-09 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">51 new recurring shows and 1 newly listed date went up in Fort Wayne between Aug 2 and Aug 9, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="philadelphia">
+<h2>Philadelphia</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-philadelphia-maz-jobrani-and-12-more-dates-this-week-oct-20-26-2026/">Comedy Club Philadelphia: Maz Jobrani and 12 More Dates This Week (Oct 20-26, 2026)</a></div>
+  <div class="post-byline">2026-10-20 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Philadelphia this week: 13 new dates since Oct 13, with Maz Jobrani, 4 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-philadelphia-comedy-sep-12-sep-19-2026/">What&#x27;s New This Week in Philadelphia Comedy (Sep 12-Sep 19, 2026)</a></div>
+  <div class="post-byline">2026-09-19 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">27 new dates went up in Philadelphia between Sep 12 and Sep 19, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-philadelphia-comedy-aug-11-aug-18-2026/">What&#x27;s New This Week in Philadelphia Comedy (Aug 11-Aug 18, 2026)</a></div>
+  <div class="post-byline">2026-08-18 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">6 newly listed dates went up in Philadelphia between Aug 11 and Aug 18, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="toronto">
+<h2>Toronto</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/stand-up-comedy-toronto-dave-chappelle-and-17-more-dates-this-week-oct-19-25-2026/">Stand Up Comedy Toronto: Dave Chappelle and 17 More Dates This Week (Oct 19-25, 2026)</a></div>
+  <div class="post-byline">2026-10-19 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Stand-up comedy in Toronto this week: 10 new dates since Oct 12, with Dave Chappelle, 5 rooms with dates in the next two weeks, tickets from CA$9.99, 2 free.</p>
+</div>
+</section>
+<section class="news-city" id="new-york">
+<h2>New York</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-new-york-aziz-ansari-chris-redd-and-13-more-dates-this-week-oct-18-24-2026/">Comedy Club New York: Aziz Ansari, Chris Redd and 13 More Dates This Week (Oct 18-24, 2026)</a></div>
+  <div class="post-byline">2026-10-18 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in New York this week: 21 new dates since Oct 11, with Aziz Ansari and Chris Redd, 7 rooms with dates in the next two weeks, tickets from $9.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-new-york-comedy-sep-9-sep-16-2026/">What&#x27;s New This Week in New York Comedy (Sep 9-Sep 16, 2026)</a></div>
+  <div class="post-byline">2026-09-16 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">32 new dates went up in New York between Sep 9 and Sep 16, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-new-york-comedy-sep-2-sep-9-2026/">What&#x27;s New This Week in New York Comedy (Sep 2-Sep 9, 2026)</a></div>
+  <div class="post-byline">2026-09-09 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">34 new dates went up in New York between Sep 2 and Sep 9, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-new-york-comedy-aug-29-sep-5-2026/">What&#x27;s New This Week in New York Comedy (Aug 29-Sep 5, 2026)</a></div>
+  <div class="post-byline">2026-09-05 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">39 new dates went up in New York between Aug 29 and Sep 5, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-new-york-comedy-aug-10-aug-17-2026/">What&#x27;s New This Week in New York Comedy (Aug 10-Aug 17, 2026)</a></div>
+  <div class="post-byline">2026-08-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">36 newly listed dates went up in New York between Aug 10 and Aug 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="minneapolis">
+<h2>Minneapolis</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-minneapolis-tim-harmston-and-6-more-dates-this-week-oct-17-23-2026/">Comedy Club Minneapolis: Tim Harmston and 6 More Dates This Week (Oct 17-23, 2026)</a></div>
+  <div class="post-byline">2026-10-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Minneapolis this week: 3 new dates since Oct 10, with Tim Harmston, 4 rooms with dates in the next two weeks, tickets from $10.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-minneapolis-comedy-sep-1-sep-8-2026/">What&#x27;s New This Week in Minneapolis Comedy (Sep 1-Sep 8, 2026)</a></div>
+  <div class="post-byline">2026-09-08 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">7 new dates went up in Minneapolis between Sep 1 and Sep 8, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-minneapolis-comedy-aug-28-sep-4-2026/">What&#x27;s New This Week in Minneapolis Comedy (Aug 28-Sep 4, 2026)</a></div>
+  <div class="post-byline">2026-09-04 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">5 new dates went up in Minneapolis between Aug 28 and Sep 4, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-minneapolis-comedy-aug-10-aug-17-2026/">What&#x27;s New This Week in Minneapolis Comedy (Aug 10-Aug 17, 2026)</a></div>
+  <div class="post-byline">2026-08-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 new venues and 1 newly listed date went up in Minneapolis between Aug 10 and Aug 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="galway">
+<h2>Galway</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-galway-emma-doran-terry-alderton-and-18-more-dates-this-week-oct-16-22-2026/">Comedy Club Galway: Emma Doran, Terry Alderton and 18 More Dates This Week (Oct 16-22, 2026)</a></div>
+  <div class="post-byline">2026-10-16 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Galway this week: 3 new dates since Oct 9, with Emma Doran and Terry Alderton, 15 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-galway-comedy-aug-26-sep-2-2026/">What&#x27;s New This Week in Galway Comedy (Aug 26-Sep 2, 2026)</a></div>
+  <div class="post-byline">2026-09-02 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Galway between Aug 26 and Sep 2, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-galway-comedy-aug-3-aug-10-2026/">What&#x27;s New This Week in Galway Comedy (Aug 3-Aug 10, 2026)</a></div>
+  <div class="post-byline">2026-08-10 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">8 new recurring shows went up in Galway between Aug 3 and Aug 10, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="chandler">
+<h2>Chandler</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-show-chandler-this-week-9-new-dates-oct-8-oct-15-2026/">Comedy Show Chandler This Week: 9 New Dates (Oct 8-Oct 15, 2026)</a></div>
+  <div class="post-byline">2026-10-15 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy shows in Chandler this week: 9 new dates since Oct 8, 2 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-chandler-comedy-aug-23-aug-30-2026/">What&#x27;s New This Week in Chandler Comedy (Aug 23-Aug 30, 2026)</a></div>
+  <div class="post-byline">2026-08-30 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">4 new dates went up in Chandler between Aug 23 and Aug 30, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-chandler-comedy-jul-30-aug-6-2026/">What&#x27;s New This Week in Chandler Comedy (Jul 30-Aug 6, 2026)</a></div>
+  <div class="post-byline">2026-08-06 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">3 newly listed dates went up in Chandler between Jul 30 and Aug 6, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="indianapolis">
+<h2>Indianapolis</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-indianapolis-this-week-4-new-dates-oct-7-oct-14-2026/">Comedy Club Indianapolis This Week: 4 New Dates (Oct 7-Oct 14, 2026)</a></div>
+  <div class="post-byline">2026-10-14 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Indianapolis this week: 4 new dates since Oct 7, 3 rooms with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-indianapolis-comedy-aug-27-sep-3-2026/">What&#x27;s New This Week in Indianapolis Comedy (Aug 27-Sep 3, 2026)</a></div>
+  <div class="post-byline">2026-09-03 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Indianapolis between Aug 27 and Sep 3, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-indianapolis-comedy-aug-8-aug-15-2026/">What&#x27;s New This Week in Indianapolis Comedy (Aug 8-Aug 15, 2026)</a></div>
+  <div class="post-byline">2026-08-15 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">8 new recurring shows and 18 newly listed dates went up in Indianapolis between Aug 8 and Aug 15, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="fort-collins">
+<h2>Fort Collins</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/comedy-club-fort-collins-this-week-3-new-dates-oct-3-oct-10-2026/">Comedy Club Fort Collins This Week: 3 New Dates (Oct 3-Oct 10, 2026)</a></div>
+  <div class="post-byline">2026-10-10 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">Comedy clubs in Fort Collins this week: 3 new dates since Oct 3, 1 room with dates in the next two weeks.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-fort-collins-comedy-aug-1-aug-8-2026/">What&#x27;s New This Week in Fort Collins Comedy (Aug 1-Aug 8, 2026)</a></div>
+  <div class="post-byline">2026-08-08 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">4 newly listed dates went up in Fort Collins between Aug 1 and Aug 8, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="alpharetta">
+<h2>Alpharetta</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-alpharetta-comedy-sep-22-sep-29-2026/">What&#x27;s New This Week in Alpharetta Comedy (Sep 22-Sep 29, 2026)</a></div>
+  <div class="post-byline">2026-09-29 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">14 new dates went up in Alpharetta between Sep 22 and Sep 29, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-alpharetta-comedy-aug-21-aug-28-2026/">What&#x27;s New This Week in Alpharetta Comedy (Aug 21-Aug 28, 2026)</a></div>
+  <div class="post-byline">2026-08-28 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">27 new dates went up in Alpharetta between Aug 21 and Aug 28, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-alpharetta-comedy-jul-25-aug-1-2026/">What&#x27;s New This Week in Alpharetta Comedy (Jul 25-Aug 1, 2026)</a></div>
+  <div class="post-byline">2026-08-01 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new venue and 7 newly listed dates went up in Alpharetta between Jul 25 and Aug 1, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="ogden">
+<h2>Ogden</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-ogden-comedy-sep-10-sep-17-2026/">What&#x27;s New This Week in Ogden Comedy (Sep 10-Sep 17, 2026)</a></div>
+  <div class="post-byline">2026-09-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">2 new dates went up in Ogden between Sep 10 and Sep 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="naples">
+<h2>Naples</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-naples-comedy-sep-8-sep-15-2026/">What&#x27;s New This Week in Naples Comedy (Sep 8-Sep 15, 2026)</a></div>
+  <div class="post-byline">2026-09-15 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">31 new dates went up in Naples between Sep 8 and Sep 15, 2026.</p>
+</div>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-naples-comedy-aug-10-aug-17-2026/">What&#x27;s New This Week in Naples Comedy (Aug 10-Aug 17, 2026)</a></div>
+  <div class="post-byline">2026-08-17 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">9 newly listed dates went up in Naples between Aug 10 and Aug 17, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="lille">
+<h2>Lille</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-lille-comedy-sep-6-sep-13-2026/">What&#x27;s New This Week in Lille Comedy (Sep 6-Sep 13, 2026)</a></div>
+  <div class="post-byline">2026-09-13 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">4 new venues went up in Lille between Sep 6 and Sep 13, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="burlington">
+<h2>Burlington</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-burlington-comedy-aug-23-aug-30-2026/">What&#x27;s New This Week in Burlington Comedy (Aug 23-Aug 30, 2026)</a></div>
+  <div class="post-byline">2026-08-30 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Burlington between Aug 23 and Aug 30, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="tempe">
+<h2>Tempe</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-tempe-comedy-aug-17-aug-24-2026/">What&#x27;s New This Week in Tempe Comedy (Aug 17-Aug 24, 2026)</a></div>
+  <div class="post-byline">2026-08-24 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">1 new date went up in Tempe between Aug 17 and Aug 24, 2026.</p>
+</div>
+</section>
+<section class="news-city" id="helsinki">
+<h2>Helsinki</h2>
+<div class="card">
+  <div class="event-title"><a href="/comedy-atlas/blog/what-s-new-this-week-in-helsinki-comedy-aug-7-aug-14-2026/">What&#x27;s New This Week in Helsinki Comedy (Aug 7-Aug 14, 2026)</a></div>
+  <div class="post-byline">2026-08-14 &middot; COMEDY ATLAS</div>
+  <p style="margin-top:8px">2 new recurring shows went up in Helsinki between Aug 7 and Aug 14, 2026.</p>
+</div>
+</section>
+</main>
+<footer>
+  <div>COMEDY ATLAS — the world atlas of stand-up comedy, city by city.</div>
+  <div class="footer-links"><a href="/comedy-atlas/privacy.html">Privacy</a> &middot; <a href="/comedy-atlas/terms.html">Terms</a> &middot; <a href="/comedy-atlas/data-deletion.html">Data deletion</a></div>
+  <div class="footer-links"><a href="/comedy-atlas/about.html#support">Support us &#9829;</a></div>
+  <div class="footer-feedback-cta"><button type="button" onclick="if(window.AtlasFeedback)window.AtlasFeedback.open({subject:'suggestion'})" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Is something missing? Send us a message</button></div>
+</footer>
+<script src="/comedy-atlas/atlas-feedback.js"></script>
+<script defer src="/comedy-atlas/atlas-track.js"></script>
+</body>
+</html>

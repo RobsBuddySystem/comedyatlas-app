@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-de-fouchecour@comedyatlas.app
+DTSTAMP:20261213T183000Z
+DTSTART:20261213T183000Z
+DTEND:20261213T203000Z
+SUMMARY:Thomas de Fouchécour
+LOCATION:Le Montorgueil - Scène des Halles\, 50 rue d'Aboukir\, Paris
+DESCRIPTION:Il paraît qu'on projette beaucoup de choses sur un nom.\nMore 
+ info: https://comedyatlas.app/comedy-atlas/event/thomas-de-fouchecour/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-de-fouchecour/
+END:VEVENT
+END:VCALENDAR
