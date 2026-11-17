@@ -57,7 +57,7 @@
     "country_name": "Canada",
     "id": 4,
     "language_counts": {
-      "unconfirmed": 157
+      "unconfirmed": 156
     },
     "latitude": 43.6532,
     "longitude": -79.3832,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 120,
-      "fr": 942,
+      "fr": 946,
       "unconfirmed": 16
     },
     "latitude": 48.8566,
@@ -859,7 +859,7 @@
     "country_name": "United States",
     "id": 75,
     "language_counts": {
-      "en": 12,
+      "en": 8,
       "unconfirmed": 89
     },
     "latitude": 40.7128,
@@ -877,7 +877,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 575
+      "unconfirmed": 574
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -894,7 +894,7 @@
     "country_name": "United States",
     "id": 77,
     "language_counts": {
-      "unconfirmed": 48
+      "unconfirmed": 47
     },
     "latitude": 41.8781,
     "longitude": -87.6298,
@@ -1390,8 +1390,8 @@
     "country_name": "Canada",
     "id": 108,
     "language_counts": {
-      "en": 429,
-      "unconfirmed": 385
+      "en": 428,
+      "unconfirmed": 384
     },
     "latitude": 45.5019,
     "longitude": -73.5674,
@@ -1544,7 +1544,7 @@
     "country_name": "United States",
     "id": 121,
     "language_counts": {
-      "unconfirmed": 104
+      "unconfirmed": 106
     },
     "latitude": 35.472989,
     "longitude": -97.517054,
@@ -1647,7 +1647,7 @@
     "country_name": "United States",
     "id": 127,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 33.425512,
     "longitude": -111.940016,
@@ -1749,7 +1749,7 @@
     "country_name": "United States",
     "id": 133,
     "language_counts": {
-      "unconfirmed": 134
+      "unconfirmed": 133
     },
     "latitude": 26.142198,
     "longitude": -81.794294,
@@ -1766,7 +1766,7 @@
     "country_name": "United States",
     "id": 134,
     "language_counts": {
-      "unconfirmed": 88
+      "unconfirmed": 90
     },
     "latitude": 44.261397,
     "longitude": -88.406974,
@@ -1817,7 +1817,7 @@
     "country_name": "United States",
     "id": 137,
     "language_counts": {
-      "unconfirmed": 216
+      "unconfirmed": 218
     },
     "latitude": 47.245501,
     "longitude": -122.438329,
@@ -1885,7 +1885,7 @@
     "country_name": "Mexico",
     "id": 142,
     "language_counts": {
-      "unconfirmed": 24
+      "unconfirmed": 23
     },
     "latitude": 19.4326,
     "longitude": -99.1332,
@@ -2995,7 +2995,7 @@
     "country_name": "France",
     "id": 278,
     "language_counts": {
-      "fr": 1
+      "fr": 2
     },
     "latitude": null,
     "longitude": null,
@@ -3061,6 +3061,23 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
+    "id": 286,
+    "language_counts": {
+      "fr": 9
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Saint Rapha\u00ebl",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
     "id": 289,
     "language_counts": {
       "fr": 6
@@ -3080,7 +3097,7 @@
     "country_name": "France",
     "id": 300,
     "language_counts": {
-      "fr": 27
+      "fr": 29
     },
     "latitude": null,
     "longitude": null,
@@ -5343,7 +5360,7 @@
     "country_name": "Canada",
     "id": 528,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 48.422127,
     "longitude": -89.24411,
@@ -10227,7 +10244,7 @@
     "country_name": "United States",
     "id": 841,
     "language_counts": {
-      "unconfirmed": 82
+      "unconfirmed": 79
     },
     "latitude": 40.692538,
     "longitude": -73.978935,
@@ -11099,7 +11116,7 @@
     "country_name": "United States",
     "id": 902,
     "language_counts": {
-      "unconfirmed": 3
+      "unconfirmed": 2
     },
     "latitude": 26.200545,
     "longitude": -98.259145,
