@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 161,
+      "en": 160,
       "unconfirmed": 59
     },
     "latitude": 52.52,
@@ -196,7 +196,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 82,
+      "en": 81,
       "unconfirmed": 96
     },
     "latitude": 41.3851,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 120,
-      "fr": 943,
+      "fr": 942,
       "unconfirmed": 16
     },
     "latitude": 48.8566,
@@ -841,7 +841,7 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 592,
+      "en": 588,
       "unconfirmed": 1242
     },
     "latitude": 51.5074,
@@ -1783,7 +1783,7 @@
     "country_name": "United States",
     "id": 135,
     "language_counts": {
-      "unconfirmed": 109
+      "unconfirmed": 110
     },
     "latitude": 47.657193,
     "longitude": -117.42351,
@@ -2430,6 +2430,23 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
+    "id": 194,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Angers",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
     "id": 195,
     "language_counts": {
       "fr": 1
@@ -3063,7 +3080,7 @@
     "country_name": "France",
     "id": 300,
     "language_counts": {
-      "fr": 24
+      "fr": 27
     },
     "latitude": null,
     "longitude": null,
@@ -18250,6 +18267,23 @@
     "latitude": null,
     "longitude": null,
     "name": "Quincy sous S\u00e9nart",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1557,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Le Cres",
     "region_code": null,
     "region_id": null,
     "region_name": null,
