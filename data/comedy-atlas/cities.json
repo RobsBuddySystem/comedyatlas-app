@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 160,
+      "en": 161,
       "unconfirmed": 61
     },
     "latitude": 52.52,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 120,
-      "fr": 945,
+      "fr": 932,
       "unconfirmed": 16
     },
     "latitude": 48.8566,
@@ -337,7 +337,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 359
+      "fr": 358
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -530,7 +530,7 @@
     "id": 43,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 450
+      "unconfirmed": 448
     },
     "latitude": 59.9139,
     "longitude": 10.7522,
@@ -739,7 +739,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 50
+      "unconfirmed": 49
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -2534,7 +2534,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 37,
+      "fr": 36,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2859,7 +2859,7 @@
     "country_name": "France",
     "id": 253,
     "language_counts": {
-      "fr": 2
+      "fr": 1
     },
     "latitude": null,
     "longitude": null,
@@ -2995,7 +2995,7 @@
     "country_name": "France",
     "id": 278,
     "language_counts": {
-      "fr": 2
+      "fr": 1
     },
     "latitude": null,
     "longitude": null,
@@ -3386,7 +3386,7 @@
     "country_name": "Switzerland",
     "id": 375,
     "language_counts": {
-      "fr": 4,
+      "fr": 3,
       "unconfirmed": 3
     },
     "latitude": 46.52951,
@@ -4356,7 +4356,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 445,
     "language_counts": {
-      "unconfirmed": 4
+      "unconfirmed": 3
     },
     "latitude": 36.986516,
     "longitude": 27.890948,
@@ -4456,26 +4456,9 @@
     "country_id": 45,
     "country_iso2": "TR",
     "country_name": "T\u00fcrkiye",
-    "id": 454,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 37.778893,
-    "longitude": 29.084433,
-    "name": "Denizli",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Istanbul"
-  },
-  {
-    "country_id": 45,
-    "country_iso2": "TR",
-    "country_name": "T\u00fcrkiye",
     "id": 455,
     "language_counts": {
-      "unconfirmed": 9
+      "unconfirmed": 8
     },
     "latitude": 38.437311,
     "longitude": 27.103398,
@@ -17038,7 +17021,7 @@
     "country_name": "Norway",
     "id": 1482,
     "language_counts": {
-      "unconfirmed": 186
+      "unconfirmed": 185
     },
     "latitude": 60.390444,
     "longitude": 5.324444,
