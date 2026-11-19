@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ambre-larrazet@comedyatlas.app
+DTSTAMP:20261209T183000Z
+DTSTART:20261209T183000Z
+DTEND:20261209T203000Z
+SUMMARY:Ambre Larrazet
+LOCATION:Théâtre BO Saint Martin\, 19\, Boulevard Saint Martin\, Paris
+DESCRIPTION:Ambre Larrazet au Bo Saint-Martin.\nMore info: https://comedyat
+ las.app/comedy-atlas/event/ambre-larrazet/
+URL:https://comedyatlas.app/comedy-atlas/event/ambre-larrazet/
+END:VEVENT
+END:VCALENDAR

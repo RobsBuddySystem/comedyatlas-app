@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:e-du-solten-stian-nedrejord@comedyatlas.app
+DTSTAMP:20270129T180000Z
+DTSTART:20270129T180000Z
+DTEND:20270129T200000Z
+SUMMARY:"E du solten" - Stian Nedrejord
+LOCATION:Humorhuset Stavangeren\, Vaisenhusgaten 37\, Stavanger
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/e-du-solt
+ en-stian-nedrejord/
+URL:https://comedyatlas.app/comedy-atlas/event/e-du-solten-stian-nedrejord/
+END:VEVENT
+END:VCALENDAR

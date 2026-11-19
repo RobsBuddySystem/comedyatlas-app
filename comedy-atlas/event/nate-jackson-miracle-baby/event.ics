@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-miracle-baby@comedyatlas.app
+DTSTAMP:20270704T030000Z
+DTSTART:20270704T030000Z
+DTEND:20270704T050000Z
+SUMMARY:Nate Jackson: Miracle Baby
+LOCATION:Queen Elizabeth Theatre\, 600 Block Hamilton St.\, Vancouver
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-miracle-baby/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-miracle-baby/
+END:VEVENT
+END:VCALENDAR

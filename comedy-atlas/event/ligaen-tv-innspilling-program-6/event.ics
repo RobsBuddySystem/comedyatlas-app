@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ligaen-tv-innspilling-program-6@comedyatlas.app
+DTSTAMP:20261216T180000Z
+DTSTART:20261216T180000Z
+DTEND:20261216T200000Z
+SUMMARY:LIGAEN - TV-innspilling\, Program 6
+LOCATION:Håndverkeren\, Rosenkrantz gate 7\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ligaen-tv
+ -innspilling-program-6/
+URL:https://comedyatlas.app/comedy-atlas/event/ligaen-tv-innspilling-progra
+ m-6/
+END:VEVENT
+END:VCALENDAR

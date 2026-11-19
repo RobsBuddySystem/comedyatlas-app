@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:max-amini@comedyatlas.app
+DTSTAMP:20270115T170000Z
+DTSTART:20270115T170000Z
+DTEND:20270115T190000Z
+SUMMARY:Max Amini
+LOCATION:de Doelen\, Schouwburgplein 50\, Rotterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/max-amini
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/max-amini/
+END:VEVENT
+END:VCALENDAR

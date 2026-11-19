@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:demetri-martin-the-quick-draw-tour@comedyatlas.app
+DTSTAMP:20270322T200000Z
+DTSTART:20270322T200000Z
+DTEND:20270322T220000Z
+SUMMARY:Demetri Martin - the Quick Draw Tour
+LOCATION:Vicar Street\, 58 Thomas Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/demetri-m
+ artin-the-quick-draw-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/demetri-martin-the-quick-dra
+ w-tour/
+END:VEVENT
+END:VCALENDAR

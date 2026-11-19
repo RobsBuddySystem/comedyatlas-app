@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:billy-tellier-86228@comedyatlas.app
+DTSTAMP:20270521T000000Z
+DTSTART:20270521T000000Z
+DTEND:20270521T020000Z
+SUMMARY:Billy Tellier
+LOCATION:Le Club DIX30\, 9200 Boulevard Leduc\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/billy-tel
+ lier-86228/
+URL:https://comedyatlas.app/comedy-atlas/event/billy-tellier-86228/
+END:VEVENT
+END:VCALENDAR

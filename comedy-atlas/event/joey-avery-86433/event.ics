@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joey-avery-86433@comedyatlas.app
+DTSTAMP:20270124T160000Z
+DTSTART:20270124T160000Z
+DTEND:20270124T180000Z
+SUMMARY:Joey Avery
+LOCATION:Glasgow
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joey-aver
+ y-86433/
+URL:https://comedyatlas.app/comedy-atlas/event/joey-avery-86433/
+END:VEVENT
+END:VCALENDAR

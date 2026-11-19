@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-james-the-noise-between-our-ears@comedyatlas.app
+DTSTAMP:20270403T233000Z
+DTSTART:20270403T233000Z
+DTEND:20270404T013000Z
+SUMMARY:Ron James - The Noise Between Our Ears
+LOCATION:National Arts Centre / Centre national des Arts\, 1 Elgin\, Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-james
+ -the-noise-between-our-ears/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-james-the-noise-between-
+ our-ears/
+END:VEVENT
+END:VCALENDAR

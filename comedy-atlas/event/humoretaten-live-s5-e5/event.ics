@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:humoretaten-live-s5-e5@comedyatlas.app
+DTSTAMP:20270203T154500Z
+DTSTART:20270203T154500Z
+DTEND:20270203T174500Z
+SUMMARY:Humoretaten LIVE - S5 E5
+LOCATION:Carls - Storstua\, Trondheimsveien 113\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/humoretat
+ en-live-s5-e5/
+URL:https://comedyatlas.app/comedy-atlas/event/humoretaten-live-s5-e5/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lloyd-griffith-pardon@comedyatlas.app
+DTSTAMP:20270916T183000Z
+DTSTART:20270916T183000Z
+DTEND:20270916T203000Z
+SUMMARY:Lloyd Griffith: Pardon?
+LOCATION:Dixon Studio\, 430 London Road\, Southend on Sea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lloyd-gri
+ ffith-pardon/
+URL:https://comedyatlas.app/comedy-atlas/event/lloyd-griffith-pardon/
+END:VEVENT
+END:VCALENDAR

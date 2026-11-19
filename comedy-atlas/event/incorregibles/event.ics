@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:incorregibles@comedyatlas.app
+DTSTAMP:20270314T033000Z
+DTSTART:20270314T033000Z
+DTEND:20270314T053000Z
+SUMMARY:Incorregibles
+LOCATION:México
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/incorregi
+ bles/
+URL:https://comedyatlas.app/comedy-atlas/event/incorregibles/
+END:VEVENT
+END:VCALENDAR

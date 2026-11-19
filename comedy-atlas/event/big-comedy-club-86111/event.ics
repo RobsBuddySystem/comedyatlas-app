@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:big-comedy-club-86111@comedyatlas.app
+DTSTAMP:20261214T190000Z
+DTSTART:20261214T190000Z
+DTEND:20261214T210000Z
+SUMMARY:Big Comedy Club
+LOCATION:Big White\, 22 rue Lainerie\, Lyon
+DESCRIPTION:Tous les lundi\, venez rire avec la plateau d'humoristes underg
+ ound emblématique de Lyon !\nMore info: https://comedyatlas.app/comedy-atl
+ as/event/big-comedy-club-86111/
+URL:https://comedyatlas.app/comedy-atlas/event/big-comedy-club-86111/
+END:VEVENT
+END:VCALENDAR

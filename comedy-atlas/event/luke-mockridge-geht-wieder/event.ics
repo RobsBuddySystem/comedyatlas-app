@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:luke-mockridge-geht-wieder@comedyatlas.app
+DTSTAMP:20270409T180000Z
+DTSTART:20270409T180000Z
+DTEND:20270409T200000Z
+SUMMARY:Luke Mockridge - Geht wieder
+LOCATION:PUNCH L!NE Club Berlin\, Marlene-Dietrich-Platz 1\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/luke-mock
+ ridge-geht-wieder/
+URL:https://comedyatlas.app/comedy-atlas/event/luke-mockridge-geht-wieder/
+END:VEVENT
+END:VCALENDAR

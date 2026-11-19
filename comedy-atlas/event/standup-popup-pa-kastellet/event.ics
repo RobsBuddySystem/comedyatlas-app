@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:standup-popup-pa-kastellet@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:Standup popup på Kastellet
+LOCATION:Kastellet\, Hegdehaugsveien 25\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/standup-p
+ opup-pa-kastellet/
+URL:https://comedyatlas.app/comedy-atlas/event/standup-popup-pa-kastellet/
+END:VEVENT
+END:VCALENDAR

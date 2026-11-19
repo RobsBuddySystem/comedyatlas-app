@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hollywood-s-hottest-86198@comedyatlas.app
+DTSTAMP:20261122T033000Z
+DTSTART:20261122T033000Z
+DTEND:20261122T053000Z
+SUMMARY:Hollywood's Hottest
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/hollywood
+ -s-hottest-86198/
+URL:https://comedyatlas.app/comedy-atlas/event/hollywood-s-hottest-86198/
+END:VEVENT
+END:VCALENDAR

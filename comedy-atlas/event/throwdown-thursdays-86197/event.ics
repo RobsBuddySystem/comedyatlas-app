@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:throwdown-thursdays-86197@comedyatlas.app
+DTSTAMP:20261120T054500Z
+DTSTART:20261120T054500Z
+DTEND:20261120T074500Z
+SUMMARY:Throwdown Thursdays
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/throwdown
+ -thursdays-86197/
+URL:https://comedyatlas.app/comedy-atlas/event/throwdown-thursdays-86197/
+END:VEVENT
+END:VCALENDAR

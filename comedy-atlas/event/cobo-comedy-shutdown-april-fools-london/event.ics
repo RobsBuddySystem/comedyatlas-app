@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-april-fools-london@comedyatlas.app
+DTSTAMP:20270401T170000Z
+DTSTART:20270401T170000Z
+DTEND:20270401T190000Z
+SUMMARY:COBO : Comedy Shutdown April Fools – London
+LOCATION:Top Secret Comedy Club\, 170 Drury Lane\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cobo-come
+ dy-shutdown-april-fools-london/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-april-f
+ ools-london/
+END:VEVENT
+END:VCALENDAR

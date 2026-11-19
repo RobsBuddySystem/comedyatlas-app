@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sebastopol-comedy-club-86052@comedyatlas.app
+DTSTAMP:20261217T191500Z
+DTSTART:20261217T191500Z
+DTEND:20261217T211500Z
+SUMMARY:Sébastopol Comedy Club
+LOCATION:Sebastopol Comedy Club\, 123 Boulevard de Sébastopol\, Paris
+DESCRIPTION:Du stand-up dans une salle de cinéma. Chaque vendredi et samed
+ i au 123 Sébastopol Hôtel.\nMore info: https://comedyatlas.app/comedy-atl
+ as/event/sebastopol-comedy-club-86052/
+URL:https://comedyatlas.app/comedy-atlas/event/sebastopol-comedy-club-86052
+ /
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-snowed-in-comedy-tour@comedyatlas.app
+DTSTAMP:20270320T233000Z
+DTSTART:20270320T233000Z
+DTEND:20270321T013000Z
+SUMMARY:The Snowed In Comedy Tour
+LOCATION:Thunder Bay Community Auditorium\, 1 Paul Shaffer Drive\, Thunder 
+ Bay
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-snowe
+ d-in-comedy-tour/
+URL:https://comedyatlas.app/comedy-atlas/event/the-snowed-in-comedy-tour/
+END:VEVENT
+END:VCALENDAR

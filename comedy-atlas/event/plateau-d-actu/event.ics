@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:plateau-d-actu@comedyatlas.app
+DTSTAMP:20261129T173000Z
+DTSTART:20261129T173000Z
+DTEND:20261129T193000Z
+SUMMARY:Plateau d'Actu
+LOCATION:Marseille Comedy Club\, 59 rue de Rome\, Marseille
+DESCRIPTION:Chaque dernier dimanche du mois\, le Marseille Comedy Club réu
+ nit 7 humoristes pour un plateau unique consacré à l'info.\nMore info: ht
+ tps://comedyatlas.app/comedy-atlas/event/plateau-d-actu/
+URL:https://comedyatlas.app/comedy-atlas/event/plateau-d-actu/
+END:VEVENT
+END:VCALENDAR

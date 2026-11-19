@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rund-um-kap-horn@comedyatlas.app
+DTSTAMP:20270115T190000Z
+DTSTART:20270115T190000Z
+DTEND:20270115T210000Z
+SUMMARY:Rund um Kap Horn
+LOCATION:Dorfgemeinschaftszentr. Schwegen\, Schwegen 34b\, Loxstedt
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rund-um-k
+ ap-horn/
+URL:https://comedyatlas.app/comedy-atlas/event/rund-um-kap-horn/
+END:VEVENT
+END:VCALENDAR
