@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tracy-martina-live-in-the-usa@comedyatlas.app
+DTSTAMP:20270422T000000Z
+DTSTART:20270422T000000Z
+DTEND:20270422T020000Z
+SUMMARY:Tracy & Martina: Live In The USA
+LOCATION:Varsity Theater\, 1308 SE 4th Street\, Minneapolis
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tracy-mar
+ tina-live-in-the-usa/
+URL:https://comedyatlas.app/comedy-atlas/event/tracy-martina-live-in-the-us
+ a/
+END:VEVENT
+END:VCALENDAR

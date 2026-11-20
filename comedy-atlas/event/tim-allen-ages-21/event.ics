@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-allen-ages-21@comedyatlas.app
+DTSTAMP:20270306T040000Z
+DTSTART:20270306T040000Z
+DTEND:20270306T060000Z
+SUMMARY:Tim Allen - Ages 21+
+LOCATION:Yaamava Theater\, 777 San Manuel Blvd S\, Highland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/tim-allen
+ -ages-21/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-allen-ages-21/
+END:VEVENT
+END:VCALENDAR

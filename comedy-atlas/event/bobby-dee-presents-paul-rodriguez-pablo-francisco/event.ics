@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bobby-dee-presents-paul-rodriguez-pablo-francisco@comedyatlas.app
+DTSTAMP:20270131T040000Z
+DTSTART:20270131T040000Z
+DTEND:20270131T060000Z
+SUMMARY:Bobby Dee Presents: Paul Rodriguez & Pablo Francisco
+LOCATION:Stage Red\, 8463 Sierra Ave\, Fontana
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bobby-dee
+ -presents-paul-rodriguez-pablo-francisco/
+URL:https://comedyatlas.app/comedy-atlas/event/bobby-dee-presents-paul-rodr
+ iguez-pablo-francisco/
+END:VEVENT
+END:VCALENDAR

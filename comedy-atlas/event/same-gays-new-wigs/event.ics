@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:same-gays-new-wigs@comedyatlas.app
+DTSTAMP:20270227T003000Z
+DTSTART:20270227T003000Z
+DTEND:20270227T023000Z
+SUMMARY:Same Gays\, New Wigs
+LOCATION:Crystal Ballroom at Somerville Theatre\, 55 Davis Square\, Somervi
+ lle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/same-gays
+ -new-wigs/
+URL:https://comedyatlas.app/comedy-atlas/event/same-gays-new-wigs/
+END:VEVENT
+END:VCALENDAR

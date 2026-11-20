@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liz-splatt-friends@comedyatlas.app
+DTSTAMP:20270318T003000Z
+DTSTART:20270318T003000Z
+DTEND:20270318T023000Z
+SUMMARY:Liz Splatt & Friends
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/liz-splat
+ t-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/liz-splatt-friends/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:daniel-tosh@comedyatlas.app
+DTSTAMP:20270313T040000Z
+DTSTART:20270313T040000Z
+DTEND:20270313T060000Z
+SUMMARY:Daniel Tosh
+LOCATION:The Show at Agua Caliente Casino Rancho Mirage\, 32250 Bob Hope Dr
+ \, Rancho Mirage
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/daniel-to
+ sh/
+URL:https://comedyatlas.app/comedy-atlas/event/daniel-tosh/
+END:VEVENT
+END:VCALENDAR

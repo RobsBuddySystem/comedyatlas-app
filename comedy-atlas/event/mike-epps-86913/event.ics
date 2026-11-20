@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-epps-86913@comedyatlas.app
+DTSTAMP:20270117T040000Z
+DTSTART:20270117T040000Z
+DTEND:20270117T060000Z
+SUMMARY:Mike Epps
+LOCATION:Pearl Concert Theater at Palms Casino Resort\, 4321 West Flamingo 
+ Road\, Las Vegas
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-epps
+ -86913/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-epps-86913/
+END:VEVENT
+END:VCALENDAR

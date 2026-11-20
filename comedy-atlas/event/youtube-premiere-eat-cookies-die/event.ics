@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:youtube-premiere-eat-cookies-die@comedyatlas.app
+DTSTAMP:20261202T030000Z
+DTSTART:20261202T030000Z
+DTEND:20261202T050000Z
+SUMMARY:YouTube Premiere: Eat Cookies & Die
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/youtube-p
+ remiere-eat-cookies-die/
+URL:https://comedyatlas.app/comedy-atlas/event/youtube-premiere-eat-cookies
+ -die/
+END:VEVENT
+END:VCALENDAR

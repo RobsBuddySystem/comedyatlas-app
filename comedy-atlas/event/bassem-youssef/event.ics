@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bassem-youssef@comedyatlas.app
+DTSTAMP:20270131T043000Z
+DTSTART:20270131T043000Z
+DTEND:20270131T063000Z
+SUMMARY:Bassem Youssef
+LOCATION:Blue Note Hawaii\, 2335 Kalakaua Ave\, Honolulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bassem-yo
+ ussef/
+URL:https://comedyatlas.app/comedy-atlas/event/bassem-youssef/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:la-colo-comedy-club@comedyatlas.app
+DTSTAMP:20261214T190000Z
+DTSTART:20261214T190000Z
+DTEND:20261214T210000Z
+SUMMARY:La Colo Comedy club
+LOCATION:Restaurant Au Bureau\, 12 Quai virginie Hériot\, Bordeaux
+DESCRIPTION:La colo débarque à Bacalan au resto "Au bureau" pour une soir
+ ée 100% humour !\nMore info: https://comedyatlas.app/comedy-atlas/event/la
+ -colo-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/la-colo-comedy-club/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:billy-garan@comedyatlas.app
+DTSTAMP:20261129T003000Z
+DTSTART:20261129T003000Z
+DTEND:20261129T023000Z
+SUMMARY:Billy Garan
+LOCATION:Hyatt Regency Princeton\, 102 Carnegie Center\, Princeton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/billy-gar
+ an/
+URL:https://comedyatlas.app/comedy-atlas/event/billy-garan/
+END:VEVENT
+END:VCALENDAR

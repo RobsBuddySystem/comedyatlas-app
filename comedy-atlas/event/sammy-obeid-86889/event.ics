@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sammy-obeid-86889@comedyatlas.app
+DTSTAMP:20261223T030000Z
+DTSTART:20261223T030000Z
+DTEND:20261223T050000Z
+SUMMARY:Sammy Obeid
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sammy-obe
+ id-86889/
+URL:https://comedyatlas.app/comedy-atlas/event/sammy-obeid-86889/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sean-reilly-friends@comedyatlas.app
+DTSTAMP:20270315T000000Z
+DTSTART:20270315T000000Z
+DTEND:20270315T020000Z
+SUMMARY:Sean Reilly & Friends
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sean-reil
+ ly-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/sean-reilly-friends/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eagle-witt-87505@comedyatlas.app
+DTSTAMP:20270520T233000Z
+DTSTART:20270520T233000Z
+DTEND:20270521T013000Z
+SUMMARY:Eagle Witt
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eagle-wit
+ t-87505/
+URL:https://comedyatlas.app/comedy-atlas/event/eagle-witt-87505/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:improv-event@comedyatlas.app
+DTSTAMP:20270116T000000Z
+DTSTART:20270116T000000Z
+DTEND:20270116T020000Z
+SUMMARY:Improv Event
+LOCATION:Brooklyn Improv (The Main Room)\, 64 N 9th St\, Brooklyn
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/improv-ev
+ ent/
+URL:https://comedyatlas.app/comedy-atlas/event/improv-event/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:conan-o-brien-the-vigodas@comedyatlas.app
+DTSTAMP:20270110T040000Z
+DTSTART:20270110T040000Z
+DTEND:20270110T060000Z
+SUMMARY:Conan O'Brien & The Vigodas
+LOCATION:The Bellwether\, 333 S. Boylston St.\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/conan-o-b
+ rien-the-vigodas/
+URL:https://comedyatlas.app/comedy-atlas/event/conan-o-brien-the-vigodas/
+END:VEVENT
+END:VCALENDAR

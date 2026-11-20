@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jerry-seinfeld-86951@comedyatlas.app
+DTSTAMP:20270221T020000Z
+DTSTART:20270221T020000Z
+DTEND:20270221T040000Z
+SUMMARY:Jerry Seinfeld
+LOCATION:Choctaw Grand Theater\, 4418 US-69\, Durant
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jerry-sei
+ nfeld-86951/
+URL:https://comedyatlas.app/comedy-atlas/event/jerry-seinfeld-86951/
+END:VEVENT
+END:VCALENDAR

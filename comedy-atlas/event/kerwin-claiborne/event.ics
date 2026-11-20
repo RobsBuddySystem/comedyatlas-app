@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kerwin-claiborne@comedyatlas.app
+DTSTAMP:20270108T003000Z
+DTSTART:20270108T003000Z
+DTEND:20270108T023000Z
+SUMMARY:Kerwin Claiborne
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kerwin-cl
+ aiborne/
+URL:https://comedyatlas.app/comedy-atlas/event/kerwin-claiborne/
+END:VEVENT
+END:VCALENDAR

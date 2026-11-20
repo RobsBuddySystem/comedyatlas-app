@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jfl-new-faces@comedyatlas.app
+DTSTAMP:20270209T030000Z
+DTSTART:20270209T030000Z
+DTEND:20270209T050000Z
+SUMMARY:JFL New Faces
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jfl-new-f
+ aces/
+URL:https://comedyatlas.app/comedy-atlas/event/jfl-new-faces/
+END:VEVENT
+END:VCALENDAR

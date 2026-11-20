@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nathalie-boitel@comedyatlas.app
+DTSTAMP:20261216T200000Z
+DTSTART:20261216T200000Z
+DTEND:20261216T220000Z
+SUMMARY:Nathalie Boitel
+LOCATION:Théâtre de Dix Heures\, 36 Boulevard de Clichy\, Paris
+DESCRIPTION:Elle est la bonne pote\, la bonne mère\, la bonne collègue\, 
+ un peu toutes les femmes de ta vie en elle réunies. Et parfois elle pète 
+ un câble.\nMore info: https://comedyatlas.app/comedy-atlas/event/nathalie-
+ boitel/
+URL:https://comedyatlas.app/comedy-atlas/event/nathalie-boitel/
+END:VEVENT
+END:VCALENDAR

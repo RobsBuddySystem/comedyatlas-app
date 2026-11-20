@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eid-comedy-jam@comedyatlas.app
+DTSTAMP:20270314T230000Z
+DTSTART:20270314T230000Z
+DTEND:20270315T010000Z
+SUMMARY:Eid Comedy Jam
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eid-comed
+ y-jam/
+URL:https://comedyatlas.app/comedy-atlas/event/eid-comedy-jam/
+END:VEVENT
+END:VCALENDAR

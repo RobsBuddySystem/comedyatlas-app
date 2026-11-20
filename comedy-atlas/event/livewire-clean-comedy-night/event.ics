@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:livewire-clean-comedy-night@comedyatlas.app
+DTSTAMP:20270129T013000Z
+DTSTART:20270129T013000Z
+DTEND:20270129T033000Z
+SUMMARY:Livewire: Clean Comedy Night
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/livewire-
+ clean-comedy-night/
+URL:https://comedyatlas.app/comedy-atlas/event/livewire-clean-comedy-night/
+END:VEVENT
+END:VCALENDAR

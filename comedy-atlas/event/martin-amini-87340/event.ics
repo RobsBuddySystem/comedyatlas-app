@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-amini-87340@comedyatlas.app
+DTSTAMP:20270403T230000Z
+DTSTART:20270403T230000Z
+DTEND:20270404T010000Z
+SUMMARY:Martin Amini
+LOCATION:Center Stage Theater\, 1374 W Peachtree St. NW\, Atlanta
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-am
+ ini-87340/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-amini-87340/
+END:VEVENT
+END:VCALENDAR

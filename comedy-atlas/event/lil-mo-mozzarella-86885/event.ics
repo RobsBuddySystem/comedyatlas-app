@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lil-mo-mozzarella-86885@comedyatlas.app
+DTSTAMP:20261220T020000Z
+DTSTART:20261220T020000Z
+DTEND:20261220T040000Z
+SUMMARY:Lil Mo Mozzarella
+LOCATION:Vivarium\, 1818 N. Farwell Avenue\, Milwaukee
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lil-mo-mo
+ zzarella-86885/
+URL:https://comedyatlas.app/comedy-atlas/event/lil-mo-mozzarella-86885/
+END:VEVENT
+END:VCALENDAR

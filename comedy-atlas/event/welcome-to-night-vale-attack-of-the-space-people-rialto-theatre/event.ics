@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:welcome-to-night-vale-attack-of-the-space-people-rialto-theatre@comedya
+ tlas.app
+DTSTAMP:20270915T030000Z
+DTSTART:20270915T030000Z
+DTEND:20270915T050000Z
+SUMMARY:Welcome to Night Vale: Attack of the Space People @ Rialto Theatre
+LOCATION:Rialto Theatre-Tucson\, 318 Congress St\, Tucson
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/welcome-t
+ o-night-vale-attack-of-the-space-people-rialto-theatre/
+URL:https://comedyatlas.app/comedy-atlas/event/welcome-to-night-vale-attack
+ -of-the-space-people-rialto-theatre/
+END:VEVENT
+END:VCALENDAR

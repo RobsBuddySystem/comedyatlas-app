@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:welcome-to-night-vale-attack-of-the-space-people-87500@comedyatlas.app
+DTSTAMP:20270321T000000Z
+DTSTART:20270321T000000Z
+DTEND:20270321T020000Z
+SUMMARY:Welcome to Night Vale: Attack of the Space People
+LOCATION:Newark
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/welcome-t
+ o-night-vale-attack-of-the-space-people-87500/
+URL:https://comedyatlas.app/comedy-atlas/event/welcome-to-night-vale-attack
+ -of-the-space-people-87500/
+END:VEVENT
+END:VCALENDAR

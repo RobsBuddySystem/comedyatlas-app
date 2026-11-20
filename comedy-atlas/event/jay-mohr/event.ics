@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jay-mohr@comedyatlas.app
+DTSTAMP:20270321T020000Z
+DTSTART:20270321T020000Z
+DTEND:20270321T040000Z
+SUMMARY:Jay Mohr
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jay-mohr/
+URL:https://comedyatlas.app/comedy-atlas/event/jay-mohr/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danny-jolles@comedyatlas.app
+DTSTAMP:20270319T003000Z
+DTSTART:20270319T003000Z
+DTEND:20270319T023000Z
+SUMMARY:Danny Jolles
+LOCATION:Punch Line Houston\, 1204 Caroline Street\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/danny-jol
+ les/
+URL:https://comedyatlas.app/comedy-atlas/event/danny-jolles/
+END:VEVENT
+END:VCALENDAR

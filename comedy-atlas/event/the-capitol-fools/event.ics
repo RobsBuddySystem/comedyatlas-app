@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-capitol-fools@comedyatlas.app
+DTSTAMP:20270220T200000Z
+DTSTART:20270220T200000Z
+DTEND:20270220T220000Z
+SUMMARY:The Capitol Fools
+LOCATION:North Theatre at North Shore Center for the Performing Arts\, 9501
+  Skokie Blvd\, Skokie
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/the-capit
+ ol-fools/
+URL:https://comedyatlas.app/comedy-atlas/event/the-capitol-fools/
+END:VEVENT
+END:VCALENDAR

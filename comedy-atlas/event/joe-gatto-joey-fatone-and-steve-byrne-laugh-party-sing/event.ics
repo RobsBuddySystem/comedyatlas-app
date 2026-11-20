@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joe-gatto-joey-fatone-and-steve-byrne-laugh-party-sing@comedyatlas.app
+DTSTAMP:20270115T000000Z
+DTSTART:20270115T000000Z
+DTEND:20270115T020000Z
+SUMMARY:Joe Gatto\, Joey Fatone\, and Steve Byrne: Laugh! Party! Sing!
+LOCATION:Center Stage Theater\, 1374 W Peachtree St. NW\, Atlanta
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joe-gatto
+ -joey-fatone-and-steve-byrne-laugh-party-sing/
+URL:https://comedyatlas.app/comedy-atlas/event/joe-gatto-joey-fatone-and-st
+ eve-byrne-laugh-party-sing/
+END:VEVENT
+END:VCALENDAR

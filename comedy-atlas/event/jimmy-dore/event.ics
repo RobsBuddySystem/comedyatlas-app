@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jimmy-dore@comedyatlas.app
+DTSTAMP:20270116T050000Z
+DTSTART:20270116T050000Z
+DTEND:20270116T070000Z
+SUMMARY:Jimmy Dore
+LOCATION:Blue Note Hawaii\, 2335 Kalakaua Ave\, Honolulu
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jimmy-dor
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/jimmy-dore/
+END:VEVENT
+END:VCALENDAR

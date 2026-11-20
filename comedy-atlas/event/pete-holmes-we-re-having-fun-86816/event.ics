@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pete-holmes-we-re-having-fun-86816@comedyatlas.app
+DTSTAMP:20270321T230000Z
+DTSTART:20270321T230000Z
+DTEND:20270322T010000Z
+SUMMARY:Pete Holmes: We're Having Fun
+LOCATION:The Wilbur\, 246 Tremont St.\, Boston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/pete-holm
+ es-we-re-having-fun-86816/
+URL:https://comedyatlas.app/comedy-atlas/event/pete-holmes-we-re-having-fun
+ -86816/
+END:VEVENT
+END:VCALENDAR

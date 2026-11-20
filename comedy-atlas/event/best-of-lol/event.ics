@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:best-of-lol@comedyatlas.app
+DTSTAMP:20261130T010000Z
+DTSTART:20261130T010000Z
+DTEND:20261130T030000Z
+SUMMARY:Best of Lol
+LOCATION:Laugh Out Loud Comedy Club\, 618 NW Loop 410\, San Antonio
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/best-of-l
+ ol/
+URL:https://comedyatlas.app/comedy-atlas/event/best-of-lol/
+END:VEVENT
+END:VCALENDAR

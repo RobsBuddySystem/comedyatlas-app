@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mello-mike-miller-friends@comedyatlas.app
+DTSTAMP:20261205T021500Z
+DTSTART:20261205T021500Z
+DTEND:20261205T041500Z
+SUMMARY:Mello Mike Miller & Friends
+LOCATION:Raleigh Improv\, 1224 Parkside Main St\, Cary
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mello-mik
+ e-miller-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/mello-mike-miller-friends/
+END:VEVENT
+END:VCALENDAR
