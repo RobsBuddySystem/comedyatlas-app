@@ -197,7 +197,7 @@
     "id": 20,
     "language_counts": {
       "en": 77,
-      "unconfirmed": 92
+      "unconfirmed": 102
     },
     "latitude": 41.3851,
     "longitude": 2.1734,
@@ -547,7 +547,7 @@
     "id": 44,
     "language_counts": {
       "en": 2,
-      "unconfirmed": 30
+      "unconfirmed": 29
     },
     "latitude": 60.1699,
     "longitude": 24.9384,
@@ -4237,7 +4237,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 443,
     "language_counts": {
-      "unconfirmed": 20
+      "unconfirmed": 19
     },
     "latitude": 39.906142,
     "longitude": 32.759674,
@@ -5496,7 +5496,7 @@
     "country_name": "Germany",
     "id": 547,
     "language_counts": {
-      "unconfirmed": 38
+      "unconfirmed": 39
     },
     "latitude": 49.758564,
     "longitude": 6.645976,
@@ -17043,6 +17043,23 @@
     "latitude": 59.266437,
     "longitude": 10.402843,
     "name": "T\u00f8nsberg",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Oslo"
+  },
+  {
+    "country_id": 30,
+    "country_iso2": "NO",
+    "country_name": "Norway",
+    "id": 1492,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 69.64598,
+    "longitude": 18.95077,
+    "name": "Troms\u00f8",
     "region_code": null,
     "region_id": null,
     "region_name": null,
