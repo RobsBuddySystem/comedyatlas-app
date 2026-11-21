@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:joey-avery-live@comedyatlas.app
+DTSTAMP:20270205T190000Z
+DTSTART:20270205T190000Z
+DTEND:20270205T210000Z
+SUMMARY:Joey Avery Live!
+LOCATION:PUNCH L!NE Club Berlin\, Marlene-Dietrich-Platz 1\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/joey-aver
+ y-live/
+URL:https://comedyatlas.app/comedy-atlas/event/joey-avery-live/
+END:VEVENT
+END:VCALENDAR

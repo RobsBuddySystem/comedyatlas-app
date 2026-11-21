@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:opening-night-comedy-allstars-supershow@comedyatlas.app
+DTSTAMP:20270324T083000Z
+DTSTART:20270324T083000Z
+DTEND:20270324T103000Z
+SUMMARY:Opening Night Comedy Allstars Supershow
+LOCATION:Palais Theatre\, Lower Esplanade\, St Kilda
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/opening-n
+ ight-comedy-allstars-supershow/
+URL:https://comedyatlas.app/comedy-atlas/event/opening-night-comedy-allstar
+ s-supershow/
+END:VEVENT
+END:VCALENDAR

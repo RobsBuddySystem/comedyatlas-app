@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:le-grand-soir-de-l-annee-plateau-d-humoristes-pour-le-reveillon@comedya
+ tlas.app
+DTSTAMP:20261231T190000Z
+DTSTART:20261231T190000Z
+DTEND:20261231T210000Z
+SUMMARY:Le Grand Soir de l'année : plateau d'humoristes pour le Réveillon
+LOCATION:Bourse du Travail Lyon\, 205 Place Guichard\, Lyon
+DESCRIPTION:Après le succès des éditions précédentes\, "Le Grand Soir 
+ de l'Année" est de retour pour une nouvelle édition du plus déjanté des
+  réveillons !\nMore info: https://comedyatlas.app/comedy-atlas/event/le-gr
+ and-soir-de-l-annee-plateau-d-humoristes-pour-le-reveillon/
+URL:https://comedyatlas.app/comedy-atlas/event/le-grand-soir-de-l-annee-pla
+ teau-d-humoristes-pour-le-reveillon/
+END:VEVENT
+END:VCALENDAR

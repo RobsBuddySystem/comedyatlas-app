@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:de-los-40-tambien-se-sale@comedyatlas.app
+DTSTAMP:20261211T210000Z
+DTSTART:20261211T210000Z
+DTEND:20261211T230000Z
+SUMMARY:De los 40 Tambien Se sale.
+LOCATION:Palacio de la Prensa\, Plaza del Callao\, 4\, Madrid
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/de-los-40
+ -tambien-se-sale/
+URL:https://comedyatlas.app/comedy-atlas/event/de-los-40-tambien-se-sale/
+END:VEVENT
+END:VCALENDAR

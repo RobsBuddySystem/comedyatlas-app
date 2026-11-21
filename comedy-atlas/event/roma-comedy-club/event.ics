@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roma-comedy-club@comedyatlas.app
+DTSTAMP:20270530T160000Z
+DTSTART:20270530T160000Z
+DTEND:20270530T180000Z
+SUMMARY:Roma Comedy Club
+LOCATION:The Clubhouse: Laietana & Nikki's\, 6 Via Laietana\, Barcelona
+DESCRIPTION:Stand-up comedy dal vivo con Francesco Di Lernia\, Carlo Marong
+ iu e Pasquale Gorrasi.\nMore info: https://comedyatlas.app/comedy-atlas/eve
+ nt/roma-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/roma-comedy-club/
+END:VEVENT
+END:VCALENDAR

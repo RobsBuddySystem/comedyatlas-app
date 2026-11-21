@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-baldwin@comedyatlas.app
+DTSTAMP:20270108T010000Z
+DTSTART:20270108T010000Z
+DTEND:20270108T030000Z
+SUMMARY:Mike Baldwin
+LOCATION:The Comedy Club of Kansas City\, 1130 W 103rd St\, Kansas City
+DESCRIPTION:All seating in General Admission\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/mike-baldwin/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-baldwin/
+END:VEVENT
+END:VCALENDAR

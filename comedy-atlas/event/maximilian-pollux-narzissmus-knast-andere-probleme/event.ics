@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:maximilian-pollux-narzissmus-knast-andere-probleme@comedyatlas.app
+DTSTAMP:20270521T170000Z
+DTSTART:20270521T170000Z
+DTEND:20270521T190000Z
+SUMMARY:Maximilian Pollux – Narzissmus\, Knast & andere Probleme
+LOCATION:NightWash club\, Hohenstaufenring 25\, Cologne
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/maximilia
+ n-pollux-narzissmus-knast-andere-probleme/
+URL:https://comedyatlas.app/comedy-atlas/event/maximilian-pollux-narzissmus
+ -knast-andere-probleme/
+END:VEVENT
+END:VCALENDAR

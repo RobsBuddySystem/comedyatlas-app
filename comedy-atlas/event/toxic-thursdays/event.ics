@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:toxic-thursdays@comedyatlas.app
+DTSTAMP:20261204T054500Z
+DTSTART:20261204T054500Z
+DTEND:20261204T074500Z
+SUMMARY:Toxic Thursdays
+LOCATION:Laugh Factory - Hollywood\, 8001 Sunset Blvd\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/toxic-thu
+ rsdays/
+URL:https://comedyatlas.app/comedy-atlas/event/toxic-thursdays/
+END:VEVENT
+END:VCALENDAR

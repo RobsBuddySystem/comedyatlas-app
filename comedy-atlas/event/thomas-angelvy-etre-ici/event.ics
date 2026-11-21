@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:thomas-angelvy-etre-ici@comedyatlas.app
+DTSTAMP:20271014T180000Z
+DTSTART:20271014T180000Z
+DTEND:20271014T200000Z
+SUMMARY:Thomas Angelvy - Être ici
+LOCATION:Bâtiment des Forces Motrices\, Place des Volontaires 2\, Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/thomas-an
+ gelvy-etre-ici/
+URL:https://comedyatlas.app/comedy-atlas/event/thomas-angelvy-etre-ici/
+END:VEVENT
+END:VCALENDAR

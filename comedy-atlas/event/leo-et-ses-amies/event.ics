@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:leo-et-ses-amies@comedyatlas.app
+DTSTAMP:20261223T200000Z
+DTSTART:20261223T200000Z
+DTEND:20261223T220000Z
+SUMMARY:Léo et ses amies
+LOCATION:Le Solo\, 138 boulevard Richard Lenoir\, Paris
+DESCRIPTION:Pourquoi les mecs sont si médiocres et si confiants à la fois
+  ?\nMore info: https://comedyatlas.app/comedy-atlas/event/leo-et-ses-amies/
+URL:https://comedyatlas.app/comedy-atlas/event/leo-et-ses-amies/
+END:VEVENT
+END:VCALENDAR

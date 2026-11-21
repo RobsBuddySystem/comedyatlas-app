@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:una-cita-con-jorge-cremades@comedyatlas.app
+DTSTAMP:20261128T203000Z
+DTSTART:20261128T203000Z
+DTEND:20261128T223000Z
+SUMMARY:Una cita con Jorge Cremades
+LOCATION:Palacio de la Prensa\, Plaza del Callao\, 4\, Madrid
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/una-cita-
+ con-jorge-cremades/
+URL:https://comedyatlas.app/comedy-atlas/event/una-cita-con-jorge-cremades/
+END:VEVENT
+END:VCALENDAR

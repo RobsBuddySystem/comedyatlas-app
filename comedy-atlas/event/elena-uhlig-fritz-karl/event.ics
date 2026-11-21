@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:elena-uhlig-fritz-karl@comedyatlas.app
+DTSTAMP:20270908T180000Z
+DTSTART:20270908T180000Z
+DTEND:20270908T200000Z
+SUMMARY:Elena Uhlig & Fritz Karl
+LOCATION:Metropol Theater Bremen\, Richtweg 7-13\, Bremen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/elena-uhl
+ ig-fritz-karl/
+URL:https://comedyatlas.app/comedy-atlas/event/elena-uhlig-fritz-karl/
+END:VEVENT
+END:VCALENDAR

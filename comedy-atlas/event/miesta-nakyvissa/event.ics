@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:miesta-nakyvissa@comedyatlas.app
+DTSTAMP:20270318T160018Z
+DTSTART:20270318T160018Z
+DTEND:20270318T180018Z
+SUMMARY:Miestä näkyvissä
+LOCATION:Varkauden Teatteri\, Laivalinnankatu 29\, Varkaus
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/miesta-na
+ kyvissa/
+URL:https://comedyatlas.app/comedy-atlas/event/miesta-nakyvissa/
+END:VEVENT
+END:VCALENDAR

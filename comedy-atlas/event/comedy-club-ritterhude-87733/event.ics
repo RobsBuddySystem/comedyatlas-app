@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-ritterhude-87733@comedyatlas.app
+DTSTAMP:20271105T190000Z
+DTSTART:20271105T190000Z
+DTEND:20271105T210000Z
+SUMMARY:Comedy Club Ritterhude
+LOCATION:Hamme Forum Ritterhude\, Riesstr. 11\, Ritterhude
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-cl
+ ub-ritterhude-87733/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-ritterhude-87733
+ /
+END:VEVENT
+END:VCALENDAR

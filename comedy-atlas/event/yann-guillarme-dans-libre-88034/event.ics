@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yann-guillarme-dans-libre-88034@comedyatlas.app
+DTSTAMP:20261231T194500Z
+DTSTART:20261231T194500Z
+DTEND:20261231T214500Z
+SUMMARY:Yann Guillarme dans Libre !
+LOCATION:La Cité Nantes Events Center - Auditorium 800\, 5 rue de Valmy\, 
+ Nantes
+DESCRIPTION:Libre *\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ yann-guillarme-dans-libre-88034/
+URL:https://comedyatlas.app/comedy-atlas/event/yann-guillarme-dans-libre-88
+ 034/
+END:VEVENT
+END:VCALENDAR
