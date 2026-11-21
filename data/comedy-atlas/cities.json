@@ -110,7 +110,7 @@
     "id": 14,
     "language_counts": {
       "en": 5,
-      "unconfirmed": 192
+      "unconfirmed": 197
     },
     "latitude": 53.3498,
     "longitude": -6.2603,
@@ -128,7 +128,7 @@
     "id": 16,
     "language_counts": {
       "en": 139,
-      "unconfirmed": 50
+      "unconfirmed": 52
     },
     "latitude": 52.3676,
     "longitude": 4.9041,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 112,
-      "fr": 933,
+      "fr": 932,
       "unconfirmed": 14
     },
     "latitude": 48.8566,
@@ -997,7 +997,7 @@
     "country_name": "UK",
     "id": 83,
     "language_counts": {
-      "unconfirmed": 50
+      "unconfirmed": 49
     },
     "latitude": 51.4816,
     "longitude": -3.1791,
@@ -2347,7 +2347,7 @@
     "id": 186,
     "language_counts": {
       "en": 1,
-      "unconfirmed": 25
+      "unconfirmed": 26
     },
     "latitude": 51.924442,
     "longitude": 4.47775,
@@ -3370,7 +3370,7 @@
     "country_name": "New Zealand",
     "id": 380,
     "language_counts": {
-      "unconfirmed": 11
+      "unconfirmed": 12
     },
     "latitude": -41.291801,
     "longitude": 174.77856,
@@ -3897,7 +3897,7 @@
     "country_name": "Netherlands",
     "id": 416,
     "language_counts": {
-      "unconfirmed": 2
+      "unconfirmed": 3
     },
     "latitude": 53.20287,
     "longitude": 6.55515,
@@ -16698,7 +16698,7 @@
     "country_name": "Netherlands",
     "id": 1478,
     "language_counts": {
-      "unconfirmed": 1
+      "unconfirmed": 2
     },
     "latitude": 51.43841,
     "longitude": 5.47986,
@@ -18221,5 +18221,22 @@
     "region_name": null,
     "region_type": null,
     "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 11,
+    "country_iso2": "NL",
+    "country_name": "Netherlands",
+    "id": 1576,
+    "language_counts": {
+      "unconfirmed": 1
+    },
+    "latitude": 52.09213,
+    "longitude": 5.11285,
+    "name": "Utrecht",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Amsterdam"
   }
 ]
