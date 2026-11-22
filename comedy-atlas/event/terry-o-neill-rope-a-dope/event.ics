@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:terry-o-neill-rope-a-dope@comedyatlas.app
+DTSTAMP:20270218T203000Z
+DTSTART:20270218T203000Z
+DTEND:20270218T223000Z
+SUMMARY:Terry O'Neill - Rope-A-Dope
+LOCATION:The Sugar Club\, 8 Lower Leeson Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/terry-o-n
+ eill-rope-a-dope/
+URL:https://comedyatlas.app/comedy-atlas/event/terry-o-neill-rope-a-dope/
+END:VEVENT
+END:VCALENDAR

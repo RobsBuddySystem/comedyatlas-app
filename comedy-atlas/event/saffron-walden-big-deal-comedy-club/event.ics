@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saffron-walden-big-deal-comedy-club@comedyatlas.app
+DTSTAMP:20270130T190000Z
+DTSTART:20270130T190000Z
+DTEND:20270130T210000Z
+SUMMARY:Saffron Walden - Big Deal Comedy Club
+LOCATION:Fairycroft House\, 37 Audley Road\, Saffron Walden
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/saffron-w
+ alden-big-deal-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/saffron-walden-big-deal-come
+ dy-club/
+END:VEVENT
+END:VCALENDAR

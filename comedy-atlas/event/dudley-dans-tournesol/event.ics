@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dudley-dans-tournesol@comedyatlas.app
+DTSTAMP:20261129T180000Z
+DTSTART:20261129T180000Z
+DTEND:20261129T200000Z
+SUMMARY:Dudley dans Tournesol
+LOCATION:Garage Comedy Club\, 15 rue des trois frères Barthélémy\, Marse
+ ille
+DESCRIPTION:Dudley dans Tournesol au Garage le 29 novembre à 19h\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/dudley-dans-tournesol/
+URL:https://comedyatlas.app/comedy-atlas/event/dudley-dans-tournesol/
+END:VEVENT
+END:VCALENDAR

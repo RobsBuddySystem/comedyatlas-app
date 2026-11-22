@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mo-gilligan-88238@comedyatlas.app
+DTSTAMP:20270204T190000Z
+DTSTART:20270204T190000Z
+DTEND:20270204T210000Z
+SUMMARY:Mo Gilligan
+LOCATION:Ambassador Theatre\, Oconnell Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mo-gillig
+ an-88238/
+URL:https://comedyatlas.app/comedy-atlas/event/mo-gilligan-88238/
+END:VEVENT
+END:VCALENDAR

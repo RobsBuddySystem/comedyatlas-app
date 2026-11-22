@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bryggeriet-standup@comedyatlas.app
+DTSTAMP:20261210T180000Z
+DTSTART:20261210T180000Z
+DTEND:20261210T200000Z
+SUMMARY:Bryggeriet Standup
+LOCATION:Bryggeriet Tromsø\, Storgata 6\, Tromsø
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/bryggerie
+ t-standup/
+URL:https://comedyatlas.app/comedy-atlas/event/bryggeriet-standup/
+END:VEVENT
+END:VCALENDAR
