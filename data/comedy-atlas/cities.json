@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 111,
-      "fr": 1713,
+      "fr": 1721,
       "unconfirmed": 13
     },
     "latitude": 48.8566,
@@ -337,7 +337,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 289
+      "fr": 291
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -1981,23 +1981,6 @@
     "timezone": null
   },
   {
-    "country_id": 23,
-    "country_iso2": "CH",
-    "country_name": "Switzerland",
-    "id": 152,
-    "language_counts": {
-      "fr": 1
-    },
-    "latitude": 46.431083,
-    "longitude": 6.912992,
-    "name": "Montreux",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": null
-  },
-  {
     "country_id": 2,
     "country_iso2": "BE",
     "country_name": "Belgium",
@@ -2397,7 +2380,7 @@
     "country_name": "France",
     "id": 190,
     "language_counts": {
-      "fr": 5
+      "fr": 6
     },
     "latitude": null,
     "longitude": null,
@@ -2636,7 +2619,7 @@
     "country_name": "France",
     "id": 229,
     "language_counts": {
-      "fr": 4
+      "fr": 5
     },
     "latitude": null,
     "longitude": null,
@@ -2773,7 +2756,7 @@
     "id": 249,
     "language_counts": {
       "en": 1,
-      "fr": 29
+      "fr": 37
     },
     "latitude": null,
     "longitude": null,
@@ -3590,7 +3573,7 @@
     "country_name": "Denmark",
     "id": 398,
     "language_counts": {
-      "unconfirmed": 14
+      "unconfirmed": 13
     },
     "latitude": null,
     "longitude": null,
@@ -6567,7 +6550,7 @@
     "country_name": "UK",
     "id": 613,
     "language_counts": {
-      "unconfirmed": 62
+      "unconfirmed": 61
     },
     "latitude": 53.38118,
     "longitude": -1.471079,
@@ -17206,7 +17189,7 @@
     "country_name": "Sweden",
     "id": 1515,
     "language_counts": {
-      "unconfirmed": 7
+      "unconfirmed": 6
     },
     "latitude": 59.379842,
     "longitude": 13.502612,
