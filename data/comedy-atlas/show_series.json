@@ -48265,7 +48265,7 @@
     "country_iso2": "FR",
     "description": "French Fried Comedy Night is English-language stand-up in Paris, every Tuesday at 20:00 at MAMA Comedy Club, 26 rue des Lombards, 75004 (Ch\u00e2telet). Free reservation, pay at the door: \u20ac8 with a soft drink, \u20ac12 with a cocktail or \u20ac23 with a panuozzo and a drink.",
     "format_type": "showcase",
-    "frequency_type": "biweekly",
+    "frequency_type": "weekly",
     "id": 5881,
     "name": "French Fried Comedy Night",
     "organization_id": 207,
@@ -48290,24 +48290,6 @@
     "organization_name": "Golden Comedy",
     "other_languages": null,
     "primary_language": null,
-    "typical_duration_minutes": null,
-    "typical_spot_minutes": null
-  },
-  {
-    "active_status": "active",
-    "age_policy": null,
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "description": "English-language stand-up every Tuesday at 20:00 at Mama Comedy Club, 26 rue des Lombards, 75004 Paris. Free reservation, pay at the door: \u20ac8 with a soft drink, \u20ac12 with a cocktail or \u20ac23 with a panuozzo and a drink. The comedians are supported by a hat collection after the show. Presented by French Fried Comedy Night.",
-    "format_type": "showcase",
-    "frequency_type": "weekly",
-    "id": 5883,
-    "name": "MAMA Comedy in English",
-    "organization_id": 209,
-    "organization_name": "MAMA Comedy in English",
-    "other_languages": null,
-    "primary_language": "en",
     "typical_duration_minutes": null,
     "typical_spot_minutes": null
   }

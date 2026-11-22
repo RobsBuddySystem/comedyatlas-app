@@ -1,165 +1,5 @@
 [
   {
-    "audience_payment_type": "free",
-    "canonical_event_url": "https://www.eventbrite.fr/e/dissident-projector-wings-of-desire-1987-tickets-2003363522224",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": null,
-    "description": "Catch a dreamy vibe with DISSIDENT PROJECTOR bringing Wings of Desire to life in a whole new way.",
-    "doors_at": null,
-    "ends_at": "2026-11-22T12:00:00+01:00",
-    "genre": "standup",
-    "id": 62592,
-    "is_festival": false,
-    "is_free": true,
-    "is_ongoing_run": true,
-    "language": null,
-    "organization_id": null,
-    "organization_name": null,
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": 0.0,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "dissident-projector-wings-of-desire-1987",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-22T10:00:00+01:00",
-    "status": "scheduled",
-    "timezone": "Europe/Paris",
-    "title": "[DISSIDENT PROJECTOR] Wings of Desire (1987)",
-    "venue_accessibility_notes": null,
-    "venue_address": "58 Rue Richer, 75009 Paris",
-    "venue_id": 45,
-    "venue_latitude": 48.87409,
-    "venue_longitude": 2.342735,
-    "venue_name": "The Dissident Club"
-  },
-  {
-    "audience_payment_type": null,
-    "canonical_event_url": "https://www.billetreduc.com/spectacle/kidology-comedy-club-402606#session=2026-11-22T11:00:00",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": "EUR",
-    "description": "N\u00b01 \u00e0 Paris, le Kido c'est l'exp\u00e9rience Stand-Up & Bistronomie la mieux not\u00e9e.",
-    "doors_at": null,
-    "ends_at": null,
-    "genre": "standup",
-    "id": 70556,
-    "is_festival": false,
-    "is_free": null,
-    "is_ongoing_run": false,
-    "language": "fr",
-    "organization_id": null,
-    "organization_name": null,
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": 39.9,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "kido-comedy-club-restaurant-70556",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-22T11:00:00+01:00",
-    "status": "scheduled",
-    "timezone": "Europe/Paris",
-    "title": "Kido Comedy Club & Restaurant",
-    "venue_accessibility_notes": null,
-    "venue_address": "39 boulevard Saint-Michel",
-    "venue_id": 2141,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": "Kido Comedy Club"
-  },
-  {
-    "audience_payment_type": null,
-    "canonical_event_url": "https://www.moshtix.com.au/v2/event/khaled-khalafalla-the-let-me-take-you-there-tour/199237",
-    "city_id": 115,
-    "city_name": "Perth",
-    "country_iso2": "AU",
-    "currency": null,
-    "description": null,
-    "doors_at": null,
-    "ends_at": null,
-    "genre": "standup",
-    "id": 43903,
-    "is_festival": false,
-    "is_free": null,
-    "is_ongoing_run": false,
-    "language": null,
-    "organization_id": 202,
-    "organization_name": "Ticketmaster Discovery - comedy",
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": null,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "khaled-khalafalla-the-let-me-take-you-there-tour",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-22T18:30:00+08:00",
-    "status": "scheduled",
-    "timezone": "Australia/Perth",
-    "title": "Khaled Khalafalla: The Let Me Take You There Tour",
-    "venue_accessibility_notes": null,
-    "venue_address": "224 William St",
-    "venue_id": 3488,
-    "venue_latitude": -31.948448,
-    "venue_longitude": 115.859859,
-    "venue_name": "The Rechabite"
-  },
-  {
-    "audience_payment_type": null,
-    "canonical_event_url": "https://www.billetreduc.com/spectacle/kidology-comedy-club-402606#session=2026-11-22T12:15:00",
-    "city_id": 25,
-    "city_name": "Paris",
-    "country_iso2": "FR",
-    "currency": "EUR",
-    "description": "N\u00b01 \u00e0 Paris, le Kido c'est l'exp\u00e9rience Stand-Up & Bistronomie la mieux not\u00e9e.",
-    "doors_at": null,
-    "ends_at": null,
-    "genre": "standup",
-    "id": 70557,
-    "is_festival": false,
-    "is_free": null,
-    "is_ongoing_run": false,
-    "language": "fr",
-    "organization_id": null,
-    "organization_name": null,
-    "organization_slug": null,
-    "photo_source_name": null,
-    "photo_url": null,
-    "price_max": null,
-    "price_min": 13.9,
-    "show_age_policy": null,
-    "show_series_id": null,
-    "show_series_name": null,
-    "show_series_slug": null,
-    "slug": "kido-comedy-club-restaurant-70557",
-    "sold_out_status": "unknown",
-    "starts_at": "2026-11-22T12:15:00+01:00",
-    "status": "scheduled",
-    "timezone": "Europe/Paris",
-    "title": "Kido Comedy Club & Restaurant",
-    "venue_accessibility_notes": null,
-    "venue_address": "39 boulevard Saint-Michel",
-    "venue_id": 2141,
-    "venue_latitude": null,
-    "venue_longitude": null,
-    "venue_name": "Kido Comedy Club"
-  },
-  {
     "audience_payment_type": null,
     "canonical_event_url": "https://www.ticketmaster.dk/event/sa-syng-da-kge-billetter/1263800792",
     "city_id": 398,
@@ -517,7 +357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -1197,7 +1037,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -2077,7 +1917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -3757,7 +3597,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -10997,7 +10837,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -12077,7 +11917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -15703,21 +15543,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67354",
     "sold_out_status": "unknown",
     "starts_at": "2026-11-24T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -15877,7 +15717,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -17517,7 +17357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -23317,7 +23157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -25877,7 +25717,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -29597,7 +29437,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -32437,7 +32277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -35357,7 +35197,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -38077,7 +37917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -41437,7 +41277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -45317,7 +45157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -50837,7 +50677,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -52277,7 +52117,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -57197,7 +57037,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -60201,6 +60041,46 @@
   },
   {
     "audience_payment_type": null,
+    "canonical_event_url": "https://www.comedycafe.nl/agenda/masters-of-comedy-11/",
+    "city_id": 16,
+    "city_name": "Amsterdam",
+    "country_iso2": "NL",
+    "currency": "EUR",
+    "description": "De Masters of Comedy zijn de grootse namen uit de Nederlandse comedy scene in de beste line-up comedyshow van Nederland.\n\\n",
+    "doors_at": null,
+    "ends_at": "2026-11-28T23:00:00+01:00",
+    "genre": "standup",
+    "id": 89663,
+    "is_festival": false,
+    "is_free": null,
+    "is_ongoing_run": false,
+    "language": null,
+    "organization_id": 3,
+    "organization_name": "Comedy Cafe Amsterdam",
+    "organization_slug": "comedy-cafe-amsterdam",
+    "photo_source_name": null,
+    "photo_url": null,
+    "price_max": null,
+    "price_min": 23.5,
+    "show_age_policy": null,
+    "show_series_id": null,
+    "show_series_name": null,
+    "show_series_slug": null,
+    "slug": "masters-of-comedy-89663",
+    "sold_out_status": "unknown",
+    "starts_at": "2026-11-28T21:00:00+01:00",
+    "status": "scheduled",
+    "timezone": "Europe/Amsterdam",
+    "title": "Masters of Comedy",
+    "venue_accessibility_notes": null,
+    "venue_address": null,
+    "venue_id": 2,
+    "venue_latitude": 52.3676,
+    "venue_longitude": 4.9041,
+    "venue_name": "Comedy Cafe Amsterdam"
+  },
+  {
+    "audience_payment_type": null,
     "canonical_event_url": "https://www.skiddle.com/whats-on/Edinburgh/Beehive-Inn/The-Comedy-Lock-In/43028913/?sktag=15788",
     "city_id": 33,
     "city_name": "Edinburgh",
@@ -60797,7 +60677,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -61957,7 +61837,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -67717,7 +67597,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -68357,7 +68237,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -69197,7 +69077,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -70877,7 +70757,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -76237,7 +76117,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -77277,7 +77157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -80583,21 +80463,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67355",
     "sold_out_status": "unknown",
     "starts_at": "2026-12-01T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -80717,7 +80597,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -82277,7 +82157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -87317,7 +87197,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -89757,7 +89637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -93277,7 +93157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -95837,7 +95717,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -98357,7 +98237,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -103877,7 +103757,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -106837,7 +106717,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -109757,7 +109637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -116917,7 +116797,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -118237,7 +118117,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -122677,7 +122557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -125797,7 +125677,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -126917,7 +126797,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -134117,7 +133997,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -134637,7 +134517,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -135477,7 +135357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -136917,7 +136797,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -142757,7 +142637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -144037,7 +143917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -147463,21 +147343,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-74696",
     "sold_out_status": "unknown",
     "starts_at": "2026-12-08T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -147597,7 +147477,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -149237,7 +149117,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -154437,7 +154317,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -156557,7 +156437,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -160237,7 +160117,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -163037,7 +162917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -165517,7 +165397,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -170477,7 +170357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -173197,7 +173077,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -175797,7 +175677,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -181877,7 +181757,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -183077,7 +182957,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -187317,7 +187197,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -190037,7 +189917,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "ticketed",
@@ -191357,7 +191237,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -197717,7 +197597,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -198157,7 +198037,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -198877,7 +198757,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -200397,7 +200277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -206757,7 +206637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -207917,7 +207797,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -211143,21 +211023,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67356",
     "sold_out_status": "unknown",
     "starts_at": "2026-12-15T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -211397,7 +211277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -212957,7 +212837,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -217637,7 +217517,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -219717,7 +219597,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -223437,7 +223317,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -225517,7 +225397,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -227637,7 +227517,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -232477,7 +232357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -234677,7 +234557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -237077,7 +236957,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -242357,7 +242237,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -243517,7 +243397,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -247677,7 +247557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -249957,7 +249837,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -251277,7 +251157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -256277,7 +256157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -256637,7 +256517,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -257277,7 +257157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -258397,7 +258277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -263677,7 +263557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -264677,7 +264557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -267223,21 +267103,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67357",
     "sold_out_status": "unknown",
     "starts_at": "2026-12-22T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -267277,7 +267157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -268477,7 +268357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -271757,7 +271637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": "free",
@@ -273077,7 +272957,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -275677,7 +275557,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -276397,7 +276277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -276997,7 +276877,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -278517,7 +278397,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -278997,7 +278877,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -279757,7 +279637,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -281357,7 +281237,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -282157,7 +282037,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -284277,7 +284157,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -285477,7 +285357,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -286397,7 +286277,7 @@
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -299143,21 +299023,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67358",
     "sold_out_status": "unknown",
     "starts_at": "2026-12-29T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -324423,21 +324303,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67359",
     "sold_out_status": "unknown",
     "starts_at": "2027-01-05T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -345623,21 +345503,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67360",
     "sold_out_status": "unknown",
     "starts_at": "2027-01-12T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -371143,21 +371023,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67361",
     "sold_out_status": "unknown",
     "starts_at": "2027-01-19T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -398423,21 +398303,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67362",
     "sold_out_status": "unknown",
     "starts_at": "2027-01-26T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -426303,21 +426183,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67363",
     "sold_out_status": "unknown",
     "starts_at": "2027-02-02T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -452063,21 +451943,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67364",
     "sold_out_status": "unknown",
     "starts_at": "2027-02-09T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -476583,21 +476463,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67365",
     "sold_out_status": "unknown",
     "starts_at": "2027-02-16T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -501543,21 +501423,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67366",
     "sold_out_status": "unknown",
     "starts_at": "2027-02-23T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -525103,21 +524983,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67367",
     "sold_out_status": "unknown",
     "starts_at": "2027-03-02T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -549383,21 +549263,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67368",
     "sold_out_status": "unknown",
     "starts_at": "2027-03-09T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -572143,21 +572023,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67369",
     "sold_out_status": "unknown",
     "starts_at": "2027-03-16T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -592503,21 +592383,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67370",
     "sold_out_status": "unknown",
     "starts_at": "2027-03-23T20:00:00+01:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -607263,21 +607143,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67371",
     "sold_out_status": "unknown",
     "starts_at": "2027-03-30T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -625023,21 +624903,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67372",
     "sold_out_status": "unknown",
     "starts_at": "2027-04-06T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -646023,21 +645903,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67373",
     "sold_out_status": "unknown",
     "starts_at": "2027-04-13T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -665943,21 +665823,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67374",
     "sold_out_status": "unknown",
     "starts_at": "2027-04-20T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -682423,21 +682303,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67375",
     "sold_out_status": "unknown",
     "starts_at": "2027-04-27T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -697983,21 +697863,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67376",
     "sold_out_status": "unknown",
     "starts_at": "2027-05-04T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -711383,21 +711263,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67377",
     "sold_out_status": "unknown",
     "starts_at": "2027-05-11T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -725183,21 +725063,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67378",
     "sold_out_status": "unknown",
     "starts_at": "2027-05-18T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -738383,21 +738263,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67379",
     "sold_out_status": "unknown",
     "starts_at": "2027-05-25T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -749023,21 +748903,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67380",
     "sold_out_status": "unknown",
     "starts_at": "2027-06-01T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -757863,21 +757743,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67381",
     "sold_out_status": "unknown",
     "starts_at": "2027-06-08T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -766103,21 +765983,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67382",
     "sold_out_status": "unknown",
     "starts_at": "2027-06-15T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -774183,21 +774063,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67383",
     "sold_out_status": "unknown",
     "starts_at": "2027-06-22T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
@@ -780663,21 +780543,21 @@
     "price_max": 23.0,
     "price_min": 8.0,
     "show_age_policy": null,
-    "show_series_id": 5883,
-    "show_series_name": "MAMA Comedy in English",
-    "show_series_slug": "mama-comedy-in-english",
+    "show_series_id": 5881,
+    "show_series_name": "French Fried Comedy Night",
+    "show_series_slug": "french-fried-comedy-night",
     "slug": "mama-comedy-club-in-english-stand-up-comedy-100-in-english-67384",
     "sold_out_status": "unknown",
     "starts_at": "2027-06-29T20:00:00+02:00",
     "status": "scheduled",
     "timezone": "Europe/Paris",
-    "title": "MAMA Comedy Club in English \u2014 Stand-up comedy 100% in English",
+    "title": "French Fried Comedy Night",
     "venue_accessibility_notes": null,
     "venue_address": "26 rue des Lombards",
     "venue_id": 4131,
     "venue_latitude": 48.859419,
     "venue_longitude": 2.349174,
-    "venue_name": "Mama comedy club"
+    "venue_name": "Mama Comedy Club"
   },
   {
     "audience_payment_type": null,
