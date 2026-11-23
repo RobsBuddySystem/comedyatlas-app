@@ -74,7 +74,7 @@
     "country_name": "Germany",
     "id": 8,
     "language_counts": {
-      "en": 164,
+      "en": 163,
       "unconfirmed": 66
     },
     "latitude": 52.52,
@@ -196,7 +196,7 @@
     "country_name": "Spain",
     "id": 20,
     "language_counts": {
-      "en": 68,
+      "en": 67,
       "unconfirmed": 94
     },
     "latitude": 41.3851,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 109,
-      "fr": 1660,
+      "fr": 1667,
       "unconfirmed": 12
     },
     "latitude": 48.8566,
@@ -840,7 +840,7 @@
     "country_name": "UK",
     "id": 74,
     "language_counts": {
-      "en": 505,
+      "en": 501,
       "unconfirmed": 1217
     },
     "latitude": 51.5074,
@@ -2516,7 +2516,7 @@
     "country_name": "France",
     "id": 205,
     "language_counts": {
-      "fr": 21,
+      "fr": 30,
       "unconfirmed": 1
     },
     "latitude": null,
@@ -2927,7 +2927,7 @@
     "country_name": "France",
     "id": 278,
     "language_counts": {
-      "fr": 3
+      "fr": 4
     },
     "latitude": null,
     "longitude": null,
@@ -6074,7 +6074,7 @@
     "country_name": "Germany",
     "id": 583,
     "language_counts": {
-      "unconfirmed": 10
+      "unconfirmed": 9
     },
     "latitude": null,
     "longitude": null,
@@ -9919,7 +9919,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1579
+      "unconfirmed": 1578
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
@@ -18236,5 +18236,39 @@
     "region_name": null,
     "region_type": null,
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1584,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Le Bouscat",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
+    "id": 1585,
+    "language_counts": {
+      "fr": 1
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Ramonville Saint Agne",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
   }
 ]
