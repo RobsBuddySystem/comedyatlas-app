@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michael-hirsch-dans-y-a-de-la-joie@comedyatlas.app
+DTSTAMP:20261211T194500Z
+DTSTART:20261211T194500Z
+DTEND:20261211T214500Z
+SUMMARY:Michaël Hirsch dans Y'a de la joie !
+LOCATION:Théâtre de la Celle saint Cloud\, 8 E avenue Charles de Gaulle\,
+  La Celle Saint Cloud
+DESCRIPTION:Un an pour apprendre la joie de vivre !\nMore info: https://com
+ edyatlas.app/comedy-atlas/event/michael-hirsch-dans-y-a-de-la-joie/
+URL:https://comedyatlas.app/comedy-atlas/event/michael-hirsch-dans-y-a-de-l
+ a-joie/
+END:VEVENT
+END:VCALENDAR

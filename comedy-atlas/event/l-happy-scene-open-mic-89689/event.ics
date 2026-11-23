@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:l-happy-scene-open-mic-89689@comedyatlas.app
+DTSTAMP:20261215T183000Z
+DTSTART:20261215T183000Z
+DTEND:20261215T203000Z
+SUMMARY:L'Happy Scène : Open Mic
+LOCATION:La Taverne des Jeux\, 90 rue Oberkampf\, Paris
+DESCRIPTION:Un plateau d'humoristes débutants et confirmés animé par l'H
+ appy Scène.\nMore info: https://comedyatlas.app/comedy-atlas/event/l-happy
+ -scene-open-mic-89689/
+URL:https://comedyatlas.app/comedy-atlas/event/l-happy-scene-open-mic-89689
+ /
+END:VEVENT
+END:VCALENDAR

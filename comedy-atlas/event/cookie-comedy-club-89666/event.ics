@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cookie-comedy-club-89666@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:Cookie Comedy Club
+LOCATION:Blue Moon\, 55 rue de la Roquette\, Paris
+DESCRIPTION:Venez vous régaler au Cookie Comedy Club avec les pépites de 
+ l'humour !\nMore info: https://comedyatlas.app/comedy-atlas/event/cookie-co
+ medy-club-89666/
+URL:https://comedyatlas.app/comedy-atlas/event/cookie-comedy-club-89666/
+END:VEVENT
+END:VCALENDAR

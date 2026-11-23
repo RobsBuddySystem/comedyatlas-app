@@ -440,12 +440,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   </div>
   <!-- VIEW TOGGLE (§8 secondary discovery view, 2026-07-27): A-Z is the
        default identity-first view; Next on stage is a date-first view of
-       only the 457 comics with a real upcoming date. Hidden with
+       only the 453 comics with a real upcoming date. Hidden with
        the rest of the toolbar until JS can act on it -- with JS off the
        A-Z view (which needs no script at all) is the whole page. -->
   <div class="view-row" role="group" aria-label="Choose a view">
     <button type="button" class="view-btn is-active" id="view-btn-az" aria-pressed="true">A–Z</button>
-    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(457)</span></button>
+    <button type="button" class="view-btn" id="view-btn-next" aria-pressed="false">Next on stage <span class="facet-n">(453)</span></button>
   </div>
   <details id="comics-facets">
     <summary>Filters</summary>
@@ -640,7 +640,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     </div>
     <div class="facet-row" role="group" aria-label="Filter by activity">
       <span class="facet-label">Activity</span>
-      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(457)</span></button>
+      <button type="button" class="facet-chip" id="facet-upcoming" aria-pressed="false">Has upcoming dates <span class="facet-n">(453)</span></button>
       <button type="button" class="facet-chip" id="facet-festival" aria-pressed="false">Playing a festival <span class="facet-n">(1)</span></button>
       <button type="button" class="facet-chip" id="facet-claimed" aria-pressed="false">Claimed profile <span class="facet-n">(3)</span></button>
     </div>
@@ -1320,12 +1320,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/alex-edelman/" class="comic-card" data-city="Charlotte" data-name="alex edelman" data-upcoming="1">
+<a href="/comedy-atlas/comic/alex-edelman/" class="comic-card" data-city="Charlotte" data-name="alex edelman" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Alex_Edelman_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Alex Edelman</div>
-    <div class="comic-city">Next in Charlotte</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/alex-english/" class="comic-card" data-city="" data-name="alex english" data-upcoming="0">
@@ -1560,12 +1560,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ali-siddiq/" class="comic-card" data-city="Birmingham" data-name="ali siddiq" data-upcoming="25">
+<a href="/comedy-atlas/comic/ali-siddiq/" class="comic-card" data-city="Birmingham" data-name="ali siddiq" data-upcoming="24">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ali_Siddiq_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ali Siddiq</div>
-    <div class="comic-city">Next in Montreal</div>
-    <div class="comic-count">25 upcoming shows</div>
+    <div class="comic-city">Next in Houston</div>
+    <div class="comic-count">24 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/ali-wong/" class="comic-card" data-city="San Francisco" data-name="ali wong" data-upcoming="25">
@@ -3339,12 +3339,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/bill-bailey/" class="comic-card" data-city="London" data-name="bill bailey" data-upcoming="71">
+<a href="/comedy-atlas/comic/bill-bailey/" class="comic-card" data-city="London" data-name="bill bailey" data-upcoming="70">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Bill_Bailey_%E2%80%93_Tons_of_Rock_2026-6.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Bill Bailey</div>
-    <div class="comic-city">Next in London</div>
-    <div class="comic-count">71 upcoming shows</div>
+    <div class="comic-city">Next in Glasgow</div>
+    <div class="comic-count">70 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/bill-burr/" class="comic-card" data-city="Chicago" data-name="bill burr" data-upcoming="0">
@@ -3627,12 +3627,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/boucar-diouf/" class="comic-card" data-city="Brossard" data-name="boucar diouf" data-upcoming="4">
+<a href="/comedy-atlas/comic/boucar-diouf/" class="comic-card" data-city="Brossard" data-name="boucar diouf" data-upcoming="3">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Boucar_Diouf_%28Salon_du_livre_Montr%C3%A9al_2015%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Boucar Diouf</div>
     <div class="comic-city">Next in Brossard</div>
-    <div class="comic-count">4 upcoming shows</div>
+    <div class="comic-count">3 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/boyd-banks/" class="comic-card" data-city="" data-name="boyd banks" data-upcoming="0">
@@ -3747,12 +3747,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/brett-goldstein/" class="comic-card" data-city="Boston" data-name="brett goldstein" data-upcoming="6">
+<a href="/comedy-atlas/comic/brett-goldstein/" class="comic-card" data-city="Boston" data-name="brett goldstein" data-upcoming="5">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Brett_Goldstein_at_PaleyLive_Shrinking_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Brett Goldstein</div>
-    <div class="comic-city">Next in Houston</div>
-    <div class="comic-count">6 upcoming shows</div>
+    <div class="comic-city">Next in Philadelphia</div>
+    <div class="comic-count">5 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/brian-babylon/" class="comic-card" data-city="San Francisco" data-name="brian babylon" data-upcoming="0">
@@ -4366,12 +4366,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/chelsea-handler/" class="comic-card" data-city="Los Angeles" data-name="chelsea handler" data-upcoming="8">
+<a href="/comedy-atlas/comic/chelsea-handler/" class="comic-card" data-city="Los Angeles" data-name="chelsea handler" data-upcoming="7">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Andre_Balazs_Chelsea_Handler_2012_Shankbone_%28cropped%29.JPG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Chelsea Handler</div>
-    <div class="comic-city">Next in Irving</div>
-    <div class="comic-count">8 upcoming shows</div>
+    <div class="comic-city">Next in Los Angeles</div>
+    <div class="comic-count">7 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/chelsea-peretti/" class="comic-card" data-city="Brooklyn" data-name="chelsea peretti" data-upcoming="1">
@@ -4694,12 +4694,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/christopher-titus/" class="comic-card" data-city="Oklahoma City" data-name="christopher titus" data-upcoming="8">
+<a href="/comedy-atlas/comic/christopher-titus/" class="comic-card" data-city="Oklahoma City" data-name="christopher titus" data-upcoming="7">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Christopher_Titus.JPG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Christopher Titus</div>
-    <div class="comic-city">Next in Pittsburgh</div>
-    <div class="comic-count">8 upcoming shows</div>
+    <div class="comic-city">Next in Minneapolis</div>
+    <div class="comic-count">7 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/chuck-knipp/" class="comic-card" data-city="" data-name="chuck knipp" data-upcoming="0">
@@ -4982,12 +4982,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/craig-robinson/" class="comic-card" data-city="Portland" data-name="craig robinson" data-upcoming="15">
+<a href="/comedy-atlas/comic/craig-robinson/" class="comic-card" data-city="Portland" data-name="craig robinson" data-upcoming="14">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Craig_Robinson_USO_2025.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Craig Robinson</div>
-    <div class="comic-city">Next in Philadelphia</div>
-    <div class="comic-count">15 upcoming shows</div>
+    <div class="comic-city">Next in Los Angeles</div>
+    <div class="comic-count">14 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/craig-shoemaker/" class="comic-card" data-city="Reno" data-name="craig shoemaker" data-upcoming="9">
@@ -5393,12 +5393,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/daniel-sloss/" class="comic-card" data-city="London" data-name="daniel sloss" data-upcoming="6">
+<a href="/comedy-atlas/comic/daniel-sloss/" class="comic-card" data-city="London" data-name="daniel sloss" data-upcoming="5">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Daniel_Sloss_at_the_2025_Edinburgh_Festival_Fringe-08_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Daniel Sloss</div>
-    <div class="comic-city">Next in Chicago</div>
-    <div class="comic-count">6 upcoming shows</div>
+    <div class="comic-city">Next in London</div>
+    <div class="comic-count">5 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/daniel-tosh/" class="comic-card" data-city="Las Vegas" data-name="daniel tosh" data-upcoming="2">
@@ -6137,12 +6137,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/deray-davis/" class="comic-card" data-city="Los Angeles" data-name="deray davis" data-upcoming="19">
+<a href="/comedy-atlas/comic/deray-davis/" class="comic-card" data-city="Los Angeles" data-name="deray davis" data-upcoming="18">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/DeRay_Davis_2016.png" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">DeRay Davis</div>
-    <div class="comic-city">Next in Addison</div>
-    <div class="comic-count">19 upcoming shows</div>
+    <div class="comic-city">Next in Los Angeles</div>
+    <div class="comic-count">18 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/derek-sheen/" class="comic-card" data-city="" data-name="derek sheen" data-upcoming="0">
@@ -6601,12 +6601,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/dylan-moran/" class="comic-card" data-city="London" data-name="dylan moran" data-upcoming="30">
+<a href="/comedy-atlas/comic/dylan-moran/" class="comic-card" data-city="London" data-name="dylan moran" data-upcoming="29">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Dylan_Moran_Melbourne.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dylan Moran</div>
-    <div class="comic-city">Next in Liverpool</div>
-    <div class="comic-count">30 upcoming shows</div>
+    <div class="comic-city">Next in Oban</div>
+    <div class="comic-count">29 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/dylan-rhymer/" class="comic-card" data-city="" data-name="dylan rhymer" data-upcoming="0">
@@ -7495,12 +7495,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/fin-taylor/" class="comic-card" data-city="Bristol" data-name="fin taylor" data-upcoming="9">
+<a href="/comedy-atlas/comic/fin-taylor/" class="comic-card" data-city="Bristol" data-name="fin taylor" data-upcoming="8">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Fin_Taylor_at_SXSW_London_2026_2.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Fin Taylor</div>
-    <div class="comic-city">Next in Yeovil</div>
-    <div class="comic-count">9 upcoming shows</div>
+    <div class="comic-city">Next in Exeter</div>
+    <div class="comic-count">8 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/florence-foresti/" class="comic-card" data-city="" data-name="florence foresti" data-upcoming="0">
@@ -7930,12 +7930,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">7 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/gary-owen/" class="comic-card" data-city="Laughlin" data-name="gary owen" data-upcoming="35">
+<a href="/comedy-atlas/comic/gary-owen/" class="comic-card" data-city="Laughlin" data-name="gary owen" data-upcoming="34">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Gary Owen</div>
-    <div class="comic-city">Next in Wilkes Barre</div>
-    <div class="comic-count">35 upcoming shows</div>
+    <div class="comic-city">Next in Charles Town</div>
+    <div class="comic-count">34 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/gaston-stabiszewski/" class="comic-card" data-city="Cologne" data-name="gaston stabiszewski" data-upcoming="0">
@@ -8130,12 +8130,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/gianmarco-soresi/" class="comic-card" data-city="San Jose" data-name="gianmarco soresi" data-upcoming="36">
+<a href="/comedy-atlas/comic/gianmarco-soresi/" class="comic-card" data-city="San Jose" data-name="gianmarco soresi" data-upcoming="35">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/GianmarcoSoresi_7_23_24_DC_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Gianmarco Soresi</div>
-    <div class="comic-city">Next in San Jose</div>
-    <div class="comic-count">36 upcoming shows</div>
+    <div class="comic-city">Next in Boston</div>
+    <div class="comic-count">35 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/gideon-tulus/" class="comic-card" data-city="" data-name="gideon tulus" data-upcoming="0">
@@ -8725,12 +8725,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/hazel-brugger/" class="comic-card" data-city="Berlin" data-name="hazel brugger" data-upcoming="28">
+<a href="/comedy-atlas/comic/hazel-brugger/" class="comic-card" data-city="Berlin" data-name="hazel brugger" data-upcoming="27">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/2018_Hazel_Brugger_-_by_2eight_-_DSC0725.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Hazel Brugger</div>
-    <div class="comic-city">Next in Karlsruhe</div>
-    <div class="comic-count">28 upcoming shows</div>
+    <div class="comic-city">Next in Cologne</div>
+    <div class="comic-count">27 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/heather-mcdonald/" class="comic-card" data-city="El Cajon" data-name="heather mcdonald" data-upcoming="0">
@@ -10019,12 +10019,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/jeff-arcuri/" class="comic-card" data-city="Fort Wayne" data-name="jeff arcuri" data-upcoming="55">
+<a href="/comedy-atlas/comic/jeff-arcuri/" class="comic-card" data-city="Fort Wayne" data-name="jeff arcuri" data-upcoming="54">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Jeff_Arcuri_at_Alhambra_Paris_%284%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeff Arcuri</div>
-    <div class="comic-city">Next in Sacramento</div>
-    <div class="comic-count">55 upcoming shows</div>
+    <div class="comic-city">Next in Huntsville</div>
+    <div class="comic-count">54 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/jeff-dunham/" class="comic-card" data-city="Las Vegas" data-name="jeff dunham" data-upcoming="26">
@@ -10035,12 +10035,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">26 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/jeff-dye/" class="comic-card" data-city="Naples" data-name="jeff dye" data-upcoming="19">
+<a href="/comedy-atlas/comic/jeff-dye/" class="comic-card" data-city="Naples" data-name="jeff dye" data-upcoming="18">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Jeff_Dye_in_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jeff Dye</div>
-    <div class="comic-city">Next in Ontario</div>
-    <div class="comic-count">19 upcoming shows</div>
+    <div class="comic-city">Next in Louisville</div>
+    <div class="comic-count">18 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/jeff-foxworthy/" class="comic-card" data-city="Las Vegas" data-name="jeff foxworthy" data-upcoming="4">
@@ -10835,12 +10835,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/john-crist/" class="comic-card" data-city="Huntsville" data-name="john crist" data-upcoming="27">
+<a href="/comedy-atlas/comic/john-crist/" class="comic-card" data-city="Huntsville" data-name="john crist" data-upcoming="26">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">John Crist</div>
-    <div class="comic-city">Next in Corpus Christi</div>
-    <div class="comic-count">27 upcoming shows</div>
+    <div class="comic-city">Next in Beaumont</div>
+    <div class="comic-count">26 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/john-dela-cruz/" class="comic-card" data-city="" data-name="john dela cruz" data-upcoming="0">
@@ -10939,12 +10939,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/john-oliver/" class="comic-card" data-city="New York" data-name="john oliver" data-upcoming="6">
+<a href="/comedy-atlas/comic/john-oliver/" class="comic-card" data-city="New York" data-name="john oliver" data-upcoming="5">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/43/John_Oliver_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">John Oliver</div>
     <div class="comic-city">Next in New York</div>
-    <div class="comic-count">6 upcoming shows</div>
+    <div class="comic-count">5 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/john-robertson/" class="comic-card" data-city="Edinburgh" data-name="john robertson" data-upcoming="1">
@@ -11275,20 +11275,20 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/josh-johnson/" class="comic-card" data-city="St Petersburg" data-name="josh johnson" data-upcoming="27">
+<a href="/comedy-atlas/comic/josh-johnson/" class="comic-card" data-city="St Petersburg" data-name="josh johnson" data-upcoming="26">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Trevor_Noah_2019-02-01_-_Josh_Johnson_%2833189794718%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Josh Johnson</div>
-    <div class="comic-city">Next in Seattle</div>
-    <div class="comic-count">27 upcoming shows</div>
+    <div class="comic-city">Next in Detroit</div>
+    <div class="comic-count">26 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/josh-pugh/" class="comic-card" data-city="Cambridge" data-name="josh pugh" data-upcoming="14">
+<a href="/comedy-atlas/comic/josh-pugh/" class="comic-card" data-city="Cambridge" data-name="josh pugh" data-upcoming="13">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Pugh%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Josh Pugh</div>
-    <div class="comic-city">Next in Manchester</div>
-    <div class="comic-count">14 upcoming shows</div>
+    <div class="comic-city">Next in Cambridge</div>
+    <div class="comic-count">13 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/josh-widdicombe/" class="comic-card" data-city="Edinburgh" data-name="josh widdicombe" data-upcoming="0">
@@ -11299,12 +11299,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/josh-wolf/" class="comic-card" data-city="Las Vegas" data-name="josh wolf" data-upcoming="27">
+<a href="/comedy-atlas/comic/josh-wolf/" class="comic-card" data-city="Las Vegas" data-name="josh wolf" data-upcoming="26">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Wolf%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Josh Wolf</div>
     <div class="comic-city">Next in Las Vegas</div>
-    <div class="comic-count">27 upcoming shows</div>
+    <div class="comic-count">26 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/joshua-bertus/" class="comic-card" data-city="" data-name="joshua bertus" data-upcoming="0">
@@ -11323,12 +11323,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/josie-long/" class="comic-card" data-city="Edinburgh" data-name="josie long" data-upcoming="1">
+<a href="/comedy-atlas/comic/josie-long/" class="comic-card" data-city="Edinburgh" data-name="josie long" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Josie_Long_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Josie Long</div>
-    <div class="comic-city">Next in Glasgow</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/joy-behar/" class="comic-card" data-city="" data-name="joy behar" data-upcoming="0">
@@ -13596,12 +13596,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/maria-bamford/" class="comic-card" data-city="Brooklyn" data-name="maria bamford" data-upcoming="19">
+<a href="/comedy-atlas/comic/maria-bamford/" class="comic-card" data-city="Brooklyn" data-name="maria bamford" data-upcoming="18">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Mariba.JPG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Maria Bamford</div>
-    <div class="comic-city">Next in Red Bank</div>
-    <div class="comic-count">19 upcoming shows</div>
+    <div class="comic-city">Next in Palm Springs</div>
+    <div class="comic-count">18 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/maria-shehata/" class="comic-card" data-city="Edinburgh" data-name="maria shehata" data-upcoming="0">
@@ -14188,12 +14188,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">8 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/matt-mathews/" class="comic-card" data-city="Louisville" data-name="matt mathews" data-upcoming="62">
+<a href="/comedy-atlas/comic/matt-mathews/" class="comic-card" data-city="Louisville" data-name="matt mathews" data-upcoming="60">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Matt%20Mathews%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Matt Mathews</div>
-    <div class="comic-city">Next in Memphis</div>
-    <div class="comic-count">62 upcoming shows</div>
+    <div class="comic-city">Next in Henderson</div>
+    <div class="comic-count">60 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/matt-mcgorry/" class="comic-card" data-city="" data-name="matt mcgorry" data-upcoming="0">
@@ -14228,12 +14228,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/matt-rife/" class="comic-card" data-city="Fort Worth" data-name="matt rife" data-upcoming="10">
+<a href="/comedy-atlas/comic/matt-rife/" class="comic-card" data-city="Fort Worth" data-name="matt rife" data-upcoming="9">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Matt_Rife%2C_2021.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Matt Rife</div>
-    <div class="comic-city">Next in Toronto</div>
-    <div class="comic-count">10 upcoming shows</div>
+    <div class="comic-city">Next in Las Vegas</div>
+    <div class="comic-count">9 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/matt-walsh/" class="comic-card" data-city="" data-name="matt walsh" data-upcoming="0">
@@ -14700,12 +14700,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/michelle-buteau/" class="comic-card" data-city="Brooklyn" data-name="michelle buteau" data-upcoming="4">
+<a href="/comedy-atlas/comic/michelle-buteau/" class="comic-card" data-city="Brooklyn" data-name="michelle buteau" data-upcoming="3">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/MichelleButeau-byPhilipRomano.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Michelle Buteau</div>
-    <div class="comic-city">Next in København V</div>
-    <div class="comic-count">4 upcoming shows</div>
+    <div class="comic-city">Next in Amsterdam</div>
+    <div class="comic-count">3 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/michelle-wolf/" class="comic-card" data-city="San Francisco" data-name="michelle wolf" data-upcoming="11">
@@ -15231,12 +15231,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/nacho-redondo/" class="comic-card" data-city="Los Angeles" data-name="nacho redondo" data-upcoming="4">
+<a href="/comedy-atlas/comic/nacho-redondo/" class="comic-card" data-city="Los Angeles" data-name="nacho redondo" data-upcoming="2">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Nacho_Redondo_Miami_Improv.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Nacho Redondo</div>
-    <div class="comic-city">Next in New York</div>
-    <div class="comic-count">4 upcoming shows</div>
+    <div class="comic-city">Next in Los Angeles</div>
+    <div class="comic-count">2 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/nadav-abuksis/" class="comic-card" data-city="" data-name="nadav abuksis" data-upcoming="0">
@@ -15327,12 +15327,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/natasha-leggero/" class="comic-card" data-city="Corona" data-name="natasha leggero" data-upcoming="8">
+<a href="/comedy-atlas/comic/natasha-leggero/" class="comic-card" data-city="Corona" data-name="natasha leggero" data-upcoming="7">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Natasha_Leggero_at_2025_Toronto_International_Film_Festival_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Natasha Leggero</div>
-    <div class="comic-city">Next in Corona</div>
-    <div class="comic-count">8 upcoming shows</div>
+    <div class="comic-city">Next in Los Angeles</div>
+    <div class="comic-count">7 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/nate-bargatze/" class="comic-card" data-city="Las Vegas" data-name="nate bargatze" data-upcoming="9">
@@ -15519,12 +15519,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/niccolo-cometto/" class="comic-card" data-city="Barcelona" data-name="niccolò cometto" data-upcoming="1">
+<a href="/comedy-atlas/comic/niccolo-cometto/" class="comic-card" data-city="Barcelona" data-name="niccolò cometto" data-upcoming="0">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Niccol%C3%B2%20Cometto%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Niccolò Cometto</div>
-    <div class="comic-city">Next in Barcelona</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/nick-cannon/" class="comic-card" data-city="Atlanta" data-name="nick cannon" data-upcoming="14">
@@ -17859,12 +17859,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">5 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/rhys-james/" class="comic-card" data-city="Edinburgh" data-name="rhys james" data-upcoming="11">
+<a href="/comedy-atlas/comic/rhys-james/" class="comic-card" data-city="Edinburgh" data-name="rhys james" data-upcoming="10">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/71/Rhys_James_on_Spurred_On.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Rhys James</div>
-    <div class="comic-city">Next in Sydney</div>
-    <div class="comic-count">11 upcoming shows</div>
+    <div class="comic-city">Next in Southend-On-Sea</div>
+    <div class="comic-count">10 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/rhys-nicholson/" class="comic-card" data-city="Edinburgh" data-name="rhys nicholson" data-upcoming="0">
@@ -17891,12 +17891,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ric-diez/" class="comic-card" data-city="Amsterdam" data-name="ric diez" data-upcoming="2">
+<a href="/comedy-atlas/comic/ric-diez/" class="comic-card" data-city="Amsterdam" data-name="ric diez" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ric%20Diez%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Ric Diez</div>
-    <div class="comic-city">Next in Brussels</div>
-    <div class="comic-count">2 upcoming shows</div>
+    <div class="comic-city">Next in Berlin</div>
+    <div class="comic-count">1 upcoming show</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/rich-lyons/" class="comic-card" data-city="" data-name="rich lyons" data-upcoming="0">
@@ -18219,12 +18219,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/robin-ince/" class="comic-card" data-city="Glasgow" data-name="robin ince" data-upcoming="1">
+<a href="/comedy-atlas/comic/robin-ince/" class="comic-card" data-city="Glasgow" data-name="robin ince" data-upcoming="0">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Robin_Ince_-_EdSciFest_2014.JPG" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Robin Ince</div>
-    <div class="comic-city">Next in Glasgow</div>
-    <div class="comic-count">1 upcoming show</div>
+    
+    <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/robin-paulsson/" class="comic-card" data-city="Lund" data-name="robin paulsson" data-upcoming="0">
@@ -18395,12 +18395,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">68 upcoming shows</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/ron-funches/" class="comic-card" data-city="Fort Wayne" data-name="ron funches" data-upcoming="12">
+<a href="/comedy-atlas/comic/ron-funches/" class="comic-card" data-city="Fort Wayne" data-name="ron funches" data-upcoming="11">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ron Funches</div>
     <div class="comic-city">Next in Los Angeles</div>
-    <div class="comic-count">12 upcoming shows</div>
+    <div class="comic-count">11 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/ron-lynch/" class="comic-card" data-city="" data-name="ron lynch" data-upcoming="0">
@@ -18595,12 +18595,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/russell-howard/" class="comic-card" data-city="Birmingham" data-name="russell howard" data-upcoming="24">
+<a href="/comedy-atlas/comic/russell-howard/" class="comic-card" data-city="Birmingham" data-name="russell howard" data-upcoming="23">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Russell_Howard.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Russell Howard</div>
-    <div class="comic-city">Next in Truro</div>
-    <div class="comic-count">24 upcoming shows</div>
+    <div class="comic-city">Next in Peterborough</div>
+    <div class="comic-count">23 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/russell-kane/" class="comic-card" data-city="Edinburgh" data-name="russell kane" data-upcoming="0">
@@ -19270,12 +19270,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/sebastian-maniscalco/" class="comic-card" data-city="Hollywood" data-name="sebastian maniscalco" data-upcoming="4">
+<a href="/comedy-atlas/comic/sebastian-maniscalco/" class="comic-card" data-city="Hollywood" data-name="sebastian maniscalco" data-upcoming="3">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Sebastian_Maniscalco_2018.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Sebastian Maniscalco</div>
-    <div class="comic-city">Next in Hollywood</div>
-    <div class="comic-count">4 upcoming shows</div>
+    <div class="comic-city">Next in Mashantucket</div>
+    <div class="comic-count">3 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/sebastian-marx/" class="comic-card" data-city="Annecy" data-name="sebastian marx" data-upcoming="1">
@@ -19350,12 +19350,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/seth-meyers/" class="comic-card" data-city="New York" data-name="seth meyers" data-upcoming="7">
+<a href="/comedy-atlas/comic/seth-meyers/" class="comic-card" data-city="New York" data-name="seth meyers" data-upcoming="6">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Seth_Meyers_by_Gage_Skidmore.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Seth Meyers</div>
-    <div class="comic-city">Next in New York</div>
-    <div class="comic-count">7 upcoming shows</div>
+    <div class="comic-city">Next in Washington</div>
+    <div class="comic-count">6 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/seth-rogen/" class="comic-card" data-city="" data-name="seth rogen" data-upcoming="0">
@@ -19614,12 +19614,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/simon-brodkin/" class="comic-card" data-city="Edinburgh" data-name="simon brodkin" data-upcoming="23">
+<a href="/comedy-atlas/comic/simon-brodkin/" class="comic-card" data-city="Edinburgh" data-name="simon brodkin" data-upcoming="22">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Simon%20Brodkin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Simon Brodkin</div>
-    <div class="comic-city">Next in Peterborough</div>
-    <div class="comic-count">23 upcoming shows</div>
+    <div class="comic-city">Next in Belfast</div>
+    <div class="comic-count">22 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/simon-evans/" class="comic-card" data-city="Edinburgh" data-name="simon evans" data-upcoming="1">
@@ -21663,12 +21663,12 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count comic-count-empty">No upcoming dates listed</div>
   </div>
 </a>
-<a href="/comedy-atlas/comic/victor-patrascan/" class="comic-card" data-city="Edinburgh" data-name="victor patrascan" data-upcoming="65">
+<a href="/comedy-atlas/comic/victor-patrascan/" class="comic-card" data-city="Edinburgh" data-name="victor patrascan" data-upcoming="62">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Victor%20Patrascan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EVP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Victor Patrascan</div>
-    <div class="comic-city">Next in Madrid</div>
-    <div class="comic-count">65 upcoming shows</div>
+    <div class="comic-city">Next in Lisbon</div>
+    <div class="comic-count">62 upcoming shows</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/victor-ramon/" class="comic-card" data-city="" data-name="victor ramon" data-upcoming="0">
@@ -22556,320 +22556,8 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 </div>
 <div id="next-view" hidden>
 <section class="next-group" id="next-on-stage">
-  <h2 class="letter-heading">Next on stage <span class="letter-count">(457)</span></h2>
-  <div class="comics-grid"><a href="/comedy-atlas/comic/rhys-james/" class="next-card" data-city="Sydney" data-name="rhys james" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/71/Rhys_James_on_Spurred_On.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Rhys James</div>
-    <div class="comic-city">Sydney</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/russell-howard/" class="next-card" data-city="Truro" data-name="russell howard" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Russell_Howard.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Russell Howard</div>
-    <div class="comic-city">Truro</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/victor-patrascan/" class="next-card" data-city="Madrid" data-name="victor patrascan" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Victor%20Patrascan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EVP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Victor Patrascan</div>
-    <div class="comic-city">Madrid</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/hazel-brugger/" class="next-card" data-city="Karlsruhe" data-name="hazel brugger" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/2018_Hazel_Brugger_-_by_2eight_-_DSC0725.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Hazel Brugger</div>
-    <div class="comic-city">Karlsruhe</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/michelle-buteau/" class="next-card" data-city="København V" data-name="michelle buteau" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/MichelleButeau-byPhilipRomano.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Michelle Buteau</div>
-    <div class="comic-city">København V</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/niccolo-cometto/" class="next-card" data-city="Barcelona" data-name="niccolò cometto" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Niccol%C3%B2%20Cometto%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENC%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Niccolò Cometto</div>
-    <div class="comic-city">Barcelona</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/fin-taylor/" class="next-card" data-city="Yeovil" data-name="fin taylor" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Fin_Taylor_at_SXSW_London_2026_2.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Fin Taylor</div>
-    <div class="comic-city">Yeovil</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/josie-long/" class="next-card" data-city="Glasgow" data-name="josie long" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Josie_Long_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Josie Long</div>
-    <div class="comic-city">Glasgow</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ric-diez/" class="next-card" data-city="Brussels" data-name="ric diez" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ric%20Diez%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Ric Diez</div>
-    <div class="comic-city">Brussels</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/robin-ince/" class="next-card" data-city="Glasgow" data-name="robin ince" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Robin_Ince_-_EdSciFest_2014.JPG" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Robin Ince</div>
-    <div class="comic-city">Glasgow</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/bill-bailey/" class="next-card" data-city="London" data-name="bill bailey" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Bill_Bailey_%E2%80%93_Tons_of_Rock_2026-6.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Bill Bailey</div>
-    <div class="comic-city">London</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/josh-pugh/" class="next-card" data-city="Manchester" data-name="josh pugh" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Pugh%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Josh Pugh</div>
-    <div class="comic-city">Manchester</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/simon-brodkin/" class="next-card" data-city="Peterborough" data-name="simon brodkin" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Simon%20Brodkin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Simon Brodkin</div>
-    <div class="comic-city">Peterborough</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/dylan-moran/" class="next-card" data-city="Liverpool" data-name="dylan moran" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Dylan_Moran_Melbourne.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Dylan Moran</div>
-    <div class="comic-city">Liverpool</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/boucar-diouf/" class="next-card" data-city="Brossard" data-name="boucar diouf" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Boucar_Diouf_%28Salon_du_livre_Montr%C3%A9al_2015%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Boucar Diouf</div>
-    <div class="comic-city">Brossard</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/matt-mathews/" class="next-card" data-city="Memphis" data-name="matt mathews" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Matt%20Mathews%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Matt Mathews</div>
-    <div class="comic-city">Memphis</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/nacho-redondo/" class="next-card" data-city="New York" data-name="nacho redondo" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Nacho_Redondo_Miami_Improv.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Nacho Redondo</div>
-    <div class="comic-city">New York</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/alex-edelman/" class="next-card" data-city="Charlotte" data-name="alex edelman" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Alex_Edelman_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Alex Edelman</div>
-    <div class="comic-city">Charlotte</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ali-siddiq/" class="next-card" data-city="Montreal" data-name="ali siddiq" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ali_Siddiq_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ali Siddiq</div>
-    <div class="comic-city">Montreal</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/christopher-titus/" class="next-card" data-city="Pittsburgh" data-name="christopher titus" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Christopher_Titus.JPG" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Christopher Titus</div>
-    <div class="comic-city">Pittsburgh</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/craig-robinson/" class="next-card" data-city="Philadelphia" data-name="craig robinson" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Craig_Robinson_USO_2025.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Craig Robinson</div>
-    <div class="comic-city">Philadelphia</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/gary-owen/" class="next-card" data-city="Wilkes Barre" data-name="gary owen" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Gary Owen</div>
-    <div class="comic-city">Wilkes Barre</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/matt-rife/" class="next-card" data-city="Toronto" data-name="matt rife" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Matt_Rife%2C_2021.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Matt Rife</div>
-    <div class="comic-city">Toronto</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/john-oliver/" class="next-card" data-city="New York" data-name="john oliver" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/43/John_Oliver_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">John Oliver</div>
-    <div class="comic-city">New York</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/maria-bamford/" class="next-card" data-city="Red Bank" data-name="maria bamford" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Mariba.JPG" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Maria Bamford</div>
-    <div class="comic-city">Red Bank</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/seth-meyers/" class="next-card" data-city="New York" data-name="seth meyers" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Seth_Meyers_by_Gage_Skidmore.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Seth Meyers</div>
-    <div class="comic-city">New York</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/brett-goldstein/" class="next-card" data-city="Houston" data-name="brett goldstein" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Brett_Goldstein_at_PaleyLive_Shrinking_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Brett Goldstein</div>
-    <div class="comic-city">Houston</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/chelsea-handler/" class="next-card" data-city="Irving" data-name="chelsea handler" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Andre_Balazs_Chelsea_Handler_2012_Shankbone_%28cropped%29.JPG" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Chelsea Handler</div>
-    <div class="comic-city">Irving</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/daniel-sloss/" class="next-card" data-city="Chicago" data-name="daniel sloss" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Daniel_Sloss_at_the_2025_Edinburgh_Festival_Fringe-08_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Daniel Sloss</div>
-    <div class="comic-city">Chicago</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/john-crist/" class="next-card" data-city="Corpus Christi" data-name="john crist" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">John Crist</div>
-    <div class="comic-city">Corpus Christi</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/josh-johnson/" class="next-card" data-city="Seattle" data-name="josh johnson" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Trevor_Noah_2019-02-01_-_Josh_Johnson_%2833189794718%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Josh Johnson</div>
-    <div class="comic-city">Seattle</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/sebastian-maniscalco/" class="next-card" data-city="Hollywood" data-name="sebastian maniscalco" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Sebastian_Maniscalco_2018.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Sebastian Maniscalco</div>
-    <div class="comic-city">Hollywood</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/deray-davis/" class="next-card" data-city="Addison" data-name="deray davis" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/DeRay_Davis_2016.png" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">DeRay Davis</div>
-    <div class="comic-city">Addison</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/gianmarco-soresi/" class="next-card" data-city="San Jose" data-name="gianmarco soresi" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/GianmarcoSoresi_7_23_24_DC_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Gianmarco Soresi</div>
-    <div class="comic-city">San Jose</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/jeff-dye/" class="next-card" data-city="Ontario" data-name="jeff dye" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Jeff_Dye_in_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Jeff Dye</div>
-    <div class="comic-city">Ontario</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/natasha-leggero/" class="next-card" data-city="Corona" data-name="natasha leggero" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Natasha_Leggero_at_2025_Toronto_International_Film_Festival_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Natasha Leggero</div>
-    <div class="comic-city">Corona</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/jeff-arcuri/" class="next-card" data-city="Sacramento" data-name="jeff arcuri" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Jeff_Arcuri_at_Alhambra_Paris_%284%29.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Jeff Arcuri</div>
-    <div class="comic-city">Sacramento</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ron-funches/" class="next-card" data-city="Los Angeles" data-name="ron funches" data-upcoming="1">
-  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg" alt="" loading="lazy" onerror="this.remove()">
-  <div class="comic-card-body">
-    <div class="comic-name">Ron Funches</div>
-    <div class="comic-city">Los Angeles</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/josh-wolf/" class="next-card" data-city="Las Vegas" data-name="josh wolf" data-upcoming="1">
-  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Wolf%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
-  <div class="comic-card-body">
-    <div class="comic-name">Josh Wolf</div>
-    <div class="comic-city">Las Vegas</div>
-    <div class="comic-count">Sun, Nov 22 2026</div>
-  </div>
-</a>
-<a href="/comedy-atlas/comic/ari-eldjarn/" class="next-card" data-city="Helsinki" data-name="ari eldjárn" data-upcoming="1">
+  <h2 class="letter-heading">Next on stage <span class="letter-count">(453)</span></h2>
+  <div class="comics-grid"><a href="/comedy-atlas/comic/ari-eldjarn/" class="next-card" data-city="Helsinki" data-name="ari eldjárn" data-upcoming="1">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Ari_Eldj%C3%A1rn3.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Ari Eldjárn</div>
@@ -22925,6 +22613,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Mon, Nov 23 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/josh-wolf/" class="next-card" data-city="Las Vegas" data-name="josh wolf" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Wolf%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJW%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Josh Wolf</div>
+    <div class="comic-city">Las Vegas</div>
+    <div class="comic-count">Mon, Nov 23 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/sophie-buddle/" class="next-card" data-city="Los Angeles" data-name="sophie buddle" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Sophie%20Buddle%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -22949,6 +22645,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Mon, Nov 23 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/deray-davis/" class="next-card" data-city="Los Angeles" data-name="deray davis" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/DeRay_Davis_2016.png" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">DeRay Davis</div>
+    <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Mon, Nov 23 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/frazer-smith/" class="next-card" data-city="Los Angeles" data-name="frazer smith" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Frazer%20Smith%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EFS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -22962,6 +22666,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Zarna Garg</div>
     <div class="comic-city">Sydney</div>
+    <div class="comic-count">Tue, Nov 24 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/bill-bailey/" class="next-card" data-city="Glasgow" data-name="bill bailey" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Bill_Bailey_%E2%80%93_Tons_of_Rock_2026-6.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Bill Bailey</div>
+    <div class="comic-city">Glasgow</div>
     <div class="comic-count">Tue, Nov 24 2026</div>
   </div>
 </a>
@@ -23053,6 +22765,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Wed, Nov 25 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/fin-taylor/" class="next-card" data-city="Exeter" data-name="fin taylor" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Fin_Taylor_at_SXSW_London_2026_2.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Fin Taylor</div>
+    <div class="comic-city">Exeter</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/victor-patrascan/" class="next-card" data-city="Lisbon" data-name="victor patrascan" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Victor%20Patrascan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EVP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Victor Patrascan</div>
+    <div class="comic-city">Lisbon</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/david-ingram/" class="next-card" data-city="Brighton" data-name="david ingram" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22David%20Ingram%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%234c1d95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDI%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -23061,11 +22789,35 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Wed, Nov 25 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/josh-pugh/" class="next-card" data-city="Cambridge" data-name="josh pugh" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Josh%20Pugh%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EJP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Josh Pugh</div>
+    <div class="comic-city">Cambridge</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/dylan-moran/" class="next-card" data-city="Oban" data-name="dylan moran" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Dylan_Moran_Melbourne.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Dylan Moran</div>
+    <div class="comic-city">Oban</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/ivan-decker/" class="next-card" data-city="Montreal" data-name="ivan decker" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ivan%20Decker%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EID%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Ivan Decker</div>
     <div class="comic-city">Montreal</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ali-siddiq/" class="next-card" data-city="Houston" data-name="ali siddiq" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ali_Siddiq_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ali Siddiq</div>
+    <div class="comic-city">Houston</div>
     <div class="comic-count">Wed, Nov 25 2026</div>
   </div>
 </a>
@@ -23081,6 +22833,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Dulc%C3%A9_Sloan_2019.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Dulcé Sloan</div>
+    <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Wed, Nov 25 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/craig-robinson/" class="next-card" data-city="Los Angeles" data-name="craig robinson" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Craig_Robinson_USO_2025.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Craig Robinson</div>
     <div class="comic-city">Los Angeles</div>
     <div class="comic-count">Wed, Nov 25 2026</div>
   </div>
@@ -23106,6 +22866,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Nils Ingar Aadne</div>
     <div class="comic-city">Oslo</div>
+    <div class="comic-count">Thu, Nov 26 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ric-diez/" class="next-card" data-city="Berlin" data-name="ric diez" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Ric%20Diez%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%236d28d9%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ERD%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Ric Diez</div>
+    <div class="comic-city">Berlin</div>
     <div class="comic-count">Thu, Nov 26 2026</div>
   </div>
 </a>
@@ -23138,6 +22906,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Ivo Graham</div>
     <div class="comic-city">Glasgow</div>
+    <div class="comic-count">Thu, Nov 26 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/russell-howard/" class="next-card" data-city="Peterborough" data-name="russell howard" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Russell_Howard.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Russell Howard</div>
+    <div class="comic-city">Peterborough</div>
     <div class="comic-count">Thu, Nov 26 2026</div>
   </div>
 </a>
@@ -23221,6 +22997,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Fri, Nov 27 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/simon-brodkin/" class="next-card" data-city="Belfast" data-name="simon brodkin" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Simon%20Brodkin%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ESB%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Simon Brodkin</div>
+    <div class="comic-city">Belfast</div>
+    <div class="comic-count">Fri, Nov 27 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/marc-rouge/" class="next-card" data-city="Paris" data-name="marc rougé" data-upcoming="1">
   <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-marc_1753890892.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -23258,6 +23042,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Greg Warren</div>
     <div class="comic-city">Bloomington</div>
+    <div class="comic-count">Fri, Nov 27 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/gary-owen/" class="next-card" data-city="Charles Town" data-name="gary owen" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Gary Owen</div>
+    <div class="comic-city">Charles Town</div>
+    <div class="comic-count">Fri, Nov 27 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeff-dye/" class="next-card" data-city="Louisville" data-name="jeff dye" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Jeff_Dye_in_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeff Dye</div>
+    <div class="comic-city">Louisville</div>
     <div class="comic-count">Fri, Nov 27 2026</div>
   </div>
 </a>
@@ -23365,11 +23165,27 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Sat, Nov 28 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/daniel-sloss/" class="next-card" data-city="London" data-name="daniel sloss" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Daniel_Sloss_at_the_2025_Edinburgh_Festival_Fringe-08_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Daniel Sloss</div>
+    <div class="comic-city">London</div>
+    <div class="comic-count">Sat, Nov 28 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/jason-brokerss/" class="next-card" data-city="Paris" data-name="jason brokerss" data-upcoming="1">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Jason_Brokerss_en_2025.png" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Jason Brokerss</div>
     <div class="comic-city">Paris</div>
+    <div class="comic-count">Sat, Nov 28 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/michelle-buteau/" class="next-card" data-city="Amsterdam" data-name="michelle buteau" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/MichelleButeau-byPhilipRomano.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Michelle Buteau</div>
+    <div class="comic-city">Amsterdam</div>
     <div class="comic-count">Sat, Nov 28 2026</div>
   </div>
 </a>
@@ -23437,10 +23253,26 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Sat, Nov 28 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/chelsea-handler/" class="next-card" data-city="Los Angeles" data-name="chelsea handler" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Andre_Balazs_Chelsea_Handler_2012_Shankbone_%28cropped%29.JPG" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Chelsea Handler</div>
+    <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Sat, Nov 28 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/megan-gailey/" class="next-card" data-city="Los Angeles" data-name="megan gailey" data-upcoming="1">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Megan_Gailey_at_Art_You_Can_Laugh_At.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
     <div class="comic-name">Megan Gailey</div>
+    <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Sat, Nov 28 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/natasha-leggero/" class="next-card" data-city="Los Angeles" data-name="natasha leggero" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Natasha_Leggero_at_2025_Toronto_International_Film_Festival_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Natasha Leggero</div>
     <div class="comic-city">Los Angeles</div>
     <div class="comic-count">Sat, Nov 28 2026</div>
   </div>
@@ -23458,6 +23290,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Zainab Johnson</div>
     <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Sat, Nov 28 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/maria-bamford/" class="next-card" data-city="Palm Springs" data-name="maria bamford" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Mariba.JPG" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Maria Bamford</div>
+    <div class="comic-city">Palm Springs</div>
     <div class="comic-count">Sat, Nov 28 2026</div>
   </div>
 </a>
@@ -23507,6 +23347,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-name">Ryan Sickler</div>
     <div class="comic-city">Los Angeles</div>
     <div class="comic-count">Mon, Nov 30 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/hazel-brugger/" class="next-card" data-city="Cologne" data-name="hazel brugger" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/2018_Hazel_Brugger_-_by_2eight_-_DSC0725.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Hazel Brugger</div>
+    <div class="comic-city">Cologne</div>
+    <div class="comic-count">Tue, Dec 1 2026</div>
   </div>
 </a>
 <a href="/comedy-atlas/comic/milton-jones/" class="next-card" data-city="Colchester" data-name="milton jones" data-upcoming="1">
@@ -23581,6 +23429,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Thu, Dec 3 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/brett-goldstein/" class="next-card" data-city="Philadelphia" data-name="brett goldstein" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Brett_Goldstein_at_PaleyLive_Shrinking_2024.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Brett Goldstein</div>
+    <div class="comic-city">Philadelphia</div>
+    <div class="comic-count">Thu, Dec 3 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/leanne-morgan/" class="next-card" data-city="Charlotte" data-name="leanne morgan" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Leanne%20Morgan%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23c9a84c%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ELM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -23594,6 +23450,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Akaash Singh</div>
     <div class="comic-city">Appleton</div>
+    <div class="comic-count">Thu, Dec 3 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/gianmarco-soresi/" class="next-card" data-city="Boston" data-name="gianmarco soresi" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/GianmarcoSoresi_7_23_24_DC_%28cropped%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Gianmarco Soresi</div>
+    <div class="comic-city">Boston</div>
     <div class="comic-count">Thu, Dec 3 2026</div>
   </div>
 </a>
@@ -23626,6 +23490,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Dusty Slay</div>
     <div class="comic-city">La Vista</div>
+    <div class="comic-count">Thu, Dec 3 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/jeff-arcuri/" class="next-card" data-city="Huntsville" data-name="jeff arcuri" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Jeff_Arcuri_at_Alhambra_Paris_%284%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Jeff Arcuri</div>
+    <div class="comic-city">Huntsville</div>
+    <div class="comic-count">Thu, Dec 3 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/john-crist/" class="next-card" data-city="Beaumont" data-name="john crist" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">John Crist</div>
+    <div class="comic-city">Beaumont</div>
     <div class="comic-count">Thu, Dec 3 2026</div>
   </div>
 </a>
@@ -23666,6 +23546,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Daniel Van Kirk</div>
     <div class="comic-city">Chandler</div>
+    <div class="comic-count">Thu, Dec 3 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/matt-mathews/" class="next-card" data-city="Henderson" data-name="matt mathews" data-upcoming="1">
+  <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Matt%20Mathews%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%238b6f2e%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EMM%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
+  <div class="comic-card-body">
+    <div class="comic-name">Matt Mathews</div>
+    <div class="comic-city">Henderson</div>
     <div class="comic-count">Thu, Dec 3 2026</div>
   </div>
 </a>
@@ -23893,6 +23781,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Fri, Dec 4 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/matt-rife/" class="next-card" data-city="Las Vegas" data-name="matt rife" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Matt_Rife%2C_2021.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Matt Rife</div>
+    <div class="comic-city">Las Vegas</div>
+    <div class="comic-count">Fri, Dec 4 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/jeff-foxworthy/" class="next-card" data-city="Las Vegas" data-name="jeff foxworthy" data-upcoming="1">
   <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Jeff_Foxworthy.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -23954,6 +23850,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Ali Wong</div>
     <div class="comic-city">Dallas</div>
+    <div class="comic-count">Sat, Dec 5 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/christopher-titus/" class="next-card" data-city="Minneapolis" data-name="christopher titus" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Christopher_Titus.JPG" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Christopher Titus</div>
+    <div class="comic-city">Minneapolis</div>
     <div class="comic-count">Sat, Dec 5 2026</div>
   </div>
 </a>
@@ -24245,6 +24149,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Fri, Dec 11 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/josh-johnson/" class="next-card" data-city="Detroit" data-name="josh johnson" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Trevor_Noah_2019-02-01_-_Josh_Johnson_%2833189794718%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Josh Johnson</div>
+    <div class="comic-city">Detroit</div>
+    <div class="comic-count">Fri, Dec 11 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/bob-nelson/" class="next-card" data-city="Princeton" data-name="bob nelson" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Bob%20Nelson%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%239d5ff5%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EBN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -24290,6 +24202,22 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Michael Kosta</div>
     <div class="comic-city">Grand Rapids</div>
+    <div class="comic-count">Fri, Dec 11 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/sebastian-maniscalco/" class="next-card" data-city="Mashantucket" data-name="sebastian maniscalco" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Sebastian_Maniscalco_2018.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Sebastian Maniscalco</div>
+    <div class="comic-city">Mashantucket</div>
+    <div class="comic-count">Fri, Dec 11 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/seth-meyers/" class="next-card" data-city="Washington" data-name="seth meyers" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Seth_Meyers_by_Gage_Skidmore.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Seth Meyers</div>
+    <div class="comic-city">Washington</div>
     <div class="comic-count">Fri, Dec 11 2026</div>
   </div>
 </a>
@@ -24397,6 +24325,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Sun, Dec 13 2026</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/john-oliver/" class="next-card" data-city="New York" data-name="john oliver" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/43/John_Oliver_November_2016.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">John Oliver</div>
+    <div class="comic-city">New York</div>
+    <div class="comic-count">Sun, Dec 13 2026</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/drew-lynch/" class="next-card" data-city="Columbia" data-name="drew lynch" data-upcoming="1">
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Drew%20Lynch%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%237c3aed%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3EDL%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
@@ -24410,6 +24346,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Mike Epps</div>
     <div class="comic-city">Wichita</div>
+    <div class="comic-count">Sun, Dec 13 2026</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/ron-funches/" class="next-card" data-city="Los Angeles" data-name="ron funches" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Ron Funches</div>
+    <div class="comic-city">Los Angeles</div>
     <div class="comic-count">Sun, Dec 13 2026</div>
   </div>
 </a>
@@ -24753,6 +24697,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <img class="comic-thumb comic-thumb-placeholder" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22Nurse%20Georgie%20Carroll%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2218%22%20fill%3D%22%23a67c00%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2246%22%20font-weight%3D%22700%22%20fill%3D%22%23f5f0e6%22%3ENG%3C%2Ftext%3E%3C%2Fsvg%3E" alt="" loading="lazy">
   <div class="comic-card-body">
     <div class="comic-name">Nurse Georgie Carroll</div>
+    <div class="comic-city">Los Angeles</div>
+    <div class="comic-count">Thu, Jan 7 2027</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/nacho-redondo/" class="next-card" data-city="Los Angeles" data-name="nacho redondo" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Nacho_Redondo_Miami_Improv.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Nacho Redondo</div>
     <div class="comic-city">Los Angeles</div>
     <div class="comic-count">Thu, Jan 7 2027</div>
   </div>
@@ -25349,6 +25301,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
     <div class="comic-count">Thu, Feb 4 2027</div>
   </div>
 </a>
+<a href="/comedy-atlas/comic/rhys-james/" class="next-card" data-city="Southend-On-Sea" data-name="rhys james" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/7/71/Rhys_James_on_Spurred_On.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Rhys James</div>
+    <div class="comic-city">Southend-On-Sea</div>
+    <div class="comic-count">Thu, Feb 4 2027</div>
+  </div>
+</a>
 <a href="/comedy-atlas/comic/marine-leonardi/" class="next-card" data-city="Forest (Brussels)" data-name="marine leonardi" data-upcoming="1">
   <img class="comic-thumb" src="https://www.panameartcafe.com/storage/files/artists/vignette-marineleonardi_1753967642.jpg" alt="" loading="lazy" onerror="this.remove()">
   <div class="comic-card-body">
@@ -25442,6 +25402,14 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
   <div class="comic-card-body">
     <div class="comic-name">Omid Djalili</div>
     <div class="comic-city">London</div>
+    <div class="comic-count">Thu, Feb 11 2027</div>
+  </div>
+</a>
+<a href="/comedy-atlas/comic/boucar-diouf/" class="next-card" data-city="Brossard" data-name="boucar diouf" data-upcoming="1">
+  <img class="comic-thumb" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Boucar_Diouf_%28Salon_du_livre_Montr%C3%A9al_2015%29.jpg" alt="" loading="lazy" onerror="this.remove()">
+  <div class="comic-card-body">
+    <div class="comic-name">Boucar Diouf</div>
+    <div class="comic-city">Brossard</div>
     <div class="comic-count">Thu, Feb 11 2027</div>
   </div>
 </a>
@@ -26239,7 +26207,7 @@ main#main-content { max-width: 1100px; margin: 0 auto; padding: 8px 0 80px; }
 // coalesced into a single animation frame.
 (function () {
   var TOTAL = 2724;
-  var NEXT_TOTAL = 457;
+  var NEXT_TOTAL = 453;
   var toolbar = document.getElementById('comics-toolbar');
   var input = document.getElementById('comic-search');
   var countEl = document.getElementById('comics-visible-count');

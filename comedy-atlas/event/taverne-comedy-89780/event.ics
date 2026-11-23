@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:taverne-comedy-89780@comedyatlas.app
+DTSTAMP:20261130T184500Z
+DTSTART:20261130T184500Z
+DTEND:20261130T204500Z
+SUMMARY:Taverne Comedy
+LOCATION:Monkey Pigalle\, 53 rue Jean-Baptiste Pigalle\, Paris
+DESCRIPTION:La Taverne Comedy\, c'est le nouveau lieu incontournable du Sta
+ nd Up\nMore info: https://comedyatlas.app/comedy-atlas/event/taverne-comedy
+ -89780/
+URL:https://comedyatlas.app/comedy-atlas/event/taverne-comedy-89780/
+END:VEVENT
+END:VCALENDAR

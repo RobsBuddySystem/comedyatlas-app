@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-club-2-chez-bertin-89973@comedyatlas.app
+DTSTAMP:20261216T190000Z
+DTSTART:20261216T190000Z
+DTEND:20261216T210000Z
+SUMMARY:Comedy club 2 - Chez Bertin
+LOCATION:Chez Bertin\, 2 Rue des Jacobins\, Orthez
+DESCRIPTION:Le RC Comedy Club revient chez Bertin pour une 2ème édition !
+ \nMore info: https://comedyatlas.app/comedy-atlas/event/comedy-club-2-chez-
+ bertin-89973/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-club-2-chez-bertin-89
+ 973/
+END:VEVENT
+END:VCALENDAR

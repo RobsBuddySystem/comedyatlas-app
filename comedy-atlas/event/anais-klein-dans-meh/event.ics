@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anais-klein-dans-meh@comedyatlas.app
+DTSTAMP:20261129T190000Z
+DTSTART:20261129T190000Z
+DTEND:20261129T210000Z
+SUMMARY:Anaïs Klein dans Meh
+LOCATION:Broc Café\, 2 Boulevard Henri IV\, Montpellier
+DESCRIPTION:Première du spectacle en rodage\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/anais-klein-dans-meh/
+URL:https://comedyatlas.app/comedy-atlas/event/anais-klein-dans-meh/
+END:VEVENT
+END:VCALENDAR
