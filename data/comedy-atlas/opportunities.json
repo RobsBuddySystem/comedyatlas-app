@@ -6181,13 +6181,6 @@
     "spot_role": null
   },
   {
-    "event_id": 43354,
-    "id": 1535,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
     "event_id": 80326,
     "id": 1536,
     "is_paid": null,
@@ -13764,13 +13757,6 @@
   {
     "event_id": 46582,
     "id": 2720,
-    "is_paid": null,
-    "set_length_minutes": null,
-    "spot_role": null
-  },
-  {
-    "event_id": 46581,
-    "id": 2721,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
@@ -29570,6 +29556,41 @@
   {
     "event_id": 75463,
     "id": 5100,
+    "is_paid": null,
+    "set_length_minutes": null,
+    "spot_role": null
+  },
+  {
+    "event_id": 67354,
+    "id": 8543,
+    "is_paid": null,
+    "set_length_minutes": null,
+    "spot_role": "host"
+  },
+  {
+    "event_id": 67354,
+    "id": 8544,
+    "is_paid": null,
+    "set_length_minutes": null,
+    "spot_role": null
+  },
+  {
+    "event_id": 67354,
+    "id": 8545,
+    "is_paid": null,
+    "set_length_minutes": null,
+    "spot_role": null
+  },
+  {
+    "event_id": 67354,
+    "id": 8546,
+    "is_paid": null,
+    "set_length_minutes": null,
+    "spot_role": null
+  },
+  {
+    "event_id": 67354,
+    "id": 8547,
     "is_paid": null,
     "set_length_minutes": null,
     "spot_role": null
