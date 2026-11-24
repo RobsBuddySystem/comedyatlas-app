@@ -22,7 +22,7 @@
     "country_name": "Australia",
     "id": 2,
     "language_counts": {
-      "unconfirmed": 18
+      "unconfirmed": 17
     },
     "latitude": -33.8688,
     "longitude": 151.2093,
@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 109,
-      "fr": 1667,
+      "fr": 1668,
       "unconfirmed": 12
     },
     "latitude": 48.8566,
@@ -876,7 +876,7 @@
     "country_name": "United States",
     "id": 76,
     "language_counts": {
-      "unconfirmed": 597
+      "unconfirmed": 594
     },
     "latitude": 34.0522,
     "longitude": -118.2437,
@@ -2412,6 +2412,23 @@
     "country_id": 20,
     "country_iso2": "FR",
     "country_name": "France",
+    "id": 193,
+    "language_counts": {
+      "fr": 7
+    },
+    "latitude": null,
+    "longitude": null,
+    "name": "Amiens",
+    "region_code": null,
+    "region_id": null,
+    "region_name": null,
+    "region_type": null,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "country_id": 20,
+    "country_iso2": "FR",
+    "country_name": "France",
     "id": 194,
     "language_counts": {
       "fr": 1
@@ -3029,7 +3046,7 @@
     "country_name": "France",
     "id": 300,
     "language_counts": {
-      "fr": 26
+      "fr": 27
     },
     "latitude": null,
     "longitude": null,
@@ -9920,7 +9937,7 @@
     "id": 830,
     "language_counts": {
       "en": 36,
-      "unconfirmed": 1568
+      "unconfirmed": 1567
     },
     "latitude": 36.11247,
     "longitude": -115.173589,
