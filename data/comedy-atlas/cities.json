@@ -267,7 +267,7 @@
     "id": 25,
     "language_counts": {
       "en": 106,
-      "fr": 1638,
+      "fr": 1626,
       "unconfirmed": 12
     },
     "latitude": 48.8566,
@@ -337,7 +337,7 @@
     "country_name": "France",
     "id": 30,
     "language_counts": {
-      "fr": 276
+      "fr": 273
     },
     "latitude": 45.764,
     "longitude": 4.8357,
@@ -529,7 +529,7 @@
     "id": 43,
     "language_counts": {
       "en": 3,
-      "unconfirmed": 441
+      "unconfirmed": 438
     },
     "latitude": 59.9139,
     "longitude": 10.7522,
@@ -738,7 +738,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 60,
     "language_counts": {
-      "unconfirmed": 52
+      "unconfirmed": 51
     },
     "latitude": 41.0082,
     "longitude": 28.9784,
@@ -1595,7 +1595,7 @@
     "country_name": "United States",
     "id": 124,
     "language_counts": {
-      "unconfirmed": 39
+      "unconfirmed": 42
     },
     "latitude": 40.587178,
     "longitude": -105.077011,
@@ -2843,7 +2843,7 @@
     "id": 258,
     "language_counts": {
       "en": 3,
-      "fr": 39
+      "fr": 38
     },
     "latitude": null,
     "longitude": null,
@@ -3047,7 +3047,7 @@
     "country_name": "France",
     "id": 300,
     "language_counts": {
-      "fr": 27
+      "fr": 26
     },
     "latitude": null,
     "longitude": null,
@@ -3642,7 +3642,7 @@
     "country_name": "Denmark",
     "id": 400,
     "language_counts": {
-      "unconfirmed": 63
+      "unconfirmed": 62
     },
     "latitude": null,
     "longitude": null,
@@ -4152,7 +4152,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 438,
     "language_counts": {
-      "unconfirmed": 5
+      "unconfirmed": 4
     },
     "latitude": 41.160033,
     "longitude": 27.800546,
@@ -4303,23 +4303,6 @@
     "country_id": 45,
     "country_iso2": "TR",
     "country_name": "T\u00fcrkiye",
-    "id": 447,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 38.618198,
-    "longitude": 34.70469,
-    "name": "Nev\u015fehir",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Istanbul"
-  },
-  {
-    "country_id": 45,
-    "country_iso2": "TR",
-    "country_name": "T\u00fcrkiye",
     "id": 449,
     "language_counts": {
       "unconfirmed": 2
@@ -4356,7 +4339,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 453,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 5
     },
     "latitude": 36.841775,
     "longitude": 30.827901,
@@ -4373,7 +4356,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 455,
     "language_counts": {
-      "unconfirmed": 6
+      "unconfirmed": 5
     },
     "latitude": 38.437311,
     "longitude": 27.103398,
@@ -4475,7 +4458,7 @@
     "country_name": "T\u00fcrkiye",
     "id": 469,
     "language_counts": {
-      "unconfirmed": 4
+      "unconfirmed": 3
     },
     "latitude": 40.851013,
     "longitude": 30.300454,
@@ -16476,7 +16459,7 @@
     "country_name": "Finland",
     "id": 1470,
     "language_counts": {
-      "unconfirmed": 14
+      "unconfirmed": 13
     },
     "latitude": 65.010358,
     "longitude": 25.471386,
@@ -16663,7 +16646,7 @@
     "country_name": "Norway",
     "id": 1482,
     "language_counts": {
-      "unconfirmed": 178
+      "unconfirmed": 177
     },
     "latitude": 60.390444,
     "longitude": 5.324444,
@@ -17196,23 +17179,6 @@
     "latitude": 59.379842,
     "longitude": 13.502612,
     "name": "Karlstad",
-    "region_code": null,
-    "region_id": null,
-    "region_name": null,
-    "region_type": null,
-    "timezone": "Europe/Stockholm"
-  },
-  {
-    "country_id": 28,
-    "country_iso2": "SE",
-    "country_name": "Sweden",
-    "id": 1516,
-    "language_counts": {
-      "unconfirmed": 1
-    },
-    "latitude": 58.90235,
-    "longitude": 17.94691,
-    "name": "Nyn\u00e4shamn",
     "region_code": null,
     "region_id": null,
     "region_name": null,
