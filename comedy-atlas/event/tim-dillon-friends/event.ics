@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:tim-dillon-friends@comedyatlas.app
+DTSTAMP:20261126T033000Z
+DTSTART:20261126T033000Z
+DTEND:20261126T053000Z
+SUMMARY:Tim Dillon & Friends
+LOCATION:The Comedy Store\, 8433 Sunset Blvd\, Los Angeles
+DESCRIPTION:At The Comedy Store\, Main Room.\nMore info: https://comedyatla
+ s.app/comedy-atlas/event/tim-dillon-friends/
+URL:https://comedyatlas.app/comedy-atlas/event/tim-dillon-friends/
+END:VEVENT
+END:VCALENDAR
