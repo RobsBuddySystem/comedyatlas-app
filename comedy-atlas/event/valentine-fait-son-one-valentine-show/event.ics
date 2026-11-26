@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:valentine-fait-son-one-valentine-show@comedyatlas.app
+DTSTAMP:20261201T180000Z
+DTSTART:20261201T180000Z
+DTEND:20261201T200000Z
+SUMMARY:Valentine fait son One Valentine Show
+LOCATION:Le Contrescarpe\, 5 rue blainville\, Paris
+DESCRIPTION:Dans son One Valentine Show\, Valentine réalise un rêve : mon
+ ter sur scène pour son premier spectacle.\nMore info: https://comedyatlas.
+ app/comedy-atlas/event/valentine-fait-son-one-valentine-show/
+URL:https://comedyatlas.app/comedy-atlas/event/valentine-fait-son-one-valen
+ tine-show/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aotearoa-comedy-gala@comedyatlas.app
+DTSTAMP:20270430T073000Z
+DTSTART:20270430T073000Z
+DTEND:20270430T093000Z
+SUMMARY:Aotearoa Comedy Gala
+LOCATION:Kiri Te Kanawa Theatre\, 50 Mayoral Drive\, Auckland
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/aotearoa-
+ comedy-gala/
+URL:https://comedyatlas.app/comedy-atlas/event/aotearoa-comedy-gala/
+END:VEVENT
+END:VCALENDAR

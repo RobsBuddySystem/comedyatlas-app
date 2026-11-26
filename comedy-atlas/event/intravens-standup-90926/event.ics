@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:intravens-standup-90926@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:Intravenøs Standup
+LOCATION:Folk i Storgata\, Storgata 36J\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/intravens
+ -standup-90926/
+URL:https://comedyatlas.app/comedy-atlas/event/intravens-standup-90926/
+END:VEVENT
+END:VCALENDAR

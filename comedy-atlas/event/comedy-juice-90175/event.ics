@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-juice-90175@comedyatlas.app
+DTSTAMP:20270203T040000Z
+DTSTART:20270203T040000Z
+DTEND:20270203T060000Z
+SUMMARY:Comedy Juice
+LOCATION:Brea Improv\, 180 S Brea Blvd\, Brea
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ju
+ ice-90175/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-juice-90175/
+END:VEVENT
+END:VCALENDAR

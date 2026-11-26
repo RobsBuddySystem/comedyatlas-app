@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:steve-martin-martin-short-90168@comedyatlas.app
+DTSTAMP:20270117T010000Z
+DTSTART:20270117T010000Z
+DTEND:20270117T030000Z
+SUMMARY:Steve Martin & Martin Short
+LOCATION:Jacksonville Center for the Performing Arts - Moran Theater\, 300 
+ West Water Street\, Jacksonville
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/steve-mar
+ tin-martin-short-90168/
+URL:https://comedyatlas.app/comedy-atlas/event/steve-martin-martin-short-90
+ 168/
+END:VEVENT
+END:VCALENDAR

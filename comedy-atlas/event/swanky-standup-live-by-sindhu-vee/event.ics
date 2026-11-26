@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:swanky-standup-live-by-sindhu-vee@comedyatlas.app
+DTSTAMP:20270425T020000Z
+DTSTART:20270425T020000Z
+DTEND:20270425T040000Z
+SUMMARY:Swanky Standup Live By Sindhu Vee
+LOCATION:Neptune Theatre\, 1303 NE 45th Street\, Seattle
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/swanky-st
+ andup-live-by-sindhu-vee/
+URL:https://comedyatlas.app/comedy-atlas/event/swanky-standup-live-by-sindh
+ u-vee/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sindhu-vee@comedyatlas.app
+DTSTAMP:20270430T030000Z
+DTSTART:20270430T030000Z
+DTEND:20270430T050000Z
+SUMMARY:Sindhu Vee
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sindhu-ve
+ e/
+URL:https://comedyatlas.app/comedy-atlas/event/sindhu-vee/
+END:VEVENT
+END:VCALENDAR

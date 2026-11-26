@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:clownvis-presley@comedyatlas.app
+DTSTAMP:20270301T010000Z
+DTSTART:20270301T010000Z
+DTEND:20270301T030000Z
+SUMMARY:Clownvis Presley
+LOCATION:White Oak Music Hall - Upstairs\, 2915 N Main St\,\, Houston
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/clownvis-
+ presley/
+URL:https://comedyatlas.app/comedy-atlas/event/clownvis-presley/
+END:VEVENT
+END:VCALENDAR

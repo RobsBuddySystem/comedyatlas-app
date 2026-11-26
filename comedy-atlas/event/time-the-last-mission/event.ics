@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:time-the-last-mission@comedyatlas.app
+DTSTAMP:20261214T180000Z
+DTSTART:20261214T180000Z
+DTEND:20261214T200000Z
+SUMMARY:Time : The last mission
+LOCATION:La Nouvelle Seine\, Péniche sur berge\, face au 3 quai Montebello
+ \, Paris
+DESCRIPTION:Après 10 ans de bons et loyaux services\, il est temps pour TI
+ ME de vivre sa dernière mission.\nMore info: https://comedyatlas.app/comed
+ y-atlas/event/time-the-last-mission/
+URL:https://comedyatlas.app/comedy-atlas/event/time-the-last-mission/
+END:VEVENT
+END:VCALENDAR

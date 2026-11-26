@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:par-ici-la-sortie-90731@comedyatlas.app
+DTSTAMP:20261223T190000Z
+DTSTART:20261223T190000Z
+DTEND:20261223T210000Z
+SUMMARY:Par ici la sortie !
+LOCATION:La comédie d'Amiens\, 55 rue de Sully\, Amiens
+DESCRIPTION:Trois collègues de bureau réunis par leur patron pour ce qu'i
+ ls pensaient être une réunion commerciale\, vont apprendre qu'il s'apprê
+ te à les licencier\nMore info: https://comedyatlas.app/comedy-atlas/event/
+ par-ici-la-sortie-90731/
+URL:https://comedyatlas.app/comedy-atlas/event/par-ici-la-sortie-90731/
+END:VEVENT
+END:VCALENDAR

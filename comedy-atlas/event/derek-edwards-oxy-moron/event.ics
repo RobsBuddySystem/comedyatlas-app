@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:derek-edwards-oxy-moron@comedyatlas.app
+DTSTAMP:20270409T003000Z
+DTSTART:20270409T003000Z
+DTEND:20270409T023000Z
+SUMMARY:Derek Edwards - Oxy Moron!
+LOCATION:Burton Cummings Theatre\, 364 Smith St.\, Winnipeg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/derek-edw
+ ards-oxy-moron/
+URL:https://comedyatlas.app/comedy-atlas/event/derek-edwards-oxy-moron/
+END:VEVENT
+END:VCALENDAR

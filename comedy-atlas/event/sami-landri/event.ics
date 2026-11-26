@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sami-landri@comedyatlas.app
+DTSTAMP:20270424T230000Z
+DTSTART:20270424T230000Z
+DTEND:20270425T010000Z
+SUMMARY:Sami Landri
+LOCATION:Toronto
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sami-land
+ ri/
+URL:https://comedyatlas.app/comedy-atlas/event/sami-landri/
+END:VEVENT
+END:VCALENDAR

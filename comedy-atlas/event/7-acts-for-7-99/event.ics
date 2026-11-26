@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:7-acts-for-7-99@comedyatlas.app
+DTSTAMP:20270212T200000Z
+DTSTART:20270212T200000Z
+DTEND:20270212T220000Z
+SUMMARY:7 Acts For £7.99
+LOCATION:Hansom Hall\, 54 Belvoir Street\, Leicester
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/7-acts-fo
+ r-7-99/
+URL:https://comedyatlas.app/comedy-atlas/event/7-acts-for-7-99/
+END:VEVENT
+END:VCALENDAR

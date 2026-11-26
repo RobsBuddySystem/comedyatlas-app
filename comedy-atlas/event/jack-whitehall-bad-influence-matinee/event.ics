@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-whitehall-bad-influence-matinee@comedyatlas.app
+DTSTAMP:20261229T153000Z
+DTSTART:20261229T153000Z
+DTEND:20261229T173000Z
+SUMMARY:Jack Whitehall: Bad Influence (Matinee)
+LOCATION:The Centaur\, Cheltenham Racecourse\, Cheltenham
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-whit
+ ehall-bad-influence-matinee/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-whitehall-bad-influence
+ -matinee/
+END:VEVENT
+END:VCALENDAR

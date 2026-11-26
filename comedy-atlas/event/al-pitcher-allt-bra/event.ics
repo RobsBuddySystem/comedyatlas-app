@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:al-pitcher-allt-bra@comedyatlas.app
+DTSTAMP:20270925T173000Z
+DTSTART:20270925T173000Z
+DTEND:20270925T193000Z
+SUMMARY:Al Pitcher - Allt bra?
+LOCATION:Linköping Konsert & Kongress\, Konsistoriegatan 7\, Linköping
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/al-pitche
+ r-allt-bra/
+URL:https://comedyatlas.app/comedy-atlas/event/al-pitcher-allt-bra/
+END:VEVENT
+END:VCALENDAR

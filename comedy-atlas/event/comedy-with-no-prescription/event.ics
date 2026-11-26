@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-with-no-prescription@comedyatlas.app
+DTSTAMP:20261129T023000Z
+DTSTART:20261129T023000Z
+DTEND:20261129T043000Z
+SUMMARY:Comedy With No Prescription
+LOCATION:The Stand Up Comedy Club\, 9831 Belmont St.\, Bellflower
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-wi
+ th-no-prescription/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-with-no-prescription/
+END:VEVENT
+END:VCALENDAR

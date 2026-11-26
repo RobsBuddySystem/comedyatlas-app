@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ravage-comedy-club@comedyatlas.app
+DTSTAMP:20261211T194500Z
+DTSTART:20261211T194500Z
+DTEND:20261211T214500Z
+SUMMARY:Ravage Comedy Club
+LOCATION:La Grange\, 55 cours Gouffé\, Marseille
+DESCRIPTION:Du talent\, du culot et quelques neurones en moins...\nMore inf
+ o: https://comedyatlas.app/comedy-atlas/event/ravage-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/ravage-comedy-club/
+END:VEVENT
+END:VCALENDAR

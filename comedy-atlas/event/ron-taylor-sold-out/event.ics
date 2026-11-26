@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ron-taylor-sold-out@comedyatlas.app
+DTSTAMP:20261212T000000Z
+DTSTART:20261212T000000Z
+DTEND:20261212T020000Z
+SUMMARY:Ron Taylor - SOLD OUT
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ron-taylo
+ r-sold-out/
+URL:https://comedyatlas.app/comedy-atlas/event/ron-taylor-sold-out/
+END:VEVENT
+END:VCALENDAR

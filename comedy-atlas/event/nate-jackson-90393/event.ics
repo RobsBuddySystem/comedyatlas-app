@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:nate-jackson-90393@comedyatlas.app
+DTSTAMP:20270619T020000Z
+DTSTART:20270619T020000Z
+DTEND:20270619T040000Z
+SUMMARY:Nate Jackson
+LOCATION:Fremont Theater\, 1035 Monterey Street\, San Luis Obispo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/nate-jack
+ son-90393/
+URL:https://comedyatlas.app/comedy-atlas/event/nate-jackson-90393/
+END:VEVENT
+END:VCALENDAR

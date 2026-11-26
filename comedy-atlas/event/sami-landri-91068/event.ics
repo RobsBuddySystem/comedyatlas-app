@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sami-landri-91068@comedyatlas.app
+DTSTAMP:20270607T010000Z
+DTSTART:20270607T010000Z
+DTEND:20270607T030000Z
+SUMMARY:Sami Landri
+LOCATION:Edmonton
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sami-land
+ ri-91068/
+URL:https://comedyatlas.app/comedy-atlas/event/sami-landri-91068/
+END:VEVENT
+END:VCALENDAR

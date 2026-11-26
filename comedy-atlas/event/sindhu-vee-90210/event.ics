@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sindhu-vee-90210@comedyatlas.app
+DTSTAMP:20270503T010000Z
+DTSTART:20270503T010000Z
+DTEND:20270503T030000Z
+SUMMARY:Sindhu Vee
+LOCATION:San Jose Improv\, 62 S Second St\, San Jose
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sindhu-ve
+ e-90210/
+URL:https://comedyatlas.app/comedy-atlas/event/sindhu-vee-90210/
+END:VEVENT
+END:VCALENDAR

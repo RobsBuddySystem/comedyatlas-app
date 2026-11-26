@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mike-hanley@comedyatlas.app
+DTSTAMP:20261213T010000Z
+DTSTART:20261213T010000Z
+DTEND:20261213T030000Z
+SUMMARY:Mike Hanley
+LOCATION:Lincoln
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/mike-hanl
+ ey/
+URL:https://comedyatlas.app/comedy-atlas/event/mike-hanley/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:safe-comedy-show-91395@comedyatlas.app
+DTSTAMP:20261205T173000Z
+DTSTART:20261205T173000Z
+DTEND:20261205T193000Z
+SUMMARY:Safe Comedy Show
+LOCATION:Théâtre Roquelaine\, 37 bis rue Roquelaine\, Toulouse
+DESCRIPTION:1h de stand-up avec plusieurs humoristes\, dans un théâtre ca
+ ché à Toulouse\, pour rire\, boire un verre et vivre une ambiance comedy 
+ club\nMore info: https://comedyatlas.app/comedy-atlas/event/safe-comedy-sho
+ w-91395/
+URL:https://comedyatlas.app/comedy-atlas/event/safe-comedy-show-91395/
+END:VEVENT
+END:VCALENDAR

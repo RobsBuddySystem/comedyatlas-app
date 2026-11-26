@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-end-of-year-special@comedyatlas.app
+DTSTAMP:20261227T180000Z
+DTSTART:20261227T180000Z
+DTEND:20261227T200000Z
+SUMMARY:COBO: Comedy Shutdown – End of Year Special
+LOCATION:The Top-Secret Comedy Club\, York House\, London
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/cobo-come
+ dy-shutdown-end-of-year-special/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-end-of-
+ year-special/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ismo-live-90209@comedyatlas.app
+DTSTAMP:20270503T010000Z
+DTSTART:20270503T010000Z
+DTEND:20270503T030000Z
+SUMMARY:ISMO: Live!
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ismo-live
+ -90209/
+URL:https://comedyatlas.app/comedy-atlas/event/ismo-live-90209/
+END:VEVENT
+END:VCALENDAR

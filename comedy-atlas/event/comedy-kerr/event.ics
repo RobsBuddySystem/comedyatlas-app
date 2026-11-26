@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedy-kerr@comedyatlas.app
+DTSTAMP:20261126T023000Z
+DTSTART:20261126T023000Z
+DTEND:20261126T043000Z
+SUMMARY:Comedy @ Kerr
+LOCATION:ASU Kerr\, 6110 North Scottsdale Road\, Scottsdale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedy-ke
+ rr/
+URL:https://comedyatlas.app/comedy-atlas/event/comedy-kerr/
+END:VEVENT
+END:VCALENDAR

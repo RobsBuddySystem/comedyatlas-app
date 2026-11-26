@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:just-for-laughs-showcase@comedyatlas.app
+DTSTAMP:20270213T053000Z
+DTSTART:20270213T053000Z
+DTEND:20270213T073000Z
+SUMMARY:Just For Laughs Showcase
+LOCATION:Hollywood Improv (The Lab)\, 8162 Melrose Avenue\, Los Angeles
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/just-for-
+ laughs-showcase/
+URL:https://comedyatlas.app/comedy-atlas/event/just-for-laughs-showcase/
+END:VEVENT
+END:VCALENDAR

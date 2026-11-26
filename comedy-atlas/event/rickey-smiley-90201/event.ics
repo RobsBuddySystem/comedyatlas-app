@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rickey-smiley-90201@comedyatlas.app
+DTSTAMP:20270411T010000Z
+DTSTART:20270411T010000Z
+DTEND:20270411T030000Z
+SUMMARY:Rickey Smiley
+LOCATION:Ontario Improv\, 4555 Mills Cir\, Ontario
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/rickey-sm
+ iley-90201/
+URL:https://comedyatlas.app/comedy-atlas/event/rickey-smiley-90201/
+END:VEVENT
+END:VCALENDAR
