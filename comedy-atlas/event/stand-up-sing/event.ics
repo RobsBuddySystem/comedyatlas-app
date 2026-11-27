@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-sing@comedyatlas.app
+DTSTAMP:20270121T013000Z
+DTSTART:20270121T013000Z
+DTEND:20270121T033000Z
+SUMMARY:Stand-up & Sing
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stand-up-
+ sing/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-sing/
+END:VEVENT
+END:VCALENDAR

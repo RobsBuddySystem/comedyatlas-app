@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:roger-g-abgeblasen@comedyatlas.app
+DTSTAMP:20271003T170000Z
+DTSTART:20271003T170000Z
+DTEND:20271003T190000Z
+SUMMARY:Roger G - ABGEBLASEN
+LOCATION:Admiralspalast\, Friedrichstraße 101\, Berlin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/roger-g-a
+ bgeblasen/
+URL:https://comedyatlas.app/comedy-atlas/event/roger-g-abgeblasen/
+END:VEVENT
+END:VCALENDAR

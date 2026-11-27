@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:melbourne-international-comedy-festival-roadshow@comedyatlas.app
+DTSTAMP:20270721T093000Z
+DTSTART:20270721T093000Z
+DTEND:20270721T113000Z
+SUMMARY:Melbourne International Comedy Festival Roadshow
+LOCATION:Country Club Tasmania\, Country Club Ave\, Prospect Vale
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/melbourne
+ -international-comedy-festival-roadshow/
+URL:https://comedyatlas.app/comedy-atlas/event/melbourne-international-come
+ dy-festival-roadshow/
+END:VEVENT
+END:VCALENDAR

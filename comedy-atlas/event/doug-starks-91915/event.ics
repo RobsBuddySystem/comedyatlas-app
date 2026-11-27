@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:doug-starks-91915@comedyatlas.app
+DTSTAMP:20270123T030000Z
+DTSTART:20270123T030000Z
+DTEND:20270123T050000Z
+SUMMARY:Doug Starks
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/doug-star
+ ks-91915/
+URL:https://comedyatlas.app/comedy-atlas/event/doug-starks-91915/
+END:VEVENT
+END:VCALENDAR

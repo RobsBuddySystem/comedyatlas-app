@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:george-willborn@comedyatlas.app
+DTSTAMP:20261205T000000Z
+DTSTART:20261205T000000Z
+DTEND:20261205T020000Z
+SUMMARY:George Willborn
+LOCATION:Pittsburgh Improv\, 166 East Bridge St\, Pittsburgh
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/george-wi
+ llborn/
+URL:https://comedyatlas.app/comedy-atlas/event/george-willborn/
+END:VEVENT
+END:VCALENDAR

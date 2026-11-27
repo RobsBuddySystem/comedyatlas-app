@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:murray-valeriano@comedyatlas.app
+DTSTAMP:20270115T040000Z
+DTSTART:20270115T040000Z
+DTEND:20270115T060000Z
+SUMMARY:Murray Valeriano
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/murray-va
+ leriano/
+URL:https://comedyatlas.app/comedy-atlas/event/murray-valeriano/
+END:VEVENT
+END:VCALENDAR

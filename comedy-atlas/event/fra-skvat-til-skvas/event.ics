@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fra-skvat-til-skvas@comedyatlas.app
+DTSTAMP:20270408T180000Z
+DTSTART:20270408T180000Z
+DTEND:20270408T200000Z
+SUMMARY:Fra Skvat til Skvas
+LOCATION:Pavillonen Centersalen\, Kærvej 11\, Grenaa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fra-skvat
+ -til-skvas/
+URL:https://comedyatlas.app/comedy-atlas/event/fra-skvat-til-skvas/
+END:VEVENT
+END:VCALENDAR

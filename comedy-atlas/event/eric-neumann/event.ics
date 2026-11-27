@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:eric-neumann@comedyatlas.app
+DTSTAMP:20270204T033000Z
+DTSTART:20270204T033000Z
+DTEND:20270204T053000Z
+SUMMARY:Eric Neumann
+LOCATION:Cobb's Comedy Club\, 915 Columbus Avenue\, San Francisco
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/eric-neum
+ ann/
+URL:https://comedyatlas.app/comedy-atlas/event/eric-neumann/
+END:VEVENT
+END:VCALENDAR

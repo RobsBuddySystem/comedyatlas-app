@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:andrea-jin@comedyatlas.app
+DTSTAMP:20270123T010000Z
+DTSTART:20270123T010000Z
+DTEND:20270123T030000Z
+SUMMARY:Andrea Jin
+LOCATION:Punch Line Irving\, 310 W Las Colinas Blvd.\, Suite 130\, Irving
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/andrea-ji
+ n/
+URL:https://comedyatlas.app/comedy-atlas/event/andrea-jin/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:phat-cat-comedy-advents-special@comedyatlas.app
+DTSTAMP:20261210T190000Z
+DTSTART:20261210T190000Z
+DTEND:20261210T210000Z
+SUMMARY:PHAT CAT COMEDY ADVENTS SPECIAL
+LOCATION:Phat Cat Comedy Club\, Barfußgäßchen 12\, Leipzig
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/phat-cat-
+ comedy-advents-special/
+URL:https://comedyatlas.app/comedy-atlas/event/phat-cat-comedy-advents-spec
+ ial/
+END:VEVENT
+END:VCALENDAR

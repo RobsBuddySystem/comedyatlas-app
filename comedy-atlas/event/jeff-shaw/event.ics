@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jeff-shaw@comedyatlas.app
+DTSTAMP:20270108T040000Z
+DTSTART:20270108T040000Z
+DTEND:20270108T060000Z
+SUMMARY:Jeff Shaw
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jeff-shaw
+ /
+URL:https://comedyatlas.app/comedy-atlas/event/jeff-shaw/
+END:VEVENT
+END:VCALENDAR

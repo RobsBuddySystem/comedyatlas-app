@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:lenny-schmidt@comedyatlas.app
+DTSTAMP:20270129T040000Z
+DTSTART:20270129T040000Z
+DTEND:20270129T060000Z
+SUMMARY:Lenny Schmidt
+LOCATION:Pechanga Resort Casino\, 45000 Pechanga Parkway\, Temecula
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/lenny-sch
+ midt/
+URL:https://comedyatlas.app/comedy-atlas/event/lenny-schmidt/
+END:VEVENT
+END:VCALENDAR

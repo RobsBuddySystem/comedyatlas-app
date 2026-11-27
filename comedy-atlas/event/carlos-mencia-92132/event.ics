@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:carlos-mencia-92132@comedyatlas.app
+DTSTAMP:20270227T030000Z
+DTSTART:20270227T030000Z
+DTEND:20270227T050000Z
+SUMMARY:Carlos Mencia
+LOCATION:Irvine Improv\, 527 Spectrum Center Dr.\, Irvine
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/carlos-me
+ ncia-92132/
+URL:https://comedyatlas.app/comedy-atlas/event/carlos-mencia-92132/
+END:VEVENT
+END:VCALENDAR

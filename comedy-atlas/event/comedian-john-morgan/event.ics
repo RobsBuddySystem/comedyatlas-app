@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:comedian-john-morgan@comedyatlas.app
+DTSTAMP:20270116T030000Z
+DTSTART:20270116T030000Z
+DTEND:20270116T050000Z
+SUMMARY:Comedian John Morgan
+LOCATION:Texas Club\, 456 N Donmoor Ave\, Baton Rouge
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/comedian-
+ john-morgan/
+URL:https://comedyatlas.app/comedy-atlas/event/comedian-john-morgan/
+END:VEVENT
+END:VCALENDAR

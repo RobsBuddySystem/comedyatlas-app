@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:michael-gregorio-symphonique@comedyatlas.app
+DTSTAMP:20280114T190000Z
+DTSTART:20280114T190000Z
+DTEND:20280114T210000Z
+SUMMARY:Michaël Gregorio Symphonique
+LOCATION:Vorst Nationaal/Forest National\, Avenue Victor Rousseau 208\, For
+ est (Brussels)
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/michael-g
+ regorio-symphonique/
+URL:https://comedyatlas.app/comedy-atlas/event/michael-gregorio-symphonique
+ /
+END:VEVENT
+END:VCALENDAR

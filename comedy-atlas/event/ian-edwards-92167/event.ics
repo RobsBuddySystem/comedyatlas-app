@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ian-edwards-92167@comedyatlas.app
+DTSTAMP:20270611T230000Z
+DTSTART:20270611T230000Z
+DTEND:20270612T010000Z
+SUMMARY:Ian Edwards
+LOCATION:Punch Line Philly\, 33 E. Laurel Street\, Philadelphia
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/ian-edwar
+ ds-92167/
+URL:https://comedyatlas.app/comedy-atlas/event/ian-edwards-92167/
+END:VEVENT
+END:VCALENDAR

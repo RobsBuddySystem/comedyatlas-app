@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dean-edwards@comedyatlas.app
+DTSTAMP:20261227T010000Z
+DTSTART:20261227T010000Z
+DTEND:20261227T030000Z
+SUMMARY:Dean Edwards
+LOCATION:Chicago Improv\, 5 Woodfield Mall K120B\, Schaumburg
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dean-edwa
+ rds/
+URL:https://comedyatlas.app/comedy-atlas/event/dean-edwards/
+END:VEVENT
+END:VCALENDAR

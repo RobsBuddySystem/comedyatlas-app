@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:fary-friends@comedyatlas.app
+DTSTAMP:20270126T180000Z
+DTSTART:20270126T180000Z
+DTEND:20270126T200000Z
+SUMMARY:Fary & Friends
+LOCATION:Genève
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/fary-frie
+ nds/
+URL:https://comedyatlas.app/comedy-atlas/event/fary-friends/
+END:VEVENT
+END:VCALENDAR
