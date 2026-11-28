@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dominic-paquet-92795@comedyatlas.app
+DTSTAMP:20270226T010000Z
+DTSTART:20270226T010000Z
+DTEND:20270226T030000Z
+SUMMARY:Dominic Paquet
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/dominic-p
+ aquet-92795/
+URL:https://comedyatlas.app/comedy-atlas/event/dominic-paquet-92795/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-mcgahern-lucan-mar-12@comedyatlas.app
+DTSTAMP:20270312T200000Z
+DTSTART:20270312T200000Z
+DTEND:20270312T220000Z
+SUMMARY:Kevin McGahern - Lucan - Mar 12
+LOCATION:Courtney's of Lucan\, Leixlip Rd\, Lucan\,\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-mcg
+ ahern-lucan-mar-12/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-mcgahern-lucan-mar-12/
+END:VEVENT
+END:VCALENDAR

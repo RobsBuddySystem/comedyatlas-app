@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laugh-till-it-hurts-in-aid-of-crisis@comedyatlas.app
+DTSTAMP:20270210T193000Z
+DTSTART:20270210T193000Z
+DTEND:20270210T213000Z
+SUMMARY:Laugh Till It Hurts : In aid of Crisis
+LOCATION:The Comedy Store\, 1a Oxendon Street\, London
+DESCRIPTION:Crisis\nWe are the national charity for people experiencing hom
+ elessness.\nMore info: https://comedyatlas.app/comedy-atlas/event/laugh-til
+ l-it-hurts-in-aid-of-crisis/
+URL:https://comedyatlas.app/comedy-atlas/event/laugh-till-it-hurts-in-aid-o
+ f-crisis/
+END:VEVENT
+END:VCALENDAR

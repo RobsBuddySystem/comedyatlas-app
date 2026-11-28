@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:al-pitcher-standup@comedyatlas.app
+DTSTAMP:20271016T173000Z
+DTSTART:20271016T173000Z
+DTEND:20271016T193000Z
+SUMMARY:Al Pitcher standup
+LOCATION:Halmstads Teater\, Fredsgatan 5\, Halmstad
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/al-pitche
+ r-standup/
+URL:https://comedyatlas.app/comedy-atlas/event/al-pitcher-standup/
+END:VEVENT
+END:VCALENDAR

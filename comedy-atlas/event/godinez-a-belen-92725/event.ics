@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:godinez-a-belen-92725@comedyatlas.app
+DTSTAMP:20261227T010000Z
+DTSTART:20261227T010000Z
+DTEND:20261227T030000Z
+SUMMARY:Godinez a Belén
+LOCATION:Ciudad de México
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/godinez-a
+ -belen-92725/
+URL:https://comedyatlas.app/comedy-atlas/event/godinez-a-belen-92725/
+END:VEVENT
+END:VCALENDAR

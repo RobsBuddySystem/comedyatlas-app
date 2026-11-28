@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gabriel-rutledge-early-show@comedyatlas.app
+DTSTAMP:20270619T230000Z
+DTSTART:20270619T230000Z
+DTEND:20270620T010000Z
+SUMMARY:Gabriel Rutledge EARLY SHOW
+LOCATION:Laugh Lounge\, 61 York Street\, Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gabriel-r
+ utledge-early-show/
+URL:https://comedyatlas.app/comedy-atlas/event/gabriel-rutledge-early-show/
+END:VEVENT
+END:VCALENDAR

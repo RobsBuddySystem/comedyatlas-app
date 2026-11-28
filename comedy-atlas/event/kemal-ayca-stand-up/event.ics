@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kemal-ayca-stand-up@comedyatlas.app
+DTSTAMP:20270118T170000Z
+DTSTART:20270118T170000Z
+DTEND:20270118T190000Z
+SUMMARY:Kemal Ayça Stand-Up
+LOCATION:JJ Pub Kanyon\, Levent\, Kanyon AVM\, Büyükdere Cd. No:185\, 343
+ 94\, Istanbul
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kemal-ayc
+ a-stand-up/
+URL:https://comedyatlas.app/comedy-atlas/event/kemal-ayca-stand-up/
+END:VEVENT
+END:VCALENDAR

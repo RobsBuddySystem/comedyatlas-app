@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:potted-panto@comedyatlas.app
+DTSTAMP:20261206T193000Z
+DTSTART:20261206T193000Z
+DTEND:20261206T213000Z
+SUMMARY:Potted Panto
+LOCATION:Apollo Theatre\, 31 Shaftesbury Avenue\, London
+DESCRIPTION:Seven classic pantomimes in 70 hilarious minutes! The Olivier A
+ ward nominated festive celebration Potted Panto is back for four weeks only
+ .\nMore info: https://comedyatlas.app/comedy-atlas/event/potted-panto/
+URL:https://comedyatlas.app/comedy-atlas/event/potted-panto/
+END:VEVENT
+END:VCALENDAR

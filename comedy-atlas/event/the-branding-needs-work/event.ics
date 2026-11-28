@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:the-branding-needs-work@comedyatlas.app
+DTSTAMP:20261210T193000Z
+DTSTART:20261210T193000Z
+DTEND:20261210T213000Z
+SUMMARY:The Branding Needs Work
+LOCATION:Caxton Arms\, 36 North Gardens\, Brighton
+DESCRIPTION:A great night of comedy\, with comedians trying new material in
+  a warm and friendly environment\, with Brighton Fringe Award Nominee Simon
+  Harriyott.\nMore info: https://comedyatlas.app/comedy-atlas/event/the-bran
+ ding-needs-work/
+URL:https://comedyatlas.app/comedy-atlas/event/the-branding-needs-work/
+END:VEVENT
+END:VCALENDAR

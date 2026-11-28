@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-bergen-pa-mm-cafe-bar@comedyatlas.app
+DTSTAMP:20270116T190000Z
+DTSTART:20270116T190000Z
+DTEND:20270116T210000Z
+SUMMARY:Stand Up Bergen på MM Café & Bar
+LOCATION:MM Café & Bar\, Øvre Ole Bulls plass 3\, Bergen
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/stand-up-
+ bergen-pa-mm-cafe-bar/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-bergen-pa-mm-cafe-b
+ ar/
+END:VEVENT
+END:VCALENDAR

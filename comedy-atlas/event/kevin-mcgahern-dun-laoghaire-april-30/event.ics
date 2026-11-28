@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kevin-mcgahern-dun-laoghaire-april-30@comedyatlas.app
+DTSTAMP:20270430T190000Z
+DTSTART:20270430T190000Z
+DTEND:20270430T210000Z
+SUMMARY:Kevin McGahern - Dún Laoghaire - April 30
+LOCATION:Courtney's of Lucan\, Leixlip Rd\, Lucan\,\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/kevin-mcg
+ ahern-dun-laoghaire-april-30/
+URL:https://comedyatlas.app/comedy-atlas/event/kevin-mcgahern-dun-laoghaire
+ -april-30/
+END:VEVENT
+END:VCALENDAR

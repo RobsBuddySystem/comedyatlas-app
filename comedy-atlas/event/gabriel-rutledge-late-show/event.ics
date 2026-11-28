@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gabriel-rutledge-late-show@comedyatlas.app
+DTSTAMP:20270620T013000Z
+DTSTART:20270620T013000Z
+DTEND:20270620T033000Z
+SUMMARY:Gabriel Rutledge LATE SHOW
+LOCATION:Laugh Lounge\, 61 York Street\, Ottawa
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/gabriel-r
+ utledge-late-show/
+URL:https://comedyatlas.app/comedy-atlas/event/gabriel-rutledge-late-show/
+END:VEVENT
+END:VCALENDAR

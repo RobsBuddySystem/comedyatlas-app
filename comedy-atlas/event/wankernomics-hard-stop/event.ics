@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wankernomics-hard-stop@comedyatlas.app
+DTSTAMP:20270921T181500Z
+DTSTART:20270921T181500Z
+DTEND:20270921T201500Z
+SUMMARY:Wankernomics - Hard Stop
+LOCATION:De Meervaart\, Meer en Vaart 300\, Amsterdam
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/wankernom
+ ics-hard-stop/
+URL:https://comedyatlas.app/comedy-atlas/event/wankernomics-hard-stop/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cobo-comedy-shutdown-in-luton@comedyatlas.app
+DTSTAMP:20270123T200000Z
+DTSTART:20270123T200000Z
+DTEND:20270123T220000Z
+SUMMARY:COBO : Comedy Shutdown in Luton
+LOCATION:Luton Hat Factory\, Bute Street\, Luton
+DESCRIPTION:Bring your friends\, family or crew and get ready for an unforg
+ ettable evening powered by some of the sharpest comedians in the game\nMore
+  info: https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-in-l
+ uton/
+URL:https://comedyatlas.app/comedy-atlas/event/cobo-comedy-shutdown-in-luto
+ n/
+END:VEVENT
+END:VCALENDAR

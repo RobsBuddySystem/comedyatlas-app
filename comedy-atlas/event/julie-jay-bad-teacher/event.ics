@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:julie-jay-bad-teacher@comedyatlas.app
+DTSTAMP:20270214T193000Z
+DTSTART:20270214T193000Z
+DTEND:20270214T213000Z
+SUMMARY:Julie Jay - Bad Teacher
+LOCATION:Monroes\, Dominick Street\, Galway
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/julie-jay
+ -bad-teacher/
+URL:https://comedyatlas.app/comedy-atlas/event/julie-jay-bad-teacher/
+END:VEVENT
+END:VCALENDAR

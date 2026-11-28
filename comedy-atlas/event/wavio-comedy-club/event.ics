@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wavio-comedy-club@comedyatlas.app
+DTSTAMP:20270211T193000Z
+DTSTART:20270211T193000Z
+DTEND:20270211T213000Z
+SUMMARY:Wavio Comedy Club
+LOCATION:Wavio Room Leeds LS1 6NU\, 62 New Briggate\, Leeds
+DESCRIPTION:Four guest comedians join host Antony Vila at Wavio Room on New
+  Briggate\, Leeds. Doors 7.30pm. Show starts at 8pm.\nMore info: https://co
+ medyatlas.app/comedy-atlas/event/wavio-comedy-club/
+URL:https://comedyatlas.app/comedy-atlas/event/wavio-comedy-club/
+END:VEVENT
+END:VCALENDAR

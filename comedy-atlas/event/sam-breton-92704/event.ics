@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sam-breton-92704@comedyatlas.app
+DTSTAMP:20270128T010000Z
+DTSTART:20270128T010000Z
+DTEND:20270128T030000Z
+SUMMARY:Sam Breton
+LOCATION:Théâtre Manuvie\, 6000 Boulevard Rome\, Brossard
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/sam-breto
+ n-92704/
+URL:https://comedyatlas.app/comedy-atlas/event/sam-breton-92704/
+END:VEVENT
+END:VCALENDAR

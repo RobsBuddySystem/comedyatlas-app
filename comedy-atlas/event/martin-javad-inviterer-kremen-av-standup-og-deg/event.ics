@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:martin-javad-inviterer-kremen-av-standup-og-deg@comedyatlas.app
+DTSTAMP:20270206T180000Z
+DTSTART:20270206T180000Z
+DTEND:20270206T200000Z
+SUMMARY:Martin & Javad inviterer kremen av standup\, og deg
+LOCATION:Sentrum Scene\, Arbeidersamfunnets plass 1\, Oslo
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/martin-ja
+ vad-inviterer-kremen-av-standup-og-deg/
+URL:https://comedyatlas.app/comedy-atlas/event/martin-javad-inviterer-kreme
+ n-av-standup-og-deg/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:stand-up-comedy-southampton@comedyatlas.app
+DTSTAMP:20270115T190000Z
+DTSTART:20270115T190000Z
+DTEND:20270115T210000Z
+SUMMARY:Stand Up Comedy Southampton
+LOCATION:The Attic Southampton\, 32 Winsor Road\, Southampton
+DESCRIPTION:Stand-Up Comedy in Southampton with show previews from Cecily H
+ itchcock\, Rory Cargill and Jess Carrivick Friday 15th January\nMore info: 
+ https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-southampton/
+URL:https://comedyatlas.app/comedy-atlas/event/stand-up-comedy-southampton/
+END:VEVENT
+END:VCALENDAR

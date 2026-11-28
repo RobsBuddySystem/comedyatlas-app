@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COMEDY ATLAS//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jack-whitehall-bad-influence-92709@comedyatlas.app
+DTSTAMP:20270209T213000Z
+DTSTART:20270209T213000Z
+DTEND:20270209T233000Z
+SUMMARY:Jack Whitehall - Bad Influence
+LOCATION:Vicar Street\, 58 Thomas Street\, Dublin
+DESCRIPTION:More info: https://comedyatlas.app/comedy-atlas/event/jack-whit
+ ehall-bad-influence-92709/
+URL:https://comedyatlas.app/comedy-atlas/event/jack-whitehall-bad-influence
+ -92709/
+END:VEVENT
+END:VCALENDAR
